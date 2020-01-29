@@ -1,0 +1,28 @@
+{
+	"name": "ls-engines",
+	"version": "0.0.0",
+	"description": "Determine if your dependency graph's stated \"engines\" criteria is met.",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ljharb/ls-engines.git"
+	},
+	"keywords": [
+		"engines",
+		"npm",
+		"node",
+		"node_modules"
+	],
+	"author": "Jordan Harband <ljharb@gmail.com>",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/ljharb/ls-engines/issues"
+	},
+	"homepage": "https://github.com/ljharb/ls-engines#readme",
+	"engines": {
+		"node": ">=6",
+		"npm": ">=6"
+	}
+}
