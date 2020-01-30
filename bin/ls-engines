@@ -2,9 +2,7 @@
 
 'use strict';
 
-const Arborist = require('@npmcli/arborist');
 const Semver = require('semver');
-const getJSON = require('get-json');
 const { default: intersect } = require('fast_array_intersect');
 const chalk = require('chalk');
 const yargs = require('yargs');
@@ -13,7 +11,7 @@ const { argv: { mode } } = yargs
 	.option('mode', {
 		choices: ['auto', 'actual', 'virtual', 'ideal'],
 		default: 'auto',
-		describe: '”actual“ reads from `node_modules`; ”virtual“ reads from a lockfile; “ideal” reads from `package.json`'
+		describe: '”actual“ reads from `node_modules`; ”virtual“ reads from a lockfile; “ideal” reads from `package.json`',
 	})
 /*
 	.option('only', {
@@ -24,73 +22,44 @@ const { argv: { mode } } = yargs
 	.strict()
 	.help();
 
-const npmInfo = require('../npm-info');
+const getTree = require('../get-tree');
+const getNodeVersions = require('../get-node-versions');
 
-const arb = new Arborist();
-
-const nodeVersions = getJSON('http://nodejs.org/dist/index.json').then(i => i.map(x => x.version));
-
-const treeP = npmInfo(mode).then(async ({ hasNodeModules, hasLockfile, hasPackage }) => {
-	if (mode === 'actual' || hasNodeModules) {
-		const messages = [].concat(
-			hasNodeModules ? '`node_modules` found' : [],
-			mode === 'actual' ? 'mode is “actual”' : [],
-		);
-		console.log(chalk.green(`${messages.join(', ')}; loading tree from disk...`));
-		return arb.loadActual();
-	}
-
-	if (mode === 'virtual' || hasLockfile) {
-		const messages = [].concat(
-			hasLockfile ? 'lockfile found' : [],
-			mode === 'virtual' ? 'mode is “virtual”' : [],
-		);
-		console.log(chalk.green(`${messages.join(', ')}; loading virtual tree from lockfile...`));
-		return arb.loadVirtual();
-	}
-
-	const messages = [].concat(
-		`\`package.json\` ${hasPackage ? '' : 'not '}found`,
-		mode === 'ideal' ? 'mode is “ideal”' : [],
-	);
-	console.log(chalk.green(`${messages.join(', ')}; building ideal tree from package.json...`));
-	return arb.buildIdealTree();
-});
-
-const nameRanges = treeP.then(async (tree) => {
+const pNameRanges = getTree(mode).then(async (tree) => {
 	const tuples = [[tree.package.name, tree.package.engines && tree.package.engines.node]].concat(
 		Array.from(
 			tree.inventory.filter(({ package: { engines } }) => engines && engines.node),
-			({ name, package: { engines: { node } } }) => [name, node]
+			({ name, package: { engines: { node } } }) => [name, node],
 		),
-	).filter(x => x && x[1]);
+	).filter((x) => x && x[1]);
 	return tuples
 		.filter(([, node]) => node !== '*')
 		.map(([name, node]) => [name, new Semver.Range(node)]);
 });
 
-function removeV(ver) {
-	return ver.replace(/^v/g,'');
-}
 function caret(ver) {
-	return '^' + removeV(ver);
+	return '^' + ver.replace(/^v/g, '');
 }
 
-Promise.all([nodeVersions, nameRanges]).then(([nodeVersions, nameRanges]) => {
-	const allowedVersions = nameRanges.map(([n, r]) => [n, nodeVersions.filter(v => r.test(v))]);
+Promise.all([getNodeVersions(), pNameRanges]).then(([nodeVersions, nameRanges]) => {
+	const allowedVersions = nameRanges.map(([n, r]) => [
+		n,
+		nodeVersions.filter((v) => r.test(v)),
+	]);
 	const valids = nameRanges.length > 0 ? intersect(allowedVersions.map(([, vs]) => vs)) : nodeVersions;
 	const validMajorRanges = nameRanges.length > 0 ? valids.reduceRight((prev, v) => {
-		prev = [].concat(prev);
+		prev = [].concat(prev); // eslint-disable-line no-param-reassign
 		return Semver.satisfies(v, caret(prev[prev.length - 1])) ? prev : prev.concat(v);
 	}).map(caret) : ['*'];
 	const validRange = new Semver.Range(validMajorRanges.join(' || '));
-	if (!valids.every(v => validRange.test(v))) {
+	if (!valids.every((v) => validRange.test(v))) {
 		throw new RangeError('please report this: ' + valids.join(',') + ' / ' + validRange);
 	}
 	if (validRange.raw) {
-		console.log(chalk.gray(`\nValid node version range: ${validRange.raw.replace(/(\.0)+( |$)/g, '$2').split(' ').reverse().join(' ')}`));
-		const latestMajors = validMajorRanges.map(r => Semver.maxSatisfying(nodeVersions, r).replace(/(\.0)+$/, ''));
-		console.log(chalk.bold(chalk.gray(`\nCurrently available, most recent, valid node major versions: ${latestMajors.reverse().join(', ')}`)));
+		const displayRange = validRange.raw.replace(/(\.0)+( |$)/g, '$2').split(' ').reverse().join(' ');
+		console.log(chalk.gray(`\nValid node version range: ${displayRange}`));
+		const latestMajors = validMajorRanges.map((r) => Semver.maxSatisfying(nodeVersions, r).replace(/(\.0)+$/, '')).reverse();
+		console.log(chalk.bold(chalk.gray(`\nCurrently available, most recent, valid node major versions: ${latestMajors.join(', ')}`)));
 	}
 	const currentValid = valids.includes(process.version);
 	console.log(`\nCurrent node version, ${chalk.blue(chalk.bold(process.version))}, is ${chalk.bold(currentValid ? chalk.greenBright('valid') : chalk.red('invalid'))}!`);

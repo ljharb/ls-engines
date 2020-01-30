@@ -12,9 +12,18 @@
 	},
 
 	"rules": {
+		"array-bracket-newline": 0,
 		"comma-dangle": [2, "always-multiline"],
 		"dot-notation": [2, { "allowKeywords": true }],
+		"func-style": 1,
+		"no-console": 0,
+		"object-curly-newline": 0,
 		"object-shorthand": [2, "always"],
 		"operator-linebreak": [2, "before"],
+		"quote-props": [2, "as-needed", {
+			"keywords": false,
+			"unnecessary": true,
+			"numbers": false,
+		}],
 	},
 }
