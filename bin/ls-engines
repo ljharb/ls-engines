@@ -2,38 +2,40 @@
 
 'use strict';
 
+const path = require('path');
 const Semver = require('semver');
 const { default: intersect } = require('fast_array_intersect');
 const chalk = require('chalk');
 const yargs = require('yargs');
 const allSettled = require('promise.allsettled');
+const jsonFile = require('json-file-plus');
 
 /* eslint-disable sort-keys */
 const EXITS = {
 	IMPLICIT: 1,
 	INEXACT: 2,
 	CURRENT: 4,
+	SAVE: 8,
 	ERROR: 128,
 };
 /* eslint-enable sort-keys */
 
-const { argv: { current, mode } } = yargs
+const { argv: { current, mode, save } } = yargs
 	.option('mode', {
 		choices: ['auto', 'actual', 'virtual', 'ideal'],
 		default: 'auto',
 		describe: '”actual“ reads from `node_modules`; ”virtual“ reads from a lockfile; “ideal” reads from `package.json`',
+	})
+	.option('save', {
+		default: false,
+		describe: 'update `package.json`’s “engines” field to match that of your dependency graph',
+		type: 'boolean',
 	})
 	.option('current', {
 		default: true,
 		describe: 'check that the current node version matches your dependency graph’s requirements',
 		type: 'boolean',
 	})
-/*
-	.option('only', {
-		choices: ['production', 'dev'],
-		describe: 'include only production, or only dev, deps'
-	})
-*/
 	.strict()
 	.help();
 
@@ -79,16 +81,26 @@ async function checkCurrent(rootValids, graphValids) {
 	};
 }
 
-async function checkEngines(rootNode, rootValids, graphValids, displayRange) {
+async function checkEngines(rootNode, rootValids, graphValids, displayRange, shouldSave) {
+	const saveMessage = shouldSave
+		? `\n\`${chalk.gray('ls-engines')}\` will automatically fix this, per the \`${chalk.gray('--save')}\` option, by adding the following to your \`${chalk.gray('package.json')}\`:`
+		: `\nYou can fix this by running \`${chalk.bold(chalk.gray('ls-engines --save'))}\`, or by manually adding the following to your \`${chalk.gray('package.json')}\`:`;
 	/* eslint no-throw-literal: 0 */
 	if (rootNode.raw === '*') {
 		throw {
 			code: EXITS.IMPLICIT,
 			output: [
 				chalk.bold(chalk.red('\nYour “engines” field is either missing, or set to ”*”! Prefer explicitly setting a supported engine range.')),
-				'\nYou can fix this by manually adding the following to your `package.json`:',
+				saveMessage,
 				chalk.blue(`"engines": ${JSON.stringify({ node: displayRange }, null, 2)}`),
 			],
+			save(pkg) {
+				/* eslint no-param-reassign: 0 */
+				if (!pkg.engines) {
+					pkg.engines = {};
+				}
+				pkg.engines.node = displayRange;
+			},
 		};
 	} else if (rootValids.length === graphValids.length) {
 		return {
@@ -101,9 +113,16 @@ async function checkEngines(rootNode, rootValids, graphValids, displayRange) {
 		code: EXITS.INEXACT,
 		output: [
 			chalk.red('\nYour “engines” field does not exactly match your dependency graph‘s requirements!'),
-			'\nYou can fix this by manually adding the following to your `package.json`:',
+			saveMessage,
 			chalk.blue(`"engines": ${JSON.stringify({ node: displayRange }, null, 2)}`),
 		],
+		save(pkg) {
+			/* eslint no-param-reassign: 0 */
+			if (!pkg.engines) {
+				pkg.engines = {};
+			}
+			pkg.engines.node = displayRange;
+		},
 	};
 }
 
@@ -131,10 +150,11 @@ Promise.all([getNodeVersions(), pNameRanges]).then(async ([nodeVersions, { graph
 		console.log(chalk.bold(chalk.gray(`\nCurrently available, most recent, valid node major versions: ${latestMajors.join(', ')}`)));
 	}
 
-	const pEngines = checkEngines(rootNode, rootValids, graphValids, displayRange);
+	const pEngines = checkEngines(rootNode, rootValids, graphValids, displayRange, save);
 
-	const pCurrent = current ? checkCurrent(rootValids, graphValids) : false;
+	const pCurrent = current ? checkCurrent(rootValids, graphValids) : { output: [] };
 
+	// print out successes first
 	const results = await allSettled([pEngines, pCurrent]);
 	results.filter(({ status }) => status === 'fulfilled').forEach(({ value: { output } }) => {
 		output.forEach((line) => {
@@ -142,8 +162,19 @@ Promise.all([getNodeVersions(), pNameRanges]).then(async ([nodeVersions, { graph
 		});
 	});
 
-	results.filter(({ status }) => status === 'rejected').forEach(({ reason: { code, output } }) => {
-		process.exitCode |= code;
+	// print out failures last
+	results.filter(({ status }) => status === 'rejected').forEach(async ({ reason: { code, output, save: doSave } }) => {
+		if (save && doSave) {
+			const pkg = await jsonFile(path.join(process.cwd(), 'package.json'));
+			doSave(pkg.data);
+			try {
+				await pkg.save();
+			} catch {
+				process.exitCode |= EXITS.SAVE; // eslint-disable-line require-atomic-updates
+			}
+		} else {
+			process.exitCode |= code;
+		}
 
 		output.forEach((line) => {
 			console.error(line);

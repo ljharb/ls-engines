@@ -16,7 +16,7 @@
 		"comma-dangle": [2, "always-multiline"],
 		"dot-notation": [2, { "allowKeywords": true }],
 		"func-style": 1,
-		"max-params": [2, 4],
+		"max-params": [2, 5],
 		"max-nested-callbacks": [2, 4],
 		"no-console": 0,
 		"object-curly-newline": 0,
