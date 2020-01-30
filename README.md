@@ -32,9 +32,9 @@ Current node version, v13.7.0, is valid!
 [5]: https://david-dm.org/ljharb/ls-engines.svg
 [6]: https://david-dm.org/ljharb/ls-engines
 [7]: https://david-dm.org/ljharb/ls-engines/dev-status.svg
-[8]: https://david-dm.org/ljharb/ls-engines#info=devDependencies
+[8]: https://david-dm.org/ljharb/ls-engines?type=dev
 [11]: https://nodei.co/npm/ls-engines.png?downloads=true&stars=true
-[license-image]: http://img.shields.io/npm/l/ls-engines.svg
+[license-image]: https://img.shields.io/npm/l/ls-engines.svg
 [license-url]: LICENSE
-[downloads-image]: http://img.shields.io/npm/dm/ls-engines.svg
-[downloads-url]: http://npm-stat.com/charts.html?package=ls-engines
+[downloads-image]: https://img.shields.io/npm/dm/ls-engines.svg
+[downloads-url]: https://npm-stat.com/charts.html?package=ls-engines
