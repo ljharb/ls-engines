@@ -6,12 +6,27 @@ const Semver = require('semver');
 const { default: intersect } = require('fast_array_intersect');
 const chalk = require('chalk');
 const yargs = require('yargs');
+const allSettled = require('promise.allsettled');
 
-const { argv: { mode } } = yargs
+/* eslint-disable sort-keys */
+const EXITS = {
+	IMPLICIT: 1,
+	INEXACT: 2,
+	CURRENT: 4,
+	ERROR: 128,
+};
+/* eslint-enable sort-keys */
+
+const { argv: { current, mode } } = yargs
 	.option('mode', {
 		choices: ['auto', 'actual', 'virtual', 'ideal'],
 		default: 'auto',
 		describe: '”actual“ reads from `node_modules`; ”virtual“ reads from a lockfile; “ideal” reads from `package.json`',
+	})
+	.option('current', {
+		default: true,
+		describe: 'check that the current node version matches your dependency graph’s requirements',
+		type: 'boolean',
 	})
 /*
 	.option('only', {
@@ -25,46 +40,116 @@ const { argv: { mode } } = yargs
 const getTree = require('../get-tree');
 const getNodeVersions = require('../get-node-versions');
 
+function toRange([name, node]) {
+	return [name, new Semver.Range(node)];
+}
+
 const pNameRanges = getTree(mode).then(async (tree) => {
-	const tuples = [[tree.package.name, tree.package.engines && tree.package.engines.node]].concat(
-		Array.from(
-			tree.inventory.filter(({ package: { engines } }) => engines && engines.node),
-			({ name, package: { engines: { node } } }) => [name, node],
-		),
-	).filter((x) => x && x[1]);
-	return tuples
-		.filter(([, node]) => node !== '*')
-		.map(([name, node]) => [name, new Semver.Range(node)]);
+	const rootNode = tree.package.engines && tree.package.engines.node;
+	const rootEngines = [
+		tree.package.name || tree.name || '<root>',
+		rootNode || '*',
+	];
+	const graphEngines = Array.from(
+		tree.inventory.filter(({ package: { engines } }) => engines && engines.node),
+		({ name, package: { engines: { node } } }) => node && [name, node],
+	).filter(([, node] = []) => node && node !== '*');
+	return {
+		graph: graphEngines.map(toRange),
+		root: toRange(rootEngines),
+	};
 });
 
 function caret(ver) {
 	return '^' + ver.replace(/^v/g, '');
 }
 
-Promise.all([getNodeVersions(), pNameRanges]).then(([nodeVersions, nameRanges]) => {
-	const allowedVersions = nameRanges.map(([n, r]) => [
+async function checkCurrent(rootValids, graphValids) {
+	const currentValid = rootValids.concat(graphValids).includes(process.version);
+
+	const message = `\nCurrent node version, ${chalk.blue(chalk.bold(process.version))}, is ${chalk.bold(currentValid ? chalk.greenBright('valid') : chalk.red('invalid'))}!`;
+	if (currentValid) {
+		return {
+			output: [message],
+		};
+	}
+	throw {
+		code: EXITS.CURRENT,
+		output: [message],
+	};
+}
+
+async function checkEngines(rootNode, rootValids, graphValids, displayRange) {
+	/* eslint no-throw-literal: 0 */
+	if (rootNode.raw === '*') {
+		throw {
+			code: EXITS.IMPLICIT,
+			output: [
+				chalk.bold(chalk.red('\nYour “engines” field is either missing, or set to ”*”! Prefer explicitly setting a supported engine range.')),
+				'\nYou can fix this by manually adding the following to your `package.json`:',
+				chalk.blue(`"engines": ${JSON.stringify({ node: displayRange }, null, 2)}`),
+			],
+		};
+	} else if (rootValids.length === graphValids.length) {
+		return {
+			output: [
+				chalk.bold(chalk.green('Your “engines” field exactly matches your dependency graph’s requirements!')),
+			],
+		};
+	}
+	throw {
+		code: EXITS.INEXACT,
+		output: [
+			chalk.red('\nYour “engines” field does not exactly match your dependency graph‘s requirements!'),
+			'\nYou can fix this by manually adding the following to your `package.json`:',
+			chalk.blue(`"engines": ${JSON.stringify({ node: displayRange }, null, 2)}`),
+		],
+	};
+}
+
+Promise.all([getNodeVersions(), pNameRanges]).then(async ([nodeVersions, { graph, root }]) => {
+	const [, rootNode] = root;
+	const rootValids = nodeVersions.filter((v) => Semver.satisfies(v, rootNode));
+	const graphAllowed = graph.map(([n, r]) => [
 		n,
 		nodeVersions.filter((v) => r.test(v)),
 	]);
-	const valids = nameRanges.length > 0 ? intersect(allowedVersions.map(([, vs]) => vs)) : nodeVersions;
-	const validMajorRanges = nameRanges.length > 0 ? valids.reduceRight((prev, v) => {
+	const graphValids = graph.length > 0 ? intersect(graphAllowed.map(([, vs]) => vs)) : nodeVersions;
+	const validMajorRanges = graph.length > 0 ? graphValids.reduceRight((prev, v) => {
 		prev = [].concat(prev); // eslint-disable-line no-param-reassign
 		return Semver.satisfies(v, caret(prev[prev.length - 1])) ? prev : prev.concat(v);
 	}).map(caret) : ['*'];
 	const validRange = new Semver.Range(validMajorRanges.join(' || '));
-	if (!valids.every((v) => validRange.test(v))) {
-		throw new RangeError('please report this: ' + valids.join(',') + ' / ' + validRange);
+	if (!graphValids.every((v) => validRange.test(v))) {
+		throw new RangeError('please report this: ' + graphValids.join(',') + ' / ' + validRange);
 	}
+
+	const displayRange = validRange.raw && validRange.raw.replace(/(\.0)+( |$)/g, '$2').split(' ').reverse().join(' ');
 	if (validRange.raw) {
-		const displayRange = validRange.raw.replace(/(\.0)+( |$)/g, '$2').split(' ').reverse().join(' ');
 		console.log(chalk.gray(`\nValid node version range: ${displayRange}`));
 		const latestMajors = validMajorRanges.map((r) => Semver.maxSatisfying(nodeVersions, r).replace(/(\.0)+$/, '')).reverse();
 		console.log(chalk.bold(chalk.gray(`\nCurrently available, most recent, valid node major versions: ${latestMajors.join(', ')}`)));
 	}
-	const currentValid = valids.includes(process.version);
-	console.log(`\nCurrent node version, ${chalk.blue(chalk.bold(process.version))}, is ${chalk.bold(currentValid ? chalk.greenBright('valid') : chalk.red('invalid'))}!`);
-	process.exitCode = currentValid ? 0 : 1;
+
+	const pEngines = checkEngines(rootNode, rootValids, graphValids, displayRange);
+
+	const pCurrent = current ? checkCurrent(rootValids, graphValids) : false;
+
+	const results = await allSettled([pEngines, pCurrent]);
+	results.filter(({ status }) => status === 'fulfilled').forEach(({ value: { output } }) => {
+		output.forEach((line) => {
+			console.log(line);
+		});
+	});
+
+	results.filter(({ status }) => status === 'rejected').forEach(({ reason: { code, output } }) => {
+		process.exitCode |= code;
+
+		output.forEach((line) => {
+			console.error(line);
+		});
+	});
 }).catch((e) => {
 	console.error(e.stack);
-	process.exitCode = 2;
+	process.exitCode |= EXITS.ERROR;
 });
