@@ -5,6 +5,8 @@
 	"bin": "./bin/ls-engines",
 	"exports": {},
 	"scripts": {
+		"lint": "eslint .",
+		"pretest": "npm run lint",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"repository": {
@@ -34,5 +36,9 @@
 		"get-json": "^1.0.1",
 		"semver": "^7.1.1",
 		"yargs": "^15.1.0"
+	},
+	"devDependencies": {
+		"@ljharb/eslint-config": "^16.0.0",
+		"eslint": "^6.8.0"
 	}
 }
