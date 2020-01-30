@@ -2,6 +2,8 @@
 	"name": "ls-engines",
 	"version": "0.0.0",
 	"description": "Determine if your dependency graph's stated \"engines\" criteria is met.",
+	"bin": "./bin/ls-engines",
+	"exports": {},
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
@@ -22,7 +24,15 @@
 	},
 	"homepage": "https://github.com/ljharb/ls-engines#readme",
 	"engines": {
-		"node": ">=6",
+		"node": ">=10",
 		"npm": ">=6"
+	},
+	"dependencies": {
+		"@npmcli/arborist": "0.0.0-pre.2",
+		"chalk": "^3.0.0",
+		"fast_array_intersect": "^1.1.0",
+		"get-json": "^1.0.1",
+		"semver": "^7.1.1",
+		"yargs": "^15.1.0"
 	}
 }
