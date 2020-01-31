@@ -34,20 +34,15 @@ const { argv: { current, mode, save } } = yargs
 const getTree = require('../get-tree');
 const getNodeVersions = require('../get-node-versions');
 
-const pNameRanges = getTree(mode).then(async (tree) => {
-	const rootNode = tree.package.engines && tree.package.engines.node;
+const pPackage = jsonFile(path.join(process.cwd(), 'package.json'));
 
-	const root = [
-		tree.package.name || tree.name || '<root>',
-		rootNode || '*',
-	];
-
+const graphRanges = getTree(mode).then(async (tree) => {
 	const graph = Array.from(
 		tree.inventory.filter(({ package: { engines } }) => engines && engines.node),
 		({ name, package: { engines: { node } } }) => node && [name, node],
 	).filter(([, node] = []) => node && node !== '*');
 
-	return { graph, root };
+	return graph;
 });
 
 function caret(ver) {
@@ -139,8 +134,9 @@ async function checkEngines(rootNode, rootValids, graphValids, displayRange, sho
 	};
 }
 
-Promise.all([getNodeVersions(), pNameRanges]).then(async ([nodeVersions, { graph, root }]) => {
-	const [, rootNode] = root;
+Promise.all([getNodeVersions(), graphRanges, pPackage]).then(async ([nodeVersions, graph, pkg]) => {
+	const rootNode = (pkg.engines && pkg.engines.node) || '*';
+
 	const rootValids = nodeVersions.filter((v) => Semver.satisfies(v, rootNode));
 	const graphAllowed = graph.map(([n, r]) => [
 		n,
@@ -191,7 +187,6 @@ Promise.all([getNodeVersions(), pNameRanges]).then(async ([nodeVersions, { graph
 	// print out failures last
 	results.filter(({ status }) => status === 'rejected').forEach(async ({ reason: { code, output, save: doSave } }) => {
 		if (save && doSave) {
-			const pkg = await jsonFile(path.join(process.cwd(), 'package.json'));
 			doSave(pkg.data);
 			try {
 				await pkg.save();
