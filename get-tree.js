@@ -21,7 +21,7 @@ module.exports = async function getTree(mode, logger = (x) => console.log(x)) {
 
 	if (mode === 'virtual' || hasLockfile) {
 		const messages = [].concat(
-			hasLockfile ? 'lockfile found' : [],
+			hasLockfile ? 'Lockfile found' : [],
 			mode === 'virtual' ? 'mode is “virtual”' : [],
 		);
 		logger(chalk.green(`${messages.join(', ')}; loading virtual tree from lockfile...`));
