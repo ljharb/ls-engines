@@ -69,6 +69,11 @@ async function checkCurrent(rootValids, graphValids) {
 	};
 }
 
+function isSubset(inner, outer) {
+	const outerS = new Set(outer);
+	return inner.every((item) => outerS.has(item));
+}
+
 async function checkEngines(rootNode, rootValids, graphValids, displayRange, shouldSave) {
 	const fixMessage = shouldSave
 		? `\n\`${chalk.gray('ls-engines')}\` will automatically fix this, per the \`${chalk.gray('--save')}\` option, by adding the following to your \`${chalk.gray('package.json')}\`:`
@@ -96,6 +101,25 @@ async function checkEngines(rootNode, rootValids, graphValids, displayRange, sho
 			output: [
 				chalk.bold(chalk.green('\nYour “engines” field exactly matches your dependency graph’s requirements!')),
 			],
+		};
+	}
+	if (isSubset(rootValids, graphValids)) {
+		const expandMessage = shouldSave
+			? `\n\`${chalk.gray('ls-engines')}\` will automatically widen your support, per the \`${chalk.gray('--save')}\` option, by adding the following to your \`${chalk.gray('package.json')}\`:`
+			: `\nIf you want to widen your support, you can run \`${chalk.bold(chalk.gray('ls-engines --save'))}\`, or manually add the following to your \`${chalk.gray('package.json')}\`:`;
+		return {
+			output: [
+				chalk.bold(chalk.green('\nYour “engines” field allows fewer node versions than your dependency graph does.')),
+				expandMessage,
+				chalk.blue(`"engines": ${JSON.stringify({ node: displayRange }, null, 2)}`),
+			],
+			save(pkg) {
+				/* eslint no-param-reassign: 0 */
+				if (!pkg.engines) {
+					pkg.engines = {};
+				}
+				pkg.engines.node = displayRange;
+			},
 		};
 	}
 	throw {
