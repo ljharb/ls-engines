@@ -1,0 +1,13 @@
+{
+	"name": "no-engines",
+	"description": "",
+	"repository": {},
+	"license": "All rights reserved",
+	"private": true,
+	"dependencies": {
+		"object-keys": "0.0.1"
+	},
+	"devDependencies": {
+		"object.fromentries": "0.0.1-security"
+	}
+}

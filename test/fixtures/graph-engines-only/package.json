@@ -1,0 +1,11 @@
+{
+	"name": "graph-engines-only",
+	"description": "",
+	"private": true,
+	"dependencies": {
+		"object-keys": "^1.1.1"
+	},
+	"devDependencies": {
+		"salita": "^0.11.2"
+	}
+}

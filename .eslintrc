@@ -30,4 +30,12 @@
 			"numbers": false,
 		}],
 	},
+
+	"overrides": [
+		{
+			"files": "test/**",
+			"rules": {
+			},
+		},
+	],
 }
