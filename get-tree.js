@@ -12,7 +12,7 @@ module.exports = async function getTree(mode, logger = (x) => console.log(x)) {
 
 	if (mode === 'actual' || hasNodeModules) {
 		const messages = [].concat(
-			hasNodeModules ? '`node_modules` found' : [],
+			hasNodeModules ? `\`${chalk.gray('node_modules')}\` found` : [],
 			mode === 'actual' ? 'mode is “actual”' : [],
 		);
 		logger(chalk.green(`${messages.join(', ')}; loading tree from disk...`));
@@ -29,9 +29,9 @@ module.exports = async function getTree(mode, logger = (x) => console.log(x)) {
 	}
 
 	const messages = [].concat(
-		`\`package.json\` ${hasPackage ? '' : 'not '}found`,
+		`\`${chalk.gray('package.json')}\` ${hasPackage ? '' : 'not '}found`,
 		mode === 'ideal' ? 'mode is “ideal”' : [],
 	);
-	logger(chalk.green(`${messages.join(', ')}; building ideal tree from package.json...`));
+	logger(chalk.green(`${messages.join(', ')}; building ideal tree from \`${chalk.gray('package.json')}\`...`));
 	return arb.buildIdealTree();
 };

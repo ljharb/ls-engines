@@ -16,11 +16,11 @@ const { argv: { current, mode, save } } = yargs
 	.option('mode', {
 		choices: ['auto', 'actual', 'virtual', 'ideal'],
 		default: 'auto',
-		describe: '”actual“ reads from `node_modules`; ”virtual“ reads from a lockfile; “ideal” reads from `package.json`',
+		describe: `”actual“ reads from \`${chalk.gray('node_modules')}\`; ”virtual“ reads from a lockfile; “ideal” reads from \`${chalk.gray('package.json')}\``,
 	})
 	.option('save', {
 		default: false,
-		describe: 'update `package.json`’s “engines” field to match that of your dependency graph',
+		describe: `update \`${chalk.gray('package.json')}\`’s “engines” field to match that of your dependency graph`,
 		type: 'boolean',
 	})
 	.option('current', {
