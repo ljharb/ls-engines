@@ -12,11 +12,24 @@ const jsonFile = require('json-file-plus');
 
 const EXITS = require('../exit-codes');
 
-const { argv: { current, mode, save } } = yargs
+const FALSE = Object(false);
+const TRUE = Object(true);
+
+const { argv } = yargs
 	.option('mode', {
 		choices: ['auto', 'actual', 'virtual', 'ideal'],
 		default: 'auto',
 		describe: `”actual“ reads from \`${chalk.gray('node_modules')}\`; ”virtual“ reads from a lockfile; “ideal” reads from \`${chalk.gray('package.json')}\``,
+	})
+	.option('production', {
+		default: TRUE,
+		describe: 'whether to include production deps or not',
+		type: 'boolean',
+	})
+	.option('dev', {
+		default: FALSE,
+		describe: 'whether to include dev deps or not',
+		type: 'boolean',
 	})
 	.option('save', {
 		default: false,
@@ -28,8 +41,36 @@ const { argv: { current, mode, save } } = yargs
 		describe: 'check that the current node version matches your dependency graph’s requirements',
 		type: 'boolean',
 	})
+	.check((argv) => {
+		if (typeof argv.dev === 'boolean' && typeof argv.production === 'boolean') {
+			// both arguments were explicitly passed
+			if (!argv.dev && !argv.production) {
+				throw 'One of `--dev` and `--production` must be enabled.';
+			}
+		}
+		return true;
+	})
+	// .coerce(['dev', 'production'], x => Boolean.prototype.valueOf.call(x))
 	.strict()
 	.help();
+
+
+function normalize(argv) {
+	let { dev, production } = argv;
+	if (typeof dev === 'object' && typeof production === 'object') {
+		// neither argument was explicitly passed
+		dev = false;
+		production = true;
+	} else if (typeof dev === 'boolean' && typeof production === 'object') {
+		// explicitly passed dev/no-dev, did not mention prod
+		production = !dev || Boolean.prototype.valueOf.call(production);
+	} else if (typeof dev === 'object' && typeof production === 'boolean') {
+		// explicitly passed production/no-production, did not mention dev
+		dev = !production || Boolean.prototype.valueOf.call(dev);
+	}
+	return { ...argv, dev, production };
+}
+const { current, dev, mode, production, save } = normalize(argv);
 
 const getTree = require('../get-tree');
 const getNodeVersions = require('../get-node-versions');
@@ -37,6 +78,13 @@ const getNodeVersions = require('../get-node-versions');
 const pPackage = jsonFile(path.join(process.cwd(), 'package.json'));
 
 const graphRanges = getTree(mode).then(async (tree) => {
+	if (!dev || !production) {
+		for (const node of tree.children.values()) {
+			if ((!dev && node.dev) || (!production && !node.dev)) {
+				node.parent = null;
+			}
+		}
+	}
 	const graph = Array.from(
 		tree.inventory.filter(({ package: { engines } }) => engines && engines.node),
 		({ name, package: { engines: { node } } }) => node && [name, node],
