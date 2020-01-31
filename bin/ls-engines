@@ -34,24 +34,20 @@ const { argv: { current, mode, save } } = yargs
 const getTree = require('../get-tree');
 const getNodeVersions = require('../get-node-versions');
 
-function toRange([name, node]) {
-	return [name, new Semver.Range(node)];
-}
-
 const pNameRanges = getTree(mode).then(async (tree) => {
 	const rootNode = tree.package.engines && tree.package.engines.node;
-	const rootEngines = [
+
+	const root = [
 		tree.package.name || tree.name || '<root>',
 		rootNode || '*',
 	];
-	const graphEngines = Array.from(
+
+	const graph = Array.from(
 		tree.inventory.filter(({ package: { engines } }) => engines && engines.node),
 		({ name, package: { engines: { node } } }) => node && [name, node],
 	).filter(([, node] = []) => node && node !== '*');
-	return {
-		graph: graphEngines.map(toRange),
-		root: toRange(rootEngines),
-	};
+
+	return { graph, root };
 });
 
 function caret(ver) {
@@ -74,16 +70,16 @@ async function checkCurrent(rootValids, graphValids) {
 }
 
 async function checkEngines(rootNode, rootValids, graphValids, displayRange, shouldSave) {
-	const saveMessage = shouldSave
+	const fixMessage = shouldSave
 		? `\n\`${chalk.gray('ls-engines')}\` will automatically fix this, per the \`${chalk.gray('--save')}\` option, by adding the following to your \`${chalk.gray('package.json')}\`:`
 		: `\nYou can fix this by running \`${chalk.bold(chalk.gray('ls-engines --save'))}\`, or by manually adding the following to your \`${chalk.gray('package.json')}\`:`;
 	/* eslint no-throw-literal: 0 */
-	if (rootNode.raw === '*') {
+	if (rootNode === '*') {
 		throw {
 			code: EXITS.IMPLICIT,
 			output: [
 				chalk.bold(chalk.red('\nYour “engines” field is either missing, or set to ”*”! Prefer explicitly setting a supported engine range.')),
-				saveMessage,
+				fixMessage,
 				chalk.blue(`"engines": ${JSON.stringify({ node: displayRange }, null, 2)}`),
 			],
 			save(pkg) {
@@ -94,10 +90,11 @@ async function checkEngines(rootNode, rootValids, graphValids, displayRange, sho
 				pkg.engines.node = displayRange;
 			},
 		};
-	} else if (rootValids.length === graphValids.length) {
+	}
+	if (rootValids.length === graphValids.length) {
 		return {
 			output: [
-				chalk.bold(chalk.green('Your “engines” field exactly matches your dependency graph’s requirements!')),
+				chalk.bold(chalk.green('\nYour “engines” field exactly matches your dependency graph’s requirements!')),
 			],
 		};
 	}
@@ -105,7 +102,7 @@ async function checkEngines(rootNode, rootValids, graphValids, displayRange, sho
 		code: EXITS.INEXACT,
 		output: [
 			chalk.red('\nYour “engines” field does not exactly match your dependency graph‘s requirements!'),
-			saveMessage,
+			fixMessage,
 			chalk.blue(`"engines": ${JSON.stringify({ node: displayRange }, null, 2)}`),
 		],
 		save(pkg) {
@@ -123,7 +120,7 @@ Promise.all([getNodeVersions(), pNameRanges]).then(async ([nodeVersions, { graph
 	const rootValids = nodeVersions.filter((v) => Semver.satisfies(v, rootNode));
 	const graphAllowed = graph.map(([n, r]) => [
 		n,
-		nodeVersions.filter((v) => r.test(v)),
+		nodeVersions.filter((v) => Semver.satisfies(v, r)),
 	]);
 	const graphValids = graph.length > 0 ? intersect(graphAllowed.map(([, vs]) => vs)) : nodeVersions;
 	const validMajorRanges = graph.length > 0 ? graphValids.reduceRight((prev, v) => {
@@ -138,8 +135,21 @@ Promise.all([getNodeVersions(), pNameRanges]).then(async ([nodeVersions, { graph
 	const displayRange = validRange.raw && validRange.raw.replace(/(\.0)+( |$)/g, '$2').split(' ').reverse().join(' ');
 	if (validRange.raw) {
 		console.log(chalk.gray(`\nValid node version range: ${displayRange}`));
-		const latestMajors = validMajorRanges.map((r) => Semver.maxSatisfying(nodeVersions, r).replace(/(\.0)+$/, '')).reverse();
-		console.log(chalk.bold(chalk.gray(`\nCurrently available, most recent, valid node major versions: ${latestMajors.join(', ')}`)));
+		const versionsByMajor = nodeVersions.reduce((map, v) => {
+			const major = Semver.major(v);
+			const key = major === 0 ? `${major}.${Semver.minor(v)}` : major;
+			if (!map[key]) {
+				map[key] = [];
+			}
+			map[key].push(v);
+			return map;
+		}, {});
+		const latestMajors = Object.values(versionsByMajor)
+			.map((vs) => Semver.maxSatisfying(vs, validRange))
+			.filter(Boolean)
+			.sort(Semver.compare)
+			.reverse();
+		console.log(chalk.bold(chalk.gray(`\nCurrently available latest releases of each valid node major version: ${latestMajors.join(', ')}`)));
 	}
 
 	const pEngines = checkEngines(rootNode, rootValids, graphValids, displayRange, save);
