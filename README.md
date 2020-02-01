@@ -27,8 +27,8 @@ Current node version, v13.7.0, is valid!
 
 [1]: https://npmjs.org/package/ls-engines
 [2]: http://versionbadg.es/ljharb/ls-engines.svg
-[3]: https://travis-ci.org/ljharb/ls-engines.svg
-[4]: https://travis-ci.org/ljharb/ls-engines
+[3]: https://travis-ci.com/ljharb/ls-engines.svg
+[4]: https://travis-ci.com/ljharb/ls-engines
 [5]: https://david-dm.org/ljharb/ls-engines.svg
 [6]: https://david-dm.org/ljharb/ls-engines
 [7]: https://david-dm.org/ljharb/ls-engines/dev-status.svg
