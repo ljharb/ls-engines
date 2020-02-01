@@ -41,10 +41,10 @@ const { argv } = yargs
 		describe: 'check that the current node version matches your dependency graph’s requirements',
 		type: 'boolean',
 	})
-	.check((argv) => {
-		if (typeof argv.dev === 'boolean' && typeof argv.production === 'boolean') {
+	.check(({ dev, production }) => {
+		if (typeof dev === 'boolean' && typeof production === 'boolean') {
 			// both arguments were explicitly passed
-			if (!argv.dev && !argv.production) {
+			if (!dev && !production) {
 				throw 'One of `--dev` and `--production` must be enabled.';
 			}
 		}
@@ -54,9 +54,8 @@ const { argv } = yargs
 	.strict()
 	.help();
 
-
-function normalize(argv) {
-	let { dev, production } = argv;
+function normalize(args) {
+	let { dev, production } = args;
 	if (typeof dev === 'object' && typeof production === 'object') {
 		// neither argument was explicitly passed
 		dev = false;
@@ -68,7 +67,7 @@ function normalize(argv) {
 		// explicitly passed production/no-production, did not mention dev
 		dev = !production || Boolean.prototype.valueOf.call(dev);
 	}
-	return { ...argv, dev, production };
+	return { ...args, dev, production };
 }
 const { current, dev, mode, production, save } = normalize(argv);
 
