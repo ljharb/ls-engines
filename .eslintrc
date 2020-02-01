@@ -23,6 +23,7 @@
 		"object-curly-newline": 0,
 		"object-shorthand": [2, "always"],
 		"operator-linebreak": [2, "before"],
+		"require-atomic-updates": 0,
 		"quote-props": [2, "as-needed", {
 			"keywords": false,
 			"unnecessary": true,
