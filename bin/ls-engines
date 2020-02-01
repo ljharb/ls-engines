@@ -182,7 +182,7 @@ async function checkEngines(rootNode, rootValids, graphValids, displayRange, sho
 }
 
 Promise.all([getNodeVersions(), graphRanges, pPackage]).then(async ([nodeVersions, graph, pkg]) => {
-	const rootNode = (pkg.engines && pkg.engines.node) || '*';
+	const rootNode = (pkg.data.engines && pkg.data.engines.node) || '*';
 
 	const rootValids = nodeVersions.filter((v) => Semver.satisfies(v, rootNode));
 	const graphAllowed = graph.map(([n, r]) => [
