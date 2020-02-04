@@ -19,10 +19,14 @@ function normalizeNodeVersion(output) {
 	);
 }
 
-function getOrUpdate(cwd, cmd, mode, err, res) {
-	const errPath = path.join(cwd, `${mode}-stderr`);
-	const outPath = path.join(cwd, `${mode}-stdout`);
-	const codePath = path.join(cwd, `${mode}-code`);
+function filename(mode, flag, kind) {
+	return [mode, flag.replace(/-/g, ''), kind].filter(Boolean).join('-');
+}
+
+function getOrUpdate(cwd, cmd, mode, flag, err, res) {
+	const errPath = path.join(cwd, filename(mode, flag, 'stderr'));
+	const outPath = path.join(cwd, filename(mode, flag, 'stdout'));
+	const codePath = path.join(cwd, filename(mode, flag, 'code'));
 	if (process.env.UPDATE_SNAPSHOTS) {
 		const code = Object.keys(EXITS).find((name) => EXITS[name] === (err ? err.code : 0));
 		const stderr = (err && normalizeNodeVersion(err.message.slice(`Command failed: ${cmd}\n\n`.length))) || null;
@@ -38,44 +42,40 @@ function getOrUpdate(cwd, cmd, mode, err, res) {
 	return { code, stderr, stdout };
 }
 
-function testMode(t, cwd, mode) {
-	const cmd = `${path.relative(cwd, binPath)} --mode=${mode}`;
+function testMode(t, fixture, cwd, mode) {
+	['', '--dev', '--production'].forEach((flag) => {
+		const cmd = `${path.relative(cwd, binPath)} --mode=${mode} ${flag}`.trim();
 
-	exec(cmd, { cwd, env: { ...process.env, FORCE_COLOR: 0 } }, (err, res) => {
-		const { code, stderr, stdout } = getOrUpdate(cwd, cmd, mode, err, res);
-		const succeeds = EXITS[code] === EXITS.SUCCESS;
+		exec(cmd, { cwd, env: { ...process.env, FORCE_COLOR: 0 } }, (err, res) => {
+			t.test(`fixture: ${fixture}, mode: ${mode}${flag ? `, flag: ${flag}` : ''}`, (st) => {
+				st.plan(4);
 
-		if (succeeds) {
-			t.equal(err, null, 'command succeeds, as expected');
-		} else {
-			t.ok(err, 'command fails, as expected');
-		}
-		t.equal(succeeds ? 0 : err && err.code, EXITS[code], `exit code is \`${code}\` (${EXITS[code]})`);
-		t.equal(err && normalizeNodeVersion(err.message), stderr && `Command failed: ${cmd}\n\n${stderr}`, 'stderr is as expected');
-		t.equal(normalizeNodeVersion(res), stdout, 'stdout is as expected');
+				const { code, stderr, stdout } = getOrUpdate(cwd, cmd, mode, flag, err, res);
+				const succeeds = EXITS[code] === EXITS.SUCCESS;
+
+				if (succeeds) {
+					st.equal(err, null, 'command succeeds, as expected');
+				} else {
+					st.ok(err, 'command fails, as expected');
+				}
+				st.equal(succeeds ? 0 : err && err.code, EXITS[code], `exit code is \`${code}\` (${EXITS[code]})`);
+				st.equal(err && normalizeNodeVersion(err.message), stderr && `Command failed: ${cmd}\n\n${stderr}`, 'stderr is as expected');
+				st.equal(normalizeNodeVersion(res), stdout, 'stdout is as expected');
+			});
+		});
 	});
 }
 
 test('ls-engines', (t) => {
-	fixtures.filter((x) => true || x === 'graph-engines-only').forEach((fixture) => {
+	t.plan(fixtures.length * 3 * 3);
+
+	fixtures.forEach((fixture) => {
 		const cwd = path.join(fixturePath, fixture);
+		testMode(t, fixture, cwd, 'ideal');
 
-		t.test(`fixture: ${fixture}: ideal`, (ft) => {
-			ft.plan(4);
-			testMode(ft, cwd, 'ideal');
-		});
+		testMode(t, fixture, cwd, 'virtual');
 
-		t.test(`fixture: ${fixture}: virtual`, (ft) => {
-			ft.plan(4);
-			testMode(ft, cwd, 'virtual');
-		});
-
-		t.test(`fixture: ${fixture}: actual`, (ft) => {
-			ft.plan(4);
-			execSync('npm install', { cwd });
-			testMode(ft, cwd, 'actual');
-		});
+		execSync('npm install', { cwd });
+		testMode(t, fixture, cwd, 'actual');
 	});
-
-	t.end();
 });

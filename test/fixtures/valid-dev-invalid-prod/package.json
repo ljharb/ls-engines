@@ -1,0 +1,14 @@
+{
+	"name": "valid-dev-invalid-prod",
+	"description": "",
+	"private": true,
+	"devDependencies": {
+		"object-keys": "^1.1.1"
+	},
+	"dependencies": {
+		"pacote": "^10.3.1"
+	},
+	"engines": {
+		"node": "^7"
+	}
+}

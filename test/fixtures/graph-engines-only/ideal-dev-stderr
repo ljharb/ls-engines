@@ -1,0 +1,6 @@
+Your “engines” field is either missing, or set to ”*”! Prefer explicitly setting a supported engine range.
+
+You can fix this by running `ls-engines --save`, or by manually adding the following to your `package.json`:
+"engines": {
+  "node": "^13 || ^12 || ^11 || ^10 || ^9 || ^8 || ^7 || ^6 || ^5 || ^4"
+}

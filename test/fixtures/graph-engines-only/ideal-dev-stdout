@@ -1,0 +1,7 @@
+`package.json` found, mode is “ideal”; building ideal tree from `package.json`...
+
+Valid node version range: ^13 || ^12 || ^11 || ^10 || ^9 || ^8 || ^7 || ^6 || ^5 || ^4
+
+Currently available latest releases of each valid node major version: v13.7.0, v12.14.1, v11.15.0, v10.18.1, v9.11.2, v8.17.0, v7.10.1, v6.17.1, v5.12.0, v4.9.1
+
+Current node version, v${process.versions.node}, is valid!
