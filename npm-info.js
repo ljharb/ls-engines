@@ -1,29 +1,41 @@
 'use strict';
 
-const fs = require('fs').promises;
+const fs = require('fs');
 const path = require('path');
+
+function stat(file) {
+	return new Promise((resolve, reject) => {
+		fs.stat(file, (err, result) => {
+			if (err) {
+				reject(err);
+			} else {
+				resolve(result);
+			}
+		});
+	});
+}
 
 module.exports = async function npmInfo(mode) {
 	const pHasNodeModules = mode === 'auto' || mode === 'actual'
-		? fs.stat(path.join(process.cwd(), 'node_modules')).catch(() => false)
+		? stat(path.join(process.cwd(), 'node_modules')).catch(() => false)
 		: false;
 
 	const packagePath = path.join(process.cwd(), 'package.json');
 	const packageLockPath = path.join(process.cwd(), 'package-lock.json');
 	const shrinkwrapPath = path.join(process.cwd(), 'npm-shrinkwrap.json');
-	const pHasPackageLock = fs.stat(packageLockPath).then(() => true, () => false);
+	const pHasPackageLock = stat(packageLockPath).then(() => true, () => false);
 
 	const pHasLockfile = mode === 'auto' || mode === 'virtual'
 		? pHasPackageLock.catch(async (hasPackageLock) => {
 			if (!hasPackageLock) {
 				return false;
 			}
-			return fs.stat(shrinkwrapPath).then(() => true, () => false);
+			return stat(shrinkwrapPath).then(() => true, () => false);
 		})
 		: false;
 
 	const pHasPackage = mode === 'auto' || mode === 'ideal'
-		? fs.stat(packagePath).catch(() => false)
+		? stat(packagePath).catch(() => false)
 		: false;
 
 	/* eslint-disable consistent-return, global-require */
