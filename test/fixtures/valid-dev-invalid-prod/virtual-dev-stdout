@@ -2,6 +2,6 @@ v1 lockfile found, mode is “virtual”; loading ideal tree from lockfile...
 
 Valid node version range: ^13 || ^12 || ^11 || ^10
 
-Currently available latest releases of each valid node major version: v13.8.0, v12.15.0, v11.15.0, v10.19.0
+Currently available latest releases of each valid node major version: <node versions for above semver range>
 
 Current node version, v${process.versions.node}, is valid!

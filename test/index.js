@@ -16,6 +16,9 @@ function normalizeNodeVersion(output) {
 		`Current node version, v${process.versions.node}`,
 		// eslint-disable-next-line no-template-curly-in-string
 		'Current node version, v${process.versions.node}',
+	).replace(
+		/Currently available latest releases of each valid node major version: [^\n]+/,
+		'Currently available latest releases of each valid node major version: <node versions for above semver range>',
 	);
 }
 
