@@ -59,7 +59,7 @@ const { argv } = yargs
 			}
 			return set;
 		},
-		default: ['node'],
+		default: ['node', 'npm'],
 		describe: 'Select which engine(s) to regard',
 		type: 'array',
 	})
@@ -389,8 +389,30 @@ async function checkEngines(engine, rootEngine, rootValids, graphValids, display
 		},
 	};
 }
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+=======
+
+async function getNPMVersions() {
+	return new Promise((resolve, reject) => {
+		exec('npm show --json npm versions', (err, result) => {
+			if (err) {
+				reject(err);
+			} else {
+				resolve(JSON.parse(result));
+			}
+		});
+	});
+}
+
+<<<<<<< HEAD
 >>>>>>> f11ee5b... wip with conflicts
+=======
+>>>>>>> e3e9eee... npm
+>>>>>>> c232fdf... npm
+>>>>>>> 505d027... npm
 async function validVersionsForEngines(engines) {
 	const allVersions = await pAllVersions;
 	const entries = Object.entries(allVersions);
@@ -413,6 +435,7 @@ async function getGraphValids(graphEntries) {
 async function getVersions() {
 	const entries = await Promise.all([
 		selectedEngines.has('node') ? getNodeVersions().then((x) => ['node', x]) : null,
+		selectedEngines.has('npm') ? getNPMVersions().then((x) => ['npm', x]) : null,
 	]);
 	return fromEntries(entries.filter(Boolean));
 }
@@ -653,6 +676,7 @@ async function getEngineResults(engines, versions, rootVersions, graph) {
 Promise.all([getVersions(), graphRanges, pPackage]).then(async ([versions, graph, pkg]) => {
 	const rootVersions = {
 		node: (pkg.data.engines && pkg.data.engines.node) || '*',
+		npm: (pkg.data.engines && pkg.data.engines.npm) || '*',
 	};
 
 	return {
