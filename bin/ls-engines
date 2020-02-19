@@ -130,7 +130,7 @@ async function checkEngines(rootNode, rootValids, graphValids, displayRange, sho
 		throw {
 			code: EXITS.IMPLICIT,
 			output: [
-				chalk.bold(chalk.red('\nYour “engines” field is either missing, or set to ”*”! Prefer explicitly setting a supported engine range.')),
+				chalk.bold(chalk.red('\nYour “engines” field is either missing, or set to `{ "node": "*" }`! Prefer explicitly setting a supported engine range.')),
 				fixMessage,
 				chalk.blue(`"engines": ${JSON.stringify({ node: displayRange }, null, 2)}`),
 			],
