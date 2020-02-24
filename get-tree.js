@@ -8,7 +8,18 @@ const arb = new Arborist();
 
 const npmInfo = require('./npm-info');
 
-module.exports = async function getTree(mode, logger = (x) => console.log(x)) {
+function prune(tree, keepDev, keepProduction) {
+	if (!keepDev || !keepProduction) {
+		for (const node of tree.children.values()) {
+			if ((!keepDev && node.dev) || (!keepProduction && !node.dev)) {
+				node.parent = null;
+			}
+		}
+	}
+	return tree;
+}
+
+async function getBaseTree(mode, logger) {
 	const { hasNodeModules, hasLockfile, hasPackage, lockfileVersion } = await npmInfo(mode);
 
 	if (mode === 'actual' || hasNodeModules) {
@@ -51,4 +62,10 @@ module.exports = async function getTree(mode, logger = (x) => console.log(x)) {
 	);
 	logger(chalk.green(`${messages.join(', ')}; building ideal tree from \`${chalk.gray('package.json')}\`...`));
 	return arb.buildIdealTree({ fullMetadata: true, update: { all: true } });
+}
+
+module.exports = async function getTree(mode, { dev, logger = (x) => console.log(x), production } = {}) {
+	const tree = await getBaseTree(mode, logger);
+	prune(tree, dev, production);
+	return tree;
 };

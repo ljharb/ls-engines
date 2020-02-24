@@ -76,19 +76,7 @@ const getNodeVersions = require('../get-node-versions');
 
 const pPackage = jsonFile(path.join(process.cwd(), 'package.json'));
 
-function prune(tree, keepDev, keepProduction) {
-	if (!keepDev || !keepProduction) {
-		for (const node of tree.children.values()) {
-			if ((!keepDev && node.dev) || (!keepProduction && !node.dev)) {
-				node.parent = null;
-			}
-		}
-	}
-	return tree;
-}
-
-const graphRanges = getTree(mode).then(async (tree) => {
-	prune(tree, dev, production);
+const graphRanges = getTree(mode, { dev, production }).then(async (tree) => {
 	const graph = Array.from(
 		tree.inventory.filter(({ package: { engines } }) => engines && engines.node),
 		({ name, package: { engines: { node } } }) => node && [name, node],
