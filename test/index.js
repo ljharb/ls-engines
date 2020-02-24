@@ -26,23 +26,30 @@ function filename(mode, flag, kind) {
 	return [mode, flag.replace(/-/g, ''), kind].filter(Boolean).join('-');
 }
 
+function findCodes(code) {
+	if (code === 0) {
+		return ['SUCCESS'];
+	}
+	return Object.keys(EXITS).filter((name) => EXITS[name] & code);
+}
+
 function getOrUpdate(cwd, cmd, mode, flag, err, res) {
 	const errPath = path.join(cwd, filename(mode, flag, 'stderr'));
 	const outPath = path.join(cwd, filename(mode, flag, 'stdout'));
 	const codePath = path.join(cwd, filename(mode, flag, 'code'));
 	if (process.env.UPDATE_SNAPSHOTS) {
-		const code = Object.keys(EXITS).find((name) => EXITS[name] === (err ? err.code : 0));
+		const codes = findCodes(err ? err.code : 0);
 		const stderr = (err && normalizeNodeVersion(err.message.slice(`Command failed: ${cmd}\n\n`.length))) || null;
 		const stdout = normalizeNodeVersion(res) || null;
-		fs.writeFileSync(codePath, `${code}\n`);
+		fs.writeFileSync(codePath, `${codes.join('\n')}\n`);
 		fs.writeFileSync(errPath, stderr || '');
 		fs.writeFileSync(outPath, stdout || '');
-		return { code, stderr, stdout };
+		return { codes, stderr, stdout };
 	}
-	const code = fs.readFileSync(codePath, 'utf-8').trim();
+	const codes = fs.readFileSync(codePath, 'utf-8').trim().split('\n');
 	const stderr = fs.readFileSync(errPath, 'utf-8') || null;
 	const stdout = fs.readFileSync(outPath, 'utf-8') || null;
-	return { code, stderr, stdout };
+	return { codes, stderr, stdout };
 }
 
 function testMode(t, fixture, cwd, mode) {
@@ -53,15 +60,17 @@ function testMode(t, fixture, cwd, mode) {
 			t.test(`fixture: ${fixture}, mode: ${mode}${flag ? `, flag: ${flag}` : ''}`, (st) => {
 				st.plan(4);
 
-				const { code, stderr, stdout } = getOrUpdate(cwd, cmd, mode, flag, err, res);
-				const succeeds = EXITS[code] === EXITS.SUCCESS;
+				const { codes, stderr, stdout } = getOrUpdate(cwd, cmd, mode, flag, err, res);
+				const succeeds = codes.length === 1 && codes[0] === 'SUCCESS';
 
 				if (succeeds) {
 					st.equal(err, null, 'command succeeds, as expected');
 				} else {
 					st.ok(err, 'command fails, as expected');
 				}
-				st.equal(succeeds ? 0 : err && err.code, EXITS[code], `exit code is \`${code}\` (${EXITS[code]})`);
+				const actualCode = succeeds ? 0 : err && err.code;
+				const derivedCodes = findCodes(actualCode);
+				st.deepEqual(derivedCodes, codes, `exit code is \`${actualCode}\` (${derivedCodes})`);
 				st.equal(err && normalizeNodeVersion(err.message), stderr && `Command failed: ${cmd}\n\n${stderr}`, 'stderr is as expected');
 				st.equal(normalizeNodeVersion(res), stdout, 'stdout is as expected');
 			});
