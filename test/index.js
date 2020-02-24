@@ -53,29 +53,35 @@ function getOrUpdate(cwd, cmd, mode, flag, err, res) {
 }
 
 function testMode(t, fixture, cwd, mode) {
-	['', '--dev', '--production'].forEach((flag) => {
+	return ['', '--dev', '--production'].reduce(async (prev, flag) => {
+		await prev;
 		const cmd = `${path.relative(cwd, binPath)} --mode=${mode} ${flag}`.trim();
 
-		exec(cmd, { cwd, env: { ...process.env, FORCE_COLOR: 0 } }, (err, res) => {
-			t.test(`fixture: ${fixture}, mode: ${mode}${flag ? `, flag: ${flag}` : ''}`, (st) => {
-				st.plan(4);
+		t.comment(`## ${fixture}: running \`ls-engines --mode=${(mode + ' ' + flag).trim()}\`...`);
+		return new Promise((resolve) => {
+			exec(cmd, { cwd, env: { ...process.env, FORCE_COLOR: 0 } }, (err, res) => {
+				resolve();
 
-				const { codes, stderr, stdout } = getOrUpdate(cwd, cmd, mode, flag, err, res);
-				const succeeds = codes.length === 1 && codes[0] === 'SUCCESS';
+				t.test(`fixture: ${fixture}, mode: ${mode}${flag ? `, flag: ${flag}` : ''}`, (st) => {
+					st.plan(4);
 
-				if (succeeds) {
-					st.equal(err, null, 'command succeeds, as expected');
-				} else {
-					st.ok(err, 'command fails, as expected');
-				}
-				const actualCode = succeeds ? 0 : err && err.code;
-				const derivedCodes = findCodes(actualCode);
-				st.deepEqual(derivedCodes, codes, `exit code is \`${actualCode}\` (${derivedCodes})`);
-				st.equal(err && normalizeNodeVersion(err.message), stderr && `Command failed: ${cmd}\n\n${stderr}`, 'stderr is as expected');
-				st.equal(normalizeNodeVersion(res), stdout, 'stdout is as expected');
+					const { codes, stderr, stdout } = getOrUpdate(cwd, cmd, mode, flag, err, res);
+					const succeeds = codes.length === 1 && codes[0] === 'SUCCESS';
+
+					if (succeeds) {
+						st.equal(err, null, 'command succeeds, as expected');
+					} else {
+						st.ok(err, 'command fails, as expected');
+					}
+					const actualCode = succeeds ? 0 : err && err.code;
+					const derivedCodes = findCodes(actualCode);
+					st.deepEqual(derivedCodes, codes, `exit code is \`${actualCode}\` (${derivedCodes})`);
+					st.equal(err && normalizeNodeVersion(err.message), stderr && `Command failed: ${cmd}\n\n${stderr}`, 'stderr is as expected');
+					st.equal(normalizeNodeVersion(res), stdout, 'stdout is as expected');
+				});
 			});
 		});
-	});
+	}, Promise.resolve());
 }
 
 test('ls-engines', (t) => {
