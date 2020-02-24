@@ -43,7 +43,7 @@ async function getBaseTree(mode, logger) {
 				tree.children.values(),
 				async (node) => {
 					// eslint-disable-next-line no-param-reassign
-					node.package = await pacote.manifest(node.name, { fullMetadata: true });
+					node.package = await pacote.manifest(`${node.name}@${node.package.version}`, { fullMetadata: true });
 				},
 			));
 			return tree;

@@ -1,6 +1,6 @@
 v1 lockfile found, mode is “virtual”; loading ideal tree from lockfile...
 
-Valid node version range: ^13 || ^12 || ^11 || ^10 || ^9 || ^8 || ^7 || ^6 || ^5 || ^4 || ^0.12 || ^0.11 || ^0.10 || ^0.9 || ^0.8 || ^0.7 || ^0.6 || ^0.5 || ^0.4
+Valid node version range: *
 
 Currently available latest releases of each valid node major version: <node versions for above semver range>
 
@@ -8,7 +8,7 @@ Your “engines” field allows fewer node versions than your dependency graph d
 
 If you want to widen your support, you can run `ls-engines --save`, or manually add the following to your `package.json`:
 "engines": {
-  "node": "^13 || ^12 || ^11 || ^10 || ^9 || ^8 || ^7 || ^6 || ^5 || ^4 || ^0.12 || ^0.11 || ^0.10 || ^0.9 || ^0.8 || ^0.7 || ^0.6 || ^0.5 || ^0.4"
+  "node": "*"
 }
 
 Current node version, v${process.versions.node}, is valid!
