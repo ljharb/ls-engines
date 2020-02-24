@@ -72,13 +72,18 @@ function testMode(t, fixture, cwd, mode) {
 test('ls-engines', (t) => {
 	t.plan(fixtures.length * 3 * 3);
 
-	fixtures.forEach((fixture) => {
+	fixtures.reduce(async (prev, fixture) => {
+		await prev;
+
 		const cwd = path.join(fixturePath, fixture);
-		testMode(t, fixture, cwd, 'ideal');
+		t.comment(`## fixture found: ${fixture}`);
 
-		testMode(t, fixture, cwd, 'virtual');
+		await testMode(t, fixture, cwd, 'ideal');
 
-		execSync('npm install', { cwd });
-		testMode(t, fixture, cwd, 'actual');
-	});
+		await testMode(t, fixture, cwd, 'virtual');
+
+		t.comment(`## ${fixture}: running \`npm install --no-fund --no-audit\`...`);
+		execSync('npm install --no-fund --no-audit', { cwd });
+		await testMode(t, fixture, cwd, 'actual');
+	}, Promise.resolve());
 });
