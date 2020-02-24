@@ -4,13 +4,22 @@
 
 const path = require('path');
 const Semver = require('semver');
+const { exec } = require('child_process');
 const { default: intersect } = require('fast_array_intersect');
 const chalk = require('chalk');
 const yargs = require('yargs');
 const allSettled = require('promise.allsettled');
 const jsonFile = require('json-file-plus');
 const fromEntries = require('object.fromentries');
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+=======
+const listify = require('listify');
+
+>>>>>>> 9aa5bd5... wip with conflicts
+>>>>>>> dd05eb2... wip with conflicts
 const EXITS = require('../exit-codes');
 const table = require('../table');
 const getLatestEngineMajors = require('../getLatestEngineMajors');
@@ -19,14 +28,40 @@ const checkEngines = require('../checkEngines');
 
 const FALSE = Object(false);
 const TRUE = Object(true);
+<<<<<<< HEAD
+
+=======
+<<<<<<< HEAD
+=======
 
 const validEngines = ['node', 'npm'];
 
+<<<<<<< HEAD
+=======
+>>>>>>> 9aa5bd5... wip with conflicts
+>>>>>>> dd05eb2... wip with conflicts
+>>>>>>> 6989428... wip with conflicts
 const { argv } = yargs
 	.option('mode', {
 		choices: ['auto', 'actual', 'virtual', 'ideal'],
 		default: 'auto',
 		describe: `”actual“ reads from \`${chalk.gray('node_modules')}\`; ”virtual“ reads from a lockfile; “ideal” reads from \`${chalk.gray('package.json')}\``,
+	})
+	.option('engine', {
+		coerce(arg) {
+			arg.sort();
+			const set = new Set(arg);
+			if (set.size !== arg.length) {
+				throw '”engines“ list must not contain duplicates';
+			}
+			if (arg.filter((x) => !validEngines.includes(c)) {
+				throw `”engine” may only be: ${listify(validEngines.map(x => `"${x}"`))}`;
+			}
+			return set;
+		},
+		default: ['node'],
+		describe: 'Select which engine(s) to regard',
+		type: 'array',
 	})
 	.option('production', {
 		default: TRUE,
@@ -45,7 +80,11 @@ const { argv } = yargs
 	})
 	.option('current', {
 		default: true,
+<<<<<<< HEAD
 		describe: 'check that the current engine version(s) matches your dependency graph’s requirements',
+=======
+		describe: 'check that the current engine version matches your dependency graph’s requirements',
+>>>>>>> 433290c... wip with conflicts
 		type: 'boolean',
 	})
 	.check(({ dev, production }) => {
@@ -85,7 +124,21 @@ function normalize(args) {
 	const engines = validEngines.filter((engine) => selectedEnginesSet.has(engine));
 	return { ...args, dev, engines, production };
 }
+<<<<<<< HEAD
 const { current, dev, mode, production, save, engines: selectedEngines } = normalize(argv);
+=======
+
+const selectedEngines = ['node'];
+
+const {
+	current,
+	dev,
+	engine: selectedEngines,
+	mode,
+	production,
+	save,
+} = normalize(argv);
+>>>>>>> 6989428... wip with conflicts
 
 const getTree = require('../get-tree');
 const getNodeVersions = require('../get-node-versions');
@@ -93,18 +146,30 @@ const getNPMVersions = require('../get-npm-versions');
 
 const pPackage = jsonFile(path.join(process.cwd(), 'package.json'));
 
+function keepTruthyNonStars(obj) {
+	return fromEntries(Object.entries(obj).filter(([val]) => val && val !== '*'));
+}
+
 const pGraphEntries = getTree(mode, { dev, production }).then(async (tree) => {
 	const nodesWithEngines = tree.inventory.filter(({
 		package: {
 			_inBundle,
 			engines,
 		},
+<<<<<<< HEAD
 	}) => !_inBundle && engines && validEngines.some((engine) => engines[engine]));
 	const tuples = Array.from(
+=======
+	}) => !_inBundle && engines && engines.node);
+	return Array.from(
+>>>>>>> 6989428... wip with conflicts
 		nodesWithEngines,
-		({ name, package: { engines } }) => [name, engines],
+		({ name, package: { engines } }) => [name, keepTruthyNonStars(engines)],
 	);
+<<<<<<< HEAD
 	return tuples.filter(([, engines]) => engines && validEngines.some((engine) => engines[engine] !== '*'));
+=======
+>>>>>>> 6989428... wip with conflicts
 });
 
 function caret(ver) {
@@ -116,6 +181,216 @@ const pAllVersions = Promise.all([
 	getNPMVersions(),
 ]).then(([node, npm]) => ({ node, npm }));
 
+async function checkCurrent(rootValids, graphValids) {
+	let anyInvalid = false;
+	const rows = await Promise.all(selectedEngines.map(async (engine) => {
+		const currentVersion = await currentVersions[engine];
+		const rootValid = rootValids[engine].includes(currentVersion);
+		const graphValid = graphValids[engine].includes(currentVersion);
+		if (!rootValid || !graphValid) {
+			anyInvalid = true;
+		}
+		return [
+			chalk.blue(engine),
+			`${chalk.blue(chalk.bold(currentVersion))}`,
+			`${chalk.bold(rootValid ? chalk.greenBright('yes') : chalk.red('no'))}!`,
+			`${chalk.bold(graphValids ? chalk.greenBright('yes') : chalk.red('no'))}!`,
+		];
+	}));
+	const output = [
+		'',
+		table([
+			[
+				'engine',
+				'current version',
+				'valid (package)',
+				'valid (dependency graph)',
+			].map((x) => chalk.bold(chalk.gray(x))),
+			...rows,
+		]).trim(),
+	];
+
+	if (anyInvalid) {
+		throw {
+			code: EXITS.CURRENT,
+			output,
+=======
+async function checkCurrent(engine, rootValids, graphValids) {
+	const current = engine === 'node' ? process.version : null;
+	const currentValid = rootValids.concat(graphValids).includes(current);
+
+	const message = `\nCurrent ${engine} version, ${chalk.blue(chalk.bold(current))}, is ${chalk.bold(currentValid ? chalk.greenBright('valid') : chalk.red('invalid'))}!`;
+	if (currentValid) {
+		return {
+			output: [message],
+>>>>>>> 40b0de5... wip
+		};
+	}
+	return {
+		output,
+	};
+}
+
+<<<<<<< HEAD
+=======
+>>>>>>> 2fb4feb... wip with conflicts
+>>>>>>> 9aa5bd5... wip with conflicts
+>>>>>>> dd05eb2... wip with conflicts
+function isSubset(inner, outer) {
+	const outerS = new Set(outer);
+	return inner.every((item) => outerS.has(item));
+}
+<<<<<<< HEAD
+
+<<<<<<< HEAD
+async function checkEngines(selectedEngines, rootEngines, rootValids, graphValids, graphRanges, shouldSave) {
+	/* eslint no-throw-literal: 0 */
+
+	const engineEntries = Object.entries(graphRanges).map(([engine, { displayRange }]) => [engine, displayRange]);
+	const engines = fromEntries(engineEntries);
+
+	const fixMessage = shouldSave
+		? `\n\`${chalk.gray('ls-engines')}\` will automatically fix this, per the \`${chalk.gray('--save')}\` option, by adding the following to your \`${chalk.gray('package.json')}\`:`
+		: `\nYou can fix this by running \`${chalk.bold(chalk.gray('ls-engines --save'))}\`, or by manually adding the following to your \`${chalk.gray('package.json')}\`:`;
+
+	let allOmitted = true;
+	let anyOmitted = false;
+	let allStar = true;
+	let anyStar = false;
+	const same = [];
+	const subset = [];
+	selectedEngines.forEach((engine) => {
+		const value = rootEngines[engine];
+		if (typeof value === 'string') {
+			allOmitted = false;
+			if (value === '*') {
+				anyStar = true;
+			} else {
+				allStar = false;
+			}
+		} else {
+			anyOmitted = true;
+		}
+		if (rootValids[engine].length === graphValids[engine].length) {
+			same.push(engine);
+		} else if (isSubset(rootValids[engine], graphValids[engine])) {
+			subset.push(engine);
+		}
+	});
+
+	let message;
+	if (allOmitted) {
+		message = '\nYour “engines” field is missing! Prefer explicitly setting a supported engine range.';
+	} else if (anyOmitted) {
+		message = '\nYour “engines” field has some of your selected engines missing! Prefer explicitly setting a supported engine range.';
+	} else if (allStar) {
+		message = '\nYour “engines” field has your selected engines set to `*`! Prefer explicitly setting a supported engine range.';
+	} else if (anyStar) {
+		message = '\nYour “engines” field has some of your selected engines set to `*`! Prefer explicitly setting a supported engine range.';
+	}
+	if (message) {
+		throw {
+			code: EXITS.IMPLICIT,
+			output: [
+				chalk.bold(chalk.red(message)),
+				fixMessage,
+				chalk.blue(`"engines": ${JSON.stringify(engines, null, 2)}`),
+			],
+			save(pkg) {
+				/* eslint no-param-reassign: 0 */
+				pkg.engines = { ...pkg.engines, ...engines };
+=======
+=======
+<<<<<<< HEAD
+>>>>>>> dd05eb2... wip with conflicts
+async function checkEngines(rootNode, rootValids, graphValids, displayRange, shouldSave) {
+=======
+
+async function checkEngines(engine, rootEngine, rootValids, graphValids, displayRange, shouldSave) {
+>>>>>>> 9aa5bd5... wip with conflicts
+	const fixMessage = shouldSave
+		? `\n\`${chalk.gray('ls-engines')}\` will automatically fix this, per the \`${chalk.gray('--save')}\` option, by adding the following to your \`${chalk.gray('package.json')}\`:`
+		: `\nYou can fix this by running \`${chalk.bold(chalk.gray('ls-engines --save'))}\`, or by manually adding the following to your \`${chalk.gray('package.json')}\`:`;
+	/* eslint no-throw-literal: 0 */
+	if (rootEngine === '*') {
+		throw {
+			code: EXITS.IMPLICIT,
+			output: [
+				chalk.bold(chalk.red(`\nYour “engines” field is either missing, or set to \`{ "${engine}": "*" }\`! Prefer explicitly setting a supported engine range.`)),
+				fixMessage,
+				chalk.blue(`"engines": ${JSON.stringify({ [engine]: displayRange }, null, 2)}`),
+			],
+			save(pkg) {
+				/* eslint no-param-reassign: 0 */
+				if (!pkg.engines) {
+					pkg.engines = {};
+				}
+				pkg.engines[engine] = displayRange;
+>>>>>>> 433290c... wip with conflicts
+			},
+		};
+	}
+
+	if (same.length === selectedEngines.length) {
+		return {
+			output: [
+				chalk.bold(chalk.green('\nYour “engines” field exactly matches your dependency graph’s requirements!')),
+			],
+		};
+	}
+	if (subset.length > 0) {
+		const expandMessage = shouldSave
+			? `\n\`${chalk.gray('ls-engines')}\` will automatically widen your support, per the \`${chalk.gray('--save')}\` option, by adding the following to your \`${chalk.gray('package.json')}\`:`
+			: `\nIf you want to widen your support, you can run \`${chalk.bold(chalk.gray('ls-engines --save'))}\`, or manually add the following to your \`${chalk.gray('package.json')}\`:`;
+		return {
+			output: [
+				chalk.bold(chalk.green(`\nYour “engines” field allows fewer ${engine} versions than your dependency graph does.`)),
+				expandMessage,
+<<<<<<< HEAD
+				chalk.blue(`"engines": ${JSON.stringify(engines, null, 2)}`),
+			],
+			save(pkg) {
+				/* eslint no-param-reassign: 0 */
+				pkg.engines = { ...pkg.engines, ...engines };
+=======
+				chalk.blue(`"engines": ${JSON.stringify({ [engine]: displayRange }, null, 2)}`),
+			],
+			save(pkg) {
+				/* eslint no-param-reassign: 0 */
+				if (!pkg.engines) {
+					pkg.engines = {};
+				}
+				pkg.engines[engine] = displayRange;
+>>>>>>> 433290c... wip with conflicts
+			},
+		};
+	}
+	throw {
+		code: EXITS.INEXACT,
+		output: [
+			chalk.red('\nYour “engines” field does not exactly match your dependency graph‘s requirements!'),
+			fixMessage,
+<<<<<<< HEAD
+			chalk.blue(`"engines": ${JSON.stringify(engines, null, 2)}`),
+		],
+		save(pkg) {
+			/* eslint no-param-reassign: 0 */
+			pkg.engines = { ...pkg.engines, ...engines };
+=======
+			chalk.blue(`"engines": ${JSON.stringify({ [engine]: displayRange }, null, 2)}`),
+		],
+		save(pkg) {
+			/* eslint no-param-reassign: 0 */
+			if (!pkg.engines) {
+				pkg.engines = {};
+			}
+			pkg.engines[engine] = displayRange;
+>>>>>>> 433290c... wip with conflicts
+		},
+	};
+}
+
+>>>>>>> f11ee5b... wip with conflicts
 async function validVersionsForEngines(engines) {
 	const allVersions = await pAllVersions;
 	const entries = Object.entries(allVersions);
@@ -130,7 +405,37 @@ async function validVersionsForEngines(engines) {
 
 async function getGraphValids(graphEntries) {
 	if (graphEntries.length === 0) {
+<<<<<<< HEAD
 		return validVersionsForEngines(fromEntries(validEngines.map((engine) => [engine, '*'])));
+=======
+		return validVersionsForEngines({ node: '*' });
+=======
+async function getVersions() {
+	const entries = await Promise.all([
+		selectedEngines.has('node') ? getNodeVersions().then((x) => ['node', x]) : null,
+	]);
+	return fromEntries(entries.filter(Boolean));
+}
+
+async function checkEngineVersions(engine, engineVersions, rootEngine, graph) {
+	const rootValids = engineVersions.filter((v) => Semver.satisfies(v, rootEngine));
+	const graphAllowed = graph.map(([n, { [engine]: engineVersion }]) => [
+		n,
+		engineVersions.filter((v) => Semver.satisfies(v, engineVersion)),
+	]);
+	const graphValids = graph.length > 0
+		? intersect(graphAllowed.map(([, vs]) => (vs.length > 0 ? vs : null)).filter(Boolean))
+		: rootEngine;
+	graphValids.sort((a, b) => -Semver.compare(a, b));
+	const validMajorRanges = graph.length > 0 ? graphValids.reduceRight((prev, v) => {
+		prev = [].concat(prev); // eslint-disable-line no-param-reassign
+		return Semver.satisfies(v, caret(prev[prev.length - 1])) ? prev : prev.concat(v);
+	}).map(caret) : ['*'];
+	const validRange = new Semver.Range(validMajorRanges.join(' || '));
+	if (!graphValids.every((v) => validRange.test(v))) {
+		throw new RangeError('please report this: ' + graphValids.join(',') + ' / ' + validRange);
+>>>>>>> 40b0de5... wip
+>>>>>>> 6989428... wip with conflicts
 	}
 	const graphAllowed = await Promise.all(graphEntries.map(([, engines]) => validVersionsForEngines(engines)));
 	const mergedGraphEngines = graphAllowed.reduce((mergedEngines, engines) => {
@@ -280,11 +585,63 @@ Promise.all([
 	pkg,
 	{ engines: rootEngines, valids: rootValids },
 ]) => {
+<<<<<<< HEAD
 	const { valids: graphValids, ranges: graphDisplayRanges } = graphRanges;
 	const pEngines = checkEngines(selectedEngines, rootEngines, rootValids, graphValids, graphDisplayRanges, save);
+=======
+	const { valids: graphValids, ranges: { node: { displayRange } } } = graphRanges;
+	const pEngines = checkEngines(rootEngines.node, rootValids, graphValids, displayRange, save);
+<<<<<<< HEAD
 
 	const pCurrent = current ? checkCurrent(selectedEngines, rootValids, graphValids) : { output: [] };
+>>>>>>> 433290c... wip with conflicts
 
+=======
+<<<<<<< HEAD
+	const pCurrent = current ? checkCurrent(selectedEngines, rootValids, graphValids) : { output: [] };
+=======
+=======
+	const displayRange = validRange.raw && validRange.raw.replace(/(\.0)+( |$)/g, '$2').split(' ').join(' ');
+	if (validRange.raw) {
+		console.log(chalk.gray(`\nValid ${engine} version range: ${displayRange}`));
+		const versionsByMajor = engineVersions.reduce((map, v) => {
+			const major = Semver.major(v);
+			const key = major === 0 ? `${major}.${Semver.minor(v)}` : major;
+			if (!map[key]) {
+				map[key] = [];
+			}
+			map[key].push(v);
+			return map;
+		}, {});
+		const latestMajors = Object.values(versionsByMajor)
+			.map((vs) => Semver.maxSatisfying(vs, validRange))
+			.filter(Boolean)
+			.sort(Semver.compare)
+			.reverse();
+		console.log(chalk.bold(chalk.gray(`\nCurrently available latest releases of each valid ${engine} major version: ${latestMajors.join(', ')}`)));
+	}
+
+	return [engine, {
+		displayRange,
+		graphValids,
+		rootEngine,
+		rootValids,
+	}];
+}
+
+	const pCurrent = current ? checkCurrent(selectedEngines, rootValids, graphValids) : { output: [] };
+=======
+async function getEngineResults(engines, versions, rootVersions, graph) {
+	const engineVersionResults = Array.from(
+		engines,
+		(engine) => checkEngineVersions(engine, versions[engine], rootVersions[engine], graph),
+	);
+	return fromEntries(await Promise.all(engineVersionResults));
+}\
+
+<<<<<<< HEAD
+>>>>>>> 9aa5bd5... wip with conflicts
+>>>>>>> dd05eb2... wip with conflicts
 	// print out successes first
 	const results = await allSettled([pSummary, pEngines, pCurrent]);
 	const fulfilleds = results.filter((result) => result.status === 'fulfilled');
@@ -292,9 +649,46 @@ Promise.all([
 	fulfilleds.forEach(({ value: { output } }) => {
 		output.forEach((line) => {
 			console.log(line);
-		});
-	});
+=======
+Promise.all([getVersions(), graphRanges, pPackage]).then(async ([versions, graph, pkg]) => {
+	const rootVersions = {
+		node: (pkg.data.engines && pkg.data.engines.node) || '*',
+	};
 
+	return {
+		engineResults: getEngineResults(selectedEngines, versions, rootVersions, graph),
+		pkg,
+	};
+}).then(async ({ engineResults, pkg }) => {
+
+	Object.entries(engineResults).forEach(async ([engine, {
+		displayRange,
+		graphValids,
+		rootEngine,
+		rootValids,
+	}]) => {
+		const pEngines = checkEngines(engine, rootEngine, rootValids, graphValids, displayRange, save);
+
+		const pCurrent = current ? checkCurrent(engine, rootValids, graphValids) : { output: [] };
+
+		// print out successes first
+		const results = await allSettled([pEngines, pCurrent]);
+
+		results.filter(({ status }) => status === 'fulfilled').forEach(({ value: { output } }) => {
+			output.forEach((line) => {
+				console.log(line);
+			});
+>>>>>>> 40b0de5... wip
+		});
+<<<<<<< HEAD
+	});
+<<<<<<< HEAD
+
+=======
+=======
+
+>>>>>>> 9aa5bd5... wip with conflicts
+>>>>>>> dd05eb2... wip with conflicts
 	// print out failures last
 	await rejecteds.reduce(async (prev, error) => {
 		await prev;
