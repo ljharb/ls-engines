@@ -51,7 +51,6 @@ const { argv } = yargs
 		}
 		return true;
 	})
-	// .coerce(['dev', 'production'], x => Boolean.prototype.valueOf.call(x))
 	.strict()
 	.help();
 
@@ -163,14 +162,23 @@ async function checkEngines(rootNode, rootValids, graphValids, displayRange, sho
 			},
 		};
 	}
-	if (rootValids.length === graphValids.length) {
+	const same = [];
+	const subset = [];
+	selectedEngines.forEach((engine) => {
+		if (rootValids[engine].length === graphValids[engine].length) {
+			same.push(engine);
+		} else if (isSubset(rootValids[engine], graphValids[engine])) {
+			subset.push(engine);
+		}
+	});
+	if (same.length === selectedEngines.length) {
 		return {
 			output: [
 				chalk.bold(chalk.green('\nYour “engines” field exactly matches your dependency graph’s requirements!')),
 			],
 		};
 	}
-	if (isSubset(rootValids, graphValids)) {
+	if (subset.length > 0) {
 		const expandMessage = shouldSave
 			? `\n\`${chalk.gray('ls-engines')}\` will automatically widen your support, per the \`${chalk.gray('--save')}\` option, by adding the following to your \`${chalk.gray('package.json')}\`:`
 			: `\nIf you want to widen your support, you can run \`${chalk.bold(chalk.gray('ls-engines --save'))}\`, or manually add the following to your \`${chalk.gray('package.json')}\`:`;
@@ -244,7 +252,8 @@ Promise.all([getNodeVersions(), graphRanges, pPackage]).then(async ([nodeVersion
 		console.log(chalk.bold(chalk.gray(`\nCurrently available latest releases of each valid node major version: ${latestMajors.join(', ')}`)));
 	}
 
-	const pEngines = checkEngines(rootNode, rootValids, graphValids, displayRange, save);
+	// TODO: refactor to make rootValids/graphValids an object of engines
+	const pEngines = checkEngines(rootNode, { node: rootValids }, { node: graphValids }, displayRange, save);
 
 	// TODO: refactor to make rootValids/graphValids an object of engines
 	const pCurrent = current ? checkCurrent({ node: rootValids }, { node: graphValids }) : { output: [] };
@@ -261,7 +270,8 @@ Promise.all([getNodeVersions(), graphRanges, pPackage]).then(async ([nodeVersion
 	});
 
 	// print out failures last
-	rejecteds.forEach(async ({ reason: { code, output, save: doSave } }) => {
+	await Promise.all(rejecteds.map(async ({ reason }) => {
+		const { code, output, save: doSave } = reason;
 		if (save && doSave) {
 			doSave(pkg.data);
 			try {
@@ -272,10 +282,13 @@ Promise.all([getNodeVersions(), graphRanges, pPackage]).then(async ([nodeVersion
 		} else {
 			process.exitCode |= code;
 		}
+		if (!output) {
+			throw reason;
+		}
 		output.forEach((line) => {
 			console.error(line);
 		});
-	});
+	}));
 }).catch((e) => {
 	console.error(e.stack);
 	process.exitCode |= EXITS.ERROR;
