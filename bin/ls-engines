@@ -218,6 +218,26 @@ async function checkEngines(rootNode, rootValids, graphValids, displayRange, sho
 	};
 }
 
+function isString(x) {
+	return typeof x === 'string';
+}
+
+function getLatestMajors(versions, validRange = new Semver.Range('*')) {
+	const versionsByMajor = versions.reduce((map, v) => {
+		const major = Semver.major(v);
+		const key = major === 0 ? `${major}.${Semver.minor(v)}` : String(major);
+		if (!map[key]) {
+			map[key] = [];
+		}
+		map[key].push(v);
+		return map;
+	}, {});
+	return Object.values(versionsByMajor)
+		.map((vs) => Semver.maxSatisfying(vs, validRange))
+		.filter(isString)
+		.sort((a, b) => -Semver.compare(a, b));
+}
+
 Promise.all([pAllVersions, graphRanges, pPackage]).then(async ([allVersions, graph, pkg]) => {
 	const rootNode = (pkg.data.engines && pkg.data.engines.node) || '*';
 
@@ -239,20 +259,7 @@ Promise.all([pAllVersions, graphRanges, pPackage]).then(async ([allVersions, gra
 	const displayRange = validRange.raw && validRange.raw.replace(/(\.0)+( |$)/g, '$2').split(' ').reverse().join(' ');
 	if (validRange.raw) {
 		console.log(chalk.gray(`\nValid node version range: ${displayRange}`));
-		const versionsByMajor = allVersions.node.reduce((map, v) => {
-			const major = Semver.major(v);
-			const key = major === 0 ? `${major}.${Semver.minor(v)}` : major;
-			if (!map[key]) {
-				map[key] = [];
-			}
-			map[key].push(v);
-			return map;
-		}, {});
-		const latestMajors = Object.values(versionsByMajor)
-			.map((vs) => Semver.maxSatisfying(vs, validRange))
-			.filter(Boolean)
-			.sort(Semver.compare)
-			.reverse();
+		const latestMajors = getLatestMajors(allVersions.node, validRange);
 		console.log(chalk.bold(chalk.gray(`\nCurrently available latest releases of each valid node major version: ${latestMajors.join(', ')}`)));
 	}
 
