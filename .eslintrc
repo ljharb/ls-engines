@@ -4,7 +4,7 @@
 	"extends": "@ljharb",
 
 	"parserOptions": {
-		"ecmaVersion": "2020",
+		"ecmaVersion": 2020,
 	},
 
 	"env": {

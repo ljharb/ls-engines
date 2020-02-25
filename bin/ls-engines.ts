@@ -2,25 +2,26 @@
 
 'use strict';
 
+import { Range } from 'semver';
+import { PromiseResolution, PromiseRejection } from 'promise.allsettled';
+
 const path = require('path');
-const Semver = require('semver');
+const Semver: typeof import('semver') = require('semver');
 const { default: intersect } = require('fast_array_intersect');
-const chalk = require('chalk');
-const yargs = require('yargs');
-const allSettled = require('promise.allsettled');
-const jsonFile = require('json-file-plus');
-const fromEntries = require('object.fromentries');
+const chalk: typeof import('chalk') = require('chalk');
+const yargs: typeof import('yargs') = require('yargs');
+const allSettled: typeof import('promise.allsettled') = require('promise.allsettled');
+const jsonFile: typeof import('json-file-plus') = require('json-file-plus');
+const fromEntries: typeof Object.fromEntries = require('object.fromentries');
 
-const EXITS = require('../exit-codes');
-const table = require('../table');
-const getLatestEngineMajors = require('../getLatestEngineMajors');
-const checkCurrent = require('../checkCurrent');
-const checkEngines = require('../checkEngines');
+const EXITS: import('../exit-codes') = require('../exit-codes');
+const table: typeof import('../table') = require('../table');
+const getLatestEngineMajors: import('../getLatestEngineMajors').default = require('../getLatestEngineMajors');
+const checkCurrent: import('../checkCurrent') = require('../checkCurrent');
+const checkEngines: import('../checkEngines') = require('../checkEngines');
 
-const FALSE = Object(false);
-const TRUE = Object(true);
-
-const validEngines = ['node', 'npm'];
+const FALSE: Boolean & { valueOf(): false } = Object(false);
+const TRUE: Boolean & { valueOf(): true } = Object(true);
 
 const { argv } = yargs
 	.option('mode', {
@@ -29,12 +30,12 @@ const { argv } = yargs
 		describe: `”actual“ reads from \`${chalk.gray('node_modules')}\`; ”virtual“ reads from a lockfile; “ideal” reads from \`${chalk.gray('package.json')}\``,
 	})
 	.option('production', {
-		default: TRUE,
+		default: TRUE as boolean,
 		describe: 'whether to include production deps or not',
 		type: 'boolean',
 	})
 	.option('dev', {
-		default: FALSE,
+		default: FALSE as boolean,
 		describe: 'whether to include dev deps or not',
 		type: 'boolean',
 	})
@@ -52,24 +53,17 @@ const { argv } = yargs
 		if (typeof dev === 'boolean' && typeof production === 'boolean') {
 			// both arguments were explicitly passed
 			if (!dev && !production) {
-				// eslint-disable-next-line no-throw-literal
+				// eslint-disable-line no-throw-literal
 				throw 'One of `--dev` and `--production` must be enabled.';
 			}
 		}
 		return true;
 	})
-	.option('engines', {
-		choices: validEngines,
-		default: validEngines,
-		describe: 'which engine(s) to list',
-		hidden: validEngines.length < 2,
-		type: 'array',
-	})
 	.strict()
 	.help();
 
-function normalize(args) {
-	let { dev, production, engines: originalEngines } = args;
+function normalize(args: typeof argv) {
+	let { dev, production } = args;
 	if (typeof dev === 'object' && typeof production === 'object') {
 		// neither argument was explicitly passed
 		dev = false;
@@ -81,15 +75,71 @@ function normalize(args) {
 		// explicitly passed production/no-production, did not mention dev
 		dev = !production || Boolean.prototype.valueOf.call(dev);
 	}
-	const selectedEnginesSet = new Set(originalEngines);
-	const engines = validEngines.filter((engine) => selectedEnginesSet.has(engine));
-	return { ...args, dev, engines, production };
+	return { ...args, dev, production };
 }
-const { current, dev, mode, production, save, engines: selectedEngines } = normalize(argv);
+const { current, dev, mode, production, save } = normalize(argv);
 
-const getTree = require('../get-tree');
-const getNodeVersions = require('../get-node-versions');
-const getNPMVersions = require('../get-npm-versions');
+const selectedEngines = ['node'/*, 'npm'*/] as ('node' | 'npm')[];
+
+export type Engines = typeof selectedEngines[number];
+
+type Await<T> = T extends {
+    then(onfulfilled?: (value: infer U) => unknown): unknown;
+} ? U : T;
+
+type Entry<O> = [keyof O, O[keyof O]];
+
+export type EngineStrings = {
+	[x in Engines]: string;
+} | {
+	[x: string]: string
+};
+export type EngineVersions<T extends string[] | string[][] = string[]> = {
+	[x in typeof selectedEngines[number]]: T;
+} | {
+	[x: string]: T
+};
+
+type Ranges = {
+	displayRange: string;
+	validRange: Range;
+};
+
+export type EngineRanges = {
+	[x in typeof selectedEngines[number]]: Ranges;
+} | {
+	[x: string]: Ranges;
+};
+
+type GraphRanges = {
+	engines: EngineStrings;
+	ranges: EngineRanges;
+	valids: EngineVersions;
+};
+
+type TreeNode = {
+	dev?: boolean;
+	parent?: Node | null;
+	name: string;
+	package: {
+		name: TreeNode['name'];
+		version: string;
+		engines?: EngineStrings;
+		_inBundle?: boolean;
+	};
+};
+type Tree = {
+	children: Map<string, TreeNode>;
+	inventory: TreeNode[];
+};
+
+const getTree: (mode: string, options?: {
+	dev?: boolean,
+	logger?: (x: string) => void,
+	production?: boolean,
+}) => Promise<Tree> = require('../get-tree');
+
+const getNodeVersions: import('../get-node-versions') = require('../get-node-versions');
 
 const pPackage = jsonFile(path.join(process.cwd(), 'package.json'));
 
@@ -98,43 +148,42 @@ const pGraphEntries = getTree(mode, { dev, production }).then(async (tree) => {
 		package: {
 			_inBundle,
 			engines,
-		},
-	}) => !_inBundle && engines && validEngines.some((engine) => engines[engine]));
-	const tuples = Array.from(
+		}
+	}) => !_inBundle && engines && engines.node);
+	const tuples: [TreeNode['name'], EngineStrings][] = Array.from(
 		nodesWithEngines,
-		({ name, package: { engines } }) => [name, engines],
+		({ name, package: { engines } }) => [name, engines!],
 	);
-	return tuples.filter(([, engines]) => engines && validEngines.some((engine) => engines[engine] !== '*'));
+	return tuples.filter(([, { node }]) => node && node !== '*');
 });
 
-function caret(ver) {
+function caret(ver: string) {
 	return '^' + ver.replace(/^v/g, '');
 }
 
-const pAllVersions = Promise.all([
-	getNodeVersions(),
-	getNPMVersions(),
-]).then(([node, npm]) => ({ node, npm }));
+const pAllVersions = getNodeVersions().then((nodeVersions: EngineVersions[Engines]): EngineVersions => ({
+	node: nodeVersions,
+}));
 
-async function validVersionsForEngines(engines) {
+async function validVersionsForEngines(engines: EngineStrings) {
 	const allVersions = await pAllVersions;
-	const entries = Object.entries(allVersions);
+	const entries = Object.entries(allVersions) as Entry<typeof allVersions>[];
 	return fromEntries(entries.map(([
 		engine,
 		versions,
 	]) => [
 		engine,
 		versions.filter((v) => Semver.satisfies(v, engines[engine] || '*')),
-	]));
+	])) as EngineVersions;
 }
 
-async function getGraphValids(graphEntries) {
+async function getGraphValids(graphEntries: Await<typeof pGraphEntries>) {
 	if (graphEntries.length === 0) {
-		return validVersionsForEngines(fromEntries(validEngines.map((engine) => [engine, '*'])));
+		return validVersionsForEngines({ node: '*' });
 	}
 	const graphAllowed = await Promise.all(graphEntries.map(([, engines]) => validVersionsForEngines(engines)));
-	const mergedGraphEngines = graphAllowed.reduce((mergedEngines, engines) => {
-		const entries = Object.entries(engines);
+	const mergedGraphEngines = graphAllowed.reduce<EngineVersions<string[][]>>((mergedEngines, engines) => {
+		const entries = Object.entries(engines) as Entry<typeof engines>[];
 		entries.forEach(([engine, versions]) => {
 			if (!Array.isArray(mergedEngines[engine])) {
 				mergedEngines[engine] = []; // eslint-disable-line no-param-reassign
@@ -143,33 +192,37 @@ async function getGraphValids(graphEntries) {
 		});
 		return mergedEngines;
 	}, {});
-	return fromEntries(Object.entries(mergedGraphEngines).map(([engine, versionArrays]) => {
-		const intersection = intersect(versionArrays);
-		return [engine, intersection.sort((a, b) => -Semver.compare(a, b))];
-	}));
+	const entries = Object.entries(mergedGraphEngines).map(([engine, versionArrays]) => {
+		const intersection: typeof versionArrays[number] = intersect(versionArrays);
+		return [engine, intersection.sort((a, b) => -Semver.compare(a, b))] as [Engines, string[]];
+	});
+	return fromEntries(entries) as EngineVersions;
 }
 
-const pRootRanges = pPackage.then(async (pkg) => {
-	const engineEntries = validEngines.map((engine) => [
+type Entries<T> = [keyof T, T[keyof T]][];
+
+const pRootRanges: Promise<GraphRanges> = pPackage.then(async (pkg) => {
+	const engineEntries: [Engines, string | null][] = selectedEngines.map((engine) => [
 		engine,
 		(pkg.data.engines && pkg.data.engines[engine]) || null,
-	]).map(([engine, data]) => [engine, data && data.replace(/=(\d)/, '= $1')]);
-	const engines = fromEntries(engineEntries);
-	const rangeEntries = engineEntries.map(([engine, v]) => [engine, new Semver.Range(v || '*')]);
-	const ranges = fromEntries(rangeEntries);
+	]);
+	const engines: EngineStrings = fromEntries(engineEntries);
+	const rangeEntries: [Engines, Range][] = engineEntries.map(([engine, v]) => [engine, new Semver.Range(v || '*')]);
+	const ranges: EngineRanges = fromEntries(rangeEntries);
 	const valids = await validVersionsForEngines(engines);
+
 	return { engines, ranges, valids };
 });
 
-function dropPatch(v) {
+function dropPatch(v: string) {
 	const num = v.replace(/^v/, '');
 	return `^${Semver.major(num)}.${Semver.minor(num)}`;
 }
 
-const pGraphRanges = pGraphEntries.then(async (graphEntries) => {
+const pGraphRanges = pGraphEntries.then((async (graphEntries): Promise<GraphRanges> => {
 	const graphValids = await getGraphValids(graphEntries);
 	const graphRanges = Object.entries(graphValids).map(([engine, versions]) => {
-		const validMajorRanges = graphEntries.length > 0 && versions.length > 0 ? versions.reduceRight((prev, v) => {
+		const validMajorRanges = graphEntries.length > 0 && versions.length > 0 ? versions.reduceRight<string[]>((prev, v) => {
 			if (prev.length === 0) {
 				return [v];
 			}
@@ -185,26 +238,26 @@ const pGraphRanges = pGraphEntries.then(async (graphEntries) => {
 		}
 
 		const displayRange = validRange.raw && validRange.raw.replace(/(\.0)+( |$)/g, '$2').split(' ').join(' ');
-		const tuple = [engine, { displayRange, validRange }];
+		const tuple: [keyof EngineStrings, Ranges] = [engine as keyof EngineStrings, { displayRange, validRange }];
 		return tuple;
 	});
 
-	const engineEntries = graphRanges.map(([engine, { displayRange }]) => [engine, displayRange]);
+	const engineEntries: Entries<EngineStrings> = graphRanges.map(([engine, { displayRange }]) => [engine, displayRange]);
 
-	const engines = fromEntries(engineEntries);
+	const engines: EngineStrings = fromEntries(engineEntries);
 
-	const validEntries = await Promise.all(validEngines.map(async (engine) => {
+	const validEntries = await Promise.all(selectedEngines.map(async (engine): Promise<[Engines, string[]]> => {
 		const validForEngine = await validVersionsForEngines(engines);
 		return [engine, validForEngine[engine]];
 	}));
-	const valids = fromEntries(validEntries);
+	const valids: EngineVersions = fromEntries(validEntries);
 
 	return {
 		engines,
 		ranges: fromEntries(graphRanges),
 		valids,
 	};
-});
+}));
 
 const pLatestEngineMajors = Promise.all([
 	pRootRanges,
@@ -214,9 +267,9 @@ const pLatestEngineMajors = Promise.all([
 	{ ranges: rootRanges },
 	{ ranges: graphRanges },
 	allVersions,
-]) => getLatestEngineMajors(validEngines, allVersions, rootRanges, graphRanges));
+]) => getLatestEngineMajors(selectedEngines, allVersions, rootRanges, graphRanges));
 
-function wrapCommaSeparated(array, limit) {
+function wrapCommaSeparated(array: string[], limit: number) {
 	const str = array.join(', ');
 	if (str.length <= limit) {
 		return str;
@@ -228,8 +281,8 @@ function wrapCommaSeparated(array, limit) {
 
 const majorsHeading = 'Currently available latest release of each valid major version:';
 
-function normalizeEngines(engines) {
-	const entries = Object.entries(engines).map(([engine, version]) => [engine, version || '*']);
+function normalizeEngines(engines: EngineStrings): EngineStrings {
+	const entries = Object.entries(engines).map(([engine, version]) => [engine, version || '*'] as [Engines, string]);
 	return fromEntries(entries);
 }
 
@@ -241,22 +294,20 @@ const pSummary = Promise.all([
 	{ engines: rootEngines },
 	{ engines: graphEngines },
 	latestEngineMajors,
-]) => ({
+]): Await<ReturnType<typeof checkEngines>> => ({
 	output: [
 		table([
 			[
 				'engine',
 				majorsHeading,
 			].map((x) => chalk.bold(chalk.gray(x))),
-			...Object.entries(latestEngineMajors)
-				.filter(([engine]) => selectedEngines.includes(engine))
-				.map(([
-					engine,
-					{ root, graph },
-				]) => [
-					chalk.blue(engine),
-					wrapCommaSeparated(intersect([root, graph]), majorsHeading.length),
-				]),
+			...Object.entries(latestEngineMajors).map(([
+				engine,
+				{ root, graph },
+			]) => [
+				chalk.blue(engine),
+				wrapCommaSeparated(intersect([root, graph]), majorsHeading.length),
+			]),
 		]),
 		table([
 			[
@@ -283,12 +334,16 @@ Promise.all([
 	const { valids: graphValids, ranges: graphDisplayRanges } = graphRanges;
 	const pEngines = checkEngines(selectedEngines, rootEngines, rootValids, graphValids, graphDisplayRanges, save);
 
-	const pCurrent = current ? checkCurrent(selectedEngines, rootValids, graphValids) : { output: [] };
+	const pCurrent = current ? checkCurrent(selectedEngines, rootValids, graphValids) : { output: [] as string[] };
 
 	// print out successes first
 	const results = await allSettled([pSummary, pEngines, pCurrent]);
-	const fulfilleds = results.filter((result) => result.status === 'fulfilled');
-	const rejecteds = results.filter((result) => result.status === 'rejected');
+	type resultType = typeof pSummary | typeof pEngines | typeof pCurrent;
+	type ResultValue = PromiseResolution<Await<resultType>>;
+	type ResultReason = PromiseRejection<Await<resultType>> & { reason: { code: typeof EXITS[keyof typeof EXITS] } };
+	const fulfilleds = results.filter((result): result is ResultValue => result.status === 'fulfilled');
+	const rejecteds = results.filter((result): result is ResultReason => result.status === 'rejected');
+
 	fulfilleds.forEach(({ value: { output } }) => {
 		output.forEach((line) => {
 			console.log(line);
@@ -308,23 +363,22 @@ Promise.all([
 		if (!output) {
 			throw reason;
 		}
-
 		if (save && doSave) {
 			doSave(pkg.data);
 			try {
 				await pkg.save();
 			} catch {
-				process.exitCode |= EXITS.SAVE;
+				process.exitCode! |= EXITS.SAVE;
 			}
 		} else {
-			process.exitCode |= code;
+			process.exitCode! |= code;
 		}
+
 		output.forEach((line) => {
 			console.error(line);
 		});
 	}, Promise.resolve());
 }).catch((e) => {
-	console.error((e && e.stack) || e);
-	process.exitCode |= EXITS.ERROR;
+	console.error(e?.stack || e);
+	process.exitCode! |= EXITS.ERROR;
 });
-// # sourceMappingURL=ls-engines.js.map
