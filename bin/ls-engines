@@ -248,7 +248,7 @@ Promise.all([pAllVersions, graphRanges, pPackage]).then(async ([allVersions, gra
 	]);
 	const graphValids = graph.length > 0 ? intersect(graphAllowed.map(([, vs]) => vs)) : allVersions.node;
 	const validMajorRanges = graph.length > 0 ? graphValids.reduceRight((prev, v) => {
-		prev = [].concat(prev); // eslint-disable-line no-param-reassign
+		prev = [].concat(prev);
 		return Semver.satisfies(v, caret(prev[prev.length - 1])) ? prev : prev.concat(v);
 	}).map(caret) : ['*'];
 	const validRange = new Semver.Range(validMajorRanges.join(' || '));
@@ -298,7 +298,7 @@ Promise.all([pAllVersions, graphRanges, pPackage]).then(async ([allVersions, gra
 			try {
 				await pkg.save();
 			} catch {
-				process.exitCode |= EXITS.SAVE; // eslint-disable-line require-atomic-updates
+				process.exitCode |= EXITS.SAVE;
 			}
 		} else {
 			process.exitCode |= code;

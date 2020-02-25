@@ -5,7 +5,7 @@
 	"bin": "./bin/ls-engines",
 	"exports": {},
 	"scripts": {
-		"lint": "eslint .",
+		"lint": "eslint . bin/*",
 		"pretest": "npm run lint",
 		"tests-only": "tape test",
 		"test": "npm run tests-only",
