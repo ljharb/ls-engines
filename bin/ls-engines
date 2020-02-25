@@ -95,6 +95,10 @@ function caret(ver) {
 	return '^' + ver.replace(/^v/g, '');
 }
 
+const pAllVersions = getNodeVersions().then((nodeVersions) => ({
+	node: nodeVersions,
+}));
+
 async function checkCurrent(rootValids, graphValids) {
 	let anyInvalid = false;
 	const rows = await Promise.all(selectedEngines.map(async (engine) => {
@@ -214,15 +218,15 @@ async function checkEngines(rootNode, rootValids, graphValids, displayRange, sho
 	};
 }
 
-Promise.all([getNodeVersions(), graphRanges, pPackage]).then(async ([nodeVersions, graph, pkg]) => {
+Promise.all([pAllVersions, graphRanges, pPackage]).then(async ([allVersions, graph, pkg]) => {
 	const rootNode = (pkg.data.engines && pkg.data.engines.node) || '*';
 
-	const rootValids = nodeVersions.filter((v) => Semver.satisfies(v, rootNode));
+	const rootValids = allVersions.node.filter((v) => Semver.satisfies(v, rootNode));
 	const graphAllowed = graph.map(([n, r]) => [
 		n,
-		nodeVersions.filter((v) => Semver.satisfies(v, r)),
+		allVersions.node.filter((v) => Semver.satisfies(v, r)),
 	]);
-	const graphValids = graph.length > 0 ? intersect(graphAllowed.map(([, vs]) => vs)) : nodeVersions;
+	const graphValids = graph.length > 0 ? intersect(graphAllowed.map(([, vs]) => vs)) : allVersions.node;
 	const validMajorRanges = graph.length > 0 ? graphValids.reduceRight((prev, v) => {
 		prev = [].concat(prev); // eslint-disable-line no-param-reassign
 		return Semver.satisfies(v, caret(prev[prev.length - 1])) ? prev : prev.concat(v);
@@ -235,7 +239,7 @@ Promise.all([getNodeVersions(), graphRanges, pPackage]).then(async ([nodeVersion
 	const displayRange = validRange.raw && validRange.raw.replace(/(\.0)+( |$)/g, '$2').split(' ').reverse().join(' ');
 	if (validRange.raw) {
 		console.log(chalk.gray(`\nValid node version range: ${displayRange}`));
-		const versionsByMajor = nodeVersions.reduce((map, v) => {
+		const versionsByMajor = allVersions.node.reduce((map, v) => {
 			const major = Semver.major(v);
 			const key = major === 0 ? `${major}.${Semver.minor(v)}` : major;
 			if (!map[key]) {
