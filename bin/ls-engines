@@ -281,8 +281,18 @@ Promise.all([pAllVersions, graphRanges, pPackage]).then(async ([allVersions, gra
 	});
 
 	// print out failures last
-	await Promise.all(rejecteds.map(async ({ reason }) => {
+	await rejecteds.reduce(async (prev, error) => {
+		await prev;
+
+		if (!error || !error.reason) {
+			throw error;
+		}
+		const { reason } = error;
 		const { code, output, save: doSave } = reason;
+		if (!output) {
+			throw reason;
+		}
+
 		if (save && doSave) {
 			doSave(pkg.data);
 			try {
@@ -293,14 +303,11 @@ Promise.all([pAllVersions, graphRanges, pPackage]).then(async ([allVersions, gra
 		} else {
 			process.exitCode |= code;
 		}
-		if (!output) {
-			throw reason;
-		}
 		output.forEach((line) => {
 			console.error(line);
 		});
-	}));
+	}, Promise.resolve());
 }).catch((e) => {
-	console.error(e.stack);
+	console.error((e && e.stack) || e);
 	process.exitCode |= EXITS.ERROR;
 });
