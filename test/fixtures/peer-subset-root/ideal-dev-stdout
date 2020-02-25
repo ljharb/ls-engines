@@ -1,5 +1,5 @@
 `package.json` found, mode is “ideal”; building ideal tree from `package.json`...
 
-Valid node version range: ^18 || ^17 || ^16 || ^15 || ^14 || ^13 || ^12 || ^11 || ^10
+Valid node version range: >= 10
 
 Currently available latest releases of each valid node major version: <node versions for above semver range>

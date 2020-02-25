@@ -4,5 +4,5 @@ Conflicting dependencies: @ljharb/eslint-config, eslint, aud, ls-engines, @eslin
 
 If you want to narrow your support, you can run `ls-engines --save`, or manually add the following to your `package.json`:
 "engines": {
-  "node": "^16 || ^15 || ^14.13 || ^12.20"
+  "node": ">= 12.20"
 }

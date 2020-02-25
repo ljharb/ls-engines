@@ -1,5 +1,5 @@
 v1 lockfile found, mode is “virtual”; loading virtual tree from lockfile...
 
-Valid node version range: ^18 || ^17 || ^16 || ^15 || ^14 || ^13 || ^12 || ^11 || ^10 || ^9 || ^8 || ^7 || ^6 || ^5 || ^4
+Valid node version range: >= 4
 
 Currently available latest releases of each valid node major version: <node versions for above semver range>
