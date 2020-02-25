@@ -1,6 +1,6 @@
 `node_modules` found, mode is “actual”; loading tree from disk...
 
-Valid node version range: ^13 || ^12 || ^11 || ^10
+Valid node version range: >= 10
 
 Currently available latest releases of each valid node major version: <node versions for above semver range>
 
