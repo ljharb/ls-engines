@@ -11,6 +11,7 @@ const allSettled = require('promise.allsettled');
 const jsonFile = require('json-file-plus');
 
 const EXITS = require('../exit-codes');
+const table = require('../table');
 
 const FALSE = Object(false);
 const TRUE = Object(true);
@@ -74,6 +75,12 @@ const { current, dev, mode, production, save } = normalize(argv);
 const getTree = require('../get-tree');
 const getNodeVersions = require('../get-node-versions');
 
+const selectedEngines = ['node'];
+
+const currentVersions = {
+	node: process.version,
+};
+
 const pPackage = jsonFile(path.join(process.cwd(), 'package.json'));
 
 const graphRanges = getTree(mode, { dev, production }).then(async (tree) => {
@@ -90,17 +97,42 @@ function caret(ver) {
 }
 
 async function checkCurrent(rootValids, graphValids) {
-	const currentValid = rootValids.concat(graphValids).includes(process.version);
+	let anyInvalid = false;
+	const rows = await Promise.all(selectedEngines.map(async (engine) => {
+		const currentVersion = await currentVersions[engine];
+		const rootValid = rootValids[engine].includes(currentVersion);
+		const graphValid = graphValids[engine].includes(currentVersion);
+		if (!rootValid || !graphValid) {
+			anyInvalid = true;
+		}
+		return [
+			chalk.blue(engine),
+			`${chalk.blue(chalk.bold(currentVersion))}`,
+			`${chalk.bold(rootValid ? chalk.greenBright('yes') : chalk.red('no'))}!`,
+			`${chalk.bold(graphValids ? chalk.greenBright('yes') : chalk.red('no'))}!`,
+		];
+	}));
+	const output = [
+		'',
+		table([
+			[
+				'engine',
+				'current version',
+				'valid (package)',
+				'valid (dependency graph)',
+			].map((x) => chalk.bold(chalk.gray(x))),
+			...rows,
+		]).trim(),
+	];
 
-	const message = `\nCurrent node version, ${chalk.blue(chalk.bold(process.version))}, is ${chalk.bold(currentValid ? chalk.greenBright('valid') : chalk.red('invalid'))}!`;
-	if (currentValid) {
-		return {
-			output: [message],
+	if (anyInvalid) {
+		throw {
+			code: EXITS.CURRENT,
+			output,
 		};
 	}
-	throw {
-		code: EXITS.CURRENT,
-		output: [message],
+	return {
+		output,
 	};
 }
 
@@ -214,18 +246,22 @@ Promise.all([getNodeVersions(), graphRanges, pPackage]).then(async ([nodeVersion
 
 	const pEngines = checkEngines(rootNode, rootValids, graphValids, displayRange, save);
 
-	const pCurrent = current ? checkCurrent(rootValids, graphValids) : { output: [] };
+	// TODO: refactor to make rootValids/graphValids an object of engines
+	const pCurrent = current ? checkCurrent({ node: rootValids }, { node: graphValids }) : { output: [] };
 
 	// print out successes first
 	const results = await allSettled([pEngines, pCurrent]);
-	results.filter(({ status }) => status === 'fulfilled').forEach(({ value: { output } }) => {
+	const fulfilleds = results.filter(({ status }) => status === 'fulfilled');
+	const rejecteds = results.filter(({ status }) => status === 'rejected');
+
+	fulfilleds.forEach(({ value: { output } }) => {
 		output.forEach((line) => {
 			console.log(line);
 		});
 	});
 
 	// print out failures last
-	results.filter(({ status }) => status === 'rejected').forEach(async ({ reason: { code, output, save: doSave } }) => {
+	rejecteds.forEach(async ({ reason: { code, output, save: doSave } }) => {
 		if (save && doSave) {
 			doSave(pkg.data);
 			try {
@@ -236,7 +272,6 @@ Promise.all([getNodeVersions(), graphRanges, pPackage]).then(async ([nodeVersion
 		} else {
 			process.exitCode |= code;
 		}
-
 		output.forEach((line) => {
 			console.error(line);
 		});

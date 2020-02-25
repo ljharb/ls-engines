@@ -4,4 +4,8 @@ Valid node version range: *
 
 Currently available latest releases of each valid node major version: <node versions for above semver range>
 
-Current node version, v${process.versions.node}, is valid!
+┌────────┬─────────────────┬─────────────────┬──────────────────────────┐
+│ engine │ current version │ valid (package) │ valid (dependency graph) │
+├────────┼─────────────────┼─────────────────┼──────────────────────────┤
+│ node   │ ${process.version} │ yes!            │ yes!                     │
+└────────┴─────────────────┴─────────────────┴──────────────────────────┘

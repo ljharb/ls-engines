@@ -11,4 +11,8 @@ If you want to widen your support, you can run `ls-engines --save`, or manually 
   "node": "*"
 }
 
-Current node version, v${process.versions.node}, is valid!
+┌────────┬─────────────────┬─────────────────┬──────────────────────────┐
+│ engine │ current version │ valid (package) │ valid (dependency graph) │
+├────────┼─────────────────┼─────────────────┼──────────────────────────┤
+│ node   │ ${process.version} │ yes!            │ yes!                     │
+└────────┴─────────────────┴─────────────────┴──────────────────────────┘

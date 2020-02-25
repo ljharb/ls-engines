@@ -3,5 +3,3 @@
 Valid node version range: ^13 || ^12 || ^11 || ^10
 
 Currently available latest releases of each valid node major version: <node versions for above semver range>
-
-Current node version, v${process.versions.node}, is valid!

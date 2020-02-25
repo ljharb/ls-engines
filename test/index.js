@@ -13,9 +13,9 @@ const fixtures = fs.readdirSync(fixturePath).filter((x) => !process.env.FIXTURE 
 
 function normalizeNodeVersion(output) {
 	return output && output.replace(
-		`Current node version, v${process.versions.node}`,
+		new RegExp(`^(│\\s+node\\s+│\\s+)${process.version}\\s+(│)`, 'm'),
 		// eslint-disable-next-line no-template-curly-in-string
-		'Current node version, v${process.versions.node}',
+		'$1${process.version} $2',
 	).replace(
 		/Currently available latest releases of each valid node major version: [^\n]+/,
 		'Currently available latest releases of each valid node major version: <node versions for above semver range>',
