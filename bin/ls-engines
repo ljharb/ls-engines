@@ -13,6 +13,7 @@ const fromEntries = require('object.fromentries');
 
 const EXITS = require('../exit-codes');
 const table = require('../table');
+const getLatestMajors = require('../getLatestMajors');
 
 const FALSE = Object(false);
 const TRUE = Object(true);
@@ -312,26 +313,6 @@ const pGraphRanges = pGraphEntries.then(async (graphEntries) => {
 		valids,
 	};
 });
-
-function isString(x) {
-	return typeof x === 'string';
-}
-
-function getLatestMajors(versions, validRange = new Semver.Range('*')) {
-	const versionsByMajor = versions.reduce((map, v) => {
-		const major = Semver.major(v);
-		const key = major === 0 ? `${major}.${Semver.minor(v)}` : String(major);
-		if (!map[key]) {
-			map[key] = [];
-		}
-		map[key].push(v);
-		return map;
-	}, {});
-	return Object.values(versionsByMajor)
-		.map((vs) => Semver.maxSatisfying(vs, validRange))
-		.filter(isString)
-		.sort((a, b) => -Semver.compare(a, b));
-}
 
 async function getLatestEngineMajors(
 	allVersions,
