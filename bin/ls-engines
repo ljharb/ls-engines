@@ -365,14 +365,8 @@ function wrapCommaSeparated(array, limit) {
 		return str;
 	}
 
-	return array.reduce((lines, version) => {
-		const lastLine = lines.pop();
-		const possibleLine = lastLine ? lastLine + ', ' + version : version;
-		if (possibleLine.length <= limit) {
-			return lines.concat(possibleLine);
-		}
-		return lines.concat(lastLine, version);
-	}, []).map((x) => x.split(',').map((y) => chalk.blue(y)).join(',')).join(',\n');
+	const re = new RegExp(`.{1,${limit}}(?<=(?:,|$)) `, 'g');
+	return str.match(re).map((x) => x).join('\n');
 }
 
 const majorsHeading = 'Currently available latest release of each valid major version:';
