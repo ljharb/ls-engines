@@ -1,9 +1,10 @@
 v1 lockfile found, mode is “virtual”; loading virtual tree from lockfile...
-┌────────┬─────────────────────────────────────────────────────────────────────┐
-│ engine │ Currently available latest release of each valid major version:     │
-├────────┼─────────────────────────────────────────────────────────────────────┤
-│ node   │ <node versions for below semver range>                              │
-└────────┴─────────────────────────────────────────────────────────────────────┘
+┌────────┬─────────────────────────────────────────────────────────────────┐
+│ engine │ Currently available latest release of each valid major version: │
+├────────┼─────────────────────────────────────────────────────────────────┤
+│ node   │ <node versions for below semver range>                          │
+│        │ <node versions for below semver range>                          │
+└────────┴─────────────────────────────────────────────────────────────────┘
 
 ┌───────────────────┬───────────────────────────┐
 │ package engines:  │ dependency graph engines: │

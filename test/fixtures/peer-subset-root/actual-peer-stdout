@@ -1,9 +1,10 @@
 `node_modules` found, mode is “actual”; loading tree from disk...
-┌────────┬─────────────────────────────────────────────────────────────────────────────────────────┐
-│ engine │ Currently available latest release of each valid major version:                         │
-├────────┼─────────────────────────────────────────────────────────────────────────────────────────┤
-│ node   │ <node versions for below semver range>                                                  │
-└────────┴─────────────────────────────────────────────────────────────────────────────────────────┘
+┌────────┬─────────────────────────────────────────────────────────────────┐
+│ engine │ Currently available latest release of each valid major version: │
+├────────┼─────────────────────────────────────────────────────────────────┤
+│ node   │ <node versions for below semver range>                          │
+│        │ <node versions for below semver range>                          │
+└────────┴─────────────────────────────────────────────────────────────────┘
 
 ┌──────────────────┬───────────────────────────┐
 │ package engines: │ dependency graph engines: │

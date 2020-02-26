@@ -1,9 +1,10 @@
 `package.json` found, mode is “ideal”; building ideal tree from `package.json`...
-┌────────┬─────────────────────────────────────────────────────────────────────┐
-│ engine │ Currently available latest release of each valid major version:     │
-├────────┼─────────────────────────────────────────────────────────────────────┤
-│ node   │ <node versions for below semver range>                              │
-└────────┴─────────────────────────────────────────────────────────────────────┘
+┌────────┬─────────────────────────────────────────────────────────────────┐
+│ engine │ Currently available latest release of each valid major version: │
+├────────┼─────────────────────────────────────────────────────────────────┤
+│ node   │ <node versions for below semver range>                          │
+│        │ <node versions for below semver range>                          │
+└────────┴─────────────────────────────────────────────────────────────────┘
 
 ┌───────────────────┬───────────────────────────┐
 │ package engines:  │ dependency graph engines: │

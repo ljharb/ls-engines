@@ -20,6 +20,7 @@ const fixtures = readdirSync(fixturePath)
 const npmVersion = String(execSync('npm --version'));
 const isNPM7 = semver.satisfies(npmVersion, '>= 7');
 
+const replacement = '<node versions for below semver range>';
 function normalizeNodeVersion(output) {
 	return output && output.replace(
 		new RegExp(`^(│\\s+node\\s+│\\s+)${process.version}\\s+(│)`, 'm'),
@@ -38,8 +39,8 @@ function normalizeNodeVersion(output) {
 		isNPM7 ? /^Lockfile/ : /^v1 lockfile/,
 		'v1 lockfile',
 	).replace(
-		/^(?<before>│\s+node\s+│\s+)(?<versions>[^│]+)(?<after>\s+│)$/m,
-		(_, __, ___, ____, _____, ______, { before, versions, after }) => `${before}${'<node versions for below semver range>'.padEnd(versions.length, ' ')}${after}`,
+		/(?<before>│ )(?<versions>(?:v[^, │]+(?:, )?)+ *)(?<after>│)$/gm,
+		(_, __, ___, ____, _____, ______, { before, versions, after }) => `${before}${replacement.padEnd(versions.length - 1, ' ')} ${after}`,
 	);
 }
 
