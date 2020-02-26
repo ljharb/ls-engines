@@ -37,6 +37,9 @@ function normalizeNodeVersion(output) {
 	).replace(
 		isNPM7 ? /^Lockfile/ : /^v1 lockfile/,
 		'v1 lockfile',
+	).replace(
+		/^(?<before>│\s+node\s+│\s+)(?<versions>[^│]+)(?<after>\s+│)$/m,
+		(_, __, ___, ____, _____, ______, { before, versions, after }) => `${before}${'<node versions for below semver range>'.padEnd(versions.length, ' ')}${after}`,
 	);
 }
 

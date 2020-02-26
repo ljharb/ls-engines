@@ -1,12 +1,22 @@
 `package.json` found, mode is “ideal”; building ideal tree from `package.json`...
+┌────────┬────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ engine │ Currently available latest release of each valid major version:                                                    │
+├────────┼────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ node   │ <node versions for below semver range>                                                                             │
+└────────┴────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 
-Valid node version range: >= 0.4
+┌──────────────────┬───────────────────────────┐
+│ package engines: │ dependency graph engines: │
+├──────────────────┼───────────────────────────┤
+│ "engines": {     │ "engines": {              │
+│   "node": "^7"   │   "node": ">= 7"          │
+│ }                │ }                         │
+└──────────────────┴───────────────────────────┘
 
-Currently available latest releases of each valid node major version: <node versions for above semver range>
 
 Your “engines” field allows fewer node versions than your dependency graph does.
 
 If you want to widen your support, you can run `ls-engines --save`, or manually add the following to your `package.json`:
 "engines": {
-  "node": ">= 0.4"
+  "node": ">= 7"
 }

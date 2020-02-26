@@ -1,15 +1,20 @@
 `node_modules` found, mode is “actual”; loading tree from disk...
+┌────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ engine │ Currently available latest release of each valid major version:                                           │
+├────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ node   │ <node versions for below semver range>                                                                    │
+└────────┴───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 
-Valid node version range: *
+┌──────────────────┬───────────────────────────┐
+│ package engines: │ dependency graph engines: │
+├──────────────────┼───────────────────────────┤
+│ "engines": {     │ "engines": {              │
+│   "node": ">= 8" │   "node": ">= 8"          │
+│ }                │ }                         │
+└──────────────────┴───────────────────────────┘
 
-Currently available latest releases of each valid node major version: <node versions for above semver range>
 
-Your “engines” field allows fewer node versions than your dependency graph does.
-
-If you want to widen your support, you can run `ls-engines --save`, or manually add the following to your `package.json`:
-"engines": {
-  "node": "*"
-}
+Your “engines” field exactly matches your dependency graph’s requirements!
 
 ┌────────┬─────────────────┬─────────────────┬──────────────────────────┐
 │ engine │ current version │ valid (package) │ valid (dependency graph) │

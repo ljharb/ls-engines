@@ -10,6 +10,7 @@
 	"rules": {
 		"array-bracket-newline": 0,
 		"func-style": 1,
+		"id-length": 0,
 		"max-len": 0,
 		"max-lines-per-function": [2, 100],
 		"max-lines": 0,

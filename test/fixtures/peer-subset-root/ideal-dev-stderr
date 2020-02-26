@@ -1,6 +1,17 @@
 Your “engines” field allows more node versions than your dependency graph does.
 
-Conflicting dependencies: npm-package-arg, hosted-git-info, semver, lru-cache
+┌──────────────────────────┬──────────────┐
+│ Conflicting dependencies │ engines.node │
+├──────────────────────────┼──────────────┤
+│ npm-package-arg          │ >=10         │
+├──────────────────────────┼──────────────┤
+│ hosted-git-info          │ >=10         │
+├──────────────────────────┼──────────────┤
+│ semver                   │ >=10         │
+├──────────────────────────┼──────────────┤
+│ lru-cache                │ >=10         │
+└──────────────────────────┴──────────────┘
+
 
 If you want to narrow your support, you can run `ls-engines --save`, or manually add the following to your `package.json`:
 "engines": {

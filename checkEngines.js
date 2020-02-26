@@ -3,6 +3,7 @@
 const colors = require('colors/safe');
 
 const EXITS = require('./exit-codes');
+const table = require('./table');
 
 function isSubset(inner, outer) {
 	const outerS = new Set(outer);
@@ -52,9 +53,9 @@ module.exports = async function checkEngines(
 			same.push(engine);
 			conflicting[engine] = [];
 		} else {
-			const packageInvalids = graphAllowed[engine]
-				.filter(([, vs]) => !rootValids[engine].every((v) => vs.includes(v)))
-				.map(([name, vs]) => [name, rootValids[engine].filter((v) => !vs.includes(v))]);
+			const packageInvalids = graphAllowed
+				.filter(([, , { [engine]: vs }]) => !rootValids[engine].every((v) => vs.includes(v)))
+				.map(([name, engines, { [engine]: vs }]) => [name, engines[engine], rootValids[engine].filter((v) => !vs.includes(v))]);
 			conflicting[engine] = packageInvalids;
 
 			if (graphIsSubsetOfRoot) {
@@ -77,11 +78,16 @@ module.exports = async function checkEngines(
 			? `\n\`${colors.gray('ls-engines')}\` will automatically ${superset.length > 0 ? 'narrow' : 'widen'} your support, per the \`${colors.gray('--save')}\` option, by adding the following to your \`${colors.gray('package.json')}\`:`
 			: `\nIf you want to ${superset.length > 0 ? 'narrow' : 'widen'} your support, you can run \`${colors.bold(colors.gray('ls-engines --save'))}\`, or manually add the following to your \`${colors.gray('package.json')}\`:`;
 
+		const conflictingTable = conflicting.node.length > 0 ? `\n${table([].concat(
+			[['Conflicting dependencies', 'engines.node'].map((x) => colors.bold(colors.gray(x)))],
+			conflicting.node.map(([name, engines]) => [name, engines].map((x) => colors.gray(x))),
+		))}` : [];
+
 		const result = {
 			code: superset.length > 0 ? EXITS.INEXACT : EXITS.SUCCESS,
 			output: [].concat(
 				colors.bold(colors[superset.length > 0 ? 'yellow' : 'green'](`\nYour “engines” field allows ${superset.length > 0 ? 'more' : 'fewer'} node versions than your dependency graph does.`)),
-				conflicting.node.length > 0 ? `\n${colors.gray(`Conflicting dependencies: ${conflicting.node.map(([name]) => name).join(', ')}`)}` : [],
+				conflictingTable,
 				expandMessage,
 				colors.blue(`"engines": ${JSON.stringify({ node: displayRange }, null, 2)}`),
 			),
