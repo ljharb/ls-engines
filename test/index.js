@@ -11,14 +11,15 @@ const binPath = path.join(__dirname, '..', 'bin', 'ls-engines');
 const fixturePath = path.join(__dirname, 'fixtures');
 const fixtures = fs.readdirSync(fixturePath).filter((x) => !process.env.FIXTURE || process.env.FIXTURE === x);
 
+const replacement = '<node versions for below semver range>';
 function normalizeNodeVersion(output) {
 	return output && output.replace(
 		new RegExp(`^(│\\s+node\\s+│\\s+)${process.version}\\s+(│)`, 'm'),
 		// eslint-disable-next-line no-template-curly-in-string
 		'$1${process.version} $2',
 	).replace(
-		/^(│\s+node\s+│\s+)([^│]+)(\s+│)$/m,
-		(_, before, versions, after) => `${before}${'<node versions for below semver range>'.padEnd(versions.length, ' ')}${after}`,
+		/(│ )((?:v[^, │]+(?:, )?)+ *)(│)$/gm,
+		(_, before, versions, after) => `${before}${replacement.padEnd(versions.length - 1, ' ')} ${after}`,
 	);
 }
 

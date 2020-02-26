@@ -359,6 +359,22 @@ const pLatestEngineMajors = Promise.all([
 	allVersions,
 ]) => getLatestEngineMajors(allVersions, rootRanges, graphRanges));
 
+function wrapCommaSeparated(array, limit) {
+	const str = array.join(', ');
+	if (str.length <= limit) {
+		return str;
+	}
+
+	return array.reduce((lines, version) => {
+		const lastLine = lines.pop();
+		const possibleLine = lastLine ? lastLine + ', ' + version : version;
+		if (possibleLine.length <= limit) {
+			return lines.concat(possibleLine);
+		}
+		return lines.concat(lastLine, version);
+	}, []).map((x) => x.split(',').map((y) => chalk.blue(y)).join(',')).join(',\n');
+}
+
 const majorsHeading = 'Currently available latest release of each valid major version:';
 
 const pSummary = Promise.all([
@@ -381,7 +397,7 @@ const pSummary = Promise.all([
 				{ root, graph },
 			]) => [
 				chalk.blue(engine),
-				intersect([root, graph]).join(', '),
+				wrapCommaSeparated(intersect([root, graph]), majorsHeading.length),
 			]),
 		]),
 		table([
