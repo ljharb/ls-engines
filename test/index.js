@@ -17,8 +17,8 @@ function normalizeNodeVersion(output) {
 		// eslint-disable-next-line no-template-curly-in-string
 		'$1${process.version} $2',
 	).replace(
-		/Currently available latest releases of each valid node major version: [^\n]+/,
-		'Currently available latest releases of each valid node major version: <node versions for above semver range>',
+		/^(│\s+node\s+│\s+)([^│]+)(\s+│)$/m,
+		(_, before, versions, after) => `${before}${'<node versions for below semver range>'.padEnd(versions.length, ' ')}${after}`,
 	);
 }
 
