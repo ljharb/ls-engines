@@ -1,8 +1,18 @@
 `node_modules` found, mode is “actual”; loading tree from disk...
+┌────────┬────────────────────────────────────────────────────────────────────────────────────────────┐
+│ engine │ Currently available latest release of each valid major version:                            │
+├────────┼────────────────────────────────────────────────────────────────────────────────────────────┤
+│ node   │ <node versions for below semver range>                                                     │
+└────────┴────────────────────────────────────────────────────────────────────────────────────────────┘
 
-Valid node version range: >= 6
+┌──────────────────┬───────────────────────────┐
+│ package engines: │ dependency graph engines: │
+├──────────────────┼───────────────────────────┤
+│ "engines": {     │ "engines": {              │
+│   "node": "*"    │   "node": ">= 4"          │
+│ }                │ }                         │
+└──────────────────┴───────────────────────────┘
 
-Currently available latest releases of each valid node major version: <node versions for above semver range>
 
 ┌────────┬─────────────────┬─────────────────┬──────────────────────────┐
 │ engine │ current version │ valid (package) │ valid (dependency graph) │
