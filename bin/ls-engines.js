@@ -72,9 +72,10 @@ function normalize(args) {
     return { ...args, dev, production };
 }
 const { current, dev, mode, production, save } = normalize(argv);
-const selectedEngines = ['node' /*, 'npm'*/];
+const selectedEngines = ['node', 'npm'];
 const getTree = require('../get-tree');
 const getNodeVersions = require('../get-node-versions');
+const getNPMVersions = require('../get-npm-versions');
 const pPackage = jsonFile(path.join(process.cwd(), 'package.json'));
 const pGraphEntries = getTree(mode, { dev, production }).then(async (tree) => {
     const nodesWithEngines = tree.inventory.filter(({ package: { _inBundle, engines, } }) => !_inBundle && engines && engines.node);
@@ -84,8 +85,12 @@ const pGraphEntries = getTree(mode, { dev, production }).then(async (tree) => {
 function caret(ver) {
     return '^' + ver.replace(/^v/g, '');
 }
-const pAllVersions = getNodeVersions().then((nodeVersions) => ({
+const pAllVersions = Promise.all([
+    getNodeVersions(),
+    getNPMVersions(),
+]).then(([nodeVersions, npmVersions,]) => ({
     node: nodeVersions,
+    npm: npmVersions,
 }));
 async function validVersionsForEngines(engines) {
     const allVersions = await pAllVersions;
@@ -180,6 +185,7 @@ function wrapCommaSeparated(array, limit) {
 }
 const majorsHeading = 'Currently available latest release of each valid major version:';
 function normalizeEngines(engines) {
+    const entries = Object.entries(engines).map(([engine, version]) => [engine, version || '*']);
     const entries = Object.entries(engines).map(([engine, version]) => [engine, version || '*']);
     return fromEntries(entries);
 }

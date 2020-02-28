@@ -79,7 +79,7 @@ function normalize(args: typeof argv) {
 }
 const { current, dev, mode, production, save } = normalize(argv);
 
-const selectedEngines = ['node'/*, 'npm'*/] as ('node' | 'npm')[];
+const selectedEngines = ['node', 'npm'] as ('node' | 'npm')[];
 
 export type Engines = typeof selectedEngines[number];
 
@@ -140,6 +140,7 @@ const getTree: (mode: string, options?: {
 }) => Promise<Tree> = require('../get-tree');
 
 const getNodeVersions: import('../get-node-versions') = require('../get-node-versions');
+const getNPMVersions: import('../get-npm-versions') = require('../get-npm-versions');
 
 const pPackage = jsonFile(path.join(process.cwd(), 'package.json'));
 
@@ -161,8 +162,15 @@ function caret(ver: string) {
 	return '^' + ver.replace(/^v/g, '');
 }
 
-const pAllVersions = getNodeVersions().then((nodeVersions: EngineVersions[Engines]): EngineVersions => ({
+const pAllVersions = Promise.all([
+	getNodeVersions(),
+	getNPMVersions(),
+]).then(([
+	nodeVersions,
+	npmVersions,
+]): EngineVersions => ({
 	node: nodeVersions,
+	npm: npmVersions,
 }));
 
 async function validVersionsForEngines(engines: EngineStrings) {
@@ -281,8 +289,16 @@ function wrapCommaSeparated(array: string[], limit: number) {
 
 const majorsHeading = 'Currently available latest release of each valid major version:';
 
+<<<<<<< HEAD
 function normalizeEngines(engines: EngineStrings): EngineStrings {
+<<<<<<< HEAD
 	const entries = Object.entries(engines).map(([engine, version]) => [engine, version || '*'] as [Engines, string]);
+=======
+=======
+function normalizeEngines(engines: EngineStrings) {
+>>>>>>> cda89d1... npm
+	const entries = Object.entries(engines).map(([engine, version]) => [engine, version || '*']);
+>>>>>>> db2acf5... npm
 	return fromEntries(entries);
 }
 
