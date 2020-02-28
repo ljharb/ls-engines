@@ -13,7 +13,7 @@ const fromEntries = require('object.fromentries');
 
 const EXITS = require('../exit-codes');
 const table = require('../table');
-const getLatestMajors = require('../getLatestMajors');
+const getLatestEngineMajors = require('../getLatestEngineMajors');
 const checkCurrent = require('../checkCurrent');
 
 const FALSE = Object(false);
@@ -271,22 +271,6 @@ const pGraphRanges = pGraphEntries.then(async (graphEntries) => {
 	};
 });
 
-async function getLatestEngineMajors(
-	allVersions,
-	rootRanges,
-	graphRanges,
-) {
-	const majorEntries = await Promise.all(selectedEngines.map(async (engine) => {
-		const { validRange: rootRange } = rootRanges[engine];
-		const { validRange: graphRange } = graphRanges[engine];
-		const versions = allVersions[engine];
-		const rootMajors = getLatestMajors(versions, rootRange);
-		const graphMajors = getLatestMajors(versions, graphRange);
-		return [engine, { graph: graphMajors, root: rootMajors }];
-	}));
-	return fromEntries(majorEntries);
-}
-
 const pLatestEngineMajors = Promise.all([
 	pRootRanges,
 	pGraphRanges,
@@ -295,7 +279,7 @@ const pLatestEngineMajors = Promise.all([
 	{ ranges: rootRanges },
 	{ ranges: graphRanges },
 	allVersions,
-]) => getLatestEngineMajors(allVersions, rootRanges, graphRanges));
+]) => getLatestEngineMajors(selectedEngines, allVersions, rootRanges, graphRanges));
 
 function wrapCommaSeparated(array, limit) {
 	const str = array.join(', ');
