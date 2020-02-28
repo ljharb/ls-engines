@@ -14,6 +14,7 @@ const fromEntries = require('object.fromentries');
 const EXITS = require('../exit-codes');
 const table = require('../table');
 const getLatestMajors = require('../getLatestMajors');
+const checkCurrent = require('../checkCurrent');
 
 const FALSE = Object(false);
 const TRUE = Object(true);
@@ -78,10 +79,6 @@ const getNodeVersions = require('../get-node-versions');
 
 const selectedEngines = ['node'];
 
-const currentVersions = {
-	node: process.version,
-};
-
 const pPackage = jsonFile(path.join(process.cwd(), 'package.json'));
 
 const pGraphEntries = getTree(mode, { dev, production }).then(async (tree) => {
@@ -105,46 +102,6 @@ function caret(ver) {
 const pAllVersions = getNodeVersions().then((nodeVersions) => ({
 	node: nodeVersions,
 }));
-
-async function checkCurrent(rootValids, graphValids) {
-	let anyInvalid = false;
-	const rows = await Promise.all(selectedEngines.map(async (engine) => {
-		const currentVersion = await currentVersions[engine];
-		const rootValid = rootValids[engine].includes(currentVersion);
-		const graphValid = graphValids[engine].includes(currentVersion);
-		if (!rootValid || !graphValid) {
-			anyInvalid = true;
-		}
-		return [
-			chalk.blue(engine),
-			`${chalk.blue(chalk.bold(currentVersion))}`,
-			`${chalk.bold(rootValid ? chalk.greenBright('yes') : chalk.red('no'))}!`,
-			`${chalk.bold(graphValids ? chalk.greenBright('yes') : chalk.red('no'))}!`,
-		];
-	}));
-	const output = [
-		'',
-		table([
-			[
-				'engine',
-				'current version',
-				'valid (package)',
-				'valid (dependency graph)',
-			].map((x) => chalk.bold(chalk.gray(x))),
-			...rows,
-		]).trim(),
-	];
-
-	if (anyInvalid) {
-		throw {
-			code: EXITS.CURRENT,
-			output,
-		};
-	}
-	return {
-		output,
-	};
-}
 
 function isSubset(inner, outer) {
 	const outerS = new Set(outer);
@@ -400,7 +357,7 @@ Promise.all([
 	const { valids: graphValids, ranges: { node: { displayRange } } } = graphRanges;
 	const pEngines = checkEngines(rootEngines.node, rootValids, graphValids, displayRange, save);
 
-	const pCurrent = current ? checkCurrent(rootValids, graphValids) : { output: [] };
+	const pCurrent = current ? checkCurrent(selectedEngines, rootValids, graphValids) : { output: [] };
 
 	// print out successes first
 	const results = await allSettled([pSummary, pEngines, pCurrent]);
