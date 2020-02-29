@@ -15,6 +15,7 @@ const EXITS = require('../exit-codes');
 const table = require('../table');
 const getLatestEngineMajors = require('../getLatestEngineMajors');
 const checkCurrent = require('../checkCurrent');
+const checkEngines = require('../checkEngines');
 
 const FALSE = Object(false);
 const TRUE = Object(true);
@@ -42,13 +43,14 @@ const { argv } = yargs
 	})
 	.option('current', {
 		default: true,
-		describe: 'check that the current node version matches your dependency graph’s requirements',
+		describe: 'check that the current engine version(s) matches your dependency graph’s requirements',
 		type: 'boolean',
 	})
 	.check(({ dev, production }) => {
 		if (typeof dev === 'boolean' && typeof production === 'boolean') {
 			// both arguments were explicitly passed
 			if (!dev && !production) {
+				// eslint-disable-next-line no-throw-literal
 				throw 'One of `--dev` and `--production` must be enabled.';
 			}
 		}
@@ -103,85 +105,6 @@ const pAllVersions = getNodeVersions().then((nodeVersions) => ({
 	node: nodeVersions,
 }));
 
-function isSubset(inner, outer) {
-	const outerS = new Set(outer);
-	return inner.every((item) => outerS.has(item));
-}
-
-async function checkEngines(rootNode, rootValids, graphValids, displayRange, shouldSave) {
-	const fixMessage = shouldSave
-		? `\n\`${chalk.gray('ls-engines')}\` will automatically fix this, per the \`${chalk.gray('--save')}\` option, by adding the following to your \`${chalk.gray('package.json')}\`:`
-		: `\nYou can fix this by running \`${chalk.bold(chalk.gray('ls-engines --save'))}\`, or by manually adding the following to your \`${chalk.gray('package.json')}\`:`;
-	/* eslint no-throw-literal: 0 */
-	if (rootNode === '*') {
-		throw {
-			code: EXITS.IMPLICIT,
-			output: [
-				chalk.bold(chalk.red('\nYour “engines” field is either missing, or set to `{ "node": "*" }`! Prefer explicitly setting a supported engine range.')),
-				fixMessage,
-				chalk.blue(`"engines": ${JSON.stringify({ node: displayRange }, null, 2)}`),
-			],
-			save(pkg) {
-				/* eslint no-param-reassign: 0 */
-				if (!pkg.engines) {
-					pkg.engines = {};
-				}
-				pkg.engines.node = displayRange;
-			},
-		};
-	}
-	const same = [];
-	const subset = [];
-	selectedEngines.forEach((engine) => {
-		if (rootValids[engine].length === graphValids[engine].length) {
-			same.push(engine);
-		} else if (isSubset(rootValids[engine], graphValids[engine])) {
-			subset.push(engine);
-		}
-	});
-	if (same.length === selectedEngines.length) {
-		return {
-			output: [
-				chalk.bold(chalk.green('\nYour “engines” field exactly matches your dependency graph’s requirements!')),
-			],
-		};
-	}
-	if (subset.length > 0) {
-		const expandMessage = shouldSave
-			? `\n\`${chalk.gray('ls-engines')}\` will automatically widen your support, per the \`${chalk.gray('--save')}\` option, by adding the following to your \`${chalk.gray('package.json')}\`:`
-			: `\nIf you want to widen your support, you can run \`${chalk.bold(chalk.gray('ls-engines --save'))}\`, or manually add the following to your \`${chalk.gray('package.json')}\`:`;
-		return {
-			output: [
-				chalk.bold(chalk.green('\nYour “engines” field allows fewer node versions than your dependency graph does.')),
-				expandMessage,
-				chalk.blue(`"engines": ${JSON.stringify({ node: displayRange }, null, 2)}`),
-			],
-			save(pkg) {
-				/* eslint no-param-reassign: 0 */
-				if (!pkg.engines) {
-					pkg.engines = {};
-				}
-				pkg.engines.node = displayRange;
-			},
-		};
-	}
-	throw {
-		code: EXITS.INEXACT,
-		output: [
-			chalk.red('\nYour “engines” field does not exactly match your dependency graph‘s requirements!'),
-			fixMessage,
-			chalk.blue(`"engines": ${JSON.stringify({ node: displayRange }, null, 2)}`),
-		],
-		save(pkg) {
-			/* eslint no-param-reassign: 0 */
-			if (!pkg.engines) {
-				pkg.engines = {};
-			}
-			pkg.engines.node = displayRange;
-		},
-	};
-}
-
 async function validVersionsForEngines(engines) {
 	const allVersions = await pAllVersions;
 	const entries = Object.entries(allVersions);
@@ -190,7 +113,7 @@ async function validVersionsForEngines(engines) {
 		versions,
 	]) => [
 		engine,
-		versions.filter((v) => Semver.satisfies(v, engines[engine])),
+		versions.filter((v) => Semver.satisfies(v, engines[engine] || '*')),
 	]));
 }
 
@@ -203,7 +126,7 @@ async function getGraphValids(graphEntries) {
 		const entries = Object.entries(engines);
 		entries.forEach(([engine, versions]) => {
 			if (!Array.isArray(mergedEngines[engine])) {
-				mergedEngines[engine] = [];
+				mergedEngines[engine] = []; // eslint-disable-line no-param-reassign
 			}
 			mergedEngines[engine].push(versions);
 		});
@@ -216,11 +139,12 @@ async function getGraphValids(graphEntries) {
 }
 
 const pRootRanges = pPackage.then(async (pkg) => {
-	const engines = {
-		node: '*',
-		...pkg.data.engines,
-	};
-	const rangeEntries = Object.entries(engines).map(([engine, v]) => [engine, new Semver.Range(v)]);
+	const engineEntries = selectedEngines.map((engine) => [
+		engine,
+		(pkg.data.engines && pkg.data.engines[engine]) || null,
+	]);
+	const engines = fromEntries(engineEntries);
+	const rangeEntries = engineEntries.map(([engine, v]) => [engine, new Semver.Range(v || '*')]);
 	const ranges = fromEntries(rangeEntries);
 	const valids = await validVersionsForEngines(engines);
 	return { engines, ranges, valids };
@@ -293,6 +217,11 @@ function wrapCommaSeparated(array, limit) {
 
 const majorsHeading = 'Currently available latest release of each valid major version:';
 
+function normalizeEngines(engines) {
+	const entries = Object.entries(engines).map(([engine, version]) => [engine, version || '*']);
+	return fromEntries(entries);
+}
+
 const pSummary = Promise.all([
 	pRootRanges,
 	pGraphRanges,
@@ -322,8 +251,8 @@ const pSummary = Promise.all([
 				'dependency graph engines:',
 			].map((x) => chalk.bold(chalk.gray(x))),
 			[
-				`"engines": ${JSON.stringify(rootEngines, null, 2)}`,
-				`"engines": ${JSON.stringify(graphEngines, null, 2)}`,
+				`"engines": ${JSON.stringify(normalizeEngines(rootEngines), null, 2)}`,
+				`"engines": ${JSON.stringify(normalizeEngines(graphEngines), null, 2)}`,
 			].map((x) => chalk.blue(x)),
 		]),
 	],
@@ -338,8 +267,8 @@ Promise.all([
 	pkg,
 	{ engines: rootEngines, valids: rootValids },
 ]) => {
-	const { valids: graphValids, ranges: { node: { displayRange } } } = graphRanges;
-	const pEngines = checkEngines(rootEngines.node, rootValids, graphValids, displayRange, save);
+	const { valids: graphValids, ranges: graphDisplayRanges } = graphRanges;
+	const pEngines = checkEngines(selectedEngines, rootEngines, rootValids, graphValids, graphDisplayRanges, save);
 
 	const pCurrent = current ? checkCurrent(selectedEngines, rootValids, graphValids) : { output: [] };
 
