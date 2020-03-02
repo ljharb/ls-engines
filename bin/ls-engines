@@ -20,6 +20,8 @@ const checkEngines = require('../checkEngines');
 const FALSE = Object(false);
 const TRUE = Object(true);
 
+const validEngines = ['node'];
+
 const { argv } = yargs
 	.option('mode', {
 		choices: ['auto', 'actual', 'virtual', 'ideal'],
@@ -56,11 +58,18 @@ const { argv } = yargs
 		}
 		return true;
 	})
+	.option('engines', {
+		choices: validEngines,
+		default: validEngines,
+		describe: 'which engine(s) to list',
+		hidden: validEngines.length < 2,
+		type: 'array',
+	})
 	.strict()
 	.help();
 
 function normalize(args) {
-	let { dev, production } = args;
+	let { dev, production, engines: originalEngines } = args;
 	if (typeof dev === 'object' && typeof production === 'object') {
 		// neither argument was explicitly passed
 		dev = false;
@@ -72,14 +81,14 @@ function normalize(args) {
 		// explicitly passed production/no-production, did not mention dev
 		dev = !production || Boolean.prototype.valueOf.call(dev);
 	}
-	return { ...args, dev, production };
+	const selectedEnginesSet = new Set(originalEngines);
+	const engines = validEngines.filter((engine) => selectedEnginesSet.has(engine));
+	return { ...args, dev, engines, production };
 }
-const { current, dev, mode, production, save } = normalize(argv);
+const { current, dev, mode, production, save, engines: selectedEngines } = normalize(argv);
 
 const getTree = require('../get-tree');
 const getNodeVersions = require('../get-node-versions');
-
-const selectedEngines = ['node'];
 
 const pPackage = jsonFile(path.join(process.cwd(), 'package.json'));
 
@@ -89,12 +98,12 @@ const pGraphEntries = getTree(mode, { dev, production }).then(async (tree) => {
 			_inBundle,
 			engines,
 		},
-	}) => !_inBundle && engines && engines.node);
+	}) => !_inBundle && engines && validEngines.some((engine) => engines[engine]));
 	const tuples = Array.from(
 		nodesWithEngines,
 		({ name, package: { engines } }) => [name, engines],
 	);
-	return tuples.filter(([, { node }]) => node && node !== '*');
+	return tuples.filter(([, engines]) => engines && validEngines.some((engine) => engines[engine] !== '*'));
 });
 
 function caret(ver) {
@@ -119,7 +128,7 @@ async function validVersionsForEngines(engines) {
 
 async function getGraphValids(graphEntries) {
 	if (graphEntries.length === 0) {
-		return validVersionsForEngines({ node: '*' });
+		return validVersionsForEngines(fromEntries(validEngines.map((engine) => [engine, '*'])));
 	}
 	const graphAllowed = await Promise.all(graphEntries.map(([, engines]) => validVersionsForEngines(engines)));
 	const mergedGraphEngines = graphAllowed.reduce((mergedEngines, engines) => {
@@ -139,10 +148,10 @@ async function getGraphValids(graphEntries) {
 }
 
 const pRootRanges = pPackage.then(async (pkg) => {
-	const engineEntries = selectedEngines.map((engine) => [
+	const engineEntries = validEngines.map((engine) => [
 		engine,
 		(pkg.data.engines && pkg.data.engines[engine]) || null,
-	]);
+	]).map(([engine, data]) => [engine, data && data.replace(/=(\d)/, '= $1')]);
 	const engines = fromEntries(engineEntries);
 	const rangeEntries = engineEntries.map(([engine, v]) => [engine, new Semver.Range(v || '*')]);
 	const ranges = fromEntries(rangeEntries);
@@ -182,7 +191,7 @@ const pGraphRanges = pGraphEntries.then(async (graphEntries) => {
 
 	const engines = fromEntries(engineEntries);
 
-	const validEntries = await Promise.all(selectedEngines.map(async (engine) => {
+	const validEntries = await Promise.all(validEngines.map(async (engine) => {
 		const validForEngine = await validVersionsForEngines(engines);
 		return [engine, validForEngine[engine]];
 	}));
@@ -203,7 +212,7 @@ const pLatestEngineMajors = Promise.all([
 	{ ranges: rootRanges },
 	{ ranges: graphRanges },
 	allVersions,
-]) => getLatestEngineMajors(selectedEngines, allVersions, rootRanges, graphRanges));
+]) => getLatestEngineMajors(validEngines, allVersions, rootRanges, graphRanges));
 
 function wrapCommaSeparated(array, limit) {
 	const str = array.join(', ');
@@ -237,13 +246,15 @@ const pSummary = Promise.all([
 				'engine',
 				majorsHeading,
 			].map((x) => chalk.bold(chalk.gray(x))),
-			...Object.entries(latestEngineMajors).map(([
-				engine,
-				{ root, graph },
-			]) => [
-				chalk.blue(engine),
-				wrapCommaSeparated(intersect([root, graph]), majorsHeading.length),
-			]),
+			...Object.entries(latestEngineMajors)
+				.filter(([engine]) => selectedEngines.includes(engine))
+				.map(([
+					engine,
+					{ root, graph },
+				]) => [
+					chalk.blue(engine),
+					wrapCommaSeparated(intersect([root, graph]), majorsHeading.length),
+				]),
 		]),
 		table([
 			[

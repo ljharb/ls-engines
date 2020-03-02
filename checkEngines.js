@@ -90,7 +90,7 @@ module.exports = async function checkEngines(
 			: `\nIf you want to widen your support, you can run \`${chalk.bold(chalk.gray('ls-engines --save'))}\`, or manually add the following to your \`${chalk.gray('package.json')}\`:`;
 		return {
 			output: [
-				chalk.bold(chalk.green('\nYour “engines” field allows fewer node versions than your dependency graph does.')),
+				chalk.bold(chalk.green('\nYour “engines” field allows fewer engine versions than your dependency graph does.')),
 				expandMessage,
 				chalk.blue(`"engines": ${JSON.stringify(engines, null, 2)}`),
 			],
