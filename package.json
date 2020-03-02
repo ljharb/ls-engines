@@ -13,9 +13,10 @@
 		"prepublishOnly": "safe-publish-latest",
 		"lint": "eslint . bin/*",
 		"pretest": "npm run lint",
-		"tests-only": "nyc tape 'test/*.js'",
+		"tests-only": "NODE_OPTIONS='--require=./test/mocks' tape 'test/*.js'",
 		"test": "npm run tests-only",
 		"posttest": "npx aud --production",
+		"test:update-mocks": "curl http://nodejs.org/dist/index.json > test/mocks/node-versions.json",
 		"version": "auto-changelog && git add CHANGELOG.md",
 		"postversion": "auto-changelog && git add CHANGELOG.md && git commit --no-edit --amend && git tag -f \"v$(node -e \"console.log(require('./package.json').version)\")\""
 	},

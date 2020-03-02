@@ -4,5 +4,5 @@ Conflicting dependencies: @npmcli/installed-package-contents, agent-base, agentk
 
 If you want to narrow your support, you can run `ls-engines --save`, or manually add the following to your `package.json`:
 "engines": {
-  "node": "^17 || ^16 || ^15 || ^14 || ^13 || ^12 || ^11 || ^10"
+  "node": "^18 || ^17 || ^16 || ^15 || ^14 || ^13 || ^12 || ^11 || ^10"
 }

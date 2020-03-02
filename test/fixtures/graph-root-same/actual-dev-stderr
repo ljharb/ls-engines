@@ -1,6 +1,6 @@
 Your “engines” field allows more node versions than your dependency graph does.
 
-Conflicting dependencies: @eslint/eslintrc, @humanwhocodes/config-array, @ljharb/eslint-config, eslint, espree, file-entry-cache, flat-cache, ls-engines, yargs, node-gyp, socks
+Conflicting dependencies: @eslint/eslintrc, @humanwhocodes/config-array, @ljharb/eslint-config, aud, eslint, espree, file-entry-cache, flat-cache, ls-engines, yargs, node-gyp, socks
 
 If you want to narrow your support, you can run `ls-engines --save`, or manually add the following to your `package.json`:
 "engines": {
