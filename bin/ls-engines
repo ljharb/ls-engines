@@ -20,7 +20,7 @@ const checkEngines = require('../checkEngines');
 const FALSE = Object(false);
 const TRUE = Object(true);
 
-const validEngines = ['node'];
+const validEngines = ['node', 'npm'];
 
 const { argv } = yargs
 	.option('mode', {
@@ -89,6 +89,7 @@ const { current, dev, mode, production, save, engines: selectedEngines } = norma
 
 const getTree = require('../get-tree');
 const getNodeVersions = require('../get-node-versions');
+const getNPMVersions = require('../get-npm-versions');
 
 const pPackage = jsonFile(path.join(process.cwd(), 'package.json'));
 
@@ -110,9 +111,10 @@ function caret(ver) {
 	return '^' + ver.replace(/^v/g, '');
 }
 
-const pAllVersions = getNodeVersions().then((nodeVersions) => ({
-	node: nodeVersions,
-}));
+const pAllVersions = Promise.all([
+	getNodeVersions(),
+	getNPMVersions(),
+]).then(([node, npm]) => ({ node, npm }));
 
 async function validVersionsForEngines(engines) {
 	const allVersions = await pAllVersions;

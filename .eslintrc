@@ -17,7 +17,7 @@
 		"dot-notation": [2, { "allowKeywords": true }],
 		"func-style": 1,
 		"id-length": 0,
-		"max-lines": [2, 330],
+		"max-lines": [2, 350],
 		"max-lines-per-function": [2, 110],
 		"max-params": [2, 6],
 		"max-nested-callbacks": [2, 4],

@@ -1,5 +1,6 @@
 'use strict';
 
+const { execSync } = require('child_process');
 const chalk = require('chalk');
 
 const EXITS = require('./exit-codes');
@@ -9,8 +10,11 @@ function isString(x) {
 	return typeof x === 'string';
 }
 
+const npm = `v${String(execSync('npm -v')).trim()}`;
+
 const currentVersions = {
 	node: process.version,
+	npm,
 };
 
 module.exports = async function checkCurrent(selectedEngines, rootValids, graphValids) {
