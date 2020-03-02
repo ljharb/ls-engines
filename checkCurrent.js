@@ -1,12 +1,16 @@
 'use strict';
 
 const colors = require('colors/safe');
+const { execSync } = require('child_process');
 
 const EXITS = require('./exit-codes');
 const table = require('./table');
 
+const npm = `v${execSync('npm --version')}`.trim();
+
 const currentVersions = {
 	node: process.version,
+	npm,
 };
 
 module.exports = async function checkCurrent(selectedEngines, rootValids, graphValids) {

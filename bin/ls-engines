@@ -23,7 +23,7 @@ const table = require('../table');
 const FALSE = Object(false);
 const TRUE = Object(true);
 
-const validEngines = ['node'];
+const validEngines = ['node', 'npm'];
 
 const argv = yargs
 	.option('mode', {
@@ -114,6 +114,7 @@ const { current, dev, mode, peer, production, save, engines: selectedEngines } =
 
 const getTree = require('get-dep-tree');
 const getNodeVersions = require('../get-node-versions');
+const getNPMVersions = require('../get-npm-versions');
 
 const pPackage = jsonFile(path.join(process.cwd(), 'package.json'));
 
@@ -137,6 +138,7 @@ function caret(ver) {
 
 const getEngineVersions = {
 	node: getNodeVersions,
+	npm: getNPMVersions,
 };
 
 const pAllVersions = Promise.all(selectedEngines.map((x) => getEngineVersions[x]()))
@@ -210,7 +212,7 @@ const pGraphRanges = pGraphEntries.then(async (graphEntries) => {
 		const lastMajor = validMajorRanges[validMajorRanges.length - 1];
 		const greaterThanLowest = lastMajor === '*' ? lastMajor : `>= ${lastMajor.replace(/^\^/, '')}`;
 		const validRange = versions.every((v) => Semver.satisfies(v, greaterThanLowest))
-			? new Semver.Range(greaterThanLowest)
+			? new Semver.Range(engine === 'node' ? greaterThanLowest : '*')
 			: new Semver.Range(validMajorRanges.join(' || '));
 		if (!versions.every((v) => validRange.test(v))) {
 			throw new RangeError(`please report this: ${engine}: ${versions.join(',')} / ${validRange}`);

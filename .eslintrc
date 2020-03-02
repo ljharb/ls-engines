@@ -16,6 +16,7 @@
 		"max-lines": 0,
 		"max-params": [2, 6],
 		"max-nested-callbacks": [2, 4],
+		"newline-per-chained-call": "off",
 		"object-curly-newline": 0,
 	},
 
@@ -42,6 +43,12 @@
 			"files": "./getLatestMajors.js",
 			"rules": {
 				"no-param-reassign": [2, { "props": false }],
+			},
+		},
+		{
+			"files": "test/mock.js",
+			"rules": {
+				"func-name-matching": ["error", "always"],
 			},
 		},
 		{

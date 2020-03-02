@@ -41,7 +41,7 @@ module.exports = async function checkEngines(
 		const value = rootEngines[engine];
 		if (typeof value === 'string') {
 			allOmitted = false;
-			if (value === '*') {
+			if (engine === 'node' && value === '*') {
 				anyStar = true;
 			} else {
 				allStar = false;
