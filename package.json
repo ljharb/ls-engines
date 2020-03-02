@@ -7,9 +7,10 @@
 	"scripts": {
 		"lint": "eslint . bin/*",
 		"pretest": "npm run lint",
-		"tests-only": "tape test",
+		"tests-only": "NODE_OPTIONS='--require=./test/mocks' tape test",
 		"test": "npm run tests-only",
 		"posttest": "npx aud",
+		"test:update-mocks": "curl http://nodejs.org/dist/index.json > test/mocks/node-versions.json",
 		"version": "auto-changelog && git add CHANGELOG.md",
 		"postversion": "auto-changelog && git add CHANGELOG.md && git commit --no-edit --amend && git tag -f \"v$(node -e \"console.log(require('./package.json').version)\")\""
 	},
