@@ -1,0 +1,876 @@
+{
+  "request": {
+    "method": "GET",
+    "href": "https://registry.npmjs.org/promise-deferred",
+    "headers": {
+      "connection": [
+        "keep-alive"
+      ],
+      "user-agent": [
+        "pacote/11.1.0 node/v13.10.1"
+      ],
+      "npm-in-ci": [
+        "false"
+      ],
+      "pacote-version": [
+        "11.1.0"
+      ],
+      "pacote-req-type": [
+        "packument"
+      ],
+      "pacote-pkg-id": [
+        "registry:promise-deferred"
+      ],
+      "accept": [
+        "application/json"
+      ],
+      "accept-encoding": [
+        "gzip,deflate"
+      ]
+    },
+    "body": ""
+  },
+  "response": {
+    "statusCode": 200,
+    "headers": {
+      "date": "Thu, 12 Mar 2020 04:58:44 GMT",
+      "content-type": "application/json",
+      "connection": "keep-alive",
+      "set-cookie": [
+        "__cfduid=daaa25abee329a17e2de1b6b7d43b679e1583989124; expires=Sat, 11-Apr-20 04:58:44 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax"
+      ],
+      "cf-ray": "572af11e9f9eed27-SJC",
+      "age": "4",
+      "cache-control": "public, max-age=300",
+      "etag": "W/\"53aedf5163ab43f45849622e9a0a620f\"",
+      "last-modified": "Tue, 14 Jan 2020 22:44:56 GMT",
+      "vary": "accept-encoding, accept",
+      "cf-cache-status": "HIT",
+      "expect-ct": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"",
+      "server": "cloudflare",
+      "content-encoding": "application/json"
+    },
+    "body": {
+      "_id": "promise-deferred",
+      "_rev": "15-df831b3605bf7ad6c680da4003a5f579",
+      "name": "promise-deferred",
+      "description": "A lightweight Deferred implementation, on top of Promises/A+",
+      "dist-tags": {
+        "latest": "2.0.3"
+      },
+      "versions": {
+        "0.1.0": {
+          "name": "promise-deferred",
+          "version": "0.1.0",
+          "description": "A lightweight Deferred implementation, on top of Promises/A+",
+          "main": "index.js",
+          "scripts": {
+            "test": "node test.js",
+            "coverage": "covert test.js",
+            "coverage-quiet": "covert test.js --quiet"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/ljharb/promise-deferred.git"
+          },
+          "keywords": [
+            "promise",
+            "promises",
+            "deferred",
+            "deferreds",
+            "reject",
+            "resolve",
+            "async"
+          ],
+          "author": {
+            "name": "Jordan Harband"
+          },
+          "license": "MIT",
+          "bugs": {
+            "url": "https://github.com/ljharb/promise-deferred/issues"
+          },
+          "homepage": "https://github.com/ljharb/promise-deferred",
+          "testling": {
+            "files": "test.js",
+            "browsers": [
+              "iexplore/6.0..latest",
+              "firefox/3.0..6.0",
+              "firefox/15.0..latest",
+              "firefox/nightly",
+              "chrome/4.0..10.0",
+              "chrome/20.0..latest",
+              "chrome/canary",
+              "opera/10.0..latest",
+              "opera/next",
+              "safari/4.0..latest",
+              "ipad/6.0..latest",
+              "iphone/6.0..latest",
+              "android-browser/4.2"
+            ]
+          },
+          "dependencies": {
+            "promise": "~3.2.0"
+          },
+          "devDependencies": {
+            "tape": "~2.3.2",
+            "covert": "~0.2.0"
+          },
+          "_id": "promise-deferred@0.1.0",
+          "dist": {
+            "shasum": "1e1e37b24140daa9c3923aa66eb863beeb07cdb1",
+            "tarball": "https://registry.npmjs.org/promise-deferred/-/promise-deferred-0.1.0.tgz"
+          },
+          "_from": ".",
+          "_npmVersion": "1.3.21",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "directories": {}
+        },
+        "0.1.1": {
+          "name": "promise-deferred",
+          "version": "0.1.1",
+          "description": "A lightweight Deferred implementation, on top of Promises/A+",
+          "main": "index.js",
+          "scripts": {
+            "test": "node test.js",
+            "coverage": "covert test.js",
+            "coverage-quiet": "covert test.js --quiet"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/ljharb/promise-deferred.git"
+          },
+          "keywords": [
+            "promise",
+            "promises",
+            "deferred",
+            "deferreds",
+            "reject",
+            "resolve",
+            "async"
+          ],
+          "author": {
+            "name": "Jordan Harband"
+          },
+          "license": "MIT",
+          "bugs": {
+            "url": "https://github.com/ljharb/promise-deferred/issues"
+          },
+          "homepage": "https://github.com/ljharb/promise-deferred",
+          "testling": {
+            "files": "test.js",
+            "browsers": [
+              "iexplore/6.0..latest",
+              "firefox/3.0..6.0",
+              "firefox/15.0..latest",
+              "firefox/nightly",
+              "chrome/4.0..10.0",
+              "chrome/20.0..latest",
+              "chrome/canary",
+              "opera/10.0..latest",
+              "opera/next",
+              "safari/4.0..latest",
+              "ipad/6.0..latest",
+              "iphone/6.0..latest",
+              "android-browser/4.2"
+            ]
+          },
+          "dependencies": {
+            "promise": "~4.0.0"
+          },
+          "devDependencies": {
+            "tape": "~2.10.2",
+            "covert": "~0.3.1"
+          },
+          "engines": {
+            "node": ">= 0.4"
+          },
+          "_id": "promise-deferred@0.1.1",
+          "dist": {
+            "shasum": "92f398ce1573aa223962f4037f7e2d71a306f1e1",
+            "tarball": "https://registry.npmjs.org/promise-deferred/-/promise-deferred-0.1.1.tgz"
+          },
+          "_from": ".",
+          "_npmVersion": "1.4.3",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "directories": {}
+        },
+        "0.2.0": {
+          "name": "promise-deferred",
+          "version": "0.2.0",
+          "description": "A lightweight Deferred implementation, on top of Promises/A+",
+          "main": "index.js",
+          "scripts": {
+            "test": "node test.js",
+            "coverage": "covert test.js",
+            "coverage-quiet": "covert test.js --quiet"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/ljharb/promise-deferred.git"
+          },
+          "keywords": [
+            "promise",
+            "promises",
+            "deferred",
+            "deferreds",
+            "reject",
+            "resolve",
+            "async"
+          ],
+          "author": {
+            "name": "Jordan Harband"
+          },
+          "license": "MIT",
+          "bugs": {
+            "url": "https://github.com/ljharb/promise-deferred/issues"
+          },
+          "homepage": "https://github.com/ljharb/promise-deferred",
+          "testling": {
+            "files": "test.js",
+            "browsers": [
+              "iexplore/6.0..latest",
+              "firefox/3.0..6.0",
+              "firefox/15.0..latest",
+              "firefox/nightly",
+              "chrome/4.0..10.0",
+              "chrome/20.0..latest",
+              "chrome/canary",
+              "opera/10.0..latest",
+              "opera/next",
+              "safari/4.0..latest",
+              "ipad/6.0..latest",
+              "iphone/6.0..latest",
+              "android-browser/4.2"
+            ]
+          },
+          "dependencies": {
+            "promise": "~5.0.0"
+          },
+          "devDependencies": {
+            "tape": "~2.12.3",
+            "covert": "~0.4.0"
+          },
+          "engines": {
+            "node": ">= 0.4"
+          },
+          "_id": "promise-deferred@0.2.0",
+          "dist": {
+            "shasum": "96de1154fb7659d7c2bd9121b6bc76ecbb635c36",
+            "tarball": "https://registry.npmjs.org/promise-deferred/-/promise-deferred-0.2.0.tgz"
+          },
+          "_from": ".",
+          "_npmVersion": "1.4.3",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "directories": {}
+        },
+        "1.0.0": {
+          "name": "promise-deferred",
+          "version": "1.0.0",
+          "description": "A lightweight Deferred implementation, on top of Promises/A+",
+          "main": "index.js",
+          "scripts": {
+            "test": "node test.js",
+            "coverage": "covert test.js",
+            "coverage-quiet": "covert test.js --quiet"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/ljharb/promise-deferred.git"
+          },
+          "keywords": [
+            "promise",
+            "promises",
+            "deferred",
+            "deferreds",
+            "reject",
+            "resolve",
+            "async"
+          ],
+          "author": {
+            "name": "Jordan Harband"
+          },
+          "license": "MIT",
+          "bugs": {
+            "url": "https://github.com/ljharb/promise-deferred/issues"
+          },
+          "homepage": "https://github.com/ljharb/promise-deferred",
+          "testling": {
+            "files": "test.js",
+            "browsers": [
+              "iexplore/6.0..latest",
+              "firefox/3.0..6.0",
+              "firefox/15.0..latest",
+              "firefox/nightly",
+              "chrome/4.0..10.0",
+              "chrome/20.0..latest",
+              "chrome/canary",
+              "opera/10.0..latest",
+              "opera/next",
+              "safari/4.0..latest",
+              "ipad/6.0..latest",
+              "iphone/6.0..latest",
+              "android-browser/4.2"
+            ]
+          },
+          "dependencies": {
+            "promise": "~5.0.0"
+          },
+          "devDependencies": {
+            "tape": "~2.14.0",
+            "covert": "~0.4.0"
+          },
+          "engines": {
+            "node": ">= 0.4"
+          },
+          "gitHead": "23fe95ace202a76ffc349a8e1220ae228b1cc23c",
+          "_id": "promise-deferred@1.0.0",
+          "_shasum": "221d5b6112d1b6d52c8225c52afe5d310bbf613f",
+          "_from": ".",
+          "_npmVersion": "1.4.21",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "dist": {
+            "shasum": "221d5b6112d1b6d52c8225c52afe5d310bbf613f",
+            "tarball": "https://registry.npmjs.org/promise-deferred/-/promise-deferred-1.0.0.tgz"
+          },
+          "directories": {}
+        },
+        "1.0.1": {
+          "name": "promise-deferred",
+          "version": "1.0.1",
+          "description": "A lightweight Deferred implementation, on top of Promises/A+",
+          "main": "index.js",
+          "scripts": {
+            "test": "npm run lint && node test.js && npm run coverage-quiet",
+            "coverage": "covert test.js",
+            "coverage-quiet": "covert test.js --quiet",
+            "lint": "jscs *.js"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/ljharb/promise-deferred.git"
+          },
+          "keywords": [
+            "promise",
+            "promises",
+            "deferred",
+            "deferreds",
+            "reject",
+            "resolve",
+            "async"
+          ],
+          "author": {
+            "name": "Jordan Harband"
+          },
+          "license": "MIT",
+          "bugs": {
+            "url": "https://github.com/ljharb/promise-deferred/issues"
+          },
+          "homepage": "https://github.com/ljharb/promise-deferred",
+          "testling": {
+            "files": "test.js",
+            "browsers": [
+              "iexplore/6.0..latest",
+              "firefox/3.0..6.0",
+              "firefox/15.0..latest",
+              "firefox/nightly",
+              "chrome/4.0..10.0",
+              "chrome/20.0..latest",
+              "chrome/canary",
+              "opera/10.0..latest",
+              "opera/next",
+              "safari/4.0..latest",
+              "ipad/6.0..latest",
+              "iphone/6.0..latest",
+              "android-browser/4.2"
+            ]
+          },
+          "dependencies": {
+            "promise": "~5.0.0"
+          },
+          "devDependencies": {
+            "tape": "~2.14.0",
+            "covert": "~1.0.0",
+            "jscs": "~1.5.9"
+          },
+          "engines": {
+            "node": ">= 0.4"
+          },
+          "gitHead": "fa7150f5abeba83bf64474888c4bc61734cae9b0",
+          "_id": "promise-deferred@1.0.1",
+          "_shasum": "7c5d5c48d2b14daf1ff43ca899a9671695f7240a",
+          "_from": ".",
+          "_npmVersion": "1.4.23",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "dist": {
+            "shasum": "7c5d5c48d2b14daf1ff43ca899a9671695f7240a",
+            "tarball": "https://registry.npmjs.org/promise-deferred/-/promise-deferred-1.0.1.tgz"
+          },
+          "directories": {}
+        },
+        "2.0.0": {
+          "name": "promise-deferred",
+          "version": "2.0.0",
+          "description": "A lightweight Deferred implementation, on top of Promises/A+",
+          "main": "index.js",
+          "scripts": {
+            "test": "npm run lint && node test.js && npm run coverage-quiet",
+            "coverage": "covert test.js",
+            "coverage-quiet": "covert test.js --quiet",
+            "lint": "jscs *.js"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/ljharb/promise-deferred.git"
+          },
+          "keywords": [
+            "promise",
+            "promises",
+            "deferred",
+            "deferreds",
+            "reject",
+            "resolve",
+            "async"
+          ],
+          "author": {
+            "name": "Jordan Harband"
+          },
+          "license": "MIT",
+          "bugs": {
+            "url": "https://github.com/ljharb/promise-deferred/issues"
+          },
+          "homepage": "https://github.com/ljharb/promise-deferred",
+          "testling": {
+            "files": "test.js",
+            "browsers": [
+              "iexplore/6.0..latest",
+              "firefox/3.0..6.0",
+              "firefox/15.0..latest",
+              "firefox/nightly",
+              "chrome/4.0..10.0",
+              "chrome/20.0..latest",
+              "chrome/canary",
+              "opera/10.0..latest",
+              "opera/next",
+              "safari/4.0..latest",
+              "ipad/6.0..latest",
+              "iphone/6.0..latest",
+              "android-browser/4.2"
+            ]
+          },
+          "dependencies": {
+            "promise": "~6.0.0"
+          },
+          "devDependencies": {
+            "tape": "~2.14.0",
+            "covert": "~1.0.0",
+            "jscs": "~1.6.1"
+          },
+          "engines": {
+            "node": ">= 0.4"
+          },
+          "gitHead": "788785e7c9220eb64fde8047b5e1bb23e170383f",
+          "_id": "promise-deferred@2.0.0",
+          "_shasum": "652848acaca3d8c670ff906d520d46cda61ad939",
+          "_from": ".",
+          "_npmVersion": "1.4.23",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "dist": {
+            "shasum": "652848acaca3d8c670ff906d520d46cda61ad939",
+            "tarball": "https://registry.npmjs.org/promise-deferred/-/promise-deferred-2.0.0.tgz"
+          },
+          "directories": {}
+        },
+        "2.0.1": {
+          "name": "promise-deferred",
+          "version": "2.0.1",
+          "description": "A lightweight Deferred implementation, on top of Promises/A+",
+          "main": "index.js",
+          "scripts": {
+            "test": "npm run lint && node test.js && npm run coverage-quiet",
+            "coverage": "covert test.js",
+            "coverage-quiet": "covert test.js --quiet",
+            "lint": "jscs *.js"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/ljharb/promise-deferred.git"
+          },
+          "keywords": [
+            "promise",
+            "promises",
+            "deferred",
+            "deferreds",
+            "reject",
+            "resolve",
+            "async"
+          ],
+          "author": {
+            "name": "Jordan Harband"
+          },
+          "license": "MIT",
+          "bugs": {
+            "url": "https://github.com/ljharb/promise-deferred/issues"
+          },
+          "homepage": "https://github.com/ljharb/promise-deferred",
+          "testling": {
+            "files": "test.js",
+            "browsers": [
+              "iexplore/6.0..latest",
+              "firefox/3.0..6.0",
+              "firefox/15.0..latest",
+              "firefox/nightly",
+              "chrome/4.0..10.0",
+              "chrome/20.0..latest",
+              "chrome/canary",
+              "opera/10.0..latest",
+              "opera/next",
+              "safari/4.0..latest",
+              "ipad/6.0..latest",
+              "iphone/6.0..latest",
+              "android-browser/4.2"
+            ]
+          },
+          "dependencies": {
+            "promise": "~6.1.0"
+          },
+          "devDependencies": {
+            "tape": "~3.4.0",
+            "covert": "1.0.0",
+            "jscs": "~1.10.0"
+          },
+          "engines": {
+            "node": ">= 0.4"
+          },
+          "gitHead": "1584db57f40267e802d13657eac1d9d3759e12d7",
+          "_id": "promise-deferred@2.0.1",
+          "_shasum": "b05398f1a43f6d87be0c97c52040046e83eb5454",
+          "_from": ".",
+          "_npmVersion": "1.4.28",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "dist": {
+            "shasum": "b05398f1a43f6d87be0c97c52040046e83eb5454",
+            "tarball": "https://registry.npmjs.org/promise-deferred/-/promise-deferred-2.0.1.tgz"
+          },
+          "directories": {}
+        },
+        "2.0.2": {
+          "name": "promise-deferred",
+          "version": "2.0.2",
+          "description": "A lightweight Deferred implementation, on top of Promises/A+",
+          "main": "index.js",
+          "scripts": {
+            "pretest": "npm run lint",
+            "tests-only": "node test",
+            "test": "npm run tests-only && npm run coverage",
+            "posttest": "npx aud",
+            "coverage": "covert test/index.js",
+            "lint": "eslint .",
+            "version": "auto-changelog && git add CHANGELOG.md",
+            "postversion": "auto-changelog && git add CHANGELOG.md && git commit --no-edit --amend && git tag -f \"v$(node -e \"console.log(require('./package.json').version)\")\""
+          },
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/ljharb/promise-deferred.git"
+          },
+          "keywords": [
+            "promise",
+            "promises",
+            "deferred",
+            "deferreds",
+            "reject",
+            "resolve",
+            "async"
+          ],
+          "author": {
+            "name": "Jordan Harband"
+          },
+          "funding": {
+            "url": "https://github.com/sponsors/ljharb"
+          },
+          "license": "MIT",
+          "bugs": {
+            "url": "https://github.com/ljharb/promise-deferred/issues"
+          },
+          "homepage": "https://github.com/ljharb/promise-deferred",
+          "testling": {
+            "files": "test/index.js",
+            "browsers": [
+              "iexplore/6.0..latest",
+              "firefox/3.0..6.0",
+              "firefox/15.0..latest",
+              "firefox/nightly",
+              "chrome/4.0..10.0",
+              "chrome/20.0..latest",
+              "chrome/canary",
+              "opera/10.0..latest",
+              "opera/next",
+              "safari/4.0..latest",
+              "ipad/6.0..latest",
+              "iphone/6.0..latest",
+              "android-browser/4.2"
+            ]
+          },
+          "dependencies": {
+            "promise": "^8.0.3"
+          },
+          "devDependencies": {
+            "@ljharb/eslint-config": "^15.1.0",
+            "auto-changelog": "^1.16.2",
+            "covert": "^1.1.1",
+            "eslint": "^6.8.0",
+            "tape": "^5.0.0-next.3"
+          },
+          "engines": {
+            "node": ">= 0.4"
+          },
+          "auto-changelog": {
+            "output": "CHANGELOG.md",
+            "template": "keepachangelog",
+            "unreleased": false,
+            "commitLimit": false,
+            "backfillLimit": false
+          },
+          "gitHead": "6bb6e84a0ef532193cf6fb4286df65efc09f7573",
+          "_id": "promise-deferred@2.0.2",
+          "_nodeVersion": "13.6.0",
+          "_npmVersion": "6.13.4",
+          "dist": {
+            "integrity": "sha512-+D67Y2Aa4ctz/4epqb7gykwJ43ue47rvMVZ7ZkNpxI+gylAkI9Tl/H+m1vF9X6e368Q1bz/QLX7o1CP2oDHgXQ==",
+            "shasum": "4cd047ad04b8465e33b818a8cb3c56a21a4669f2",
+            "tarball": "https://registry.npmjs.org/promise-deferred/-/promise-deferred-2.0.2.tgz",
+            "fileCount": 9,
+            "unpackedSize": 18894,
+            "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeHiBTCRA9TVsSAnZWagAAQvkP/jMUKqBgwHZlfCB+7lzY\nUt7rTRN7OgNjytftOuRDgpQUtinabimBAxjkrw0xBJTZUGnS7g0ARteJ0Dxg\nHhvx4DFvWADMibIqebAslcvlJF3w3/Hd05TXi1eKl1KYTwE1TdIrsbfE4Oy/\nqEric+Rv9JPx8kEUnr/Zl2+j+Tt/Hre/QUBtfDwJq8TtXlvksFWYhkqQ1Hsk\n6a6otU+IT6SbOTRGyli/jIpo1yMy89lxs4c3CTyWV3ymRa40kVgbLaq5hbNn\nxVp3L6WhMAVQpYdyVqpXBZi95p1PgXMjiXmOO9lE1xLPULQSVerCnYNd5JOT\n+Xpbwyw0zudouVkJs9GEevCFq0l84Hhs62tdMnooVkUWp9lT2FeOzPP9yWdH\n474yG9T3I87KXZgxTpKUmGHznLwVkk70REfkmA7CyqF07Pdve9DPR/2v7lyY\nJH6nRRZr5QMk8OkjfYOfWvr8AZmcX0RGcEpJq7IjNUjQsWAsnp9+S6unFlHe\no4r2biNIB/JS7KT5lTvmQmtIJxr9Lpvp2M5dFrBTTPkRhkETOHq5YHmMpxzj\nAR34Pqj1ZBI0Zjp/cGq+WI42IbySiwlk0pXQU+TfZtcnUfsnIVBWDp08IFlL\nvsYAH+wKZJn6c34iJ1KHNm66i79o8ksFv7f1eGjTr1O/5nnQXobsGMXs/nCy\n1zTN\r\n=DWNe\r\n-----END PGP SIGNATURE-----\r\n"
+          },
+          "maintainers": [
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "directories": {},
+          "_npmOperationalInternal": {
+            "host": "s3://npm-registry-packages",
+            "tmp": "tmp/promise-deferred_2.0.2_1579032658960_0.5011033416507842"
+          },
+          "_hasShrinkwrap": false
+        },
+        "2.0.3": {
+          "name": "promise-deferred",
+          "version": "2.0.3",
+          "description": "A lightweight Deferred implementation, on top of Promises/A+",
+          "main": "index.js",
+          "scripts": {
+            "pretest": "npm run lint",
+            "tests-only": "node test",
+            "test": "npm run tests-only && npm run coverage",
+            "posttest": "npx aud",
+            "coverage": "covert test/index.js",
+            "lint": "eslint .",
+            "version": "auto-changelog && git add CHANGELOG.md",
+            "postversion": "auto-changelog && git add CHANGELOG.md && git commit --no-edit --amend && git tag -f \"v$(node -e \"console.log(require('./package.json').version)\")\""
+          },
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/ljharb/promise-deferred.git"
+          },
+          "keywords": [
+            "promise",
+            "promises",
+            "deferred",
+            "deferreds",
+            "reject",
+            "resolve",
+            "async"
+          ],
+          "author": {
+            "name": "Jordan Harband"
+          },
+          "funding": {
+            "url": "https://github.com/sponsors/ljharb"
+          },
+          "license": "MIT",
+          "bugs": {
+            "url": "https://github.com/ljharb/promise-deferred/issues"
+          },
+          "homepage": "https://github.com/ljharb/promise-deferred",
+          "testling": {
+            "files": "test/index.js",
+            "browsers": [
+              "iexplore/6.0..latest",
+              "firefox/3.0..6.0",
+              "firefox/15.0..latest",
+              "firefox/nightly",
+              "chrome/4.0..10.0",
+              "chrome/20.0..latest",
+              "chrome/canary",
+              "opera/10.0..latest",
+              "opera/next",
+              "safari/4.0..latest",
+              "ipad/6.0..latest",
+              "iphone/6.0..latest",
+              "android-browser/4.2"
+            ]
+          },
+          "dependencies": {
+            "promise": "^7.3.1"
+          },
+          "devDependencies": {
+            "@ljharb/eslint-config": "^15.1.0",
+            "auto-changelog": "^1.16.2",
+            "covert": "^1.1.1",
+            "eslint": "^6.8.0",
+            "tape": "^5.0.0-next.3"
+          },
+          "engines": {
+            "node": ">= 0.4"
+          },
+          "auto-changelog": {
+            "output": "CHANGELOG.md",
+            "template": "keepachangelog",
+            "unreleased": false,
+            "commitLimit": false,
+            "backfillLimit": false
+          },
+          "gitHead": "064f48ea41e706424d022b6cbae7e54c10fd25e5",
+          "_id": "promise-deferred@2.0.3",
+          "_nodeVersion": "13.6.0",
+          "_npmVersion": "6.13.4",
+          "dist": {
+            "integrity": "sha512-n10XaoznCzLfyPFOlEE8iurezHpxrYzyjgq/1eW9Wk1gJwur/N7BdBmjJYJpqMeMcXK4wEbzo2EvZQcqjYcKUQ==",
+            "shasum": "b99c9588820798501862a593d49cece51d06fd7f",
+            "tarball": "https://registry.npmjs.org/promise-deferred/-/promise-deferred-2.0.3.tgz",
+            "fileCount": 9,
+            "unpackedSize": 19174,
+            "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeHkRkCRA9TVsSAnZWagAArDUP/1DZHlTwaN2qjw/2ONV+\nYN09Lj3hkPIdUZtxC87ezjCf/Hr2K9krCwH4McNcNTF7M3JIgaE+/lW4HdBX\nBN+QpW8Ae3RuFOSgci93fWIrU0f1ve1YRTxcYPW5NwZBST5Cs3gqFRzee1J9\nDXqME4Y4Q8GoxvXTeTGMU1U/zlZ3zs6xR3/B7m8kBfO9chMd6lEhD4ibt/iY\nweM3BK02//8dueGXGCTWSePAOfdDpErPSprXhr7Cbo2Xv8seRK30myfz00oO\nLgIwOQeEtIUjppdZWKn8wdvWG9ey/9XqyfVmhcIYHEbNRT2+CPP0QpBnGSLI\n6AmLNirwxk2+uyjFdt7S6eMBhh238x0l1g04E9Cg8e8F4W4krErfgtmPKb/B\nULSKC2Vv2TlVmGimRevH57HxlPSLiE72UfvTrGwjL7GrPsU9KERKnFYCMek6\n8MyfeQWa+s/Ovad7kgaEyls0CP1oStlzaYKkPKnUsImA8ovyUdlzSWG37m3a\n88LjPy7i5fSWkAJMIyK1tSt2TaIfsxP11E2an1ErGK/waO5y8Teor/UpenLh\nlznDOqUUJUFiFAF3k11c5as4t1zDuXd7XWNKGCiNguFwy5PpUic5XiKy15WP\nK8stNI/W3/yM9tb0IQM4Bxz9zz6VqHEykJuTCeOG6cSv1Kvt3MnIaWiy34pz\n1zMP\r\n=9f28\r\n-----END PGP SIGNATURE-----\r\n"
+          },
+          "maintainers": [
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "directories": {},
+          "_npmOperationalInternal": {
+            "host": "s3://npm-registry-packages",
+            "tmp": "tmp/promise-deferred_2.0.3_1579041892486_0.06908494391842512"
+          },
+          "_hasShrinkwrap": false
+        }
+      },
+      "readme": "# promise-deferred <sup>[![Version Badge][npm-version-svg]][npm-url]</sup>\n\n[![Build Status][travis-svg]][travis-url]\n[![dependency status][deps-svg]][deps-url]\n[![dev dependency status][dev-deps-svg]][dev-deps-url]\n[![License][license-image]][license-url]\n[![Downloads][downloads-image]][downloads-url]\n\n[![npm badge][npm-badge-png]][npm-url]\n\nA lightweight Deferred implementation, on top of Promises/A+\n\n## Examples\n```js\nvar Deferred = require('promise-deferred');\n\nvar deferred = new Deferred();\n\n// set up handlers\ndeferred.promise.then(function (value) {}, function (error) {});\n\n// resolve\ndeferred.resolve('a value');\n\n// reject\ndeferred.reject(new Error('oh noes'));\n```\n\n## Tests\nSimply clone the repo, `npm install`, and run `npm test`\n\n[npm-url]: https://npmjs.org/package/promise-deferred\n[npm-version-svg]: http://versionbadg.es/ljharb/promise-deferred.svg\n[travis-svg]: https://travis-ci.org/ljharb/promise-deferred.svg\n[travis-url]: https://travis-ci.org/ljharb/promise-deferred\n[deps-svg]: https://david-dm.org/ljharb/promise-deferred.svg\n[deps-url]: https://david-dm.org/ljharb/promise-deferred\n[dev-deps-svg]: https://david-dm.org/ljharb/promise-deferred/dev-status.svg\n[dev-deps-url]: https://david-dm.org/ljharb/promise-deferred#info=devDependencies\n[npm-badge-png]: https://nodei.co/npm/promise-deferred.png?downloads=true&stars=true\n[license-image]: http://img.shields.io/npm/l/promise-deferred.svg\n[license-url]: LICENSE\n[downloads-image]: http://img.shields.io/npm/dm/promise-deferred.svg\n[downloads-url]: http://npm-stat.com/charts.html?package=promise-deferred\n\n",
+      "maintainers": [
+        {
+          "name": "ljharb",
+          "email": "ljharb@gmail.com"
+        }
+      ],
+      "time": {
+        "modified": "2020-01-14T22:44:55.109Z",
+        "created": "2013-12-30T10:50:17.933Z",
+        "0.1.0": "2013-12-30T10:50:17.933Z",
+        "0.1.1": "2014-03-16T07:58:41.379Z",
+        "0.2.0": "2014-04-30T05:04:52.816Z",
+        "1.0.0": "2014-08-10T17:52:34.186Z",
+        "1.0.1": "2014-08-28T09:28:05.906Z",
+        "2.0.0": "2014-09-13T07:39:47.890Z",
+        "2.0.1": "2015-01-20T07:57:16.193Z",
+        "2.0.2": "2020-01-14T20:10:59.084Z",
+        "2.0.3": "2020-01-14T22:44:52.626Z"
+      },
+      "homepage": "https://github.com/ljharb/promise-deferred",
+      "keywords": [
+        "promise",
+        "promises",
+        "deferred",
+        "deferreds",
+        "reject",
+        "resolve",
+        "async"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/ljharb/promise-deferred.git"
+      },
+      "author": {
+        "name": "Jordan Harband"
+      },
+      "bugs": {
+        "url": "https://github.com/ljharb/promise-deferred/issues"
+      },
+      "license": "MIT",
+      "readmeFilename": "README.md"
+    }
+  }
+}

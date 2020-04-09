@@ -1,0 +1,56 @@
+{
+  "request": {
+    "method": "GET",
+    "href": "https://registry.npmjs.org/es6-promisify",
+    "headers": {
+      "connection": [
+        "keep-alive"
+      ],
+      "user-agent": [
+        "pacote/11.1.0 node/v13.10.1"
+      ],
+      "npm-in-ci": [
+        "false"
+      ],
+      "pacote-version": [
+        "11.1.0"
+      ],
+      "pacote-req-type": [
+        "packument"
+      ],
+      "pacote-pkg-id": [
+        "registry:es6-promisify"
+      ],
+      "accept": [
+        "application/vnd.npm.install-v1+json; q=1.0, application/json; q=0.8, */*"
+      ],
+      "accept-encoding": [
+        "gzip,deflate"
+      ]
+    },
+    "body": ""
+  },
+  "response": {
+    "statusCode": 200,
+    "headers": {
+      "date": "Thu, 12 Mar 2020 05:00:08 GMT",
+      "content-type": "application/vnd.npm.install-v1+json",
+      "content-length": "6702",
+      "connection": "keep-alive",
+      "set-cookie": [
+        "__cfduid=d689d9f59066e5ecccc6ce33722816a931583989208; expires=Sat, 11-Apr-20 05:00:08 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax"
+      ],
+      "cf-ray": "572af3290b296d34-SJC",
+      "accept-ranges": "bytes",
+      "age": "1231",
+      "cache-control": "public, max-age=300",
+      "etag": "\"1580ef1e88381e4aa9640a3e7002469f\"",
+      "last-modified": "Fri, 14 Feb 2020 11:34:00 GMT",
+      "vary": "accept-encoding, accept",
+      "cf-cache-status": "HIT",
+      "expect-ct": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"",
+      "server": "cloudflare"
+    },
+    "body": "{\"name\":\"es6-promisify\",\"dist-tags\":{\"latest\":\"6.0.2\"},\"versions\":{\"0.1.0\":{\"name\":\"es6-promisify\",\"version\":\"0.1.0\",\"dependencies\":{\"es6-promise\":\"^0.1.1\"},\"dist\":{\"shasum\":\"b9a88624b70495d9334fc30c71022c79567e66a2\",\"tarball\":\"https://registry.npmjs.org/es6-promisify/-/es6-promisify-0.1.0.tgz\"}},\"1.0.0\":{\"name\":\"es6-promisify\",\"version\":\"1.0.0\",\"dependencies\":{\"es6-promise\":\"^1.0.0\"},\"devDependencies\":{\"nodeunit\":\"^0.9.0\"},\"dist\":{\"shasum\":\"614ad2920e5da9bb4acf8393276441c29efda9cf\",\"tarball\":\"https://registry.npmjs.org/es6-promisify/-/es6-promisify-1.0.0.tgz\"}},\"1.0.1\":{\"name\":\"es6-promisify\",\"version\":\"1.0.1\",\"dependencies\":{\"es6-promise\":\"^1.0.0\"},\"devDependencies\":{\"nodeunit\":\"^0.9.0\"},\"dist\":{\"shasum\":\"9c187194fbd6ae53f14306832fe0c92b9796830e\",\"tarball\":\"https://registry.npmjs.org/es6-promisify/-/es6-promisify-1.0.1.tgz\"}},\"1.0.2\":{\"name\":\"es6-promisify\",\"version\":\"1.0.2\",\"dependencies\":{\"es6-promise\":\"^1.0.0\"},\"devDependencies\":{\"nodeunit\":\"^0.9.0\"},\"dist\":{\"shasum\":\"6304f1059fac1b481d58e63ec2f56056aa8b9d01\",\"tarball\":\"https://registry.npmjs.org/es6-promisify/-/es6-promisify-1.0.2.tgz\"}},\"1.1.0\":{\"name\":\"es6-promisify\",\"version\":\"1.1.0\",\"dependencies\":{\"es6-promise\":\"^1.0.0\"},\"devDependencies\":{\"nodeunit\":\"^0.9.0\"},\"dist\":{\"shasum\":\"cf625ed8b7adb0582091b7404321f974d4014272\",\"tarball\":\"https://registry.npmjs.org/es6-promisify/-/es6-promisify-1.1.0.tgz\"}},\"1.1.1\":{\"name\":\"es6-promisify\",\"version\":\"1.1.1\",\"dependencies\":{\"es6-promise\":\"^1.0.0\"},\"devDependencies\":{\"nodeunit\":\"^0.9.0\"},\"dist\":{\"shasum\":\"b896a8b14f9c66b2be9f8105b619c1856e79be3b\",\"tarball\":\"https://registry.npmjs.org/es6-promisify/-/es6-promisify-1.1.1.tgz\"}},\"2.0.0\":{\"name\":\"es6-promisify\",\"version\":\"2.0.0\",\"dependencies\":{\"es6-promise\":\"^2.3.0\"},\"devDependencies\":{\"jslint\":\"^0.9.0\",\"nodeunit\":\"^0.9.0\"},\"dist\":{\"shasum\":\"6baf0486077028fe4b8cc735ff02124f470747a2\",\"tarball\":\"https://registry.npmjs.org/es6-promisify/-/es6-promisify-2.0.0.tgz\"}},\"3.0.0\":{\"name\":\"es6-promisify\",\"version\":\"3.0.0\",\"dependencies\":{\"es6-promise\":\"^3.0.2\"},\"devDependencies\":{\"gulp\":\"^3.9.0\",\"gulp-babel\":\"^5.2.0\",\"jslint\":\"^0.9.3\",\"nodeunit\":\"^0.9.1\"},\"dist\":{\"shasum\":\"22226b92957317f965247edfde9295f83efebe86\",\"tarball\":\"https://registry.npmjs.org/es6-promisify/-/es6-promisify-3.0.0.tgz\"}},\"4.0.0\":{\"name\":\"es6-promisify\",\"version\":\"4.0.0\",\"dependencies\":{\"es6-promise\":\"^3.1.2\"},\"devDependencies\":{\"babel-preset-es2015\":\"^6.6.0\",\"gulp\":\"^3.9.1\",\"gulp-babel\":\"^6.1.2\",\"jslint\":\"^0.9.6\",\"nodeunit\":\"^0.9.1\"},\"dist\":{\"shasum\":\"78c1ffcd848ce233fd9629feaa5371ca6dcdf4b8\",\"tarball\":\"https://registry.npmjs.org/es6-promisify/-/es6-promisify-4.0.0.tgz\"}},\"4.1.0\":{\"name\":\"es6-promisify\",\"version\":\"4.1.0\",\"dependencies\":{\"es6-promise\":\"^3.2.1\"},\"devDependencies\":{\"babel-preset-es2015\":\"^6.9.0\",\"gulp\":\"^3.9.1\",\"gulp-babel\":\"^6.1.2\",\"jslint\":\"^0.10.0\",\"nodeunit\":\"^0.9.1\"},\"dist\":{\"shasum\":\"dbcc1a3e93fdb8e9e709744182b7d2080c03fdb3\",\"tarball\":\"https://registry.npmjs.org/es6-promisify/-/es6-promisify-4.1.0.tgz\"}},\"5.0.0\":{\"name\":\"es6-promisify\",\"version\":\"5.0.0\",\"dependencies\":{\"es6-promise\":\"^4.0.3\"},\"devDependencies\":{\"babel-preset-es2015\":\"^6.9.0\",\"eslint\":\"^2.13.1\",\"gulp\":\"^3.9.1\",\"gulp-babel\":\"^6.1.2\",\"nodeunit\":\"^0.10.0\"},\"dist\":{\"shasum\":\"5109d62f3e56ea967c4b63505aef08291c8a5203\",\"tarball\":\"https://registry.npmjs.org/es6-promisify/-/es6-promisify-5.0.0.tgz\"}},\"6.0.0\":{\"name\":\"es6-promisify\",\"version\":\"6.0.0\",\"devDependencies\":{\"babel-cli\":\"^6.26.0\",\"babel-preset-es2015\":\"^6.24.1\",\"es6-promise\":\"^4.1.1\",\"eslint\":\"^4.9.0\",\"istanbul\":\"^0.4.5\",\"sinon\":\"^4.0.1\",\"tape\":\"^4.8.0\"},\"dist\":{\"integrity\":\"sha512-8Tbqjrb8lC85dd81haajYwuRmiU2rkqNAFnlvQOJeeKqdUloIlI+JcUqeJruV4rCm5Y7oNU7jfs2FbmxhRR/2g==\",\"shasum\":\"b526a75eaa5ca600e960bf3d5ad98c40d75c7203\",\"tarball\":\"https://registry.npmjs.org/es6-promisify/-/es6-promisify-6.0.0.tgz\"}},\"6.0.1\":{\"name\":\"es6-promisify\",\"version\":\"6.0.1\",\"devDependencies\":{\"babel-cli\":\"^6.26.0\",\"babel-preset-es2015\":\"^6.24.1\",\"es6-promise\":\"^4.2.5\",\"eslint\":\"^5.7.0\",\"istanbul\":\"^0.4.5\",\"sinon\":\"^7.0.0\",\"tape\":\"^4.9.1\"},\"dist\":{\"integrity\":\"sha512-J3ZkwbEnnO+fGAKrjVpeUAnZshAdfZvbhQpqfIH9kSAspReRC4nJnu8ewm55b4y9ElyeuhCTzJD0XiH8Tsbhlw==\",\"shasum\":\"6edaa45f3bd570ffe08febce66f7116be4b1cdb6\",\"tarball\":\"https://registry.npmjs.org/es6-promisify/-/es6-promisify-6.0.1.tgz\",\"fileCount\":4,\"unpackedSize\":7505,\"npm-signature\":\"-----BEGIN PGP SIGNATURE-----\\r\\nVersion: OpenPGP.js v3.0.4\\r\\nComment: https://openpgpjs.org\\r\\n\\r\\nwsFcBAEBCAAQBQJby38eCRA9TVsSAnZWagAAni0QAIyXDsOwfVsupitdN/LJ\\nbnnqVB9nJJk4oZvOnA4VwjmMNIxAzhUrOpxQXsRQI/vJRcACBL0FQJ/tqLpI\\nsGj5NZeXa4pqHW8FioDcH7BttquRKHFToRc8iuOorEFJh94MpMH5uSX+m0u3\\nQhF9rOvlmTgWVPgZ/ItdTwBFn3jD883eYz85mnQy7JaWN/+/+K3tI8mzUqY7\\niA+pNpms5m+ZDkNDsTvKGSsoMFAn9MzlQrOCJgk7asvWRKO0gyPNwDuRJYjN\\nOay7sCXup9diqoUsmT+5Fen39ElLKdve126WOwTQkj0w1P5+QqbVOkYtsG1i\\nikYZiLbxvmxbBBk/+8HNHMqJM6nPe/WfTndVsX6NhLYdoDYvRDw+Gaq1P4AZ\\nIOzdBMtZUPECRw27oGe5A4XcvQJVpCf2l0QIC3CYTlyb9jSCvV+T7QiVbRfR\\nRZ1BLfVTQzdy7FvhWqhJI0asS1qf+5JLJx//pidun5yxCli04vEF4DVUkrF9\\nv3WewHBru+c1JgxPx1YGXWtWvHTpXqWfkTV1LYAYEOIZUwK88iT/ScYIUnuM\\n9eXSfWBcOwYNFdyFaYdieZ5CUXcXoWCWXrgXulMcU3rt28nueMwVSFl5R14j\\nrIfoPziM2IuvufhgWjGajvlZOZb2JALg/atSW+mVuXDK0HABiQU3NOKbw/Z3\\n6scu\\r\\n=iatq\\r\\n-----END PGP SIGNATURE-----\\r\\n\"}},\"6.0.2\":{\"name\":\"es6-promisify\",\"version\":\"6.0.2\",\"devDependencies\":{\"@babel/cli\":\"^7.5.5\",\"@babel/core\":\"^7.5.5\",\"@babel/preset-env\":\"^7.5.5\",\"es6-promise\":\"^4.2.8\",\"eslint\":\"^5.16.0\",\"nyc\":\"^14.1.1\",\"sinon\":\"^7.4.1\",\"tape\":\"^4.11.0\"},\"dist\":{\"shasum\":\"525c23725b8510f5f1f2feb5a1fbad93a93e29b4\",\"tarball\":\"https://registry.npmjs.org/es6-promisify/-/es6-promisify-6.0.2.tgz\",\"integrity\":\"sha512-eO6vFm0JvqGzjWIQA6QVKjxpmELfhWbDUWHm1rPfIbn55mhKPiAa5xpLmQWJrNa629ZIeQ8ZvMAi13kvrjK6Mg==\",\"fileCount\":4,\"unpackedSize\":7284,\"npm-signature\":\"-----BEGIN PGP SIGNATURE-----\\r\\nVersion: OpenPGP.js v3.0.4\\r\\nComment: https://openpgpjs.org\\r\\n\\r\\nwsFcBAEBCAAQBQJdZQaeCRA9TVsSAnZWagAAaGYP/1T4L2xccK/Fs9IYv0Yb\\nLnJPXYaA6mW31WdlkeHadEGcWqBXy1psKtcIN6hUap2ybCnvYfDm6K0J4Zvq\\niJdY/0SgmBipawOagNBsHD6FhlbU6DeKSVkvps0kKyiheN20Zhw+DXj4QO8N\\nUJsyJbzYR792P/l40sq8A71Eb6nVNsFxkVtHcML63ubOCLf/aJCvmC1rjlPL\\nSn031PY9xwg3YX2fEZz/A5zT+LvZFO9J0HpKHFu1lOoinG26C8LaiOMdEfzY\\nJxakE8Pf6vFLOXmPDlfQdFlVeuOI+4CaeoGcyymg4nNpQylNqew5DtMh5gl5\\nNTzzHyfJLHy+Tnd4j3OPpd2G++3lSRZHk1yNjGWJBAW+7/WXzqDu+wPbSg05\\nK6KXaSaTTpFJNYQrMPvfSh8R76MIoVzmch1fWF1lsGa5eyOR2RcwupT0XMTf\\nlV8Ysev1h4nXmc5r1kT1ZmqgaFp+5UQFMwjTF8gkIMQbxKRyIg+h4HlhA+3J\\n3X2uLue0nonR4G1IEw7D1aGjXrV7ezM11gqTO+4xmg+sigUozleUlWJs1bxs\\nJRzysNzwgqs1kmE4569jhKsD6HXd8rbxYSpVNdvWF6OKbaCvsr4lBH5kRBj9\\n7i9jRGTrr/YS+eTk5Pl82kRzL1RBdVQ9v3+Dcu2XClmxzja4Fjmh0/Oz8g0a\\npeua\\r\\n=3Lhw\\r\\n-----END PGP SIGNATURE-----\\r\\n\"}}},\"modified\":\"2019-08-27T10:32:00.902Z\"}"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "request": {
+    "method": "GET",
+    "href": "https://registry.npmjs.org/fs.realpath",
+    "headers": {
+      "connection": [
+        "keep-alive"
+      ],
+      "user-agent": [
+        "pacote/11.1.0 node/v13.10.1"
+      ],
+      "npm-in-ci": [
+        "false"
+      ],
+      "pacote-version": [
+        "11.1.0"
+      ],
+      "pacote-req-type": [
+        "packument"
+      ],
+      "pacote-pkg-id": [
+        "registry:fs.realpath"
+      ],
+      "accept": [
+        "application/vnd.npm.install-v1+json; q=1.0, application/json; q=0.8, */*"
+      ],
+      "accept-encoding": [
+        "gzip,deflate"
+      ]
+    },
+    "body": ""
+  },
+  "response": {
+    "statusCode": 200,
+    "headers": {
+      "date": "Thu, 12 Mar 2020 04:59:16 GMT",
+      "content-type": "application/vnd.npm.install-v1+json",
+      "content-length": "474",
+      "connection": "keep-alive",
+      "set-cookie": [
+        "__cfduid=dae01e8402ac4afba09d156f46c6e35d31583989156; expires=Sat, 11-Apr-20 04:59:16 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax"
+      ],
+      "cf-ray": "572af1e1ee05929e-SJC",
+      "accept-ranges": "bytes",
+      "age": "5282",
+      "cache-control": "public, max-age=300",
+      "etag": "\"a6c36350e75d6f42f88ceaf6cb7c8842\"",
+      "last-modified": "Fri, 14 Feb 2020 13:26:54 GMT",
+      "vary": "accept-encoding, accept",
+      "cf-cache-status": "HIT",
+      "expect-ct": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"",
+      "server": "cloudflare"
+    },
+    "body": "{\"name\":\"fs.realpath\",\"dist-tags\":{\"latest\":\"1.0.0\"},\"versions\":{\"0.0.0\":{\"name\":\"fs.realpath\",\"version\":\"0.0.0\",\"dist\":{\"shasum\":\"ee31b09e1272a8c6e58714abcacded5bd7cf7c6d\",\"tarball\":\"https://registry.npmjs.org/fs.realpath/-/fs.realpath-0.0.0.tgz\"}},\"1.0.0\":{\"name\":\"fs.realpath\",\"version\":\"1.0.0\",\"dist\":{\"shasum\":\"1504ad2523158caa40db4a2787cb01411994ea4f\",\"tarball\":\"https://registry.npmjs.org/fs.realpath/-/fs.realpath-1.0.0.tgz\"}}},\"modified\":\"2016-11-01T17:25:20.989Z\"}"
+  }
+}

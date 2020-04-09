@@ -1,0 +1,56 @@
+{
+  "request": {
+    "method": "GET",
+    "href": "https://registry.npmjs.org/move-concurrently",
+    "headers": {
+      "connection": [
+        "keep-alive"
+      ],
+      "user-agent": [
+        "pacote/11.1.0 node/v13.10.1"
+      ],
+      "npm-in-ci": [
+        "false"
+      ],
+      "pacote-version": [
+        "11.1.0"
+      ],
+      "pacote-req-type": [
+        "packument"
+      ],
+      "pacote-pkg-id": [
+        "registry:move-concurrently"
+      ],
+      "accept": [
+        "application/vnd.npm.install-v1+json; q=1.0, application/json; q=0.8, */*"
+      ],
+      "accept-encoding": [
+        "gzip,deflate"
+      ]
+    },
+    "body": ""
+  },
+  "response": {
+    "statusCode": 200,
+    "headers": {
+      "date": "Thu, 12 Mar 2020 04:59:15 GMT",
+      "content-type": "application/vnd.npm.install-v1+json",
+      "content-length": "1032",
+      "connection": "keep-alive",
+      "set-cookie": [
+        "__cfduid=dfe13df1b94f6bdc4c9f96fc7836ba61d1583989155; expires=Sat, 11-Apr-20 04:59:15 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax"
+      ],
+      "cf-ray": "572af1e08ee8ed73-SJC",
+      "accept-ranges": "bytes",
+      "age": "5744",
+      "cache-control": "public, max-age=300",
+      "etag": "\"bd7b707806ad00fc1ca10f1de622cc0a\"",
+      "last-modified": "Fri, 14 Feb 2020 22:41:38 GMT",
+      "vary": "accept-encoding, accept",
+      "cf-cache-status": "HIT",
+      "expect-ct": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"",
+      "server": "cloudflare"
+    },
+    "body": "{\"name\":\"move-concurrently\",\"dist-tags\":{\"latest\":\"1.0.1\"},\"versions\":{\"1.0.0\":{\"name\":\"move-concurrently\",\"version\":\"1.0.0\",\"dependencies\":{\"copy-concurrently\":\"^1.0.0\",\"aproba\":\"^1.1.1\",\"fs-write-stream-atomic\":\"^1.0.8\",\"mkdirp\":\"^0.5.1\",\"rimraf\":\"^2.5.4\",\"run-queue\":\"^1.0.3\"},\"devDependencies\":{\"standard\":\"^8.6.0\",\"tacks\":\"^1.2.6\",\"tap\":\"^10.1.1\"},\"directories\":{\"test\":\"test\"},\"dist\":{\"shasum\":\"7b34a6808475a19b1ea15df9e27e270f0cf013f9\",\"tarball\":\"https://registry.npmjs.org/move-concurrently/-/move-concurrently-1.0.0.tgz\"}},\"1.0.1\":{\"name\":\"move-concurrently\",\"version\":\"1.0.1\",\"dependencies\":{\"copy-concurrently\":\"^1.0.0\",\"aproba\":\"^1.1.1\",\"fs-write-stream-atomic\":\"^1.0.8\",\"mkdirp\":\"^0.5.1\",\"rimraf\":\"^2.5.4\",\"run-queue\":\"^1.0.3\"},\"devDependencies\":{\"standard\":\"^8.6.0\",\"tacks\":\"^1.2.6\",\"tap\":\"^10.1.1\"},\"directories\":{\"test\":\"test\"},\"dist\":{\"shasum\":\"be2c005fda32e0b29af1f05d7c4b33214c701f92\",\"tarball\":\"https://registry.npmjs.org/move-concurrently/-/move-concurrently-1.0.1.tgz\"}}},\"modified\":\"2020-01-02T04:05:50.836Z\"}"
+  }
+}

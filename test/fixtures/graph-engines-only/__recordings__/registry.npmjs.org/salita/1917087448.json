@@ -1,0 +1,2580 @@
+{
+  "request": {
+    "method": "GET",
+    "href": "https://registry.npmjs.org/salita",
+    "headers": {
+      "connection": [
+        "keep-alive"
+      ],
+      "user-agent": [
+        "pacote/11.1.0 node/v13.10.1"
+      ],
+      "npm-in-ci": [
+        "false"
+      ],
+      "pacote-version": [
+        "11.1.0"
+      ],
+      "pacote-req-type": [
+        "packument"
+      ],
+      "pacote-pkg-id": [
+        "registry:salita"
+      ],
+      "accept": [
+        "application/json"
+      ],
+      "accept-encoding": [
+        "gzip,deflate"
+      ]
+    },
+    "body": ""
+  },
+  "response": {
+    "statusCode": 200,
+    "headers": {
+      "date": "Thu, 12 Mar 2020 04:58:44 GMT",
+      "content-type": "application/json",
+      "connection": "keep-alive",
+      "set-cookie": [
+        "__cfduid=dd059719e9f005ba9664a4f39971403c61583989124; expires=Sat, 11-Apr-20 04:58:44 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax"
+      ],
+      "cf-ray": "572af11eb9af6d82-SJC",
+      "age": "4",
+      "cache-control": "public, max-age=300",
+      "etag": "W/\"aad7957cd619e2bd7a2c4b54a0a47770\"",
+      "last-modified": "Wed, 23 Oct 2019 23:36:58 GMT",
+      "vary": "accept-encoding, accept",
+      "cf-cache-status": "HIT",
+      "expect-ct": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"",
+      "server": "cloudflare",
+      "content-encoding": "application/json"
+    },
+    "body": {
+      "_id": "salita",
+      "_rev": "67-f12f0e52788d54499f208750e0321550",
+      "name": "salita",
+      "description": "Automatically upgrade all dependencies, devDependencies, and peerDependencies",
+      "dist-tags": {
+        "latest": "0.11.2"
+      },
+      "versions": {
+        "0.1.0": {
+          "name": "salita",
+          "version": "0.1.0",
+          "description": "Automatically upgrade all dependencies and devDependencies.",
+          "main": "index.js",
+          "dependencies": {
+            "async": "~0.9.0",
+            "npm": "~1.4.13"
+          },
+          "devDependencies": {},
+          "author": {
+            "name": "Tim Branyen",
+            "url": "@tbranyen"
+          },
+          "license": "MIT",
+          "gitHead": "50e5c4a1d7d9866cbbcab9fc2e906448a42c8c9a",
+          "_id": "salita@0.1.0",
+          "scripts": {},
+          "_shasum": "dd2ffdb3da511909dd4f2f504108c34fa04433fb",
+          "_from": ".",
+          "_npmVersion": "1.4.13",
+          "_npmUser": {
+            "name": "tbranyen",
+            "email": "tim@tabdeveloper.com"
+          },
+          "maintainers": [
+            {
+              "name": "tbranyen",
+              "email": "tim@tabdeveloper.com"
+            }
+          ],
+          "dist": {
+            "shasum": "dd2ffdb3da511909dd4f2f504108c34fa04433fb",
+            "tarball": "https://registry.npmjs.org/salita/-/salita-0.1.0.tgz"
+          },
+          "directories": {}
+        },
+        "0.1.1": {
+          "name": "salita",
+          "bin": {
+            "salita": "bin"
+          },
+          "version": "0.1.1",
+          "description": "Automatically upgrade all dependencies and devDependencies.",
+          "main": "index.js",
+          "dependencies": {
+            "async": "~0.9.0",
+            "npm": "~1.4.13"
+          },
+          "devDependencies": {},
+          "author": {
+            "name": "Tim Branyen",
+            "url": "@tbranyen"
+          },
+          "license": "MIT",
+          "gitHead": "89e35814ee694eae214aa92bb75043ef100cf2a3",
+          "_id": "salita@0.1.1",
+          "scripts": {},
+          "_shasum": "e477a8c099612a04dce02f8fdda8ae0991f3aed1",
+          "_from": ".",
+          "_npmVersion": "1.4.13",
+          "_npmUser": {
+            "name": "tbranyen",
+            "email": "tim@tabdeveloper.com"
+          },
+          "maintainers": [
+            {
+              "name": "tbranyen",
+              "email": "tim@tabdeveloper.com"
+            }
+          ],
+          "dist": {
+            "shasum": "e477a8c099612a04dce02f8fdda8ae0991f3aed1",
+            "tarball": "https://registry.npmjs.org/salita/-/salita-0.1.1.tgz"
+          },
+          "directories": {}
+        },
+        "0.1.2": {
+          "name": "salita",
+          "bin": {
+            "salita": "bin/salita"
+          },
+          "version": "0.1.2",
+          "description": "Automatically upgrade all dependencies and devDependencies.",
+          "main": "index.js",
+          "dependencies": {
+            "async": "~0.9.0",
+            "npm": "~1.4.13"
+          },
+          "devDependencies": {},
+          "author": {
+            "name": "Tim Branyen",
+            "url": "@tbranyen"
+          },
+          "license": "MIT",
+          "gitHead": "b1e84c1c0cb42f62bf0967d5e2276591a240b9f0",
+          "_id": "salita@0.1.2",
+          "scripts": {},
+          "_shasum": "5aac5327c60d71146ddbe402ee72e682f6a15aa1",
+          "_from": ".",
+          "_npmVersion": "1.4.13",
+          "_npmUser": {
+            "name": "tbranyen",
+            "email": "tim@tabdeveloper.com"
+          },
+          "maintainers": [
+            {
+              "name": "tbranyen",
+              "email": "tim@tabdeveloper.com"
+            }
+          ],
+          "dist": {
+            "shasum": "5aac5327c60d71146ddbe402ee72e682f6a15aa1",
+            "tarball": "https://registry.npmjs.org/salita/-/salita-0.1.2.tgz"
+          },
+          "directories": {}
+        },
+        "0.1.3": {
+          "name": "salita",
+          "bin": {
+            "salita": "bin/salita"
+          },
+          "version": "0.1.3",
+          "description": "Automatically upgrade all dependencies and devDependencies.",
+          "main": "index.js",
+          "dependencies": {
+            "async": "~0.9.0",
+            "npm": "~1.4.13"
+          },
+          "devDependencies": {},
+          "author": {
+            "name": "Tim Branyen",
+            "url": "@tbranyen"
+          },
+          "license": "MIT",
+          "gitHead": "a7078f0488b5851c2e764cf22bc089a4909acc9f",
+          "_id": "salita@0.1.3",
+          "scripts": {},
+          "_shasum": "775559788041a75668ce9336509c7f0abb26bafd",
+          "_from": ".",
+          "_npmVersion": "1.4.13",
+          "_npmUser": {
+            "name": "tbranyen",
+            "email": "tim@tabdeveloper.com"
+          },
+          "maintainers": [
+            {
+              "name": "tbranyen",
+              "email": "tim@tabdeveloper.com"
+            }
+          ],
+          "dist": {
+            "shasum": "775559788041a75668ce9336509c7f0abb26bafd",
+            "tarball": "https://registry.npmjs.org/salita/-/salita-0.1.3.tgz"
+          },
+          "directories": {}
+        },
+        "0.1.4": {
+          "name": "salita",
+          "bin": {
+            "salita": "bin/salita"
+          },
+          "version": "0.1.4",
+          "description": "Automatically upgrade all dependencies and devDependencies.",
+          "main": "index.js",
+          "dependencies": {
+            "async": "~0.9.0",
+            "npm": "~1.4.13"
+          },
+          "devDependencies": {},
+          "author": {
+            "name": "Tim Branyen",
+            "url": "@tbranyen"
+          },
+          "license": "MIT",
+          "gitHead": "51d08a32a38870f1086a2306fa087fae25ec5d49",
+          "_id": "salita@0.1.4",
+          "scripts": {},
+          "_shasum": "c6bed8698aa9cf67dce48f7e7f6defa401417535",
+          "_from": ".",
+          "_npmVersion": "1.4.13",
+          "_npmUser": {
+            "name": "tbranyen",
+            "email": "tim@tabdeveloper.com"
+          },
+          "maintainers": [
+            {
+              "name": "tbranyen",
+              "email": "tim@tabdeveloper.com"
+            }
+          ],
+          "dist": {
+            "shasum": "c6bed8698aa9cf67dce48f7e7f6defa401417535",
+            "tarball": "https://registry.npmjs.org/salita/-/salita-0.1.4.tgz"
+          },
+          "directories": {}
+        },
+        "0.1.5": {
+          "name": "salita",
+          "bin": {
+            "salita": "bin/salita"
+          },
+          "version": "0.1.5",
+          "description": "Automatically upgrade all dependencies and devDependencies.",
+          "main": "index.js",
+          "dependencies": {
+            "async": "~0.9.0",
+            "npm": "~1.4.13"
+          },
+          "devDependencies": {},
+          "author": {
+            "name": "Tim Branyen",
+            "url": "@tbranyen"
+          },
+          "license": "MIT",
+          "gitHead": "8fe6600239cf73fa706aceda94dd94dac0458c24",
+          "_id": "salita@0.1.5",
+          "scripts": {},
+          "_shasum": "f1875b20fed1ba33836527bc380e5ac0ff9c2570",
+          "_from": ".",
+          "_npmVersion": "1.4.13",
+          "_npmUser": {
+            "name": "tbranyen",
+            "email": "tim@tabdeveloper.com"
+          },
+          "maintainers": [
+            {
+              "name": "tbranyen",
+              "email": "tim@tabdeveloper.com"
+            }
+          ],
+          "dist": {
+            "shasum": "f1875b20fed1ba33836527bc380e5ac0ff9c2570",
+            "tarball": "https://registry.npmjs.org/salita/-/salita-0.1.5.tgz"
+          },
+          "directories": {}
+        },
+        "0.1.6": {
+          "name": "salita",
+          "bin": {
+            "salita": "bin/salita"
+          },
+          "version": "0.1.6",
+          "description": "Automatically upgrade all dependencies and devDependencies.",
+          "main": "index.js",
+          "dependencies": {
+            "async": "~0.9.0",
+            "npm": "~1.4.13"
+          },
+          "devDependencies": {},
+          "author": {
+            "name": "Tim Branyen",
+            "url": "@tbranyen"
+          },
+          "license": "MIT",
+          "gitHead": "b0386effd8419d6baa4df37983ba3531abdc6437",
+          "_id": "salita@0.1.6",
+          "scripts": {},
+          "_shasum": "ae6008e76c37ff4786cd8e6e7a3108bb3a76bada",
+          "_from": ".",
+          "_npmVersion": "1.4.13",
+          "_npmUser": {
+            "name": "tbranyen",
+            "email": "tim@tabdeveloper.com"
+          },
+          "maintainers": [
+            {
+              "name": "tbranyen",
+              "email": "tim@tabdeveloper.com"
+            }
+          ],
+          "dist": {
+            "shasum": "ae6008e76c37ff4786cd8e6e7a3108bb3a76bada",
+            "tarball": "https://registry.npmjs.org/salita/-/salita-0.1.6.tgz"
+          },
+          "directories": {}
+        },
+        "0.1.7": {
+          "name": "salita",
+          "bin": {
+            "salita": "bin/salita"
+          },
+          "version": "0.1.7",
+          "description": "Automatically upgrade all dependencies and devDependencies.",
+          "main": "index.js",
+          "dependencies": {
+            "async": "~0.9.0",
+            "chalk": "~0.4.0",
+            "npm": "~1.4.13",
+            "fjksdfjsdkflksdfj": "whatever"
+          },
+          "devDependencies": {},
+          "author": {
+            "name": "Tim Branyen",
+            "url": "@tbranyen"
+          },
+          "license": "MIT",
+          "gitHead": "c1d6fedd0442f09523bb1252a39a3a9063acf6c6",
+          "_id": "salita@0.1.7",
+          "scripts": {},
+          "_shasum": "8fa731f6fce7b3b64339bb6075be7a19fafdf424",
+          "_from": ".",
+          "_npmVersion": "1.4.13",
+          "_npmUser": {
+            "name": "tbranyen",
+            "email": "tim@tabdeveloper.com"
+          },
+          "maintainers": [
+            {
+              "name": "tbranyen",
+              "email": "tim@tabdeveloper.com"
+            }
+          ],
+          "dist": {
+            "shasum": "8fa731f6fce7b3b64339bb6075be7a19fafdf424",
+            "tarball": "https://registry.npmjs.org/salita/-/salita-0.1.7.tgz"
+          },
+          "directories": {}
+        },
+        "0.1.8": {
+          "name": "salita",
+          "bin": {
+            "salita": "bin/salita"
+          },
+          "version": "0.1.8",
+          "description": "Automatically upgrade all dependencies and devDependencies.",
+          "main": "index.js",
+          "dependencies": {
+            "async": "~0.9.0",
+            "chalk": "~0.4.0",
+            "npm": "~1.4.13"
+          },
+          "devDependencies": {},
+          "author": {
+            "name": "Tim Branyen",
+            "url": "@tbranyen"
+          },
+          "license": "MIT",
+          "gitHead": "88b8d28bd220f2341a046346e0fc0b1b9d2fd52f",
+          "_id": "salita@0.1.8",
+          "scripts": {},
+          "_shasum": "e48accea86433b39aa8f5e61d57586fa7a5b4b15",
+          "_from": ".",
+          "_npmVersion": "1.4.13",
+          "_npmUser": {
+            "name": "tbranyen",
+            "email": "tim@tabdeveloper.com"
+          },
+          "maintainers": [
+            {
+              "name": "tbranyen",
+              "email": "tim@tabdeveloper.com"
+            }
+          ],
+          "dist": {
+            "shasum": "e48accea86433b39aa8f5e61d57586fa7a5b4b15",
+            "tarball": "https://registry.npmjs.org/salita/-/salita-0.1.8.tgz"
+          },
+          "directories": {}
+        },
+        "0.1.9": {
+          "name": "salita",
+          "bin": {
+            "salita": "bin/salita"
+          },
+          "version": "0.1.9",
+          "description": "Automatically upgrade all dependencies and devDependencies.",
+          "main": "index.js",
+          "dependencies": {
+            "async": "~0.9.0",
+            "chalk": "~0.4.0",
+            "cli-table": "~0.3.0",
+            "npm": "~1.4.13"
+          },
+          "devDependencies": {},
+          "author": {
+            "name": "Tim Branyen",
+            "url": "@tbranyen"
+          },
+          "license": "MIT",
+          "gitHead": "0b6c49a3c9f13f374d7473a10f5b1695ba16ae8a",
+          "_id": "salita@0.1.9",
+          "scripts": {},
+          "_shasum": "2394c422dc8eb08dee8cce1b318fce6a4a6c9562",
+          "_from": ".",
+          "_npmVersion": "1.4.13",
+          "_npmUser": {
+            "name": "tbranyen",
+            "email": "tim@tabdeveloper.com"
+          },
+          "maintainers": [
+            {
+              "name": "tbranyen",
+              "email": "tim@tabdeveloper.com"
+            }
+          ],
+          "dist": {
+            "shasum": "2394c422dc8eb08dee8cce1b318fce6a4a6c9562",
+            "tarball": "https://registry.npmjs.org/salita/-/salita-0.1.9.tgz"
+          },
+          "directories": {}
+        },
+        "0.1.11": {
+          "name": "salita",
+          "bin": {
+            "salita": "bin/salita"
+          },
+          "version": "0.1.11",
+          "description": "Automatically upgrade all dependencies and devDependencies.",
+          "main": "index.js",
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/tbranyen/salita.git"
+          },
+          "dependencies": {
+            "async": "~0.9.0",
+            "chalk": "~0.5.1",
+            "cli-table": "~0.3.0",
+            "npm": "~1.4.24",
+            "json-file-plus": "~1.0.5"
+          },
+          "devDependencies": {},
+          "author": {
+            "name": "Tim Branyen",
+            "url": "@tbranyen"
+          },
+          "license": "MIT",
+          "gitHead": "3eb5a8d1a2f61e9fd5aac423554410fa78e98ade",
+          "bugs": {
+            "url": "https://github.com/tbranyen/salita/issues"
+          },
+          "homepage": "https://github.com/tbranyen/salita",
+          "_id": "salita@0.1.11",
+          "scripts": {},
+          "_shasum": "9a63db80f08518593dbf3e686b2342724eecc111",
+          "_from": ".",
+          "_npmVersion": "1.4.13",
+          "_npmUser": {
+            "name": "tbranyen",
+            "email": "tim@tabdeveloper.com"
+          },
+          "maintainers": [
+            {
+              "name": "tbranyen",
+              "email": "tim@tabdeveloper.com"
+            }
+          ],
+          "dist": {
+            "shasum": "9a63db80f08518593dbf3e686b2342724eecc111",
+            "tarball": "https://registry.npmjs.org/salita/-/salita-0.1.11.tgz"
+          },
+          "directories": {}
+        },
+        "0.2.0": {
+          "name": "salita",
+          "bin": {
+            "salita": "bin/salita"
+          },
+          "version": "0.2.0",
+          "description": "Automatically upgrade all dependencies and devDependencies.",
+          "main": "index.js",
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/tbranyen/salita.git"
+          },
+          "dependencies": {
+            "async": "~0.9.0",
+            "chalk": "~0.5.1",
+            "cli-table": "~0.3.0",
+            "npm": "~1.4.24",
+            "json-file-plus": "~1.0.5"
+          },
+          "devDependencies": {},
+          "author": {
+            "name": "Tim Branyen",
+            "url": "@tbranyen"
+          },
+          "license": "MIT",
+          "gitHead": "a97cc44ce4013f41d71553388950a67e0c385f08",
+          "bugs": {
+            "url": "https://github.com/tbranyen/salita/issues"
+          },
+          "homepage": "https://github.com/tbranyen/salita",
+          "_id": "salita@0.2.0",
+          "scripts": {},
+          "_shasum": "b26426a7fafbbbf4e59c1cfc9ab1ce0c5ac086a1",
+          "_from": ".",
+          "_npmVersion": "1.4.23",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "tbranyen",
+              "email": "tim@tabdeveloper.com"
+            },
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "dist": {
+            "shasum": "b26426a7fafbbbf4e59c1cfc9ab1ce0c5ac086a1",
+            "tarball": "https://registry.npmjs.org/salita/-/salita-0.2.0.tgz"
+          },
+          "directories": {}
+        },
+        "0.3.0": {
+          "name": "salita",
+          "bin": {
+            "salita": "bin/salita"
+          },
+          "version": "0.3.0",
+          "description": "Automatically upgrade all dependencies and devDependencies.",
+          "main": "index.js",
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/tbranyen/salita.git"
+          },
+          "dependencies": {
+            "chalk": "~0.5.1",
+            "cli-table": "~0.3.0",
+            "json-file-plus": "~1.0.7",
+            "npm": "~1.4.26",
+            "minimist": "~1.1.0",
+            "object.assign": "~1.0.1",
+            "promise": "~5.0.0"
+          },
+          "devDependencies": {},
+          "author": {
+            "name": "Tim Branyen",
+            "url": "@tbranyen"
+          },
+          "license": "MIT",
+          "gitHead": "7c046491fb053c4df5e12dbada3b9f2ce9b86344",
+          "bugs": {
+            "url": "https://github.com/tbranyen/salita/issues"
+          },
+          "homepage": "https://github.com/tbranyen/salita",
+          "_id": "salita@0.3.0",
+          "scripts": {},
+          "_shasum": "4ad2b3391c6d46882014b04e96ee122cfdfbd88e",
+          "_from": ".",
+          "_npmVersion": "1.4.23",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "tbranyen",
+              "email": "tim@tabdeveloper.com"
+            },
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "dist": {
+            "shasum": "4ad2b3391c6d46882014b04e96ee122cfdfbd88e",
+            "tarball": "https://registry.npmjs.org/salita/-/salita-0.3.0.tgz"
+          },
+          "directories": {}
+        },
+        "0.4.0": {
+          "name": "salita",
+          "bin": {
+            "salita": "bin/salita"
+          },
+          "version": "0.4.0",
+          "description": "Automatically upgrade all dependencies and devDependencies.",
+          "main": "index.js",
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/tbranyen/salita.git"
+          },
+          "dependencies": {
+            "chalk": "~0.5.1",
+            "cli-table": "~0.3.0",
+            "json-file-plus": "~1.0.7",
+            "npm": "~1.4.26",
+            "minimist": "~1.1.0",
+            "object.assign": "~1.0.1",
+            "promise": "~5.0.0"
+          },
+          "devDependencies": {},
+          "author": {
+            "name": "Tim Branyen",
+            "url": "@tbranyen"
+          },
+          "license": "MIT",
+          "gitHead": "b043c146fcedcc58e61ff263b5740def974301d3",
+          "bugs": {
+            "url": "https://github.com/tbranyen/salita/issues"
+          },
+          "homepage": "https://github.com/tbranyen/salita",
+          "_id": "salita@0.4.0",
+          "scripts": {},
+          "_shasum": "10bb3c438e5a1321dd3cab97b6fe2cd4753f4480",
+          "_from": ".",
+          "_npmVersion": "1.4.23",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "tbranyen",
+              "email": "tim@tabdeveloper.com"
+            },
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "dist": {
+            "shasum": "10bb3c438e5a1321dd3cab97b6fe2cd4753f4480",
+            "tarball": "https://registry.npmjs.org/salita/-/salita-0.4.0.tgz"
+          },
+          "directories": {}
+        },
+        "0.4.1": {
+          "name": "salita",
+          "bin": {
+            "salita": "bin/salita"
+          },
+          "version": "0.4.1",
+          "description": "Automatically upgrade all dependencies and devDependencies.",
+          "main": "index.js",
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/tbranyen/salita.git"
+          },
+          "contributors": [
+            {
+              "name": "Tim Branyen",
+              "url": "https://github.com/tbranyen"
+            },
+            {
+              "name": "Jordan Harband",
+              "email": "ljharb@gmail.com",
+              "url": "https://github.com/ljharb/"
+            }
+          ],
+          "dependencies": {
+            "chalk": "~0.5.1",
+            "cli-table": "~0.3.0",
+            "json-file-plus": "~1.0.7",
+            "npm": "~2.0.0",
+            "minimist": "~1.1.0",
+            "object.assign": "~1.0.1",
+            "promise": "~6.0.0"
+          },
+          "devDependencies": {},
+          "author": {
+            "name": "Tim Branyen",
+            "url": "@tbranyen"
+          },
+          "license": "MIT",
+          "gitHead": "d68675da2fb343284796640c95d5cf9fdf3f8765",
+          "bugs": {
+            "url": "https://github.com/tbranyen/salita/issues"
+          },
+          "homepage": "https://github.com/tbranyen/salita",
+          "_id": "salita@0.4.1",
+          "scripts": {},
+          "_shasum": "d72deca54902479f04c34621ac49f719faa2ce78",
+          "_from": ".",
+          "_npmVersion": "1.4.28",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "tbranyen",
+              "email": "tim@tabdeveloper.com"
+            },
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "dist": {
+            "shasum": "d72deca54902479f04c34621ac49f719faa2ce78",
+            "tarball": "https://registry.npmjs.org/salita/-/salita-0.4.1.tgz"
+          },
+          "directories": {}
+        },
+        "0.4.2": {
+          "name": "salita",
+          "bin": {
+            "salita": "bin/salita"
+          },
+          "version": "0.4.2",
+          "description": "Automatically upgrade all dependencies and devDependencies.",
+          "main": "index.js",
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/tbranyen/salita.git"
+          },
+          "contributors": [
+            {
+              "name": "Tim Branyen",
+              "url": "https://github.com/tbranyen"
+            },
+            {
+              "name": "Jordan Harband",
+              "email": "ljharb@gmail.com",
+              "url": "https://github.com/ljharb/"
+            }
+          ],
+          "dependencies": {
+            "chalk": "~0.5.1",
+            "cli-table": "~0.3.0",
+            "json-file-plus": "~2.0.0",
+            "npm": "~2.0.0",
+            "minimist": "~1.1.0",
+            "object.assign": "~1.0.1",
+            "promise": "~6.0.0"
+          },
+          "devDependencies": {},
+          "author": {
+            "name": "Tim Branyen",
+            "url": "@tbranyen"
+          },
+          "license": "MIT",
+          "gitHead": "162d2d235a0959703428033deafc7be06d1da7ab",
+          "bugs": {
+            "url": "https://github.com/tbranyen/salita/issues"
+          },
+          "homepage": "https://github.com/tbranyen/salita",
+          "_id": "salita@0.4.2",
+          "scripts": {},
+          "_shasum": "e5080168a70dba8cbad42893cc585f5c99bfc715",
+          "_from": ".",
+          "_npmVersion": "1.4.28",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "tbranyen",
+              "email": "tim@tabdeveloper.com"
+            },
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "dist": {
+            "shasum": "e5080168a70dba8cbad42893cc585f5c99bfc715",
+            "tarball": "https://registry.npmjs.org/salita/-/salita-0.4.2.tgz"
+          },
+          "directories": {}
+        },
+        "0.4.3": {
+          "name": "salita",
+          "bin": {
+            "salita": "bin/salita"
+          },
+          "version": "0.4.3",
+          "description": "Automatically upgrade all dependencies and devDependencies.",
+          "main": "index.js",
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/tbranyen/salita.git"
+          },
+          "contributors": [
+            {
+              "name": "Tim Branyen",
+              "url": "https://github.com/tbranyen"
+            },
+            {
+              "name": "Jordan Harband",
+              "email": "ljharb@gmail.com",
+              "url": "https://github.com/ljharb/"
+            }
+          ],
+          "dependencies": {
+            "chalk": "~0.5.1",
+            "cli-table": "~0.3.0",
+            "json-file-plus": "~2.0.0",
+            "npm": "~2.0.2",
+            "minimist": "~1.1.0",
+            "object.assign": "~1.0.1",
+            "promise": "~6.0.0"
+          },
+          "devDependencies": {},
+          "author": {
+            "name": "Tim Branyen",
+            "url": "@tbranyen"
+          },
+          "license": "MIT",
+          "gitHead": "a0e51718f0b1698d22953cfbfa6613da822465bc",
+          "bugs": {
+            "url": "https://github.com/tbranyen/salita/issues"
+          },
+          "homepage": "https://github.com/tbranyen/salita",
+          "_id": "salita@0.4.3",
+          "scripts": {},
+          "_shasum": "220a3e595b860081842e7b065e3421cc115cf629",
+          "_from": ".",
+          "_npmVersion": "1.4.28",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "tbranyen",
+              "email": "tim@tabdeveloper.com"
+            },
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "dist": {
+            "shasum": "220a3e595b860081842e7b065e3421cc115cf629",
+            "tarball": "https://registry.npmjs.org/salita/-/salita-0.4.3.tgz"
+          },
+          "directories": {}
+        },
+        "0.5.0": {
+          "name": "salita",
+          "bin": {
+            "salita": "bin/salita"
+          },
+          "version": "0.5.0",
+          "description": "Automatically upgrade all dependencies and devDependencies.",
+          "main": "index.js",
+          "scripts": {
+            "lint": "jscs *.js bin/salita"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/tbranyen/salita.git"
+          },
+          "contributors": [
+            {
+              "name": "Tim Branyen",
+              "url": "https://github.com/tbranyen"
+            },
+            {
+              "name": "Jordan Harband",
+              "email": "ljharb@gmail.com",
+              "url": "https://github.com/ljharb/"
+            }
+          ],
+          "dependencies": {
+            "chalk": "~0.5.1",
+            "cli-table": "~0.3.1",
+            "json-file-plus": "~2.0.0",
+            "npm": "~2.1.4",
+            "minimist": "~1.1.0",
+            "object.assign": "~1.0.1",
+            "promise": "~6.0.1",
+            "semver": "~4.1.0"
+          },
+          "devDependencies": {
+            "jscs": "~1.7.3"
+          },
+          "author": {
+            "name": "Tim Branyen",
+            "url": "@tbranyen"
+          },
+          "license": "MIT",
+          "gitHead": "e157e981b26ecfd64384cec21001ba5955f2bc60",
+          "bugs": {
+            "url": "https://github.com/tbranyen/salita/issues"
+          },
+          "homepage": "https://github.com/tbranyen/salita",
+          "_id": "salita@0.5.0",
+          "_shasum": "f0d34e0d089bd11e1b1d92cba508841ccdba12fe",
+          "_from": ".",
+          "_npmVersion": "1.4.28",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "tbranyen",
+              "email": "tim@tabdeveloper.com"
+            },
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "dist": {
+            "shasum": "f0d34e0d089bd11e1b1d92cba508841ccdba12fe",
+            "tarball": "https://registry.npmjs.org/salita/-/salita-0.5.0.tgz"
+          },
+          "directories": {}
+        },
+        "0.6.0": {
+          "name": "salita",
+          "bin": {
+            "salita": "bin/salita"
+          },
+          "version": "0.6.0",
+          "description": "Automatically upgrade all dependencies and devDependencies.",
+          "main": "index.js",
+          "scripts": {
+            "lint": "jscs *.js bin/salita"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/tbranyen/salita.git"
+          },
+          "contributors": [
+            {
+              "name": "Tim Branyen",
+              "url": "https://github.com/tbranyen"
+            },
+            {
+              "name": "Jordan Harband",
+              "email": "ljharb@gmail.com",
+              "url": "https://github.com/ljharb/"
+            }
+          ],
+          "dependencies": {
+            "chalk": "~0.5.1",
+            "cli-table": "~0.3.1",
+            "json-file-plus": "~2.0.0",
+            "npm": "~2.1.14",
+            "minimist": "~1.1.0",
+            "object.assign": "~1.1.1",
+            "promise": "~6.0.1",
+            "semver": "~4.1.0"
+          },
+          "devDependencies": {
+            "jscs": "~1.8.1"
+          },
+          "author": {
+            "name": "Tim Branyen",
+            "url": "@tbranyen"
+          },
+          "license": "MIT",
+          "gitHead": "a822af8686806ca3c68d03f050d221fea29a82cc",
+          "bugs": {
+            "url": "https://github.com/tbranyen/salita/issues"
+          },
+          "homepage": "https://github.com/tbranyen/salita",
+          "_id": "salita@0.6.0",
+          "_shasum": "89e621bee8be306e2eeacc42d2bb0f734d4f6034",
+          "_from": ".",
+          "_npmVersion": "1.4.28",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "tbranyen",
+              "email": "tim@tabdeveloper.com"
+            },
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "dist": {
+            "shasum": "89e621bee8be306e2eeacc42d2bb0f734d4f6034",
+            "tarball": "https://registry.npmjs.org/salita/-/salita-0.6.0.tgz"
+          },
+          "directories": {}
+        },
+        "0.7.0": {
+          "name": "salita",
+          "bin": {
+            "salita": "bin/salita"
+          },
+          "version": "0.7.0",
+          "description": "Automatically upgrade all dependencies and devDependencies.",
+          "main": "index.js",
+          "scripts": {
+            "lint": "jscs *.js bin/salita"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/tbranyen/salita.git"
+          },
+          "contributors": [
+            {
+              "name": "Tim Branyen",
+              "url": "https://github.com/tbranyen"
+            },
+            {
+              "name": "Jordan Harband",
+              "email": "ljharb@gmail.com",
+              "url": "https://github.com/ljharb/"
+            }
+          ],
+          "dependencies": {
+            "chalk": "~0.5.1",
+            "cli-table": "~0.3.1",
+            "json-file-plus": "~2.0.0",
+            "npm": "~2.1.18",
+            "minimist": "~1.1.0",
+            "object.assign": "~1.1.1",
+            "promise": "~6.0.1",
+            "semver": "~4.2.0"
+          },
+          "devDependencies": {
+            "jscs": "~1.9.0"
+          },
+          "author": {
+            "name": "Tim Branyen",
+            "url": "@tbranyen"
+          },
+          "license": "MIT",
+          "gitHead": "ec765b0879fccafbdb9c9d1c5542adb29bf784b6",
+          "bugs": {
+            "url": "https://github.com/tbranyen/salita/issues"
+          },
+          "homepage": "https://github.com/tbranyen/salita",
+          "_id": "salita@0.7.0",
+          "_shasum": "3315e997f2c7649bd2d5b840eaddeb402cc47326",
+          "_from": ".",
+          "_npmVersion": "1.4.28",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "tbranyen",
+              "email": "tim@tabdeveloper.com"
+            },
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "dist": {
+            "shasum": "3315e997f2c7649bd2d5b840eaddeb402cc47326",
+            "tarball": "https://registry.npmjs.org/salita/-/salita-0.7.0.tgz"
+          },
+          "directories": {}
+        },
+        "0.7.1": {
+          "name": "salita",
+          "bin": {
+            "salita": "bin/salita"
+          },
+          "version": "0.7.1",
+          "description": "Automatically upgrade all dependencies and devDependencies.",
+          "main": "index.js",
+          "scripts": {
+            "lint": "jscs *.js bin/salita"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/tbranyen/salita.git"
+          },
+          "contributors": [
+            {
+              "name": "Tim Branyen",
+              "url": "https://github.com/tbranyen"
+            },
+            {
+              "name": "Jordan Harband",
+              "email": "ljharb@gmail.com",
+              "url": "https://github.com/ljharb/"
+            }
+          ],
+          "dependencies": {
+            "chalk": "^1.0.0",
+            "cli-table": "^0.3.1",
+            "json-file-plus": "^3.0.0",
+            "npm": "^2.10.1",
+            "minimist": "^1.1.1",
+            "object.assign": "^2.0.1",
+            "promise": "^7.0.1",
+            "semver": "^4.3.4"
+          },
+          "devDependencies": {
+            "jscs": "^1.13.1"
+          },
+          "author": {
+            "name": "Tim Branyen",
+            "url": "@tbranyen"
+          },
+          "license": "MIT",
+          "gitHead": "83178ae1e18fbeb1e293c9c78e885ae19c330229",
+          "bugs": {
+            "url": "https://github.com/tbranyen/salita/issues"
+          },
+          "homepage": "https://github.com/tbranyen/salita#readme",
+          "_id": "salita@0.7.1",
+          "_shasum": "a581899331c6d73bdf72dc7d30488396a912b13f",
+          "_from": ".",
+          "_npmVersion": "2.9.0",
+          "_nodeVersion": "2.0.2",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "dist": {
+            "shasum": "a581899331c6d73bdf72dc7d30488396a912b13f",
+            "tarball": "https://registry.npmjs.org/salita/-/salita-0.7.1.tgz"
+          },
+          "maintainers": [
+            {
+              "name": "tbranyen",
+              "email": "tim@tabdeveloper.com"
+            },
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "directories": {}
+        },
+        "0.8.0": {
+          "name": "salita",
+          "bin": {
+            "salita": "bin/salita"
+          },
+          "version": "0.8.0",
+          "description": "Automatically upgrade all dependencies and devDependencies.",
+          "main": "index.js",
+          "scripts": {
+            "lint": "jscs *.js bin/salita"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/tbranyen/salita.git"
+          },
+          "contributors": [
+            {
+              "name": "Tim Branyen",
+              "url": "https://github.com/tbranyen"
+            },
+            {
+              "name": "Jordan Harband",
+              "email": "ljharb@gmail.com",
+              "url": "https://github.com/ljharb/"
+            }
+          ],
+          "dependencies": {
+            "chalk": "^1.0.0",
+            "cli-table": "^0.3.1",
+            "json-file-plus": "^3.0.0",
+            "npm": "3.0-latest",
+            "yargs": "^3.13.0",
+            "object.assign": "^3.0.0",
+            "promise": "^7.0.3",
+            "semver": "^4.3.6"
+          },
+          "devDependencies": {
+            "jscs": "^1.13.1"
+          },
+          "author": {
+            "name": "Tim Branyen",
+            "url": "@tbranyen"
+          },
+          "license": "MIT",
+          "gitHead": "09fdcde886f2038c88ea49dd689e31fee935a6ea",
+          "bugs": {
+            "url": "https://github.com/tbranyen/salita/issues"
+          },
+          "homepage": "https://github.com/tbranyen/salita#readme",
+          "_id": "salita@0.8.0",
+          "_shasum": "9bd6c70b9dc64d75b6e16cf65683f0509cfd6eaf",
+          "_from": ".",
+          "_npmVersion": "2.11.3",
+          "_nodeVersion": "2.3.1",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "dist": {
+            "shasum": "9bd6c70b9dc64d75b6e16cf65683f0509cfd6eaf",
+            "tarball": "https://registry.npmjs.org/salita/-/salita-0.8.0.tgz"
+          },
+          "maintainers": [
+            {
+              "name": "tbranyen",
+              "email": "tim@tabdeveloper.com"
+            },
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "directories": {}
+        },
+        "0.8.1": {
+          "name": "salita",
+          "bin": {
+            "salita": "bin/salita"
+          },
+          "version": "0.8.1",
+          "description": "Automatically upgrade all dependencies and devDependencies.",
+          "main": "index.js",
+          "scripts": {
+            "lint": "npm run jscs && npm run eslint",
+            "eslint": "eslint *.js bin/salita",
+            "jscs": "jscs *.js bin/salita"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/tbranyen/salita.git"
+          },
+          "contributors": [
+            {
+              "name": "Tim Branyen",
+              "url": "https://github.com/tbranyen"
+            },
+            {
+              "name": "Jordan Harband",
+              "email": "ljharb@gmail.com",
+              "url": "https://github.com/ljharb/"
+            }
+          ],
+          "dependencies": {
+            "chalk": "^1.1.0",
+            "cli-table": "^0.3.1",
+            "json-file-plus": "^3.0.0",
+            "npm": "v3.x-next",
+            "yargs": "^3.18.0",
+            "object.assign": "^3.0.1",
+            "promise": "^7.0.4",
+            "semver": "^5.0.1"
+          },
+          "devDependencies": {
+            "jscs": "^2.0.0",
+            "eslint": "^1.1.0",
+            "@ljharb/eslint-config": "^1.0.4"
+          },
+          "author": {
+            "name": "Tim Branyen",
+            "url": "@tbranyen"
+          },
+          "license": "MIT",
+          "gitHead": "038443a37c5a8b9f5c5156fcacdccd7589456b47",
+          "bugs": {
+            "url": "https://github.com/tbranyen/salita/issues"
+          },
+          "homepage": "https://github.com/tbranyen/salita#readme",
+          "_id": "salita@0.8.1",
+          "_shasum": "3e1317bb80fcfdc0df623d43d051232614527f2e",
+          "_from": ".",
+          "_npmVersion": "2.13.3",
+          "_nodeVersion": "3.0.0",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "dist": {
+            "shasum": "3e1317bb80fcfdc0df623d43d051232614527f2e",
+            "tarball": "https://registry.npmjs.org/salita/-/salita-0.8.1.tgz"
+          },
+          "maintainers": [
+            {
+              "name": "tbranyen",
+              "email": "tim@tabdeveloper.com"
+            },
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "directories": {}
+        },
+        "0.8.2": {
+          "name": "salita",
+          "bin": {
+            "salita": "bin/salita"
+          },
+          "version": "0.8.2",
+          "description": "Automatically upgrade all dependencies and devDependencies.",
+          "main": "index.js",
+          "scripts": {
+            "lint": "npm run jscs && npm run eslint",
+            "eslint": "eslint *.js bin/salita",
+            "jscs": "jscs *.js bin/salita"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/tbranyen/salita.git"
+          },
+          "contributors": [
+            {
+              "name": "Tim Branyen",
+              "url": "https://github.com/tbranyen"
+            },
+            {
+              "name": "Jordan Harband",
+              "email": "ljharb@gmail.com",
+              "url": "https://github.com/ljharb/"
+            }
+          ],
+          "dependencies": {
+            "chalk": "^1.1.1",
+            "cli-table": "^0.3.1",
+            "json-file-plus": "^3.0.1",
+            "npm": "next",
+            "yargs": "^3.25.0",
+            "object.assign": "^4.0.1",
+            "promise": "^7.0.4",
+            "semver": "^5.0.3"
+          },
+          "devDependencies": {
+            "jscs": "^2.1.1",
+            "eslint": "^1.4.3",
+            "@ljharb/eslint-config": "^1.2.0"
+          },
+          "author": {
+            "name": "Tim Branyen",
+            "url": "@tbranyen"
+          },
+          "license": "MIT",
+          "gitHead": "4337e7b5af7d4f6d54598300ba283684e733bf3d",
+          "bugs": {
+            "url": "https://github.com/tbranyen/salita/issues"
+          },
+          "homepage": "https://github.com/tbranyen/salita#readme",
+          "_id": "salita@0.8.2",
+          "_shasum": "3d00602865c213290a85b5cea283c7e33a5f58fa",
+          "_from": ".",
+          "_npmVersion": "2.14.3",
+          "_nodeVersion": "4.1.0",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "dist": {
+            "shasum": "3d00602865c213290a85b5cea283c7e33a5f58fa",
+            "tarball": "https://registry.npmjs.org/salita/-/salita-0.8.2.tgz"
+          },
+          "maintainers": [
+            {
+              "name": "tbranyen",
+              "email": "tim@tabdeveloper.com"
+            },
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "directories": {}
+        },
+        "0.8.3": {
+          "name": "salita",
+          "bin": {
+            "salita": "node bin/salita"
+          },
+          "version": "0.8.3",
+          "description": "Automatically upgrade all dependencies and devDependencies.",
+          "main": "index.js",
+          "scripts": {
+            "lint": "npm run jscs && npm run eslint",
+            "eslint": "eslint *.js bin/salita",
+            "jscs": "jscs *.js bin/salita"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/tbranyen/salita.git"
+          },
+          "contributors": [
+            {
+              "name": "Tim Branyen",
+              "url": "https://github.com/tbranyen"
+            },
+            {
+              "name": "Jordan Harband",
+              "email": "ljharb@gmail.com",
+              "url": "https://github.com/ljharb/"
+            }
+          ],
+          "dependencies": {
+            "chalk": "^1.1.1",
+            "cli-table": "^0.3.1",
+            "json-file-plus": "^3.0.1",
+            "npm": "next",
+            "yargs": "^3.27.0",
+            "object.assign": "^4.0.1",
+            "promise": "^7.0.4",
+            "semver": "^5.0.3"
+          },
+          "devDependencies": {
+            "jscs": "^2.3.1",
+            "eslint": "^1.6.0",
+            "@ljharb/eslint-config": "^1.3.0"
+          },
+          "author": {
+            "name": "Tim Branyen",
+            "url": "@tbranyen"
+          },
+          "license": "MIT",
+          "gitHead": "66a035093826257c2fdf960353f882f046d02104",
+          "bugs": {
+            "url": "https://github.com/tbranyen/salita/issues"
+          },
+          "homepage": "https://github.com/tbranyen/salita#readme",
+          "_id": "salita@0.8.3",
+          "_shasum": "229153f9229501cd5abb6264fc8013e95f1b4c8a",
+          "_from": ".",
+          "_npmVersion": "2.14.7",
+          "_nodeVersion": "4.2.1",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "dist": {
+            "shasum": "229153f9229501cd5abb6264fc8013e95f1b4c8a",
+            "tarball": "https://registry.npmjs.org/salita/-/salita-0.8.3.tgz"
+          },
+          "maintainers": [
+            {
+              "name": "tbranyen",
+              "email": "tim@tabdeveloper.com"
+            },
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "directories": {}
+        },
+        "0.8.4": {
+          "name": "salita",
+          "bin": {
+            "salita": "bin/salita"
+          },
+          "version": "0.8.4",
+          "description": "Automatically upgrade all dependencies and devDependencies.",
+          "main": "index.js",
+          "scripts": {
+            "lint": "npm run jscs && npm run eslint",
+            "eslint": "eslint *.js bin/salita",
+            "jscs": "jscs *.js bin/salita"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/tbranyen/salita.git"
+          },
+          "contributors": [
+            {
+              "name": "Tim Branyen",
+              "url": "https://github.com/tbranyen"
+            },
+            {
+              "name": "Jordan Harband",
+              "email": "ljharb@gmail.com",
+              "url": "https://github.com/ljharb/"
+            }
+          ],
+          "dependencies": {
+            "chalk": "^1.1.1",
+            "cli-table": "^0.3.1",
+            "json-file-plus": "^3.0.1",
+            "npm": "^3.3.8",
+            "yargs": "^3.27.0",
+            "object.assign": "^4.0.1",
+            "promise": "^7.0.4",
+            "semver": "^5.0.3"
+          },
+          "devDependencies": {
+            "jscs": "^2.3.3",
+            "eslint": "^1.7.1",
+            "@ljharb/eslint-config": "^1.3.0"
+          },
+          "author": {
+            "name": "Tim Branyen",
+            "url": "@tbranyen"
+          },
+          "license": "MIT",
+          "gitHead": "232041adf553b5d465a4a9fb52b152472e7a286d",
+          "bugs": {
+            "url": "https://github.com/tbranyen/salita/issues"
+          },
+          "homepage": "https://github.com/tbranyen/salita#readme",
+          "_id": "salita@0.8.4",
+          "_shasum": "a3c252d0390acf1a030ed980d9a22241d92575eb",
+          "_from": ".",
+          "_npmVersion": "2.14.7",
+          "_nodeVersion": "4.2.1",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "dist": {
+            "shasum": "a3c252d0390acf1a030ed980d9a22241d92575eb",
+            "tarball": "https://registry.npmjs.org/salita/-/salita-0.8.4.tgz"
+          },
+          "maintainers": [
+            {
+              "name": "tbranyen",
+              "email": "tim@tabdeveloper.com"
+            },
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "directories": {}
+        },
+        "0.8.5": {
+          "name": "salita",
+          "bin": {
+            "salita": "bin/salita"
+          },
+          "version": "0.8.5",
+          "description": "Automatically upgrade all dependencies and devDependencies.",
+          "main": "index.js",
+          "scripts": {
+            "lint": "npm run jscs && npm run eslint",
+            "eslint": "eslint *.js bin/salita",
+            "jscs": "jscs *.js bin/salita"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/tbranyen/salita.git"
+          },
+          "contributors": [
+            {
+              "name": "Tim Branyen",
+              "url": "https://github.com/tbranyen"
+            },
+            {
+              "name": "Jordan Harband",
+              "email": "ljharb@gmail.com",
+              "url": "https://github.com/ljharb/"
+            }
+          ],
+          "dependencies": {
+            "chalk": "^1.1.1",
+            "cli-table": "^0.3.1",
+            "json-file-plus": "^3.2.0",
+            "npm": "^3.5.2",
+            "yargs": "^3.31.0",
+            "object.assign": "^4.0.3",
+            "promise": "^7.1.1",
+            "semver": "^5.1.0"
+          },
+          "devDependencies": {
+            "jscs": "^2.7.0",
+            "eslint": "^1.10.3",
+            "@ljharb/eslint-config": "^1.6.1"
+          },
+          "author": {
+            "name": "Tim Branyen",
+            "url": "@tbranyen"
+          },
+          "license": "MIT",
+          "gitHead": "6bb5020717fd80d58b729f50be500a267dec0e49",
+          "bugs": {
+            "url": "https://github.com/tbranyen/salita/issues"
+          },
+          "homepage": "https://github.com/tbranyen/salita#readme",
+          "_id": "salita@0.8.5",
+          "_shasum": "942fbe213e5b6bc261d8e66229fb448bca6afe2b",
+          "_from": ".",
+          "_npmVersion": "3.3.12",
+          "_nodeVersion": "5.3.0",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "dist": {
+            "shasum": "942fbe213e5b6bc261d8e66229fb448bca6afe2b",
+            "tarball": "https://registry.npmjs.org/salita/-/salita-0.8.5.tgz"
+          },
+          "maintainers": [
+            {
+              "name": "tbranyen",
+              "email": "tim@tabdeveloper.com"
+            },
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "directories": {}
+        },
+        "0.9.0": {
+          "name": "salita",
+          "bin": {
+            "salita": "bin/salita"
+          },
+          "version": "0.9.0",
+          "description": "Automatically upgrade all dependencies, devDependencies, and peerDependencies",
+          "main": "index.js",
+          "scripts": {
+            "lint": "npm run --silent jscs && npm run --silent eslint",
+            "pretest": "npm run --silent lint",
+            "eslint": "eslint *.js bin/salita",
+            "jscs": "jscs *.js bin/salita"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/tbranyen/salita.git"
+          },
+          "contributors": [
+            {
+              "name": "Tim Branyen",
+              "url": "https://github.com/tbranyen"
+            },
+            {
+              "name": "Jordan Harband",
+              "email": "ljharb@gmail.com",
+              "url": "https://github.com/ljharb/"
+            }
+          ],
+          "dependencies": {
+            "chalk": "^1.1.3",
+            "cli-table": "^0.3.1",
+            "json-file-plus": "^3.3.0",
+            "npm": "^3.8.5",
+            "yargs": "^4.4.0",
+            "object.assign": "^4.0.3",
+            "promise": "^7.1.1",
+            "semver": "^5.1.0",
+            "for-each": "^0.3.2"
+          },
+          "devDependencies": {
+            "jscs": "^2.11.0",
+            "eslint": "^2.7.0",
+            "@ljharb/eslint-config": "^2.2.0"
+          },
+          "author": {
+            "name": "Tim Branyen",
+            "url": "@tbranyen"
+          },
+          "license": "MIT",
+          "gitHead": "6398a5481d78d4a768b6a8e37ed65a33aad8a7e2",
+          "bugs": {
+            "url": "https://github.com/tbranyen/salita/issues"
+          },
+          "homepage": "https://github.com/tbranyen/salita#readme",
+          "_id": "salita@0.9.0",
+          "_shasum": "ad43136b4cda6fbf73aa57b9ee5bbffcf91fb8d9",
+          "_from": ".",
+          "_npmVersion": "3.8.3",
+          "_nodeVersion": "5.10.0",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "dist": {
+            "shasum": "ad43136b4cda6fbf73aa57b9ee5bbffcf91fb8d9",
+            "tarball": "https://registry.npmjs.org/salita/-/salita-0.9.0.tgz"
+          },
+          "maintainers": [
+            {
+              "name": "tbranyen",
+              "email": "tim@tabdeveloper.com"
+            },
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "_npmOperationalInternal": {
+            "host": "packages-12-west.internal.npmjs.com",
+            "tmp": "tmp/salita-0.9.0.tgz_1460010113084_0.39002681360580027"
+          },
+          "directories": {}
+        },
+        "0.9.1": {
+          "name": "salita",
+          "bin": {
+            "salita": "bin/salita"
+          },
+          "version": "0.9.1",
+          "description": "Automatically upgrade all dependencies, devDependencies, and peerDependencies",
+          "main": "index.js",
+          "scripts": {
+            "lint": "npm run --silent jscs && npm run --silent eslint",
+            "pretest": "npm run --silent lint",
+            "eslint": "eslint *.js bin/salita",
+            "jscs": "jscs *.js bin/salita"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/tbranyen/salita.git"
+          },
+          "contributors": [
+            {
+              "name": "Tim Branyen",
+              "url": "https://github.com/tbranyen"
+            },
+            {
+              "name": "Jordan Harband",
+              "email": "ljharb@gmail.com",
+              "url": "https://github.com/ljharb/"
+            }
+          ],
+          "dependencies": {
+            "chalk": "^1.1.3",
+            "cli-table": "^0.3.1",
+            "json-file-plus": "^3.3.0",
+            "npm": "^3.10.2",
+            "yargs": "^4.7.1",
+            "object.assign": "^4.0.3",
+            "promise": "^7.1.1",
+            "semver": "^5.1.1",
+            "for-each": "^0.3.2"
+          },
+          "devDependencies": {
+            "jscs": "^3.0.5",
+            "eslint": "^2.13.1",
+            "@ljharb/eslint-config": "^5.0.0"
+          },
+          "author": {
+            "name": "Tim Branyen",
+            "url": "@tbranyen"
+          },
+          "license": "MIT",
+          "gitHead": "c50b2f76433deca10c6c991efc933dd1744dc3ef",
+          "bugs": {
+            "url": "https://github.com/tbranyen/salita/issues"
+          },
+          "homepage": "https://github.com/tbranyen/salita#readme",
+          "_id": "salita@0.9.1",
+          "_shasum": "eb8823fd57ce84d5a797a860cf9f87011e75e226",
+          "_from": ".",
+          "_npmVersion": "3.9.5",
+          "_nodeVersion": "6.2.2",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "dist": {
+            "shasum": "eb8823fd57ce84d5a797a860cf9f87011e75e226",
+            "tarball": "https://registry.npmjs.org/salita/-/salita-0.9.1.tgz"
+          },
+          "maintainers": [
+            {
+              "name": "tbranyen",
+              "email": "tim@tabdeveloper.com"
+            },
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "_npmOperationalInternal": {
+            "host": "packages-16-east.internal.npmjs.com",
+            "tmp": "tmp/salita-0.9.1.tgz_1467092962969_0.4036864656955004"
+          },
+          "directories": {}
+        },
+        "0.9.2": {
+          "name": "salita",
+          "bin": {
+            "salita": "bin/salita"
+          },
+          "version": "0.9.2",
+          "description": "Automatically upgrade all dependencies, devDependencies, and peerDependencies",
+          "main": "index.js",
+          "scripts": {
+            "lint": "npm run --silent jscs && npm run --silent eslint",
+            "pretest": "npm run --silent lint",
+            "eslint": "eslint *.js bin/salita",
+            "jscs": "jscs *.js bin/salita"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/tbranyen/salita.git"
+          },
+          "contributors": [
+            {
+              "name": "Tim Branyen",
+              "url": "https://github.com/tbranyen"
+            },
+            {
+              "name": "Jordan Harband",
+              "email": "ljharb@gmail.com",
+              "url": "https://github.com/ljharb/"
+            }
+          ],
+          "dependencies": {
+            "chalk": "^1.1.3",
+            "cli-table": "^0.3.1",
+            "json-file-plus": "^3.3.0",
+            "npm": "^3.10.5",
+            "yargs": "^4.8.0",
+            "object.assign": "^4.0.4",
+            "promise": "^7.1.1",
+            "semver": "^5.3.0",
+            "for-each": "^0.3.2"
+          },
+          "devDependencies": {
+            "jscs": "^3.0.7",
+            "eslint": "^3.1.0",
+            "@ljharb/eslint-config": "^6.0.0"
+          },
+          "author": {
+            "name": "Tim Branyen",
+            "url": "@tbranyen"
+          },
+          "license": "MIT",
+          "gitHead": "2150554d741f2587c688faee7fb5e739baf6734a",
+          "bugs": {
+            "url": "https://github.com/tbranyen/salita/issues"
+          },
+          "homepage": "https://github.com/tbranyen/salita#readme",
+          "_id": "salita@0.9.2",
+          "_shasum": "eb3c5a2324535dec7e68aaea95ce767771f6e415",
+          "_from": ".",
+          "_npmVersion": "3.10.3",
+          "_nodeVersion": "6.3.0",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "dist": {
+            "shasum": "eb3c5a2324535dec7e68aaea95ce767771f6e415",
+            "tarball": "https://registry.npmjs.org/salita/-/salita-0.9.2.tgz"
+          },
+          "maintainers": [
+            {
+              "name": "tbranyen",
+              "email": "tim@tabdeveloper.com"
+            },
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "_npmOperationalInternal": {
+            "host": "packages-16-east.internal.npmjs.com",
+            "tmp": "tmp/salita-0.9.2.tgz_1468686427914_0.0877434485591948"
+          },
+          "directories": {}
+        },
+        "0.9.3": {
+          "name": "salita",
+          "bin": {
+            "salita": "bin/salita"
+          },
+          "version": "0.9.3",
+          "description": "Automatically upgrade all dependencies, devDependencies, and peerDependencies",
+          "main": "index.js",
+          "scripts": {
+            "lint": "npm run --silent jscs && npm run --silent eslint",
+            "pretest": "npm run --silent lint",
+            "eslint": "eslint *.js bin/salita",
+            "jscs": "jscs *.js bin/salita"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/tbranyen/salita.git"
+          },
+          "contributors": [
+            {
+              "name": "Tim Branyen",
+              "url": "https://github.com/tbranyen"
+            },
+            {
+              "name": "Jordan Harband",
+              "email": "ljharb@gmail.com",
+              "url": "https://github.com/ljharb/"
+            }
+          ],
+          "dependencies": {
+            "chalk": "^1.1.3",
+            "cli-table": "^0.3.1",
+            "json-file-plus": "^3.3.0",
+            "npm": "^3.10.5",
+            "yargs": "^4.8.0",
+            "object.assign": "^4.0.4",
+            "promise": "^7.1.1",
+            "semver": "^5.3.0",
+            "for-each": "^0.3.2"
+          },
+          "devDependencies": {
+            "jscs": "^3.0.7",
+            "eslint": "^3.1.0",
+            "@ljharb/eslint-config": "^6.0.0"
+          },
+          "author": {
+            "name": "Tim Branyen",
+            "url": "@tbranyen"
+          },
+          "license": "MIT",
+          "gitHead": "b13218bcb830f33f7fd0e072e1718913bc296cd0",
+          "bugs": {
+            "url": "https://github.com/tbranyen/salita/issues"
+          },
+          "homepage": "https://github.com/tbranyen/salita#readme",
+          "_id": "salita@0.9.3",
+          "_shasum": "4f852da83302b7ca5fb9625f909a875bf1be8cf0",
+          "_from": ".",
+          "_npmVersion": "3.10.8",
+          "_nodeVersion": "7.0.0",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "dist": {
+            "shasum": "4f852da83302b7ca5fb9625f909a875bf1be8cf0",
+            "tarball": "https://registry.npmjs.org/salita/-/salita-0.9.3.tgz"
+          },
+          "maintainers": [
+            {
+              "name": "tbranyen",
+              "email": "tim@tabdeveloper.com"
+            },
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "_npmOperationalInternal": {
+            "host": "packages-18-east.internal.npmjs.com",
+            "tmp": "tmp/salita-0.9.3.tgz_1478597814887_0.37816917547024786"
+          },
+          "directories": {}
+        },
+        "0.9.4": {
+          "name": "salita",
+          "bin": {
+            "salita": "bin/salita"
+          },
+          "version": "0.9.4",
+          "description": "Automatically upgrade all dependencies, devDependencies, and peerDependencies",
+          "main": "index.js",
+          "scripts": {
+            "lint": "npm run --silent jscs && npm run --silent eslint",
+            "pretest": "npm run --silent lint",
+            "eslint": "eslint *.js bin/salita",
+            "jscs": "jscs *.js bin/salita"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/tbranyen/salita.git"
+          },
+          "contributors": [
+            {
+              "name": "Tim Branyen",
+              "url": "https://github.com/tbranyen"
+            },
+            {
+              "name": "Jordan Harband",
+              "email": "ljharb@gmail.com",
+              "url": "https://github.com/ljharb/"
+            }
+          ],
+          "dependencies": {
+            "chalk": "^1.1.3",
+            "cli-table": "^0.3.1",
+            "json-file-plus": "^3.3.0",
+            "npm": "^3.10.8",
+            "yargs": "^5.0.0",
+            "object.assign": "^4.0.4",
+            "promise": "^7.1.1",
+            "semver": "^5.3.0",
+            "for-each": "^0.3.2"
+          },
+          "devDependencies": {
+            "jscs": "^3.0.7",
+            "eslint": "^3.6.1",
+            "@ljharb/eslint-config": "^8.0.0"
+          },
+          "author": {
+            "name": "Tim Branyen",
+            "url": "@tbranyen"
+          },
+          "license": "MIT",
+          "gitHead": "4ee13995e0490d30d161bf6c0b11a20a1cf645c9",
+          "bugs": {
+            "url": "https://github.com/tbranyen/salita/issues"
+          },
+          "homepage": "https://github.com/tbranyen/salita#readme",
+          "_id": "salita@0.9.4",
+          "_shasum": "169bb84011d7ff974e959f100eb7c42bac057c6d",
+          "_from": ".",
+          "_npmVersion": "3.10.9",
+          "_nodeVersion": "7.1.0",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "dist": {
+            "shasum": "169bb84011d7ff974e959f100eb7c42bac057c6d",
+            "tarball": "https://registry.npmjs.org/salita/-/salita-0.9.4.tgz"
+          },
+          "maintainers": [
+            {
+              "name": "tbranyen",
+              "email": "tim@tabdeveloper.com"
+            },
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "_npmOperationalInternal": {
+            "host": "packages-12-west.internal.npmjs.com",
+            "tmp": "tmp/salita-0.9.4.tgz_1479365275260_0.05075809941627085"
+          },
+          "directories": {}
+        },
+        "0.10.0": {
+          "name": "salita",
+          "bin": {
+            "salita": "bin/salita"
+          },
+          "version": "0.10.0",
+          "description": "Automatically upgrade all dependencies, devDependencies, and peerDependencies",
+          "main": "index.js",
+          "scripts": {
+            "lint": "npm run --silent jscs && npm run --silent eslint",
+            "pretest": "npm run --silent lint",
+            "eslint": "eslint *.js bin/salita",
+            "jscs": "jscs *.js bin/salita"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/tbranyen/salita.git"
+          },
+          "contributors": [
+            {
+              "name": "Tim Branyen",
+              "url": "https://github.com/tbranyen"
+            },
+            {
+              "name": "Jordan Harband",
+              "email": "ljharb@gmail.com",
+              "url": "https://github.com/ljharb/"
+            }
+          ],
+          "dependencies": {
+            "chalk": "^1.1.3",
+            "cli-table": "^0.3.1",
+            "json-file-plus": "^3.3.0",
+            "npm": "^3.10.8",
+            "yargs": "^5.0.0",
+            "object.assign": "^4.0.4",
+            "promise": "^7.1.1",
+            "semver": "^5.3.0",
+            "for-each": "^0.3.2"
+          },
+          "devDependencies": {
+            "jscs": "^3.0.7",
+            "eslint": "^3.6.1",
+            "@ljharb/eslint-config": "^8.0.0"
+          },
+          "author": {
+            "name": "Tim Branyen",
+            "url": "@tbranyen"
+          },
+          "license": "MIT",
+          "gitHead": "59215224e897826cf49b729d24b2b2effcc038fd",
+          "bugs": {
+            "url": "https://github.com/tbranyen/salita/issues"
+          },
+          "homepage": "https://github.com/tbranyen/salita#readme",
+          "_id": "salita@0.10.0",
+          "_shasum": "ce243095edba1a3f1903b5aa0290aa303d8757f1",
+          "_from": ".",
+          "_npmVersion": "3.10.9",
+          "_nodeVersion": "7.1.0",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "dist": {
+            "shasum": "ce243095edba1a3f1903b5aa0290aa303d8757f1",
+            "tarball": "https://registry.npmjs.org/salita/-/salita-0.10.0.tgz"
+          },
+          "maintainers": [
+            {
+              "name": "tbranyen",
+              "email": "tim@tabdeveloper.com"
+            },
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "_npmOperationalInternal": {
+            "host": "packages-12-west.internal.npmjs.com",
+            "tmp": "tmp/salita-0.10.0.tgz_1479365358813_0.08917078585363925"
+          },
+          "directories": {}
+        },
+        "0.10.1": {
+          "name": "salita",
+          "bin": {
+            "salita": "bin/salita"
+          },
+          "version": "0.10.1",
+          "description": "Automatically upgrade all dependencies, devDependencies, and peerDependencies",
+          "main": "index.js",
+          "scripts": {
+            "lint": "npm run --silent jscs && npm run --silent eslint",
+            "pretest": "npm run --silent lint",
+            "eslint": "eslint *.js bin/salita",
+            "jscs": "jscs *.js bin/salita"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/tbranyen/salita.git"
+          },
+          "contributors": [
+            {
+              "name": "Tim Branyen",
+              "url": "https://github.com/tbranyen"
+            },
+            {
+              "name": "Jordan Harband",
+              "email": "ljharb@gmail.com",
+              "url": "https://github.com/ljharb/"
+            }
+          ],
+          "dependencies": {
+            "chalk": "^1.1.3",
+            "cli-table": "^0.3.1",
+            "json-file-plus": "^3.3.0",
+            "npm": "^3.10.8",
+            "yargs": "^5.0.0",
+            "object.assign": "^4.0.4",
+            "promise": "^7.1.1",
+            "semver": "^5.3.0",
+            "for-each": "^0.3.2"
+          },
+          "devDependencies": {
+            "jscs": "^3.0.7",
+            "eslint": "^3.6.1",
+            "@ljharb/eslint-config": "^8.0.0"
+          },
+          "author": {
+            "name": "Tim Branyen",
+            "url": "@tbranyen"
+          },
+          "license": "MIT",
+          "gitHead": "cfe02a7ce7ec487177a8f99fdb3a2f2b474ac350",
+          "bugs": {
+            "url": "https://github.com/tbranyen/salita/issues"
+          },
+          "homepage": "https://github.com/tbranyen/salita#readme",
+          "_id": "salita@0.10.1",
+          "_shasum": "6648b639b79b0fbde7d0effc8761b982e5d7b257",
+          "_from": ".",
+          "_npmVersion": "3.10.9",
+          "_nodeVersion": "7.1.0",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "dist": {
+            "shasum": "6648b639b79b0fbde7d0effc8761b982e5d7b257",
+            "tarball": "https://registry.npmjs.org/salita/-/salita-0.10.1.tgz"
+          },
+          "maintainers": [
+            {
+              "name": "tbranyen",
+              "email": "tim@tabdeveloper.com"
+            },
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "_npmOperationalInternal": {
+            "host": "packages-18-east.internal.npmjs.com",
+            "tmp": "tmp/salita-0.10.1.tgz_1479487910190_0.2542793082538992"
+          },
+          "directories": {}
+        },
+        "0.11.0": {
+          "name": "salita",
+          "bin": {
+            "salita": "bin/salita"
+          },
+          "version": "0.11.0",
+          "description": "Automatically upgrade all dependencies, devDependencies, and peerDependencies",
+          "main": "index.js",
+          "scripts": {
+            "lint": "npm run --silent jscs && npm run --silent eslint",
+            "pretest": "npm run --silent lint",
+            "eslint": "eslint *.js bin/salita",
+            "jscs": "jscs *.js bin/salita"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/tbranyen/salita.git"
+          },
+          "contributors": [
+            {
+              "name": "Tim Branyen",
+              "url": "https://github.com/tbranyen"
+            },
+            {
+              "name": "Jordan Harband",
+              "email": "ljharb@gmail.com",
+              "url": "https://github.com/ljharb/"
+            }
+          ],
+          "dependencies": {
+            "chalk": "^2.3.0",
+            "cli-table": "^0.3.1",
+            "for-each": "^0.3.2",
+            "json-file-plus": "^3.3.0",
+            "npm": "^5.5.1",
+            "object.assign": "^4.0.4",
+            "promise": "^8.0.1",
+            "semver": "^5.4.1",
+            "yargs": "^10.0.3"
+          },
+          "devDependencies": {
+            "@ljharb/eslint-config": "^12.2.1",
+            "eslint": "^4.16.0",
+            "jscs": "^3.0.7"
+          },
+          "engines": {
+            "node": ">= 4"
+          },
+          "author": {
+            "name": "Tim Branyen",
+            "url": "@tbranyen"
+          },
+          "license": "MIT",
+          "gitHead": "9df974438168ed8599650af352b5dc8f02e29c36",
+          "bugs": {
+            "url": "https://github.com/tbranyen/salita/issues"
+          },
+          "homepage": "https://github.com/tbranyen/salita#readme",
+          "_id": "salita@0.11.0",
+          "_npmVersion": "5.6.0",
+          "_nodeVersion": "9.4.0",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "dist": {
+            "integrity": "sha512-gP2hbCOQrDD/RjzJYF8LxYXDmUGvLmsYQNCds4oYWpP3W0PogV3xw3lxsCIN0L5GosmOC5q9AUwwUnLyRrWTuQ==",
+            "shasum": "ce215ed6daf9c06a5dd50562539806a81b7492fd",
+            "tarball": "https://registry.npmjs.org/salita/-/salita-0.11.0.tgz"
+          },
+          "maintainers": [
+            {
+              "email": "ljharb@gmail.com",
+              "name": "ljharb"
+            },
+            {
+              "email": "tim@tabdeveloper.com",
+              "name": "tbranyen"
+            }
+          ],
+          "_npmOperationalInternal": {
+            "host": "s3://npm-registry-packages",
+            "tmp": "tmp/salita-0.11.0.tgz_1517212075174_0.24116539116948843"
+          },
+          "directories": {}
+        },
+        "0.11.1": {
+          "name": "salita",
+          "bin": {
+            "salita": "bin/salita"
+          },
+          "version": "0.11.1",
+          "description": "Automatically upgrade all dependencies, devDependencies, and peerDependencies",
+          "main": "index.js",
+          "scripts": {
+            "lint": "npm run --silent jscs && npm run --silent eslint",
+            "pretest": "npm run --silent lint",
+            "eslint": "eslint *.js bin/salita",
+            "jscs": "jscs *.js bin/salita"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/tbranyen/salita.git"
+          },
+          "contributors": [
+            {
+              "name": "Tim Branyen",
+              "url": "https://github.com/tbranyen"
+            },
+            {
+              "name": "Jordan Harband",
+              "email": "ljharb@gmail.com",
+              "url": "https://github.com/ljharb/"
+            }
+          ],
+          "dependencies": {
+            "chalk": "^2.4.1",
+            "cli-table": "^0.3.1",
+            "for-each": "^0.3.3",
+            "json-file-plus": "^3.3.1",
+            "npm": "^5.5.1",
+            "object.assign": "^4.1.0",
+            "promise": "^8.0.2",
+            "semver": "^5.6.0",
+            "yargs": "^10.1.2"
+          },
+          "devDependencies": {
+            "@ljharb/eslint-config": "^13.0.0",
+            "eslint": "^5.9.0",
+            "jscs": "^3.0.7"
+          },
+          "engines": {
+            "node": ">= 4"
+          },
+          "author": {
+            "name": "Tim Branyen",
+            "url": "@tbranyen"
+          },
+          "license": "MIT",
+          "gitHead": "b951d62fa4b8ffde0c974bea9146a3ed1f3cc3d5",
+          "bugs": {
+            "url": "https://github.com/tbranyen/salita/issues"
+          },
+          "homepage": "https://github.com/tbranyen/salita#readme",
+          "_id": "salita@0.11.1",
+          "_npmVersion": "6.4.1",
+          "_nodeVersion": "11.1.0",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "dist": {
+            "integrity": "sha512-NM74C/LUKqW21w/sz5YW9/toWUN0YQLu73ikgCz6cQvdN0lKHXYwkpLIDnyKh2k14YL96WagKGLNhyo491xHGA==",
+            "shasum": "a8ddcf9cb9f1261560ec413f3a7fc81eb20301bb",
+            "tarball": "https://registry.npmjs.org/salita/-/salita-0.11.1.tgz",
+            "fileCount": 8,
+            "unpackedSize": 19406,
+            "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJb5oo0CRA9TVsSAnZWagAAhjQP/3StQoPxNe6xn4yAsu9I\n3yj9sBuHrqueeolxP6s2ZH/vNewwfbptE5QUvCDiuH+TYARPpzShJ8sTydtv\npHj3r2vUv5QP1DV3j/ueMrJUiV9//9zQkbmNg/BwZ1eWYEd3DmpPCjExW/k4\nUiK22icJ5UHs4gTSvGweYKRMtmWJ0XrMhO/Zn/2xsCZASpt7tZ1LeSFenPpx\nDIwfkRakJr57sP9/s52LdG4j5IVM5+80ziUN9Kc1tQLqTcvWpsoERY1sSdMO\nGI73RAREH3A5WAMLmYtFTSB6/PFCeoRl0G2K2WaitiQLe+DqKHiRARmwCg/C\n5onOm8aBwtZ5LYqVpu/l4v6cjAbqBh4rNKx0yTPuvDtrj4PlyPbV121TEGA5\nYFxJqwxKAswd/Rp47E0L7KBw0r5YL/j9sU5dZl66JOml7L3/RgZFMs9aJW+d\nAgqk6qaZ++obSvBAbX/2bC5Sxay4pVkGWAKckVQPCFExgvbUTi5OzuEtW6Ux\nzXgoo7DPt8KCJyCRhGM0712TloGR1mw0VeLBkF2h/7ItY0XNiBjC2g+UTE/0\neYxxymsYLzxArhqTiYeytIituwHdcjhToPgu5dSGXmLqLtiMPobr/uMEFei5\nYbycG4Qa/3uUdZSaIYmRAOtDGvJhNAl7LNvinyqf0IdcMCC369Ff72OaNHnG\n8xD8\r\n=G/nd\r\n-----END PGP SIGNATURE-----\r\n"
+          },
+          "maintainers": [
+            {
+              "email": "ljharb@gmail.com",
+              "name": "ljharb"
+            },
+            {
+              "email": "tim@tabdeveloper.com",
+              "name": "tbranyen"
+            }
+          ],
+          "directories": {},
+          "_npmOperationalInternal": {
+            "host": "s3://npm-registry-packages",
+            "tmp": "tmp/salita_0.11.1_1541835316094_0.7378330292216333"
+          },
+          "_hasShrinkwrap": false
+        },
+        "0.11.2": {
+          "name": "salita",
+          "bin": {
+            "salita": "bin/salita"
+          },
+          "version": "0.11.2",
+          "description": "Automatically upgrade all dependencies, devDependencies, and peerDependencies",
+          "main": "index.js",
+          "scripts": {
+            "pretest": "npm run --silent lint",
+            "lint": "eslint *.js bin/salita"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/tbranyen/salita.git"
+          },
+          "contributors": [
+            {
+              "name": "Tim Branyen",
+              "url": "https://github.com/tbranyen"
+            },
+            {
+              "name": "Jordan Harband",
+              "email": "ljharb@gmail.com",
+              "url": "https://github.com/ljharb/"
+            }
+          ],
+          "dependencies": {
+            "chalk": "^2.4.2",
+            "cli-table": "^0.3.1",
+            "for-each": "^0.3.3",
+            "json-file-plus": "^3.3.1",
+            "npm": "^5.10.0",
+            "object.assign": "^4.1.0",
+            "promise": "^8.0.3",
+            "semver": "^5.7.1",
+            "yargs": "^10.1.2"
+          },
+          "devDependencies": {
+            "@ljharb/eslint-config": "^14.1.0",
+            "eslint": "^6.5.1"
+          },
+          "engines": {
+            "node": ">= 4"
+          },
+          "author": {
+            "name": "Tim Branyen",
+            "url": "@tbranyen"
+          },
+          "license": "MIT",
+          "gitHead": "0c96796efca4d642691a117464e1fbc0b2275a5a",
+          "bugs": {
+            "url": "https://github.com/tbranyen/salita/issues"
+          },
+          "homepage": "https://github.com/tbranyen/salita#readme",
+          "_id": "salita@0.11.2",
+          "_nodeVersion": "13.0.1",
+          "_npmVersion": "6.12.0",
+          "dist": {
+            "integrity": "sha512-ojVGetKyYWXWy2PnaQj+jSs5XXrVahCBF9XDJ+yVGIyF1FDKVTKgga/FpbnIRKEtE9+h7vloni0wel9aJpdhnA==",
+            "shasum": "e060d7dd9f574aefa5ab5f20fcb8261e91f218ae",
+            "tarball": "https://registry.npmjs.org/salita/-/salita-0.11.2.tgz",
+            "fileCount": 7,
+            "unpackedSize": 16425,
+            "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdsOQXCRA9TVsSAnZWagAAzK8P/AvbdSBkPgL4c8rrTRSj\n1XGofJz5bWB8LbpH+GVFA2EOqZkRz1fHvPxayYhBGgUfnxAXKXlJ46qLX3BF\nDeoTz9nuw2XB1YM2330WfuaIQHkMriHWIBPSfN4F3upp5ktcdWZayTKZQlwM\nKgnaNGzyMLkbAF4AniZdNvIpyJ6rINRMo7ywQA01TuICoZxzQx1R0WyFlSjZ\n/Zn0Yb49Nq4DgbMJ5rnm4aa6KXdU/RIVy01WiODiMrFhcPVTvmzG1j/JTqMh\ntM6V0GV5SWWIVu7tJoo5wz/r0vw154Yz9D44KG+oGmhOto/m57TyMjMhMUrb\nAj2bV1ttdcBhmBCdf5jhBSKlcXJApJSApzSuicxmatIt8oDhlwhx5ak9kLlP\nUo44EzV/N9E7o2NonLX9ucfimLp7QEsyEHbZor5oPQ2rImsyC82yeVJjDMEX\nCFx6mCaNTpEhgc1rQi7IYDvlKMM7nxRbD/rkYId6ei6ossBWoy1K3eeW0TRL\nQUJxD3S2dXBJ9R/Lr0PBFjdvJwJWmXdMcXXp0SogzwNSYHcF0Raesok3rehb\nqOjxi5I0w7UnOjoVrRnZQhTwUIxj4HHxLBAbp3Bm7vohisACtxqjGRGW8Mn+\n8S6IBp47EszBu0SEzGUsqEB0c4lZHYAB31+NvXy4E7Num7esx9nhvnkhaajM\ngPZc\r\n=Vb4f\r\n-----END PGP SIGNATURE-----\r\n"
+          },
+          "maintainers": [
+            {
+              "email": "ljharb@gmail.com",
+              "name": "ljharb"
+            },
+            {
+              "email": "tim@tabdeveloper.com",
+              "name": "tbranyen"
+            }
+          ],
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "directories": {},
+          "_npmOperationalInternal": {
+            "host": "s3://npm-registry-packages",
+            "tmp": "tmp/salita_0.11.2_1571873814993_0.006483684757325969"
+          },
+          "_hasShrinkwrap": false
+        }
+      },
+      "readme": "Salita\n======\n\nAutomatically upgrade all dependencies and devDependencies to their latest\nstable semver.\n\n### Install ###\n\n``` bash\nnpm install salita -g\n```\n\n### Usage ###\n\n``` bash\n# Change into directory with package.json.\ncd my_project\n\n# Upgrade all dependencies.\nsalita\n```\n\n### Options ###\n - `--no-color`: prevents colorized output\n - `--json`: provides parseable JSON output (also disables colors)\n - `--dry-run` / `-n`: prevents changes to `package.json`\n - `--update`: reflects the changes in `package.json`\n - `--ignore-stars`: ignore updates to packages that are set to \"`*`\"\n - `--ignore-pegged`: ignore updates to packages that are pegged to a single version, rather than a range\n - `--check`: implies \"dry-run\"; and returns with an exit code matching the number of updated dependencies.\n - `--only-changed`: only show packages that have (or would have) changed\n\n### Example ###\n\nYou can see in the example below that dependencies are always resolved to\ntheir latest stable, instead of just the latest version tagged:\n\n![Terminal](http://tbranyen.com/u/7bc20890.png)\n",
+      "maintainers": [
+        {
+          "email": "ljharb@gmail.com",
+          "name": "ljharb"
+        },
+        {
+          "email": "tim@tabdeveloper.com",
+          "name": "tbranyen"
+        }
+      ],
+      "time": {
+        "modified": "2019-10-23T23:36:57.556Z",
+        "created": "2014-05-30T18:48:16.361Z",
+        "0.1.0": "2014-05-30T18:48:16.361Z",
+        "0.1.1": "2014-05-30T18:49:26.021Z",
+        "0.1.2": "2014-05-30T18:51:05.213Z",
+        "0.1.3": "2014-05-30T18:55:43.104Z",
+        "0.1.4": "2014-05-30T18:57:11.803Z",
+        "0.1.5": "2014-05-30T18:59:16.401Z",
+        "0.1.6": "2014-05-31T16:30:44.869Z",
+        "0.1.7": "2014-05-31T17:01:40.219Z",
+        "0.1.8": "2014-05-31T17:02:54.084Z",
+        "0.1.9": "2014-05-31T17:13:47.172Z",
+        "0.1.10": "2014-08-29T01:06:47.039Z",
+        "0.1.11": "2014-08-29T17:39:38.261Z",
+        "0.2.0": "2014-09-02T23:03:50.423Z",
+        "0.3.0": "2014-09-06T22:08:47.632Z",
+        "0.4.0": "2014-09-07T01:08:38.927Z",
+        "0.4.1": "2014-09-20T09:29:17.858Z",
+        "0.4.2": "2014-09-26T06:50:56.461Z",
+        "0.4.3": "2014-09-27T06:30:29.590Z",
+        "0.5.0": "2014-11-02T21:36:32.539Z",
+        "0.6.0": "2014-12-14T10:42:53.586Z",
+        "0.7.0": "2015-01-08T07:52:31.819Z",
+        "0.7.1": "2015-05-19T17:44:25.754Z",
+        "0.8.0": "2015-06-26T07:41:49.153Z",
+        "0.8.1": "2015-08-08T05:50:00.987Z",
+        "0.8.2": "2015-09-21T11:15:25.167Z",
+        "0.8.3": "2015-10-14T22:56:38.543Z",
+        "0.8.4": "2015-10-19T18:09:32.143Z",
+        "0.8.5": "2016-01-04T00:50:30.168Z",
+        "0.9.0": "2016-04-07T06:21:55.246Z",
+        "0.9.1": "2016-06-28T05:49:25.253Z",
+        "0.9.2": "2016-07-16T16:27:09.729Z",
+        "0.9.3": "2016-11-08T09:36:56.848Z",
+        "0.9.4": "2016-11-17T06:47:55.484Z",
+        "0.10.0": "2016-11-17T06:49:19.039Z",
+        "0.10.1": "2016-11-18T16:51:52.168Z",
+        "0.11.0": "2018-01-29T07:47:56.030Z",
+        "0.11.1": "2018-11-10T07:35:16.310Z",
+        "0.11.2": "2019-10-23T23:36:55.178Z"
+      },
+      "author": {
+        "name": "Tim Branyen",
+        "url": "@tbranyen"
+      },
+      "license": "MIT",
+      "readmeFilename": "README.md",
+      "homepage": "https://github.com/tbranyen/salita#readme",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/tbranyen/salita.git"
+      },
+      "bugs": {
+        "url": "https://github.com/tbranyen/salita/issues"
+      },
+      "contributors": [
+        {
+          "name": "Tim Branyen",
+          "url": "https://github.com/tbranyen"
+        },
+        {
+          "name": "Jordan Harband",
+          "email": "ljharb@gmail.com",
+          "url": "https://github.com/ljharb/"
+        }
+      ],
+      "users": {
+        "hasnaer": true
+      }
+    }
+  }
+}

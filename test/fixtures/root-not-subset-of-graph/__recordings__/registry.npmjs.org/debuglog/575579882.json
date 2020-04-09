@@ -1,0 +1,56 @@
+{
+  "request": {
+    "method": "GET",
+    "href": "https://registry.npmjs.org/debuglog",
+    "headers": {
+      "connection": [
+        "keep-alive"
+      ],
+      "user-agent": [
+        "pacote/11.1.0 node/v13.10.1"
+      ],
+      "npm-in-ci": [
+        "false"
+      ],
+      "pacote-version": [
+        "11.1.0"
+      ],
+      "pacote-req-type": [
+        "packument"
+      ],
+      "pacote-pkg-id": [
+        "registry:debuglog"
+      ],
+      "accept": [
+        "application/vnd.npm.install-v1+json; q=1.0, application/json; q=0.8, */*"
+      ],
+      "accept-encoding": [
+        "gzip,deflate"
+      ]
+    },
+    "body": ""
+  },
+  "response": {
+    "statusCode": 200,
+    "headers": {
+      "date": "Thu, 12 Mar 2020 04:59:16 GMT",
+      "content-type": "application/vnd.npm.install-v1+json",
+      "content-length": "1295",
+      "connection": "keep-alive",
+      "set-cookie": [
+        "__cfduid=de212b0eaedb56e87d94d6dc05acec4c81583989156; expires=Sat, 11-Apr-20 04:59:16 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax"
+      ],
+      "cf-ray": "572af1e16ffd6bde-SJC",
+      "accept-ranges": "bytes",
+      "age": "1709",
+      "cache-control": "public, max-age=300",
+      "etag": "\"693a7ab0b772f0caf10f517036967f40\"",
+      "last-modified": "Fri, 14 Feb 2020 09:28:15 GMT",
+      "vary": "accept-encoding, accept",
+      "cf-cache-status": "HIT",
+      "expect-ct": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"",
+      "server": "cloudflare"
+    },
+    "body": "{\"name\":\"debuglog\",\"dist-tags\":{\"latest\":\"1.0.1\"},\"versions\":{\"0.0.1\":{\"name\":\"debuglog\",\"version\":\"0.0.1\",\"dist\":{\"shasum\":\"fb1fd676217dcb4e1ba0deeb8efc092de61ae96d\",\"tarball\":\"https://registry.npmjs.org/debuglog/-/debuglog-0.0.1.tgz\"},\"engines\":{\"node\":\"*\"}},\"0.0.2\":{\"name\":\"debuglog\",\"version\":\"0.0.2\",\"dist\":{\"shasum\":\"6c0dcf07e2c3f74524629b741668bd46c7b362eb\",\"tarball\":\"https://registry.npmjs.org/debuglog/-/debuglog-0.0.2.tgz\"},\"engines\":{\"node\":\"*\"}},\"0.0.3\":{\"name\":\"debuglog\",\"version\":\"0.0.3\",\"dist\":{\"shasum\":\"9944a196d9adf267029db460b4ce1d70b54e8a82\",\"tarball\":\"https://registry.npmjs.org/debuglog/-/debuglog-0.0.3.tgz\"},\"engines\":{\"node\":\"*\"}},\"0.0.4\":{\"name\":\"debuglog\",\"version\":\"0.0.4\",\"dist\":{\"shasum\":\"0e705fb949f085aa0aa4d7333640661d060fee17\",\"tarball\":\"https://registry.npmjs.org/debuglog/-/debuglog-0.0.4.tgz\"},\"engines\":{\"node\":\"*\"}},\"1.0.0\":{\"name\":\"debuglog\",\"version\":\"1.0.0\",\"dist\":{\"shasum\":\"da572fd764f3884679e570d226e1489e0f0015af\",\"tarball\":\"https://registry.npmjs.org/debuglog/-/debuglog-1.0.0.tgz\"},\"engines\":{\"node\":\"*\"}},\"1.0.1\":{\"name\":\"debuglog\",\"version\":\"1.0.1\",\"dist\":{\"shasum\":\"aa24ffb9ac3df9a2351837cfb2d279360cd78492\",\"tarball\":\"https://registry.npmjs.org/debuglog/-/debuglog-1.0.1.tgz\"},\"engines\":{\"node\":\"*\"}}},\"modified\":\"2019-10-21T22:23:17.241Z\"}"
+  }
+}

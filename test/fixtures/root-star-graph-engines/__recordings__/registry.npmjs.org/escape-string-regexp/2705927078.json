@@ -1,0 +1,56 @@
+{
+  "request": {
+    "method": "GET",
+    "href": "https://registry.npmjs.org/escape-string-regexp",
+    "headers": {
+      "connection": [
+        "keep-alive"
+      ],
+      "user-agent": [
+        "pacote/11.1.0 node/v13.10.1"
+      ],
+      "npm-in-ci": [
+        "false"
+      ],
+      "pacote-version": [
+        "11.1.0"
+      ],
+      "pacote-req-type": [
+        "packument"
+      ],
+      "pacote-pkg-id": [
+        "registry:escape-string-regexp"
+      ],
+      "accept": [
+        "application/vnd.npm.install-v1+json; q=1.0, application/json; q=0.8, */*"
+      ],
+      "accept-encoding": [
+        "gzip,deflate"
+      ]
+    },
+    "body": ""
+  },
+  "response": {
+    "statusCode": 200,
+    "headers": {
+      "date": "Thu, 12 Mar 2020 04:59:35 GMT",
+      "content-type": "application/vnd.npm.install-v1+json",
+      "content-length": "3125",
+      "connection": "keep-alive",
+      "set-cookie": [
+        "__cfduid=d87bd568962765d98fc55171f7db379241583989175; expires=Sat, 11-Apr-20 04:59:35 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax"
+      ],
+      "cf-ray": "572af25bb851ed07-SJC",
+      "accept-ranges": "bytes",
+      "age": "1908",
+      "cache-control": "public, max-age=300",
+      "etag": "\"509f484339e2f7978ff3002f0b05843f\"",
+      "last-modified": "Fri, 14 Feb 2020 11:34:50 GMT",
+      "vary": "accept-encoding, accept",
+      "cf-cache-status": "HIT",
+      "expect-ct": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"",
+      "server": "cloudflare"
+    },
+    "body": "{\"name\":\"escape-string-regexp\",\"dist-tags\":{\"latest\":\"2.0.0\"},\"versions\":{\"1.0.0\":{\"name\":\"escape-string-regexp\",\"version\":\"1.0.0\",\"devDependencies\":{\"mocha\":\"*\"},\"dist\":{\"shasum\":\"0ca42ef5f3d8499fbc239fa0409ea849857d74c4\",\"tarball\":\"https://registry.npmjs.org/escape-string-regexp/-/escape-string-regexp-1.0.0.tgz\"},\"engines\":{\"node\":\">=0.10.0\"}},\"1.0.1\":{\"name\":\"escape-string-regexp\",\"version\":\"1.0.1\",\"devDependencies\":{\"mocha\":\"*\"},\"dist\":{\"shasum\":\"78c76393afb84f102230d949a6125c7f3cf65904\",\"tarball\":\"https://registry.npmjs.org/escape-string-regexp/-/escape-string-regexp-1.0.1.tgz\"},\"engines\":{\"node\":\">=0.10.0\"}},\"1.0.2\":{\"name\":\"escape-string-regexp\",\"version\":\"1.0.2\",\"devDependencies\":{\"mocha\":\"*\"},\"dist\":{\"shasum\":\"4dbc2fe674e71949caf3fb2695ce7f2dc1d9a8d1\",\"tarball\":\"https://registry.npmjs.org/escape-string-regexp/-/escape-string-regexp-1.0.2.tgz\"},\"engines\":{\"node\":\">=0.8.0\"}},\"1.0.3\":{\"name\":\"escape-string-regexp\",\"version\":\"1.0.3\",\"devDependencies\":{\"mocha\":\"*\"},\"dist\":{\"shasum\":\"9e2d8b25bc2555c3336723750e03f099c2735bb5\",\"tarball\":\"https://registry.npmjs.org/escape-string-regexp/-/escape-string-regexp-1.0.3.tgz\"},\"engines\":{\"node\":\">=0.8.0\"}},\"1.0.4\":{\"name\":\"escape-string-regexp\",\"version\":\"1.0.4\",\"devDependencies\":{\"ava\":\"*\",\"xo\":\"*\"},\"dist\":{\"shasum\":\"b85e679b46f72d03fbbe8a3bf7259d535c21b62f\",\"tarball\":\"https://registry.npmjs.org/escape-string-regexp/-/escape-string-regexp-1.0.4.tgz\"},\"engines\":{\"node\":\">=0.8.0\"}},\"1.0.5\":{\"name\":\"escape-string-regexp\",\"version\":\"1.0.5\",\"devDependencies\":{\"ava\":\"*\",\"xo\":\"*\"},\"dist\":{\"shasum\":\"1b61c0562190a8dff6ae3bb2cf0200ca130b86d4\",\"tarball\":\"https://registry.npmjs.org/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz\"},\"engines\":{\"node\":\">=0.8.0\"}},\"2.0.0\":{\"name\":\"escape-string-regexp\",\"version\":\"2.0.0\",\"devDependencies\":{\"ava\":\"^1.4.1\",\"tsd\":\"^0.7.2\",\"xo\":\"^0.24.0\"},\"dist\":{\"integrity\":\"sha512-UpzcLCXolUWcNu5HtVMHYdXJjArjsF9C0aNnquZYY4uW/Vu0miy5YoWvbV345HauVvcAUnpRuhMMcqTcGOY2+w==\",\"shasum\":\"a30304e99daa32e23b2fd20f51babd07cffca344\",\"tarball\":\"https://registry.npmjs.org/escape-string-regexp/-/escape-string-regexp-2.0.0.tgz\",\"fileCount\":5,\"unpackedSize\":3259,\"npm-signature\":\"-----BEGIN PGP SIGNATURE-----\\r\\nVersion: OpenPGP.js v3.0.4\\r\\nComment: https://openpgpjs.org\\r\\n\\r\\nwsFcBAEBCAAQBQJcttp2CRA9TVsSAnZWagAAH+gP/0jUFye+8JcZ4PlzibdD\\nCYz15d9ULMk4brKKIDF8WvOSx+qrkGmQ9ryeyc5pIviaAUmU/gVim8G5vRiB\\n8Osea8MHVebWkZNctNpYqS7zqb79RVUVbWDOP/VSr7Se0qdg+4VMo4LwQ1QN\\nJ6QhswG5gON4uyWjR6Bpak5LGylVZf4WZLpaFho3LuScSOhnzvCEgFLwtKCf\\nMJEnyZEiKB+ZJpJQzm0r3kGw8m8/4v7PjvVGg+lHCn+z5xEZlW0gNrUlrUnB\\nMNkGsLDUv2gV3x3AnOeN2JtAOI0M4XWrp5XyiMF+KXTmYmItrx3PpRSOoVKs\\nNwrTYpZK3LeqEKf6fsr0wTw/GW1BocBe4qAf+zVJ/se1txnM1YY2OkA+Mk3i\\nBUvUCZN1GYkwuqbrhr1iPNv5ln9NbUHS9igHAuo49RlJ3khB0+MvNq4+7Hl2\\nd4LdE9D+NW5qRyUfBGwbOdCkz/nFRGB/Ty38IqSPDYTta0gvnFVF0OiCFd6s\\n6gF94/kgrIs18+wIpn1qmQOFXRyQAtaZF+T53+PG3XCQ4niBmakXjCl2QLpS\\nQSjXAB+dNyYPl2pK1aVmtfclRBmFHXKHbfF6cr7eMJdte2LsTt9DL9l+HXL+\\nGMf3gm9sURzxTxJp3udwyD5/c+P782djgu3X/gXTcMneRHnFjL59wgY4KVDN\\n4OBO\\r\\n=x82n\\r\\n-----END PGP SIGNATURE-----\\r\\n\"},\"engines\":{\"node\":\">=8\"}}},\"modified\":\"2019-04-17T07:49:12.245Z\"}"
+  }
+}

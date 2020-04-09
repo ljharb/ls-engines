@@ -1,0 +1,56 @@
+{
+  "request": {
+    "method": "GET",
+    "href": "https://registry.npmjs.org/promise-retry",
+    "headers": {
+      "connection": [
+        "keep-alive"
+      ],
+      "user-agent": [
+        "pacote/11.1.0 node/v13.10.1"
+      ],
+      "npm-in-ci": [
+        "false"
+      ],
+      "pacote-version": [
+        "11.1.0"
+      ],
+      "pacote-req-type": [
+        "packument"
+      ],
+      "pacote-pkg-id": [
+        "registry:promise-retry"
+      ],
+      "accept": [
+        "application/vnd.npm.install-v1+json; q=1.0, application/json; q=0.8, */*"
+      ],
+      "accept-encoding": [
+        "gzip,deflate"
+      ]
+    },
+    "body": ""
+  },
+  "response": {
+    "statusCode": 200,
+    "headers": {
+      "date": "Thu, 12 Mar 2020 04:59:15 GMT",
+      "content-type": "application/vnd.npm.install-v1+json",
+      "content-length": "5158",
+      "connection": "keep-alive",
+      "set-cookie": [
+        "__cfduid=dfe13df1b94f6bdc4c9f96fc7836ba61d1583989155; expires=Sat, 11-Apr-20 04:59:15 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax"
+      ],
+      "cf-ray": "572af1df8cfaed73-SJC",
+      "accept-ranges": "bytes",
+      "age": "1551",
+      "cache-control": "public, max-age=300",
+      "etag": "\"f914224c1cf51d10876014f35db1d1fe\"",
+      "last-modified": "Sat, 15 Feb 2020 09:19:23 GMT",
+      "vary": "accept-encoding, accept",
+      "cf-cache-status": "HIT",
+      "expect-ct": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"",
+      "server": "cloudflare"
+    },
+    "body": "{\"name\":\"promise-retry\",\"dist-tags\":{\"latest\":\"1.1.1\"},\"versions\":{\"0.1.1\":{\"name\":\"promise-retry\",\"version\":\"0.1.1\",\"dependencies\":{\"bluebird\":\"^2.6.2\",\"err-code\":\"^0.1.2\",\"retry\":\"^0.6.1\"},\"devDependencies\":{\"expect.js\":\"^0.3.1\",\"mocha\":\"^2.1.0\"},\"dist\":{\"shasum\":\"e4e8f3573e89a20de40012be5bd9c8619308d13f\",\"tarball\":\"https://registry.npmjs.org/promise-retry/-/promise-retry-0.1.1.tgz\"}},\"0.2.0\":{\"name\":\"promise-retry\",\"version\":\"0.2.0\",\"dependencies\":{\"bluebird\":\"^2.6.2\",\"err-code\":\"^0.1.2\",\"retry\":\"^0.6.1\"},\"devDependencies\":{\"expect.js\":\"^0.3.1\",\"mocha\":\"^2.1.0\"},\"dist\":{\"shasum\":\"b77f49bba369d9aa4f64e61ea7f7bb82effd785a\",\"tarball\":\"https://registry.npmjs.org/promise-retry/-/promise-retry-0.2.0.tgz\"}},\"0.2.2\":{\"name\":\"promise-retry\",\"version\":\"0.2.2\",\"dependencies\":{\"bluebird\":\"^2.6.2\",\"err-code\":\"^0.1.2\",\"retry\":\"^0.6.1\"},\"devDependencies\":{\"expect.js\":\"^0.3.1\",\"mocha\":\"^2.1.0\"},\"dist\":{\"shasum\":\"810eabe2411fec1627da624fc85484f25627c4cd\",\"tarball\":\"https://registry.npmjs.org/promise-retry/-/promise-retry-0.2.2.tgz\"}},\"0.2.3\":{\"name\":\"promise-retry\",\"version\":\"0.2.3\",\"dependencies\":{\"bluebird\":\"^2.6.2\",\"err-code\":\"^0.1.2\",\"retry\":\"^0.6.1\"},\"devDependencies\":{\"expect.js\":\"^0.3.1\",\"mocha\":\"^2.1.0\"},\"dist\":{\"shasum\":\"a0f94c563a784b086866fde73de43304c854d501\",\"tarball\":\"https://registry.npmjs.org/promise-retry/-/promise-retry-0.2.3.tgz\"}},\"0.2.4\":{\"name\":\"promise-retry\",\"version\":\"0.2.4\",\"dependencies\":{\"bluebird\":\"^2.6.2\",\"err-code\":\"^0.1.2\",\"retry\":\"^0.6.1\"},\"devDependencies\":{\"expect.js\":\"^0.3.1\",\"mocha\":\"^2.1.0\"},\"dist\":{\"shasum\":\"fdf04ddfbaaf452c7430898cf045a58b7b0f1ede\",\"tarball\":\"https://registry.npmjs.org/promise-retry/-/promise-retry-0.2.4.tgz\"}},\"0.2.5\":{\"name\":\"promise-retry\",\"version\":\"0.2.5\",\"dependencies\":{\"bluebird\":\"^2.6.2\",\"err-code\":\"^0.1.2\",\"retry\":\"^0.6.1\"},\"devDependencies\":{\"expect.js\":\"^0.3.1\",\"mocha\":\"^2.1.0\"},\"dist\":{\"shasum\":\"6f586973fb798e16890a31b80c2e5a127eda5d7c\",\"tarball\":\"https://registry.npmjs.org/promise-retry/-/promise-retry-0.2.5.tgz\"}},\"0.2.6\":{\"name\":\"promise-retry\",\"version\":\"0.2.6\",\"dependencies\":{\"bluebird\":\"^2.6.2\",\"err-code\":\"^0.1.2\",\"retry\":\"^0.6.1\"},\"devDependencies\":{\"expect.js\":\"^0.3.1\",\"mocha\":\"^2.1.0\"},\"dist\":{\"shasum\":\"cd707fca2834bc7e8fede1057797ca0f2f343638\",\"tarball\":\"https://registry.npmjs.org/promise-retry/-/promise-retry-0.2.6.tgz\"}},\"0.2.7\":{\"name\":\"promise-retry\",\"version\":\"0.2.7\",\"dependencies\":{\"bluebird\":\"^2.6.2\",\"err-code\":\"^0.1.2\",\"retry\":\"^0.6.1\"},\"devDependencies\":{\"expect.js\":\"^0.3.1\",\"mocha\":\"^2.1.0\"},\"dist\":{\"shasum\":\"8ead37cedf544a831765ce2e19cfcbd9853d07e1\",\"tarball\":\"https://registry.npmjs.org/promise-retry/-/promise-retry-0.2.7.tgz\"}},\"0.2.8\":{\"name\":\"promise-retry\",\"version\":\"0.2.8\",\"dependencies\":{\"bluebird\":\"^2.6.2\",\"err-code\":\"^0.1.2\",\"retry\":\"^0.6.1\"},\"devDependencies\":{\"expect.js\":\"^0.3.1\",\"mocha\":\"^2.1.0\"},\"dist\":{\"shasum\":\"ac45b42632366bbc00aac50d2af85ce56595f7ca\",\"tarball\":\"https://registry.npmjs.org/promise-retry/-/promise-retry-0.2.8.tgz\"}},\"0.2.9\":{\"name\":\"promise-retry\",\"version\":\"0.2.9\",\"dependencies\":{\"bluebird\":\"^2.6.2\",\"err-code\":\"^0.1.2\",\"retry\":\"^0.6.1\"},\"devDependencies\":{\"expect.js\":\"^0.3.1\",\"mocha\":\"^2.1.0\"},\"dist\":{\"shasum\":\"cef911cfe282316757d62c598bccf44ee8677c27\",\"tarball\":\"https://registry.npmjs.org/promise-retry/-/promise-retry-0.2.9.tgz\"}},\"1.0.0\":{\"name\":\"promise-retry\",\"version\":\"1.0.0\",\"dependencies\":{\"err-code\":\"^1.0.0\",\"promise-try\":\"^1.0.1\",\"retry\":\"^0.8.0\"},\"devDependencies\":{\"expect.js\":\"^0.3.1\",\"mocha\":\"^2.3.4\",\"sleep-promise\":\"^1.0.0\"},\"dist\":{\"shasum\":\"8783f59f662de7db8020788af5028d7be9faffe8\",\"tarball\":\"https://registry.npmjs.org/promise-retry/-/promise-retry-1.0.0.tgz\"}},\"1.0.1\":{\"name\":\"promise-retry\",\"version\":\"1.0.1\",\"dependencies\":{\"err-code\":\"^1.0.0\",\"promise-try\":\"^1.0.1\",\"retry\":\"^0.8.0\"},\"devDependencies\":{\"expect.js\":\"^0.3.1\",\"mocha\":\"^2.3.4\",\"sleep-promise\":\"^1.0.0\"},\"dist\":{\"shasum\":\"5d8c8920f1c255f73d668532c78759c09de20e25\",\"tarball\":\"https://registry.npmjs.org/promise-retry/-/promise-retry-1.0.1.tgz\"},\"engines\":{\"node\":\">=0.12\"}},\"1.0.2\":{\"name\":\"promise-retry\",\"version\":\"1.0.2\",\"dependencies\":{\"err-code\":\"^1.0.0\",\"promise-try\":\"^1.0.1\",\"retry\":\"^0.9.0\"},\"devDependencies\":{\"expect.js\":\"^0.3.1\",\"mocha\":\"^2.3.4\",\"sleep-promise\":\"^1.0.0\"},\"dist\":{\"shasum\":\"9b0d9c0201965cc46c560eddbba34d557ea0d867\",\"tarball\":\"https://registry.npmjs.org/promise-retry/-/promise-retry-1.0.2.tgz\"},\"engines\":{\"node\":\">=0.12\"}},\"1.1.0\":{\"name\":\"promise-retry\",\"version\":\"1.1.0\",\"dependencies\":{\"err-code\":\"^1.0.0\",\"retry\":\"^0.9.0\"},\"devDependencies\":{\"expect.js\":\"^0.3.1\",\"mocha\":\"^2.3.4\",\"sleep-promise\":\"^1.0.0\"},\"dist\":{\"shasum\":\"26e0138304a2594fd18c8131d046588d9bd7c651\",\"tarball\":\"https://registry.npmjs.org/promise-retry/-/promise-retry-1.1.0.tgz\"},\"engines\":{\"node\":\">=0.12\"}},\"1.1.1\":{\"name\":\"promise-retry\",\"version\":\"1.1.1\",\"dependencies\":{\"err-code\":\"^1.0.0\",\"retry\":\"^0.10.0\"},\"devDependencies\":{\"expect.js\":\"^0.3.1\",\"mocha\":\"^3.0.0\",\"sleep-promise\":\"^2.0.0\"},\"dist\":{\"shasum\":\"6739e968e3051da20ce6497fb2b50f6911df3d6d\",\"tarball\":\"https://registry.npmjs.org/promise-retry/-/promise-retry-1.1.1.tgz\"},\"engines\":{\"node\":\">=0.12\"}}},\"modified\":\"2018-08-15T21:26:45.491Z\"}"
+  }
+}

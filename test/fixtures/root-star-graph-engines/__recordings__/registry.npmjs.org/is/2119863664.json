@@ -1,0 +1,2419 @@
+{
+  "request": {
+    "method": "GET",
+    "href": "https://registry.npmjs.org/is",
+    "headers": {
+      "connection": [
+        "keep-alive"
+      ],
+      "user-agent": [
+        "pacote/11.1.0 node/v13.10.1"
+      ],
+      "npm-in-ci": [
+        "false"
+      ],
+      "pacote-version": [
+        "11.1.0"
+      ],
+      "pacote-req-type": [
+        "packument"
+      ],
+      "pacote-pkg-id": [
+        "registry:is"
+      ],
+      "accept": [
+        "application/json"
+      ],
+      "accept-encoding": [
+        "gzip,deflate"
+      ]
+    },
+    "body": ""
+  },
+  "response": {
+    "statusCode": 200,
+    "headers": {
+      "date": "Thu, 12 Mar 2020 04:59:47 GMT",
+      "content-type": "application/json",
+      "connection": "keep-alive",
+      "set-cookie": [
+        "__cfduid=d60209131836ee4851f831b3642cee8501583989187; expires=Sat, 11-Apr-20 04:59:47 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax"
+      ],
+      "cf-ray": "572af2a49eeded83-SJC",
+      "age": "1491",
+      "cache-control": "public, max-age=300",
+      "etag": "W/\"2bdad0311cc571209fd347deb8c80a3d\"",
+      "last-modified": "Tue, 08 Jan 2019 05:29:49 GMT",
+      "vary": "accept-encoding, accept",
+      "cf-cache-status": "HIT",
+      "expect-ct": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"",
+      "server": "cloudflare",
+      "content-encoding": "application/json"
+    },
+    "body": {
+      "_id": "is",
+      "_rev": "110-62ac3d6742bed64ce9ee36b02b487a2a",
+      "name": "is",
+      "description": "the definitive JavaScript type testing library",
+      "dist-tags": {
+        "latest": "3.3.0"
+      },
+      "versions": {
+        "0.0.7": {
+          "name": "is",
+          "description": "JavaScript type testing library",
+          "homepage": "https://github.com/onirame/is",
+          "keywords": [
+            "util",
+            "type",
+            "sniff",
+            "server",
+            "client",
+            "browser"
+          ],
+          "author": {
+            "name": "Enrico Marino",
+            "email": "enrico.marino@email.com",
+            "url": "http://onirame.no.de"
+          },
+          "contributors": [],
+          "dependencies": {},
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/onirame/is.git"
+          },
+          "main": "is.js",
+          "version": "0.0.7",
+          "devDependencies": {},
+          "engines": {
+            "node": "*"
+          },
+          "_npmUser": {
+            "name": "onirame",
+            "email": "enrico.marino@email.com"
+          },
+          "_id": "is@0.0.7",
+          "_engineSupported": true,
+          "_npmVersion": "1.0.106",
+          "_nodeVersion": "v0.6.2",
+          "_defaultsLoaded": true,
+          "dist": {
+            "shasum": "52c5638db4cd610ae6243f1277c6ea7e73d815ae",
+            "tarball": "https://registry.npmjs.org/is/-/is-0.0.7.tgz"
+          },
+          "maintainers": [
+            {
+              "name": "onirame",
+              "email": "enrico.marino@email.com"
+            }
+          ],
+          "directories": {}
+        },
+        "0.1.0": {
+          "name": "is",
+          "description": "the definitive JavaScript type testing library",
+          "homepage": "https://github.com/onirame/is",
+          "keywords": [
+            "util",
+            "test",
+            "type",
+            "sniff",
+            "server",
+            "client",
+            "browser"
+          ],
+          "author": {
+            "name": "Enrico Marino",
+            "email": "enrico.marino@email.com",
+            "url": "http://onirame.no.de"
+          },
+          "contributors": [],
+          "dependencies": {},
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/onirame/is.git"
+          },
+          "main": "is.js",
+          "version": "0.1.0",
+          "devDependencies": {},
+          "engines": {
+            "node": "*"
+          },
+          "_npmUser": {
+            "name": "onirame",
+            "email": "enrico.marino@email.com"
+          },
+          "_id": "is@0.1.0",
+          "_engineSupported": true,
+          "_npmVersion": "1.0.106",
+          "_nodeVersion": "v0.6.2",
+          "_defaultsLoaded": true,
+          "dist": {
+            "shasum": "affadef63ed027f4ce6f8299a62e20f48457b133",
+            "tarball": "https://registry.npmjs.org/is/-/is-0.1.0.tgz"
+          },
+          "maintainers": [
+            {
+              "name": "onirame",
+              "email": "enrico.marino@email.com"
+            }
+          ],
+          "directories": {}
+        },
+        "0.1.1": {
+          "name": "is",
+          "description": "the definitive JavaScript type testing library",
+          "homepage": "https://github.com/onirame/is",
+          "keywords": [
+            "util",
+            "test",
+            "type",
+            "sniff",
+            "server",
+            "client",
+            "browser"
+          ],
+          "author": {
+            "name": "Enrico Marino",
+            "email": "enrico.marino@email.com",
+            "url": "http://onirame.no.de"
+          },
+          "contributors": [],
+          "dependencies": {},
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/onirame/is.git"
+          },
+          "main": "is.js",
+          "version": "0.1.1",
+          "devDependencies": {},
+          "engines": {
+            "node": "*"
+          },
+          "_npmUser": {
+            "name": "onirame",
+            "email": "enrico.marino@email.com"
+          },
+          "_id": "is@0.1.1",
+          "_engineSupported": true,
+          "_npmVersion": "1.0.106",
+          "_nodeVersion": "v0.6.2",
+          "_defaultsLoaded": true,
+          "dist": {
+            "shasum": "c466aeba376cdc5ecceda1c59eed650df4f05855",
+            "tarball": "https://registry.npmjs.org/is/-/is-0.1.1.tgz"
+          },
+          "maintainers": [
+            {
+              "name": "onirame",
+              "email": "enrico.marino@email.com"
+            }
+          ],
+          "directories": {}
+        },
+        "0.1.2": {
+          "name": "is",
+          "description": "the definitive JavaScript type testing library",
+          "homepage": "https://github.com/onirame/is",
+          "keywords": [
+            "util",
+            "test",
+            "type",
+            "sniff",
+            "server",
+            "client",
+            "browser"
+          ],
+          "author": {
+            "name": "Enrico Marino",
+            "email": "enrico.marino@email.com",
+            "url": "http://onirame.no.de"
+          },
+          "contributors": [],
+          "dependencies": {},
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/onirame/is.git"
+          },
+          "main": "is.js",
+          "version": "0.1.2",
+          "devDependencies": {},
+          "engines": {
+            "node": "*"
+          },
+          "_npmUser": {
+            "name": "onirame",
+            "email": "enrico.marino@email.com"
+          },
+          "_id": "is@0.1.2",
+          "_engineSupported": true,
+          "_npmVersion": "1.0.106",
+          "_nodeVersion": "v0.6.2",
+          "_defaultsLoaded": true,
+          "dist": {
+            "shasum": "721fe290ff453c8e3f801ff456ba00eafe024a64",
+            "tarball": "https://registry.npmjs.org/is/-/is-0.1.2.tgz"
+          },
+          "maintainers": [
+            {
+              "name": "onirame",
+              "email": "enrico.marino@email.com"
+            }
+          ],
+          "directories": {}
+        },
+        "0.1.3": {
+          "name": "is",
+          "description": "the definitive JavaScript type testing library",
+          "homepage": "https://github.com/onirame/is",
+          "keywords": [
+            "util",
+            "test",
+            "type",
+            "sniff",
+            "server",
+            "client",
+            "browser"
+          ],
+          "author": {
+            "name": "Enrico Marino",
+            "email": "enrico.marino@email.com",
+            "url": "http://onirame.no.de"
+          },
+          "contributors": [],
+          "dependencies": {},
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/onirame/is.git"
+          },
+          "main": "is.js",
+          "version": "0.1.3",
+          "devDependencies": {},
+          "engines": {
+            "node": "*"
+          },
+          "_npmUser": {
+            "name": "onirame",
+            "email": "enrico.marino@email.com"
+          },
+          "_id": "is@0.1.3",
+          "_engineSupported": true,
+          "_npmVersion": "1.0.106",
+          "_nodeVersion": "v0.6.2",
+          "_defaultsLoaded": true,
+          "dist": {
+            "shasum": "0f40777ee837943426fc376e579e19d776a3837a",
+            "tarball": "https://registry.npmjs.org/is/-/is-0.1.3.tgz"
+          },
+          "maintainers": [
+            {
+              "name": "onirame",
+              "email": "enrico.marino@email.com"
+            }
+          ],
+          "directories": {}
+        },
+        "0.1.4": {
+          "name": "is",
+          "description": "the definitive JavaScript type testing library",
+          "homepage": "https://github.com/onirame/is",
+          "keywords": [
+            "util",
+            "test",
+            "type",
+            "sniff",
+            "server",
+            "client",
+            "browser"
+          ],
+          "author": {
+            "name": "Enrico Marino",
+            "email": "enrico.marino@email.com",
+            "url": "http://onirame.no.de"
+          },
+          "contributors": [],
+          "dependencies": {},
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/onirame/is.git"
+          },
+          "main": "is.js",
+          "version": "0.1.4",
+          "devDependencies": {},
+          "engines": {
+            "node": "*"
+          },
+          "_npmUser": {
+            "name": "onirame",
+            "email": "enrico.marino@email.com"
+          },
+          "_id": "is@0.1.4",
+          "_engineSupported": true,
+          "_npmVersion": "1.0.106",
+          "_nodeVersion": "v0.6.2",
+          "_defaultsLoaded": true,
+          "dist": {
+            "shasum": "599c40253cffaa3e6dfb6b2812fa7740222edade",
+            "tarball": "https://registry.npmjs.org/is/-/is-0.1.4.tgz"
+          },
+          "maintainers": [
+            {
+              "name": "onirame",
+              "email": "enrico.marino@email.com"
+            }
+          ],
+          "directories": {}
+        },
+        "0.1.5": {
+          "name": "is",
+          "description": "the definitive JavaScript type testing library",
+          "homepage": "https://github.com/onirame/is",
+          "keywords": [
+            "util",
+            "test",
+            "type",
+            "sniff",
+            "server",
+            "client",
+            "browser"
+          ],
+          "author": {
+            "name": "Enrico Marino",
+            "email": "enrico.marino@email.com",
+            "url": "http://onirame.no.de"
+          },
+          "contributors": [],
+          "dependencies": {},
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/onirame/is.git"
+          },
+          "main": "is.js",
+          "version": "0.1.5",
+          "devDependencies": {},
+          "engines": {
+            "node": "*"
+          },
+          "_npmUser": {
+            "name": "onirame",
+            "email": "enrico.marino@email.com"
+          },
+          "_id": "is@0.1.5",
+          "_engineSupported": true,
+          "_npmVersion": "1.0.106",
+          "_nodeVersion": "v0.6.2",
+          "_defaultsLoaded": true,
+          "dist": {
+            "shasum": "2a0801fab44eac19802c212d8442f113ad0c6ebe",
+            "tarball": "https://registry.npmjs.org/is/-/is-0.1.5.tgz"
+          },
+          "maintainers": [
+            {
+              "name": "onirame",
+              "email": "enrico.marino@email.com"
+            }
+          ],
+          "directories": {}
+        },
+        "0.1.6": {
+          "name": "is",
+          "author": {
+            "name": "Enrico Marino",
+            "url": "http://onirame.com"
+          },
+          "description": "the definitive JavaScript type testing library",
+          "homepage": "https://github.com/enricomarino/is",
+          "keywords": [
+            "util",
+            "type",
+            "test"
+          ],
+          "contributors": [],
+          "dependencies": {},
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/enricomarino/is.git"
+          },
+          "main": "index.js",
+          "version": "0.1.6",
+          "devDependencies": {},
+          "engines": {
+            "node": "*"
+          },
+          "_id": "is@0.1.6",
+          "dist": {
+            "shasum": "f4b97308252abc026315d23d6835fa10b1ab5fb9",
+            "tarball": "https://registry.npmjs.org/is/-/is-0.1.6.tgz"
+          },
+          "_from": ".",
+          "_npmVersion": "1.2.2",
+          "_npmUser": {
+            "name": "onirame",
+            "email": "enrico.marino@email.com"
+          },
+          "maintainers": [
+            {
+              "name": "onirame",
+              "email": "enrico.marino@email.com"
+            }
+          ],
+          "directories": {}
+        },
+        "0.2.0": {
+          "name": "is",
+          "author": {
+            "name": "Enrico Marino",
+            "url": "http://onirame.com"
+          },
+          "description": "the definitive JavaScript type testing library",
+          "homepage": "https://github.com/enricomarino/is",
+          "keywords": [
+            "util",
+            "type",
+            "test"
+          ],
+          "contributors": [],
+          "dependencies": {},
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/enricomarino/is.git"
+          },
+          "main": "index.js",
+          "version": "0.2.0",
+          "scripts": {
+            "test": "node test/index.js"
+          },
+          "devDependencies": {
+            "tape": "~0.3.3",
+            "foreach": "~2.0.0"
+          },
+          "testling": {
+            "files": "test.js",
+            "browsers": [
+              "iexplore/6.0..latest",
+              "firefox/3.0",
+              "firefox/15.0..latest",
+              "firefox/nightly",
+              "chrome/4.0",
+              "chrome/22.0..latest",
+              "chrome/canary",
+              "opera/10.0..latest",
+              "opera/next",
+              "safari/5.0.5..latest",
+              "ipad/6.0..latest",
+              "iphone/6.0..latest"
+            ]
+          },
+          "engines": {
+            "node": "*"
+          },
+          "_id": "is@0.2.0",
+          "dist": {
+            "shasum": "0d68f5ec23d230f9dd8dc0b7fd17627c16241b04",
+            "tarball": "https://registry.npmjs.org/is/-/is-0.2.0.tgz"
+          },
+          "_from": ".",
+          "_npmVersion": "1.2.2",
+          "_npmUser": {
+            "name": "onirame",
+            "email": "enrico.marino@email.com"
+          },
+          "maintainers": [
+            {
+              "name": "onirame",
+              "email": "enrico.marino@email.com"
+            }
+          ],
+          "directories": {}
+        },
+        "0.2.1": {
+          "name": "is",
+          "author": {
+            "name": "Enrico Marino",
+            "url": "http://onirame.com"
+          },
+          "description": "the definitive JavaScript type testing library",
+          "homepage": "https://github.com/enricomarino/is",
+          "keywords": [
+            "util",
+            "type",
+            "test"
+          ],
+          "contributors": [
+            {
+              "name": "Jordan Harband",
+              "url": "https://github.com/ljharb"
+            }
+          ],
+          "dependencies": {},
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/enricomarino/is.git"
+          },
+          "main": "index.js",
+          "version": "0.2.1",
+          "scripts": {
+            "test": "node test/index.js"
+          },
+          "devDependencies": {
+            "tape": "~0.3.3",
+            "foreach": "~2.0.2"
+          },
+          "testling": {
+            "files": "test.js",
+            "browsers": [
+              "iexplore/6.0..latest",
+              "firefox/3.0",
+              "firefox/15.0..latest",
+              "firefox/nightly",
+              "chrome/4.0",
+              "chrome/22.0..latest",
+              "chrome/canary",
+              "opera/10.0..latest",
+              "opera/next",
+              "safari/5.0.5..latest",
+              "ipad/6.0..latest",
+              "iphone/6.0..latest"
+            ]
+          },
+          "engines": {
+            "node": "*"
+          },
+          "_id": "is@0.2.1",
+          "dist": {
+            "shasum": "cfe6d40895bb3fd7e5c148e160959dd500bc3fdd",
+            "tarball": "https://registry.npmjs.org/is/-/is-0.2.1.tgz"
+          },
+          "_from": ".",
+          "_npmVersion": "1.2.2",
+          "_npmUser": {
+            "name": "onirame",
+            "email": "enrico.marino@email.com"
+          },
+          "maintainers": [
+            {
+              "name": "onirame",
+              "email": "enrico.marino@email.com"
+            }
+          ],
+          "directories": {}
+        },
+        "0.2.2": {
+          "name": "is",
+          "author": {
+            "name": "Enrico Marino",
+            "url": "http://onirame.com"
+          },
+          "description": "the definitive JavaScript type testing library",
+          "homepage": "https://github.com/enricomarino/is",
+          "keywords": [
+            "util",
+            "type",
+            "test"
+          ],
+          "contributors": [
+            {
+              "name": "Jordan Harband",
+              "url": "https://github.com/ljharb"
+            }
+          ],
+          "dependencies": {},
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/enricomarino/is.git"
+          },
+          "main": "index.js",
+          "version": "0.2.2",
+          "scripts": {
+            "test": "node test/index.js"
+          },
+          "devDependencies": {
+            "tape": "~0.3.3",
+            "foreach": "~2.0.2"
+          },
+          "testling": {
+            "files": "test.js",
+            "browsers": [
+              "iexplore/6.0..latest",
+              "firefox/3.0",
+              "firefox/15.0..latest",
+              "firefox/nightly",
+              "chrome/4.0",
+              "chrome/22.0..latest",
+              "chrome/canary",
+              "opera/10.0..latest",
+              "opera/next",
+              "safari/5.0.5..latest",
+              "ipad/6.0..latest",
+              "iphone/6.0..latest"
+            ]
+          },
+          "engines": {
+            "node": "*"
+          },
+          "_id": "is@0.2.2",
+          "dist": {
+            "shasum": "698c0fd6d6133f92451acc5b0fe8083db5f90054",
+            "tarball": "https://registry.npmjs.org/is/-/is-0.2.2.tgz"
+          },
+          "_from": ".",
+          "_npmVersion": "1.2.2",
+          "_npmUser": {
+            "name": "onirame",
+            "email": "enrico.marino@email.com"
+          },
+          "maintainers": [
+            {
+              "name": "onirame",
+              "email": "enrico.marino@email.com"
+            },
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "directories": {}
+        },
+        "0.2.3": {
+          "name": "is",
+          "author": {
+            "name": "Enrico Marino",
+            "url": "http://onirame.com"
+          },
+          "description": "the definitive JavaScript type testing library",
+          "homepage": "https://github.com/enricomarino/is",
+          "keywords": [
+            "util",
+            "type",
+            "test"
+          ],
+          "contributors": [
+            {
+              "name": "Jordan Harband",
+              "url": "https://github.com/ljharb"
+            }
+          ],
+          "dependencies": {},
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/enricomarino/is.git"
+          },
+          "main": "index.js",
+          "version": "0.2.3",
+          "scripts": {
+            "test": "node test/index.js"
+          },
+          "devDependencies": {
+            "tape": "~0.3.3",
+            "foreach": "~2.0.2"
+          },
+          "testling": {
+            "files": "test.js",
+            "browsers": [
+              "iexplore/6.0..latest",
+              "firefox/3.0",
+              "firefox/15.0..latest",
+              "firefox/nightly",
+              "chrome/4.0",
+              "chrome/22.0..latest",
+              "chrome/canary",
+              "opera/10.0..latest",
+              "opera/next",
+              "safari/5.0.5..latest",
+              "ipad/6.0..latest",
+              "iphone/6.0..latest"
+            ]
+          },
+          "engines": {
+            "node": "*"
+          },
+          "_id": "is@0.2.3",
+          "dist": {
+            "shasum": "2527a4e5b9fc17b384ee8f430f6ce96cac21b69b",
+            "tarball": "https://registry.npmjs.org/is/-/is-0.2.3.tgz"
+          },
+          "_from": ".",
+          "_npmVersion": "1.2.14",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "onirame",
+              "email": "enrico.marino@email.com"
+            },
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "directories": {}
+        },
+        "0.2.4": {
+          "name": "is",
+          "author": {
+            "name": "Enrico Marino",
+            "url": "http://onirame.com"
+          },
+          "description": "the definitive JavaScript type testing library",
+          "homepage": "https://github.com/enricomarino/is",
+          "keywords": [
+            "util",
+            "type",
+            "test"
+          ],
+          "contributors": [
+            {
+              "name": "Jordan Harband",
+              "url": "https://github.com/ljharb"
+            }
+          ],
+          "dependencies": {},
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/enricomarino/is.git"
+          },
+          "main": "index.js",
+          "version": "0.2.4",
+          "scripts": {
+            "test": "node test/index.js"
+          },
+          "devDependencies": {
+            "tape": "~0.3.3",
+            "foreach": "~2.0.2"
+          },
+          "testling": {
+            "files": "test.js",
+            "browsers": [
+              "iexplore/6.0..latest",
+              "firefox/3.0",
+              "firefox/15.0..latest",
+              "firefox/nightly",
+              "chrome/4.0",
+              "chrome/22.0..latest",
+              "chrome/canary",
+              "opera/10.0..latest",
+              "opera/next",
+              "safari/5.0.5..latest",
+              "ipad/6.0..latest",
+              "iphone/6.0..latest"
+            ]
+          },
+          "engines": {
+            "node": "*"
+          },
+          "_id": "is@0.2.4",
+          "dist": {
+            "shasum": "8d4148fff5c27db9a3c182251ff41ad9ad4d7593",
+            "tarball": "https://registry.npmjs.org/is/-/is-0.2.4.tgz"
+          },
+          "_from": ".",
+          "_npmVersion": "1.2.14",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "onirame",
+              "email": "enrico.marino@email.com"
+            },
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "directories": {}
+        },
+        "0.2.5": {
+          "name": "is",
+          "author": {
+            "name": "Enrico Marino",
+            "url": "http://onirame.com"
+          },
+          "description": "the definitive JavaScript type testing library",
+          "homepage": "https://github.com/enricomarino/is",
+          "keywords": [
+            "util",
+            "type",
+            "test"
+          ],
+          "contributors": [
+            {
+              "name": "Jordan Harband",
+              "url": "https://github.com/ljharb"
+            }
+          ],
+          "dependencies": {},
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/enricomarino/is.git"
+          },
+          "main": "index.js",
+          "version": "0.2.5",
+          "scripts": {
+            "test": "node test/index.js"
+          },
+          "devDependencies": {
+            "tap": "~0.4.1",
+            "foreach": "~2.0.2"
+          },
+          "testling": {
+            "files": "test.js",
+            "browsers": [
+              "iexplore/6.0..latest",
+              "firefox/3.0",
+              "firefox/15.0..latest",
+              "firefox/nightly",
+              "chrome/4.0",
+              "chrome/22.0..latest",
+              "chrome/canary",
+              "opera/10.0..latest",
+              "opera/next",
+              "safari/5.0.5..latest",
+              "ipad/6.0..latest",
+              "iphone/6.0..latest"
+            ]
+          },
+          "engines": {
+            "node": "*"
+          },
+          "_id": "is@0.2.5",
+          "dist": {
+            "shasum": "132aec555f2920a012157bbec889aebeaf67823a",
+            "tarball": "https://registry.npmjs.org/is/-/is-0.2.5.tgz"
+          },
+          "_from": ".",
+          "_npmVersion": "1.2.18",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "onirame",
+              "email": "enrico.marino@email.com"
+            },
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "directories": {}
+        },
+        "0.2.6": {
+          "name": "is",
+          "author": {
+            "name": "Enrico Marino",
+            "url": "http://onirame.com"
+          },
+          "description": "the definitive JavaScript type testing library",
+          "homepage": "https://github.com/enricomarino/is",
+          "keywords": [
+            "util",
+            "type",
+            "test"
+          ],
+          "contributors": [
+            {
+              "name": "Jordan Harband",
+              "url": "https://github.com/ljharb"
+            }
+          ],
+          "dependencies": {},
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/enricomarino/is.git"
+          },
+          "main": "index.js",
+          "version": "0.2.6",
+          "scripts": {
+            "test": "node test/index.js"
+          },
+          "devDependencies": {
+            "tape": "~1.0.1",
+            "foreach": "~2.0.3"
+          },
+          "testling": {
+            "files": "test/index.js",
+            "browsers": [
+              "iexplore/6.0..latest",
+              "firefox/3.0",
+              "firefox/15.0..latest",
+              "firefox/nightly",
+              "chrome/4.0",
+              "chrome/22.0..latest",
+              "chrome/canary",
+              "opera/10.0..latest",
+              "opera/next",
+              "safari/5.0.5..latest",
+              "ipad/6.0..latest",
+              "iphone/6.0..latest"
+            ]
+          },
+          "engines": {
+            "node": "*"
+          },
+          "_id": "is@0.2.6",
+          "dist": {
+            "shasum": "36681b7c4328a75a6dd4b6d8f7131e4f81de55c0",
+            "tarball": "https://registry.npmjs.org/is/-/is-0.2.6.tgz"
+          },
+          "_from": ".",
+          "_npmVersion": "1.2.18",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "onirame",
+              "email": "enrico.marino@email.com"
+            },
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "directories": {}
+        },
+        "0.2.7": {
+          "name": "is",
+          "author": {
+            "name": "Enrico Marino",
+            "url": "http://onirame.com"
+          },
+          "description": "the definitive JavaScript type testing library",
+          "homepage": "https://github.com/enricomarino/is",
+          "keywords": [
+            "util",
+            "type",
+            "test"
+          ],
+          "contributors": [
+            {
+              "name": "Jordan Harband",
+              "url": "https://github.com/ljharb"
+            }
+          ],
+          "dependencies": {},
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/enricomarino/is.git"
+          },
+          "main": "index.js",
+          "version": "0.2.7",
+          "scripts": {
+            "test": "node test/index.js"
+          },
+          "devDependencies": {
+            "tape": "~2.3.2",
+            "foreach": "~2.0.4"
+          },
+          "testling": {
+            "files": "test/index.js",
+            "browsers": [
+              "iexplore/6.0..latest",
+              "firefox/3.0",
+              "firefox/15.0..latest",
+              "firefox/nightly",
+              "chrome/4.0",
+              "chrome/22.0..latest",
+              "chrome/canary",
+              "opera/10.0..latest",
+              "opera/next",
+              "safari/5.0.5..latest",
+              "ipad/6.0..latest",
+              "iphone/6.0..latest"
+            ]
+          },
+          "engines": {
+            "node": "*"
+          },
+          "bugs": {
+            "url": "https://github.com/enricomarino/is/issues"
+          },
+          "_id": "is@0.2.7",
+          "dist": {
+            "shasum": "3b34a2c48f359972f35042849193ae7264b63562",
+            "tarball": "https://registry.npmjs.org/is/-/is-0.2.7.tgz"
+          },
+          "_from": ".",
+          "_npmVersion": "1.3.17",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            },
+            {
+              "name": "enricomarino",
+              "email": "enrico.marino@email.com"
+            }
+          ],
+          "directories": {}
+        },
+        "0.3.0": {
+          "name": "is",
+          "author": {
+            "name": "Enrico Marino",
+            "url": "http://onirame.com"
+          },
+          "description": "the definitive JavaScript type testing library",
+          "homepage": "https://github.com/enricomarino/is",
+          "keywords": [
+            "util",
+            "type",
+            "test"
+          ],
+          "contributors": [
+            {
+              "name": "Jordan Harband",
+              "url": "https://github.com/ljharb"
+            }
+          ],
+          "dependencies": {},
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/enricomarino/is.git"
+          },
+          "main": "index.js",
+          "version": "0.3.0",
+          "scripts": {
+            "test": "node test/index.js",
+            "coverage": "covert test/index.js",
+            "coverage-quiet": "covert test/index.js --quiet"
+          },
+          "devDependencies": {
+            "tape": "~2.5.0",
+            "foreach": "~2.0.4",
+            "covert": "~0.3.1"
+          },
+          "testling": {
+            "files": "test/index.js",
+            "browsers": [
+              "iexplore/6.0..latest",
+              "firefox/3.0",
+              "firefox/15.0..latest",
+              "firefox/nightly",
+              "chrome/4.0",
+              "chrome/22.0..latest",
+              "chrome/canary",
+              "opera/10.0..latest",
+              "opera/next",
+              "safari/5.0.5..latest",
+              "ipad/6.0..latest",
+              "iphone/6.0..latest"
+            ]
+          },
+          "engines": {
+            "node": "*"
+          },
+          "bugs": {
+            "url": "https://github.com/enricomarino/is/issues"
+          },
+          "_id": "is@0.3.0",
+          "dist": {
+            "shasum": "a8f71dfc8a6e28371627f26c929098c6f4d5d5d7",
+            "tarball": "https://registry.npmjs.org/is/-/is-0.3.0.tgz"
+          },
+          "_from": ".",
+          "_npmVersion": "1.4.3",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            },
+            {
+              "name": "enricomarino",
+              "email": "enrico.marino@email.com"
+            }
+          ],
+          "directories": {}
+        },
+        "1.0.0": {
+          "name": "is",
+          "version": "1.0.0",
+          "main": "index.js",
+          "scripts": {
+            "test": "node test/index.js",
+            "coverage": "covert test/index.js",
+            "coverage-quiet": "covert test/index.js --quiet"
+          },
+          "author": {
+            "name": "Enrico Marino",
+            "url": "http://onirame.com"
+          },
+          "description": "the definitive JavaScript type testing library",
+          "homepage": "https://github.com/enricomarino/is",
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/enricomarino/is.git"
+          },
+          "keywords": [
+            "util",
+            "type",
+            "test"
+          ],
+          "contributors": [
+            {
+              "name": "Jordan Harband",
+              "url": "https://github.com/ljharb"
+            }
+          ],
+          "dependencies": {},
+          "devDependencies": {
+            "tape": "~2.14.0",
+            "foreach": "~2.0.4",
+            "covert": "~0.4.0"
+          },
+          "testling": {
+            "files": "test/index.js",
+            "browsers": [
+              "iexplore/6.0..latest",
+              "firefox/3.0",
+              "firefox/15.0..latest",
+              "firefox/nightly",
+              "chrome/4.0",
+              "chrome/22.0..latest",
+              "chrome/canary",
+              "opera/10.0..latest",
+              "opera/next",
+              "safari/5.0.5..latest",
+              "ipad/6.0..latest",
+              "iphone/6.0..latest"
+            ]
+          },
+          "engines": {
+            "node": "*"
+          },
+          "gitHead": "2ccbc19ce77c00c95e56fef6a1a76d7944a66b0a",
+          "bugs": {
+            "url": "https://github.com/enricomarino/is/issues"
+          },
+          "_id": "is@1.0.0",
+          "_shasum": "a023b1b476029a71dbf35dc1c2c0eb52557ee2de",
+          "_from": ".",
+          "_npmVersion": "1.4.21",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            },
+            {
+              "name": "enricomarino",
+              "email": "enrico.marino@email.com"
+            }
+          ],
+          "dist": {
+            "shasum": "a023b1b476029a71dbf35dc1c2c0eb52557ee2de",
+            "tarball": "https://registry.npmjs.org/is/-/is-1.0.0.tgz"
+          },
+          "directories": {}
+        },
+        "1.1.0": {
+          "name": "is",
+          "version": "1.1.0",
+          "main": "index.js",
+          "scripts": {
+            "test": "npm run lint && node test/index.js",
+            "coverage": "covert test/index.js",
+            "coverage-quiet": "covert test/index.js --quiet",
+            "lint": "jscs *.js */*.js"
+          },
+          "author": {
+            "name": "Enrico Marino",
+            "url": "http://onirame.com"
+          },
+          "description": "the definitive JavaScript type testing library",
+          "homepage": "https://github.com/enricomarino/is",
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/enricomarino/is.git"
+          },
+          "keywords": [
+            "util",
+            "type",
+            "test"
+          ],
+          "contributors": [
+            {
+              "name": "Jordan Harband",
+              "url": "https://github.com/ljharb"
+            }
+          ],
+          "dependencies": {},
+          "devDependencies": {
+            "tape": "~2.14.0",
+            "foreach": "~2.0.4",
+            "covert": "~1.0.0",
+            "jscs": "~1.5.9"
+          },
+          "testling": {
+            "files": "test/index.js",
+            "browsers": [
+              "iexplore/6.0..latest",
+              "firefox/3.0",
+              "firefox/15.0..latest",
+              "firefox/nightly",
+              "chrome/4.0",
+              "chrome/22.0..latest",
+              "chrome/canary",
+              "opera/10.0..latest",
+              "opera/next",
+              "safari/5.0.5..latest",
+              "ipad/6.0..latest",
+              "iphone/6.0..latest"
+            ]
+          },
+          "engines": {
+            "node": "*"
+          },
+          "gitHead": "1bb48f21faf992fef943e6f5ba843e282337d659",
+          "bugs": {
+            "url": "https://github.com/enricomarino/is/issues"
+          },
+          "_id": "is@1.1.0",
+          "_shasum": "783f91758fd3dcfae02818c08eb6e46c28009017",
+          "_from": ".",
+          "_npmVersion": "1.4.23",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            },
+            {
+              "name": "enricomarino",
+              "email": "enrico.marino@email.com"
+            }
+          ],
+          "dist": {
+            "shasum": "783f91758fd3dcfae02818c08eb6e46c28009017",
+            "tarball": "https://registry.npmjs.org/is/-/is-1.1.0.tgz"
+          },
+          "directories": {}
+        },
+        "2.0.0": {
+          "name": "is",
+          "version": "2.0.0",
+          "main": "index.js",
+          "scripts": {
+            "test": "npm run lint && node test/index.js",
+            "coverage": "covert test/index.js",
+            "coverage-quiet": "covert test/index.js --quiet",
+            "lint": "jscs *.js */*.js"
+          },
+          "author": {
+            "name": "Enrico Marino",
+            "url": "http://onirame.com"
+          },
+          "description": "the definitive JavaScript type testing library",
+          "homepage": "https://github.com/enricomarino/is",
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/enricomarino/is.git"
+          },
+          "keywords": [
+            "util",
+            "type",
+            "test"
+          ],
+          "contributors": [
+            {
+              "name": "Jordan Harband",
+              "url": "https://github.com/ljharb"
+            }
+          ],
+          "dependencies": {},
+          "devDependencies": {
+            "tape": "~2.14.0",
+            "foreach": "~2.0.4",
+            "covert": "~1.0.0",
+            "jscs": "~1.5.9"
+          },
+          "testling": {
+            "files": "test/index.js",
+            "browsers": [
+              "iexplore/6.0..latest",
+              "firefox/3.0",
+              "firefox/15.0..latest",
+              "firefox/nightly",
+              "chrome/4.0",
+              "chrome/22.0..latest",
+              "chrome/canary",
+              "opera/10.0..latest",
+              "opera/next",
+              "safari/5.0.5..latest",
+              "ipad/6.0..latest",
+              "iphone/6.0..latest"
+            ]
+          },
+          "engines": {
+            "node": "*"
+          },
+          "gitHead": "ec3647dab585c59adcace304428daa46f90eec84",
+          "bugs": {
+            "url": "https://github.com/enricomarino/is/issues"
+          },
+          "_id": "is@2.0.0",
+          "_shasum": "80ceb181483e35279d1be2498ee209b0396d2b01",
+          "_from": ".",
+          "_npmVersion": "1.4.23",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            },
+            {
+              "name": "enricomarino",
+              "email": "enrico.marino@email.com"
+            }
+          ],
+          "dist": {
+            "shasum": "80ceb181483e35279d1be2498ee209b0396d2b01",
+            "tarball": "https://registry.npmjs.org/is/-/is-2.0.0.tgz"
+          },
+          "directories": {}
+        },
+        "2.0.1": {
+          "name": "is",
+          "version": "2.0.1",
+          "main": "index.js",
+          "scripts": {
+            "test": "npm run lint && node test/index.js",
+            "coverage": "covert test/index.js",
+            "coverage-quiet": "covert test/index.js --quiet",
+            "lint": "jscs *.js */*.js"
+          },
+          "author": {
+            "name": "Enrico Marino",
+            "url": "http://onirame.com"
+          },
+          "description": "the definitive JavaScript type testing library",
+          "homepage": "https://github.com/enricomarino/is",
+          "license": "MIT",
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/enricomarino/is.git"
+          },
+          "keywords": [
+            "util",
+            "type",
+            "test"
+          ],
+          "contributors": [
+            {
+              "name": "Jordan Harband",
+              "url": "https://github.com/ljharb"
+            }
+          ],
+          "dependencies": {},
+          "devDependencies": {
+            "tape": "~2.14.0",
+            "foreach": "~2.0.4",
+            "covert": "~1.0.0",
+            "jscs": "~1.6.0"
+          },
+          "testling": {
+            "files": "test/index.js",
+            "browsers": [
+              "iexplore/6.0..latest",
+              "firefox/3.0",
+              "firefox/15.0..latest",
+              "firefox/nightly",
+              "chrome/4.0",
+              "chrome/22.0..latest",
+              "chrome/canary",
+              "opera/10.0..latest",
+              "opera/next",
+              "safari/5.0.5..latest",
+              "ipad/6.0..latest",
+              "iphone/6.0..latest"
+            ]
+          },
+          "engines": {
+            "node": "*"
+          },
+          "gitHead": "da4f1328bdafdad91b5a5ebbb864c58990330eb7",
+          "bugs": {
+            "url": "https://github.com/enricomarino/is/issues"
+          },
+          "_id": "is@2.0.1",
+          "_shasum": "9e5d23f2930cc756f54da8aca4e8836ea4121cfc",
+          "_from": ".",
+          "_npmVersion": "1.4.23",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            },
+            {
+              "name": "enricomarino",
+              "email": "enrico.marino@email.com"
+            }
+          ],
+          "dist": {
+            "shasum": "9e5d23f2930cc756f54da8aca4e8836ea4121cfc",
+            "tarball": "https://registry.npmjs.org/is/-/is-2.0.1.tgz"
+          },
+          "directories": {}
+        },
+        "2.0.2": {
+          "name": "is",
+          "version": "2.0.2",
+          "main": "index.js",
+          "scripts": {
+            "test": "npm run lint && node test/index.js",
+            "coverage": "covert test/index.js",
+            "coverage-quiet": "covert test/index.js --quiet",
+            "lint": "jscs *.js */*.js"
+          },
+          "author": {
+            "name": "Enrico Marino",
+            "url": "http://onirame.com"
+          },
+          "description": "the definitive JavaScript type testing library",
+          "homepage": "https://github.com/enricomarino/is",
+          "license": "MIT",
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/enricomarino/is.git"
+          },
+          "keywords": [
+            "util",
+            "type",
+            "test"
+          ],
+          "contributors": [
+            {
+              "name": "Jordan Harband",
+              "url": "https://github.com/ljharb"
+            }
+          ],
+          "dependencies": {},
+          "devDependencies": {
+            "tape": "~3.0.0",
+            "foreach": "~2.0.5",
+            "covert": "~1.0.0",
+            "jscs": "~1.6.2"
+          },
+          "testling": {
+            "files": "test/index.js",
+            "browsers": [
+              "iexplore/6.0..latest",
+              "firefox/3.0",
+              "firefox/15.0..latest",
+              "firefox/nightly",
+              "chrome/4.0",
+              "chrome/22.0..latest",
+              "chrome/canary",
+              "opera/10.0..latest",
+              "opera/next",
+              "safari/5.0.5..latest",
+              "ipad/6.0..latest",
+              "iphone/6.0..latest"
+            ]
+          },
+          "engines": {
+            "node": "*"
+          },
+          "gitHead": "c00da932cfecbc89da1489e2d932cb2bb53d758e",
+          "bugs": {
+            "url": "https://github.com/enricomarino/is/issues"
+          },
+          "_id": "is@2.0.2",
+          "_shasum": "9e3bee3c1bcfae27edb117429af477510429a956",
+          "_from": ".",
+          "_npmVersion": "1.4.28",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            },
+            {
+              "name": "enricomarino",
+              "email": "enrico.marino@email.com"
+            }
+          ],
+          "dist": {
+            "shasum": "9e3bee3c1bcfae27edb117429af477510429a956",
+            "tarball": "https://registry.npmjs.org/is/-/is-2.0.2.tgz"
+          },
+          "directories": {}
+        },
+        "2.1.0": {
+          "name": "is",
+          "version": "2.1.0",
+          "main": "index.js",
+          "scripts": {
+            "test": "npm run lint && node test/index.js",
+            "coverage": "covert test/index.js",
+            "coverage-quiet": "covert test/index.js --quiet",
+            "lint": "jscs *.js */*.js"
+          },
+          "author": {
+            "name": "Enrico Marino",
+            "url": "http://onirame.com"
+          },
+          "description": "the definitive JavaScript type testing library",
+          "homepage": "https://github.com/enricomarino/is",
+          "license": "MIT",
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/enricomarino/is.git"
+          },
+          "keywords": [
+            "util",
+            "type",
+            "test"
+          ],
+          "contributors": [
+            {
+              "name": "Jordan Harband",
+              "url": "https://github.com/ljharb"
+            }
+          ],
+          "dependencies": {},
+          "devDependencies": {
+            "tape": "~3.0.1",
+            "foreach": "~2.0.5",
+            "covert": "1.0.0",
+            "jscs": "~1.7.3"
+          },
+          "testling": {
+            "files": "test/index.js",
+            "browsers": [
+              "iexplore/6.0..latest",
+              "firefox/3.0",
+              "firefox/15.0..latest",
+              "firefox/nightly",
+              "chrome/4.0",
+              "chrome/22.0..latest",
+              "chrome/canary",
+              "opera/10.0..latest",
+              "opera/next",
+              "safari/5.0.5..latest",
+              "ipad/6.0..latest",
+              "iphone/6.0..latest"
+            ]
+          },
+          "engines": {
+            "node": "*"
+          },
+          "gitHead": "a9e13b16c35adf35cbc920a8aae0ffc9a92fe5ed",
+          "bugs": {
+            "url": "https://github.com/enricomarino/is/issues"
+          },
+          "_id": "is@2.1.0",
+          "_shasum": "cf3dc3a5e1dd21c72e3838d8170e5f746127be8b",
+          "_from": ".",
+          "_npmVersion": "1.4.28",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            },
+            {
+              "name": "enricomarino",
+              "email": "enrico.marino@email.com"
+            }
+          ],
+          "dist": {
+            "shasum": "cf3dc3a5e1dd21c72e3838d8170e5f746127be8b",
+            "tarball": "https://registry.npmjs.org/is/-/is-2.1.0.tgz"
+          },
+          "directories": {}
+        },
+        "2.2.0": {
+          "name": "is",
+          "version": "2.2.0",
+          "main": "index.js",
+          "scripts": {
+            "test": "npm run lint && node test/index.js",
+            "coverage": "covert test/index.js",
+            "coverage-quiet": "covert test/index.js --quiet",
+            "lint": "jscs *.js */*.js"
+          },
+          "author": {
+            "name": "Enrico Marino",
+            "url": "http://onirame.com"
+          },
+          "description": "the definitive JavaScript type testing library",
+          "homepage": "https://github.com/enricomarino/is",
+          "license": "MIT",
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/enricomarino/is.git"
+          },
+          "keywords": [
+            "util",
+            "type",
+            "test"
+          ],
+          "contributors": [
+            {
+              "name": "Jordan Harband",
+              "url": "https://github.com/ljharb"
+            }
+          ],
+          "dependencies": {},
+          "devDependencies": {
+            "tape": "~3.0.3",
+            "foreach": "~2.0.5",
+            "covert": "1.0.0",
+            "jscs": "~1.8.1"
+          },
+          "testling": {
+            "files": "test/index.js",
+            "browsers": [
+              "iexplore/6.0..latest",
+              "firefox/3.0",
+              "firefox/15.0..latest",
+              "firefox/nightly",
+              "chrome/4.0",
+              "chrome/22.0..latest",
+              "chrome/canary",
+              "opera/10.0..latest",
+              "opera/next",
+              "safari/5.0.5..latest",
+              "ipad/6.0..latest",
+              "iphone/6.0..latest"
+            ]
+          },
+          "engines": {
+            "node": "*"
+          },
+          "gitHead": "34ab97617d8588bf095c35d06399ac417aaf0bc2",
+          "bugs": {
+            "url": "https://github.com/enricomarino/is/issues"
+          },
+          "_id": "is@2.2.0",
+          "_shasum": "91eefacd0db199f6ff761b6bf08c65e2d2813c37",
+          "_from": ".",
+          "_npmVersion": "1.4.28",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            },
+            {
+              "name": "enricomarino",
+              "email": "enrico.marino@email.com"
+            }
+          ],
+          "dist": {
+            "shasum": "91eefacd0db199f6ff761b6bf08c65e2d2813c37",
+            "tarball": "https://registry.npmjs.org/is/-/is-2.2.0.tgz"
+          },
+          "directories": {}
+        },
+        "2.2.1": {
+          "name": "is",
+          "version": "2.2.1",
+          "main": "index.js",
+          "scripts": {
+            "test": "npm run lint && node test/index.js",
+            "coverage": "covert test/index.js",
+            "coverage-quiet": "covert test/index.js --quiet",
+            "lint": "jscs *.js */*.js"
+          },
+          "author": {
+            "name": "Enrico Marino",
+            "url": "http://onirame.com"
+          },
+          "description": "the definitive JavaScript type testing library",
+          "homepage": "https://github.com/enricomarino/is",
+          "license": "MIT",
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/enricomarino/is.git"
+          },
+          "keywords": [
+            "util",
+            "type",
+            "test"
+          ],
+          "contributors": [
+            {
+              "name": "Jordan Harband",
+              "url": "https://github.com/ljharb"
+            }
+          ],
+          "dependencies": {},
+          "devDependencies": {
+            "tape": "~3.5.0",
+            "foreach": "~2.0.5",
+            "covert": "1.0.0",
+            "jscs": "~1.10.0"
+          },
+          "testling": {
+            "files": "test/index.js",
+            "browsers": [
+              "iexplore/6.0..latest",
+              "firefox/3.0",
+              "firefox/15.0..latest",
+              "firefox/nightly",
+              "chrome/4.0",
+              "chrome/22.0..latest",
+              "chrome/canary",
+              "opera/10.0..latest",
+              "opera/next",
+              "safari/5.0.5..latest",
+              "ipad/6.0..latest",
+              "iphone/6.0..latest"
+            ]
+          },
+          "engines": {
+            "node": "*"
+          },
+          "gitHead": "4f4f866b06f5950c500381c821387d8c57bedfd8",
+          "bugs": {
+            "url": "https://github.com/enricomarino/is/issues"
+          },
+          "_id": "is@2.2.1",
+          "_shasum": "5b0557a3dc68089d978ecd1184cc8fc529837a04",
+          "_from": ".",
+          "_npmVersion": "2.3.0",
+          "_nodeVersion": "1.0.4",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            },
+            {
+              "name": "enricomarino",
+              "email": "enrico.marino@email.com"
+            }
+          ],
+          "dist": {
+            "shasum": "5b0557a3dc68089d978ecd1184cc8fc529837a04",
+            "tarball": "https://registry.npmjs.org/is/-/is-2.2.1.tgz"
+          },
+          "directories": {}
+        },
+        "3.0.1": {
+          "name": "is",
+          "version": "3.0.1",
+          "main": "index.js",
+          "scripts": {
+            "test": "npm run lint && node test/index.js",
+            "coverage": "covert test/index.js",
+            "coverage-quiet": "covert test/index.js --quiet",
+            "lint": "jscs *.js */*.js"
+          },
+          "author": {
+            "name": "Enrico Marino",
+            "url": "http://onirame.com"
+          },
+          "description": "the definitive JavaScript type testing library",
+          "homepage": "https://github.com/enricomarino/is",
+          "license": "MIT",
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/enricomarino/is.git"
+          },
+          "keywords": [
+            "util",
+            "type",
+            "test"
+          ],
+          "contributors": [
+            {
+              "name": "Jordan Harband",
+              "url": "https://github.com/ljharb"
+            }
+          ],
+          "dependencies": {},
+          "devDependencies": {
+            "tape": "^3.5.0",
+            "foreach": "^2.0.5",
+            "covert": "^1.0.1",
+            "jscs": "^1.11.3"
+          },
+          "testling": {
+            "files": "test/index.js",
+            "browsers": [
+              "iexplore/6.0..latest",
+              "firefox/3.0",
+              "firefox/15.0..latest",
+              "firefox/nightly",
+              "chrome/4.0",
+              "chrome/22.0..latest",
+              "chrome/canary",
+              "opera/10.0..latest",
+              "opera/next",
+              "safari/5.0.5..latest",
+              "ipad/6.0..latest",
+              "iphone/6.0..latest"
+            ]
+          },
+          "engines": {
+            "node": "*"
+          },
+          "gitHead": "b6388dca669e5f17686ff974a988861f57f5aea5",
+          "bugs": {
+            "url": "https://github.com/enricomarino/is/issues"
+          },
+          "_id": "is@3.0.1",
+          "_shasum": "282b817ba11a63228fb26c405ff625fd754e1ca1",
+          "_from": ".",
+          "_npmVersion": "1.4.28",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            },
+            {
+              "name": "enricomarino",
+              "email": "enrico.marino@email.com"
+            }
+          ],
+          "dist": {
+            "shasum": "282b817ba11a63228fb26c405ff625fd754e1ca1",
+            "tarball": "https://registry.npmjs.org/is/-/is-3.0.1.tgz"
+          },
+          "directories": {}
+        },
+        "3.1.0": {
+          "name": "is",
+          "version": "3.1.0",
+          "main": "index.js",
+          "scripts": {
+            "test": "npm run lint && node test/index.js",
+            "coverage": "covert test/index.js",
+            "coverage-quiet": "covert test/index.js --quiet",
+            "lint": "npm run jscs && npm run eslint",
+            "jscs": "jscs *.js */*.js",
+            "eslint": "eslint *.js */*.js"
+          },
+          "author": {
+            "name": "Enrico Marino",
+            "url": "http://onirame.com"
+          },
+          "description": "the definitive JavaScript type testing library",
+          "homepage": "https://github.com/enricomarino/is",
+          "license": "MIT",
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/enricomarino/is.git"
+          },
+          "keywords": [
+            "util",
+            "type",
+            "test"
+          ],
+          "contributors": [
+            {
+              "name": "Jordan Harband",
+              "url": "https://github.com/ljharb"
+            }
+          ],
+          "dependencies": {},
+          "devDependencies": {
+            "tape": "^4.2.0",
+            "foreach": "^2.0.5",
+            "covert": "^1.1.0",
+            "jscs": "^2.1.1",
+            "eslint": "^1.5.0",
+            "@ljharb/eslint-config": "^1.2.0"
+          },
+          "testling": {
+            "files": "test/index.js",
+            "browsers": [
+              "iexplore/6.0..latest",
+              "firefox/3.0",
+              "firefox/15.0..latest",
+              "firefox/nightly",
+              "chrome/4.0",
+              "chrome/22.0..latest",
+              "chrome/canary",
+              "opera/10.0..latest",
+              "opera/next",
+              "safari/5.0.5..latest",
+              "ipad/6.0..latest",
+              "iphone/6.0..latest"
+            ]
+          },
+          "engines": {
+            "node": "*"
+          },
+          "gitHead": "7b3ba15898119e90c3a8ef3b9d347fa70a4e8255",
+          "bugs": {
+            "url": "https://github.com/enricomarino/is/issues"
+          },
+          "_id": "is@3.1.0",
+          "_shasum": "2945d205d691cbfe4833e3f8a11c8ae94673f2a7",
+          "_from": ".",
+          "_npmVersion": "2.14.3",
+          "_nodeVersion": "4.1.0",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "dist": {
+            "shasum": "2945d205d691cbfe4833e3f8a11c8ae94673f2a7",
+            "tarball": "https://registry.npmjs.org/is/-/is-3.1.0.tgz"
+          },
+          "maintainers": [
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            },
+            {
+              "name": "enricomarino",
+              "email": "enrico.marino@email.com"
+            }
+          ],
+          "directories": {}
+        },
+        "3.2.0": {
+          "name": "is",
+          "version": "3.2.0",
+          "main": "index.js",
+          "scripts": {
+            "pretest": "npm run lint",
+            "test": "npm run --silent tests-only",
+            "tests-only": "node test/index.js",
+            "coverage": "covert test/index.js",
+            "coverage-quiet": "covert test/index.js --quiet",
+            "lint": "npm run jscs && npm run eslint",
+            "jscs": "jscs *.js */*.js",
+            "eslint": "eslint *.js */*.js"
+          },
+          "author": {
+            "name": "Enrico Marino",
+            "url": "http://onirame.com"
+          },
+          "description": "the definitive JavaScript type testing library",
+          "homepage": "https://github.com/enricomarino/is",
+          "license": "MIT",
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/enricomarino/is.git"
+          },
+          "keywords": [
+            "util",
+            "type",
+            "test"
+          ],
+          "contributors": [
+            {
+              "name": "Jordan Harband",
+              "url": "https://github.com/ljharb"
+            }
+          ],
+          "dependencies": {},
+          "devDependencies": {
+            "tape": "^4.6.2",
+            "foreach": "^2.0.5",
+            "covert": "^1.1.0",
+            "jscs": "^3.0.7",
+            "eslint": "^3.8.1",
+            "@ljharb/eslint-config": "^8.0.0"
+          },
+          "testling": {
+            "files": "test/index.js",
+            "browsers": [
+              "iexplore/6.0..latest",
+              "firefox/3.0",
+              "firefox/15.0..latest",
+              "firefox/nightly",
+              "chrome/4.0",
+              "chrome/22.0..latest",
+              "chrome/canary",
+              "opera/10.0..latest",
+              "opera/next",
+              "safari/5.0.5..latest",
+              "ipad/6.0..latest",
+              "iphone/6.0..latest"
+            ]
+          },
+          "engines": {
+            "node": "*"
+          },
+          "gitHead": "fce8a66ab070837fcf606e57bc2323376222a327",
+          "bugs": {
+            "url": "https://github.com/enricomarino/is/issues"
+          },
+          "_id": "is@3.2.0",
+          "_shasum": "a362e3daf7df3fd8b7114115d624c5b7e1cb90f7",
+          "_from": ".",
+          "_npmVersion": "3.10.8",
+          "_nodeVersion": "6.9.1",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "dist": {
+            "shasum": "a362e3daf7df3fd8b7114115d624c5b7e1cb90f7",
+            "tarball": "https://registry.npmjs.org/is/-/is-3.2.0.tgz"
+          },
+          "maintainers": [
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            },
+            {
+              "name": "enricomarino",
+              "email": "enrico.marino@email.com"
+            }
+          ],
+          "_npmOperationalInternal": {
+            "host": "packages-18-east.internal.npmjs.com",
+            "tmp": "tmp/is-3.2.0.tgz_1477361574280_0.3033844856545329"
+          },
+          "directories": {}
+        },
+        "3.2.1": {
+          "name": "is",
+          "version": "3.2.1",
+          "main": "index.js",
+          "scripts": {
+            "prepublish": "safe-publish-latest",
+            "pretest": "npm run lint",
+            "test": "npm run --silent tests-only",
+            "tests-only": "node test/index.js",
+            "coverage": "covert test/index.js",
+            "coverage-quiet": "covert test/index.js --quiet",
+            "lint": "npm run jscs && npm run eslint",
+            "jscs": "jscs *.js */*.js",
+            "eslint": "eslint *.js */*.js"
+          },
+          "author": {
+            "name": "Enrico Marino",
+            "url": "http://onirame.com"
+          },
+          "description": "the definitive JavaScript type testing library",
+          "homepage": "https://github.com/enricomarino/is",
+          "license": "MIT",
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/enricomarino/is.git"
+          },
+          "keywords": [
+            "util",
+            "type",
+            "test"
+          ],
+          "contributors": [
+            {
+              "name": "Jordan Harband",
+              "url": "https://github.com/ljharb"
+            }
+          ],
+          "dependencies": {},
+          "devDependencies": {
+            "@ljharb/eslint-config": "^11.0.0",
+            "covert": "^1.1.0",
+            "eslint": "^3.16.1",
+            "foreach": "^2.0.5",
+            "jscs": "^3.0.7",
+            "make-generator-function": "^1.1.0",
+            "safe-publish-latest": "^1.1.1",
+            "tape": "^4.6.3"
+          },
+          "testling": {
+            "files": "test/index.js",
+            "browsers": [
+              "iexplore/6.0..latest",
+              "firefox/3.0",
+              "firefox/15.0..latest",
+              "firefox/nightly",
+              "chrome/4.0",
+              "chrome/22.0..latest",
+              "chrome/canary",
+              "opera/10.0..latest",
+              "opera/next",
+              "safari/5.0.5..latest",
+              "ipad/6.0..latest",
+              "iphone/6.0..latest"
+            ]
+          },
+          "engines": {
+            "node": "*"
+          },
+          "gitHead": "f6952692d5b864da8db24267166fe2683e338581",
+          "bugs": {
+            "url": "https://github.com/enricomarino/is/issues"
+          },
+          "_id": "is@3.2.1",
+          "_shasum": "d0ac2ad55eb7b0bec926a5266f6c662aaa83dca5",
+          "_from": ".",
+          "_npmVersion": "4.1.2",
+          "_nodeVersion": "7.6.0",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "dist": {
+            "shasum": "d0ac2ad55eb7b0bec926a5266f6c662aaa83dca5",
+            "tarball": "https://registry.npmjs.org/is/-/is-3.2.1.tgz"
+          },
+          "maintainers": [
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            },
+            {
+              "name": "enricomarino",
+              "email": "enrico.marino@email.com"
+            }
+          ],
+          "_npmOperationalInternal": {
+            "host": "packages-12-west.internal.npmjs.com",
+            "tmp": "tmp/is-3.2.1.tgz_1488220899833_0.36363155697472394"
+          },
+          "directories": {}
+        },
+        "3.3.0": {
+          "name": "is",
+          "version": "3.3.0",
+          "main": "index.js",
+          "scripts": {
+            "prepublish": "safe-publish-latest",
+            "pretest": "npm run lint",
+            "test": "npm run --silent tests-only",
+            "tests-only": "node test/index.js",
+            "coverage": "covert test/index.js",
+            "coverage-quiet": "covert test/index.js --quiet",
+            "lint": "npm run jscs && npm run eslint",
+            "jscs": "jscs *.js */*.js",
+            "eslint": "eslint ."
+          },
+          "author": {
+            "name": "Enrico Marino",
+            "url": "http://onirame.com"
+          },
+          "description": "the definitive JavaScript type testing library",
+          "homepage": "https://github.com/enricomarino/is",
+          "license": "MIT",
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/enricomarino/is.git"
+          },
+          "keywords": [
+            "util",
+            "type",
+            "test"
+          ],
+          "contributors": [
+            {
+              "name": "Jordan Harband",
+              "url": "https://github.com/ljharb"
+            }
+          ],
+          "dependencies": {},
+          "devDependencies": {
+            "@ljharb/eslint-config": "^13.0.0",
+            "covert": "^1.1.0",
+            "eslint": "^5.10.0",
+            "foreach": "^2.0.5",
+            "jscs": "^3.0.7",
+            "make-generator-function": "^1.1.0",
+            "safe-publish-latest": "^1.1.2",
+            "tape": "^4.9.1"
+          },
+          "testling": {
+            "files": "test/index.js",
+            "browsers": [
+              "iexplore/6.0..latest",
+              "firefox/3.0",
+              "firefox/15.0..latest",
+              "firefox/nightly",
+              "chrome/4.0",
+              "chrome/22.0..latest",
+              "chrome/canary",
+              "opera/10.0..latest",
+              "opera/next",
+              "safari/5.0.5..latest",
+              "ipad/6.0..latest",
+              "iphone/6.0..latest"
+            ]
+          },
+          "engines": {
+            "node": "*"
+          },
+          "gitHead": "188a52b3d3e16013a09a426a8df0810a67179115",
+          "bugs": {
+            "url": "https://github.com/enricomarino/is/issues"
+          },
+          "_id": "is@3.3.0",
+          "_npmVersion": "6.4.1",
+          "_nodeVersion": "11.4.0",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "dist": {
+            "integrity": "sha512-nW24QBoPcFGGHJGUwnfpI7Yc5CdqWNdsyHQszVE/z2pKHXzh7FZ5GWhJqSyaQ9wMkQnsTx+kAI8bHlCX4tKdbg==",
+            "shasum": "61cff6dd3c4193db94a3d62582072b44e5645d79",
+            "tarball": "https://registry.npmjs.org/is/-/is-3.3.0.tgz",
+            "fileCount": 8,
+            "unpackedSize": 57468,
+            "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcFCXsCRA9TVsSAnZWagAAoEAP/3vlvmN2davZJ6evqS5L\nHMzIKoAOK0dZDpTfNJUi5ZujRuD+JwFNWOJ4EVadg5gBIYlsFCIgXnlXfIm8\nYQJvtt+AVd017naKRWj3DkabWouYFrS655nlq0filXtSqmQ0rOkSmKNSNSzP\nbACNlRjo6Sl0+QaZqMC4YJR3zwtrhf/hQ5yhtvQg5hVpzpk2ZHZrelWGg55Y\nfp4iHPTtM0ONWFzUJt5Bkd0n15kA5EY2XgEW13k3+nDL4mfKLprqkBVYKsyX\nUNrFrKMlNk67i9ADEpals3yhfXhXBbrY6CCoWvwnPSAn1Nu6wUDZF5M03RCC\nVp0jDf0F31l91qUlAdgSlrzxLDYUYL+AwRITRWH6uVk0pPG89r/cvQf14JOw\nSSv5z1Of6S4GVpVuJPUKxKQf7vh7zXInkkmCyuCBvdaYtafvKgooe4W0QflK\nbLauS4T1DNGxeYhyOU5x/J/m13S3TCsFQ/hXrFkUTFjOzFHaLfvMKPCSq/Au\nZeUTVvYrYmtUsSRx5rqnePyQ25M6cWtd/Rz48wc+FOcbgPPOsZLbahKKslJD\nyk+DCju/xQK9VdDe48HMO5XZO/5jAU3kFQ6oZM4HCtQR6DwrTPLskx/SjT4B\nOCwRywLumzc7ijZRUAPlAIf8d1mXV6q1l0YZQAnC/VEJTdXeR41VAwxSSWs0\nwaNg\r\n=dWhD\r\n-----END PGP SIGNATURE-----\r\n"
+          },
+          "maintainers": [
+            {
+              "name": "enricomarino",
+              "email": "enrico.marino@email.com"
+            },
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "directories": {},
+          "_npmOperationalInternal": {
+            "host": "s3://npm-registry-packages",
+            "tmp": "tmp/is_3.3.0_1544824299571_0.0006590609021466243"
+          },
+          "_hasShrinkwrap": false
+        }
+      },
+      "maintainers": [
+        {
+          "name": "enricomarino",
+          "email": "enrico.marino@email.com"
+        },
+        {
+          "name": "ljharb",
+          "email": "ljharb@gmail.com"
+        }
+      ],
+      "time": {
+        "modified": "2019-01-08T05:29:47.977Z",
+        "created": "2011-11-19T23:50:28.498Z",
+        "0.0.7": "2011-11-20T00:41:44.402Z",
+        "0.1.0": "2011-12-03T15:30:35.083Z",
+        "0.1.1": "2011-12-03T17:19:42.852Z",
+        "0.1.2": "2011-12-05T00:19:02.461Z",
+        "0.1.3": "2011-12-10T22:46:58.847Z",
+        "0.1.4": "2011-12-10T23:10:55.235Z",
+        "0.1.5": "2012-05-14T05:59:33.963Z",
+        "0.1.6": "2013-04-06T13:07:51.638Z",
+        "0.2.0": "2013-04-08T18:27:50.357Z",
+        "0.2.1": "2013-04-14T11:09:08.810Z",
+        "0.2.2": "2013-04-17T07:07:39.962Z",
+        "0.2.3": "2013-04-17T16:53:53.207Z",
+        "0.2.4": "2013-04-18T02:51:29.991Z",
+        "0.2.5": "2013-04-25T03:50:20.322Z",
+        "0.2.6": "2013-05-06T23:22:36.378Z",
+        "0.2.7": "2013-12-26T22:04:46.502Z",
+        "0.3.0": "2014-03-02T22:29:10.796Z",
+        "1.0.0": "2014-08-07T17:27:22.769Z",
+        "1.1.0": "2014-08-22T08:56:36.968Z",
+        "2.0.0": "2014-08-26T05:47:48.805Z",
+        "2.0.1": "2014-09-02T07:07:47.162Z",
+        "2.0.2": "2014-10-05T07:52:12.839Z",
+        "2.1.0": "2014-10-21T17:40:47.051Z",
+        "2.2.0": "2014-11-29T08:11:22.005Z",
+        "2.2.1": "2015-02-06T08:55:07.755Z",
+        "3.0.0": "2015-02-21T21:26:26.820Z",
+        "3.0.1": "2015-02-22T19:24:08.207Z",
+        "3.1.0": "2015-09-19T15:29:02.569Z",
+        "3.2.0": "2016-10-25T02:12:57.235Z",
+        "3.2.1": "2017-02-27T18:41:40.057Z",
+        "3.3.0": "2018-12-14T21:51:39.814Z"
+      },
+      "author": {
+        "name": "Enrico Marino",
+        "url": "http://onirame.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/enricomarino/is.git"
+      },
+      "users": {
+        "julien-f": true,
+        "zhangyaochun": true,
+        "lokua": true,
+        "stanzhai": true,
+        "nickeljew": true,
+        "rsp": true,
+        "battlemidget": true,
+        "crazyjingling": true,
+        "fotooo": true,
+        "pandao": true,
+        "m80126colin": true,
+        "curioussavage": true,
+        "naissur": true,
+        "samypesse": true,
+        "dralc": true,
+        "gubi": true,
+        "chrisyipw": true,
+        "programmer.severson": true,
+        "ninozhang": true,
+        "max_devjs": true,
+        "kontrax": true,
+        "shuoshubao": true,
+        "arnold-almeida": true,
+        "jhillacre": true,
+        "nuwaio": true,
+        "xiechao06": true,
+        "hualei": true
+      },
+      "readme": "# is <sup>[![Version Badge][npm-version-svg]][npm-url]</sup>\n\n[![Build Status][travis-svg]][travis-url]\n[![dependency status][deps-svg]][deps-url]\n[![dev dependency status][dev-deps-svg]][dev-deps-url]\n[![License][license-image]][license-url]\n[![Downloads][downloads-image]][downloads-url]\n\n[![npm badge][npm-badge-png]][npm-url]\n\n[![browser support][testling-png]][testling-url]\n\nThe definitive JavaScript type testing library\n\nTo be or not to be? This is the library!\n\n## Installation\n\nAs a node.js module\n\n```shell\n$ npm install is\n```\n\nAs a component\n```shell\n$ component install enricomarino/is\n```\n\n## API\n\n### general\n\n - ``is.a`` (value, type) or ``is.type`` (value, type)\n - ``is.defined`` (value)\n - ``is.empty`` (value)\n - ``is.equal`` (value, other)\n - ``is.hosted`` (value, host)\n - ``is.instance`` (value, constructor)\n - ``is.instanceof`` (value, constructor) - deprecated, because in ES3 browsers, \"instanceof\" is a reserved word\n - ``is.nil`` (value)\n - ``is.null`` (value) - deprecated, because in ES3 browsers, \"null\" is a reserved word\n - ``is.undef`` (value)\n - ``is.undefined`` (value) - deprecated, because in ES3 browsers, \"undefined\" is a reserved word\n\n### arguments\n\n - ``is.args`` (value)\n - ``is.arguments`` (value) - deprecated, because \"arguments\" is a reserved word\n - ``is.args.empty`` (value)\n\n### array\n\n - ``is.array`` (value)\n - ``is.array.empty`` (value)\n - ``is.arraylike`` (value)\n\n### boolean\n\n - ``is.bool`` (value)\n - ``is.boolean`` (value) - deprecated, because in ES3 browsers, \"boolean\" is a reserved word\n - ``is.false`` (value) - deprecated, because in ES3 browsers, \"false\" is a reserved word\n - ``is.true`` (value) - deprecated, because in ES3 browsers, \"true\" is a reserved word\n\n### date\n\n - ``is.date`` (value)\n\n### element\n\n - ``is.element`` (value)\n\n### error\n\n - ``is.error`` (value)\n\n### function\n\n - ``is.fn`` (value)\n - ``is.function`` (value) - deprecated, because in ES3 browsers, \"function\" is a reserved word\n\n### number\n\n - ``is.number`` (value)\n - ``is.infinite`` (value)\n - ``is.decimal`` (value)\n - ``is.divisibleBy`` (value, n)\n - ``is.integer`` (value)\n - ``is.int`` (value) - deprecated, because in ES3 browsers, \"int\" is a reserved word\n - ``is.maximum`` (value, others)\n - ``is.minimum`` (value, others)\n - ``is.nan`` (value)\n - ``is.even`` (value)\n - ``is.odd`` (value)\n - ``is.ge`` (value, other)\n - ``is.gt`` (value, other)\n - ``is.le`` (value, other)\n - ``is.lt`` (value, other)\n - ``is.within`` (value, start, finish)\n\n### object\n\n - ``is.object`` (value)\n\n### regexp\n\n - ``is.regexp`` (value)\n\n### string\n\n - ``is.string`` (value)\n\n### encoded binary\n\n - ``is.base64`` (value)\n - ``is.hex`` (value)\n\n### Symbols\n - ``is.symbol`` (value)\n\n### BigInts\n - ``is.bigint`` (value)\n\n## Contributors\n\n- [Jordan Harband](https://github.com/ljharb)\n\n[npm-url]: https://npmjs.org/package/is\n[npm-version-svg]: http://versionbadg.es/enricomarino/is.svg\n[travis-svg]: https://travis-ci.org/enricomarino/is.svg\n[travis-url]: https://travis-ci.org/enricomarino/is\n[deps-svg]: https://david-dm.org/enricomarino/is.svg\n[deps-url]: https://david-dm.org/enricomarino/is\n[dev-deps-svg]: https://david-dm.org/enricomarino/is/dev-status.svg\n[dev-deps-url]: https://david-dm.org/enricomarino/is#info=devDependencies\n[testling-png]: https://ci.testling.com/enricomarino/is.png\n[testling-url]: https://ci.testling.com/enricomarino/is\n[npm-badge-png]: https://nodei.co/npm/is.png?downloads=true&stars=true\n[license-image]: http://img.shields.io/npm/l/is.svg\n[license-url]: LICENSE.md\n[downloads-image]: http://img.shields.io/npm/dm/is.svg\n[downloads-url]: http://npm-stat.com/charts.html?package=is\n",
+      "homepage": "https://github.com/enricomarino/is",
+      "keywords": [
+        "util",
+        "type",
+        "test"
+      ],
+      "contributors": [
+        {
+          "name": "Jordan Harband",
+          "url": "https://github.com/ljharb"
+        }
+      ],
+      "bugs": {
+        "url": "https://github.com/enricomarino/is/issues"
+      },
+      "readmeFilename": "README.md",
+      "license": "MIT"
+    }
+  }
+}

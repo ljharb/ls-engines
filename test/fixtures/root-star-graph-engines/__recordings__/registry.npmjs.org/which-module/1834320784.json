@@ -1,0 +1,56 @@
+{
+  "request": {
+    "method": "GET",
+    "href": "https://registry.npmjs.org/which-module",
+    "headers": {
+      "connection": [
+        "keep-alive"
+      ],
+      "user-agent": [
+        "pacote/11.1.0 node/v13.10.1"
+      ],
+      "npm-in-ci": [
+        "false"
+      ],
+      "pacote-version": [
+        "11.1.0"
+      ],
+      "pacote-req-type": [
+        "packument"
+      ],
+      "pacote-pkg-id": [
+        "registry:which-module"
+      ],
+      "accept": [
+        "application/vnd.npm.install-v1+json; q=1.0, application/json; q=0.8, */*"
+      ],
+      "accept-encoding": [
+        "gzip,deflate"
+      ]
+    },
+    "body": ""
+  },
+  "response": {
+    "statusCode": 200,
+    "headers": {
+      "date": "Thu, 12 Mar 2020 04:59:35 GMT",
+      "content-type": "application/vnd.npm.install-v1+json",
+      "content-length": "725",
+      "connection": "keep-alive",
+      "set-cookie": [
+        "__cfduid=d0640f807922d58ee5067063c65c409731583989175; expires=Sat, 11-Apr-20 04:59:35 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax"
+      ],
+      "cf-ray": "572af25c2be7ed2b-SJC",
+      "accept-ranges": "bytes",
+      "age": "2278",
+      "cache-control": "public, max-age=300",
+      "etag": "\"2e5543607f5b3681d1a5a266954f7054\"",
+      "last-modified": "Sat, 15 Feb 2020 19:55:53 GMT",
+      "vary": "accept-encoding, accept",
+      "cf-cache-status": "HIT",
+      "expect-ct": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"",
+      "server": "cloudflare"
+    },
+    "body": "{\"name\":\"which-module\",\"dist-tags\":{\"latest\":\"2.0.0\"},\"versions\":{\"1.0.0\":{\"name\":\"which-module\",\"version\":\"1.0.0\",\"devDependencies\":{\"ava\":\"^0.15.2\",\"coveralls\":\"^2.11.9\",\"nyc\":\"^6.4.4\",\"standard\":\"^7.1.2\",\"standard-version\":\"^2.3.0\"},\"dist\":{\"shasum\":\"bba63ca861948994ff307736089e3b96026c2a4f\",\"tarball\":\"https://registry.npmjs.org/which-module/-/which-module-1.0.0.tgz\"}},\"2.0.0\":{\"name\":\"which-module\",\"version\":\"2.0.0\",\"devDependencies\":{\"ava\":\"^0.19.1\",\"coveralls\":\"^2.13.1\",\"nyc\":\"^10.3.0\",\"standard\":\"^10.0.2\",\"standard-version\":\"^4.0.0\"},\"dist\":{\"shasum\":\"d9ef07dce77b9902b8a3a8fa4b31c3e3f7e6e87a\",\"tarball\":\"https://registry.npmjs.org/which-module/-/which-module-2.0.0.tgz\"}}},\"modified\":\"2018-01-23T08:55:31.744Z\"}"
+  }
+}

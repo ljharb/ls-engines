@@ -1,0 +1,2332 @@
+{
+  "request": {
+    "method": "GET",
+    "href": "https://registry.npmjs.org/node.extend",
+    "headers": {
+      "connection": [
+        "keep-alive"
+      ],
+      "user-agent": [
+        "pacote/11.1.0 node/v13.10.1"
+      ],
+      "npm-in-ci": [
+        "false"
+      ],
+      "pacote-version": [
+        "11.1.0"
+      ],
+      "pacote-req-type": [
+        "packument"
+      ],
+      "pacote-pkg-id": [
+        "registry:node.extend"
+      ],
+      "accept": [
+        "application/json"
+      ],
+      "accept-encoding": [
+        "gzip,deflate"
+      ]
+    },
+    "body": ""
+  },
+  "response": {
+    "statusCode": 200,
+    "headers": {
+      "date": "Thu, 12 Mar 2020 04:58:44 GMT",
+      "content-type": "application/json",
+      "connection": "keep-alive",
+      "set-cookie": [
+        "__cfduid=dd2d34695b7741587101379b559b69d711583989124; expires=Sat, 11-Apr-20 04:58:44 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax"
+      ],
+      "cf-ray": "572af11e48409baf-SJC",
+      "age": "3636",
+      "cache-control": "public, max-age=300",
+      "etag": "W/\"3360979e55fb9011812466bd31e271b0\"",
+      "last-modified": "Fri, 04 Jan 2019 23:39:22 GMT",
+      "vary": "accept-encoding, accept",
+      "cf-cache-status": "HIT",
+      "expect-ct": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"",
+      "server": "cloudflare",
+      "content-encoding": "application/json"
+    },
+    "body": {
+      "_id": "node.extend",
+      "_rev": "74-4c1d284165272536a8668bfcbbc80e11",
+      "name": "node.extend",
+      "description": "A port of jQuery.extend that actually works on node.js",
+      "dist-tags": {
+        "latest": "2.0.2"
+      },
+      "versions": {
+        "0.0.1": {
+          "name": "node.extend",
+          "version": "0.0.1",
+          "description": "Port of jQuery.extend that actually works on node.js",
+          "keywords": [
+            "extend",
+            "jQuery",
+            "jQuery extend",
+            "clone",
+            "copy",
+            "inherit"
+          ],
+          "author": {
+            "name": "dreamerslab",
+            "email": "ben@dreamerslab.com"
+          },
+          "dependencies": {},
+          "main": "index",
+          "engines": [
+            "node >= 0.4.0"
+          ],
+          "_npmUser": {
+            "name": "dreamerslab",
+            "email": "ben@dreamerslab.com"
+          },
+          "_id": "node.extend@0.0.1",
+          "devDependencies": {},
+          "_engineSupported": true,
+          "_npmVersion": "1.1.0-beta-10",
+          "_nodeVersion": "v0.6.7",
+          "_defaultsLoaded": true,
+          "dist": {
+            "shasum": "c616a6200f845976f04a6983fe728eb8f597e9c7",
+            "tarball": "https://registry.npmjs.org/node.extend/-/node.extend-0.0.1.tgz"
+          },
+          "maintainers": [
+            {
+              "name": "dreamerslab",
+              "email": "ben@dreamerslab.com"
+            }
+          ],
+          "directories": {},
+          "deprecated": "0.0.1"
+        },
+        "1.0.0": {
+          "name": "node.extend",
+          "version": "1.0.0",
+          "description": "A port of jQuery.extend that actually works on node.js",
+          "keywords": [
+            "extend",
+            "jQuery",
+            "jQuery extend",
+            "clone",
+            "copy",
+            "inherit"
+          ],
+          "author": {
+            "name": "dreamerslab",
+            "email": "ben@dreamerslab.com"
+          },
+          "dependencies": {},
+          "devDependencies": {
+            "should": "0.5.1"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/dreamerslab/node.extend.git"
+          },
+          "main": "index",
+          "engines": [
+            "node >= 0.4.0"
+          ],
+          "license": "MIT",
+          "_npmUser": {
+            "name": "dreamerslab",
+            "email": "ben@dreamerslab.com"
+          },
+          "_id": "node.extend@1.0.0",
+          "optionalDependencies": {},
+          "_engineSupported": true,
+          "_npmVersion": "1.1.1",
+          "_nodeVersion": "v0.6.11",
+          "_defaultsLoaded": true,
+          "dist": {
+            "shasum": "ab83960c477280d01ba5554a0d8fd3acfe39336e",
+            "tarball": "https://registry.npmjs.org/node.extend/-/node.extend-1.0.0.tgz"
+          },
+          "maintainers": [
+            {
+              "name": "dreamerslab",
+              "email": "ben@dreamerslab.com"
+            }
+          ],
+          "directories": {},
+          "deprecated": "0.0.1"
+        },
+        "1.0.1": {
+          "name": "node.extend",
+          "version": "1.0.1",
+          "description": "A port of jQuery.extend that actually works on node.js",
+          "keywords": [
+            "extend",
+            "jQuery",
+            "jQuery extend",
+            "clone",
+            "copy",
+            "inherit"
+          ],
+          "author": {
+            "name": "dreamerslab",
+            "email": "ben@dreamerslab.com"
+          },
+          "dependencies": {},
+          "devDependencies": {
+            "should": "1.2.2"
+          },
+          "repository": {
+            "type": "git",
+            "url": "https://github.com/dreamerslab/node.extend.git"
+          },
+          "contributors": [
+            {
+              "name": "Jordan Harband"
+            }
+          ],
+          "main": "index",
+          "scripts": {
+            "test": "node test/run.js"
+          },
+          "engines": [
+            "node >= 0.4.0"
+          ],
+          "licenses": [
+            {
+              "type": "MIT",
+              "url": "http://en.wikipedia.org/wiki/MIT_License"
+            },
+            {
+              "type": "GPL",
+              "url": "http://en.wikipedia.org/wiki/GNU_General_Public_License"
+            }
+          ],
+          "_id": "node.extend@1.0.1",
+          "dist": {
+            "shasum": "912f7cd99ad00e92d8a034a12a9d637d9cad26d8",
+            "tarball": "https://registry.npmjs.org/node.extend/-/node.extend-1.0.1.tgz"
+          },
+          "_from": ".",
+          "_npmVersion": "1.2.15",
+          "_npmUser": {
+            "name": "dreamerslab",
+            "email": "ben@dreamerslab.com"
+          },
+          "maintainers": [
+            {
+              "name": "dreamerslab",
+              "email": "ben@dreamerslab.com"
+            }
+          ],
+          "directories": {},
+          "deprecated": "0.0.1"
+        },
+        "1.0.2": {
+          "name": "node.extend",
+          "version": "1.0.2",
+          "description": "A port of jQuery.extend that actually works on node.js",
+          "keywords": [
+            "extend",
+            "jQuery",
+            "jQuery extend",
+            "clone",
+            "copy",
+            "inherit"
+          ],
+          "author": {
+            "name": "dreamerslab",
+            "email": "ben@dreamerslab.com"
+          },
+          "dependencies": {
+            "object-keys": "~0.1.3"
+          },
+          "devDependencies": {
+            "should": "1.2.2"
+          },
+          "repository": {
+            "type": "git",
+            "url": "https://github.com/dreamerslab/node.extend.git"
+          },
+          "contributors": [
+            {
+              "name": "Jordan Harband"
+            }
+          ],
+          "main": "index",
+          "scripts": {
+            "test": "node test/run.js"
+          },
+          "engines": [
+            "node >= 0.4.0"
+          ],
+          "testling": {
+            "files": "index.js",
+            "browsers": [
+              "iexplore/6.0..latest",
+              "firefox/3.0",
+              "firefox/15.0..latest",
+              "firefox/nightly",
+              "chrome/4.0",
+              "chrome/22.0..latest",
+              "chrome/canary",
+              "opera/10.0..latest",
+              "opera/next",
+              "safari/5.0.5..latest",
+              "ipad/6.0..latest",
+              "iphone/6.0..latest"
+            ]
+          },
+          "licenses": [
+            {
+              "type": "MIT",
+              "url": "http://en.wikipedia.org/wiki/MIT_License"
+            },
+            {
+              "type": "GPL",
+              "url": "http://en.wikipedia.org/wiki/GNU_General_Public_License"
+            }
+          ],
+          "_id": "node.extend@1.0.2",
+          "dist": {
+            "shasum": "913d5b7b8f5cee58a3421a615180574a69ea7aca",
+            "tarball": "https://registry.npmjs.org/node.extend/-/node.extend-1.0.2.tgz"
+          },
+          "_from": ".",
+          "_npmVersion": "1.2.14",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "dreamerslab",
+              "email": "ben@dreamerslab.com"
+            },
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "directories": {},
+          "deprecated": "0.0.1"
+        },
+        "1.0.3": {
+          "name": "node.extend",
+          "version": "1.0.3",
+          "description": "A port of jQuery.extend that actually works on node.js",
+          "keywords": [
+            "extend",
+            "jQuery",
+            "jQuery extend",
+            "clone",
+            "copy",
+            "inherit"
+          ],
+          "author": {
+            "name": "dreamerslab",
+            "email": "ben@dreamerslab.com"
+          },
+          "dependencies": {
+            "object-keys": "~0.1.4"
+          },
+          "devDependencies": {
+            "tape": "0.3.3"
+          },
+          "repository": {
+            "type": "git",
+            "url": "https://github.com/dreamerslab/node.extend.git"
+          },
+          "contributors": [
+            {
+              "name": "Jordan Harband"
+            }
+          ],
+          "main": "index",
+          "scripts": {
+            "test": "node test/index.js"
+          },
+          "engines": [
+            "node >= 0.4.0"
+          ],
+          "testling": {
+            "files": "index.js",
+            "browsers": [
+              "iexplore/6.0..latest",
+              "firefox/3.0..6.0",
+              "firefox/15.0..latest",
+              "firefox/nightly",
+              "chrome/4.0..10.0",
+              "chrome/20.0..latest",
+              "chrome/canary",
+              "opera/10.0..latest",
+              "opera/next",
+              "safari/4.0..latest",
+              "ipad/6.0..latest",
+              "iphone/6.0..latest"
+            ]
+          },
+          "licenses": [
+            {
+              "type": "MIT",
+              "url": "http://en.wikipedia.org/wiki/MIT_License"
+            },
+            {
+              "type": "GPL",
+              "url": "http://en.wikipedia.org/wiki/GNU_General_Public_License"
+            }
+          ],
+          "_id": "node.extend@1.0.3",
+          "dist": {
+            "shasum": "f44d06b5ecf6db9d370182a0fdf63acba0ed91bc",
+            "tarball": "https://registry.npmjs.org/node.extend/-/node.extend-1.0.3.tgz"
+          },
+          "_from": ".",
+          "_npmVersion": "1.2.14",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "dreamerslab",
+              "email": "ben@dreamerslab.com"
+            },
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "directories": {},
+          "deprecated": "0.0.1"
+        },
+        "1.0.4": {
+          "name": "node.extend",
+          "version": "1.0.4",
+          "description": "A port of jQuery.extend that actually works on node.js",
+          "keywords": [
+            "extend",
+            "jQuery",
+            "jQuery extend",
+            "clone",
+            "copy",
+            "inherit"
+          ],
+          "author": {
+            "name": "dreamerslab",
+            "email": "ben@dreamerslab.com"
+          },
+          "dependencies": {
+            "is": "~0.2.4",
+            "object-keys": "~0.1.7"
+          },
+          "devDependencies": {
+            "tape": "~0.3.3"
+          },
+          "repository": {
+            "type": "git",
+            "url": "https://github.com/dreamerslab/node.extend.git"
+          },
+          "contributors": [
+            {
+              "name": "Jordan Harband"
+            }
+          ],
+          "main": "index",
+          "scripts": {
+            "test": "node test/index.js"
+          },
+          "engines": [
+            "node >= 0.4.0"
+          ],
+          "testling": {
+            "files": "index.js",
+            "browsers": [
+              "iexplore/6.0..latest",
+              "firefox/3.0..6.0",
+              "firefox/15.0..latest",
+              "firefox/nightly",
+              "chrome/4.0..10.0",
+              "chrome/20.0..latest",
+              "chrome/canary",
+              "opera/10.0..latest",
+              "opera/next",
+              "safari/4.0..latest",
+              "ipad/6.0..latest",
+              "iphone/6.0..latest"
+            ]
+          },
+          "licenses": [
+            {
+              "type": "MIT",
+              "url": "http://en.wikipedia.org/wiki/MIT_License"
+            },
+            {
+              "type": "GPL",
+              "url": "http://en.wikipedia.org/wiki/GNU_General_Public_License"
+            }
+          ],
+          "_id": "node.extend@1.0.4",
+          "dist": {
+            "shasum": "c3fd7acb7765f44b3af77817400c6af47362f026",
+            "tarball": "https://registry.npmjs.org/node.extend/-/node.extend-1.0.4.tgz"
+          },
+          "_from": ".",
+          "_npmVersion": "1.2.14",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "dreamerslab",
+              "email": "ben@dreamerslab.com"
+            },
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "directories": {},
+          "deprecated": "0.0.1"
+        },
+        "1.0.5": {
+          "name": "node.extend",
+          "version": "1.0.5",
+          "description": "A port of jQuery.extend that actually works on node.js",
+          "keywords": [
+            "extend",
+            "jQuery",
+            "jQuery extend",
+            "clone",
+            "copy",
+            "inherit"
+          ],
+          "author": {
+            "name": "dreamerslab",
+            "email": "ben@dreamerslab.com"
+          },
+          "dependencies": {
+            "is": "~0.2.4",
+            "object-keys": "~0.1.7"
+          },
+          "devDependencies": {
+            "tape": "~0.3.3"
+          },
+          "repository": {
+            "type": "git",
+            "url": "https://github.com/dreamerslab/node.extend.git"
+          },
+          "contributors": [
+            {
+              "name": "Jordan Harband"
+            }
+          ],
+          "main": "index",
+          "scripts": {
+            "test": "node test/index.js"
+          },
+          "engines": [
+            "node >= 0.4.0"
+          ],
+          "testling": {
+            "files": "index.js",
+            "browsers": [
+              "iexplore/6.0..latest",
+              "firefox/3.0..6.0",
+              "firefox/15.0..latest",
+              "firefox/nightly",
+              "chrome/4.0..10.0",
+              "chrome/20.0..latest",
+              "chrome/canary",
+              "opera/10.0..latest",
+              "opera/next",
+              "safari/4.0..latest",
+              "ipad/6.0..latest",
+              "iphone/6.0..latest"
+            ]
+          },
+          "licenses": [
+            {
+              "type": "MIT",
+              "url": "http://en.wikipedia.org/wiki/MIT_License"
+            },
+            {
+              "type": "GPL",
+              "url": "http://en.wikipedia.org/wiki/GNU_General_Public_License"
+            }
+          ],
+          "_id": "node.extend@1.0.5",
+          "dist": {
+            "shasum": "80c871c3446199be88dd17453ab7877e2a7f1b89",
+            "tarball": "https://registry.npmjs.org/node.extend/-/node.extend-1.0.5.tgz"
+          },
+          "_from": ".",
+          "_npmVersion": "1.2.14",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "dreamerslab",
+              "email": "ben@dreamerslab.com"
+            },
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "directories": {},
+          "deprecated": "0.0.1"
+        },
+        "1.0.6": {
+          "name": "node.extend",
+          "version": "1.0.6",
+          "description": "A port of jQuery.extend that actually works on node.js",
+          "keywords": [
+            "extend",
+            "jQuery",
+            "jQuery extend",
+            "clone",
+            "copy",
+            "inherit"
+          ],
+          "author": {
+            "name": "dreamerslab",
+            "email": "ben@dreamerslab.com"
+          },
+          "dependencies": {
+            "is": "~0.2.6",
+            "object-keys": "~0.1.8"
+          },
+          "devDependencies": {
+            "tape": "~1.0.2"
+          },
+          "repository": {
+            "type": "git",
+            "url": "https://github.com/dreamerslab/node.extend.git"
+          },
+          "contributors": [
+            {
+              "name": "Jordan Harband"
+            }
+          ],
+          "main": "index",
+          "scripts": {
+            "test": "node test/index.js"
+          },
+          "engines": [
+            "node >= 0.4.0"
+          ],
+          "testling": {
+            "files": "index.js",
+            "browsers": [
+              "iexplore/6.0..latest",
+              "firefox/3.0..6.0",
+              "firefox/15.0..latest",
+              "firefox/nightly",
+              "chrome/4.0..10.0",
+              "chrome/20.0..latest",
+              "chrome/canary",
+              "opera/10.0..latest",
+              "opera/next",
+              "safari/4.0..latest",
+              "ipad/6.0..latest",
+              "iphone/6.0..latest"
+            ]
+          },
+          "licenses": [
+            {
+              "type": "MIT",
+              "url": "http://en.wikipedia.org/wiki/MIT_License"
+            },
+            {
+              "type": "GPL",
+              "url": "http://en.wikipedia.org/wiki/GNU_General_Public_License"
+            }
+          ],
+          "_id": "node.extend@1.0.6",
+          "dist": {
+            "shasum": "9bbd179b4233faebbb9a27da102c5b63e0fef5da",
+            "tarball": "https://registry.npmjs.org/node.extend/-/node.extend-1.0.6.tgz"
+          },
+          "_from": ".",
+          "_npmVersion": "1.2.18",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "dreamerslab",
+              "email": "ben@dreamerslab.com"
+            },
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "directories": {},
+          "deprecated": "0.0.1"
+        },
+        "1.0.7": {
+          "name": "node.extend",
+          "version": "1.0.7",
+          "description": "A port of jQuery.extend that actually works on node.js",
+          "keywords": [
+            "extend",
+            "jQuery",
+            "jQuery extend",
+            "clone",
+            "copy",
+            "inherit"
+          ],
+          "author": {
+            "name": "dreamerslab",
+            "email": "ben@dreamerslab.com"
+          },
+          "dependencies": {
+            "is": "~0.2.6",
+            "object-keys": "~0.3.0"
+          },
+          "devDependencies": {
+            "tape": "~1.0.2"
+          },
+          "repository": {
+            "type": "git",
+            "url": "https://github.com/dreamerslab/node.extend.git"
+          },
+          "contributors": [
+            {
+              "name": "Jordan Harband"
+            }
+          ],
+          "main": "index",
+          "scripts": {
+            "test": "node test/index.js"
+          },
+          "engines": [
+            "node >= 0.4.0"
+          ],
+          "testling": {
+            "files": "test/index.js",
+            "browsers": [
+              "iexplore/6.0..latest",
+              "firefox/3.0..6.0",
+              "firefox/15.0..latest",
+              "firefox/nightly",
+              "chrome/4.0..10.0",
+              "chrome/20.0..latest",
+              "chrome/canary",
+              "opera/10.0..latest",
+              "opera/next",
+              "safari/4.0..latest",
+              "ipad/6.0..latest",
+              "iphone/6.0..latest"
+            ]
+          },
+          "licenses": [
+            {
+              "type": "MIT",
+              "url": "http://en.wikipedia.org/wiki/MIT_License"
+            },
+            {
+              "type": "GPL",
+              "url": "http://en.wikipedia.org/wiki/GNU_General_Public_License"
+            }
+          ],
+          "bugs": {
+            "url": "https://github.com/dreamerslab/node.extend/issues"
+          },
+          "_id": "node.extend@1.0.7",
+          "dist": {
+            "shasum": "b39a50f7f961c1cedb5f866ad7cbbc8c2c3cd974",
+            "tarball": "https://registry.npmjs.org/node.extend/-/node.extend-1.0.7.tgz"
+          },
+          "_from": ".",
+          "_npmVersion": "1.2.21",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "dreamerslab",
+              "email": "ben@dreamerslab.com"
+            },
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "directories": {},
+          "deprecated": "0.0.1"
+        },
+        "1.0.8": {
+          "name": "node.extend",
+          "version": "1.0.8",
+          "description": "A port of jQuery.extend that actually works on node.js",
+          "keywords": [
+            "extend",
+            "jQuery",
+            "jQuery extend",
+            "clone",
+            "copy",
+            "inherit"
+          ],
+          "author": {
+            "name": "dreamerslab",
+            "email": "ben@dreamerslab.com"
+          },
+          "dependencies": {
+            "is": "~0.2.6",
+            "object-keys": "~0.4.0"
+          },
+          "devDependencies": {
+            "tape": "~2.0.0"
+          },
+          "repository": {
+            "type": "git",
+            "url": "https://github.com/dreamerslab/node.extend.git"
+          },
+          "contributors": [
+            {
+              "name": "Jordan Harband"
+            }
+          ],
+          "main": "index",
+          "scripts": {
+            "test": "node test/index.js"
+          },
+          "engines": [
+            "node >= 0.4.0"
+          ],
+          "testling": {
+            "files": "test/index.js",
+            "browsers": [
+              "iexplore/6.0..latest",
+              "firefox/3.0..6.0",
+              "firefox/15.0..latest",
+              "firefox/nightly",
+              "chrome/4.0..10.0",
+              "chrome/20.0..latest",
+              "chrome/canary",
+              "opera/10.0..latest",
+              "opera/next",
+              "safari/4.0..latest",
+              "ipad/6.0..latest",
+              "iphone/6.0..latest"
+            ]
+          },
+          "licenses": [
+            {
+              "type": "MIT",
+              "url": "http://en.wikipedia.org/wiki/MIT_License"
+            },
+            {
+              "type": "GPL",
+              "url": "http://en.wikipedia.org/wiki/GNU_General_Public_License"
+            }
+          ],
+          "bugs": {
+            "url": "https://github.com/dreamerslab/node.extend/issues"
+          },
+          "homepage": "https://github.com/dreamerslab/node.extend",
+          "_id": "node.extend@1.0.8",
+          "dist": {
+            "shasum": "bab04379f7383f4587990c9df07b6a7f65db772b",
+            "tarball": "https://registry.npmjs.org/node.extend/-/node.extend-1.0.8.tgz"
+          },
+          "_from": ".",
+          "_npmVersion": "1.3.14",
+          "_npmUser": {
+            "name": "dreamerslab",
+            "email": "ben@dreamerslab.com"
+          },
+          "maintainers": [
+            {
+              "name": "dreamerslab",
+              "email": "ben@dreamerslab.com"
+            },
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "directories": {}
+        },
+        "1.0.9": {
+          "name": "node.extend",
+          "version": "1.0.9",
+          "description": "A port of jQuery.extend that actually works on node.js",
+          "keywords": [
+            "extend",
+            "jQuery",
+            "jQuery extend",
+            "clone",
+            "copy",
+            "inherit"
+          ],
+          "author": {
+            "name": "dreamerslab",
+            "email": "ben@dreamerslab.com"
+          },
+          "dependencies": {
+            "is": "~0.2.7"
+          },
+          "devDependencies": {
+            "tape": "~2.3.2"
+          },
+          "repository": {
+            "type": "git",
+            "url": "https://github.com/dreamerslab/node.extend.git"
+          },
+          "contributors": [
+            {
+              "name": "Jordan Harband"
+            }
+          ],
+          "main": "index",
+          "scripts": {
+            "test": "node test/index.js"
+          },
+          "engines": [
+            "node >= 0.4.0"
+          ],
+          "testling": {
+            "files": "test/index.js",
+            "browsers": [
+              "iexplore/6.0..latest",
+              "firefox/3.0..6.0",
+              "firefox/15.0..latest",
+              "firefox/nightly",
+              "chrome/4.0..10.0",
+              "chrome/20.0..latest",
+              "chrome/canary",
+              "opera/10.0..latest",
+              "opera/next",
+              "safari/4.0..latest",
+              "ipad/6.0..latest",
+              "iphone/6.0..latest"
+            ]
+          },
+          "licenses": [
+            {
+              "type": "MIT",
+              "url": "http://en.wikipedia.org/wiki/MIT_License"
+            },
+            {
+              "type": "GPL",
+              "url": "http://en.wikipedia.org/wiki/GNU_General_Public_License"
+            }
+          ],
+          "bugs": {
+            "url": "https://github.com/dreamerslab/node.extend/issues"
+          },
+          "homepage": "https://github.com/dreamerslab/node.extend",
+          "_id": "node.extend@1.0.9",
+          "dist": {
+            "shasum": "4f26c7ec91b7cf435dede607d3db4fbf639a436c",
+            "tarball": "https://registry.npmjs.org/node.extend/-/node.extend-1.0.9.tgz"
+          },
+          "_from": ".",
+          "_npmVersion": "1.3.21",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "directories": {}
+        },
+        "1.0.10": {
+          "name": "node.extend",
+          "version": "1.0.10",
+          "description": "A port of jQuery.extend that actually works on node.js",
+          "keywords": [
+            "extend",
+            "jQuery",
+            "jQuery extend",
+            "clone",
+            "copy",
+            "inherit"
+          ],
+          "author": {
+            "name": "dreamerslab",
+            "email": "ben@dreamerslab.com"
+          },
+          "dependencies": {
+            "is": "~0.3.0"
+          },
+          "devDependencies": {
+            "tape": "~2.10.2"
+          },
+          "repository": {
+            "type": "git",
+            "url": "https://github.com/dreamerslab/node.extend.git"
+          },
+          "contributors": [
+            {
+              "name": "Jordan Harband"
+            }
+          ],
+          "main": "index",
+          "scripts": {
+            "test": "node test/index.js"
+          },
+          "engines": [
+            "node >= 0.4"
+          ],
+          "testling": {
+            "files": "test/index.js",
+            "browsers": [
+              "iexplore/6.0..latest",
+              "firefox/3.0..6.0",
+              "firefox/15.0..latest",
+              "firefox/nightly",
+              "chrome/4.0..10.0",
+              "chrome/20.0..latest",
+              "chrome/canary",
+              "opera/10.0..latest",
+              "opera/next",
+              "safari/4.0..latest",
+              "ipad/6.0..latest",
+              "iphone/6.0..latest"
+            ]
+          },
+          "licenses": [
+            {
+              "type": "MIT",
+              "url": "http://en.wikipedia.org/wiki/MIT_License"
+            },
+            {
+              "type": "GPL",
+              "url": "http://en.wikipedia.org/wiki/GNU_General_Public_License"
+            }
+          ],
+          "bugs": {
+            "url": "https://github.com/dreamerslab/node.extend/issues"
+          },
+          "homepage": "https://github.com/dreamerslab/node.extend",
+          "_id": "node.extend@1.0.10",
+          "dist": {
+            "shasum": "3269bddf81c54535f408abc784c32b0d2bd55f6f",
+            "tarball": "https://registry.npmjs.org/node.extend/-/node.extend-1.0.10.tgz"
+          },
+          "_from": ".",
+          "_npmVersion": "1.4.3",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "dreamerslab",
+              "email": "ben@dreamerslab.com"
+            },
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "directories": {}
+        },
+        "1.1.0": {
+          "name": "node.extend",
+          "version": "1.1.0",
+          "description": "A port of jQuery.extend that actually works on node.js",
+          "keywords": [
+            "extend",
+            "jQuery",
+            "jQuery extend",
+            "clone",
+            "copy",
+            "inherit"
+          ],
+          "author": {
+            "name": "dreamerslab",
+            "email": "ben@dreamerslab.com"
+          },
+          "dependencies": {
+            "is": "~1.0.0"
+          },
+          "devDependencies": {
+            "tape": "~2.14.0",
+            "covert": "~0.4.0"
+          },
+          "repository": {
+            "type": "git",
+            "url": "https://github.com/dreamerslab/node.extend.git"
+          },
+          "contributors": [
+            {
+              "name": "Jordan Harband"
+            }
+          ],
+          "main": "index",
+          "scripts": {
+            "test": "node test/index.js",
+            "coverage": "covert test/index.js",
+            "coverage-quiet": "covert test/index.js --quiet"
+          },
+          "engines": [
+            "node >= 0.4"
+          ],
+          "testling": {
+            "files": "test/index.js",
+            "browsers": [
+              "iexplore/6.0..latest",
+              "firefox/3.0..6.0",
+              "firefox/15.0..latest",
+              "firefox/nightly",
+              "chrome/4.0..10.0",
+              "chrome/20.0..latest",
+              "chrome/canary",
+              "opera/10.0..latest",
+              "opera/next",
+              "safari/4.0..latest",
+              "ipad/6.0..latest",
+              "iphone/6.0..latest"
+            ]
+          },
+          "licenses": [
+            {
+              "type": "MIT",
+              "url": "http://en.wikipedia.org/wiki/MIT_License"
+            },
+            {
+              "type": "GPL",
+              "url": "http://en.wikipedia.org/wiki/GNU_General_Public_License"
+            }
+          ],
+          "gitHead": "2410c68673361d0e12affe06bd42762e0b3d7b10",
+          "bugs": {
+            "url": "https://github.com/dreamerslab/node.extend/issues"
+          },
+          "homepage": "https://github.com/dreamerslab/node.extend",
+          "_id": "node.extend@1.1.0",
+          "_shasum": "5e1976914f5b4f0e173f8387cea2c3dd231f6915",
+          "_from": ".",
+          "_npmVersion": "1.4.21",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "dreamerslab",
+              "email": "ben@dreamerslab.com"
+            },
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "dist": {
+            "shasum": "5e1976914f5b4f0e173f8387cea2c3dd231f6915",
+            "tarball": "https://registry.npmjs.org/node.extend/-/node.extend-1.1.0.tgz"
+          },
+          "directories": {}
+        },
+        "1.1.1": {
+          "name": "node.extend",
+          "version": "1.1.1",
+          "description": "A port of jQuery.extend that actually works on node.js",
+          "keywords": [
+            "extend",
+            "jQuery",
+            "jQuery extend",
+            "clone",
+            "copy",
+            "inherit"
+          ],
+          "author": {
+            "name": "dreamerslab",
+            "email": "ben@dreamerslab.com"
+          },
+          "dependencies": {
+            "is": "~1.1.0"
+          },
+          "devDependencies": {
+            "tape": "~2.14.0",
+            "covert": "~1.0.0",
+            "jscs": "~1.5.9"
+          },
+          "repository": {
+            "type": "git",
+            "url": "https://github.com/dreamerslab/node.extend.git"
+          },
+          "contributors": [
+            {
+              "name": "Jordan Harband"
+            }
+          ],
+          "main": "index",
+          "scripts": {
+            "test": "npm run lint && node test/index.js && npm run coverage-quiet",
+            "coverage": "covert test/index.js",
+            "coverage-quiet": "covert test/index.js --quiet",
+            "lint": "jscs *.js */*.js"
+          },
+          "engines": [
+            "node >= 0.4"
+          ],
+          "testling": {
+            "files": "test/index.js",
+            "browsers": [
+              "iexplore/6.0..latest",
+              "firefox/3.0..6.0",
+              "firefox/15.0..latest",
+              "firefox/nightly",
+              "chrome/4.0..10.0",
+              "chrome/20.0..latest",
+              "chrome/canary",
+              "opera/10.0..latest",
+              "opera/next",
+              "safari/4.0..latest",
+              "ipad/6.0..latest",
+              "iphone/6.0..latest"
+            ]
+          },
+          "licenses": [
+            {
+              "type": "MIT",
+              "url": "http://en.wikipedia.org/wiki/MIT_License"
+            },
+            {
+              "type": "GPL",
+              "url": "http://en.wikipedia.org/wiki/GNU_General_Public_License"
+            }
+          ],
+          "gitHead": "009b549dde8018c922bfec9d1772b004b479620f",
+          "bugs": {
+            "url": "https://github.com/dreamerslab/node.extend/issues"
+          },
+          "homepage": "https://github.com/dreamerslab/node.extend",
+          "_id": "node.extend@1.1.1",
+          "_shasum": "ccc44be8ac8b435421a572f37717c4efffd42f95",
+          "_from": ".",
+          "_npmVersion": "1.4.23",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "dreamerslab",
+              "email": "ben@dreamerslab.com"
+            },
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "dist": {
+            "shasum": "ccc44be8ac8b435421a572f37717c4efffd42f95",
+            "tarball": "https://registry.npmjs.org/node.extend/-/node.extend-1.1.1.tgz"
+          },
+          "directories": {}
+        },
+        "1.1.2": {
+          "name": "node.extend",
+          "version": "1.1.2",
+          "description": "A port of jQuery.extend that actually works on node.js",
+          "keywords": [
+            "extend",
+            "jQuery",
+            "jQuery extend",
+            "clone",
+            "copy",
+            "inherit"
+          ],
+          "author": {
+            "name": "dreamerslab",
+            "email": "ben@dreamerslab.com"
+          },
+          "dependencies": {
+            "is": "~2.0.0"
+          },
+          "devDependencies": {
+            "tape": "~2.14.0",
+            "covert": "~1.0.0",
+            "jscs": "~1.5.9"
+          },
+          "repository": {
+            "type": "git",
+            "url": "https://github.com/dreamerslab/node.extend.git"
+          },
+          "contributors": [
+            {
+              "name": "Jordan Harband"
+            }
+          ],
+          "main": "index",
+          "scripts": {
+            "test": "npm run lint && node test/index.js && npm run coverage-quiet",
+            "coverage": "covert test/index.js",
+            "coverage-quiet": "covert test/index.js --quiet",
+            "lint": "jscs *.js */*.js"
+          },
+          "engines": [
+            "node >= 0.4"
+          ],
+          "testling": {
+            "files": "test/index.js",
+            "browsers": [
+              "iexplore/6.0..latest",
+              "firefox/3.0..6.0",
+              "firefox/15.0..latest",
+              "firefox/nightly",
+              "chrome/4.0..10.0",
+              "chrome/20.0..latest",
+              "chrome/canary",
+              "opera/10.0..latest",
+              "opera/next",
+              "safari/4.0..latest",
+              "ipad/6.0..latest",
+              "iphone/6.0..latest"
+            ]
+          },
+          "licenses": [
+            {
+              "type": "MIT",
+              "url": "http://en.wikipedia.org/wiki/MIT_License"
+            },
+            {
+              "type": "GPL",
+              "url": "http://en.wikipedia.org/wiki/GNU_General_Public_License"
+            }
+          ],
+          "gitHead": "358fc9dbe2f0bea221ea9ad02892f710bfb231fc",
+          "bugs": {
+            "url": "https://github.com/dreamerslab/node.extend/issues"
+          },
+          "homepage": "https://github.com/dreamerslab/node.extend",
+          "_id": "node.extend@1.1.2",
+          "_shasum": "d68962f20eb9e51d5b179add0083bccfb165b788",
+          "_from": ".",
+          "_npmVersion": "1.4.23",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "dreamerslab",
+              "email": "ben@dreamerslab.com"
+            },
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "dist": {
+            "shasum": "d68962f20eb9e51d5b179add0083bccfb165b788",
+            "tarball": "https://registry.npmjs.org/node.extend/-/node.extend-1.1.2.tgz"
+          },
+          "directories": {}
+        },
+        "1.1.3": {
+          "name": "node.extend",
+          "version": "1.1.3",
+          "description": "A port of jQuery.extend that actually works on node.js",
+          "keywords": [
+            "extend",
+            "jQuery",
+            "jQuery extend",
+            "clone",
+            "copy",
+            "inherit"
+          ],
+          "author": {
+            "name": "dreamerslab",
+            "email": "ben@dreamerslab.com"
+          },
+          "dependencies": {
+            "is": "~2.1.0"
+          },
+          "devDependencies": {
+            "tape": "~3.0.1",
+            "covert": "1.0.0",
+            "jscs": "~1.7.3"
+          },
+          "repository": {
+            "type": "git",
+            "url": "https://github.com/dreamerslab/node.extend.git"
+          },
+          "contributors": [
+            {
+              "name": "Jordan Harband"
+            }
+          ],
+          "main": "index",
+          "scripts": {
+            "test": "npm run lint && node test/index.js && npm run coverage-quiet",
+            "coverage": "covert test/index.js",
+            "coverage-quiet": "covert test/index.js --quiet",
+            "lint": "jscs *.js */*.js"
+          },
+          "engines": [
+            "node >= 0.4"
+          ],
+          "testling": {
+            "files": "test/index.js",
+            "browsers": [
+              "iexplore/6.0..latest",
+              "firefox/3.0..6.0",
+              "firefox/15.0..latest",
+              "firefox/nightly",
+              "chrome/4.0..10.0",
+              "chrome/20.0..latest",
+              "chrome/canary",
+              "opera/10.0..latest",
+              "opera/next",
+              "safari/4.0..latest",
+              "ipad/6.0..latest",
+              "iphone/6.0..latest"
+            ]
+          },
+          "licenses": [
+            {
+              "type": "MIT",
+              "url": "http://en.wikipedia.org/wiki/MIT_License"
+            },
+            {
+              "type": "GPL",
+              "url": "http://en.wikipedia.org/wiki/GNU_General_Public_License"
+            }
+          ],
+          "gitHead": "9392ba7672392e5d1b84a53475cff8289e4ff2be",
+          "bugs": {
+            "url": "https://github.com/dreamerslab/node.extend/issues"
+          },
+          "homepage": "https://github.com/dreamerslab/node.extend",
+          "_id": "node.extend@1.1.3",
+          "_shasum": "9cd06d6b05a19ca9daf8f7ba574a8d1ced280d9f",
+          "_from": ".",
+          "_npmVersion": "1.4.28",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "dreamerslab",
+              "email": "ben@dreamerslab.com"
+            },
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "dist": {
+            "shasum": "9cd06d6b05a19ca9daf8f7ba574a8d1ced280d9f",
+            "tarball": "https://registry.npmjs.org/node.extend/-/node.extend-1.1.3.tgz"
+          },
+          "directories": {}
+        },
+        "1.1.4": {
+          "name": "node.extend",
+          "version": "1.1.4",
+          "description": "A port of jQuery.extend that actually works on node.js",
+          "keywords": [
+            "extend",
+            "jQuery",
+            "jQuery extend",
+            "clone",
+            "copy",
+            "inherit"
+          ],
+          "author": {
+            "name": "dreamerslab",
+            "email": "ben@dreamerslab.com"
+          },
+          "dependencies": {
+            "is": "^3.0.1"
+          },
+          "devDependencies": {
+            "tape": "^4.0.0",
+            "covert": "^1.1.0",
+            "jscs": "^1.13.1"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git+https://github.com/dreamerslab/node.extend.git"
+          },
+          "contributors": [
+            {
+              "name": "Jordan Harband"
+            }
+          ],
+          "main": "index",
+          "scripts": {
+            "test": "npm run lint && node test/index.js && npm run coverage-quiet",
+            "coverage": "covert test/index.js",
+            "coverage-quiet": "covert test/index.js --quiet",
+            "lint": "jscs *.js */*.js"
+          },
+          "engines": [
+            "node >= 0.4"
+          ],
+          "testling": {
+            "files": "test/index.js",
+            "browsers": [
+              "iexplore/6.0..latest",
+              "firefox/3.0..6.0",
+              "firefox/15.0..latest",
+              "firefox/nightly",
+              "chrome/4.0..10.0",
+              "chrome/20.0..latest",
+              "chrome/canary",
+              "opera/10.0..latest",
+              "opera/next",
+              "safari/4.0..latest",
+              "ipad/6.0..latest",
+              "iphone/6.0..latest"
+            ]
+          },
+          "license": "(MIT OR GPL)",
+          "gitHead": "bf11914e7a9ca3739565a6985a6b0757891aa321",
+          "bugs": {
+            "url": "https://github.com/dreamerslab/node.extend/issues"
+          },
+          "homepage": "https://github.com/dreamerslab/node.extend#readme",
+          "_id": "node.extend@1.1.4",
+          "_shasum": "78584c169e9b1e2dbac31eefa5a8a46b1b2b2014",
+          "_from": ".",
+          "_npmVersion": "2.9.0",
+          "_nodeVersion": "2.0.2",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "dist": {
+            "shasum": "78584c169e9b1e2dbac31eefa5a8a46b1b2b2014",
+            "tarball": "https://registry.npmjs.org/node.extend/-/node.extend-1.1.4.tgz"
+          },
+          "maintainers": [
+            {
+              "name": "dreamerslab",
+              "email": "ben@dreamerslab.com"
+            },
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "directories": {}
+        },
+        "1.1.5": {
+          "name": "node.extend",
+          "version": "1.1.5",
+          "description": "A port of jQuery.extend that actually works on node.js",
+          "keywords": [
+            "extend",
+            "jQuery",
+            "jQuery extend",
+            "clone",
+            "copy",
+            "inherit"
+          ],
+          "author": {
+            "name": "dreamerslab",
+            "email": "ben@dreamerslab.com"
+          },
+          "dependencies": {
+            "is": "^3.0.1"
+          },
+          "devDependencies": {
+            "tape": "^4.0.0",
+            "covert": "^1.1.0",
+            "jscs": "^1.13.1"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git+https://github.com/dreamerslab/node.extend.git"
+          },
+          "contributors": [
+            {
+              "name": "Jordan Harband"
+            }
+          ],
+          "main": "index",
+          "scripts": {
+            "test": "npm run lint && node test/index.js && npm run coverage-quiet",
+            "coverage": "covert test/index.js",
+            "coverage-quiet": "covert test/index.js --quiet",
+            "lint": "jscs *.js */*.js"
+          },
+          "engines": [
+            "node >= 0.4"
+          ],
+          "testling": {
+            "files": "test/index.js",
+            "browsers": [
+              "iexplore/6.0..latest",
+              "firefox/3.0..6.0",
+              "firefox/15.0..latest",
+              "firefox/nightly",
+              "chrome/4.0..10.0",
+              "chrome/20.0..latest",
+              "chrome/canary",
+              "opera/10.0..latest",
+              "opera/next",
+              "safari/4.0..latest",
+              "ipad/6.0..latest",
+              "iphone/6.0..latest"
+            ]
+          },
+          "license": "(MIT OR GPL-2.0)",
+          "gitHead": "e92f03dc1d62d8d18245a4200720f7e181663c0f",
+          "bugs": {
+            "url": "https://github.com/dreamerslab/node.extend/issues"
+          },
+          "homepage": "https://github.com/dreamerslab/node.extend#readme",
+          "_id": "node.extend@1.1.5",
+          "_shasum": "336bd4d9bf9f8a13028c153e67bf5dc506ac0093",
+          "_from": ".",
+          "_npmVersion": "2.10.1",
+          "_nodeVersion": "2.1.0",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "dist": {
+            "shasum": "336bd4d9bf9f8a13028c153e67bf5dc506ac0093",
+            "tarball": "https://registry.npmjs.org/node.extend/-/node.extend-1.1.5.tgz"
+          },
+          "maintainers": [
+            {
+              "name": "dreamerslab",
+              "email": "ben@dreamerslab.com"
+            },
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "directories": {}
+        },
+        "1.1.6": {
+          "name": "node.extend",
+          "version": "1.1.6",
+          "description": "A port of jQuery.extend that actually works on node.js",
+          "keywords": [
+            "extend",
+            "jQuery",
+            "jQuery extend",
+            "clone",
+            "copy",
+            "inherit"
+          ],
+          "author": {
+            "name": "dreamerslab",
+            "email": "ben@dreamerslab.com"
+          },
+          "dependencies": {
+            "is": "^3.1.0"
+          },
+          "devDependencies": {
+            "tape": "^4.6.0",
+            "covert": "^1.1.0",
+            "jscs": "^3.0.7",
+            "eslint": "^3.4.0",
+            "@ljharb/eslint-config": "^8.0.0"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git+https://github.com/dreamerslab/node.extend.git"
+          },
+          "contributors": [
+            {
+              "name": "Jordan Harband"
+            }
+          ],
+          "main": "index",
+          "scripts": {
+            "pretest": "npm run lint",
+            "test": "npm run --silent tests-only",
+            "posttest": "npm run coverage-quiet",
+            "tests-only": "node test",
+            "coverage": "covert test/index.js",
+            "coverage-quiet": "covert test/index.js --quiet",
+            "lint": "npm run jscs && npm run eslint",
+            "jscs": "jscs *.js */*.js",
+            "eslint": "eslint *.js */*.js"
+          },
+          "engines": {
+            "node": ">=0.4.0"
+          },
+          "testling": {
+            "files": "test/index.js",
+            "browsers": [
+              "iexplore/6.0..latest",
+              "firefox/3.0..6.0",
+              "firefox/15.0..latest",
+              "firefox/nightly",
+              "chrome/4.0..10.0",
+              "chrome/20.0..latest",
+              "chrome/canary",
+              "opera/10.0..latest",
+              "opera/next",
+              "safari/4.0..latest",
+              "ipad/6.0..latest",
+              "iphone/6.0..latest"
+            ]
+          },
+          "license": "(MIT OR GPL-2.0)",
+          "gitHead": "c4131c74acef44f9ed0f9c30b10bdf496731f15f",
+          "bugs": {
+            "url": "https://github.com/dreamerslab/node.extend/issues"
+          },
+          "homepage": "https://github.com/dreamerslab/node.extend#readme",
+          "_id": "node.extend@1.1.6",
+          "_shasum": "a7b882c82d6c93a4863a5504bd5de8ec86258b96",
+          "_from": ".",
+          "_npmVersion": "3.10.3",
+          "_nodeVersion": "6.5.0",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "dist": {
+            "shasum": "a7b882c82d6c93a4863a5504bd5de8ec86258b96",
+            "tarball": "https://registry.npmjs.org/node.extend/-/node.extend-1.1.6.tgz"
+          },
+          "maintainers": [
+            {
+              "name": "dreamerslab",
+              "email": "ben@dreamerslab.com"
+            },
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "_npmOperationalInternal": {
+            "host": "packages-16-east.internal.npmjs.com",
+            "tmp": "tmp/node.extend-1.1.6.tgz_1473179454389_0.5775601353961974"
+          },
+          "directories": {}
+        },
+        "2.0.0": {
+          "name": "node.extend",
+          "version": "2.0.0",
+          "description": "A port of jQuery.extend that actually works on node.js",
+          "keywords": [
+            "extend",
+            "jQuery",
+            "jQuery extend",
+            "clone",
+            "copy",
+            "inherit"
+          ],
+          "author": {
+            "name": "dreamerslab",
+            "email": "ben@dreamerslab.com"
+          },
+          "dependencies": {
+            "is": "^3.2.1"
+          },
+          "devDependencies": {
+            "tape": "^4.6.3",
+            "covert": "^1.1.0",
+            "jscs": "^3.0.7",
+            "eslint": "^3.19.0",
+            "@ljharb/eslint-config": "^11.0.0"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git+https://github.com/dreamerslab/node.extend.git"
+          },
+          "contributors": [
+            {
+              "name": "Jordan Harband"
+            }
+          ],
+          "main": "index",
+          "scripts": {
+            "pretest": "npm run lint",
+            "test": "npm run --silent tests-only",
+            "posttest": "npm run coverage-quiet",
+            "tests-only": "node test",
+            "coverage": "covert test/index.js",
+            "coverage-quiet": "covert test/index.js --quiet",
+            "lint": "npm run jscs && npm run eslint",
+            "jscs": "jscs *.js */*.js",
+            "eslint": "eslint *.js */*.js"
+          },
+          "engines": {
+            "node": ">=0.4.0"
+          },
+          "testling": {
+            "files": "test/index.js",
+            "browsers": [
+              "iexplore/6.0..latest",
+              "firefox/3.0..6.0",
+              "firefox/15.0..latest",
+              "firefox/nightly",
+              "chrome/4.0..10.0",
+              "chrome/20.0..latest",
+              "chrome/canary",
+              "opera/10.0..latest",
+              "opera/next",
+              "safari/4.0..latest",
+              "ipad/6.0..latest",
+              "iphone/6.0..latest"
+            ]
+          },
+          "license": "(MIT OR GPL-2.0)",
+          "gitHead": "d43f2482b94b90a28a108827e9042f5ede8e826a",
+          "bugs": {
+            "url": "https://github.com/dreamerslab/node.extend/issues"
+          },
+          "homepage": "https://github.com/dreamerslab/node.extend#readme",
+          "_id": "node.extend@2.0.0",
+          "_shasum": "7525a2875677ea534784a5e10ac78956139614df",
+          "_from": ".",
+          "_npmVersion": "4.2.0",
+          "_nodeVersion": "7.9.0",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "dist": {
+            "shasum": "7525a2875677ea534784a5e10ac78956139614df",
+            "tarball": "https://registry.npmjs.org/node.extend/-/node.extend-2.0.0.tgz"
+          },
+          "maintainers": [
+            {
+              "name": "dreamerslab",
+              "email": "ben@dreamerslab.com"
+            },
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "_npmOperationalInternal": {
+            "host": "packages-12-west.internal.npmjs.com",
+            "tmp": "tmp/node.extend-2.0.0.tgz_1492586002812_0.5264382327441126"
+          },
+          "directories": {}
+        },
+        "2.0.1": {
+          "name": "node.extend",
+          "version": "2.0.1",
+          "description": "A port of jQuery.extend that actually works on node.js",
+          "keywords": [
+            "extend",
+            "jQuery",
+            "jQuery extend",
+            "clone",
+            "copy",
+            "inherit"
+          ],
+          "author": {
+            "name": "dreamerslab",
+            "email": "ben@dreamerslab.com"
+          },
+          "dependencies": {
+            "has": "^1.0.3",
+            "is": "^3.2.1"
+          },
+          "devDependencies": {
+            "@ljharb/eslint-config": "^13.0.0",
+            "covert": "^1.1.0",
+            "eslint": "^5.8.0",
+            "jscs": "^3.0.7",
+            "tape": "^4.9.1"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git+https://github.com/dreamerslab/node.extend.git"
+          },
+          "contributors": [
+            {
+              "name": "Jordan Harband"
+            }
+          ],
+          "main": "index",
+          "scripts": {
+            "pretest": "npm run lint",
+            "test": "npm run --silent tests-only",
+            "posttest": "npm run coverage-quiet",
+            "tests-only": "node test",
+            "coverage": "covert test/index.js",
+            "coverage-quiet": "covert test/index.js --quiet",
+            "lint": "npm run jscs && npm run eslint .",
+            "jscs": "jscs *.js */*.js",
+            "eslint": "eslint"
+          },
+          "engines": {
+            "node": ">=0.4.0"
+          },
+          "testling": {
+            "files": "test/index.js",
+            "browsers": [
+              "iexplore/6.0..latest",
+              "firefox/3.0..6.0",
+              "firefox/15.0..latest",
+              "firefox/nightly",
+              "chrome/4.0..10.0",
+              "chrome/20.0..latest",
+              "chrome/canary",
+              "opera/10.0..latest",
+              "opera/next",
+              "safari/4.0..latest",
+              "ipad/6.0..latest",
+              "iphone/6.0..latest"
+            ]
+          },
+          "license": "(MIT OR GPL-2.0)",
+          "gitHead": "886192aa3fd5c4952f101b7ff3d9a61c16cbe19d",
+          "bugs": {
+            "url": "https://github.com/dreamerslab/node.extend/issues"
+          },
+          "homepage": "https://github.com/dreamerslab/node.extend#readme",
+          "_id": "node.extend@2.0.1",
+          "_npmVersion": "6.4.1",
+          "_nodeVersion": "11.0.0",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "dist": {
+            "integrity": "sha512-42zXr2Cy16E58KEHm8vz2LE3IJWW0xUrQw0L+R2sII7NIiqKMa9JlwX02YFHg5+IKDg+Es1ZE8nD7ucUWR16UA==",
+            "shasum": "8d52296197b5408fe82b0a3c7c78513d9f98aeca",
+            "tarball": "https://registry.npmjs.org/node.extend/-/node.extend-2.0.1.tgz",
+            "fileCount": 9,
+            "unpackedSize": 19271,
+            "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJb2OuJCRA9TVsSAnZWagAAmjIP/1WlKyQ93HQd9cjHxFOd\nsrB10fU3wFxcCfxOkT0OP4uMYYFY6WXGG42yrb1jo7FO6CaUTp+qGjE0wCF/\nUMFoDEzlZdVNNbDOHG2SSmPuKHMqWqzvCnmenauVgRoJqP6wHhzYm+R+i7GU\nbYkmCVw42DSoeFbxdIx3Ug8SdlIYTa2NOOYPFK5JQPkBnY545t6E050H8ZF/\n2TU0GkWq82thFVNgdavmrQSOg/M861P+4mmkJhfdKpv+DlnDuUCsVJL+ZW1G\n+SUhY0ekm+X0Oxe4G8MxkAr9UYAFA0jNCJUR087P71fCeGRk25JdvXPIjtc2\nMuTa/AGSiEZoHwgEL5/I20HUvj8oeqJ96wAMscVZCLR5QGulXrNQu8w/U5bR\n06mwIhYH61lYOpJzXAC8ZGpYmUesAIi0EoJKGxiJ0jNjjlvV64QFCTPLasBX\nIKGwqwhcDnHMWInQYGX3hcaMfR3PEC+YwfwL5ghLS4CAlnqslzkjl0TOoXok\n50P3GkxDhdl44MdMWKf03y1PoSoCCLIveIqW82CqE33zcjgFQRzPP3dP/ZxS\n5pVZ7/uLNW3qKD+wueSWqUtvoUzSpqfBqWBANm7XIbCHiPlcmxagZUkLogBv\n7mTyI9MRRAdQf6FP5S9lJ4tVh4W07VW66xgvb2B1pmsrb/p6Me3kJgEq1ikr\nEN2T\r\n=XioP\r\n-----END PGP SIGNATURE-----\r\n"
+          },
+          "maintainers": [
+            {
+              "email": "ben@dreamerslab.com",
+              "name": "dreamerslab"
+            },
+            {
+              "email": "ljharb@gmail.com",
+              "name": "ljharb"
+            }
+          ],
+          "directories": {},
+          "_npmOperationalInternal": {
+            "host": "s3://npm-registry-packages",
+            "tmp": "tmp/node.extend_2.0.1_1540942728694_0.5958284417460928"
+          },
+          "_hasShrinkwrap": false
+        },
+        "1.1.7": {
+          "name": "node.extend",
+          "version": "1.1.7",
+          "description": "A port of jQuery.extend that actually works on node.js",
+          "keywords": [
+            "extend",
+            "jQuery",
+            "jQuery extend",
+            "clone",
+            "copy",
+            "inherit"
+          ],
+          "author": {
+            "name": "dreamerslab",
+            "email": "ben@dreamerslab.com"
+          },
+          "dependencies": {
+            "has": "^1.0.3",
+            "is": "^3.2.1"
+          },
+          "devDependencies": {
+            "@ljharb/eslint-config": "^13.0.0",
+            "covert": "^1.1.0",
+            "eslint": "^5.8.0",
+            "jscs": "^3.0.7",
+            "safe-publish-latest": "^1.1.2",
+            "tape": "^4.9.1"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git+https://github.com/dreamerslab/node.extend.git"
+          },
+          "contributors": [
+            {
+              "name": "Jordan Harband"
+            }
+          ],
+          "main": "index",
+          "scripts": {
+            "prepublish": "safe-publish-latest",
+            "pretest": "npm run lint",
+            "test": "npm run --silent tests-only",
+            "posttest": "npm run coverage-quiet",
+            "tests-only": "node test",
+            "coverage": "covert test/index.js",
+            "coverage-quiet": "covert test/index.js --quiet",
+            "lint": "npm run jscs && npm run eslint .",
+            "jscs": "jscs *.js */*.js",
+            "eslint": "eslint"
+          },
+          "engines": {
+            "node": ">=0.4.0"
+          },
+          "testling": {
+            "files": "test/index.js",
+            "browsers": [
+              "iexplore/6.0..latest",
+              "firefox/3.0..6.0",
+              "firefox/15.0..latest",
+              "firefox/nightly",
+              "chrome/4.0..10.0",
+              "chrome/20.0..latest",
+              "chrome/canary",
+              "opera/10.0..latest",
+              "opera/next",
+              "safari/4.0..latest",
+              "ipad/6.0..latest",
+              "iphone/6.0..latest"
+            ]
+          },
+          "license": "(MIT OR GPL-2.0)",
+          "gitHead": "503209dd76c96c0b98ee0b86c0914ad6b2be23ed",
+          "readme": "# node.extend\n\nA port of jQuery.extend that **actually works** on node.js\n\n[![Build Status][travis-svg]][travis-url]\n[![dependency status][deps-svg]][deps-url]\n[![dev dependency status][dev-deps-svg]][dev-deps-url]\n\n[![browser support][testling-png]][testling-url]\n\n\n## Description\n\nNone of the existing ones on npm really work therefore I ported it myself.\n\n\n\n## Usage\n\nTo install this module in your current working directory (which should already contain a package.json), run\n\n```\nnpm install node.extend\n```\n\nYou can additionally just list the module in your [package.json](https://npmjs.org/doc/json.html) and run npm install.\n\nThen, require this package where you need it:\n\n```\nvar extend = require('node.extend');\n```\n\nThe syntax for merging two objects is as follows:\n\n```\nvar destObject = extend({}, sourceObject);\n// Where sourceObject is the object whose properties will be copied into another.\n// NOTE: In this situation, this is not a deep merge. See below on how to handle a deep merge.\n```\n\nFor information about how the clone works internally, view source in lib/extend.js or checkout the doc from [jQuery][]\n\n### A Note About Deep Merge (avoiding pass-by-reference cloning)\n\nIn order to force a deep merge, when extending an object, you must pass boolean true as the first argument to extend:\n\n```\nvar destObject = extend(true, {}, sourceObject);\n// Where sourceObject is the object whose properties will be copied into another.\n```\n\nSee [this article](http://www.jon-carlos.com/2013/is-javascript-call-by-value-or-call-by-reference/) for more information about the need for deep merges in JavaScript.\n\n## Credit\n\n- Jordan Harband [@ljharb][]\n\n\n\n## License\n\nCopyright 2011, John Resig\nDual licensed under the MIT or GPL Version 2 licenses.\nhttp://jquery.org/license\n\n[testling-png]: https://ci.testling.com/dreamerslab/node.extend.png\n[testling-url]: https://ci.testling.com/dreamerslab/node.extend\n[travis-svg]: https://travis-ci.org/dreamerslab/node.extend.svg\n[travis-url]: https://travis-ci.org/dreamerslab/node.extend\n[deps-svg]: https://david-dm.org/dreamerslab/node.extend.svg\n[deps-url]: https://david-dm.org/dreamerslab/node.extend\n[dev-deps-svg]: https://david-dm.org/dreamerslab/node.extend/dev-status.svg\n[dev-deps-url]: https://david-dm.org/dreamerslab/node.extend#info=devDependencies\n[jQuery]: http://api.jquery.com/jQuery.extend/\n[@ljharb]: https://twitter.com/ljharb\n\n",
+          "readmeFilename": "Readme.md",
+          "bugs": {
+            "url": "https://github.com/dreamerslab/node.extend/issues"
+          },
+          "homepage": "https://github.com/dreamerslab/node.extend#readme",
+          "_id": "node.extend@1.1.7",
+          "_npmVersion": "6.4.1",
+          "_nodeVersion": "11.0.0",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "dist": {
+            "integrity": "sha512-7Firgqanbd7UtypwBezNTEuo9eHKtEXd+pD96Aj4wai6Q2vM1S38X+MZvR7sQv5E5pj2TZ9j0Am4dLfc6EvKsA==",
+            "shasum": "e140a5a54d587465085a99d78ce92c856331a131",
+            "tarball": "https://registry.npmjs.org/node.extend/-/node.extend-1.1.7.tgz",
+            "fileCount": 9,
+            "unpackedSize": 19469,
+            "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJb2Pd3CRA9TVsSAnZWagAA/9wP+wZDbcMZgXZjYorAqngm\nZRoMdVdZJF3742M7s4Gz/PPPjGilAEoSd4QdkgL2zPZOBRX+dxTFf624QvH3\n/tvIymwseH3xSguhVV1CdDhwqw1OQw1db4lJZ0SX2gcQJR+bKBbyvRZNkNFa\ndPniZnjw6JFd6ov9lLWPb/voZEn7Tbsr5hiq60z7aZ8qLL7Ud1dHI3wK0hjP\nLM6+G3Dre1/9sl2x2/5Wlb+XgwUP7HwvWxoNKmkfkATyk8uI+i1t1s0yXpDp\nHruwdKzTOeTKrRpLYgkq7olmcFAxSaldwMZ5W7uQl9RjRRv2oQTpLVUirN2/\n/EGYviuuZ7pEO4z/8h2jMxwT1CJ4lYXBsbOfE9kNoY3CR4/UCLSJNk495LoU\ngLYEc7Dae5sC4ZwLqrUeOW6L1VbU20Q/iYRO0j+wdf1eScaMvvCDG3kqkcQy\n8in0QQbf7BVrSwL+bRDfhznqSTL78HARYlsiU5saMmt0WbVBQKvxY+was07Q\nbiKN+HpaIsc28iTX0zyvTnnVGAAYpE7vNqGK5CzRh8cmwJdtmDTThJLLzLVG\nzOfPfGBqMVKmxzunL7JgrvHIXTfY3tP5AdGwwj4txOClp5bDNb9sPIQEpxWD\nx68g008nSJRV/ibaf75Psk9JCbIHxq588qgJ9NjCbkFj5XIF16dOydVVQxhW\ng/2h\r\n=T3OL\r\n-----END PGP SIGNATURE-----\r\n"
+          },
+          "maintainers": [
+            {
+              "email": "ben@dreamerslab.com",
+              "name": "dreamerslab"
+            },
+            {
+              "email": "ljharb@gmail.com",
+              "name": "ljharb"
+            }
+          ],
+          "directories": {},
+          "_npmOperationalInternal": {
+            "host": "s3://npm-registry-packages",
+            "tmp": "tmp/node.extend_1.1.7_1540945782608_0.038761791893654696"
+          },
+          "_hasShrinkwrap": false
+        },
+        "2.0.2": {
+          "name": "node.extend",
+          "version": "2.0.2",
+          "description": "A port of jQuery.extend that actually works on node.js",
+          "keywords": [
+            "extend",
+            "jQuery",
+            "jQuery extend",
+            "clone",
+            "copy",
+            "inherit"
+          ],
+          "author": {
+            "name": "dreamerslab",
+            "email": "ben@dreamerslab.com"
+          },
+          "dependencies": {
+            "has": "^1.0.3",
+            "is": "^3.2.1"
+          },
+          "devDependencies": {
+            "@ljharb/eslint-config": "^13.0.0",
+            "covert": "^1.1.0",
+            "eslint": "^5.8.0",
+            "jscs": "^3.0.7",
+            "safe-publish-latest": "^1.1.2",
+            "tape": "^4.9.1"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git+https://github.com/dreamerslab/node.extend.git"
+          },
+          "contributors": [
+            {
+              "name": "Jordan Harband"
+            }
+          ],
+          "main": "index",
+          "scripts": {
+            "prepublish": "safe-publish-latest",
+            "pretest": "npm run lint",
+            "test": "npm run --silent tests-only",
+            "posttest": "npm run coverage-quiet",
+            "tests-only": "node test",
+            "coverage": "covert test/index.js",
+            "coverage-quiet": "covert test/index.js --quiet",
+            "lint": "npm run jscs && npm run eslint .",
+            "jscs": "jscs *.js */*.js",
+            "eslint": "eslint"
+          },
+          "engines": {
+            "node": ">=0.4.0"
+          },
+          "testling": {
+            "files": "test/index.js",
+            "browsers": [
+              "iexplore/6.0..latest",
+              "firefox/3.0..6.0",
+              "firefox/15.0..latest",
+              "firefox/nightly",
+              "chrome/4.0..10.0",
+              "chrome/20.0..latest",
+              "chrome/canary",
+              "opera/10.0..latest",
+              "opera/next",
+              "safari/4.0..latest",
+              "ipad/6.0..latest",
+              "iphone/6.0..latest"
+            ]
+          },
+          "license": "(MIT OR GPL-2.0)",
+          "gitHead": "e4508dd9f7ba803ae8948ed1164c6613a5707cc2",
+          "bugs": {
+            "url": "https://github.com/dreamerslab/node.extend/issues"
+          },
+          "homepage": "https://github.com/dreamerslab/node.extend#readme",
+          "_id": "node.extend@2.0.2",
+          "_npmVersion": "6.4.1",
+          "_nodeVersion": "11.2.0",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "dist": {
+            "integrity": "sha512-pDT4Dchl94/+kkgdwyS2PauDFjZG0Hk0IcHIB+LkW27HLDtdoeMxHTxZh39DYbPP8UflWXWj9JcdDozF+YDOpQ==",
+            "shasum": "b4404525494acc99740f3703c496b7d5182cc6cc",
+            "tarball": "https://registry.npmjs.org/node.extend/-/node.extend-2.0.2.tgz",
+            "fileCount": 10,
+            "unpackedSize": 38580,
+            "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJb+jG7CRA9TVsSAnZWagAAYKMQAKTQm8U3nZz030fgQ0sp\ndg/PcJx0AgVRczGj19sGf1aP/X784uWJrnBC235CE8U0utdfVafdDkU/mFF2\nKAWhpnaczpW5p95VVe42bgNVgAjzN3bzX/JEf+qlSqenlzBNIDWrIHUplt4w\nW/EMdGNXTD3Gkjn1mxjIBGCy/Uuv9zaMF5+NRiBdR9wdAEpvs7fu8REQwMNV\nby77g1y/k6pRxCXhLuBkDROszjQusPxNbKWSvuj37RCBc3KnPMz+fi4u9fLF\nZqKN5Ebw5bcG4QcoD75O9gc5nZEt5giUrdB/32etSo3qCmKBT1IaqUB9Ug7l\ne8mL8b2yZMAjbJBrUJk2w1pNYj7/sXv05dBWkqKpVhy8KsQcZrrmfD382Yy6\nCsilGaEDYpPj4syRpeFKkIt5xuQeCJL9LGFNsgQVETMktQc3ly/cJJKR8XWa\nXQcujt7WsN8/3LIMyKwn48Ca0oRxnJ4Df08KekS9+1yyzwoX25JD9ZjC1uTv\ntyL2RvMMQMuPtJ95gSZrYihbo/DpYPfEmx8ITIUap77Nfe8YeVqS4o03JQD2\nMhtlA7QBrubnB8jaZNWBbTDbjA29Wfb37DuXt8Rge1Gn6ioa9ERcOqHw+fB9\n3snpQTDPLVTnxpPKrwApX+9VnVQbOqPS/fQrUjMxKCDYmjjsA0ODPXWE7Zvi\nRyB5\r\n=UnUU\r\n-----END PGP SIGNATURE-----\r\n"
+          },
+          "maintainers": [
+            {
+              "email": "ben@dreamerslab.com",
+              "name": "dreamerslab"
+            },
+            {
+              "email": "ljharb@gmail.com",
+              "name": "ljharb"
+            }
+          ],
+          "directories": {},
+          "_npmOperationalInternal": {
+            "host": "s3://npm-registry-packages",
+            "tmp": "tmp/node.extend_2.0.2_1543123386928_0.7212167881518174"
+          },
+          "_hasShrinkwrap": false
+        },
+        "1.1.8": {
+          "name": "node.extend",
+          "version": "1.1.8",
+          "description": "A port of jQuery.extend that actually works on node.js",
+          "keywords": [
+            "extend",
+            "jQuery",
+            "jQuery extend",
+            "clone",
+            "copy",
+            "inherit"
+          ],
+          "author": {
+            "name": "dreamerslab",
+            "email": "ben@dreamerslab.com"
+          },
+          "dependencies": {
+            "has": "^1.0.3",
+            "is": "^3.2.1"
+          },
+          "devDependencies": {
+            "@ljharb/eslint-config": "^13.0.0",
+            "covert": "^1.1.0",
+            "eslint": "^5.8.0",
+            "jscs": "^3.0.7",
+            "safe-publish-latest": "^1.1.2",
+            "tape": "^4.9.1"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git+https://github.com/dreamerslab/node.extend.git"
+          },
+          "contributors": [
+            {
+              "name": "Jordan Harband"
+            }
+          ],
+          "main": "index",
+          "scripts": {
+            "prepublish": "safe-publish-latest",
+            "pretest": "npm run lint",
+            "test": "npm run --silent tests-only",
+            "posttest": "npm run coverage-quiet",
+            "tests-only": "node test",
+            "coverage": "covert test/index.js",
+            "coverage-quiet": "covert test/index.js --quiet",
+            "lint": "npm run jscs && npm run eslint .",
+            "jscs": "jscs *.js */*.js",
+            "eslint": "eslint"
+          },
+          "engines": {
+            "node": ">=0.4.0"
+          },
+          "testling": {
+            "files": "test/index.js",
+            "browsers": [
+              "iexplore/6.0..latest",
+              "firefox/3.0..6.0",
+              "firefox/15.0..latest",
+              "firefox/nightly",
+              "chrome/4.0..10.0",
+              "chrome/20.0..latest",
+              "chrome/canary",
+              "opera/10.0..latest",
+              "opera/next",
+              "safari/4.0..latest",
+              "ipad/6.0..latest",
+              "iphone/6.0..latest"
+            ]
+          },
+          "license": "(MIT OR GPL-2.0)",
+          "gitHead": "d4dcc9215f24e36ba884140acee0ad0823f6c54d",
+          "readme": "# node.extend\n\nA port of jQuery.extend that **actually works** on node.js\n\n[![Build Status][travis-svg]][travis-url]\n[![dependency status][deps-svg]][deps-url]\n[![dev dependency status][dev-deps-svg]][dev-deps-url]\n\n[![browser support][testling-png]][testling-url]\n\n\n## Description\n\nNone of the existing ones on npm really work therefore I ported it myself.\n\n\n\n## Usage\n\nTo install this module in your current working directory (which should already contain a package.json), run\n\n```\nnpm install node.extend\n```\n\nYou can additionally just list the module in your [package.json](https://npmjs.org/doc/json.html) and run npm install.\n\nThen, require this package where you need it:\n\n```\nvar extend = require('node.extend');\n```\n\nThe syntax for merging two objects is as follows:\n\n```\nvar destObject = extend({}, sourceObject);\n// Where sourceObject is the object whose properties will be copied into another.\n// NOTE: In this situation, this is not a deep merge. See below on how to handle a deep merge.\n```\n\nFor information about how the clone works internally, view source in lib/extend.js or checkout the doc from [jQuery][]\n\n### A Note About Deep Merge (avoiding pass-by-reference cloning)\n\nIn order to force a deep merge, when extending an object, you must pass boolean true as the first argument to extend:\n\n```\nvar destObject = extend(true, {}, sourceObject);\n// Where sourceObject is the object whose properties will be copied into another.\n```\n\nSee [this article](http://www.jon-carlos.com/2013/is-javascript-call-by-value-or-call-by-reference/) for more information about the need for deep merges in JavaScript.\n\n## Credit\n\n- Jordan Harband [@ljharb][]\n\n\n\n## License\n\nCopyright 2011, John Resig\nDual licensed under the MIT or GPL Version 2 licenses.\nhttp://jquery.org/license\n\n[testling-png]: https://ci.testling.com/dreamerslab/node.extend.png\n[testling-url]: https://ci.testling.com/dreamerslab/node.extend\n[travis-svg]: https://travis-ci.org/dreamerslab/node.extend.svg\n[travis-url]: https://travis-ci.org/dreamerslab/node.extend\n[deps-svg]: https://david-dm.org/dreamerslab/node.extend.svg\n[deps-url]: https://david-dm.org/dreamerslab/node.extend\n[dev-deps-svg]: https://david-dm.org/dreamerslab/node.extend/dev-status.svg\n[dev-deps-url]: https://david-dm.org/dreamerslab/node.extend#info=devDependencies\n[jQuery]: http://api.jquery.com/jQuery.extend/\n[@ljharb]: https://twitter.com/ljharb\n\n",
+          "readmeFilename": "Readme.md",
+          "bugs": {
+            "url": "https://github.com/dreamerslab/node.extend/issues"
+          },
+          "homepage": "https://github.com/dreamerslab/node.extend#readme",
+          "_id": "node.extend@1.1.8",
+          "_npmVersion": "6.4.1",
+          "_nodeVersion": "11.2.0",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "dist": {
+            "integrity": "sha512-L/dvEBwyg3UowwqOUTyDsGBU6kjBQOpOhshio9V3i3BMPv5YUb9+mWNN8MK0IbWqT0AqaTSONZf0aTuMMahWgA==",
+            "shasum": "0aab3e63789f4e6d68b42bc00073ad1881243cf0",
+            "tarball": "https://registry.npmjs.org/node.extend/-/node.extend-1.1.8.tgz",
+            "fileCount": 10,
+            "unpackedSize": 38700,
+            "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJb+jHvCRA9TVsSAnZWagAADsQP/3bVaHyFidAr0cbgw5V/\nsxdEyAn78pjDulZngxYIoknAuCCmj4i+0qm+9NmjgoU0zNjpptvW3Xbl87bF\nK2x2knr5xK07kzxQ/JGLZzPyqQCVgmDTWmpw0Xu4HolZ6Ef9cxF/KKVdiHGh\nLVFCK82jQlO/BAo8kz4F2anQVoIY78KMt4qpQQ/CyA+d2taTTLJsEI+fGi29\nERla5ertcp6wleyotPnXoMpgNpJUxo2NlWZmv3nquMJsmMUZ7wN2mRiDjAjC\nBbktBc5Ow8Y0XEkRKdbsleh60ED77ZN2fTVXka3F6fZ/bYybTfFH3Sp+IqFZ\nWyMy7FiAVCM0jo8z0iGx8FijADRxigHeAGzv79i0314FhqHYArl73J9NrOG2\nv0xLgyevftFWW2BXhvkrlWwdqkPQOiArvWN8hEliEpEjEHhxdkqekA62x88s\ndtlJqROvC7IPCfaF3jMz76ABous96ngexCDpCAtDXgGFsj0P5pOkin2XMz+r\n7md9NGInVpRfNj1Uz9/B32OZgfHy+cKXufv5tM5WigTD2ClCjCTZm2WUy1+e\nKNn/Y3q5yHlDN1Zo9jf6LUmvJRwwqtvdSYQE20rnlyViSg1PqrSx/9oThIUF\n5s2KbwMzMqpHOdvT+/Xvbk2/uW9036DAMo+jjgen95IPqiWOcPcVuKphsxF5\nOVW2\r\n=MR95\r\n-----END PGP SIGNATURE-----\r\n"
+          },
+          "maintainers": [
+            {
+              "email": "ben@dreamerslab.com",
+              "name": "dreamerslab"
+            },
+            {
+              "email": "ljharb@gmail.com",
+              "name": "ljharb"
+            }
+          ],
+          "directories": {},
+          "_npmOperationalInternal": {
+            "host": "s3://npm-registry-packages",
+            "tmp": "tmp/node.extend_1.1.8_1543123438959_0.4511324068356004"
+          },
+          "_hasShrinkwrap": false
+        }
+      },
+      "readme": "",
+      "maintainers": [
+        {
+          "email": "ben@dreamerslab.com",
+          "name": "dreamerslab"
+        },
+        {
+          "email": "ljharb@gmail.com",
+          "name": "ljharb"
+        }
+      ],
+      "time": {
+        "modified": "2019-01-04T23:39:20.957Z",
+        "created": "2012-01-10T13:48:53.998Z",
+        "0.0.1": "2012-01-10T13:48:57.757Z",
+        "0.0.2": "2012-01-15T19:44:00.332Z",
+        "1.0.0": "2012-02-28T14:45:58.162Z",
+        "1.0.1": "2013-04-02T03:56:06.699Z",
+        "1.0.2": "2013-04-08T08:22:35.616Z",
+        "1.0.3": "2013-04-14T12:23:03.352Z",
+        "1.0.4": "2013-04-18T02:55:42.220Z",
+        "1.0.5": "2013-04-18T03:12:59.958Z",
+        "1.0.6": "2013-05-10T17:34:21.941Z",
+        "1.0.7": "2013-05-19T22:03:27.104Z",
+        "1.0.8": "2013-12-12T15:53:37.414Z",
+        "1.0.9": "2014-01-06T18:58:45.261Z",
+        "1.0.10": "2014-03-16T06:34:06.441Z",
+        "1.1.0": "2014-08-10T17:44:29.376Z",
+        "1.1.1": "2014-08-26T07:02:55.443Z",
+        "1.1.2": "2014-08-26T07:03:45.072Z",
+        "1.1.3": "2014-11-02T21:38:58.779Z",
+        "1.1.4": "2015-05-21T07:34:15.437Z",
+        "1.1.5": "2015-05-29T05:11:35.893Z",
+        "1.1.6": "2016-09-06T16:30:56.297Z",
+        "2.0.0": "2017-04-19T07:13:24.630Z",
+        "2.0.1": "2018-10-30T23:38:48.807Z",
+        "1.1.7": "2018-10-31T00:29:42.739Z",
+        "2.0.2": "2018-11-25T05:23:07.068Z",
+        "1.1.8": "2018-11-25T05:23:59.070Z"
+      },
+      "author": {
+        "name": "dreamerslab",
+        "email": "ben@dreamerslab.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/dreamerslab/node.extend.git"
+      },
+      "users": {
+        "fgribreau": true,
+        "jedmao": true,
+        "zhangyaochun": true,
+        "vitre": true,
+        "kontrax": true,
+        "briantrice": true,
+        "pandao": true,
+        "wearevilla": true
+      },
+      "homepage": "https://github.com/dreamerslab/node.extend#readme",
+      "keywords": [
+        "extend",
+        "jQuery",
+        "jQuery extend",
+        "clone",
+        "copy",
+        "inherit"
+      ],
+      "contributors": [
+        {
+          "name": "Jordan Harband"
+        }
+      ],
+      "bugs": {
+        "url": "https://github.com/dreamerslab/node.extend/issues"
+      },
+      "readmeFilename": "",
+      "license": "(MIT OR GPL-2.0)"
+    }
+  }
+}

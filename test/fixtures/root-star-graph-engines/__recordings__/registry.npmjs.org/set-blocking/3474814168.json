@@ -1,0 +1,56 @@
+{
+  "request": {
+    "method": "GET",
+    "href": "https://registry.npmjs.org/set-blocking",
+    "headers": {
+      "connection": [
+        "keep-alive"
+      ],
+      "user-agent": [
+        "pacote/11.1.0 node/v13.10.1"
+      ],
+      "npm-in-ci": [
+        "false"
+      ],
+      "pacote-version": [
+        "11.1.0"
+      ],
+      "pacote-req-type": [
+        "packument"
+      ],
+      "pacote-pkg-id": [
+        "registry:set-blocking"
+      ],
+      "accept": [
+        "application/vnd.npm.install-v1+json; q=1.0, application/json; q=0.8, */*"
+      ],
+      "accept-encoding": [
+        "gzip,deflate"
+      ]
+    },
+    "body": ""
+  },
+  "response": {
+    "statusCode": 200,
+    "headers": {
+      "date": "Thu, 12 Mar 2020 04:59:35 GMT",
+      "content-type": "application/vnd.npm.install-v1+json",
+      "content-length": "757",
+      "connection": "keep-alive",
+      "set-cookie": [
+        "__cfduid=d1c0ed0d2c5311d5007ed1ac7ea1923e21583989175; expires=Sat, 11-Apr-20 04:59:35 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax"
+      ],
+      "cf-ray": "572af25c1f9f960b-SJC",
+      "accept-ranges": "bytes",
+      "age": "3347",
+      "cache-control": "public, max-age=300",
+      "etag": "\"e15dcf869df7c8ee5de6da885fc8f594\"",
+      "last-modified": "Sat, 15 Feb 2020 13:52:15 GMT",
+      "vary": "accept-encoding, accept",
+      "cf-cache-status": "HIT",
+      "expect-ct": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"",
+      "server": "cloudflare"
+    },
+    "body": "{\"name\":\"set-blocking\",\"dist-tags\":{\"latest\":\"2.0.0\"},\"versions\":{\"1.0.0\":{\"name\":\"set-blocking\",\"version\":\"1.0.0\",\"devDependencies\":{\"chai\":\"^3.5.0\",\"coveralls\":\"^2.11.9\",\"mocha\":\"^2.4.5\",\"nyc\":\"^6.4.4\",\"standard\":\"^7.0.1\",\"standard-version\":\"^2.2.1\"},\"dist\":{\"shasum\":\"cd5e5d938048df1ac92dfe92e1f16add656f5ec5\",\"tarball\":\"https://registry.npmjs.org/set-blocking/-/set-blocking-1.0.0.tgz\"}},\"2.0.0\":{\"name\":\"set-blocking\",\"version\":\"2.0.0\",\"devDependencies\":{\"chai\":\"^3.5.0\",\"coveralls\":\"^2.11.9\",\"mocha\":\"^2.4.5\",\"nyc\":\"^6.4.4\",\"standard\":\"^7.0.1\",\"standard-version\":\"^2.2.1\"},\"dist\":{\"shasum\":\"045f9782d011ae9a6803ddd382b24392b3d890f7\",\"tarball\":\"https://registry.npmjs.org/set-blocking/-/set-blocking-2.0.0.tgz\"}}},\"modified\":\"2017-07-11T07:31:18.612Z\"}"
+  }
+}

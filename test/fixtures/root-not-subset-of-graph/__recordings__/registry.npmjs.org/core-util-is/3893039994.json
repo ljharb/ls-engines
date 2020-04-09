@@ -1,0 +1,56 @@
+{
+  "request": {
+    "method": "GET",
+    "href": "https://registry.npmjs.org/core-util-is",
+    "headers": {
+      "connection": [
+        "keep-alive"
+      ],
+      "user-agent": [
+        "pacote/11.1.0 node/v13.10.1"
+      ],
+      "npm-in-ci": [
+        "false"
+      ],
+      "pacote-version": [
+        "11.1.0"
+      ],
+      "pacote-req-type": [
+        "packument"
+      ],
+      "pacote-pkg-id": [
+        "registry:core-util-is"
+      ],
+      "accept": [
+        "application/vnd.npm.install-v1+json; q=1.0, application/json; q=0.8, */*"
+      ],
+      "accept-encoding": [
+        "gzip,deflate"
+      ]
+    },
+    "body": ""
+  },
+  "response": {
+    "statusCode": 200,
+    "headers": {
+      "date": "Thu, 12 Mar 2020 04:59:16 GMT",
+      "content-type": "application/vnd.npm.install-v1+json",
+      "content-length": "704",
+      "connection": "keep-alive",
+      "set-cookie": [
+        "__cfduid=d383c3d83399fb3211e3bc43e5b4881f11583989156; expires=Sat, 11-Apr-20 04:59:16 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax"
+      ],
+      "cf-ray": "572af1e43df1ed73-SJC",
+      "accept-ranges": "bytes",
+      "age": "3403",
+      "cache-control": "public, max-age=300",
+      "etag": "\"6b53f41c10da431598acc223dad8208a\"",
+      "last-modified": "Fri, 14 Feb 2020 08:26:02 GMT",
+      "vary": "accept-encoding, accept",
+      "cf-cache-status": "HIT",
+      "expect-ct": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"",
+      "server": "cloudflare"
+    },
+    "body": "{\"name\":\"core-util-is\",\"dist-tags\":{\"latest\":\"1.0.2\"},\"versions\":{\"1.0.0\":{\"name\":\"core-util-is\",\"version\":\"1.0.0\",\"dist\":{\"shasum\":\"740c74c400e72707b95cc75d509543f8ad7f83de\",\"tarball\":\"https://registry.npmjs.org/core-util-is/-/core-util-is-1.0.0.tgz\"}},\"1.0.1\":{\"name\":\"core-util-is\",\"version\":\"1.0.1\",\"dist\":{\"shasum\":\"6b07085aef9a3ccac6ee53bf9d3df0c1521a5538\",\"tarball\":\"https://registry.npmjs.org/core-util-is/-/core-util-is-1.0.1.tgz\"}},\"1.0.2\":{\"name\":\"core-util-is\",\"version\":\"1.0.2\",\"devDependencies\":{\"tap\":\"^2.3.0\"},\"dist\":{\"shasum\":\"b5fd54220aa2bc5ab57aab7140c940754503c1a7\",\"tarball\":\"https://registry.npmjs.org/core-util-is/-/core-util-is-1.0.2.tgz\"}}},\"modified\":\"2017-05-09T07:13:14.494Z\"}"
+  }
+}

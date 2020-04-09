@@ -1,0 +1,56 @@
+{
+  "request": {
+    "method": "GET",
+    "href": "https://registry.npmjs.org/dezalgo",
+    "headers": {
+      "connection": [
+        "keep-alive"
+      ],
+      "user-agent": [
+        "pacote/11.1.0 node/v13.10.1"
+      ],
+      "npm-in-ci": [
+        "false"
+      ],
+      "pacote-version": [
+        "11.1.0"
+      ],
+      "pacote-req-type": [
+        "packument"
+      ],
+      "pacote-pkg-id": [
+        "registry:dezalgo"
+      ],
+      "accept": [
+        "application/vnd.npm.install-v1+json; q=1.0, application/json; q=0.8, */*"
+      ],
+      "accept-encoding": [
+        "gzip,deflate"
+      ]
+    },
+    "body": ""
+  },
+  "response": {
+    "statusCode": 200,
+    "headers": {
+      "date": "Thu, 12 Mar 2020 05:00:07 GMT",
+      "content-type": "application/vnd.npm.install-v1+json",
+      "content-length": "1226",
+      "connection": "keep-alive",
+      "set-cookie": [
+        "__cfduid=d0270054339410c03578b10260078f21a1583989207; expires=Sat, 11-Apr-20 05:00:07 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax"
+      ],
+      "cf-ray": "572af324defd9660-SJC",
+      "accept-ranges": "bytes",
+      "age": "6778",
+      "cache-control": "public, max-age=300",
+      "etag": "\"c7e4583081c7c4d0c1a1356946014768\"",
+      "last-modified": "Fri, 14 Feb 2020 09:46:44 GMT",
+      "vary": "accept-encoding, accept",
+      "cf-cache-status": "HIT",
+      "expect-ct": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"",
+      "server": "cloudflare"
+    },
+    "body": "{\"name\":\"dezalgo\",\"dist-tags\":{\"latest\":\"1.0.3\"},\"versions\":{\"1.0.0\":{\"name\":\"dezalgo\",\"version\":\"1.0.0\",\"dependencies\":{\"asap\":\"^1.0.0\"},\"devDependencies\":{\"tap\":\"^0.4.11\"},\"directories\":{\"test\":\"test\"},\"dist\":{\"shasum\":\"050bb723f18b5617b309f26c2dc8fe6f2573b6fc\",\"tarball\":\"https://registry.npmjs.org/dezalgo/-/dezalgo-1.0.0.tgz\"}},\"1.0.1\":{\"name\":\"dezalgo\",\"version\":\"1.0.1\",\"dependencies\":{\"asap\":\"^1.0.0\",\"wrappy\":\"1\"},\"devDependencies\":{\"tap\":\"^0.4.11\"},\"directories\":{\"test\":\"test\"},\"dist\":{\"shasum\":\"12bde135060807900d5a7aebb607c2abb7c76937\",\"tarball\":\"https://registry.npmjs.org/dezalgo/-/dezalgo-1.0.1.tgz\"}},\"1.0.2\":{\"name\":\"dezalgo\",\"version\":\"1.0.2\",\"dependencies\":{\"asap\":\"^1.0.0\",\"wrappy\":\"1\"},\"devDependencies\":{\"tap\":\"^0.4.11\"},\"directories\":{\"test\":\"test\"},\"dist\":{\"shasum\":\"2bc8b5a1683131764a98def7e4aa22105a688a5a\",\"tarball\":\"https://registry.npmjs.org/dezalgo/-/dezalgo-1.0.2.tgz\"}},\"1.0.3\":{\"name\":\"dezalgo\",\"version\":\"1.0.3\",\"dependencies\":{\"asap\":\"^2.0.0\",\"wrappy\":\"1\"},\"devDependencies\":{\"tap\":\"^1.2.0\"},\"directories\":{\"test\":\"test\"},\"dist\":{\"shasum\":\"7f742de066fc748bc8db820569dddce49bf0d456\",\"tarball\":\"https://registry.npmjs.org/dezalgo/-/dezalgo-1.0.3.tgz\"}}},\"modified\":\"2020-01-02T04:05:20.779Z\"}"
+  }
+}

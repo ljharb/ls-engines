@@ -1,0 +1,56 @@
+{
+  "request": {
+    "method": "GET",
+    "href": "https://registry.npmjs.org/humanize-ms",
+    "headers": {
+      "connection": [
+        "keep-alive"
+      ],
+      "user-agent": [
+        "pacote/11.1.0 node/v13.10.1"
+      ],
+      "npm-in-ci": [
+        "false"
+      ],
+      "pacote-version": [
+        "11.1.0"
+      ],
+      "pacote-req-type": [
+        "packument"
+      ],
+      "pacote-pkg-id": [
+        "registry:humanize-ms"
+      ],
+      "accept": [
+        "application/vnd.npm.install-v1+json; q=1.0, application/json; q=0.8, */*"
+      ],
+      "accept-encoding": [
+        "gzip,deflate"
+      ]
+    },
+    "body": ""
+  },
+  "response": {
+    "statusCode": 200,
+    "headers": {
+      "date": "Thu, 12 Mar 2020 05:00:08 GMT",
+      "content-type": "application/vnd.npm.install-v1+json",
+      "content-length": "1739",
+      "connection": "keep-alive",
+      "set-cookie": [
+        "__cfduid=da85fa1fc1121ebe56cbdecb3a0a94df51583989208; expires=Sat, 11-Apr-20 05:00:08 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax"
+      ],
+      "cf-ray": "572af327c93a9baf-SJC",
+      "accept-ranges": "bytes",
+      "age": "2396",
+      "cache-control": "public, max-age=300",
+      "etag": "\"f8cbd0d824f5ea40b41535b907b36fe7\"",
+      "last-modified": "Fri, 14 Feb 2020 16:49:28 GMT",
+      "vary": "accept-encoding, accept",
+      "cf-cache-status": "HIT",
+      "expect-ct": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"",
+      "server": "cloudflare"
+    },
+    "body": "{\"name\":\"humanize-ms\",\"dist-tags\":{\"latest\":\"1.2.1\"},\"versions\":{\"1.0.0\":{\"name\":\"humanize-ms\",\"version\":\"1.0.0\",\"dependencies\":{\"ms\":\"~0.6.2\"},\"devDependencies\":{\"autod\":\"~0.3.2\",\"istanbul\":\"~0.3.0\",\"mocha\":\"~1.21.4\",\"should\":\"~4.0.4\"},\"dist\":{\"shasum\":\"9d65bcd8df5a142d88392e717412179d051f94eb\",\"tarball\":\"https://registry.npmjs.org/humanize-ms/-/humanize-ms-1.0.0.tgz\"}},\"1.0.1\":{\"name\":\"humanize-ms\",\"version\":\"1.0.1\",\"dependencies\":{\"ms\":\"~0.6.2\"},\"devDependencies\":{\"autod\":\"~0.3.2\",\"istanbul\":\"~0.3.0\",\"mocha\":\"~1.21.4\",\"should\":\"~4.0.4\"},\"dist\":{\"shasum\":\"4336d3c4392236bb8e59cda599f6d88675dc5ff8\",\"tarball\":\"https://registry.npmjs.org/humanize-ms/-/humanize-ms-1.0.1.tgz\"}},\"1.0.2\":{\"name\":\"humanize-ms\",\"version\":\"1.0.2\",\"dependencies\":{\"ms\":\"~0.7.0\"},\"devDependencies\":{\"autod\":\"*\",\"beautify-benchmark\":\"~0.2.4\",\"benchmark\":\"~1.0.0\",\"istanbul\":\"*\",\"mocha\":\"*\",\"should\":\"*\"},\"dist\":{\"shasum\":\"9868fb2f7beecd16b9f0baffc53c45213bd3fcbd\",\"tarball\":\"https://registry.npmjs.org/humanize-ms/-/humanize-ms-1.0.2.tgz\"}},\"1.2.0\":{\"name\":\"humanize-ms\",\"version\":\"1.2.0\",\"dependencies\":{\"ms\":\"~0.7.0\"},\"devDependencies\":{\"autod\":\"*\",\"beautify-benchmark\":\"~0.2.4\",\"benchmark\":\"~1.0.0\",\"istanbul\":\"*\",\"mocha\":\"*\",\"should\":\"*\"},\"dist\":{\"shasum\":\"4d691a1fa1b87989789af8e58cddfd550622e4d4\",\"tarball\":\"https://registry.npmjs.org/humanize-ms/-/humanize-ms-1.2.0.tgz\"}},\"1.2.1\":{\"name\":\"humanize-ms\",\"version\":\"1.2.1\",\"dependencies\":{\"ms\":\"^2.0.0\"},\"devDependencies\":{\"autod\":\"*\",\"beautify-benchmark\":\"~0.2.4\",\"benchmark\":\"~1.0.0\",\"istanbul\":\"*\",\"mocha\":\"*\",\"should\":\"*\"},\"dist\":{\"shasum\":\"c46e3159a293f6b896da29316d8b6fe8bb79bbed\",\"tarball\":\"https://registry.npmjs.org/humanize-ms/-/humanize-ms-1.2.1.tgz\"}}},\"modified\":\"2017-09-21T09:21:42.564Z\"}"
+  }
+}

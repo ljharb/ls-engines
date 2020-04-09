@@ -1,0 +1,438 @@
+{
+  "request": {
+    "method": "GET",
+    "href": "https://registry.npmjs.org/for-each",
+    "headers": {
+      "connection": [
+        "keep-alive"
+      ],
+      "user-agent": [
+        "pacote/11.1.0 node/v13.10.1"
+      ],
+      "npm-in-ci": [
+        "false"
+      ],
+      "pacote-version": [
+        "11.1.0"
+      ],
+      "pacote-req-type": [
+        "packument"
+      ],
+      "pacote-pkg-id": [
+        "registry:for-each"
+      ],
+      "accept": [
+        "application/json"
+      ],
+      "accept-encoding": [
+        "gzip,deflate"
+      ]
+    },
+    "body": ""
+  },
+  "response": {
+    "statusCode": 200,
+    "headers": {
+      "date": "Thu, 12 Mar 2020 04:59:47 GMT",
+      "content-type": "application/json; charset=UTF-8",
+      "connection": "keep-alive",
+      "set-cookie": [
+        "__cfduid=dea0c6a06a4db10bc3b5208104b333af31583989187; expires=Sat, 11-Apr-20 04:59:47 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax"
+      ],
+      "cf-ray": "572af2a4594192bc-SJC",
+      "age": "6363",
+      "cache-control": "public, max-age=300",
+      "etag": "W/\"c7a8af430192cb6903f20eecc3a6b1a2\"",
+      "last-modified": "Sat, 02 Jun 2018 05:31:01 GMT",
+      "vary": "accept-encoding, accept",
+      "cf-cache-status": "HIT",
+      "expect-ct": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"",
+      "server": "cloudflare",
+      "content-encoding": "application/json"
+    },
+    "body": {
+      "_id": "for-each",
+      "_rev": "15-d4389101e10e8013cc4463de752a1049",
+      "name": "for-each",
+      "description": "A better forEach",
+      "dist-tags": {
+        "latest": "0.3.3"
+      },
+      "versions": {
+        "0.1.0": {
+          "name": "for-each",
+          "version": "0.1.0",
+          "description": "A better forEach",
+          "keywords": [],
+          "author": {
+            "name": "Raynos",
+            "email": "raynos2@gmail.com"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/Raynos/for-each.git"
+          },
+          "main": "index",
+          "homepage": "https://github.com/Raynos/for-each",
+          "contributors": [
+            {
+              "name": "Jake Verbaten"
+            }
+          ],
+          "bugs": {
+            "url": "https://github.com/Raynos/for-each/issues",
+            "email": "raynos2@gmail.com"
+          },
+          "dependencies": {},
+          "devDependencies": {
+            "tap": "~0.3.1"
+          },
+          "licenses": [
+            {
+              "type": "MIT",
+              "url": "http://github.com/Raynos/for-each/raw/master/LICENSE"
+            }
+          ],
+          "scripts": {
+            "test": "tap --stderr --tap ./test"
+          },
+          "readme": "# for-each [![build status][1]][2]\n\nA better forEach.\n\n## Example\n\nLike `Array.prototype.forEach` but works on objects\n\n``` js\nvar forEach = require(\"for-each\")\n\nforEach({ key: \"value\" }, function (value, key) {\n    /* code */\n})\n```\n\n## Installation\n\n`npm install for-each`\n\n## Contributors\n\n - Raynos\n\n## MIT Licenced\n\n  [1]: https://secure.travis-ci.org/Raynos/for-each.png\n  [2]: http://travis-ci.org/Raynos/for-each\n",
+          "_id": "for-each@0.1.0",
+          "dist": {
+            "shasum": "e64d083dfe1ecb48d030b7db2e9eb33f7b02fb45",
+            "tarball": "https://registry.npmjs.org/for-each/-/for-each-0.1.0.tgz"
+          },
+          "_npmVersion": "1.1.49",
+          "_npmUser": {
+            "name": "raynos",
+            "email": "raynos2@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "raynos",
+              "email": "raynos2@gmail.com"
+            }
+          ],
+          "directories": {}
+        },
+        "0.3.1": {
+          "name": "for-each",
+          "version": "0.3.1",
+          "description": "A better forEach",
+          "keywords": [],
+          "author": {
+            "name": "Raynos",
+            "email": "raynos2@gmail.com"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/Raynos/for-each.git"
+          },
+          "main": "index",
+          "homepage": "https://github.com/Raynos/for-each",
+          "contributors": [
+            {
+              "name": "Jake Verbaten"
+            },
+            {
+              "name": "Jordan Harband",
+              "url": "https://github.com/ljharb"
+            }
+          ],
+          "bugs": {
+            "url": "https://github.com/Raynos/for-each/issues",
+            "email": "raynos2@gmail.com"
+          },
+          "dependencies": {},
+          "devDependencies": {
+            "tape": "~1.1.0"
+          },
+          "licenses": [
+            {
+              "type": "MIT",
+              "url": "http://github.com/Raynos/for-each/raw/master/LICENSE"
+            }
+          ],
+          "scripts": {
+            "test": "node test/test.js"
+          },
+          "testling": {
+            "files": "test/test.js",
+            "browsers": [
+              "iexplore/6.0..latest",
+              "firefox/3.0..6.0",
+              "firefox/15.0..latest",
+              "firefox/nightly",
+              "chrome/4.0..10.0",
+              "chrome/20.0..latest",
+              "chrome/canary",
+              "opera/10.0..latest",
+              "opera/next",
+              "safari/4.0..latest",
+              "ipad/6.0..latest",
+              "iphone/6.0..latest",
+              "android-browser/4.2"
+            ]
+          },
+          "readme": "# for-each [![build status][1]][2]\n\n[![browser support][3]][4]\n\nA better forEach.\n\n## Example\n\nLike `Array.prototype.forEach` but works on objects.\n\n```js\nvar forEach = require(\"for-each\")\n\nforEach({ key: \"value\" }, function (value, key, object) {\n    /* code */\n})\n```\n\nAs a bonus, it's also a perfectly function shim/polyfill for arrays too!\n\n```js\nvar forEach = require(\"for-each\")\n\nforEach([1, 2, 3], function (value, index, array) {\n    /* code */\n})\n```\n\n## Installation\n\n`npm install for-each`\n\n## Contributors\n\n - Raynos\n\n## MIT Licenced\n\n  [1]: https://secure.travis-ci.org/Raynos/for-each.png\n  [2]: http://travis-ci.org/Raynos/for-each\n  [3]: https://ci.testling.com/Raynos/for-each.png\n  [4]: https://ci.testling.com/Raynos/for-each\n\n",
+          "readmeFilename": "README.md",
+          "_id": "for-each@0.3.1",
+          "dist": {
+            "shasum": "d24a631395e844c226261e3b30206ef956e1b53f",
+            "tarball": "https://registry.npmjs.org/for-each/-/for-each-0.3.1.tgz"
+          },
+          "_from": ".",
+          "_npmVersion": "1.3.17",
+          "_npmUser": {
+            "name": "raynos",
+            "email": "raynos2@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "raynos",
+              "email": "raynos2@gmail.com"
+            }
+          ],
+          "directories": {}
+        },
+        "0.3.2": {
+          "name": "for-each",
+          "version": "0.3.2",
+          "description": "A better forEach",
+          "keywords": [],
+          "author": {
+            "name": "Raynos",
+            "email": "raynos2@gmail.com"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/Raynos/for-each.git"
+          },
+          "main": "index",
+          "homepage": "https://github.com/Raynos/for-each",
+          "contributors": [
+            {
+              "name": "Jake Verbaten"
+            },
+            {
+              "name": "Jordan Harband",
+              "url": "https://github.com/ljharb"
+            }
+          ],
+          "bugs": {
+            "url": "https://github.com/Raynos/for-each/issues",
+            "email": "raynos2@gmail.com"
+          },
+          "dependencies": {
+            "is-function": "~1.0.0"
+          },
+          "devDependencies": {
+            "tape": "~1.1.0"
+          },
+          "licenses": [
+            {
+              "type": "MIT",
+              "url": "http://github.com/Raynos/for-each/raw/master/LICENSE"
+            }
+          ],
+          "scripts": {
+            "test": "node test/test.js"
+          },
+          "testling": {
+            "files": "test/test.js",
+            "browsers": [
+              "iexplore/6.0..latest",
+              "firefox/3.0..6.0",
+              "firefox/15.0..latest",
+              "firefox/nightly",
+              "chrome/4.0..10.0",
+              "chrome/20.0..latest",
+              "chrome/canary",
+              "opera/10.0..latest",
+              "opera/next",
+              "safari/4.0..latest",
+              "ipad/6.0..latest",
+              "iphone/6.0..latest",
+              "android-browser/4.2"
+            ]
+          },
+          "readme": "# for-each [![build status][1]][2]\n\n[![browser support][3]][4]\n\nA better forEach.\n\n## Example\n\nLike `Array.prototype.forEach` but works on objects.\n\n```js\nvar forEach = require(\"for-each\")\n\nforEach({ key: \"value\" }, function (value, key, object) {\n    /* code */\n})\n```\n\nAs a bonus, it's also a perfectly function shim/polyfill for arrays too!\n\n```js\nvar forEach = require(\"for-each\")\n\nforEach([1, 2, 3], function (value, index, array) {\n    /* code */\n})\n```\n\n## Installation\n\n`npm install for-each`\n\n## Contributors\n\n - Raynos\n\n## MIT Licenced\n\n  [1]: https://secure.travis-ci.org/Raynos/for-each.png\n  [2]: http://travis-ci.org/Raynos/for-each\n  [3]: https://ci.testling.com/Raynos/for-each.png\n  [4]: https://ci.testling.com/Raynos/for-each\n\n",
+          "readmeFilename": "README.md",
+          "_id": "for-each@0.3.2",
+          "dist": {
+            "shasum": "2c40450b9348e97f281322593ba96704b9abd4d4",
+            "tarball": "https://registry.npmjs.org/for-each/-/for-each-0.3.2.tgz"
+          },
+          "_from": ".",
+          "_npmVersion": "1.3.17",
+          "_npmUser": {
+            "name": "raynos",
+            "email": "raynos2@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "raynos",
+              "email": "raynos2@gmail.com"
+            }
+          ],
+          "directories": {}
+        },
+        "0.3.3": {
+          "name": "for-each",
+          "version": "0.3.3",
+          "description": "A better forEach",
+          "keywords": [],
+          "author": {
+            "name": "Raynos",
+            "email": "raynos2@gmail.com"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/Raynos/for-each.git"
+          },
+          "main": "index",
+          "homepage": "https://github.com/Raynos/for-each",
+          "contributors": [
+            {
+              "name": "Jake Verbaten"
+            },
+            {
+              "name": "Jordan Harband",
+              "url": "https://github.com/ljharb"
+            }
+          ],
+          "bugs": {
+            "url": "https://github.com/Raynos/for-each/issues",
+            "email": "raynos2@gmail.com"
+          },
+          "dependencies": {
+            "is-callable": "^1.1.3"
+          },
+          "devDependencies": {
+            "@ljharb/eslint-config": "^12.2.1",
+            "eslint": "^4.19.1",
+            "nsp": "^3.2.1",
+            "tape": "^4.9.0"
+          },
+          "license": "MIT",
+          "licenses": [
+            {
+              "type": "MIT",
+              "url": "http://github.com/Raynos/for-each/raw/master/LICENSE"
+            }
+          ],
+          "scripts": {
+            "pretest": "npm run lint",
+            "test": "npm run tests-only",
+            "tests-only": "node test/test",
+            "posttest": "npm run security",
+            "lint": "eslint *.js test/*.js",
+            "security": "nsp check"
+          },
+          "testling": {
+            "files": "test/test.js",
+            "browsers": [
+              "iexplore/6.0..latest",
+              "firefox/3.0..6.0",
+              "firefox/15.0..latest",
+              "firefox/nightly",
+              "chrome/4.0..10.0",
+              "chrome/20.0..latest",
+              "chrome/canary",
+              "opera/10.0..latest",
+              "opera/next",
+              "safari/4.0..latest",
+              "ipad/6.0..latest",
+              "iphone/6.0..latest",
+              "android-browser/4.2"
+            ]
+          },
+          "gitHead": "7adaf8162a12d55f6ea3fb0bf5e999035dfd303a",
+          "_id": "for-each@0.3.3",
+          "_npmVersion": "6.1.0",
+          "_nodeVersion": "10.3.0",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "dist": {
+            "integrity": "sha512-jqYfLp7mo9vIyQf8ykW2v7A+2N4QjeCeI5+Dz9XraiO1ign81wjiH7Fb9vSOWvQfNtmSa4H2RoQTrrXivdUZmw==",
+            "shasum": "69b447e88a0a5d32c3e7084f3f1710034b21376e",
+            "tarball": "https://registry.npmjs.org/for-each/-/for-each-0.3.3.tgz",
+            "fileCount": 9,
+            "unpackedSize": 13033,
+            "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbEiuRCRA9TVsSAnZWagAA2aUP/1cRKERbqJF6aH9E1IPq\n9fyzb8YbJ9eBdsCzc/N34Z9tIXUye7RdvteMIDcXcBxKlXn68Uq6xrGD0DLi\nIOA+uGyVXsw8hUDB1EnAhKurjUOTLs3ygmBqQGQPVeExOzqyxpGqXI3rF5EW\ngzgKCPFGa8ZOcEXys4Im09SHI0tsW4Ns/lEwqf7SH22wcuZybBoI6J04Tuh3\nVpUJdqSVWsBBlOcdoHj9pyHqjD6JHE65JRiLxhWsuuVDzgWnbaTSfJrBpRNA\n94Jku+KgteDorHHF3+cbDZe+L4C0o6AenEscRzMStqjfLL6wyjMKowMR4YY+\nyrffiZ3GLyl7NpJQhEKHxGeypIrJludOS4u9RWhG1GO1fZgqOxAbGCve9Mo/\nUEn79sq/LvUybjH9eSOuEcs/DApEtmMObb0cOidES1VfOLbQCaOKqQ4KawX8\nZmVLCm2aI3giQKOcthvJZxFvCNH8lwQbrmHZdyLh1BIvqs8/YXgsFI4hwKKG\nPdaNdYBZgEgqdAXwTtNXYLBL60KqK182sCchEUxmVAQelkS+2aArJHgOb1hz\nVKhybdSs/Cc55/Bd7KqOAyrZGRFxMUoGP350/X1A+37+Rk2up+38lX3VWrBl\nSaLbwtkeJZE/Vm1ojAbXOTwx6UVEvuqCgSXNFfuh3cYSXRNj8R3kbIS9+B9q\nc9g2\r\n=rUoa\r\n-----END PGP SIGNATURE-----\r\n"
+          },
+          "maintainers": [
+            {
+              "email": "ljharb@gmail.com",
+              "name": "ljharb"
+            },
+            {
+              "email": "raynos2@gmail.com",
+              "name": "raynos"
+            }
+          ],
+          "directories": {},
+          "_npmOperationalInternal": {
+            "host": "s3://npm-registry-packages",
+            "tmp": "tmp/for-each_0.3.3_1527917456605_0.15636549848965142"
+          }
+        }
+      },
+      "readme": "# for-each [![build status][1]][2]\n\n[![browser support][3]][4]\n\nA better forEach.\n\n## Example\n\nLike `Array.prototype.forEach` but works on objects.\n\n```js\nvar forEach = require(\"for-each\")\n\nforEach({ key: \"value\" }, function (value, key, object) {\n    /* code */\n})\n```\n\nAs a bonus, it's also a perfectly function shim/polyfill for arrays too!\n\n```js\nvar forEach = require(\"for-each\")\n\nforEach([1, 2, 3], function (value, index, array) {\n    /* code */\n})\n```\n\n## Installation\n\n`npm install for-each`\n\n## Contributors\n\n - Raynos\n\n## MIT Licenced\n\n  [1]: https://secure.travis-ci.org/Raynos/for-each.png\n  [2]: http://travis-ci.org/Raynos/for-each\n  [3]: https://ci.testling.com/Raynos/for-each.png\n  [4]: https://ci.testling.com/Raynos/for-each\n\n",
+      "maintainers": [
+        {
+          "email": "ljharb@gmail.com",
+          "name": "ljharb"
+        },
+        {
+          "email": "raynos2@gmail.com",
+          "name": "raynos"
+        }
+      ],
+      "time": {
+        "modified": "2018-06-02T05:31:00.095Z",
+        "created": "2012-09-29T06:32:20.980Z",
+        "0.1.0": "2012-09-29T06:32:22.249Z",
+        "0.3.1": "2014-01-07T03:25:23.023Z",
+        "0.3.2": "2014-01-07T21:27:50.214Z",
+        "0.3.3": "2018-06-02T05:30:56.680Z"
+      },
+      "author": {
+        "name": "Raynos",
+        "email": "raynos2@gmail.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/Raynos/for-each.git"
+      },
+      "users": {
+        "ljharb": true,
+        "jamescostian": true,
+        "mwyatt": true,
+        "nichoth": true,
+        "shekharreddy": true,
+        "mojaray2k": true
+      },
+      "homepage": "https://github.com/Raynos/for-each",
+      "keywords": [],
+      "contributors": [
+        {
+          "name": "Jake Verbaten"
+        },
+        {
+          "name": "Jordan Harband",
+          "url": "https://github.com/ljharb"
+        }
+      ],
+      "bugs": {
+        "url": "https://github.com/Raynos/for-each/issues",
+        "email": "raynos2@gmail.com"
+      },
+      "license": "MIT",
+      "readmeFilename": "README.md",
+      "_attachments": {}
+    }
+  }
+}

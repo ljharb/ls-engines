@@ -1,0 +1,443 @@
+{
+  "request": {
+    "method": "GET",
+    "href": "https://registry.npmjs.org/@npmcli%2fci-detect",
+    "headers": {
+      "connection": [
+        "keep-alive"
+      ],
+      "user-agent": [
+        "pacote/11.1.0 node/v13.10.1"
+      ],
+      "npm-in-ci": [
+        "false"
+      ],
+      "pacote-version": [
+        "11.1.0"
+      ],
+      "pacote-req-type": [
+        "packument"
+      ],
+      "pacote-pkg-id": [
+        "registry:@npmcli/ci-detect"
+      ],
+      "accept": [
+        "application/json"
+      ],
+      "accept-encoding": [
+        "gzip,deflate"
+      ]
+    },
+    "body": ""
+  },
+  "response": {
+    "statusCode": 200,
+    "headers": {
+      "date": "Thu, 12 Mar 2020 05:00:25 GMT",
+      "content-type": "application/json",
+      "connection": "keep-alive",
+      "set-cookie": [
+        "__cfduid=db6094e85ec73984ff26a7f3835c0cf831583989225; expires=Sat, 11-Apr-20 05:00:25 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax"
+      ],
+      "cf-ray": "572af3940e3d93b2-SJC",
+      "age": "6517",
+      "cache-control": "public, max-age=300",
+      "etag": "W/\"6a15247e54a6edaaadbd9518050a6b60\"",
+      "last-modified": "Wed, 05 Feb 2020 06:14:53 GMT",
+      "vary": "accept-encoding, accept",
+      "cf-cache-status": "HIT",
+      "expect-ct": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"",
+      "server": "cloudflare",
+      "content-encoding": "application/json"
+    },
+    "body": {
+      "_id": "@npmcli/ci-detect",
+      "_rev": "5-9dc9b75356faa65e6d13bd5e5dde3827",
+      "name": "@npmcli/ci-detect",
+      "dist-tags": {
+        "latest": "1.2.0"
+      },
+      "versions": {
+        "1.0.0": {
+          "name": "@npmcli/ci-detect",
+          "version": "1.0.0",
+          "description": "Detect what kind of CI environment the program is in",
+          "author": {
+            "name": "Isaac Z. Schlueter",
+            "email": "i@izs.me",
+            "url": "https://izs.me"
+          },
+          "license": "ISC",
+          "scripts": {
+            "test": "tap",
+            "preversion": "npm test",
+            "postversion": "npm publish",
+            "prepublishOnly": "git push origin --follow-tags"
+          },
+          "tap": {
+            "check-coverage": true
+          },
+          "devDependencies": {
+            "tap": "^14.10.2"
+          },
+          "gitHead": "9f2b358ccdce6d8a42604a0cdaa22aab2908493c",
+          "_id": "@npmcli/ci-detect@1.0.0",
+          "_nodeVersion": "13.3.0",
+          "_npmVersion": "6.13.4",
+          "dist": {
+            "integrity": "sha512-5Kp/ijewcOJonsiq+ydxDT6gxVPIvV0tNaxD9WAm2xya5EGhuyV8Ww+JswEXr5q677x5NVgU6eU/b2WlUiktrg==",
+            "shasum": "a961a0cf12eb2b7c42f0ccebdf047e0613c42951",
+            "tarball": "https://registry.npmjs.org/@npmcli/ci-detect/-/ci-detect-1.0.0.tgz",
+            "fileCount": 4,
+            "unpackedSize": 2493,
+            "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd9yjrCRA9TVsSAnZWagAAWYEP/2kI1hKNomRNTm16/ovL\nR3Ijvnz3yXHmu664kf4exc0DDqiaAuK44ca8G6UfR1EHUTxuMaX016xBzxVf\nIFKMgKoD/74dWY7XycFexmIzcayIl3/Og6kPdg1RHaFHeGV5LssudvFLPWXk\nFMKzqxuGL8Quc6yXbLPBKKjlQp2u7s0ADphulT3D85keIz4mqCC3vo7HvVbm\n1rzWtC7oI/UtiC46Az+TB3kvzHKXEhLRDr86VM0BMDwV5wvYG7j+5yAU93pX\nmU9kd06+mDP3k3CqeK3s2DR3Dp5cNj8TTsAYLotl4gxF0LOpsg4VSJpXtoMF\nV6iTwQTTmn8n5X9op39Qr4Tz2H6VWBah4TeKyTxx3aVY8fdME9cRJHE2gVTq\nJ+LJNPMiPAhxRVJrOu6EwhUOX8pdh1bkWa2Hvi6pE2JrPMVMbAjtFrSPSbQD\nrith/zcfAZLVC+lxscTGWH1Kah9RtZAt0J7dbXVnCm6wQXJ+OiquMPvVK8TV\nWRjXPXHJoibX9BCpfNFNp2cr74Rkwe1ZgdDfhWbLHYz5EC3bukJJgvVEZqM/\n7Uu2mWxBpx7x4oFT8HEygrLdblJR7iOOAJx+PLexLm2Y1HEbWqYxdtTVWmTT\n8ksWLNQQIVetr/XfzFAakzh4p3tePTbPIJKPLXzyGq7hKb4T/NKYumlfvQLH\nlHqN\r\n=H5Yc\r\n-----END PGP SIGNATURE-----\r\n"
+          },
+          "maintainers": [
+            {
+              "name": "ruyadorno",
+              "email": "ruyadorno@hotmail.com"
+            },
+            {
+              "name": "mikemimik",
+              "email": "mike@mikecorp.ca"
+            },
+            {
+              "name": "billatnpm",
+              "email": "billatnpm@gmail.com"
+            },
+            {
+              "name": "annekimsey",
+              "email": "anne@npmjs.com"
+            },
+            {
+              "name": "claudiahdz",
+              "email": "cghr1990@gmail.com"
+            },
+            {
+              "name": "darcyclarke",
+              "email": "darcy@darcyclarke.me"
+            },
+            {
+              "name": "adam_baldwin",
+              "email": "evilpacket@gmail.com"
+            },
+            {
+              "name": "ahmadnassri",
+              "email": "ahmad@ahmadnassri.com"
+            },
+            {
+              "name": "isaacs",
+              "email": "i@izs.me"
+            }
+          ],
+          "_npmUser": {
+            "name": "isaacs",
+            "email": "i@izs.me"
+          },
+          "directories": {},
+          "_npmOperationalInternal": {
+            "host": "s3://npm-registry-packages",
+            "tmp": "tmp/ci-detect_1.0.0_1576478955363_0.5714192703961343"
+          },
+          "_hasShrinkwrap": false
+        },
+        "1.1.0": {
+          "name": "@npmcli/ci-detect",
+          "version": "1.1.0",
+          "description": "Detect what kind of CI environment the program is in",
+          "author": {
+            "name": "Isaac Z. Schlueter",
+            "email": "i@izs.me",
+            "url": "https://izs.me"
+          },
+          "license": "ISC",
+          "scripts": {
+            "test": "tap",
+            "preversion": "npm test",
+            "postversion": "npm publish",
+            "prepublishOnly": "git push origin --follow-tags"
+          },
+          "tap": {
+            "check-coverage": true
+          },
+          "devDependencies": {
+            "tap": "^14.10.2"
+          },
+          "gitHead": "c018a267002eadd6d2547c93b5a347f93beb2969",
+          "_id": "@npmcli/ci-detect@1.1.0",
+          "_nodeVersion": "13.4.0",
+          "_npmVersion": "6.13.4",
+          "dist": {
+            "integrity": "sha512-PNDzb12OvWQ3n1iGVv3IqXJyVogBSEckPQ/+E9ijdsTRxM5Kz1Wpa//voHZO967NMTvQ9LcpNZ/2TXUpEE9GRw==",
+            "shasum": "149cf9a1f21701ce889125ee22e6400a9eaed527",
+            "tarball": "https://registry.npmjs.org/@npmcli/ci-detect/-/ci-detect-1.1.0.tgz",
+            "fileCount": 4,
+            "unpackedSize": 4140,
+            "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeEnvlCRA9TVsSAnZWagAA4v0P/3OLVabLbAfmQ6DBcIrT\nb8VwYKOBh3ESYsp6JPZku0JXWXBtwNxeRQMc8QUPMgwni/TyTzzZyNp7J7WG\nXgPKsGWz/w74VmMEdJKxQS2ADAcemieO33N/g3dVhS4gwgKNTp92b0AWOhaT\n7anMCY0ORiPpg8C2cZud9OmJXu/pRVWyuXLrY7QnaJYYGqaDqPbglOu8zM3T\nciT+vE6fBc6EZuu0Yn5JVRiVG5qjrGLGzq+7JJWJwKXR5mTSrgFyxRktuY7T\nqr9GmxM41p+NNd49m1Due2pTutYg2W5eqwGx00/Lsr5Fv4SgrB7VGwVgE3fu\nAmBlxGdBhMPBX1R5Z63oa9v9zHb/66sUQrfKz9LNcZHIGssMezVbd9dS5kC2\nHgnWg76ywFIYk/ovO3NSRlCQHXfr816BZeKfPNqPmGiN5zgfMhCUTJGcmJfG\nRG6yIWbtIItETceU46EInqNEtFwRMsrXtZKSdk8fiirexw+hSFKqCgZ8mb3D\nu4mvl+Bk7NYwR+BcB93r14H+duuIiwFS74HM/DRVrZZrvrvLWe4A7U5uPXYq\nSt0duB4JkYlOwcL7610jChDjIsbd5ZtGbv0AAO33/tbH5pw3q/Dw86OYQYuj\nVdTlC6O2Ax/LcuU3wmQlfEzH3H4ZvWGR5iJ/EZpPXSG9p8CG9RNTVXUWE+fl\nzYE6\r\n=Z3jj\r\n-----END PGP SIGNATURE-----\r\n"
+          },
+          "maintainers": [
+            {
+              "email": "evilpacket@gmail.com",
+              "name": "adam_baldwin"
+            },
+            {
+              "email": "ahmad@ahmadnassri.com",
+              "name": "ahmadnassri"
+            },
+            {
+              "email": "cghr1990@gmail.com",
+              "name": "claudiahdz"
+            },
+            {
+              "email": "darcy@darcyclarke.me",
+              "name": "darcyclarke"
+            },
+            {
+              "email": "i@izs.me",
+              "name": "isaacs"
+            },
+            {
+              "email": "mike@mikecorp.ca",
+              "name": "mikemimik"
+            },
+            {
+              "email": "ruyadorno@hotmail.com",
+              "name": "ruyadorno"
+            }
+          ],
+          "_npmUser": {
+            "name": "isaacs",
+            "email": "i@izs.me"
+          },
+          "directories": {},
+          "_npmOperationalInternal": {
+            "host": "s3://npm-registry-packages",
+            "tmp": "tmp/ci-detect_1.1.0_1578269668954_0.8477722686757982"
+          },
+          "_hasShrinkwrap": false
+        },
+        "1.1.1": {
+          "name": "@npmcli/ci-detect",
+          "version": "1.1.1",
+          "description": "Detect what kind of CI environment the program is in",
+          "author": {
+            "name": "Isaac Z. Schlueter",
+            "email": "i@izs.me",
+            "url": "https://izs.me"
+          },
+          "license": "ISC",
+          "scripts": {
+            "test": "tap",
+            "preversion": "npm test",
+            "postversion": "npm publish",
+            "prepublishOnly": "git push origin --follow-tags"
+          },
+          "tap": {
+            "check-coverage": true
+          },
+          "devDependencies": {
+            "tap": "^14.10.2"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git+https://github.com/npm/ci-detect.git"
+          },
+          "gitHead": "6e472e1a89a0c46bdaf6b43dd966ebd350800c9e",
+          "bugs": {
+            "url": "https://github.com/npm/ci-detect/issues"
+          },
+          "homepage": "https://github.com/npm/ci-detect#readme",
+          "_id": "@npmcli/ci-detect@1.1.1",
+          "_nodeVersion": "13.4.0",
+          "_npmVersion": "6.13.6",
+          "dist": {
+            "integrity": "sha512-h5eW3DljLypyhvfK94FkSSm4qtSUFddth/xW+7vnkVCEUJR38MYvctCSZkxqrzmXZSzpfImuAwwKvRqkEuDvCQ==",
+            "shasum": "9a158cf4e3e88f0067cbc1ca5d0de2f453de6afe",
+            "tarball": "https://registry.npmjs.org/@npmcli/ci-detect/-/ci-detect-1.1.1.tgz",
+            "fileCount": 4,
+            "unpackedSize": 4236,
+            "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeIkdyCRA9TVsSAnZWagAAVLAP/RC73FFvvoJ/IGe5zScr\nnUx0bbbRYolWpMY5Pp6pmWs25odKgWBf8PHFjSatGKnI+Nuhjg6SZR4oxwV/\ncc4udUWPyMwz6ntfcEiP7eVF0tvijR2TtmTsVgECPXLFuc0M+mrT54rhHU76\nCix7ZLmD0r8RuFsMgTbS1aT+Z7qD1TSTZtfQC6Ao27hJN+VXShkB0CJO8IKU\nl5/hrnelNKrZrOZJgUXY/PuDpiKVhdbxHvpafAl9fOxwY69Qqnc0DwxBzizR\ngIC5U/OG4d9CRrGrG0X942I0YUpcXZGWM9Ldpup7atR9cC75ewGbtpKYgELP\n8NTV19nw/vL4Fpgd72HUp+88jJ0RnE7BHS2APhwqZP4/b592e6IxDm90zlhY\ngmMvdWEThMxp3i5PdG0QgE5DAkBJUIN5GeEyVzLDYnI5m2DU/nJVzAue6vW8\n2e0K7ZSfwXecTgSuUnpqGxrHau5PUXP+2UKm4EWoIzNuB9npZl0XP71AcV82\ndrAeB6EBFaHJtRurw/bIrsNhq7iNn48eCdkFvTQnwr1gyTcj7Sj5kWJnVUc+\nH15ZVi4TkV9HnzwfCqkAgZJPzO29pijbovkyYeehuJvHf3LRc96eyPlUrYxm\n3v3G02b5jf+DcoYjb2ElXOWGTBJ0mwvqf71HkdjD/KpS629WIDz5AXmnNlNY\nReGF\r\n=oqwd\r\n-----END PGP SIGNATURE-----\r\n"
+          },
+          "maintainers": [
+            {
+              "email": "evilpacket@gmail.com",
+              "name": "adam_baldwin"
+            },
+            {
+              "email": "ahmad@ahmadnassri.com",
+              "name": "ahmadnassri"
+            },
+            {
+              "email": "cghr1990@gmail.com",
+              "name": "claudiahdz"
+            },
+            {
+              "email": "darcy@darcyclarke.me",
+              "name": "darcyclarke"
+            },
+            {
+              "email": "i@izs.me",
+              "name": "isaacs"
+            },
+            {
+              "email": "mike@mikecorp.ca",
+              "name": "mikemimik"
+            },
+            {
+              "email": "ruyadorno@hotmail.com",
+              "name": "ruyadorno"
+            }
+          ],
+          "_npmUser": {
+            "name": "isaacs",
+            "email": "i@izs.me"
+          },
+          "directories": {},
+          "_npmOperationalInternal": {
+            "host": "s3://npm-registry-packages",
+            "tmp": "tmp/ci-detect_1.1.1_1579304818139_0.8471167424600818"
+          },
+          "_hasShrinkwrap": false
+        },
+        "1.2.0": {
+          "name": "@npmcli/ci-detect",
+          "version": "1.2.0",
+          "description": "Detect what kind of CI environment the program is in",
+          "author": {
+            "name": "Isaac Z. Schlueter",
+            "email": "i@izs.me",
+            "url": "https://izs.me"
+          },
+          "license": "ISC",
+          "scripts": {
+            "test": "tap",
+            "preversion": "npm test",
+            "postversion": "npm publish",
+            "prepublishOnly": "git push origin --follow-tags"
+          },
+          "tap": {
+            "check-coverage": true
+          },
+          "devDependencies": {
+            "tap": "^14.10.2"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git+https://github.com/npm/ci-detect.git"
+          },
+          "gitHead": "ce2cc42e5b7530806922b672864123b07a8d1f91",
+          "bugs": {
+            "url": "https://github.com/npm/ci-detect/issues"
+          },
+          "homepage": "https://github.com/npm/ci-detect#readme",
+          "_id": "@npmcli/ci-detect@1.2.0",
+          "_nodeVersion": "13.7.0",
+          "_npmVersion": "6.13.7",
+          "dist": {
+            "integrity": "sha512-JtktVH7ASBVIWsQTFlFpeOzhBJskvoBCTfeeRhhZy7ybATcUvwiwotZ8j5rkqUUyB69lIy/AvboiiiGBjYBKBA==",
+            "shasum": "0df142a1ac3bba6cbf2e9da1a6994cd898e32c95",
+            "tarball": "https://registry.npmjs.org/@npmcli/ci-detect/-/ci-detect-1.2.0.tgz",
+            "fileCount": 4,
+            "unpackedSize": 4881,
+            "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeOl1aCRA9TVsSAnZWagAAc10P/R5uwpCDF4kPe5YEh9ce\nIK7LhiaFYFYMEj44k5/dEp6kP/MxrQAFUd61STPZngjD+hzVNnRdoqJniBkc\nJ85pesRqHMNAQRBifLo/mUdNZRz7cFMB/6N2uM6YWCNakYUC9wFHCjUhCO40\nKzNdjZddRuY9LbUjSLvP9qevHiU7riZoGhHw9B5HVEpTJjlQ2zcLAJxBXKNS\n7VnUDXFuDxdCz7T2OCzRFCDXGZHVzZIWQNSiM5Gs/IB35WN8UodkneYn2rii\nwUtPvbP3GG61pctliE0Bfla57rxcN1z+DtaiypCwEPrIWWXJw9uMePoUaR21\n4RSqNxuFzhX7mqIDmCWp2I22gRjXIA0CPwe/hRZB9+99Lp633ZvgkUbvAJ4h\nNcaPNo6eqWbSrGEmM6E7/e1IgaXLKfmgkdSSAJjUBBOmVbUPtjVq4HiMP0bx\nLdJJ0n+4heK+GVBuIZI3je1QlAmbensb83Um70nGf1GvX2xM+kWH1GMDHSg3\nP2L0N8mf0V+UlPGHAny50W3VQ42I672QPQHTA/IiXuZ/QWjDjEZxvXgaY727\n1yPhF0SFnBtO/9WNzPfLA/Vnbnv/uJR3mbjtwyGIbaOfxuiDspXxLzePidEL\nWg4X7zbNreZq1ZwQb8dWKxSTL7PEU+H4jP3x4BIwpcV7cRBPmJeFQypxPZLU\nrSsO\r\n=gczQ\r\n-----END PGP SIGNATURE-----\r\n"
+          },
+          "maintainers": [
+            {
+              "email": "evilpacket@gmail.com",
+              "name": "adam_baldwin"
+            },
+            {
+              "email": "ahmad@ahmadnassri.com",
+              "name": "ahmadnassri"
+            },
+            {
+              "email": "cghr1990@gmail.com",
+              "name": "claudiahdz"
+            },
+            {
+              "email": "darcy@darcyclarke.me",
+              "name": "darcyclarke"
+            },
+            {
+              "email": "i@izs.me",
+              "name": "isaacs"
+            },
+            {
+              "email": "mike@mikecorp.ca",
+              "name": "mikemimik"
+            },
+            {
+              "email": "ruyadorno@hotmail.com",
+              "name": "ruyadorno"
+            }
+          ],
+          "_npmUser": {
+            "name": "isaacs",
+            "email": "i@izs.me"
+          },
+          "directories": {},
+          "_npmOperationalInternal": {
+            "host": "s3://npm-registry-packages",
+            "tmp": "tmp/ci-detect_1.2.0_1580883290083_0.19223247183916548"
+          },
+          "_hasShrinkwrap": false
+        }
+      },
+      "time": {
+        "created": "2019-12-16T06:49:15.169Z",
+        "1.0.0": "2019-12-16T06:49:15.515Z",
+        "modified": "2020-02-05T06:14:52.599Z",
+        "1.1.0": "2020-01-06T00:14:29.188Z",
+        "1.1.1": "2020-01-17T23:46:58.268Z",
+        "1.2.0": "2020-02-05T06:14:50.213Z"
+      },
+      "maintainers": [
+        {
+          "email": "evilpacket@gmail.com",
+          "name": "adam_baldwin"
+        },
+        {
+          "email": "ahmad@ahmadnassri.com",
+          "name": "ahmadnassri"
+        },
+        {
+          "email": "cghr1990@gmail.com",
+          "name": "claudiahdz"
+        },
+        {
+          "email": "darcy@darcyclarke.me",
+          "name": "darcyclarke"
+        },
+        {
+          "email": "i@izs.me",
+          "name": "isaacs"
+        },
+        {
+          "email": "mike@mikecorp.ca",
+          "name": "mikemimik"
+        },
+        {
+          "email": "ruyadorno@hotmail.com",
+          "name": "ruyadorno"
+        }
+      ],
+      "description": "Detect what kind of CI environment the program is in",
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "https://izs.me"
+      },
+      "license": "ISC",
+      "readme": "# @npmcli/ci-detect\n\nDetect what kind of CI environment the program is in\n\n[![Build Status](https://travis-ci.com/npm/ci-detect.svg?branch=master)](https://travis-ci.com/npm/ci-detect)\n[![Coverage Status](https://coveralls.io/repos/github/npm/ci-detect/badge.svg?branch=master)](https://coveralls.io/github/npm/ci-detect?branch=master)\n\n## USAGE\n\n```js\nconst ciDetect = require('@npmcli/ci-detect')\n// false if not in CI\n// otherwise, a string indicating the CI environment type\nconst inCI = ciDetect()\n```\n\n## CIs Detected\n\nReturns one of the following strings, or `false` if none match, by looking\nat the appropriate environment variables.\n\n* `'gerrit'` Gerrit\n* `'gitlab'` GitLab\n* `'circleci'` Circle-CI\n* `'semaphore'` Semaphore\n* `'drone'` Drone\n* `'github-actions'` GitHub Actions\n* `'tddium'` TDDium\n* `'jenkins'` Jenkins\n* `'bamboo'` Bamboo\n* `'gocd'` GoCD\n* `'wercker'` Oracle Wercker\n* `'netlify'` Netlify\n* `'now-github'` Zeit.co's Now for GitHub deployment service\n* `'now-bitbucket'` Zeit.co's Now for BitBucket deployment service\n* `'now-gitlab'` Zeit.co's Now for GitLab deployment service\n* `'codeship'` CodeShip\n* Anything that sets the `CI_NAME` environment variable will return the\n  value as the result.  (This is how CodeShip is detected.)\n* `'travis-ci'` Travis-CI - A few other CI systems set `TRAVIS=1` in the\n  environment, because devs use that to indicate \"test mode\", so this one\n  can get some false positives, and is tested later in the process to\n  minimize this effect.\n* `'aws-codebuild'` AWS CodeBuild\n* `'builder'` Google Cloud Builder - This one is a bit weird.  It doesn't\n  really set anything that can be reliably detected except\n  `BUILDER_OUTPUT`, so it can get false positives pretty easily.\n* `'custom'` anything else that sets `CI` environment variable to either\n  `'1'` or `'true'`.\n\n## Caveats\n\nNote that since any program can set or unset whatever environment variables\nthey want, this is not 100% reliable.\n\nAlso, note that if your program does different behavior in\nCI/test/deployment than other places, then there's a good chance that\nyou're doing something wrong!\n\nBut, for little niceties like setting colors or other output parameters, or\nlogging and that sort of non-essential thing, this module provides a way to\ntweak without checking a bunch of things in a bunch of places.  Mostly,\nit's a single place to keep a note of what CI system sets which environment\nvariable.\n",
+      "readmeFilename": "README.md",
+      "homepage": "https://github.com/npm/ci-detect#readme",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/npm/ci-detect.git"
+      },
+      "bugs": {
+        "url": "https://github.com/npm/ci-detect/issues"
+      }
+    }
+  }
+}

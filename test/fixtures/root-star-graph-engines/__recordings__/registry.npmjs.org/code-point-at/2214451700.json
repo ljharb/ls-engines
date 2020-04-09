@@ -1,0 +1,56 @@
+{
+  "request": {
+    "method": "GET",
+    "href": "https://registry.npmjs.org/code-point-at",
+    "headers": {
+      "connection": [
+        "keep-alive"
+      ],
+      "user-agent": [
+        "pacote/11.1.0 node/v13.10.1"
+      ],
+      "npm-in-ci": [
+        "false"
+      ],
+      "pacote-version": [
+        "11.1.0"
+      ],
+      "pacote-req-type": [
+        "packument"
+      ],
+      "pacote-pkg-id": [
+        "registry:code-point-at"
+      ],
+      "accept": [
+        "application/vnd.npm.install-v1+json; q=1.0, application/json; q=0.8, */*"
+      ],
+      "accept-encoding": [
+        "gzip,deflate"
+      ]
+    },
+    "body": ""
+  },
+  "response": {
+    "statusCode": 200,
+    "headers": {
+      "date": "Thu, 12 Mar 2020 04:59:40 GMT",
+      "content-type": "application/vnd.npm.install-v1+json",
+      "content-length": "962",
+      "connection": "keep-alive",
+      "set-cookie": [
+        "__cfduid=d72f3e76b84efd1fdcee2c3f5cd02f1841583989180; expires=Sat, 11-Apr-20 04:59:40 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax"
+      ],
+      "cf-ray": "572af279da86ed43-SJC",
+      "accept-ranges": "bytes",
+      "age": "158",
+      "cache-control": "public, max-age=300",
+      "etag": "\"0e8dd543602285d35348e34a1818d455\"",
+      "last-modified": "Fri, 14 Feb 2020 07:40:47 GMT",
+      "vary": "accept-encoding, accept",
+      "cf-cache-status": "HIT",
+      "expect-ct": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"",
+      "server": "cloudflare"
+    },
+    "body": "{\"name\":\"code-point-at\",\"dist-tags\":{\"latest\":\"1.1.0\"},\"versions\":{\"1.0.0\":{\"name\":\"code-point-at\",\"version\":\"1.0.0\",\"dependencies\":{\"number-is-nan\":\"^1.0.0\"},\"devDependencies\":{\"ava\":\"0.0.4\"},\"dist\":{\"shasum\":\"f69b192d3f7d91e382e4b71bddb77878619ab0c6\",\"tarball\":\"https://registry.npmjs.org/code-point-at/-/code-point-at-1.0.0.tgz\"},\"engines\":{\"node\":\">=0.10.0\"}},\"1.0.1\":{\"name\":\"code-point-at\",\"version\":\"1.0.1\",\"dependencies\":{\"number-is-nan\":\"^1.0.0\"},\"devDependencies\":{\"ava\":\"*\"},\"dist\":{\"shasum\":\"1104cd34f9b5b45d3eba88f1babc1924e1ce35fb\",\"tarball\":\"https://registry.npmjs.org/code-point-at/-/code-point-at-1.0.1.tgz\"},\"engines\":{\"node\":\">=0.10.0\"}},\"1.1.0\":{\"name\":\"code-point-at\",\"version\":\"1.1.0\",\"devDependencies\":{\"ava\":\"*\",\"xo\":\"^0.16.0\"},\"dist\":{\"shasum\":\"0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77\",\"tarball\":\"https://registry.npmjs.org/code-point-at/-/code-point-at-1.1.0.tgz\"},\"engines\":{\"node\":\">=0.10.0\"}}},\"modified\":\"2016-11-03T10:43:00.563Z\"}"
+  }
+}

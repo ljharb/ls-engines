@@ -1,0 +1,56 @@
+{
+  "request": {
+    "method": "GET",
+    "href": "https://registry.npmjs.org/is-callable",
+    "headers": {
+      "connection": [
+        "keep-alive"
+      ],
+      "user-agent": [
+        "pacote/11.1.0 node/v13.10.1"
+      ],
+      "npm-in-ci": [
+        "false"
+      ],
+      "pacote-version": [
+        "11.1.0"
+      ],
+      "pacote-req-type": [
+        "packument"
+      ],
+      "pacote-pkg-id": [
+        "registry:is-callable"
+      ],
+      "accept": [
+        "application/vnd.npm.install-v1+json; q=1.0, application/json; q=0.8, */*"
+      ],
+      "accept-encoding": [
+        "gzip,deflate"
+      ]
+    },
+    "body": ""
+  },
+  "response": {
+    "statusCode": 200,
+    "headers": {
+      "date": "Thu, 12 Mar 2020 04:58:38 GMT",
+      "content-type": "application/vnd.npm.install-v1+json",
+      "content-length": "7175",
+      "connection": "keep-alive",
+      "set-cookie": [
+        "__cfduid=d20c3f49bb0298a5292dff025d19866411583989118; expires=Sat, 11-Apr-20 04:58:38 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax"
+      ],
+      "cf-ray": "572af0f4dafded2f-SJC",
+      "accept-ranges": "bytes",
+      "age": "6130",
+      "cache-control": "public, max-age=300",
+      "etag": "\"9a1d729ecaefbc79ba72d7a7a2b9085c\"",
+      "last-modified": "Fri, 14 Feb 2020 17:42:54 GMT",
+      "vary": "accept-encoding, accept",
+      "cf-cache-status": "HIT",
+      "expect-ct": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"",
+      "server": "cloudflare"
+    },
+    "body": "{\"name\":\"is-callable\",\"dist-tags\":{\"latest\":\"1.1.5\"},\"versions\":{\"1.0.0\":{\"name\":\"is-callable\",\"version\":\"1.0.0\",\"devDependencies\":{\"foreach\":\"~2.0.5\",\"is\":\"~2.2.0\",\"tape\":\"~3.4.0\",\"indexof\":\"~0.0.1\",\"covert\":\"1.0.0\",\"jscs\":\"~1.10.0\",\"editorconfig-tools\":\"~0.0.1\",\"nsp\":\"~1.0.0\",\"eslint\":\"~0.13.0\",\"make-generator-function\":\"~1.0.0\",\"semver\":\"~4.2.0\"},\"dist\":{\"shasum\":\"71f02be5c44b850c95517baa10856a54983cf6cd\",\"tarball\":\"https://registry.npmjs.org/is-callable/-/is-callable-1.0.0.tgz\"},\"engines\":{\"node\":\">= 0.4\"}},\"1.0.2\":{\"name\":\"is-callable\",\"version\":\"1.0.2\",\"devDependencies\":{\"foreach\":\"~2.0.5\",\"is\":\"~2.2.0\",\"tape\":\"~3.4.0\",\"indexof\":\"~0.0.1\",\"covert\":\"1.0.0\",\"jscs\":\"~1.10.0\",\"editorconfig-tools\":\"~0.0.1\",\"nsp\":\"~1.0.0\",\"eslint\":\"~0.13.0\",\"make-generator-function\":\"~1.0.0\",\"semver\":\"~4.2.0\"},\"dist\":{\"shasum\":\"21f265cc5565575d8f52d82ff380cbcea29352e5\",\"tarball\":\"https://registry.npmjs.org/is-callable/-/is-callable-1.0.2.tgz\"},\"engines\":{\"node\":\">= 0.4\"}},\"1.0.3\":{\"name\":\"is-callable\",\"version\":\"1.0.3\",\"devDependencies\":{\"foreach\":\"~2.0.5\",\"is\":\"~2.2.0\",\"tape\":\"~3.4.0\",\"indexof\":\"~0.0.1\",\"covert\":\"1.0.0\",\"jscs\":\"~1.10.0\",\"editorconfig-tools\":\"~0.0.1\",\"nsp\":\"~1.0.0\",\"eslint\":\"~0.13.0\",\"make-arrow-function\":\"~1.0.0\",\"make-generator-function\":\"~1.0.0\",\"semver\":\"~4.2.0\"},\"dist\":{\"shasum\":\"ec4daf411ae168c20e0161cac3b80c131e4e8500\",\"tarball\":\"https://registry.npmjs.org/is-callable/-/is-callable-1.0.3.tgz\"},\"engines\":{\"node\":\">= 0.4\"}},\"1.0.4\":{\"name\":\"is-callable\",\"version\":\"1.0.4\",\"devDependencies\":{\"foreach\":\"~2.0.5\",\"is\":\"~2.2.0\",\"tape\":\"~3.4.0\",\"indexof\":\"~0.0.1\",\"covert\":\"1.0.0\",\"jscs\":\"~1.10.0\",\"editorconfig-tools\":\"~0.0.1\",\"nsp\":\"~1.0.0\",\"eslint\":\"~0.13.0\",\"make-arrow-function\":\"~1.0.0\",\"make-generator-function\":\"~1.0.0\",\"semver\":\"~4.2.0\"},\"dist\":{\"shasum\":\"63cb2155460fd30501fec1d710bd6612c46c34ad\",\"tarball\":\"https://registry.npmjs.org/is-callable/-/is-callable-1.0.4.tgz\"},\"engines\":{\"node\":\">= 0.4\"}},\"1.1.0\":{\"name\":\"is-callable\",\"version\":\"1.1.0\",\"devDependencies\":{\"tape\":\"^4.2.0\",\"covert\":\"^1.1.0\",\"jscs\":\"^2.2.1\",\"editorconfig-tools\":\"^0.1.1\",\"nsp\":\"^1.1.0\",\"eslint\":\"^1.5.1\",\"@ljharb/eslint-config\":\"^1.2.0\",\"make-arrow-function\":\"^1.1.0\",\"make-generator-function\":\"^1.1.0\",\"semver\":\"^5.0.3\",\"foreach\":\"^2.0.5\"},\"dist\":{\"shasum\":\"9ebd23c4d6b0f20949ee846176e1aaad2f031f32\",\"tarball\":\"https://registry.npmjs.org/is-callable/-/is-callable-1.1.0.tgz\"},\"engines\":{\"node\":\">= 0.4\"}},\"1.1.1\":{\"name\":\"is-callable\",\"version\":\"1.1.1\",\"devDependencies\":{\"tape\":\"^4.2.2\",\"covert\":\"^1.1.0\",\"jscs\":\"^2.6.0\",\"editorconfig-tools\":\"^0.1.1\",\"nsp\":\"^2.0.2\",\"eslint\":\"^1.10.1\",\"@ljharb/eslint-config\":\"^1.6.0\",\"make-arrow-function\":\"^1.1.0\",\"make-generator-function\":\"^1.1.0\",\"semver\":\"^5.1.0\",\"foreach\":\"^2.0.5\"},\"dist\":{\"shasum\":\"4c63d56524adbc02e6014d03fdacf0ce47cf1dad\",\"tarball\":\"https://registry.npmjs.org/is-callable/-/is-callable-1.1.1.tgz\"},\"engines\":{\"node\":\">= 0.4\"}},\"1.1.2\":{\"name\":\"is-callable\",\"version\":\"1.1.2\",\"devDependencies\":{\"tape\":\"^4.4.0\",\"covert\":\"^1.1.0\",\"jscs\":\"^2.8.0\",\"editorconfig-tools\":\"^0.1.1\",\"nsp\":\"^2.2.0\",\"eslint\":\"^1.10.3\",\"@ljharb/eslint-config\":\"^1.6.1\",\"make-arrow-function\":\"^1.1.0\",\"make-generator-function\":\"^1.1.0\",\"semver\":\"^5.1.0\",\"foreach\":\"^2.0.5\",\"parallelshell\":\"^2.0.0\"},\"dist\":{\"shasum\":\"2108786f76ac1288867ccf052d9fd25c0148718d\",\"tarball\":\"https://registry.npmjs.org/is-callable/-/is-callable-1.1.2.tgz\"},\"engines\":{\"node\":\">= 0.4\"}},\"1.1.3\":{\"name\":\"is-callable\",\"version\":\"1.1.3\",\"devDependencies\":{\"tape\":\"^4.4.0\",\"covert\":\"^1.1.0\",\"jscs\":\"^2.10.1\",\"editorconfig-tools\":\"^0.1.1\",\"nsp\":\"^2.2.0\",\"eslint\":\"^2.2.0\",\"@ljharb/eslint-config\":\"^2.1.1\",\"make-arrow-function\":\"^1.1.0\",\"make-generator-function\":\"^1.1.0\",\"semver\":\"^5.1.0\",\"foreach\":\"^2.0.5\",\"parallelshell\":\"^2.0.0\"},\"dist\":{\"shasum\":\"86eb75392805ddc33af71c92a0eedf74ee7604b2\",\"tarball\":\"https://registry.npmjs.org/is-callable/-/is-callable-1.1.3.tgz\"},\"engines\":{\"node\":\">= 0.4\"}},\"1.1.4\":{\"name\":\"is-callable\",\"version\":\"1.1.4\",\"devDependencies\":{\"@ljharb/eslint-config\":\"^12.2.1\",\"covert\":\"^1.1.0\",\"editorconfig-tools\":\"^0.1.1\",\"eslint\":\"^4.19.1\",\"foreach\":\"^2.0.5\",\"istanbul\":\"1.1.0-alpha.1\",\"istanbul-merge\":\"^1.1.1\",\"jscs\":\"^3.0.7\",\"make-arrow-function\":\"^1.1.0\",\"make-generator-function\":\"^1.1.0\",\"nsp\":\"^3.2.1\",\"rimraf\":\"^2.6.2\",\"semver\":\"^5.5.0\",\"tape\":\"^4.9.1\"},\"dist\":{\"integrity\":\"sha512-r5p9sxJjYnArLjObpjA4xu5EKI3CuKHkJXMhT7kwbpUyIFD1n5PMAsoPvWnvtZiNz7LjkYDRZhd7FlI0eMijEA==\",\"shasum\":\"1e1adf219e1eeb684d691f9d6a05ff0d30a24d75\",\"tarball\":\"https://registry.npmjs.org/is-callable/-/is-callable-1.1.4.tgz\",\"fileCount\":12,\"unpackedSize\":30555,\"npm-signature\":\"-----BEGIN PGP SIGNATURE-----\\r\\nVersion: OpenPGP.js v3.0.4\\r\\nComment: https://openpgpjs.org\\r\\n\\r\\nwsFcBAEBCAAQBQJbOwP4CRA9TVsSAnZWagAAu6QP/3HMpy3IiAIhY13AT0Pv\\n/5+HHxTMTOYdwkUPjtMPwyQRts0L6j+35qFOADjfMYK5KQxxGvFzqRIaQFdZ\\nEQVqWqoWuUTrJ6trf+tZwJsFNVMSf9LkT3uyX+CxcLoiv9pVctO4HxRVKhuJ\\nkuG3CgmlPEG9U4I9/oEHXoM/6OVIUahwwo7PZbyvwOP2wXIJb0p7V8wFtJEQ\\nYGsiWzQVn+i0Te/lgWIqPFJKNQRWJAjAR3+ROqe8O735Ot1uivgkS8SYQc+n\\nuXQNk1PdUN2nnSZwwqkvYKa/sXhV906qVAJmA/7QG6AvJvvEvcPD1K90sKFR\\nQ3jlAtqFfU7JMC3oOuc91oAWzRwRJhrJxCI7CODWtRWuUVKDClv0/sMvrBsi\\nOxlccM7IqsGBIJ69A6wBI02lLjJNqM3OlRVvLKfzZ1sLd1yjysJioMIyyM6B\\nO7ewcDII7jPVbWTv0DIUC61oc0NfFrCij6YN/iq872hKFhbr0h210BxgF5Nv\\nnZ+FI8rSkZLk36jtsOirCkk4MSOWnHnLFehN3q/PSL7W2y2DG3QlW/GcBsn2\\neLAQ6bgXWloewnfZNgG5m3a8Rh+8EhTplwcnpg6+7ZbpginjZkgBHyUCn/0X\\nTfqpqtqSXNZ6FKfMGEmY56v7pq3RoPCYSrTCK4hU4lmxd4yXAB2NkiEakEuE\\nBHSV\\r\\n=stq+\\r\\n-----END PGP SIGNATURE-----\\r\\n\"},\"engines\":{\"node\":\">= 0.4\"}},\"1.1.5\":{\"name\":\"is-callable\",\"version\":\"1.1.5\",\"devDependencies\":{\"@ljharb/eslint-config\":\"^15.0.2\",\"covert\":\"^1.1.1\",\"eclint\":\"^2.8.1\",\"eslint\":\"^6.7.2\",\"foreach\":\"^2.0.5\",\"istanbul\":\"1.1.0-alpha.1\",\"istanbul-merge\":\"^1.1.1\",\"make-arrow-function\":\"^1.1.0\",\"make-generator-function\":\"^1.1.0\",\"rimraf\":\"^2.7.1\",\"tape\":\"^4.12.0\"},\"dist\":{\"integrity\":\"sha512-ESKv5sMCJB2jnHTWZ3O5itG+O128Hsus4K4Qh1h2/cgn2vbgnLSVqfV46AeJA9D5EeeLa9w81KUXMtn34zhX+Q==\",\"shasum\":\"f7e46b596890456db74e7f6e976cb3273d06faab\",\"tarball\":\"https://registry.npmjs.org/is-callable/-/is-callable-1.1.5.tgz\",\"fileCount\":13,\"unpackedSize\":17571,\"npm-signature\":\"-----BEGIN PGP SIGNATURE-----\\r\\nVersion: OpenPGP.js v3.0.4\\r\\nComment: https://openpgpjs.org\\r\\n\\r\\nwsFcBAEBCAAQBQJd+7ohCRA9TVsSAnZWagAA4uYP/34LzfgooeeqaNPjq28G\\nclfNBhoyW1gDfy0vSJYaQc75298zEpPVT5+TjS6IMdCR2x8IoeBD4lmko7Ai\\nCvra85dE1pA2/yEmLBkGdPWHnb+zdk+XOTPnKeZfPC87D7+XLyDiNtDT6H7+\\nqT7r8ZC1S2JZf5lIFyOz6WXMz0MHlpK0rpLx0LObSLBD89RoMB/TsfTB7NW0\\nZzxjJ/dr0crn2PjO091iKPKJCHTemo1rcGhIf6Yg+4D3MravJTjEL3eKKzJM\\nMLPhgbiwyvmqmJ2B4BVifxC1OWFeGWr8SFMrHRJoyokODI0rMHSWoC9B7qqi\\nItHsiCz00KLxYfR1CGAYb7cFJ9KuvoDskHTiu+88BbTwJ9xdQcxoghbye3VA\\nqbImwTJC1NNTsEPZDDlL55UFTEpKMqUedZx90Gf8XPJs+R2YpKXU2YF6fheu\\nPG6rPNAQz+3n1Kjwsg0tCQMe/pdqFOjRk+gSg+aWjAZX9wubBupcpgpTjOgw\\nbfCe6i0DN3TIZ9OdDYWhF8PmbomQLqiYooX4yBL6w5hjnRk9U1WqRAi3Sbsz\\nh/hpY7hHnpHUM6Jz+k8eW7goE3oGFrfxdZotl/XMuRrwRacDZ113/eS06lGw\\nFJ99COOnmDR7ewL1+d9TED5Ci/hDC2hXaNJbyYAG8BHmeb+EaVwFWRcUV4LL\\nSXA+\\r\\n=usFI\\r\\n-----END PGP SIGNATURE-----\\r\\n\"},\"engines\":{\"node\":\">= 0.4\"},\"funding\":{\"url\":\"https://github.com/sponsors/ljharb\"}}},\"modified\":\"2019-12-19T17:57:57.465Z\"}"
+  }
+}

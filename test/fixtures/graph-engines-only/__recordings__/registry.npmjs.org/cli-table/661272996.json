@@ -1,0 +1,56 @@
+{
+  "request": {
+    "method": "GET",
+    "href": "https://registry.npmjs.org/cli-table",
+    "headers": {
+      "connection": [
+        "keep-alive"
+      ],
+      "user-agent": [
+        "pacote/11.1.0 node/v13.10.1"
+      ],
+      "npm-in-ci": [
+        "false"
+      ],
+      "pacote-version": [
+        "11.1.0"
+      ],
+      "pacote-req-type": [
+        "packument"
+      ],
+      "pacote-pkg-id": [
+        "registry:cli-table"
+      ],
+      "accept": [
+        "application/vnd.npm.install-v1+json; q=1.0, application/json; q=0.8, */*"
+      ],
+      "accept-encoding": [
+        "gzip,deflate"
+      ]
+    },
+    "body": ""
+  },
+  "response": {
+    "statusCode": 200,
+    "headers": {
+      "date": "Thu, 12 Mar 2020 04:58:37 GMT",
+      "content-type": "application/vnd.npm.install-v1+json",
+      "content-length": "1479",
+      "connection": "keep-alive",
+      "set-cookie": [
+        "__cfduid=d2a1502a633c633b73606b0029aac0c371583989117; expires=Sat, 11-Apr-20 04:58:37 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax"
+      ],
+      "cf-ray": "572af0f36d266c86-SJC",
+      "accept-ranges": "bytes",
+      "age": "5001",
+      "cache-control": "public, max-age=300",
+      "etag": "\"2e41bbe48124261bc8b6fdd65f59b4a1\"",
+      "last-modified": "Fri, 14 Feb 2020 07:28:12 GMT",
+      "vary": "accept-encoding, accept",
+      "cf-cache-status": "HIT",
+      "expect-ct": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"",
+      "server": "cloudflare"
+    },
+    "body": "{\"name\":\"cli-table\",\"dist-tags\":{\"latest\":\"0.3.1\"},\"versions\":{\"0.0.1\":{\"name\":\"cli-table\",\"version\":\"0.0.1\",\"dependencies\":{\"colors\":\"0.3.0\"},\"dist\":{\"shasum\":\"94ef7bb0eee22ae427b4b8106d9c366b80729602\",\"tarball\":\"https://registry.npmjs.org/cli-table/-/cli-table-0.0.1.tgz\"},\"engines\":{\"node\":\">= 0.2.0\"}},\"0.0.2\":{\"name\":\"cli-table\",\"version\":\"0.0.2\",\"dependencies\":{\"colors\":\"0.3.0\"},\"dist\":{\"shasum\":\"982867e16435325c66c208a1e71b95336ea3093b\",\"tarball\":\"https://registry.npmjs.org/cli-table/-/cli-table-0.0.2.tgz\"},\"engines\":{\"node\":\">= 0.2.0\"}},\"0.2.0\":{\"name\":\"cli-table\",\"version\":\"0.2.0\",\"dependencies\":{\"colors\":\"0.3.0\"},\"devDependencies\":{\"expresso\":\"~0.9\",\"should\":\"~0.6\"},\"dist\":{\"shasum\":\"34c63eb532c206e9e5e4ae0cb0104bd1fd27317c\",\"tarball\":\"https://registry.npmjs.org/cli-table/-/cli-table-0.2.0.tgz\"},\"engines\":{\"node\":\">= 0.2.0\"}},\"0.3.0\":{\"name\":\"cli-table\",\"version\":\"0.3.0\",\"dependencies\":{\"colors\":\"0.6.2\"},\"devDependencies\":{\"expresso\":\"~0.9\",\"should\":\"~0.6\"},\"dist\":{\"shasum\":\"44a43c2641667701e084202bff7aa934128aa13e\",\"tarball\":\"https://registry.npmjs.org/cli-table/-/cli-table-0.3.0.tgz\"},\"engines\":{\"node\":\">= 0.2.0\"}},\"0.3.1\":{\"name\":\"cli-table\",\"version\":\"0.3.1\",\"dependencies\":{\"colors\":\"1.0.3\"},\"devDependencies\":{\"expresso\":\"~0.9\",\"should\":\"~0.6\"},\"dist\":{\"shasum\":\"f53b05266a8b1a0b934b3d0821e6e2dc5914ae23\",\"tarball\":\"https://registry.npmjs.org/cli-table/-/cli-table-0.3.1.tgz\"},\"engines\":{\"node\":\">= 0.2.0\"}}},\"modified\":\"2020-01-15T13:55:38.472Z\"}"
+  }
+}

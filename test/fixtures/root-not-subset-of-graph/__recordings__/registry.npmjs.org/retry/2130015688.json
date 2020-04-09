@@ -1,0 +1,56 @@
+{
+  "request": {
+    "method": "GET",
+    "href": "https://registry.npmjs.org/retry",
+    "headers": {
+      "connection": [
+        "keep-alive"
+      ],
+      "user-agent": [
+        "pacote/11.1.0 node/v13.10.1"
+      ],
+      "npm-in-ci": [
+        "false"
+      ],
+      "pacote-version": [
+        "11.1.0"
+      ],
+      "pacote-req-type": [
+        "packument"
+      ],
+      "pacote-pkg-id": [
+        "registry:retry"
+      ],
+      "accept": [
+        "application/vnd.npm.install-v1+json; q=1.0, application/json; q=0.8, */*"
+      ],
+      "accept-encoding": [
+        "gzip,deflate"
+      ]
+    },
+    "body": ""
+  },
+  "response": {
+    "statusCode": 200,
+    "headers": {
+      "date": "Thu, 12 Mar 2020 04:59:16 GMT",
+      "content-type": "application/vnd.npm.install-v1+json",
+      "content-length": "3886",
+      "connection": "keep-alive",
+      "set-cookie": [
+        "__cfduid=d55214b72287a8b5987638361151b90951583989156; expires=Sat, 11-Apr-20 04:59:16 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax"
+      ],
+      "cf-ray": "572af1e108b76dbe-SJC",
+      "accept-ranges": "bytes",
+      "age": "1297",
+      "cache-control": "public, max-age=300",
+      "etag": "\"5dff11aa29fa8508fdeeeb69cb1b5fd9\"",
+      "last-modified": "Sat, 15 Feb 2020 12:30:40 GMT",
+      "vary": "accept-encoding, accept",
+      "cf-cache-status": "HIT",
+      "expect-ct": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"",
+      "server": "cloudflare"
+    },
+    "body": "{\"name\":\"retry\",\"dist-tags\":{\"latest\":\"0.12.0\"},\"versions\":{\"0.0.1\":{\"name\":\"retry\",\"version\":\"0.0.1\",\"directories\":{\"lib\":\"./lib\"},\"dist\":{\"shasum\":\"d47a1e527644e131e8f54785452ec7cd410808fe\",\"tarball\":\"https://registry.npmjs.org/retry/-/retry-0.0.1.tgz\"},\"engines\":{\"node\":\"*\"}},\"0.1.0\":{\"name\":\"retry\",\"version\":\"0.1.0\",\"devDependencies\":{\"fake\":\"0.2.0\",\"far\":\"0.0.1\"},\"directories\":{\"lib\":\"./lib\"},\"dist\":{\"shasum\":\"e97a7b06a889a62b3f7ea16003f52a699c3651a5\",\"tarball\":\"https://registry.npmjs.org/retry/-/retry-0.1.0.tgz\"},\"engines\":{\"node\":\"*\"}},\"0.2.0\":{\"name\":\"retry\",\"version\":\"0.2.0\",\"devDependencies\":{\"fake\":\"0.2.0\",\"far\":\"0.0.1\"},\"directories\":{\"lib\":\"./lib\"},\"dist\":{\"shasum\":\"9598e6667c197772ea24ab5fc9e5445c0a4ac9a5\",\"tarball\":\"https://registry.npmjs.org/retry/-/retry-0.2.0.tgz\"},\"engines\":{\"node\":\"*\"}},\"0.3.0\":{\"name\":\"retry\",\"version\":\"0.3.0\",\"devDependencies\":{\"fake\":\"0.2.0\",\"far\":\"0.0.1\"},\"directories\":{\"lib\":\"./lib\"},\"dist\":{\"shasum\":\"902e4fc3e6c48d52badfec738be656b8ca23844c\",\"tarball\":\"https://registry.npmjs.org/retry/-/retry-0.3.0.tgz\"},\"engines\":{\"node\":\"*\"}},\"0.4.0\":{\"name\":\"retry\",\"version\":\"0.4.0\",\"devDependencies\":{\"fake\":\"0.2.0\",\"far\":\"0.0.1\"},\"directories\":{\"lib\":\"./lib\"},\"dist\":{\"shasum\":\"f6a0107aee4d4e5bd5469e1d31c780e438d154bd\",\"tarball\":\"https://registry.npmjs.org/retry/-/retry-0.4.0.tgz\"},\"engines\":{\"node\":\"*\"}},\"0.5.0\":{\"name\":\"retry\",\"version\":\"0.5.0\",\"devDependencies\":{\"fake\":\"0.2.0\",\"far\":\"0.0.1\"},\"directories\":{\"lib\":\"./lib\"},\"dist\":{\"shasum\":\"71e2793cd3e2ee9cce1182e173183af959decc3d\",\"tarball\":\"https://registry.npmjs.org/retry/-/retry-0.5.0.tgz\"},\"engines\":{\"node\":\"*\"}},\"0.6.0\":{\"name\":\"retry\",\"version\":\"0.6.0\",\"devDependencies\":{\"fake\":\"0.2.0\",\"far\":\"0.0.1\"},\"directories\":{\"lib\":\"./lib\"},\"dist\":{\"shasum\":\"1c010713279a6fd1e8def28af0c3ff1871caa537\",\"tarball\":\"https://registry.npmjs.org/retry/-/retry-0.6.0.tgz\"},\"engines\":{\"node\":\"*\"}},\"0.6.1\":{\"name\":\"retry\",\"version\":\"0.6.1\",\"devDependencies\":{\"fake\":\"0.2.0\",\"far\":\"0.0.1\"},\"directories\":{\"lib\":\"./lib\"},\"dist\":{\"shasum\":\"fdc90eed943fde11b893554b8cc63d0e899ba918\",\"tarball\":\"https://registry.npmjs.org/retry/-/retry-0.6.1.tgz\"},\"engines\":{\"node\":\"*\"}},\"0.7.0\":{\"name\":\"retry\",\"version\":\"0.7.0\",\"devDependencies\":{\"fake\":\"0.2.0\",\"far\":\"0.0.1\"},\"directories\":{\"lib\":\"./lib\"},\"dist\":{\"shasum\":\"dc86eeb960af9acb662896918be4254c1acf6379\",\"tarball\":\"https://registry.npmjs.org/retry/-/retry-0.7.0.tgz\"},\"engines\":{\"node\":\"*\"}},\"0.8.0\":{\"name\":\"retry\",\"version\":\"0.8.0\",\"devDependencies\":{\"fake\":\"0.2.0\",\"far\":\"0.0.1\"},\"directories\":{\"lib\":\"./lib\"},\"dist\":{\"shasum\":\"2367628dc0edb247b1eab649dc53ac8628ac2d5f\",\"tarball\":\"https://registry.npmjs.org/retry/-/retry-0.8.0.tgz\"},\"engines\":{\"node\":\"*\"}},\"0.9.0\":{\"name\":\"retry\",\"version\":\"0.9.0\",\"devDependencies\":{\"fake\":\"0.2.0\",\"far\":\"0.0.1\"},\"directories\":{\"lib\":\"./lib\"},\"dist\":{\"shasum\":\"6f697e50a0e4ddc8c8f7fb547a9b60dead43678d\",\"tarball\":\"https://registry.npmjs.org/retry/-/retry-0.9.0.tgz\"},\"engines\":{\"node\":\"*\"}},\"0.10.0\":{\"name\":\"retry\",\"version\":\"0.10.0\",\"devDependencies\":{\"fake\":\"0.2.0\",\"far\":\"0.0.1\"},\"directories\":{\"lib\":\"./lib\"},\"dist\":{\"shasum\":\"649e15ca408422d98318161935e7f7d652d435dd\",\"tarball\":\"https://registry.npmjs.org/retry/-/retry-0.10.0.tgz\"},\"engines\":{\"node\":\"*\"}},\"0.10.1\":{\"name\":\"retry\",\"version\":\"0.10.1\",\"devDependencies\":{\"fake\":\"0.2.0\",\"far\":\"0.0.1\"},\"directories\":{\"lib\":\"./lib\"},\"dist\":{\"shasum\":\"e76388d217992c252750241d3d3956fed98d8ff4\",\"tarball\":\"https://registry.npmjs.org/retry/-/retry-0.10.1.tgz\"},\"engines\":{\"node\":\"*\"}},\"0.12.0\":{\"name\":\"retry\",\"version\":\"0.12.0\",\"devDependencies\":{\"fake\":\"0.2.0\",\"istanbul\":\"^0.4.5\",\"tape\":\"^4.8.0\"},\"directories\":{\"lib\":\"./lib\"},\"dist\":{\"shasum\":\"1b42a6266a21f07421d1b0b54b7dc167b01c013b\",\"tarball\":\"https://registry.npmjs.org/retry/-/retry-0.12.0.tgz\",\"fileCount\":17,\"unpackedSize\":32210},\"engines\":{\"node\":\">= 4\"}}},\"modified\":\"2018-08-03T00:39:14.881Z\"}"
+  }
+}

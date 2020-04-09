@@ -1,0 +1,930 @@
+{
+  "request": {
+    "method": "GET",
+    "href": "https://registry.npmjs.org/promiseback",
+    "headers": {
+      "connection": [
+        "keep-alive"
+      ],
+      "user-agent": [
+        "pacote/11.1.0 node/v13.10.1"
+      ],
+      "npm-in-ci": [
+        "false"
+      ],
+      "pacote-version": [
+        "11.1.0"
+      ],
+      "pacote-req-type": [
+        "packument"
+      ],
+      "pacote-pkg-id": [
+        "registry:promiseback"
+      ],
+      "accept": [
+        "application/json"
+      ],
+      "accept-encoding": [
+        "gzip,deflate"
+      ]
+    },
+    "body": ""
+  },
+  "response": {
+    "statusCode": 200,
+    "headers": {
+      "date": "Thu, 12 Mar 2020 04:59:47 GMT",
+      "content-type": "application/json",
+      "connection": "keep-alive",
+      "set-cookie": [
+        "__cfduid=dea0c6a06a4db10bc3b5208104b333af31583989187; expires=Sat, 11-Apr-20 04:59:47 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax"
+      ],
+      "cf-ray": "572af2a539c592bc-SJC",
+      "age": "67",
+      "cache-control": "public, max-age=300",
+      "etag": "W/\"b0bddae2cdc9c063b3f6d97e7fae8cf0\"",
+      "last-modified": "Wed, 15 Jan 2020 05:16:37 GMT",
+      "vary": "accept-encoding, accept",
+      "cf-cache-status": "HIT",
+      "expect-ct": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"",
+      "server": "cloudflare",
+      "content-encoding": "application/json"
+    },
+    "body": {
+      "_id": "promiseback",
+      "_rev": "27-1f9b7989863bc1bbd1e7e78c8c108af5",
+      "name": "promiseback",
+      "description": "Accept an optional node-style callback, and also return a spec-compliant Promise!",
+      "dist-tags": {
+        "latest": "2.0.3"
+      },
+      "versions": {
+        "0.1.0": {
+          "name": "promiseback",
+          "version": "0.1.0",
+          "description": "Accept an optional node-style callback, and also return a spec-compliant Promise!",
+          "main": "index.js",
+          "scripts": {
+            "test": "node test.js",
+            "coverage": "covert test.js",
+            "coverage-quiet": "covert test.js --quiet"
+          },
+          "repository": {
+            "type": "git",
+            "url": "https://github.com/ljharb/promiseback"
+          },
+          "keywords": [
+            "promiseback",
+            "promisebacks",
+            "promise",
+            "promises",
+            "callback",
+            "callbacks"
+          ],
+          "author": {
+            "name": "Jordan Harband"
+          },
+          "license": "MIT",
+          "bugs": {
+            "url": "https://github.com/ljharb/promiseback/issues"
+          },
+          "homepage": "https://github.com/ljharb/promiseback",
+          "testling": {
+            "files": "test.js",
+            "browsers": [
+              "iexplore/6.0..latest",
+              "firefox/3.0..6.0",
+              "firefox/15.0..latest",
+              "firefox/nightly",
+              "chrome/4.0..10.0",
+              "chrome/20.0..latest",
+              "chrome/canary",
+              "opera/10.0..latest",
+              "opera/next",
+              "safari/4.0..latest",
+              "ipad/6.0..latest",
+              "iphone/6.0..latest",
+              "android-browser/4.2"
+            ]
+          },
+          "dependencies": {
+            "promise-deferred": "~0.1.0"
+          },
+          "devDependencies": {
+            "tape": "~2.3.2",
+            "covert": "~0.2.0"
+          },
+          "_id": "promiseback@0.1.0",
+          "dist": {
+            "shasum": "1f740ce52567492750e6ec0c8f7f72fcc45e0399",
+            "tarball": "https://registry.npmjs.org/promiseback/-/promiseback-0.1.0.tgz"
+          },
+          "_from": ".",
+          "_npmVersion": "1.3.21",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "directories": {}
+        },
+        "0.2.0": {
+          "name": "promiseback",
+          "version": "0.2.0",
+          "description": "Accept an optional node-style callback, and also return a spec-compliant Promise!",
+          "main": "index.js",
+          "scripts": {
+            "test": "node test.js",
+            "coverage": "covert test.js",
+            "coverage-quiet": "covert test.js --quiet"
+          },
+          "repository": {
+            "type": "git",
+            "url": "https://github.com/ljharb/promiseback"
+          },
+          "keywords": [
+            "promiseback",
+            "promisebacks",
+            "promise",
+            "promises",
+            "callback",
+            "callbacks"
+          ],
+          "author": {
+            "name": "Jordan Harband"
+          },
+          "license": "MIT",
+          "bugs": {
+            "url": "https://github.com/ljharb/promiseback/issues"
+          },
+          "homepage": "https://github.com/ljharb/promiseback",
+          "testling": {
+            "files": "test.js",
+            "browsers": [
+              "iexplore/6.0..latest",
+              "firefox/3.0..6.0",
+              "firefox/15.0..latest",
+              "firefox/nightly",
+              "chrome/4.0..10.0",
+              "chrome/20.0..latest",
+              "chrome/canary",
+              "opera/10.0..latest",
+              "opera/next",
+              "safari/4.0..latest",
+              "ipad/6.0..latest",
+              "iphone/6.0..latest",
+              "android-browser/4.2"
+            ]
+          },
+          "dependencies": {
+            "promise-deferred": "~0.1.1"
+          },
+          "devDependencies": {
+            "tape": "~2.10.2",
+            "covert": "~0.3.1"
+          },
+          "engines": {
+            "node": ">= 0.4"
+          },
+          "_id": "promiseback@0.2.0",
+          "dist": {
+            "shasum": "7ac2163798b19c3d12a9dacaecc8658cc2cbb313",
+            "tarball": "https://registry.npmjs.org/promiseback/-/promiseback-0.2.0.tgz"
+          },
+          "_from": ".",
+          "_npmVersion": "1.4.3",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "directories": {}
+        },
+        "0.3.0": {
+          "name": "promiseback",
+          "version": "0.3.0",
+          "description": "Accept an optional node-style callback, and also return a spec-compliant Promise!",
+          "main": "index.js",
+          "scripts": {
+            "test": "node test.js",
+            "coverage": "covert test.js",
+            "coverage-quiet": "covert test.js --quiet"
+          },
+          "repository": {
+            "type": "git",
+            "url": "https://github.com/ljharb/promiseback"
+          },
+          "keywords": [
+            "promiseback",
+            "promisebacks",
+            "promise",
+            "promises",
+            "callback",
+            "callbacks"
+          ],
+          "author": {
+            "name": "Jordan Harband"
+          },
+          "license": "MIT",
+          "bugs": {
+            "url": "https://github.com/ljharb/promiseback/issues"
+          },
+          "homepage": "https://github.com/ljharb/promiseback",
+          "testling": {
+            "files": "test.js",
+            "browsers": [
+              "iexplore/6.0..latest",
+              "firefox/3.0..6.0",
+              "firefox/15.0..latest",
+              "firefox/nightly",
+              "chrome/4.0..10.0",
+              "chrome/20.0..latest",
+              "chrome/canary",
+              "opera/10.0..latest",
+              "opera/next",
+              "safari/4.0..latest",
+              "ipad/6.0..latest",
+              "iphone/6.0..latest",
+              "android-browser/4.2"
+            ]
+          },
+          "dependencies": {
+            "promise-deferred": "~0.2.0"
+          },
+          "devDependencies": {
+            "tape": "~2.12.3",
+            "covert": "~0.4.0"
+          },
+          "engines": {
+            "node": ">= 0.4"
+          },
+          "_id": "promiseback@0.3.0",
+          "dist": {
+            "shasum": "75f709eee5ab6f91f276fa14820fa011c2c568f3",
+            "tarball": "https://registry.npmjs.org/promiseback/-/promiseback-0.3.0.tgz"
+          },
+          "_from": ".",
+          "_npmVersion": "1.4.3",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "directories": {}
+        },
+        "1.0.0": {
+          "name": "promiseback",
+          "version": "1.0.0",
+          "description": "Accept an optional node-style callback, and also return a spec-compliant Promise!",
+          "main": "index.js",
+          "scripts": {
+            "test": "node test.js",
+            "coverage": "covert test.js",
+            "coverage-quiet": "covert test.js --quiet"
+          },
+          "repository": {
+            "type": "git",
+            "url": "https://github.com/ljharb/promiseback"
+          },
+          "keywords": [
+            "promiseback",
+            "promisebacks",
+            "promise",
+            "promises",
+            "callback",
+            "callbacks"
+          ],
+          "author": {
+            "name": "Jordan Harband"
+          },
+          "license": "MIT",
+          "bugs": {
+            "url": "https://github.com/ljharb/promiseback/issues"
+          },
+          "homepage": "https://github.com/ljharb/promiseback",
+          "testling": {
+            "files": "test.js",
+            "browsers": [
+              "iexplore/6.0..latest",
+              "firefox/3.0..6.0",
+              "firefox/15.0..latest",
+              "firefox/nightly",
+              "chrome/4.0..10.0",
+              "chrome/20.0..latest",
+              "chrome/canary",
+              "opera/10.0..latest",
+              "opera/next",
+              "safari/4.0..latest",
+              "ipad/6.0..latest",
+              "iphone/6.0..latest",
+              "android-browser/4.2"
+            ]
+          },
+          "dependencies": {
+            "promise-deferred": "~1.0.0"
+          },
+          "devDependencies": {
+            "tape": "~2.14.0",
+            "covert": "~0.4.0"
+          },
+          "engines": {
+            "node": ">= 0.4"
+          },
+          "gitHead": "784829feccf17d4f41b244c2c052789389bc6fb2",
+          "_id": "promiseback@1.0.0",
+          "_shasum": "a7ae63336dc04b1d034b120212b0fe8d09043315",
+          "_from": ".",
+          "_npmVersion": "1.4.21",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "dist": {
+            "shasum": "a7ae63336dc04b1d034b120212b0fe8d09043315",
+            "tarball": "https://registry.npmjs.org/promiseback/-/promiseback-1.0.0.tgz"
+          },
+          "directories": {}
+        },
+        "1.0.1": {
+          "name": "promiseback",
+          "version": "1.0.1",
+          "description": "Accept an optional node-style callback, and also return a spec-compliant Promise!",
+          "main": "index.js",
+          "scripts": {
+            "test": "npm run lint && node test.js && npm run coverage-quiet",
+            "coverage": "covert test.js",
+            "coverage-quiet": "covert test.js --quiet",
+            "lint": "jscs *.js"
+          },
+          "repository": {
+            "type": "git",
+            "url": "https://github.com/ljharb/promiseback"
+          },
+          "keywords": [
+            "promiseback",
+            "promisebacks",
+            "promise",
+            "promises",
+            "callback",
+            "callbacks"
+          ],
+          "author": {
+            "name": "Jordan Harband"
+          },
+          "license": "MIT",
+          "bugs": {
+            "url": "https://github.com/ljharb/promiseback/issues"
+          },
+          "homepage": "https://github.com/ljharb/promiseback",
+          "testling": {
+            "files": "test.js",
+            "browsers": [
+              "iexplore/6.0..latest",
+              "firefox/3.0..6.0",
+              "firefox/15.0..latest",
+              "firefox/nightly",
+              "chrome/4.0..10.0",
+              "chrome/20.0..latest",
+              "chrome/canary",
+              "opera/10.0..latest",
+              "opera/next",
+              "safari/4.0..latest",
+              "ipad/6.0..latest",
+              "iphone/6.0..latest",
+              "android-browser/4.2"
+            ]
+          },
+          "dependencies": {
+            "promise-deferred": "~1.0.0"
+          },
+          "devDependencies": {
+            "tape": "~2.14.0",
+            "covert": "~1.0.0",
+            "jscs": "~1.5.9"
+          },
+          "engines": {
+            "node": ">= 0.4"
+          },
+          "gitHead": "d5d9b512f121c17759338fce0a822646844f27bc",
+          "_id": "promiseback@1.0.1",
+          "_shasum": "f22e055d6a07dcdc37459bb56869b44397d342bb",
+          "_from": ".",
+          "_npmVersion": "1.4.23",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "dist": {
+            "shasum": "f22e055d6a07dcdc37459bb56869b44397d342bb",
+            "tarball": "https://registry.npmjs.org/promiseback/-/promiseback-1.0.1.tgz"
+          },
+          "directories": {}
+        },
+        "1.0.2": {
+          "name": "promiseback",
+          "version": "1.0.2",
+          "description": "Accept an optional node-style callback, and also return a spec-compliant Promise!",
+          "main": "index.js",
+          "scripts": {
+            "test": "npm run lint && node test.js && npm run coverage-quiet",
+            "coverage": "covert test.js",
+            "coverage-quiet": "covert test.js --quiet",
+            "lint": "jscs *.js"
+          },
+          "repository": {
+            "type": "git",
+            "url": "https://github.com/ljharb/promiseback"
+          },
+          "keywords": [
+            "promiseback",
+            "promisebacks",
+            "promise",
+            "promises",
+            "callback",
+            "callbacks"
+          ],
+          "author": {
+            "name": "Jordan Harband"
+          },
+          "license": "MIT",
+          "bugs": {
+            "url": "https://github.com/ljharb/promiseback/issues"
+          },
+          "homepage": "https://github.com/ljharb/promiseback",
+          "testling": {
+            "files": "test.js",
+            "browsers": [
+              "iexplore/6.0..latest",
+              "firefox/3.0..6.0",
+              "firefox/15.0..latest",
+              "firefox/nightly",
+              "chrome/4.0..10.0",
+              "chrome/20.0..latest",
+              "chrome/canary",
+              "opera/10.0..latest",
+              "opera/next",
+              "safari/4.0..latest",
+              "ipad/6.0..latest",
+              "iphone/6.0..latest",
+              "android-browser/4.2"
+            ]
+          },
+          "dependencies": {
+            "promise-deferred": "~1.0.1"
+          },
+          "devDependencies": {
+            "tape": "~2.14.0",
+            "covert": "~1.0.0",
+            "jscs": "~1.5.9"
+          },
+          "engines": {
+            "node": ">= 0.4"
+          },
+          "gitHead": "676f9dc3238966c993cdedeebcf1281e62370fd0",
+          "_id": "promiseback@1.0.2",
+          "_shasum": "c0754236b6bbeb108edeb4529325ee21f38b7203",
+          "_from": ".",
+          "_npmVersion": "1.4.23",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "dist": {
+            "shasum": "c0754236b6bbeb108edeb4529325ee21f38b7203",
+            "tarball": "https://registry.npmjs.org/promiseback/-/promiseback-1.0.2.tgz"
+          },
+          "directories": {}
+        },
+        "2.0.0": {
+          "name": "promiseback",
+          "version": "2.0.0",
+          "description": "Accept an optional node-style callback, and also return a spec-compliant Promise!",
+          "main": "index.js",
+          "scripts": {
+            "test": "npm run lint && node test.js && npm run coverage-quiet",
+            "coverage": "covert test.js",
+            "coverage-quiet": "covert test.js --quiet",
+            "lint": "jscs *.js"
+          },
+          "repository": {
+            "type": "git",
+            "url": "https://github.com/ljharb/promiseback"
+          },
+          "keywords": [
+            "promiseback",
+            "promisebacks",
+            "promise",
+            "promises",
+            "callback",
+            "callbacks"
+          ],
+          "author": {
+            "name": "Jordan Harband"
+          },
+          "license": "MIT",
+          "bugs": {
+            "url": "https://github.com/ljharb/promiseback/issues"
+          },
+          "homepage": "https://github.com/ljharb/promiseback",
+          "testling": {
+            "files": "test.js",
+            "browsers": [
+              "iexplore/6.0..latest",
+              "firefox/3.0..6.0",
+              "firefox/15.0..latest",
+              "firefox/nightly",
+              "chrome/4.0..10.0",
+              "chrome/20.0..latest",
+              "chrome/canary",
+              "opera/10.0..latest",
+              "opera/next",
+              "safari/4.0..latest",
+              "ipad/6.0..latest",
+              "iphone/6.0..latest",
+              "android-browser/4.2"
+            ]
+          },
+          "dependencies": {
+            "promise-deferred": "~2.0.0"
+          },
+          "devDependencies": {
+            "tape": "~2.14.0",
+            "covert": "~1.0.0",
+            "jscs": "~1.6.1"
+          },
+          "engines": {
+            "node": ">= 0.4"
+          },
+          "gitHead": "510d232b92c792ee0dd97bcb84cc77c796e10252",
+          "_id": "promiseback@2.0.0",
+          "_shasum": "b928067f28bbe797c0bab83f2ccb8e5709a529cf",
+          "_from": ".",
+          "_npmVersion": "1.4.23",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "dist": {
+            "shasum": "b928067f28bbe797c0bab83f2ccb8e5709a529cf",
+            "tarball": "https://registry.npmjs.org/promiseback/-/promiseback-2.0.0.tgz"
+          },
+          "directories": {}
+        },
+        "2.0.1": {
+          "name": "promiseback",
+          "version": "2.0.1",
+          "description": "Accept an optional node-style callback, and also return a spec-compliant Promise!",
+          "main": "index.js",
+          "scripts": {
+            "test": "npm run lint && node test.js && npm run coverage-quiet",
+            "coverage": "covert test.js",
+            "coverage-quiet": "covert test.js --quiet",
+            "lint": "jscs *.js"
+          },
+          "repository": {
+            "type": "git",
+            "url": "https://github.com/ljharb/promiseback"
+          },
+          "keywords": [
+            "promiseback",
+            "promisebacks",
+            "promise",
+            "promises",
+            "callback",
+            "callbacks"
+          ],
+          "author": {
+            "name": "Jordan Harband"
+          },
+          "license": "MIT",
+          "bugs": {
+            "url": "https://github.com/ljharb/promiseback/issues"
+          },
+          "homepage": "https://github.com/ljharb/promiseback",
+          "testling": {
+            "files": "test.js",
+            "browsers": [
+              "iexplore/6.0..latest",
+              "firefox/3.0..6.0",
+              "firefox/15.0..latest",
+              "firefox/nightly",
+              "chrome/4.0..10.0",
+              "chrome/20.0..latest",
+              "chrome/canary",
+              "opera/10.0..latest",
+              "opera/next",
+              "safari/4.0..latest",
+              "ipad/6.0..latest",
+              "iphone/6.0..latest",
+              "android-browser/4.2"
+            ]
+          },
+          "dependencies": {
+            "promise-deferred": "~2.0.1"
+          },
+          "devDependencies": {
+            "tape": "~3.4.0",
+            "covert": "1.0.0",
+            "jscs": "~1.10.0"
+          },
+          "engines": {
+            "node": ">= 0.4"
+          },
+          "gitHead": "6d08377d6fa106494f61753114934f5cac0f887a",
+          "_id": "promiseback@2.0.1",
+          "_shasum": "ba5dc490e223deae0bc5003982a7893b7c0214a2",
+          "_from": ".",
+          "_npmVersion": "1.4.28",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "dist": {
+            "shasum": "ba5dc490e223deae0bc5003982a7893b7c0214a2",
+            "tarball": "https://registry.npmjs.org/promiseback/-/promiseback-2.0.1.tgz"
+          },
+          "directories": {}
+        },
+        "2.0.2": {
+          "name": "promiseback",
+          "version": "2.0.2",
+          "description": "Accept an optional node-style callback, and also return a spec-compliant Promise!",
+          "main": "index.js",
+          "scripts": {
+            "test": "npm run lint && node test.js && npm run coverage-quiet && npm run security",
+            "coverage": "covert test.js",
+            "coverage-quiet": "covert test.js --quiet",
+            "lint": "npm run jscs && npm run eslint",
+            "jscs": "jscs *.js",
+            "eslint": "eslint *.js",
+            "security": "nsp package"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git+https://github.com/ljharb/promiseback.git"
+          },
+          "keywords": [
+            "promiseback",
+            "promisebacks",
+            "promise",
+            "promises",
+            "callback",
+            "callbacks"
+          ],
+          "author": {
+            "name": "Jordan Harband"
+          },
+          "license": "MIT",
+          "bugs": {
+            "url": "https://github.com/ljharb/promiseback/issues"
+          },
+          "homepage": "https://github.com/ljharb/promiseback",
+          "testling": {
+            "files": "test.js",
+            "browsers": [
+              "iexplore/6.0..latest",
+              "firefox/3.0..6.0",
+              "firefox/15.0..latest",
+              "firefox/nightly",
+              "chrome/4.0..10.0",
+              "chrome/20.0..latest",
+              "chrome/canary",
+              "opera/10.0..latest",
+              "opera/next",
+              "safari/4.0..latest",
+              "ipad/6.0..latest",
+              "iphone/6.0..latest",
+              "android-browser/4.2"
+            ]
+          },
+          "dependencies": {
+            "promise-deferred": "^2.0.1",
+            "is-callable": "^1.1.0"
+          },
+          "devDependencies": {
+            "tape": "^4.2.1",
+            "covert": "^1.1.0",
+            "jscs": "^2.3.1",
+            "eslint": "^1.6.0",
+            "@ljharb/eslint-config": "^1.3.0",
+            "foreach": "^2.0.5",
+            "nsp": "^1.1.0"
+          },
+          "engines": {
+            "node": ">= 0.4"
+          },
+          "gitHead": "fd8a7a3133ececafe358ec9beba3c69e691f9cac",
+          "_id": "promiseback@2.0.2",
+          "_shasum": "424af89a43de0c6a8997bf3cb2d8139447fb3b97",
+          "_from": ".",
+          "_npmVersion": "2.14.7",
+          "_nodeVersion": "4.2.1",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "dist": {
+            "shasum": "424af89a43de0c6a8997bf3cb2d8139447fb3b97",
+            "tarball": "https://registry.npmjs.org/promiseback/-/promiseback-2.0.2.tgz"
+          },
+          "maintainers": [
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "directories": {}
+        },
+        "2.0.3": {
+          "name": "promiseback",
+          "version": "2.0.3",
+          "description": "Accept an optional node-style callback, and also return a spec-compliant Promise!",
+          "main": "index.js",
+          "scripts": {
+            "prepublish": "safe-publish-latest",
+            "pretest": "npm run lint",
+            "tests-only": "node test",
+            "test": "npm run tests-only && npm run coverage -- --quiet",
+            "posttest": "npx aud",
+            "coverage": "covert test/index.js",
+            "lint": "eslint ."
+          },
+          "repository": {
+            "type": "git",
+            "url": "git+https://github.com/ljharb/promiseback.git"
+          },
+          "keywords": [
+            "promiseback",
+            "promisebacks",
+            "promise",
+            "promises",
+            "callback",
+            "callbacks"
+          ],
+          "author": {
+            "name": "Jordan Harband"
+          },
+          "funding": {
+            "url": "https://github.com/sponsors/ljharb"
+          },
+          "license": "MIT",
+          "bugs": {
+            "url": "https://github.com/ljharb/promiseback/issues"
+          },
+          "homepage": "https://github.com/ljharb/promiseback",
+          "testling": {
+            "files": "test/index.js",
+            "browsers": [
+              "iexplore/6.0..latest",
+              "firefox/3.0..6.0",
+              "firefox/15.0..latest",
+              "firefox/nightly",
+              "chrome/4.0..10.0",
+              "chrome/20.0..latest",
+              "chrome/canary",
+              "opera/10.0..latest",
+              "opera/next",
+              "safari/4.0..latest",
+              "ipad/6.0..latest",
+              "iphone/6.0..latest",
+              "android-browser/4.2"
+            ]
+          },
+          "dependencies": {
+            "is-callable": "^1.1.5",
+            "promise-deferred": "^2.0.3"
+          },
+          "devDependencies": {
+            "@ljharb/eslint-config": "^15.1.0",
+            "covert": "^1.1.1",
+            "eslint": "^6.8.0",
+            "foreach": "^2.0.5",
+            "safe-publish-latest": "^1.1.4",
+            "tape": "^5.0.0-next.3"
+          },
+          "engines": {
+            "node": ">= 0.4"
+          },
+          "gitHead": "825c5780cf17113c1b08579f957baa81473fe18e",
+          "_id": "promiseback@2.0.3",
+          "_nodeVersion": "13.6.0",
+          "_npmVersion": "6.13.4",
+          "dist": {
+            "integrity": "sha512-VZXdCwS0ppVNTIRfNsCvVwJAaP2b+pxQF7lM8DMWfmpNWyTxB6O5YNbzs+8z0ki/KIBHKHk308NTIl4kJUem3w==",
+            "shasum": "bd468d86930e8cd44bfc3292de9a6fbafb6378e6",
+            "tarball": "https://registry.npmjs.org/promiseback/-/promiseback-2.0.3.tgz",
+            "fileCount": 9,
+            "unpackedSize": 13536,
+            "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeHqAyCRA9TVsSAnZWagAANvEP/1Awktsn/2UiF63Zbyla\nR9GUQSiY8nD3Eb54lmP2sklPFXRNW5q33DLh3Yg9wD2IRaCWHg7tviuoo8mU\nERAWIBdidL4bkLJ+cNuEH9wEFe1lDMTi0w1HJYuomgVWeJKBbGPEea5b97Zi\nPejCsMhVcLWihb230UFRoZMxjlXEktngx5AO/xLrOtrNUiflXvkXFbDxvGwi\nvYhXJLn1v/D+vxsDe2f39vwNWOlO2IBEiP99V4Trit1qEpLkwUoTKQYVeQ/x\n3BhxkZ5M1mxa3Dx3LT/MHUMkCzZiRouIgCYepRiYIvhPkl6VUoyWEzgqRS1d\nEQpldUcz0Xgf2B0eUD5100Qc8DuAT8IIVzQOViwWe8wjv/bRErJmXkOhPYEr\nXmW0eji+YaZ8LgBxmsIn1tybw/4DXJ+Wkd/jo4mwjCc702InSKkmDbA+X/h2\nW75T7mbsgbgHrFtJuLwXj9qMkurYf2/T86jMTYLK1vsTVLf72BueN4wf2+2I\nY397X5wW13IRkD5SVgeWY1kRu649E6atJK8GCmrDo8WbfO4fKAKwIPJobQS2\nB8dxr0g3FOjHi1AYjgEMVzAr4I89SzUyPVnGw28MHHpWZqX7ZIpvUBqnRQcy\nH4sCRiTGqtLylgW4O2YXQgqF1r2JSkJzsIJAt48UdEMXNL04c4emXpM5R4Gx\nWYQk\r\n=CL2V\r\n-----END PGP SIGNATURE-----\r\n"
+          },
+          "maintainers": [
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "directories": {},
+          "_npmOperationalInternal": {
+            "host": "s3://npm-registry-packages",
+            "tmp": "tmp/promiseback_2.0.3_1579065393958_0.6900733486144781"
+          },
+          "_hasShrinkwrap": false
+        }
+      },
+      "readme": "#promiseback <sup>[![Version Badge][npm-version-svg]][npm-url]</sup>\n\n[![Build Status][travis-svg]][travis-url]\n[![dependency status][deps-svg]][deps-url]\n[![dev dependency status][dev-deps-svg]][dev-deps-url]\n\n[![npm badge][npm-badge-png]][npm-url]\n\n[![browser support][testling-png]][testling-url]\n\nAccept an optional node-style callback, and also return a spec-compliant Promise!\n\n## API\n```js\nvar promiseback = require('promiseback');\nvar callback = function (err, value) {};\n\n/* without a promise: */\npromiseback(callback);\n\t/*\n\t\t- will throw if `callback` is not a function\n\t\t- returns a \"deferred\"\n\t\t- has resolve/reject methods, and `promise` property\n\t\t- will call `callback` as expected when deferred is resolved\n\t*/\n\n/* with a promise: */\npromiseback(promise, callback);\n\t/*\n\t\t- will throw if `callback` is truthy and not a function\n\t\t- `promise` will be converted to a Promise, so you can pass a value as well\n\t\t- returns a Promise\n\t\t- will call `callback` as expected when the promise is fulfilled\n\t*/\n```\n\n## Examples\n\nUsing deferreds:\n```js\nvar promiseback = require('promiseback');\n\nmodule.exports = function doSomethingCool(thing, callback) {\n\t// If callback is not provided, this code will simply return a normal promise.\n\t// If callback is provided but is not a function, promiseback will immediately throw a TypeError.\n\n\t// \"deferred\" is an object with `reject/resolve` methods, and a `promise` property.\n\tvar deferred = promiseback(callback);\n\tif (thing) {\n\t\tdeferred.resolve(thing);\n\t} else {\n\t\tdeferred.reject(thing);\n\t}\n\treturn deferred.promise;\n};\n```\n\nUsing a straight promise, when you can get it from somewhere else:\n```js\nvar promiseback = require('promiseback');\n\nmodule.exports = function doSomethingCool(thing, callback) {\n\t// If callback is not provided, this code will simply return a normal promise.\n\t// If callback is provided but is not a function, promiseback will immediately throw a TypeError.\n\n\tvar newThingPromise = makeNewThing(thing);\n\treturn promiseback(newThingPromise, callback);\n};\n```\n\n## Tests\nSimply clone the repo, `npm install`, and run `npm test`\n\n[npm-url]: https://npmjs.org/package/promiseback\n[npm-version-svg]: http://versionbadg.es/ljharb/promiseback.svg\n[travis-svg]: https://travis-ci.org/ljharb/promiseback.svg\n[travis-url]: https://travis-ci.org/ljharb/promiseback\n[deps-svg]: https://david-dm.org/ljharb/promiseback.svg\n[deps-url]: https://david-dm.org/ljharb/promiseback\n[dev-deps-svg]: https://david-dm.org/ljharb/promiseback/dev-status.svg\n[dev-deps-url]: https://david-dm.org/ljharb/promiseback#info=devDependencies\n[testling-png]: https://ci.testling.com/ljharb/promiseback.png\n[testling-url]: https://ci.testling.com/ljharb/promiseback\n[npm-badge-png]: https://nodei.co/npm/promiseback.png?downloads=true&stars=true\n",
+      "maintainers": [
+        {
+          "name": "ljharb",
+          "email": "ljharb@gmail.com"
+        }
+      ],
+      "time": {
+        "modified": "2020-01-15T05:16:36.573Z",
+        "created": "2013-12-30T09:38:56.803Z",
+        "0.1.0": "2013-12-30T09:38:56.803Z",
+        "0.2.0": "2014-03-16T08:01:25.354Z",
+        "0.3.0": "2014-04-30T05:10:52.052Z",
+        "1.0.0": "2014-08-10T17:53:28.527Z",
+        "1.0.1": "2014-08-28T09:35:16.991Z",
+        "1.0.2": "2014-08-28T09:37:26.936Z",
+        "2.0.0": "2014-09-13T07:44:46.552Z",
+        "2.0.1": "2015-01-20T08:02:32.698Z",
+        "2.0.2": "2015-10-15T03:46:53.582Z",
+        "2.0.3": "2020-01-15T05:16:34.092Z"
+      },
+      "users": {
+        "developit": true
+      },
+      "readmeFilename": "README.md",
+      "homepage": "https://github.com/ljharb/promiseback",
+      "keywords": [
+        "promiseback",
+        "promisebacks",
+        "promise",
+        "promises",
+        "callback",
+        "callbacks"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ljharb/promiseback.git"
+      },
+      "author": {
+        "name": "Jordan Harband"
+      },
+      "bugs": {
+        "url": "https://github.com/ljharb/promiseback/issues"
+      },
+      "license": "MIT"
+    }
+  }
+}

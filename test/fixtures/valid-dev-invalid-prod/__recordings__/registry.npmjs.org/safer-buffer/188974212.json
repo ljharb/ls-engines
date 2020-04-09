@@ -1,0 +1,56 @@
+{
+  "request": {
+    "method": "GET",
+    "href": "https://registry.npmjs.org/safer-buffer",
+    "headers": {
+      "connection": [
+        "keep-alive"
+      ],
+      "user-agent": [
+        "pacote/11.1.0 node/v13.10.1"
+      ],
+      "npm-in-ci": [
+        "false"
+      ],
+      "pacote-version": [
+        "11.1.0"
+      ],
+      "pacote-req-type": [
+        "packument"
+      ],
+      "pacote-pkg-id": [
+        "registry:safer-buffer"
+      ],
+      "accept": [
+        "application/vnd.npm.install-v1+json; q=1.0, application/json; q=0.8, */*"
+      ],
+      "accept-encoding": [
+        "gzip,deflate"
+      ]
+    },
+    "body": ""
+  },
+  "response": {
+    "statusCode": 200,
+    "headers": {
+      "date": "Thu, 12 Mar 2020 05:00:08 GMT",
+      "content-type": "application/vnd.npm.install-v1+json",
+      "content-length": "2445",
+      "connection": "keep-alive",
+      "set-cookie": [
+        "__cfduid=dc1e6c1dc83a2c4b0fe42bdf5b0d928d51583989208; expires=Sat, 11-Apr-20 05:00:08 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax"
+      ],
+      "cf-ray": "572af3263d319388-SJC",
+      "accept-ranges": "bytes",
+      "age": "7182",
+      "cache-control": "public, max-age=300",
+      "etag": "\"6b85e8cd5e131f4b487554cc344d56a9\"",
+      "last-modified": "Sat, 15 Feb 2020 13:10:06 GMT",
+      "vary": "accept-encoding, accept",
+      "cf-cache-status": "HIT",
+      "expect-ct": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"",
+      "server": "cloudflare"
+    },
+    "body": "{\"name\":\"safer-buffer\",\"dist-tags\":{\"latest\":\"2.1.2\"},\"versions\":{\"2.0.0\":{\"name\":\"safer-buffer\",\"version\":\"2.0.0\",\"devDependencies\":{\"standard\":\"^11.0.1\",\"tape\":\"^4.9.0\"},\"dist\":{\"integrity\":\"sha512-xfyC9tPVPALdc+v+iF5EgNWLq2tBaVLCqcwPjvZ6oNzzL/q4Bh0D+dFy90dVlX6RkCzqamJhBcxgG72DCmZ2XQ==\",\"shasum\":\"a780a965ff6375210b360a969581ceaf60600193\",\"tarball\":\"https://registry.npmjs.org/safer-buffer/-/safer-buffer-2.0.0.tgz\",\"fileCount\":5,\"unpackedSize\":19297}},\"2.0.1\":{\"name\":\"safer-buffer\",\"version\":\"2.0.1\",\"devDependencies\":{\"standard\":\"^11.0.1\",\"tape\":\"^4.9.0\"},\"dist\":{\"integrity\":\"sha512-3i2tOIUGJ6ZOIJ0FPTN+K/6iFBZUGB6fCee1PQGrLaioDFPLWQCaRJeBMMTpdSMCRAmuyu7FSJKnjriAmE/aQA==\",\"shasum\":\"9b158aab695aa93d8259a038d9f7836c8fd7fabf\",\"tarball\":\"https://registry.npmjs.org/safer-buffer/-/safer-buffer-2.0.1.tgz\",\"fileCount\":6,\"unpackedSize\":21003}},\"2.0.2\":{\"name\":\"safer-buffer\",\"version\":\"2.0.2\",\"devDependencies\":{\"standard\":\"^11.0.1\",\"tape\":\"^4.9.0\"},\"dist\":{\"integrity\":\"sha512-n7d2A1kx/NW7bow4A2jx111qpYsF0qDhvfHssl+FIuXY8skGswVCIXoo8AUt72d8vK6R3teMjHIV1Yt7Q/m08A==\",\"shasum\":\"d5e5d219697d92d1c138e0037525fd99d0ebbdf0\",\"tarball\":\"https://registry.npmjs.org/safer-buffer/-/safer-buffer-2.0.2.tgz\",\"fileCount\":7,\"unpackedSize\":36955}},\"2.1.0\":{\"name\":\"safer-buffer\",\"version\":\"2.1.0\",\"devDependencies\":{\"standard\":\"^11.0.1\",\"tape\":\"^4.9.0\"},\"dist\":{\"integrity\":\"sha512-HQhCIIl7TrF1aa7d352EXG+xumPERvoIWxOqq2CagDId0FVGtlG/fuQ7kZT+wZ7ytyGiP3pnYUVni5otBzOVmA==\",\"shasum\":\"d9f653a55538c8d7829cb1a92e90bbcbc5ff5d3b\",\"tarball\":\"https://registry.npmjs.org/safer-buffer/-/safer-buffer-2.1.0.tgz\",\"fileCount\":7,\"unpackedSize\":41366}},\"2.1.1\":{\"name\":\"safer-buffer\",\"version\":\"2.1.1\",\"devDependencies\":{\"standard\":\"^11.0.1\",\"tape\":\"^4.9.0\"},\"dist\":{\"integrity\":\"sha512-sSsAhyRw8mBRo96T6nsCCAQosFTc79+wYWbiECHP5P03a7wE76VAbbLysuJ8EEfBhElIsLZau+WNWES4Y/IQSA==\",\"shasum\":\"2e945f82c9a380e8e3b7c1a1bc21c976bb49f3ea\",\"tarball\":\"https://registry.npmjs.org/safer-buffer/-/safer-buffer-2.1.1.tgz\",\"fileCount\":7,\"unpackedSize\":42153}},\"2.1.2\":{\"name\":\"safer-buffer\",\"version\":\"2.1.2\",\"devDependencies\":{\"standard\":\"^11.0.1\",\"tape\":\"^4.9.0\"},\"dist\":{\"integrity\":\"sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==\",\"shasum\":\"44fa161b0187b9549dd84bb91802f9bd8385cd6a\",\"tarball\":\"https://registry.npmjs.org/safer-buffer/-/safer-buffer-2.1.2.tgz\",\"fileCount\":7,\"unpackedSize\":42299}}},\"modified\":\"2018-04-08T10:42:42.789Z\"}"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "request": {
+    "method": "GET",
+    "href": "https://registry.npmjs.org/promise-deferred",
+    "headers": {
+      "connection": [
+        "keep-alive"
+      ],
+      "user-agent": [
+        "pacote/11.1.0 node/v13.10.1"
+      ],
+      "npm-in-ci": [
+        "false"
+      ],
+      "pacote-version": [
+        "11.1.0"
+      ],
+      "pacote-req-type": [
+        "packument"
+      ],
+      "pacote-pkg-id": [
+        "registry:promise-deferred"
+      ],
+      "accept": [
+        "application/vnd.npm.install-v1+json; q=1.0, application/json; q=0.8, */*"
+      ],
+      "accept-encoding": [
+        "gzip,deflate"
+      ]
+    },
+    "body": ""
+  },
+  "response": {
+    "statusCode": 200,
+    "headers": {
+      "date": "Thu, 12 Mar 2020 04:58:38 GMT",
+      "content-type": "application/vnd.npm.install-v1+json",
+      "content-length": "5392",
+      "connection": "keep-alive",
+      "set-cookie": [
+        "__cfduid=d1994dcf3578130035314683037d6a7ea1583989118; expires=Sat, 11-Apr-20 04:58:38 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax"
+      ],
+      "cf-ray": "572af0f5ec07ed5f-SJC",
+      "accept-ranges": "bytes",
+      "age": "4",
+      "cache-control": "public, max-age=300",
+      "etag": "\"2388d5d9094ab50846a8dfaa6a5d71c2\"",
+      "last-modified": "Sat, 15 Feb 2020 09:18:38 GMT",
+      "vary": "accept-encoding, accept",
+      "cf-cache-status": "HIT",
+      "expect-ct": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"",
+      "server": "cloudflare"
+    },
+    "body": "{\"name\":\"promise-deferred\",\"dist-tags\":{\"latest\":\"2.0.3\"},\"versions\":{\"0.1.0\":{\"name\":\"promise-deferred\",\"version\":\"0.1.0\",\"dependencies\":{\"promise\":\"~3.2.0\"},\"devDependencies\":{\"tape\":\"~2.3.2\",\"covert\":\"~0.2.0\"},\"dist\":{\"shasum\":\"1e1e37b24140daa9c3923aa66eb863beeb07cdb1\",\"tarball\":\"https://registry.npmjs.org/promise-deferred/-/promise-deferred-0.1.0.tgz\"}},\"0.1.1\":{\"name\":\"promise-deferred\",\"version\":\"0.1.1\",\"dependencies\":{\"promise\":\"~4.0.0\"},\"devDependencies\":{\"tape\":\"~2.10.2\",\"covert\":\"~0.3.1\"},\"dist\":{\"shasum\":\"92f398ce1573aa223962f4037f7e2d71a306f1e1\",\"tarball\":\"https://registry.npmjs.org/promise-deferred/-/promise-deferred-0.1.1.tgz\"},\"engines\":{\"node\":\">= 0.4\"}},\"0.2.0\":{\"name\":\"promise-deferred\",\"version\":\"0.2.0\",\"dependencies\":{\"promise\":\"~5.0.0\"},\"devDependencies\":{\"tape\":\"~2.12.3\",\"covert\":\"~0.4.0\"},\"dist\":{\"shasum\":\"96de1154fb7659d7c2bd9121b6bc76ecbb635c36\",\"tarball\":\"https://registry.npmjs.org/promise-deferred/-/promise-deferred-0.2.0.tgz\"},\"engines\":{\"node\":\">= 0.4\"}},\"1.0.0\":{\"name\":\"promise-deferred\",\"version\":\"1.0.0\",\"dependencies\":{\"promise\":\"~5.0.0\"},\"devDependencies\":{\"tape\":\"~2.14.0\",\"covert\":\"~0.4.0\"},\"dist\":{\"shasum\":\"221d5b6112d1b6d52c8225c52afe5d310bbf613f\",\"tarball\":\"https://registry.npmjs.org/promise-deferred/-/promise-deferred-1.0.0.tgz\"},\"engines\":{\"node\":\">= 0.4\"}},\"1.0.1\":{\"name\":\"promise-deferred\",\"version\":\"1.0.1\",\"dependencies\":{\"promise\":\"~5.0.0\"},\"devDependencies\":{\"tape\":\"~2.14.0\",\"covert\":\"~1.0.0\",\"jscs\":\"~1.5.9\"},\"dist\":{\"shasum\":\"7c5d5c48d2b14daf1ff43ca899a9671695f7240a\",\"tarball\":\"https://registry.npmjs.org/promise-deferred/-/promise-deferred-1.0.1.tgz\"},\"engines\":{\"node\":\">= 0.4\"}},\"2.0.0\":{\"name\":\"promise-deferred\",\"version\":\"2.0.0\",\"dependencies\":{\"promise\":\"~6.0.0\"},\"devDependencies\":{\"tape\":\"~2.14.0\",\"covert\":\"~1.0.0\",\"jscs\":\"~1.6.1\"},\"dist\":{\"shasum\":\"652848acaca3d8c670ff906d520d46cda61ad939\",\"tarball\":\"https://registry.npmjs.org/promise-deferred/-/promise-deferred-2.0.0.tgz\"},\"engines\":{\"node\":\">= 0.4\"}},\"2.0.1\":{\"name\":\"promise-deferred\",\"version\":\"2.0.1\",\"dependencies\":{\"promise\":\"~6.1.0\"},\"devDependencies\":{\"tape\":\"~3.4.0\",\"covert\":\"1.0.0\",\"jscs\":\"~1.10.0\"},\"dist\":{\"shasum\":\"b05398f1a43f6d87be0c97c52040046e83eb5454\",\"tarball\":\"https://registry.npmjs.org/promise-deferred/-/promise-deferred-2.0.1.tgz\"},\"engines\":{\"node\":\">= 0.4\"}},\"2.0.2\":{\"name\":\"promise-deferred\",\"version\":\"2.0.2\",\"dependencies\":{\"promise\":\"^8.0.3\"},\"devDependencies\":{\"@ljharb/eslint-config\":\"^15.1.0\",\"auto-changelog\":\"^1.16.2\",\"covert\":\"^1.1.1\",\"eslint\":\"^6.8.0\",\"tape\":\"^5.0.0-next.3\"},\"dist\":{\"integrity\":\"sha512-+D67Y2Aa4ctz/4epqb7gykwJ43ue47rvMVZ7ZkNpxI+gylAkI9Tl/H+m1vF9X6e368Q1bz/QLX7o1CP2oDHgXQ==\",\"shasum\":\"4cd047ad04b8465e33b818a8cb3c56a21a4669f2\",\"tarball\":\"https://registry.npmjs.org/promise-deferred/-/promise-deferred-2.0.2.tgz\",\"fileCount\":9,\"unpackedSize\":18894,\"npm-signature\":\"-----BEGIN PGP SIGNATURE-----\\r\\nVersion: OpenPGP.js v3.0.4\\r\\nComment: https://openpgpjs.org\\r\\n\\r\\nwsFcBAEBCAAQBQJeHiBTCRA9TVsSAnZWagAAQvkP/jMUKqBgwHZlfCB+7lzY\\nUt7rTRN7OgNjytftOuRDgpQUtinabimBAxjkrw0xBJTZUGnS7g0ARteJ0Dxg\\nHhvx4DFvWADMibIqebAslcvlJF3w3/Hd05TXi1eKl1KYTwE1TdIrsbfE4Oy/\\nqEric+Rv9JPx8kEUnr/Zl2+j+Tt/Hre/QUBtfDwJq8TtXlvksFWYhkqQ1Hsk\\n6a6otU+IT6SbOTRGyli/jIpo1yMy89lxs4c3CTyWV3ymRa40kVgbLaq5hbNn\\nxVp3L6WhMAVQpYdyVqpXBZi95p1PgXMjiXmOO9lE1xLPULQSVerCnYNd5JOT\\n+Xpbwyw0zudouVkJs9GEevCFq0l84Hhs62tdMnooVkUWp9lT2FeOzPP9yWdH\\n474yG9T3I87KXZgxTpKUmGHznLwVkk70REfkmA7CyqF07Pdve9DPR/2v7lyY\\nJH6nRRZr5QMk8OkjfYOfWvr8AZmcX0RGcEpJq7IjNUjQsWAsnp9+S6unFlHe\\no4r2biNIB/JS7KT5lTvmQmtIJxr9Lpvp2M5dFrBTTPkRhkETOHq5YHmMpxzj\\nAR34Pqj1ZBI0Zjp/cGq+WI42IbySiwlk0pXQU+TfZtcnUfsnIVBWDp08IFlL\\nvsYAH+wKZJn6c34iJ1KHNm66i79o8ksFv7f1eGjTr1O/5nnQXobsGMXs/nCy\\n1zTN\\r\\n=DWNe\\r\\n-----END PGP SIGNATURE-----\\r\\n\"},\"engines\":{\"node\":\">= 0.4\"},\"funding\":{\"url\":\"https://github.com/sponsors/ljharb\"}},\"2.0.3\":{\"name\":\"promise-deferred\",\"version\":\"2.0.3\",\"dependencies\":{\"promise\":\"^7.3.1\"},\"devDependencies\":{\"@ljharb/eslint-config\":\"^15.1.0\",\"auto-changelog\":\"^1.16.2\",\"covert\":\"^1.1.1\",\"eslint\":\"^6.8.0\",\"tape\":\"^5.0.0-next.3\"},\"dist\":{\"integrity\":\"sha512-n10XaoznCzLfyPFOlEE8iurezHpxrYzyjgq/1eW9Wk1gJwur/N7BdBmjJYJpqMeMcXK4wEbzo2EvZQcqjYcKUQ==\",\"shasum\":\"b99c9588820798501862a593d49cece51d06fd7f\",\"tarball\":\"https://registry.npmjs.org/promise-deferred/-/promise-deferred-2.0.3.tgz\",\"fileCount\":9,\"unpackedSize\":19174,\"npm-signature\":\"-----BEGIN PGP SIGNATURE-----\\r\\nVersion: OpenPGP.js v3.0.4\\r\\nComment: https://openpgpjs.org\\r\\n\\r\\nwsFcBAEBCAAQBQJeHkRkCRA9TVsSAnZWagAArDUP/1DZHlTwaN2qjw/2ONV+\\nYN09Lj3hkPIdUZtxC87ezjCf/Hr2K9krCwH4McNcNTF7M3JIgaE+/lW4HdBX\\nBN+QpW8Ae3RuFOSgci93fWIrU0f1ve1YRTxcYPW5NwZBST5Cs3gqFRzee1J9\\nDXqME4Y4Q8GoxvXTeTGMU1U/zlZ3zs6xR3/B7m8kBfO9chMd6lEhD4ibt/iY\\nweM3BK02//8dueGXGCTWSePAOfdDpErPSprXhr7Cbo2Xv8seRK30myfz00oO\\nLgIwOQeEtIUjppdZWKn8wdvWG9ey/9XqyfVmhcIYHEbNRT2+CPP0QpBnGSLI\\n6AmLNirwxk2+uyjFdt7S6eMBhh238x0l1g04E9Cg8e8F4W4krErfgtmPKb/B\\nULSKC2Vv2TlVmGimRevH57HxlPSLiE72UfvTrGwjL7GrPsU9KERKnFYCMek6\\n8MyfeQWa+s/Ovad7kgaEyls0CP1oStlzaYKkPKnUsImA8ovyUdlzSWG37m3a\\n88LjPy7i5fSWkAJMIyK1tSt2TaIfsxP11E2an1ErGK/waO5y8Teor/UpenLh\\nlznDOqUUJUFiFAF3k11c5as4t1zDuXd7XWNKGCiNguFwy5PpUic5XiKy15WP\\nK8stNI/W3/yM9tb0IQM4Bxz9zz6VqHEykJuTCeOG6cSv1Kvt3MnIaWiy34pz\\n1zMP\\r\\n=9f28\\r\\n-----END PGP SIGNATURE-----\\r\\n\"},\"engines\":{\"node\":\">= 0.4\"},\"funding\":{\"url\":\"https://github.com/sponsors/ljharb\"}}},\"modified\":\"2020-01-14T22:44:55.109Z\"}"
+  }
+}

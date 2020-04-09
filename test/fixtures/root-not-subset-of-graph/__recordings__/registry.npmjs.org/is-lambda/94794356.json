@@ -1,0 +1,229 @@
+{
+  "request": {
+    "method": "GET",
+    "href": "https://registry.npmjs.org/is-lambda",
+    "headers": {
+      "connection": [
+        "keep-alive"
+      ],
+      "user-agent": [
+        "pacote/11.1.0 node/v13.10.1"
+      ],
+      "npm-in-ci": [
+        "false"
+      ],
+      "pacote-version": [
+        "11.1.0"
+      ],
+      "pacote-req-type": [
+        "packument"
+      ],
+      "pacote-pkg-id": [
+        "registry:is-lambda"
+      ],
+      "accept": [
+        "application/json"
+      ],
+      "accept-encoding": [
+        "gzip,deflate"
+      ]
+    },
+    "body": ""
+  },
+  "response": {
+    "statusCode": 200,
+    "headers": {
+      "date": "Thu, 12 Mar 2020 04:59:23 GMT",
+      "content-type": "application/json; charset=UTF-8",
+      "connection": "keep-alive",
+      "set-cookie": [
+        "__cfduid=d6e33ccbad033e8a63094ffb03416a6ca1583989163; expires=Sat, 11-Apr-20 04:59:23 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax"
+      ],
+      "cf-ray": "572af20f5e78ed77-SJC",
+      "age": "5",
+      "cache-control": "public, max-age=300",
+      "etag": "W/\"d2d734d905783e2f0bd056728ebe057e\"",
+      "last-modified": "Sun, 27 May 2018 04:59:18 GMT",
+      "vary": "accept-encoding, accept",
+      "cf-cache-status": "HIT",
+      "expect-ct": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"",
+      "server": "cloudflare",
+      "content-encoding": "application/json"
+    },
+    "body": {
+      "_id": "is-lambda",
+      "_rev": "2-e5670940fa79b94270d38443a4622636",
+      "name": "is-lambda",
+      "description": "Detect if your code is running on an AWS Lambda server",
+      "dist-tags": {
+        "latest": "1.0.1"
+      },
+      "versions": {
+        "1.0.0": {
+          "name": "is-lambda",
+          "version": "1.0.0",
+          "description": "Detect if your code is running on an AWS Lambda server",
+          "main": "index.js",
+          "dependencies": {},
+          "devDependencies": {
+            "clear-require": "^1.0.1",
+            "standard": "^6.0.4"
+          },
+          "scripts": {
+            "test": "standard && node test.js"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git+https://github.com/watson/is-lambda.git"
+          },
+          "keywords": [
+            "aws",
+            "hosting",
+            "hosted",
+            "lambda",
+            "detect"
+          ],
+          "author": {
+            "name": "Thomas Watson Steen",
+            "email": "w@tson.dk",
+            "url": "https://twitter.com/wa7son"
+          },
+          "license": "MIT",
+          "bugs": {
+            "url": "https://github.com/watson/is-lambda/issues"
+          },
+          "homepage": "https://github.com/watson/is-lambda",
+          "coordinates": [
+            55.6665749,
+            12.5801368
+          ],
+          "gitHead": "c84d875f9071d174cd1be2b2f292c3d9e48bb731",
+          "_id": "is-lambda@1.0.0",
+          "_shasum": "01e25e8e83d774987f9a2bd6b1d99a88e3d93af4",
+          "_from": ".",
+          "_npmVersion": "2.14.7",
+          "_nodeVersion": "4.2.2",
+          "_npmUser": {
+            "name": "watson",
+            "email": "w@tson.dk"
+          },
+          "maintainers": [
+            {
+              "name": "watson",
+              "email": "w@tson.dk"
+            }
+          ],
+          "dist": {
+            "shasum": "01e25e8e83d774987f9a2bd6b1d99a88e3d93af4",
+            "tarball": "https://registry.npmjs.org/is-lambda/-/is-lambda-1.0.0.tgz"
+          },
+          "_npmOperationalInternal": {
+            "host": "packages-6-west.internal.npmjs.com",
+            "tmp": "tmp/is-lambda-1.0.0.tgz_1455301879480_0.2202226109802723"
+          },
+          "directories": {}
+        },
+        "1.0.1": {
+          "name": "is-lambda",
+          "version": "1.0.1",
+          "description": "Detect if your code is running on an AWS Lambda server",
+          "main": "index.js",
+          "dependencies": {},
+          "devDependencies": {
+            "clear-require": "^1.0.1",
+            "standard": "^10.0.2"
+          },
+          "scripts": {
+            "test": "standard && node test.js"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git+https://github.com/watson/is-lambda.git"
+          },
+          "keywords": [
+            "aws",
+            "hosting",
+            "hosted",
+            "lambda",
+            "detect"
+          ],
+          "author": {
+            "name": "Thomas Watson Steen",
+            "email": "w@tson.dk",
+            "url": "https://twitter.com/wa7son"
+          },
+          "license": "MIT",
+          "bugs": {
+            "url": "https://github.com/watson/is-lambda/issues"
+          },
+          "homepage": "https://github.com/watson/is-lambda",
+          "coordinates": [
+            37.3859955,
+            -122.0838831
+          ],
+          "gitHead": "9e6734e406f4f84f1f5540a8e5115d6e00f860ff",
+          "_id": "is-lambda@1.0.1",
+          "_shasum": "3d9877899e6a53efc0160504cde15f82e6f061d5",
+          "_from": ".",
+          "_npmVersion": "4.2.0",
+          "_nodeVersion": "7.10.0",
+          "_npmUser": {
+            "name": "watson",
+            "email": "w@tson.dk"
+          },
+          "maintainers": [
+            {
+              "name": "watson",
+              "email": "w@tson.dk"
+            }
+          ],
+          "dist": {
+            "shasum": "3d9877899e6a53efc0160504cde15f82e6f061d5",
+            "tarball": "https://registry.npmjs.org/is-lambda/-/is-lambda-1.0.1.tgz"
+          },
+          "_npmOperationalInternal": {
+            "host": "s3://npm-registry-packages",
+            "tmp": "tmp/is-lambda-1.0.1.tgz_1495652830893_0.7506156389135867"
+          },
+          "directories": {}
+        }
+      },
+      "readme": "# is-lambda\n\nReturns `true` if the current environment is an [AWS\nLambda](https://aws.amazon.com/lambda/) server.\n\n[![Build status](https://travis-ci.org/watson/is-lambda.svg?branch=master)](https://travis-ci.org/watson/is-lambda)\n[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)\n\n## Installation\n\n```\nnpm install is-lambda\n```\n\n## Usage\n\n```js\nvar isLambda = require('is-lambda')\n\nif (isLambda) {\n  console.log('The code is running on a AWS Lambda')\n}\n```\n\n## License\n\nMIT\n",
+      "maintainers": [
+        {
+          "name": "watson",
+          "email": "w@tson.dk"
+        }
+      ],
+      "time": {
+        "modified": "2017-05-24T19:07:11.056Z",
+        "created": "2016-02-12T18:31:22.835Z",
+        "1.0.0": "2016-02-12T18:31:22.835Z",
+        "1.0.1": "2017-05-24T19:07:11.056Z"
+      },
+      "homepage": "https://github.com/watson/is-lambda",
+      "keywords": [
+        "aws",
+        "hosting",
+        "hosted",
+        "lambda",
+        "detect"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/watson/is-lambda.git"
+      },
+      "author": {
+        "name": "Thomas Watson Steen",
+        "email": "w@tson.dk",
+        "url": "https://twitter.com/wa7son"
+      },
+      "bugs": {
+        "url": "https://github.com/watson/is-lambda/issues"
+      },
+      "license": "MIT",
+      "readmeFilename": "README.md",
+      "_attachments": {}
+    }
+  }
+}

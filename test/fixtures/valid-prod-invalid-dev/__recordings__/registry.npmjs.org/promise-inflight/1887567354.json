@@ -1,0 +1,56 @@
+{
+  "request": {
+    "method": "GET",
+    "href": "https://registry.npmjs.org/promise-inflight",
+    "headers": {
+      "connection": [
+        "keep-alive"
+      ],
+      "user-agent": [
+        "pacote/11.1.0 node/v13.10.1"
+      ],
+      "npm-in-ci": [
+        "false"
+      ],
+      "pacote-version": [
+        "11.1.0"
+      ],
+      "pacote-req-type": [
+        "packument"
+      ],
+      "pacote-pkg-id": [
+        "registry:promise-inflight"
+      ],
+      "accept": [
+        "application/vnd.npm.install-v1+json; q=1.0, application/json; q=0.8, */*"
+      ],
+      "accept-encoding": [
+        "gzip,deflate"
+      ]
+    },
+    "body": ""
+  },
+  "response": {
+    "statusCode": 200,
+    "headers": {
+      "date": "Thu, 12 Mar 2020 05:00:21 GMT",
+      "content-type": "application/vnd.npm.install-v1+json",
+      "content-length": "546",
+      "connection": "keep-alive",
+      "set-cookie": [
+        "__cfduid=d6c3d3f642e5dbbe2645861c5bf747d651583989221; expires=Sat, 11-Apr-20 05:00:21 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax"
+      ],
+      "cf-ray": "572af3775e2b6d2e-SJC",
+      "accept-ranges": "bytes",
+      "age": "844",
+      "cache-control": "public, max-age=300",
+      "etag": "\"fe862b143aed2207985bbea53b693727\"",
+      "last-modified": "Sat, 15 Feb 2020 09:18:54 GMT",
+      "vary": "accept-encoding, accept",
+      "cf-cache-status": "HIT",
+      "expect-ct": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"",
+      "server": "cloudflare"
+    },
+    "body": "{\"name\":\"promise-inflight\",\"dist-tags\":{\"latest\":\"1.0.1\"},\"versions\":{\"1.0.0\":{\"name\":\"promise-inflight\",\"version\":\"1.0.0\",\"dependencies\":{\"bluebird\":\"^3.4.7\"},\"dist\":{\"shasum\":\"94d19b043a508a584969bb15f675810569dbbb50\",\"tarball\":\"https://registry.npmjs.org/promise-inflight/-/promise-inflight-1.0.0.tgz\"}},\"1.0.1\":{\"name\":\"promise-inflight\",\"version\":\"1.0.1\",\"dist\":{\"shasum\":\"98472870bf228132fcbdd868129bad12c3c029e3\",\"tarball\":\"https://registry.npmjs.org/promise-inflight/-/promise-inflight-1.0.1.tgz\"}}},\"modified\":\"2017-08-14T22:43:57.269Z\"}"
+  }
+}

@@ -1,0 +1,1947 @@
+{
+  "request": {
+    "method": "GET",
+    "href": "https://registry.npmjs.org/json-file-plus",
+    "headers": {
+      "connection": [
+        "keep-alive"
+      ],
+      "user-agent": [
+        "pacote/11.1.0 node/v13.10.1"
+      ],
+      "npm-in-ci": [
+        "false"
+      ],
+      "pacote-version": [
+        "11.1.0"
+      ],
+      "pacote-req-type": [
+        "packument"
+      ],
+      "pacote-pkg-id": [
+        "registry:json-file-plus"
+      ],
+      "accept": [
+        "application/json"
+      ],
+      "accept-encoding": [
+        "gzip,deflate"
+      ]
+    },
+    "body": ""
+  },
+  "response": {
+    "statusCode": 200,
+    "headers": {
+      "date": "Thu, 12 Mar 2020 04:58:44 GMT",
+      "content-type": "application/json; charset=UTF-8",
+      "connection": "keep-alive",
+      "set-cookie": [
+        "__cfduid=d1517d94cd5079d9045ef6f4a792398991583989124; expires=Sat, 11-Apr-20 04:58:44 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax"
+      ],
+      "cf-ray": "572af11e1cf693a0-SJC",
+      "age": "4",
+      "cache-control": "public, max-age=300",
+      "etag": "W/\"027c9f50910d7d7f018703ff94c2fd41\"",
+      "last-modified": "Sun, 27 May 2018 05:39:05 GMT",
+      "vary": "accept-encoding, accept",
+      "cf-cache-status": "HIT",
+      "expect-ct": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"",
+      "server": "cloudflare",
+      "content-encoding": "application/json"
+    },
+    "body": {
+      "_id": "json-file-plus",
+      "_rev": "80-021895bc85010bd0c8f9ee697bcebd47",
+      "name": "json-file-plus",
+      "description": "Read from and write to a JSON file, minimizing diffs and preserving formatting.",
+      "dist-tags": {
+        "latest": "3.3.1"
+      },
+      "versions": {
+        "0.0.1": {
+          "name": "json-file-plus",
+          "version": "0.0.1",
+          "author": {
+            "name": "Jordan Harband"
+          },
+          "description": "Read from and write to a JSON file, minimizing diffs and preserving formatting.",
+          "license": "MIT",
+          "main": "index.js",
+          "scripts": {
+            "test": "node test/test.js"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/ljharb/node-json-file.git"
+          },
+          "keywords": [
+            "json",
+            "json file",
+            "formatting",
+            "read",
+            "write"
+          ],
+          "dependencies": {
+            "is-extended": "~0.0.4",
+            "node.extend": "~1.0.1",
+            "optimist": "~0.3.5"
+          },
+          "devDependencies": {
+            "tape": "~0.3.2"
+          },
+          "_id": "json-file-plus@0.0.1",
+          "dist": {
+            "shasum": "f7714d42aa064133ade0a63e82ef18b33a3111b5",
+            "tarball": "https://registry.npmjs.org/json-file-plus/-/json-file-plus-0.0.1.tgz"
+          },
+          "_from": ".",
+          "_npmVersion": "1.2.14",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "directories": {}
+        },
+        "0.0.2": {
+          "name": "json-file-plus",
+          "version": "0.0.2",
+          "author": {
+            "name": "Jordan Harband"
+          },
+          "description": "Read from and write to a JSON file, minimizing diffs and preserving formatting.",
+          "license": "MIT",
+          "main": "index.js",
+          "scripts": {
+            "test": "node test/test.js"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/ljharb/node-json-file.git"
+          },
+          "keywords": [
+            "json",
+            "json file",
+            "formatting",
+            "read",
+            "write"
+          ],
+          "dependencies": {
+            "is-extended": "~0.0.5",
+            "node.extend": "~1.0.1"
+          },
+          "devDependencies": {
+            "tape": "~0.3.2"
+          },
+          "_id": "json-file-plus@0.0.2",
+          "dist": {
+            "shasum": "6bd33ffa1be7b0b57e7917af7ff7ea177a92b6a9",
+            "tarball": "https://registry.npmjs.org/json-file-plus/-/json-file-plus-0.0.2.tgz"
+          },
+          "_from": ".",
+          "_npmVersion": "1.2.15",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "directories": {}
+        },
+        "0.0.3": {
+          "name": "json-file-plus",
+          "version": "0.0.3",
+          "author": {
+            "name": "Jordan Harband"
+          },
+          "description": "Read from and write to a JSON file, minimizing diffs and preserving formatting.",
+          "license": "MIT",
+          "main": "index.js",
+          "scripts": {
+            "test": "node test/test.js"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/ljharb/node-json-file.git"
+          },
+          "keywords": [
+            "json",
+            "json file",
+            "formatting",
+            "read",
+            "write"
+          ],
+          "dependencies": {
+            "is-extended": "~0.0.5",
+            "node.extend": "~1.0.1"
+          },
+          "devDependencies": {
+            "tape": "~0.3.2",
+            "foreach": "~2.0.0"
+          },
+          "_id": "json-file-plus@0.0.3",
+          "dist": {
+            "shasum": "484d0b7480ccb064d885fbb7f3d125850ac3b9bd",
+            "tarball": "https://registry.npmjs.org/json-file-plus/-/json-file-plus-0.0.3.tgz"
+          },
+          "_from": ".",
+          "_npmVersion": "1.2.14",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "directories": {}
+        },
+        "0.0.4": {
+          "name": "json-file-plus",
+          "version": "0.0.4",
+          "author": {
+            "name": "Jordan Harband"
+          },
+          "description": "Read from and write to a JSON file, minimizing diffs and preserving formatting.",
+          "license": "MIT",
+          "main": "index.js",
+          "scripts": {
+            "test": "node test/test.js"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/ljharb/node-json-file.git"
+          },
+          "keywords": [
+            "json",
+            "json file",
+            "formatting",
+            "read",
+            "write"
+          ],
+          "dependencies": {
+            "is": "~0.2.0",
+            "node.extend": "~1.0.2"
+          },
+          "devDependencies": {
+            "tape": "~0.3.3",
+            "foreach": "~2.0.1"
+          },
+          "_id": "json-file-plus@0.0.4",
+          "dist": {
+            "shasum": "127fc9d8c5cb6e02d77f3720d8b08cbd82966b17",
+            "tarball": "https://registry.npmjs.org/json-file-plus/-/json-file-plus-0.0.4.tgz"
+          },
+          "_from": ".",
+          "_npmVersion": "1.2.14",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "directories": {}
+        },
+        "0.0.5": {
+          "name": "json-file-plus",
+          "version": "0.0.5",
+          "author": {
+            "name": "Jordan Harband"
+          },
+          "description": "Read from and write to a JSON file, minimizing diffs and preserving formatting.",
+          "license": "MIT",
+          "main": "index.js",
+          "scripts": {
+            "test": "node test/test.js"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/ljharb/node-json-file.git"
+          },
+          "keywords": [
+            "json",
+            "json file",
+            "formatting",
+            "read",
+            "write"
+          ],
+          "dependencies": {
+            "is": "~0.2.1",
+            "node.extend": "~1.0.3"
+          },
+          "devDependencies": {
+            "tape": "~0.3.3",
+            "foreach": "~2.0.1"
+          },
+          "_id": "json-file-plus@0.0.5",
+          "dist": {
+            "shasum": "a85f5d2a623450a9dac70b8d37fd8fda9cff3133",
+            "tarball": "https://registry.npmjs.org/json-file-plus/-/json-file-plus-0.0.5.tgz"
+          },
+          "_from": ".",
+          "_npmVersion": "1.2.14",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "directories": {}
+        },
+        "0.0.6": {
+          "name": "json-file-plus",
+          "version": "0.0.6",
+          "author": {
+            "name": "Jordan Harband"
+          },
+          "description": "Read from and write to a JSON file, minimizing diffs and preserving formatting.",
+          "license": "MIT",
+          "main": "index.js",
+          "scripts": {
+            "test": "node test/test.js"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/ljharb/node-json-file.git"
+          },
+          "keywords": [
+            "json",
+            "json file",
+            "formatting",
+            "read",
+            "write"
+          ],
+          "dependencies": {
+            "is": "~0.2.2",
+            "node.extend": "~1.0.3"
+          },
+          "devDependencies": {
+            "tape": "~0.3.3",
+            "foreach": "~2.0.1"
+          },
+          "_id": "json-file-plus@0.0.6",
+          "dist": {
+            "shasum": "186d0d12046278b5e29d68b2cee186205d0635a8",
+            "tarball": "https://registry.npmjs.org/json-file-plus/-/json-file-plus-0.0.6.tgz"
+          },
+          "_from": ".",
+          "_npmVersion": "1.2.14",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "directories": {}
+        },
+        "0.0.7": {
+          "name": "json-file-plus",
+          "version": "0.0.7",
+          "author": {
+            "name": "Jordan Harband"
+          },
+          "description": "Read from and write to a JSON file, minimizing diffs and preserving formatting.",
+          "license": "MIT",
+          "main": "index.js",
+          "scripts": {
+            "test": "node test/test.js"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/ljharb/node-json-file.git"
+          },
+          "keywords": [
+            "json",
+            "json file",
+            "formatting",
+            "read",
+            "write"
+          ],
+          "dependencies": {
+            "is": "~0.2.3",
+            "node.extend": "~1.0.4"
+          },
+          "devDependencies": {
+            "tape": "~0.3.3",
+            "foreach": "~2.0.1"
+          },
+          "_id": "json-file-plus@0.0.7",
+          "dist": {
+            "shasum": "d1600216eb889a831a75f131a11094881f4c1bd9",
+            "tarball": "https://registry.npmjs.org/json-file-plus/-/json-file-plus-0.0.7.tgz"
+          },
+          "_from": ".",
+          "_npmVersion": "1.2.14",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "directories": {}
+        },
+        "0.0.8": {
+          "name": "json-file-plus",
+          "version": "0.0.8",
+          "author": {
+            "name": "Jordan Harband"
+          },
+          "description": "Read from and write to a JSON file, minimizing diffs and preserving formatting.",
+          "license": "MIT",
+          "main": "index.js",
+          "scripts": {
+            "test": "node test/test.js"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/ljharb/node-json-file.git"
+          },
+          "keywords": [
+            "json",
+            "json file",
+            "formatting",
+            "read",
+            "write"
+          ],
+          "dependencies": {
+            "is": "~0.2.3",
+            "node.extend": "~1.0.4"
+          },
+          "devDependencies": {
+            "tap": "~0.4.1",
+            "foreach": "~2.0.1"
+          },
+          "_id": "json-file-plus@0.0.8",
+          "dist": {
+            "shasum": "d05a39a32bbef4541883dbb86ef6cb2273bad327",
+            "tarball": "https://registry.npmjs.org/json-file-plus/-/json-file-plus-0.0.8.tgz"
+          },
+          "_from": ".",
+          "_npmVersion": "1.2.18",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "directories": {},
+          "deprecated": "Before v3.0.0, errors in fs.writeFile would not be propagated"
+        },
+        "0.1.0": {
+          "name": "json-file-plus",
+          "version": "0.1.0",
+          "author": {
+            "name": "Jordan Harband"
+          },
+          "description": "Read from and write to a JSON file, minimizing diffs and preserving formatting.",
+          "license": "MIT",
+          "main": "index.js",
+          "scripts": {
+            "test": "node test/test.js"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/ljharb/node-json-file.git"
+          },
+          "keywords": [
+            "json",
+            "json file",
+            "formatting",
+            "read",
+            "write"
+          ],
+          "dependencies": {
+            "is": "~0.2.6",
+            "node.extend": "~1.0.7"
+          },
+          "devDependencies": {
+            "tape": "~1.0.4",
+            "foreach": "~2.0.3",
+            "object-keys": "~0.3.0"
+          },
+          "bugs": {
+            "url": "https://github.com/ljharb/node-json-file/issues"
+          },
+          "_id": "json-file-plus@0.1.0",
+          "dist": {
+            "shasum": "91615b8cdd43970c9f8dcb9d96da20e69a8d5bdf",
+            "tarball": "https://registry.npmjs.org/json-file-plus/-/json-file-plus-0.1.0.tgz"
+          },
+          "_from": ".",
+          "_npmVersion": "1.3.5",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "directories": {}
+        },
+        "0.1.1": {
+          "name": "json-file-plus",
+          "version": "0.1.1",
+          "author": {
+            "name": "Jordan Harband"
+          },
+          "description": "Read from and write to a JSON file, minimizing diffs and preserving formatting.",
+          "license": "MIT",
+          "main": "index.js",
+          "scripts": {
+            "test": "node test/test.js"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/ljharb/node-json-file.git"
+          },
+          "keywords": [
+            "json",
+            "json file",
+            "formatting",
+            "read",
+            "write"
+          ],
+          "dependencies": {
+            "is": "~0.2.6",
+            "node.extend": "~1.0.8"
+          },
+          "devDependencies": {
+            "tape": "~1.0.4",
+            "foreach": "~2.0.4",
+            "object-keys": "~0.4.0"
+          },
+          "bugs": {
+            "url": "https://github.com/ljharb/node-json-file/issues"
+          },
+          "_id": "json-file-plus@0.1.1",
+          "dist": {
+            "shasum": "127ddbfdd41ce82f14aad31c0fa1893b7f6335b5",
+            "tarball": "https://registry.npmjs.org/json-file-plus/-/json-file-plus-0.1.1.tgz"
+          },
+          "_from": ".",
+          "_npmVersion": "1.3.8",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "deprecated": "Before v3.0.0, errors in fs.writeFile would not be propagated",
+          "directories": {}
+        },
+        "0.2.0": {
+          "name": "json-file-plus",
+          "version": "0.2.0",
+          "author": {
+            "name": "Jordan Harband"
+          },
+          "description": "Read from and write to a JSON file, minimizing diffs and preserving formatting.",
+          "license": "MIT",
+          "main": "index.js",
+          "scripts": {
+            "test": "node test/test.js"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/ljharb/node-json-file.git"
+          },
+          "keywords": [
+            "json",
+            "json file",
+            "formatting",
+            "read",
+            "write"
+          ],
+          "dependencies": {
+            "is": "~0.2.6",
+            "node.extend": "~1.0.8"
+          },
+          "devDependencies": {
+            "tape": "~1.0.4",
+            "foreach": "~2.0.4",
+            "object-keys": "~0.4.0"
+          },
+          "bugs": {
+            "url": "https://github.com/ljharb/node-json-file/issues"
+          },
+          "_id": "json-file-plus@0.2.0",
+          "dist": {
+            "shasum": "27703a78b69d1255b8fb428f6c0d284de55145c5",
+            "tarball": "https://registry.npmjs.org/json-file-plus/-/json-file-plus-0.2.0.tgz"
+          },
+          "_from": ".",
+          "_npmVersion": "1.3.8",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "directories": {}
+        },
+        "0.2.1": {
+          "name": "json-file-plus",
+          "version": "0.2.1",
+          "author": {
+            "name": "Jordan Harband"
+          },
+          "description": "Read from and write to a JSON file, minimizing diffs and preserving formatting.",
+          "license": "MIT",
+          "main": "index.js",
+          "scripts": {
+            "test": "node test/test.js"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/ljharb/node-json-file.git"
+          },
+          "keywords": [
+            "json",
+            "json file",
+            "formatting",
+            "read",
+            "write"
+          ],
+          "dependencies": {
+            "is": "~0.2.6",
+            "node.extend": "~1.0.8"
+          },
+          "devDependencies": {
+            "tape": "~1.1.0",
+            "foreach": "~2.0.4",
+            "object-keys": "~0.4.0"
+          },
+          "bugs": {
+            "url": "https://github.com/ljharb/node-json-file/issues"
+          },
+          "_id": "json-file-plus@0.2.1",
+          "dist": {
+            "shasum": "672bf8eabdecd393e37b8bb803f4818d317258d1",
+            "tarball": "https://registry.npmjs.org/json-file-plus/-/json-file-plus-0.2.1.tgz"
+          },
+          "_from": ".",
+          "_npmVersion": "1.3.8",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "directories": {}
+        },
+        "0.2.2": {
+          "name": "json-file-plus",
+          "version": "0.2.2",
+          "author": {
+            "name": "Jordan Harband"
+          },
+          "description": "Read from and write to a JSON file, minimizing diffs and preserving formatting.",
+          "license": "MIT",
+          "main": "index.js",
+          "scripts": {
+            "test": "node test/test.js"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/ljharb/node-json-file.git"
+          },
+          "keywords": [
+            "json",
+            "json file",
+            "formatting",
+            "read",
+            "write"
+          ],
+          "dependencies": {
+            "is": "~0.2.6",
+            "node.extend": "~1.0.8"
+          },
+          "devDependencies": {
+            "tape": "~2.0.0",
+            "foreach": "~2.0.4",
+            "object-keys": "~0.4.0"
+          },
+          "bugs": {
+            "url": "https://github.com/ljharb/node-json-file/issues"
+          },
+          "_id": "json-file-plus@0.2.2",
+          "dist": {
+            "shasum": "f538ca0c6c7af234f71e23689b53585c60c19cbd",
+            "tarball": "https://registry.npmjs.org/json-file-plus/-/json-file-plus-0.2.2.tgz"
+          },
+          "_from": ".",
+          "_npmVersion": "1.3.11",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "directories": {}
+        },
+        "0.2.3": {
+          "name": "json-file-plus",
+          "version": "0.2.3",
+          "author": {
+            "name": "Jordan Harband"
+          },
+          "description": "Read from and write to a JSON file, minimizing diffs and preserving formatting.",
+          "license": "MIT",
+          "main": "index.js",
+          "scripts": {
+            "test": "node test/test.js"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/ljharb/node-json-file.git"
+          },
+          "keywords": [
+            "json",
+            "json file",
+            "formatting",
+            "read",
+            "write"
+          ],
+          "dependencies": {
+            "is": "~0.2.6",
+            "node.extend": "~1.0.8"
+          },
+          "devDependencies": {
+            "tape": "~2.3.0",
+            "foreach": "~2.0.4",
+            "object-keys": "~0.4.0"
+          },
+          "bugs": {
+            "url": "https://github.com/ljharb/node-json-file/issues"
+          },
+          "homepage": "https://github.com/ljharb/node-json-file",
+          "_id": "json-file-plus@0.2.3",
+          "dist": {
+            "shasum": "7a6c1f7827a2afe17c49d3a566e89fe94ddb99a9",
+            "tarball": "https://registry.npmjs.org/json-file-plus/-/json-file-plus-0.2.3.tgz"
+          },
+          "_from": ".",
+          "_npmVersion": "1.3.14",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "deprecated": "Before v3.0.0, errors in fs.writeFile would not be propagated",
+          "directories": {}
+        },
+        "1.0.0": {
+          "name": "json-file-plus",
+          "version": "1.0.0",
+          "author": {
+            "name": "Jordan Harband"
+          },
+          "description": "Read from and write to a JSON file, minimizing diffs and preserving formatting.",
+          "license": "MIT",
+          "main": "index.js",
+          "scripts": {
+            "test": "npm run lint && node test/test.js",
+            "coverage": "covert test/test.js",
+            "coverage-quiet": "covert test/test.js --quiet",
+            "lint": "jscs *.js test/*.js"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/ljharb/node-json-file.git"
+          },
+          "keywords": [
+            "json",
+            "json file",
+            "formatting",
+            "read",
+            "write"
+          ],
+          "dependencies": {
+            "is": "~0.3.0",
+            "jscs": "~1.5.7",
+            "node.extend": "~1.0.10"
+          },
+          "devDependencies": {
+            "tape": "~2.14.0",
+            "foreach": "~2.0.4",
+            "object-keys": "~0.6.0",
+            "covert": "~0.4.0"
+          },
+          "engines": {
+            "node": ">= 0.4"
+          },
+          "gitHead": "cd9109f8bd0c6c7aff2fa6e857b56426396bf4c6",
+          "bugs": {
+            "url": "https://github.com/ljharb/node-json-file/issues"
+          },
+          "homepage": "https://github.com/ljharb/node-json-file",
+          "_id": "json-file-plus@1.0.0",
+          "_shasum": "b65090f080265347d387079aae964dbe2d12d6ec",
+          "_from": ".",
+          "_npmVersion": "1.4.21",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "dist": {
+            "shasum": "b65090f080265347d387079aae964dbe2d12d6ec",
+            "tarball": "https://registry.npmjs.org/json-file-plus/-/json-file-plus-1.0.0.tgz"
+          },
+          "directories": {}
+        },
+        "1.0.1": {
+          "name": "json-file-plus",
+          "version": "1.0.1",
+          "author": {
+            "name": "Jordan Harband"
+          },
+          "description": "Read from and write to a JSON file, minimizing diffs and preserving formatting.",
+          "license": "MIT",
+          "main": "index.js",
+          "scripts": {
+            "test": "npm run lint && node test/test.js",
+            "coverage": "covert test/test.js",
+            "coverage-quiet": "covert test/test.js --quiet",
+            "lint": "jscs *.js test/*.js"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/ljharb/node-json-file.git"
+          },
+          "keywords": [
+            "json",
+            "json file",
+            "formatting",
+            "read",
+            "write"
+          ],
+          "dependencies": {
+            "is": "~1.0.0",
+            "jscs": "~1.5.7",
+            "node.extend": "~1.1.0"
+          },
+          "devDependencies": {
+            "tape": "~2.14.0",
+            "foreach": "~2.0.4",
+            "object-keys": "~0.6.0",
+            "covert": "~1.0.0"
+          },
+          "engines": {
+            "node": ">= 0.4"
+          },
+          "gitHead": "a63aeeb18b545bbde3769d72bda32c6bcfa0de87",
+          "bugs": {
+            "url": "https://github.com/ljharb/node-json-file/issues"
+          },
+          "homepage": "https://github.com/ljharb/node-json-file",
+          "_id": "json-file-plus@1.0.1",
+          "_shasum": "3dcbf056f33c806e405a0faf89fd2224275d3d27",
+          "_from": ".",
+          "_npmVersion": "1.4.21",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "dist": {
+            "shasum": "3dcbf056f33c806e405a0faf89fd2224275d3d27",
+            "tarball": "https://registry.npmjs.org/json-file-plus/-/json-file-plus-1.0.1.tgz"
+          },
+          "deprecated": "Accidentally included a devDependency as a normal dependency",
+          "directories": {}
+        },
+        "1.0.2": {
+          "name": "json-file-plus",
+          "version": "1.0.2",
+          "author": {
+            "name": "Jordan Harband"
+          },
+          "description": "Read from and write to a JSON file, minimizing diffs and preserving formatting.",
+          "license": "MIT",
+          "main": "index.js",
+          "scripts": {
+            "test": "npm run lint && node test/test.js",
+            "coverage": "covert test/test.js",
+            "coverage-quiet": "covert test/test.js --quiet",
+            "lint": "jscs *.js test/*.js"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/ljharb/node-json-file.git"
+          },
+          "keywords": [
+            "json",
+            "json file",
+            "formatting",
+            "read",
+            "write"
+          ],
+          "dependencies": {
+            "is": "~1.0.0",
+            "node.extend": "~1.1.0"
+          },
+          "devDependencies": {
+            "tape": "~2.14.0",
+            "foreach": "~2.0.4",
+            "object-keys": "~0.6.0",
+            "covert": "~1.0.0",
+            "jscs": "~1.5.7"
+          },
+          "engines": {
+            "node": ">= 0.4"
+          },
+          "gitHead": "64b983b78a1ae1a740aa24497e08c2f95885ccf1",
+          "bugs": {
+            "url": "https://github.com/ljharb/node-json-file/issues"
+          },
+          "homepage": "https://github.com/ljharb/node-json-file",
+          "_id": "json-file-plus@1.0.2",
+          "_shasum": "dd846e64147ee40e27fdc04ad99720686d5ada37",
+          "_from": ".",
+          "_npmVersion": "1.4.21",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "dist": {
+            "shasum": "dd846e64147ee40e27fdc04ad99720686d5ada37",
+            "tarball": "https://registry.npmjs.org/json-file-plus/-/json-file-plus-1.0.2.tgz"
+          },
+          "directories": {}
+        },
+        "1.0.3": {
+          "name": "json-file-plus",
+          "version": "1.0.3",
+          "author": {
+            "name": "Jordan Harband"
+          },
+          "description": "Read from and write to a JSON file, minimizing diffs and preserving formatting.",
+          "license": "MIT",
+          "main": "index.js",
+          "scripts": {
+            "test": "npm run lint && node test/test.js",
+            "coverage": "covert test/test.js",
+            "coverage-quiet": "covert test/test.js --quiet",
+            "lint": "jscs *.js test/*.js"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/ljharb/node-json-file.git"
+          },
+          "keywords": [
+            "json",
+            "json file",
+            "formatting",
+            "read",
+            "write"
+          ],
+          "dependencies": {
+            "is": "~1.1.0",
+            "node.extend": "~1.1.0"
+          },
+          "devDependencies": {
+            "tape": "~2.14.0",
+            "foreach": "~2.0.4",
+            "object-keys": "~0.6.0",
+            "covert": "~1.0.0",
+            "jscs": "~1.5.7"
+          },
+          "engines": {
+            "node": ">= 0.4"
+          },
+          "gitHead": "3c477a4f612f44ace4c7d1aeec98b465ac46dad4",
+          "bugs": {
+            "url": "https://github.com/ljharb/node-json-file/issues"
+          },
+          "homepage": "https://github.com/ljharb/node-json-file",
+          "_id": "json-file-plus@1.0.3",
+          "_shasum": "08ba75470cd236048458682815c2a269bc70c8fb",
+          "_from": ".",
+          "_npmVersion": "1.4.23",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "dist": {
+            "shasum": "08ba75470cd236048458682815c2a269bc70c8fb",
+            "tarball": "https://registry.npmjs.org/json-file-plus/-/json-file-plus-1.0.3.tgz"
+          },
+          "directories": {}
+        },
+        "1.0.4": {
+          "name": "json-file-plus",
+          "version": "1.0.4",
+          "author": {
+            "name": "Jordan Harband"
+          },
+          "description": "Read from and write to a JSON file, minimizing diffs and preserving formatting.",
+          "license": "MIT",
+          "main": "index.js",
+          "scripts": {
+            "test": "npm run lint && node test/test.js",
+            "coverage": "covert test/test.js",
+            "coverage-quiet": "covert test/test.js --quiet",
+            "lint": "jscs *.js test/*.js"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/ljharb/node-json-file.git"
+          },
+          "keywords": [
+            "json",
+            "json file",
+            "formatting",
+            "read",
+            "write"
+          ],
+          "dependencies": {
+            "is": "~2.0.0",
+            "node.extend": "~1.1.0"
+          },
+          "devDependencies": {
+            "tape": "~2.14.0",
+            "foreach": "~2.0.4",
+            "object-keys": "~0.6.0",
+            "covert": "~1.0.0",
+            "jscs": "~1.5.7"
+          },
+          "engines": {
+            "node": ">= 0.4"
+          },
+          "gitHead": "34f63d457cf1d7821683c5006c221ae56a653081",
+          "bugs": {
+            "url": "https://github.com/ljharb/node-json-file/issues"
+          },
+          "homepage": "https://github.com/ljharb/node-json-file",
+          "_id": "json-file-plus@1.0.4",
+          "_shasum": "c92b3609423c301bf387acc6e7fa15ddfa14d3be",
+          "_from": ".",
+          "_npmVersion": "1.4.23",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "dist": {
+            "shasum": "c92b3609423c301bf387acc6e7fa15ddfa14d3be",
+            "tarball": "https://registry.npmjs.org/json-file-plus/-/json-file-plus-1.0.4.tgz"
+          },
+          "directories": {}
+        },
+        "1.0.5": {
+          "name": "json-file-plus",
+          "version": "1.0.5",
+          "author": {
+            "name": "Jordan Harband"
+          },
+          "description": "Read from and write to a JSON file, minimizing diffs and preserving formatting.",
+          "license": "MIT",
+          "main": "index.js",
+          "scripts": {
+            "test": "npm run lint && node test/test.js",
+            "coverage": "covert test/test.js",
+            "coverage-quiet": "covert test/test.js --quiet",
+            "lint": "jscs *.js test/*.js"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/ljharb/node-json-file.git"
+          },
+          "keywords": [
+            "json",
+            "json file",
+            "formatting",
+            "read",
+            "write"
+          ],
+          "dependencies": {
+            "is": "~2.0.0",
+            "node.extend": "~1.1.0"
+          },
+          "devDependencies": {
+            "tape": "~2.14.0",
+            "foreach": "~2.0.4",
+            "object-keys": "~1.0.0",
+            "covert": "~1.0.0",
+            "jscs": "~1.5.7"
+          },
+          "engines": {
+            "node": ">= 0.4"
+          },
+          "gitHead": "e827b1adcb3dc0d12c45f277379b98aba076195e",
+          "bugs": {
+            "url": "https://github.com/ljharb/node-json-file/issues"
+          },
+          "homepage": "https://github.com/ljharb/node-json-file",
+          "_id": "json-file-plus@1.0.5",
+          "_shasum": "6bb483f304243e9203d2dc7ec469adbc59f1e77b",
+          "_from": ".",
+          "_npmVersion": "1.4.23",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "dist": {
+            "shasum": "6bb483f304243e9203d2dc7ec469adbc59f1e77b",
+            "tarball": "https://registry.npmjs.org/json-file-plus/-/json-file-plus-1.0.5.tgz"
+          },
+          "directories": {}
+        },
+        "1.0.6": {
+          "name": "json-file-plus",
+          "version": "1.0.6",
+          "author": {
+            "name": "Jordan Harband"
+          },
+          "description": "Read from and write to a JSON file, minimizing diffs and preserving formatting.",
+          "license": "MIT",
+          "main": "index.js",
+          "scripts": {
+            "test": "npm run lint && node test/test.js",
+            "coverage": "covert test/test.js",
+            "coverage-quiet": "covert test/test.js --quiet",
+            "lint": "jscs *.js test/*.js"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/ljharb/node-json-file.git"
+          },
+          "keywords": [
+            "json",
+            "json file",
+            "formatting",
+            "read",
+            "write"
+          ],
+          "dependencies": {
+            "is": "~2.0.0",
+            "node.extend": "~1.1.2"
+          },
+          "devDependencies": {
+            "tape": "~2.14.0",
+            "foreach": "~2.0.4",
+            "object-keys": "~1.0.0",
+            "covert": "~1.0.0",
+            "jscs": "~1.6.0"
+          },
+          "engines": {
+            "node": ">= 0.4"
+          },
+          "gitHead": "7c81ae85ce11fa23ef3011c201f0b030b131fa36",
+          "bugs": {
+            "url": "https://github.com/ljharb/node-json-file/issues"
+          },
+          "homepage": "https://github.com/ljharb/node-json-file",
+          "_id": "json-file-plus@1.0.6",
+          "_shasum": "d902b4b58b7b8214d6f75278f6eb8c166546022f",
+          "_from": ".",
+          "_npmVersion": "1.4.23",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "dist": {
+            "shasum": "d902b4b58b7b8214d6f75278f6eb8c166546022f",
+            "tarball": "https://registry.npmjs.org/json-file-plus/-/json-file-plus-1.0.6.tgz"
+          },
+          "directories": {}
+        },
+        "1.0.7": {
+          "name": "json-file-plus",
+          "version": "1.0.7",
+          "author": {
+            "name": "Jordan Harband"
+          },
+          "description": "Read from and write to a JSON file, minimizing diffs and preserving formatting.",
+          "license": "MIT",
+          "main": "index.js",
+          "scripts": {
+            "test": "npm run lint && node test/test.js",
+            "coverage": "covert test/test.js",
+            "coverage-quiet": "covert test/test.js --quiet",
+            "lint": "jscs *.js test/*.js"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/ljharb/node-json-file.git"
+          },
+          "keywords": [
+            "json",
+            "json file",
+            "formatting",
+            "read",
+            "write"
+          ],
+          "dependencies": {
+            "is": "~2.0.1",
+            "node.extend": "~1.1.2"
+          },
+          "devDependencies": {
+            "tape": "~2.14.0",
+            "foreach": "~2.0.4",
+            "object-keys": "~1.0.1",
+            "covert": "~1.0.0",
+            "jscs": "~1.6.1"
+          },
+          "engines": {
+            "node": ">= 0.4"
+          },
+          "gitHead": "d9aa54d9d0ecf5c82ee891b7323ae090dfd85f21",
+          "bugs": {
+            "url": "https://github.com/ljharb/node-json-file/issues"
+          },
+          "homepage": "https://github.com/ljharb/node-json-file",
+          "_id": "json-file-plus@1.0.7",
+          "_shasum": "d0159f64825aea9c2e0af5785c2d0557d822f8ec",
+          "_from": ".",
+          "_npmVersion": "1.4.23",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "dist": {
+            "shasum": "d0159f64825aea9c2e0af5785c2d0557d822f8ec",
+            "tarball": "https://registry.npmjs.org/json-file-plus/-/json-file-plus-1.0.7.tgz"
+          },
+          "deprecated": "Before v3.0.0, errors in fs.writeFile would not be propagated",
+          "directories": {}
+        },
+        "2.0.0": {
+          "name": "json-file-plus",
+          "version": "2.0.0",
+          "author": {
+            "name": "Jordan Harband"
+          },
+          "description": "Read from and write to a JSON file, minimizing diffs and preserving formatting.",
+          "license": "MIT",
+          "main": "index.js",
+          "scripts": {
+            "test": "npm run lint && node test/test.js",
+            "coverage": "covert test/test.js",
+            "coverage-quiet": "covert test/test.js --quiet",
+            "lint": "jscs *.js test/*.js"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/ljharb/node-json-file.git"
+          },
+          "keywords": [
+            "json",
+            "json file",
+            "formatting",
+            "read",
+            "write",
+            "promise",
+            "promiseback"
+          ],
+          "dependencies": {
+            "is": "~2.0.1",
+            "node.extend": "~1.1.2",
+            "promiseback": "~2.0.0"
+          },
+          "devDependencies": {
+            "tape": "~3.0.0",
+            "foreach": "~2.0.5",
+            "object-keys": "~1.0.1",
+            "covert": "~1.0.0",
+            "jscs": "~1.6.2"
+          },
+          "engines": {
+            "node": ">= 0.4"
+          },
+          "gitHead": "8c88a3159789794fc085154284d6490f9ca9d387",
+          "bugs": {
+            "url": "https://github.com/ljharb/node-json-file/issues"
+          },
+          "homepage": "https://github.com/ljharb/node-json-file",
+          "_id": "json-file-plus@2.0.0",
+          "_shasum": "8a9b418f85949ac5fba5cdad0cb8f92fc3391927",
+          "_from": ".",
+          "_npmVersion": "1.4.28",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "maintainers": [
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "dist": {
+            "shasum": "8a9b418f85949ac5fba5cdad0cb8f92fc3391927",
+            "tarball": "https://registry.npmjs.org/json-file-plus/-/json-file-plus-2.0.0.tgz"
+          },
+          "deprecated": "Before v3.0.0, errors in fs.writeFile would not be propagated",
+          "directories": {}
+        },
+        "3.0.0": {
+          "name": "json-file-plus",
+          "version": "3.0.0",
+          "author": {
+            "name": "Jordan Harband"
+          },
+          "description": "Read from and write to a JSON file, minimizing diffs and preserving formatting.",
+          "license": "MIT",
+          "main": "index.js",
+          "scripts": {
+            "test": "npm run lint && node test/test.js",
+            "coverage": "covert test/test.js",
+            "coverage-quiet": "covert test/test.js --quiet",
+            "lint": "jscs *.js test/*.js"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/ljharb/node-json-file.git"
+          },
+          "keywords": [
+            "json",
+            "json file",
+            "formatting",
+            "read",
+            "write",
+            "promise",
+            "promiseback"
+          ],
+          "dependencies": {
+            "is": "^3.0.1",
+            "node.extend": "^1.1.3",
+            "promiseback": "^2.0.1"
+          },
+          "devDependencies": {
+            "tape": "^4.0.0",
+            "foreach": "^2.0.5",
+            "object-keys": "^1.0.3",
+            "covert": "^1.0.1",
+            "jscs": "^1.13.1"
+          },
+          "engines": {
+            "node": ">= 0.4"
+          },
+          "gitHead": "523d61de5abecd60e907cbe2b92e3ef40d96cb30",
+          "bugs": {
+            "url": "https://github.com/ljharb/node-json-file/issues"
+          },
+          "homepage": "https://github.com/ljharb/node-json-file#readme",
+          "_id": "json-file-plus@3.0.0",
+          "_shasum": "c8b296324709ecee73f7ca2152f68ea7dbfccb52",
+          "_from": ".",
+          "_npmVersion": "2.8.3",
+          "_nodeVersion": "1.8.1",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "dist": {
+            "shasum": "c8b296324709ecee73f7ca2152f68ea7dbfccb52",
+            "tarball": "https://registry.npmjs.org/json-file-plus/-/json-file-plus-3.0.0.tgz"
+          },
+          "maintainers": [
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "directories": {}
+        },
+        "3.0.1": {
+          "name": "json-file-plus",
+          "version": "3.0.1",
+          "author": {
+            "name": "Jordan Harband"
+          },
+          "description": "Read from and write to a JSON file, minimizing diffs and preserving formatting.",
+          "license": "MIT",
+          "main": "index.js",
+          "scripts": {
+            "test": "npm run lint && node test/test.js && npm run security",
+            "coverage": "covert test/test.js",
+            "coverage-quiet": "covert test/test.js --quiet",
+            "lint": "npm run jscs && npm run eslint",
+            "eslint": "eslint *.js test/*.js",
+            "jscs": "jscs *.js test/*.js",
+            "security": "nsp package"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/ljharb/node-json-file.git"
+          },
+          "keywords": [
+            "json",
+            "json file",
+            "formatting",
+            "read",
+            "write",
+            "promise",
+            "promiseback"
+          ],
+          "dependencies": {
+            "is": "^3.0.1",
+            "node.extend": "^1.1.5",
+            "promiseback": "^2.0.1"
+          },
+          "devDependencies": {
+            "tape": "^4.2.0",
+            "foreach": "^2.0.5",
+            "object-keys": "^1.0.7",
+            "covert": "^1.1.0",
+            "jscs": "^2.1.0",
+            "eslint": "^1.2.0",
+            "@ljharb/eslint-config": "^1.0.5",
+            "nsp": "^1.0.3"
+          },
+          "engines": {
+            "node": ">= 0.4"
+          },
+          "gitHead": "f6fa8bc5bbabf2bcca93738505ab771f808b7b0b",
+          "bugs": {
+            "url": "https://github.com/ljharb/node-json-file/issues"
+          },
+          "homepage": "https://github.com/ljharb/node-json-file#readme",
+          "_id": "json-file-plus@3.0.1",
+          "_shasum": "730807c6a6f987d7b36c38c891cbb7e698b16e3b",
+          "_from": ".",
+          "_npmVersion": "2.14.0",
+          "_nodeVersion": "3.0.0",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "dist": {
+            "shasum": "730807c6a6f987d7b36c38c891cbb7e698b16e3b",
+            "tarball": "https://registry.npmjs.org/json-file-plus/-/json-file-plus-3.0.1.tgz"
+          },
+          "maintainers": [
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "directories": {}
+        },
+        "3.1.0": {
+          "name": "json-file-plus",
+          "version": "3.1.0",
+          "author": {
+            "name": "Jordan Harband"
+          },
+          "description": "Read from and write to a JSON file, minimizing diffs and preserving formatting.",
+          "license": "MIT",
+          "main": "index.js",
+          "scripts": {
+            "test": "npm run lint && evalmd README.md && node test/test.js && npm run security",
+            "coverage": "covert test/test.js",
+            "coverage-quiet": "covert test/test.js --quiet",
+            "lint": "npm run jscs && npm run eslint",
+            "eslint": "eslint *.js test/*.js",
+            "jscs": "jscs *.js test/*.js",
+            "security": "nsp package"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/ljharb/node-json-file.git"
+          },
+          "keywords": [
+            "json",
+            "json file",
+            "formatting",
+            "read",
+            "write",
+            "promise",
+            "promiseback"
+          ],
+          "dependencies": {
+            "is": "^3.1.0",
+            "node.extend": "^1.1.5",
+            "promiseback": "^2.0.2"
+          },
+          "devDependencies": {
+            "tape": "^4.2.1",
+            "foreach": "^2.0.5",
+            "object-keys": "^1.0.8",
+            "covert": "^1.1.0",
+            "jscs": "^2.3.4",
+            "eslint": "^1.7.1",
+            "@ljharb/eslint-config": "^1.4.1",
+            "nsp": "^1.1.0",
+            "evalmd": "^0.0.16"
+          },
+          "engines": {
+            "node": ">= 0.4"
+          },
+          "gitHead": "bbb177c8f7023a083440b071729c047e5f02b565",
+          "bugs": {
+            "url": "https://github.com/ljharb/node-json-file/issues"
+          },
+          "homepage": "https://github.com/ljharb/node-json-file#readme",
+          "_id": "json-file-plus@3.1.0",
+          "_shasum": "652b5d53bfb6f244c36ff1761d2686d911cb9b89",
+          "_from": ".",
+          "_npmVersion": "2.14.7",
+          "_nodeVersion": "4.2.1",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "dist": {
+            "shasum": "652b5d53bfb6f244c36ff1761d2686d911cb9b89",
+            "tarball": "https://registry.npmjs.org/json-file-plus/-/json-file-plus-3.1.0.tgz"
+          },
+          "maintainers": [
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "directories": {}
+        },
+        "3.2.0": {
+          "name": "json-file-plus",
+          "version": "3.2.0",
+          "author": {
+            "name": "Jordan Harband"
+          },
+          "description": "Read from and write to a JSON file, minimizing diffs and preserving formatting.",
+          "license": "MIT",
+          "main": "index.js",
+          "scripts": {
+            "test": "npm run lint && evalmd README.md && node test/test.js && npm run security",
+            "coverage": "covert test/test.js",
+            "coverage-quiet": "covert test/test.js --quiet",
+            "lint": "npm run jscs && npm run eslint",
+            "eslint": "eslint *.js test/*.js",
+            "jscs": "jscs *.js test/*.js",
+            "security": "nsp package"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/ljharb/node-json-file.git"
+          },
+          "keywords": [
+            "json",
+            "json file",
+            "formatting",
+            "read",
+            "write",
+            "promise",
+            "promiseback"
+          ],
+          "dependencies": {
+            "is": "^3.1.0",
+            "node.extend": "^1.1.5",
+            "promiseback": "^2.0.2"
+          },
+          "devDependencies": {
+            "tape": "^4.2.1",
+            "foreach": "^2.0.5",
+            "object-keys": "^1.0.8",
+            "covert": "^1.1.0",
+            "jscs": "^2.3.4",
+            "eslint": "^1.7.1",
+            "@ljharb/eslint-config": "^1.4.1",
+            "nsp": "^1.1.0",
+            "evalmd": "^0.0.16"
+          },
+          "engines": {
+            "node": ">= 0.4"
+          },
+          "gitHead": "d56f0add2e836dd6cf9f3a31955ea0f3655661a4",
+          "bugs": {
+            "url": "https://github.com/ljharb/node-json-file/issues"
+          },
+          "homepage": "https://github.com/ljharb/node-json-file#readme",
+          "_id": "json-file-plus@3.2.0",
+          "_shasum": "413609e249a8147b6899b995cadc2a196771dd7b",
+          "_from": ".",
+          "_npmVersion": "2.14.7",
+          "_nodeVersion": "4.2.1",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "dist": {
+            "shasum": "413609e249a8147b6899b995cadc2a196771dd7b",
+            "tarball": "https://registry.npmjs.org/json-file-plus/-/json-file-plus-3.2.0.tgz"
+          },
+          "maintainers": [
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "directories": {}
+        },
+        "3.3.0": {
+          "name": "json-file-plus",
+          "version": "3.3.0",
+          "author": {
+            "name": "Jordan Harband",
+            "email": "ljharb@gmail.com",
+            "url": "http://ljharb.codes"
+          },
+          "contributors": [
+            {
+              "name": "Jordan Harband",
+              "email": "ljharb@gmail.com",
+              "url": "http://ljharb.codes"
+            }
+          ],
+          "description": "Read from and write to a JSON file, minimizing diffs and preserving formatting.",
+          "license": "MIT",
+          "main": "index.js",
+          "scripts": {
+            "pretest": "npm run --silent lint && evalmd README.md",
+            "test": "npm run tests-only",
+            "tests-only": "node test/test.js",
+            "posttest": "npm run --silent security",
+            "coverage": "covert test/test.js",
+            "coverage-quiet": "covert test/test.js --quiet",
+            "lint": "npm run jscs && npm run eslint",
+            "eslint": "eslint *.js test/*.js",
+            "jscs": "jscs *.js test/*.js",
+            "security": "nsp check"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/ljharb/json-file-plus.git"
+          },
+          "keywords": [
+            "json",
+            "json file",
+            "formatting",
+            "read",
+            "write",
+            "promise",
+            "promiseback"
+          ],
+          "dependencies": {
+            "is": "^3.1.0",
+            "node.extend": "^1.1.5",
+            "promiseback": "^2.0.2"
+          },
+          "devDependencies": {
+            "tape": "^4.5.1",
+            "foreach": "^2.0.5",
+            "object-keys": "^1.0.9",
+            "covert": "^1.1.0",
+            "jscs": "^2.11.0",
+            "eslint": "^2.4.0",
+            "@ljharb/eslint-config": "^2.1.1",
+            "nsp": "^2.2.1",
+            "evalmd": "^0.0.16"
+          },
+          "engines": {
+            "node": ">= 0.4"
+          },
+          "gitHead": "a2156788085402c0594fd9f6bdc04fe37ccc1c6b",
+          "bugs": {
+            "url": "https://github.com/ljharb/json-file-plus/issues"
+          },
+          "homepage": "https://github.com/ljharb/json-file-plus#readme",
+          "_id": "json-file-plus@3.3.0",
+          "_shasum": "702a0bcaff6d85c0edbe1cd03c88a582532f99f5",
+          "_from": ".",
+          "_npmVersion": "3.7.3",
+          "_nodeVersion": "5.9.0",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "dist": {
+            "shasum": "702a0bcaff6d85c0edbe1cd03c88a582532f99f5",
+            "tarball": "https://registry.npmjs.org/json-file-plus/-/json-file-plus-3.3.0.tgz"
+          },
+          "maintainers": [
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "_npmOperationalInternal": {
+            "host": "packages-13-west.internal.npmjs.com",
+            "tmp": "tmp/json-file-plus-3.3.0.tgz_1458668618871_0.8765803689602762"
+          },
+          "directories": {}
+        },
+        "3.3.1": {
+          "name": "json-file-plus",
+          "version": "3.3.1",
+          "author": {
+            "name": "Jordan Harband",
+            "email": "ljharb@gmail.com",
+            "url": "http://ljharb.codes"
+          },
+          "contributors": [
+            {
+              "name": "Jordan Harband",
+              "email": "ljharb@gmail.com",
+              "url": "http://ljharb.codes"
+            }
+          ],
+          "description": "Read from and write to a JSON file, minimizing diffs and preserving formatting.",
+          "license": "MIT",
+          "main": "index.js",
+          "scripts": {
+            "pretest": "npm run --silent lint",
+            "test": "npm run --silent tests-only",
+            "tests-only": "node test/test.js",
+            "posttest": "npm run --silent security",
+            "coverage": "covert test/test.js",
+            "coverage-quiet": "covert test/test.js --quiet",
+            "prelint": "evalmd README.md",
+            "lint": "npm run --silent jscs && npm run --silent eslint",
+            "eslint": "eslint *.js test/*.js",
+            "jscs": "jscs *.js test/*.js",
+            "security": "nsp check"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git://github.com/ljharb/json-file-plus.git"
+          },
+          "keywords": [
+            "json",
+            "json file",
+            "formatting",
+            "read",
+            "write",
+            "promise",
+            "promiseback"
+          ],
+          "dependencies": {
+            "is": "^3.2.1",
+            "node.extend": "^2.0.0",
+            "object.assign": "^4.1.0",
+            "promiseback": "^2.0.2",
+            "safer-buffer": "^2.0.2"
+          },
+          "devDependencies": {
+            "@ljharb/eslint-config": "^12.2.1",
+            "covert": "^1.1.0",
+            "eslint": "^4.19.0",
+            "evalmd": "^0.0.17",
+            "foreach": "^2.0.5",
+            "has": "^1.0.1",
+            "jscs": "^3.0.7",
+            "nsp": "^3.2.1",
+            "object-keys": "^1.0.11",
+            "tape": "^4.9.0"
+          },
+          "engines": {
+            "node": ">= 0.4"
+          },
+          "gitHead": "90c43e1f861639da3beb55bf35c2d3545914bbe8",
+          "bugs": {
+            "url": "https://github.com/ljharb/json-file-plus/issues"
+          },
+          "homepage": "https://github.com/ljharb/json-file-plus#readme",
+          "_id": "json-file-plus@3.3.1",
+          "_npmVersion": "5.6.0",
+          "_nodeVersion": "9.8.0",
+          "_npmUser": {
+            "name": "ljharb",
+            "email": "ljharb@gmail.com"
+          },
+          "dist": {
+            "integrity": "sha512-wo0q1UuiV5NsDPQDup1Km8IwEeqe+olr8tkWxeJq9Bjtcp7DZ0l+yrg28fSC3DEtrE311mhTZ54QGS6oiqnZEA==",
+            "shasum": "f4363806b82819ff8803d83d539d6a9edd2a5258",
+            "tarball": "https://registry.npmjs.org/json-file-plus/-/json-file-plus-3.3.1.tgz",
+            "fileCount": 15,
+            "unpackedSize": 39494
+          },
+          "maintainers": [
+            {
+              "name": "ljharb",
+              "email": "ljharb@gmail.com"
+            }
+          ],
+          "directories": {},
+          "_npmOperationalInternal": {
+            "host": "s3://npm-registry-packages",
+            "tmp": "tmp/json-file-plus_3.3.1_1521594138356_0.6416369191552387"
+          }
+        }
+      },
+      "readme": "#json-file-plus <sup>[![Version Badge][npm-version-svg]][npm-url]</sup>\n\n[![Build Status][travis-svg]][travis-url]\n[![dependency status][deps-svg]][deps-url]\n[![dev dependency status][dev-deps-svg]][dev-deps-url]\n[![License][license-image]][license-url]\n[![Downloads][downloads-image]][downloads-url]\n\n[![npm badge][npm-badge-png]][npm-url]\n\nA module to read from and write to JSON files, without losing formatting, to minimize diffs.\n\n## Example\n```js\nvar jsonFile = require('json-file-plus');\nvar path = require('path'); // in node-core\nvar filename = path.join(process.cwd(), 'package.json');\nvar callback = function (err, result) { /* your code here */ };\n\n/* Note: jsonFile also returns a Promise, if you prefer that to a Node-style callback (\"errorback\"). */\njsonFile(filename, function (err, file) {\n\tif (err) { return doSomethingWithError(err); }\n\n\tfile.data; // Direct access to the data from the file\n\tfile.format; // extracted formatting data. change at will.\n\n\tfile.get('version'); // get top-level keys. returns a Promise\n\tfile.get('version', callback); // get top-level keys. calls the errorback\n\tfile.get(); // get entire data. returns a Promise\n\tfile.get(callback); // get entire data. calls the errorback\n\n\t/* pass any plain object into \"set\" to merge in a deep copy */\n\t/* please note: references will be broken. */\n\t/* if a non-plain object is passed, will throw a TypeError. */\n\tfile.set({\n\t\tfoo: 'bar',\n\t\tbar: {\n\t\t\tbaz: true\n\t\t}\n\t});\n\t\n\tfile.remove('description'); // remove a specific key-value pair. returns a Promise\n    \tfile.remove('description', callback); // remove a specific key-value pair. calls the errorback\n\n\t/* change the filename if desired */\n\tfile.filename = path.join(process.cwd(), 'new-package.json');\n\n\t/* Save the file, preserving formatting. */\n\t/* Errorback will be passed to fs.writeFile */\n\t/* Returns a Promise. */\n\tfile.save(callback).then(function () {\n\t\tconsole.log('success!');\n\t}).catch(function (err) {\n\t\tconsole.log('error!', err);\n\t});\n});\n```\n\n## Tests\nSimply run `npm test` in the repo\n\n[npm-url]: https://npmjs.org/package/json-file-plus\n[npm-version-svg]: http://versionbadg.es/ljharb/json-file-plus.svg\n[travis-svg]: https://travis-ci.org/ljharb/json-file-plus.svg\n[travis-url]: https://travis-ci.org/ljharb/json-file-plus\n[deps-svg]: https://david-dm.org/ljharb/json-file-plus.svg\n[deps-url]: https://david-dm.org/ljharb/json-file-plus\n[dev-deps-svg]: https://david-dm.org/ljharb/json-file-plus/dev-status.svg\n[dev-deps-url]: https://david-dm.org/ljharb/json-file-plus#info=devDependencies\n[npm-badge-png]: https://nodei.co/npm/json-file-plus.png?downloads=true&stars=true\n[license-image]: http://img.shields.io/npm/l/json-file-plus.svg\n[license-url]: LICENSE\n[downloads-image]: http://img.shields.io/npm/dm/json-file-plus.svg\n[downloads-url]: http://npm-stat.com/charts.html?package=json-file-plus\n\n",
+      "maintainers": [
+        {
+          "name": "ljharb",
+          "email": "ljharb@gmail.com"
+        }
+      ],
+      "time": {
+        "modified": "2018-03-21T01:02:19.468Z",
+        "created": "2013-04-02T06:48:07.918Z",
+        "0.0.1": "2013-04-02T06:48:09.065Z",
+        "0.0.2": "2013-04-03T16:29:53.237Z",
+        "0.0.3": "2013-04-07T10:46:48.424Z",
+        "0.0.4": "2013-04-09T00:50:18.302Z",
+        "0.0.5": "2013-04-14T12:25:04.684Z",
+        "0.0.6": "2013-04-17T07:17:23.026Z",
+        "0.0.7": "2013-04-18T02:58:22.572Z",
+        "0.0.8": "2013-04-25T03:13:40.139Z",
+        "0.1.0": "2013-08-14T08:01:06.292Z",
+        "0.1.1": "2013-08-20T22:49:46.924Z",
+        "0.2.0": "2013-08-21T05:06:41.810Z",
+        "0.2.1": "2013-09-17T07:49:03.667Z",
+        "0.2.2": "2013-10-15T06:48:36.729Z",
+        "0.2.3": "2013-12-07T22:50:19.254Z",
+        "1.0.0": "2014-08-07T16:12:32.206Z",
+        "1.0.1": "2014-08-11T08:42:29.747Z",
+        "1.0.2": "2014-08-13T17:25:38.840Z",
+        "1.0.3": "2014-08-26T05:48:46.614Z",
+        "1.0.4": "2014-08-26T05:49:32.014Z",
+        "1.0.5": "2014-08-28T08:31:29.725Z",
+        "1.0.6": "2014-09-01T19:00:50.877Z",
+        "1.0.7": "2014-09-03T07:22:41.443Z",
+        "2.0.0": "2014-09-26T06:39:17.509Z",
+        "3.0.0": "2015-05-03T22:50:52.712Z",
+        "3.0.1": "2015-08-19T06:53:21.771Z",
+        "3.1.0": "2015-10-18T02:28:53.742Z",
+        "3.2.0": "2015-10-18T05:04:35.820Z",
+        "3.3.0": "2016-03-22T17:43:39.373Z",
+        "3.3.1": "2018-03-21T01:02:18.413Z"
+      },
+      "author": {
+        "name": "Jordan Harband",
+        "email": "ljharb@gmail.com",
+        "url": "http://ljharb.codes"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/ljharb/json-file-plus.git"
+      },
+      "users": {
+        "chrisparana": true,
+        "itonyyo": true,
+        "ceejbot": true,
+        "a.sanchez": true,
+        "anchnk": true
+      },
+      "homepage": "https://github.com/ljharb/json-file-plus#readme",
+      "keywords": [
+        "json",
+        "json file",
+        "formatting",
+        "read",
+        "write",
+        "promise",
+        "promiseback"
+      ],
+      "bugs": {
+        "url": "https://github.com/ljharb/json-file-plus/issues"
+      },
+      "license": "MIT",
+      "readmeFilename": "README.md",
+      "contributors": [
+        {
+          "name": "Jordan Harband",
+          "email": "ljharb@gmail.com",
+          "url": "http://ljharb.codes"
+        }
+      ],
+      "_attachments": {}
+    }
+  }
+}

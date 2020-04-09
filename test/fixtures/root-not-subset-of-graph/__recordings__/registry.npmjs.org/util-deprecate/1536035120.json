@@ -1,0 +1,56 @@
+{
+  "request": {
+    "method": "GET",
+    "href": "https://registry.npmjs.org/util-deprecate",
+    "headers": {
+      "connection": [
+        "keep-alive"
+      ],
+      "user-agent": [
+        "pacote/11.1.0 node/v13.10.1"
+      ],
+      "npm-in-ci": [
+        "false"
+      ],
+      "pacote-version": [
+        "11.1.0"
+      ],
+      "pacote-req-type": [
+        "packument"
+      ],
+      "pacote-pkg-id": [
+        "registry:util-deprecate"
+      ],
+      "accept": [
+        "application/vnd.npm.install-v1+json; q=1.0, application/json; q=0.8, */*"
+      ],
+      "accept-encoding": [
+        "gzip,deflate"
+      ]
+    },
+    "body": ""
+  },
+  "response": {
+    "statusCode": 200,
+    "headers": {
+      "date": "Thu, 12 Mar 2020 04:59:16 GMT",
+      "content-type": "application/vnd.npm.install-v1+json",
+      "content-length": "689",
+      "connection": "keep-alive",
+      "set-cookie": [
+        "__cfduid=d5a5fd896237994b866d596d2cf43e1d51583989156; expires=Sat, 11-Apr-20 04:59:16 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax"
+      ],
+      "cf-ray": "572af1e44eb89328-SJC",
+      "accept-ranges": "bytes",
+      "age": "4553",
+      "cache-control": "public, max-age=300",
+      "etag": "\"c5fae95341c0c6b73869c962a59b1030\"",
+      "last-modified": "Sat, 15 Feb 2020 18:15:18 GMT",
+      "vary": "accept-encoding, accept",
+      "cf-cache-status": "HIT",
+      "expect-ct": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"",
+      "server": "cloudflare"
+    },
+    "body": "{\"name\":\"util-deprecate\",\"dist-tags\":{\"latest\":\"1.0.2\"},\"versions\":{\"1.0.0\":{\"name\":\"util-deprecate\",\"version\":\"1.0.0\",\"dist\":{\"shasum\":\"3007af012c140eae26de05576ec22785cac3abf2\",\"tarball\":\"https://registry.npmjs.org/util-deprecate/-/util-deprecate-1.0.0.tgz\"}},\"1.0.1\":{\"name\":\"util-deprecate\",\"version\":\"1.0.1\",\"dist\":{\"shasum\":\"3556a3d13c4c6aa7983d7e2425478197199b7881\",\"tarball\":\"https://registry.npmjs.org/util-deprecate/-/util-deprecate-1.0.1.tgz\"}},\"1.0.2\":{\"name\":\"util-deprecate\",\"version\":\"1.0.2\",\"dist\":{\"shasum\":\"450d4dc9fa70de732762fbd2d4a28981419a0ccf\",\"tarball\":\"https://registry.npmjs.org/util-deprecate/-/util-deprecate-1.0.2.tgz\"}}},\"modified\":\"2017-06-14T14:28:22.197Z\"}"
+  }
+}
