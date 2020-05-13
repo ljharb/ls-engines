@@ -16,9 +16,9 @@ Determine if your dependency graph's stated "engines" criteria is met.
 > ls-engines
 `package.json` found; building ideal tree from package.json...
 
-Valid node version range: ^13 || ^12 || ^11 || ^10 || ^9 || ^8 || ^7 || ^6 || ^5 || ^4 || ^0.12 || ^0.11 || ^0.10 || ^0.9 || ^0.8
+Valid node version range: ^14 || ^13 || ^12 || ^11 || ^10 || ^9 || ^8 || ^7 || ^6 || ^5 || ^4 || ^0.12 || ^0.11 || ^0.10 || ^0.9 || ^0.8
 
-Currently available, most recent, valid node major versions: v13.7, v12.14.1, v11.15, v10.18.1, v9.11.2, v8.17, v7.10.1, v6.17.1, v5.12, v4.9.1, v0.12.18, v0.11.16, v0.10.48, v0.9.12, v0.8.28
+Currently available, most recent, valid node major versions: v14.2, v13.14, v12.16.3, v11.15, v10.20.1, v9.11.2, v8.17, v7.10.1, v6.17.1, v5.12, v4.9.1, v0.12.18, v0.11.16, v0.10.48, v0.9.12, v0.8.28
 
 Current node version, v13.7.0, is valid!
 ```
