@@ -34,16 +34,16 @@
 		"npm": ">=6"
 	},
 	"dependencies": {
-		"@npmcli/arborist": "^0.0.0",
+		"@npmcli/arborist": "^0.0.28",
 		"chalk": "^4.1.0",
 		"fast_array_intersect": "^1.1.0",
 		"get-json": "^1.0.1",
 		"json-file-plus": "^3.3.1",
-		"pacote": "^11.1.10",
+		"pacote": "^11.1.11",
 		"promise.allsettled": "^1.0.2",
 		"semver": "^7.3.2",
-		"table": "^5.4.6",
-		"yargs": "^15.4.1"
+		"table": "^6.0.3",
+		"yargs": "^16.0.3"
 	},
 	"devDependencies": {
 		"@ljharb/eslint-config": "^17.1.0",
