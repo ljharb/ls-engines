@@ -1,6 +1,6 @@
 {
 	"name": "ls-engines",
-	"version": "0.3.4",
+	"version": "0.3.5",
 	"description": "Determine if your dependency graph's stated \"engines\" criteria is met.",
 	"bin": "./bin/ls-engines",
 	"exports": {},
