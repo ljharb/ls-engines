@@ -32,11 +32,11 @@
 	},
 	"homepage": "https://github.com/ljharb/ls-engines#readme",
 	"engines": {
-		"node": ">=10",
+		"node": ">=10.13",
 		"npm": ">=6"
 	},
 	"dependencies": {
-		"@npmcli/arborist": "^0.0.28",
+		"@npmcli/arborist": "^1.0.3",
 		"chalk": "^4.1.0",
 		"fast_array_intersect": "^1.1.0",
 		"get-json": "^1.0.1",
@@ -45,7 +45,7 @@
 		"promise.allsettled": "^1.0.2",
 		"semver": "^7.3.2",
 		"table": "^6.0.3",
-		"yargs": "^16.0.3"
+		"yargs": "^16.1.0"
 	},
 	"devDependencies": {
 		"@ljharb/eslint-config": "^17.2.0",
