@@ -2,7 +2,9 @@
 	"name": "ls-engines",
 	"version": "0.3.5",
 	"description": "Determine if your dependency graph's stated \"engines\" criteria is met.",
-	"bin": "./bin/ls-engines",
+	"bin": {
+		"ls-engines": "bin/ls-engines"
+	},
 	"exports": {},
 	"scripts": {
 		"lint": "eslint . bin/*",
@@ -49,7 +51,7 @@
 		"@ljharb/eslint-config": "^17.2.0",
 		"aud": "^1.1.2",
 		"auto-changelog": "^2.2.1",
-		"eslint": "^7.10.0",
+		"eslint": "^7.11.0",
 		"tape": "^5.0.1"
 	},
 	"auto-changelog": {
