@@ -48,11 +48,11 @@
 		"yargs": "^16.1.0"
 	},
 	"devDependencies": {
-		"@ljharb/eslint-config": "^17.2.0",
-		"aud": "^1.1.2",
+		"@ljharb/eslint-config": "^17.5.1",
+		"aud": "^1.1.4",
 		"auto-changelog": "^2.2.1",
-		"eslint": "^7.11.0",
-		"tape": "^5.0.1"
+		"eslint": "^7.20.0",
+		"tape": "^5.1.1"
 	},
 	"auto-changelog": {
 		"output": "CHANGELOG.md",
