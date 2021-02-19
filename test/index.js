@@ -23,6 +23,12 @@ function normalizeNodeVersion(output) {
 	).replace(
 		/Currently available latest releases of each valid node major version: [^\n]+/,
 		'Currently available latest releases of each valid node major version: <node versions for above semver range>',
+	).replace(
+		/\(node:\d{4}\) ExperimentalWarning: The fs.promises API is experimental\n/,
+		'',
+	).replace(
+		/\(node:\d{4}\) ExperimentalWarning: Conditional exports is an experimental feature. This feature could change at any time\n/,
+		'',
 	);
 }
 
