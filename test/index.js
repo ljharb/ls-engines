@@ -9,7 +9,11 @@ const EXITS = require('../exit-codes');
 
 const binPath = path.join(__dirname, '..', 'bin', 'ls-engines');
 const fixturePath = path.join(__dirname, 'fixtures');
-const fixtures = fs.readdirSync(fixturePath).filter((x) => !process.env.FIXTURE || process.env.FIXTURE === x);
+const grepRegex = process.env.GREP && new RegExp(process.env.GREP);
+const fixtures = fs.readdirSync(fixturePath).filter((x) => !process.env.FIXTURE
+	|| process.env.FIXTURE === x
+	|| (grepRegex && grepRegex.test(x)
+	));
 
 function normalizeNodeVersion(output) {
 	return output && output.replace(
