@@ -1,6 +1,5 @@
 # ls-engines <sup>[![Version Badge][2]][1]</sup>
 
-[![Build Status][3]][4]
 [![dependency status][5]][6]
 [![dev dependency status][7]][8]
 [![License][license-image]][license-url]
@@ -26,9 +25,7 @@ Current node version, v13.7.0, is valid!
 `ls-engines` takes a `--mode` option, which defaults to "auto", but can also be "actual", "virtual", or "ideal". ”actual“ reads from `node_modules`; ”virtual“ reads from a lockfile; “ideal” reads from `package.json`.
 
 [1]: https://npmjs.org/package/ls-engines
-[2]: http://versionbadg.es/ljharb/ls-engines.svg
-[3]: https://travis-ci.com/ljharb/ls-engines.svg
-[4]: https://travis-ci.com/ljharb/ls-engines
+[2]: https://versionbadg.es/ljharb/ls-engines.svg
 [5]: https://david-dm.org/ljharb/ls-engines.svg
 [6]: https://david-dm.org/ljharb/ls-engines
 [7]: https://david-dm.org/ljharb/ls-engines/dev-status.svg
