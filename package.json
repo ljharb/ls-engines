@@ -9,7 +9,7 @@
 	"scripts": {
 		"lint": "eslint . bin/*",
 		"pretest": "npm run lint",
-		"tests-only": "tape test",
+		"tests-only": "nyc tape 'test/*.js'",
 		"test": "npm run tests-only",
 		"posttest": "npx aud --production",
 		"version": "auto-changelog && git add CHANGELOG.md",
@@ -52,6 +52,7 @@
 		"aud": "^1.1.4",
 		"auto-changelog": "^2.2.1",
 		"eslint": "^7.20.0",
+		"nyc": "^15.1.0",
 		"tape": "^5.1.1"
 	},
 	"auto-changelog": {
