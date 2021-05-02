@@ -4,6 +4,7 @@ const test = require('tape');
 const fs = require('fs');
 const { exec, execSync } = require('child_process');
 const path = require('path');
+const semver = require('semver');
 
 const EXITS = require('../exit-codes');
 
@@ -14,6 +15,8 @@ const fixtures = fs.readdirSync(fixturePath).filter((x) => !process.env.FIXTURE
 	|| process.env.FIXTURE === x
 	|| (grepRegex && grepRegex.test(x)
 	));
+const npmVersion = String(execSync('npm --version'));
+const isNPM7 = semver.satisfies(npmVersion, '>= 7');
 
 function normalizeNodeVersion(output) {
 	return output && output.replace(
@@ -29,6 +32,9 @@ function normalizeNodeVersion(output) {
 	).replace(
 		/\(node:\d{4}\) ExperimentalWarning: Conditional exports is an experimental feature. This feature could change at any time\n/,
 		'',
+	).replace(
+		isNPM7 ? /^Lockfile/ : /^v1 lockfile/,
+		'v1 lockfile',
 	);
 }
 
