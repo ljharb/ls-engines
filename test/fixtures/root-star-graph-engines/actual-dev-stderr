@@ -2,5 +2,5 @@ Your “engines” field is either missing, or set to `{ "node": "*" }`! Prefer 
 
 You can fix this by running `ls-engines --save`, or by manually adding the following to your `package.json`:
 "engines": {
-  "node": "^15 || ^14 || ^13 || ^12 || ^11 || ^10 || ^9 || ^8 || ^7 || ^6"
+  "node": "^16 || ^15 || ^14 || ^13 || ^12 || ^11 || ^10 || ^9 || ^8 || ^7 || ^6"
 }
