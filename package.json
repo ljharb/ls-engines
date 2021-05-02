@@ -7,6 +7,8 @@
 	},
 	"exports": {},
 	"scripts": {
+		"prepublish": "not-in-publish || npm run prepublishOnly",
+		"prepublishOnly": "safe-publish-latest",
 		"lint": "eslint . bin/*",
 		"pretest": "npm run lint",
 		"tests-only": "nyc tape 'test/*.js'",
@@ -53,6 +55,7 @@
 		"auto-changelog": "^2.2.1",
 		"eslint": "^7.20.0",
 		"nyc": "^15.1.0",
+		"safe-publish-latest": "^1.1.4",
 		"tape": "^5.1.1"
 	},
 	"auto-changelog": {
