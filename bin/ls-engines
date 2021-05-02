@@ -274,11 +274,21 @@ Promise.all([pAllVersions, graphRanges, pPackage]).then(async ([allVersions, gra
 	const fulfilleds = results.filter(({ status }) => status === 'fulfilled');
 	const rejecteds = results.filter(({ status }) => status === 'rejected');
 
-	fulfilleds.forEach(({ value: { output } }) => {
+	fulfilleds.reduce(async (prev, { value: { output, save: doSave } }) => {
+		await prev;
+
 		output.forEach((line) => {
 			console.log(line);
 		});
-	});
+		if (save && doSave) {
+			doSave(pkg.data);
+			try {
+				await pkg.save();
+			} catch {
+				process.exitCode |= EXITS.SAVE;
+			}
+		}
+	}, Promise.resolve());
 
 	// print out failures last
 	await rejecteds.reduce(async (prev, error) => {
