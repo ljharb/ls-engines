@@ -160,10 +160,17 @@ async function checkEngines(rootNode, rootValids, graphValids, displayRange, sho
 	}
 	const same = [];
 	const subset = [];
+	const superset = [];
 	selectedEngines.forEach((engine) => {
-		if (rootValids[engine].length === graphValids[engine].length) {
+		const all = new Set(rootValids[engine].concat(graphValids[engine]));
+		const isSame = all.size === rootValids[engine.length] && all.size === graphValids[engine].length;
+		const rootIsSubsetOfGraph = isSubset(rootValids[engine], graphValids[engine]);
+		const graphIsSubsetOfRoot = isSubset(graphValids[engine], rootValids[engine]);
+		if (isSame) {
 			same.push(engine);
-		} else if (isSubset(rootValids[engine], graphValids[engine])) {
+		} else if (graphIsSubsetOfRoot) {
+			superset.push(engine);
+		} else if (rootIsSubsetOfGraph) {
 			subset.push(engine);
 		}
 	});
@@ -174,13 +181,15 @@ async function checkEngines(rootNode, rootValids, graphValids, displayRange, sho
 			],
 		};
 	}
-	if (subset.length > 0) {
+
+	if (superset.length > 0 || subset.length > 0) {
 		const expandMessage = shouldSave
-			? `\n\`${chalk.gray('ls-engines')}\` will automatically widen your support, per the \`${chalk.gray('--save')}\` option, by adding the following to your \`${chalk.gray('package.json')}\`:`
-			: `\nIf you want to widen your support, you can run \`${chalk.bold(chalk.gray('ls-engines --save'))}\`, or manually add the following to your \`${chalk.gray('package.json')}\`:`;
-		return {
+			? `\n\`${chalk.gray('ls-engines')}\` will automatically ${superset.length > 0 ? 'narrow' : 'widen'} your support, per the \`${chalk.gray('--save')}\` option, by adding the following to your \`${chalk.gray('package.json')}\`:`
+			: `\nIf you want to ${superset.length > 0 ? 'narrow' : 'widen'} your support, you can run \`${chalk.bold(chalk.gray('ls-engines --save'))}\`, or manually add the following to your \`${chalk.gray('package.json')}\`:`;
+		const result = {
+			code: superset.length > 0 ? EXITS.INEXACT : EXITS.SUCCESS,
 			output: [
-				chalk.bold(chalk.green('\nYour “engines” field allows fewer node versions than your dependency graph does.')),
+				chalk.bold(chalk[superset.length > 0 ? 'yellow' : 'green'](`\nYour “engines” field allows ${superset.length > 0 ? 'more' : 'fewer'} node versions than your dependency graph does.`)),
 				expandMessage,
 				chalk.blue(`"engines": ${JSON.stringify({ node: displayRange }, null, 2)}`),
 			],
@@ -192,6 +201,10 @@ async function checkEngines(rootNode, rootValids, graphValids, displayRange, sho
 				pkg.engines.node = displayRange;
 			},
 		};
+		if (result.code !== EXITS.SUCCESS) {
+			throw result;
+		}
+		return result;
 	}
 	throw {
 		code: EXITS.INEXACT,
