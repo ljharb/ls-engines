@@ -8,10 +8,10 @@ const arb = new Arborist();
 
 const npmInfo = require('./npm-info');
 
-function prune(tree, keepDev, keepProduction) {
+function prune(tree, keepDev, keepProduction, keepPeer) {
 	if (!keepDev || !keepProduction) {
 		for (const node of tree.children.values()) {
-			if ((!keepDev && node.dev) || (!keepProduction && !node.dev)) {
+			if ((!keepDev && node.dev) || (!keepProduction && !node.dev) || (!keepPeer && node.peer)) {
 				node.parent = null;
 			}
 		}
@@ -64,8 +64,8 @@ async function getBaseTree(mode, logger) {
 	return arb.buildIdealTree({ fullMetadata: true, update: { all: true } });
 }
 
-module.exports = async function getTree(mode, { dev, logger = (x) => console.log(x), production } = {}) {
+module.exports = async function getTree(mode, { dev, logger = (x) => console.log(x), peer, production } = {}) {
 	const tree = await getBaseTree(mode, logger);
-	prune(tree, dev, production);
+	prune(tree, dev, production, peer);
 	return tree;
 };

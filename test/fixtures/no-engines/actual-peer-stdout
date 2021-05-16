@@ -1,0 +1,11 @@
+`node_modules` found, mode is “actual”; loading tree from disk...
+
+Valid node version range: *
+
+Currently available latest releases of each valid node major version: <node versions for above semver range>
+
+┌────────┬─────────────────┬─────────────────┬──────────────────────────┐
+│ engine │ current version │ valid (package) │ valid (dependency graph) │
+├────────┼─────────────────┼─────────────────┼──────────────────────────┤
+│ node   │ ${process.version} │ yes!            │ yes!                     │
+└────────┴─────────────────┴─────────────────┴──────────────────────────┘

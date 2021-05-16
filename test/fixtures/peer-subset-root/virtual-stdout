@@ -1,8 +1,15 @@
 v1 lockfile found, mode is “virtual”; loading virtual tree from lockfile...
 
-Valid node version range: ^16 || ^15 || ^14 || ^13 || ^12 || ^11 || ^10
+Valid node version range: *
 
 Currently available latest releases of each valid node major version: <node versions for above semver range>
+
+Your “engines” field allows fewer node versions than your dependency graph does.
+
+If you want to widen your support, you can run `ls-engines --save`, or manually add the following to your `package.json`:
+"engines": {
+  "node": "*"
+}
 
 ┌────────┬─────────────────┬─────────────────┬──────────────────────────┐
 │ engine │ current version │ valid (package) │ valid (dependency graph) │

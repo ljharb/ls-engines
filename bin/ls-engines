@@ -32,6 +32,11 @@ const { argv } = yargs
 		describe: 'whether to include dev deps or not',
 		type: 'boolean',
 	})
+	.option('peer', {
+		default: FALSE,
+		describe: 'whether to include peer deps or not',
+		type: 'boolean',
+	})
 	.option('save', {
 		default: false,
 		describe: `update \`${chalk.gray('package.json')}\`’s “engines” field to match that of your dependency graph`,
@@ -42,9 +47,9 @@ const { argv } = yargs
 		describe: 'check that the current node version matches your dependency graph’s requirements',
 		type: 'boolean',
 	})
-	.check(({ dev, production }) => {
-		if (![dev, production].some((x) => x === TRUE || x === true)) {
-			throw 'At least one of `--dev` or `--production` must be enabled.';
+	.check(({ dev, production, peer }) => {
+		if (![dev, production, peer].some((x) => x === TRUE || x === true)) {
+			throw 'At least one of `--dev`, `--production`, or `--peer` must be enabled.';
 		}
 		return true;
 	})
@@ -52,16 +57,19 @@ const { argv } = yargs
 	.help();
 
 function normalize(args) {
-	let { dev, production } = args;
+	let { dev, production, peer } = args;
 	if (typeof dev === 'object') {
 		dev = Boolean.prototype.valueOf.call(dev);
 	}
 	if (typeof production === 'object') {
 		production = Boolean.prototype.valueOf.call(production);
 	}
-	return { ...args, dev, production };
+	if (typeof peer === 'object') {
+		peer = Boolean.prototype.valueOf.call(peer);
+	}
+	return { ...args, dev, peer, production };
 }
-const { current, dev, mode, production, save } = normalize(argv);
+const { current, dev, mode, peer, production, save } = normalize(argv);
 
 const getTree = require('../get-tree');
 const getNodeVersions = require('../get-node-versions');
@@ -74,7 +82,7 @@ const currentVersions = {
 
 const pPackage = jsonFile(path.join(process.cwd(), 'package.json'));
 
-const graphRanges = getTree(mode, { dev, production }).then(async (tree) => {
+const graphRanges = getTree(mode, { dev, peer, production }).then(async (tree) => {
 	const graph = Array.from(
 		tree.inventory.filter(({ package: { engines }, edgesIn }) => edgesIn.size > 0 && engines && engines.node),
 		({ name, package: { engines: { node } } }) => node && [name, node],

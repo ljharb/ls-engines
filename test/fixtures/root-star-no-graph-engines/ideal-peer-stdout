@@ -1,0 +1,11 @@
+`package.json` found, mode is “ideal”; building ideal tree from `package.json`...
+
+Valid node version range: *
+
+Currently available latest releases of each valid node major version: <node versions for above semver range>
+
+┌────────┬─────────────────┬─────────────────┬──────────────────────────┐
+│ engine │ current version │ valid (package) │ valid (dependency graph) │
+├────────┼─────────────────┼─────────────────┼──────────────────────────┤
+│ node   │ ${process.version} │ yes!            │ yes!                     │
+└────────┴─────────────────┴─────────────────┴──────────────────────────┘

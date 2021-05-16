@@ -69,7 +69,7 @@ function getOrUpdate(cwd, cmd, mode, flag, err, res) {
 }
 
 function testMode(t, fixture, cwd, mode) {
-	return ['', '--dev', '--production'].reduce(async (prev, flag) => {
+	return ['', '--dev', '--production', '--peer'].reduce(async (prev, flag) => {
 		await prev;
 		const cmd = `${path.relative(cwd, binPath)} --mode=${mode} ${flag}`.trim();
 
