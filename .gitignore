@@ -107,3 +107,5 @@ dist
 npm-shrinkwrap.json
 package-lock.json
 yarn.lock
+
+!test/fixtures/*/package-lock.json
