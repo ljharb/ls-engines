@@ -1,0 +1,69 @@
+{
+	"name": "list-exports",
+	"version": "1.0.4",
+	"description": "Given a package name and a version number, or a path to a package.json, what specifiers does it expose?",
+	"main": "index.js",
+	"exports": {
+		".": [
+			{
+				"import": "./index.mjs",
+				"require": "./index.js",
+				"default": "./index.js"
+			},
+			"./index.js"
+		],
+		"./package.json": "./package.json"
+	},
+	"scripts": {
+		"prepublish": "not-in-publish || (safe-publish-latest && cp ../../LICENSE ./)",
+		"lint": "eslint .",
+		"pretest": "npm run lint",
+		"test": ">&2 echo tests are ran in the monorepo only",
+		"posttest": "npx aud --production"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ljharb/list-exports.git",
+		"directory": "./packages/list-exports"
+	},
+	"keywords": [
+		"exports",
+		"cjs",
+		"esm",
+		"module",
+		"commonjs",
+		"es",
+		"export",
+		"entrypoint",
+		"resolve"
+	],
+	"author": "Jordan Harband <ljharb@gmail.com>",
+	"funding": {
+		"url": "https://github.com/sponsors/ljharb"
+	},
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/ljharb/list-exports/issues"
+	},
+	"homepage": "https://github.com/ljharb/list-exports#readme",
+	"dependencies": {
+		"array.prototype.flatmap": "^1.2.5",
+		"get-package-type": "^0.1.0",
+		"npm-packlist": "^2.2.2",
+		"object-inspect": "^1.11.0",
+		"object.entries": "^1.1.5",
+		"read-package-json": "^3.0.1",
+		"resolve": "^2.0.0-next.3"
+	},
+	"devDependencies": {
+		"@ljharb/eslint-config": "^18.0.0",
+		"aud": "^1.1.5",
+		"eslint": "^7.32.0",
+		"in-publish": "^2.0.1",
+		"ls-engines": "^0.5.0",
+		"safe-publish-latest": "^1.1.5"
+	},
+	"engines": {
+		"node": ">= 10"
+	}
+}

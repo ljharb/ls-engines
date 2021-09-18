@@ -171,7 +171,7 @@ async function checkEngines(rootNode, rootValids, graphValids, displayRange, sho
 	const superset = [];
 	selectedEngines.forEach((engine) => {
 		const all = new Set(rootValids[engine].concat(graphValids[engine]));
-		const isSame = all.size === rootValids[engine.length] && all.size === graphValids[engine].length;
+		const isSame = all.size === rootValids[engine].length && all.size === graphValids[engine].length;
 		const rootIsSubsetOfGraph = isSubset(rootValids[engine], graphValids[engine]);
 		const graphIsSubsetOfRoot = isSubset(graphValids[engine], rootValids[engine]);
 		if (isSame) {

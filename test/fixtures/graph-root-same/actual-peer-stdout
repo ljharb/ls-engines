@@ -1,0 +1,13 @@
+`node_modules` found, mode is “actual”; loading tree from disk...
+
+Valid node version range: ^16 || ^15 || ^14 || ^13 || ^12 || ^11 || ^10
+
+Currently available latest releases of each valid node major version: <node versions for above semver range>
+
+Your “engines” field exactly matches your dependency graph’s requirements!
+
+┌────────┬─────────────────┬─────────────────┬──────────────────────────┐
+│ engine │ current version │ valid (package) │ valid (dependency graph) │
+├────────┼─────────────────┼─────────────────┼──────────────────────────┤
+│ node   │ ${process.version} │ yes!            │ yes!                     │
+└────────┴─────────────────┴─────────────────┴──────────────────────────┘

@@ -1,0 +1,11 @@
+v1 lockfile found, mode is “virtual”; loading virtual tree from lockfile...
+
+Valid node version range: ^16 || ^15 || ^14.13 || ^12.20
+
+Currently available latest releases of each valid node major version: <node versions for above semver range>
+
+┌────────┬─────────────────┬─────────────────┬──────────────────────────┐
+│ engine │ current version │ valid (package) │ valid (dependency graph) │
+├────────┼─────────────────┼─────────────────┼──────────────────────────┤
+│ node   │ ${process.version} │ yes!            │ yes!                     │
+└────────┴─────────────────┴─────────────────┴──────────────────────────┘
