@@ -1,11 +1,13 @@
-# ls-engines <sup>[![Version Badge][2]][1]</sup>
+# ls-engines <sup>[![Version Badge][npm-version-svg]][package-url]</sup>
 
-[![dependency status][5]][6]
-[![dev dependency status][7]][8]
+[![github actions][actions-image]][actions-url]
+[![coverage][codecov-image]][codecov-url]
+[![dependency status][deps-svg]][deps-url]
+[![dev dependency status][dev-deps-svg]][dev-deps-url]
 [![License][license-image]][license-url]
 [![Downloads][downloads-image]][downloads-url]
 
-[![npm badge][11]][1]
+[![npm badge][npm-badge-png]][package-url]
 
 Determine if your dependency graph's stated "engines" criteria is met.
 
@@ -24,14 +26,18 @@ Current node version, v13.7.0, is valid!
 
 `ls-engines` takes a `--mode` option, which defaults to "auto", but can also be "actual", "virtual", or "ideal". ”actual“ reads from `node_modules`; ”virtual“ reads from a lockfile; “ideal” reads from `package.json`.
 
-[1]: https://npmjs.org/package/ls-engines
-[2]: https://versionbadg.es/ljharb/ls-engines.svg
-[5]: https://david-dm.org/ljharb/ls-engines.svg
-[6]: https://david-dm.org/ljharb/ls-engines
-[7]: https://david-dm.org/ljharb/ls-engines/dev-status.svg
-[8]: https://david-dm.org/ljharb/ls-engines?type=dev
-[11]: https://nodei.co/npm/ls-engines.png?downloads=true&stars=true
+[package-url]: https://npmjs.org/package/ls-engines
+[npm-version-svg]: https://versionbadg.es/ljharb/ls-engines.svg
+[deps-svg]: https://david-dm.org/ljharb/ls-engines.svg
+[deps-url]: https://david-dm.org/ljharb/ls-engines
+[dev-deps-svg]: https://david-dm.org/ljharb/ls-engines/dev-status.svg
+[dev-deps-url]: https://david-dm.org/ljharb/ls-engines#info=devDependencies
+[npm-badge-png]: https://nodei.co/npm/ls-engines.png?downloads=true&stars=true
 [license-image]: https://img.shields.io/npm/l/ls-engines.svg
 [license-url]: LICENSE
 [downloads-image]: https://img.shields.io/npm/dm/ls-engines.svg
 [downloads-url]: https://npm-stat.com/charts.html?package=ls-engines
+[codecov-image]: https://codecov.io/gh/ljharb/ls-engines/branch/main/graphs/badge.svg
+[codecov-url]: https://app.codecov.io/gh/ljharb/ls-engines/
+[actions-image]: https://img.shields.io/endpoint?url=https://github-actions-badge-u3jn4tfpocch.runkit.sh/ljharb/ls-engines
+[actions-url]: https://github.com/ljharb/ls-engines/actions
