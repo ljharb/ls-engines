@@ -33,10 +33,7 @@ async function getBaseTree(mode, logger) {
 
 	if (mode === 'virtual' || hasLockfile) {
 		if (hasLockfile && lockfileVersion < 2) {
-			const messages = [].concat(
-				hasLockfile ? 'v1 lockfile found' : [],
-				mode === 'virtual' ? 'mode is “virtual”' : [],
-			);
+			const messages = ['v1 lockfile found'].concat(mode === 'virtual' ? 'mode is “virtual”' : []);
 			logger(chalk.green(`${messages.join(', ')}; loading ideal tree from lockfile...`));
 			const tree = await arb.buildIdealTree({ fullMetadata: true });
 			await Promise.all(Array.from(
