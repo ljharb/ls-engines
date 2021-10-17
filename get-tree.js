@@ -12,7 +12,7 @@ function prune(tree, keepDev, keepProduction, keepPeer) {
 	if (!keepDev || !keepProduction) {
 		for (const node of tree.children.values()) {
 			if ((!keepDev && node.dev) || (!keepProduction && !node.dev) || (!keepPeer && node.peer)) {
-				node.parent = null;
+				node.root = null;
 			}
 		}
 	}
