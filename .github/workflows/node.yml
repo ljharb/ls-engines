@@ -12,7 +12,7 @@ jobs:
       - uses: ljharb/actions/node/matrix@main
         id: set-matrix
         with:
-          preset: "^16 || ^15 || ^14.13 || ^12.20"
+          preset: "^16 || ^14.15 || ^12.20"
 
   latest:
     needs: [matrix]

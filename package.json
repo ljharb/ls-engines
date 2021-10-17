@@ -34,16 +34,16 @@
 	},
 	"homepage": "https://github.com/ljharb/ls-engines#readme",
 	"engines": {
-		"node": "^16 || ^15 || ^14.13 || ^12.20",
+		"node": "^16 || ^14.15 || ^12.20",
 		"npm": ">=7"
 	},
 	"dependencies": {
-		"@npmcli/arborist": "^2.10.0",
+		"@npmcli/arborist": "^4.0.1",
 		"chalk": "^4.1.2",
 		"fast_array_intersect": "^1.1.0",
 		"get-json": "^1.0.1",
 		"json-file-plus": "^3.3.1",
-		"pacote": "^11.3.5",
+		"pacote": "^12.0.2",
 		"promise.allsettled": "^1.0.5",
 		"semver": "^7.3.5",
 		"table": "^6.7.2",
