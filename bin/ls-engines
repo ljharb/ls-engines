@@ -92,7 +92,7 @@ const pPackage = jsonFile(path.join(process.cwd(), 'package.json'));
 
 const graphRanges = getTree(mode, { dev, peer, production }).then(async (tree) => {
 	const graph = Array.from(
-		tree.inventory.filter(({ package: { engines }, edgesIn }) => edgesIn.size > 0 && engines && engines.node),
+		tree.inventory.filter(({ package: { engines }, edgesIn, dev: isDev }) => (isDev ? dev : production) && edgesIn.size > 0 && engines && engines.node),
 		({ name, package: { engines: { node } } }) => node && [name, node],
 	).filter(([, node] = []) => node && node !== '*');
 
