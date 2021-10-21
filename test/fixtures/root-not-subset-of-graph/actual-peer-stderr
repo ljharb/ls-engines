@@ -2,5 +2,5 @@ Your “engines” field allows more node versions than your dependency graph do
 
 If you want to narrow your support, you can run `ls-engines --save`, or manually add the following to your `package.json`:
 "engines": {
-  "node": "^16 || ^15 || ^14 || ^13 || ^12 || ^11 || ^10"
+  "node": "^17 || ^16 || ^15 || ^14 || ^13 || ^12 || ^11 || ^10"
 }
