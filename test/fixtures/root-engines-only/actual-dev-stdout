@@ -10,9 +10,3 @@ If you want to widen your support, you can run `ls-engines --save`, or manually 
 "engines": {
   "node": "*"
 }
-
-┌────────┬─────────────────┬─────────────────┬──────────────────────────┐
-│ engine │ current version │ valid (package) │ valid (dependency graph) │
-├────────┼─────────────────┼─────────────────┼──────────────────────────┤
-│ node   │ ${process.version} │ yes!            │ yes!                     │
-└────────┴─────────────────┴─────────────────┴──────────────────────────┘

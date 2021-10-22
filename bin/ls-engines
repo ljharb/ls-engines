@@ -43,13 +43,18 @@ const { argv } = yargs
 		type: 'boolean',
 	})
 	.option('current', {
-		default: true,
+		default: TRUE,
 		describe: 'check that the current node version matches your dependency graph’s requirements',
 		type: 'boolean',
 	})
-	.check(({ dev, production, peer }) => {
+	.check(({ dev, production, peer, current }) => {
 		if (![dev, production, peer].some((x) => x === TRUE || x === true)) {
 			throw 'At least one of `--dev`, `--production`, or `--peer` must be enabled.';
+		}
+		if (current && dev) {
+			if (current !== TRUE) {
+				throw '`--current` is not available when checking dev deps.';
+			}
 		}
 		return true;
 	})
@@ -57,7 +62,7 @@ const { argv } = yargs
 	.help();
 
 function normalize(args) {
-	let { dev, production, peer } = args;
+	let { dev, production, peer, current } = args;
 	if (typeof dev === 'object') {
 		dev = Boolean.prototype.valueOf.call(dev);
 	}
@@ -67,7 +72,10 @@ function normalize(args) {
 	if (typeof peer === 'object') {
 		peer = Boolean.prototype.valueOf.call(peer);
 	}
-	return { ...args, dev, peer, production };
+	if (typeof current === 'object') {
+		current = !dev && Boolean.prototype.valueOf.call(current);
+	}
+	return { ...args, current, dev, peer, production };
 }
 const { current, dev, mode, peer, production, save } = normalize(argv);
 

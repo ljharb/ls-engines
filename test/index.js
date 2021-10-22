@@ -10,11 +10,10 @@ const EXITS = require('../exit-codes');
 
 const binPath = path.join(__dirname, '..', 'bin', 'ls-engines');
 const fixturePath = path.join(__dirname, 'fixtures');
-const grepRegex = process.env.GREP && new RegExp(process.env.GREP);
-const fixtures = fs.readdirSync(fixturePath).filter((x) => !process.env.FIXTURE
-	|| process.env.FIXTURE === x
-	|| (grepRegex && grepRegex.test(x)
-	));
+const { GREP, FIXTURE, UPDATE_SNAPSHOTS } = process.env;
+const grepRegex = GREP && new RegExp(GREP);
+const fixtures = fs.readdirSync(fixturePath)
+	.filter((x) => !FIXTURE || FIXTURE === x || (grepRegex && grepRegex.test(x)));
 const npmVersion = String(execSync('npm --version'));
 const isNPM7 = semver.satisfies(npmVersion, '>= 7');
 
@@ -53,7 +52,7 @@ function getOrUpdate(cwd, cmd, mode, flag, err, res) {
 	const errPath = path.join(cwd, filename(mode, flag, 'stderr'));
 	const outPath = path.join(cwd, filename(mode, flag, 'stdout'));
 	const codePath = path.join(cwd, filename(mode, flag, 'code'));
-	if (process.env.UPDATE_SNAPSHOTS) {
+	if (UPDATE_SNAPSHOTS) {
 		const codes = findCodes(err ? err.code : 0);
 		const stderr = (err && normalizeNodeVersion(err.message.slice(`Command failed: ${cmd}\n\n`.length))) || null;
 		const stdout = normalizeNodeVersion(res) || null;
