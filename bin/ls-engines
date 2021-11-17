@@ -276,6 +276,7 @@ Promise.all([pAllVersions, graphRanges, pPackage]).then(async ([allVersions, gra
 	if (!graphValids.every((v) => validRange.test(v))) {
 		throw new RangeError('please report this: ' + graphValids.join(',') + ' / ' + validRange);
 	}
+	// console.log('*', graphAllowed.filter(([x, vs]) => !vs.some((v) => v.startsWith('v8.'))));
 
 	const displayRange = validRange.raw && validRange.raw.replace(/(\.0)+( |$)/g, '$2').split(' ').reverse().join(' ');
 	if (validRange.raw) {

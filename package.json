@@ -38,7 +38,7 @@
 		"npm": ">=7"
 	},
 	"dependencies": {
-		"@npmcli/arborist": "^4.0.2",
+		"@npmcli/arborist": "^4.0.4",
 		"chalk": "^4.1.2",
 		"fast_array_intersect": "^1.1.0",
 		"get-json": "^1.0.1",
@@ -46,7 +46,7 @@
 		"pacote": "^12.0.2",
 		"promise.allsettled": "^1.0.5",
 		"semver": "^7.3.5",
-		"table": "^6.7.2",
+		"table": "^6.7.3",
 		"yargs": "^17.2.1"
 	},
 	"devDependencies": {
