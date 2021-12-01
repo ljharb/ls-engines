@@ -16,7 +16,7 @@ const table = require('../table');
 const FALSE = Object(false);
 const TRUE = Object(true);
 
-const { argv } = yargs
+const { current, dev, mode, peer, production, save } = yargs
 	.option('mode', {
 		choices: ['auto', 'actual', 'virtual', 'ideal'],
 		default: 'auto',
@@ -58,26 +58,24 @@ const { argv } = yargs
 		}
 		return true;
 	})
+	.middleware(({ dev, production, peer, current, ...args }) => {
+		if (typeof dev === 'object') {
+			dev = Boolean.prototype.valueOf.call(dev);
+		}
+		if (typeof production === 'object') {
+			production = Boolean.prototype.valueOf.call(production);
+		}
+		if (typeof peer === 'object') {
+			peer = Boolean.prototype.valueOf.call(peer);
+		}
+		if (typeof current === 'object') {
+			current = !dev && Boolean.prototype.valueOf.call(current);
+		}
+		return { ...args, current, dev, peer, production };
+	})
 	.strict()
-	.help();
-
-function normalize(args) {
-	let { dev, production, peer, current } = args;
-	if (typeof dev === 'object') {
-		dev = Boolean.prototype.valueOf.call(dev);
-	}
-	if (typeof production === 'object') {
-		production = Boolean.prototype.valueOf.call(production);
-	}
-	if (typeof peer === 'object') {
-		peer = Boolean.prototype.valueOf.call(peer);
-	}
-	if (typeof current === 'object') {
-		current = !dev && Boolean.prototype.valueOf.call(current);
-	}
-	return { ...args, current, dev, peer, production };
-}
-const { current, dev, mode, peer, production, save } = normalize(argv);
+	.help()
+	.parse();
 
 const getTree = require('../get-tree');
 const getNodeVersions = require('../get-node-versions');
