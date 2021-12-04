@@ -72,7 +72,7 @@ function testMode(t, fixture, cwd, mode) {
 		await prev;
 		const cmd = `${path.relative(cwd, binPath)} --mode=${mode} ${flag}`.trim();
 
-		t.comment(`## ${fixture}: running \`ls-engines --mode=${(mode + ' ' + flag).trim()}\`...`);
+		t.comment(`## ${fixture}: running \`ls-engines --mode=${`${mode} ${flag}`.trim()}\`...`);
 		return new Promise((resolve) => {
 			exec(cmd, { cwd, env: { ...process.env, FORCE_COLOR: 0 } }, (err, res) => {
 				resolve();

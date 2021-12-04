@@ -16,7 +16,7 @@ const table = require('../table');
 const FALSE = Object(false);
 const TRUE = Object(true);
 
-const { current, dev, mode, peer, production, save } = yargs
+const argv = yargs
 	.option('mode', {
 		choices: ['auto', 'actual', 'virtual', 'ideal'],
 		default: 'auto',
@@ -77,6 +77,8 @@ const { current, dev, mode, peer, production, save } = yargs
 	.help()
 	.parse();
 
+const { current, dev, mode, peer, production, save } = argv;
+
 const getTree = require('../get-tree');
 const getNodeVersions = require('../get-node-versions');
 
@@ -98,7 +100,7 @@ const graphRanges = getTree(mode, { dev, peer, production }).then(async (tree) =
 });
 
 function caret(ver) {
-	return '^' + ver.replace(/^v/g, '');
+	return `^${ver.replace(/^v/g, '')}`;
 }
 
 const pAllVersions = getNodeVersions().then((nodeVersions) => ({
@@ -272,11 +274,11 @@ Promise.all([pAllVersions, graphRanges, pPackage]).then(async ([allVersions, gra
 	}).map(caret) : ['*'];
 	const validRange = new Semver.Range(validMajorRanges.join(' || '));
 	if (!graphValids.every((v) => validRange.test(v))) {
-		throw new RangeError('please report this: ' + graphValids.join(',') + ' / ' + validRange);
+		throw new RangeError(`please report this: ${graphValids.join(',')} / ${validRange}`);
 	}
 	// console.log('*', graphAllowed.filter(([x, vs]) => !vs.some((v) => v.startsWith('v8.'))));
 
-	const displayRange = validRange.raw && validRange.raw.replace(/(\.0)+( |$)/g, '$2').split(' ').reverse().join(' ');
+	const displayRange = validRange.raw && validRange.raw.replace(/(?:\.0)+(?<x> |$)/g, '$<x>').split(' ').reverse().join(' ');
 	if (validRange.raw) {
 		console.log(chalk.gray(`\nValid node version range: ${displayRange}`));
 		const latestMajors = getLatestMajors(allVersions.node, validRange);

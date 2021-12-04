@@ -50,13 +50,13 @@
 		"yargs": "^17.2.1"
 	},
 	"devDependencies": {
-		"@ljharb/eslint-config": "^18.0.0",
+		"@ljharb/eslint-config": "^19.1.0",
 		"aud": "^1.1.5",
 		"auto-changelog": "^2.3.0",
-		"eslint": "^7.32.0",
+		"eslint": "^8.4.0",
 		"nyc": "^15.1.0",
 		"safe-publish-latest": "^2.0.0",
-		"tape": "^5.3.1"
+		"tape": "^5.3.2"
 	},
 	"auto-changelog": {
 		"output": "CHANGELOG.md",

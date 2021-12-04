@@ -1,36 +1,22 @@
 {
 	"root": true,
 
-	"extends": "@ljharb",
+	"extends": "@ljharb/eslint-config/node/12",
 
 	"parserOptions": {
 		"ecmaVersion": "2020",
 	},
 
-	"env": {
-		"es6": true,
-	},
-
 	"rules": {
 		"array-bracket-newline": 0,
-		"comma-dangle": [2, "always-multiline"],
-		"dot-notation": [2, { "allowKeywords": true }],
 		"func-style": 1,
 		"max-len": 0,
 		"max-lines-per-function": [2, 100],
 		"max-lines": 0,
 		"max-params": [2, 5],
 		"max-nested-callbacks": [2, 4],
-		"no-console": 0,
 		"object-curly-newline": 0,
-		"object-shorthand": [2, "always"],
-		"operator-linebreak": [2, "before"],
 		"require-atomic-updates": 0,
-		"quote-props": [2, "as-needed", {
-			"keywords": false,
-			"unnecessary": true,
-			"numbers": false,
-		}],
 	},
 
 	"overrides": [
