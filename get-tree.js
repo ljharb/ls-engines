@@ -6,7 +6,7 @@ const pacote = require('pacote');
 
 const arb = new Arborist();
 
-const npmInfo = require('./npm-info');
+const lockfileInfo = require('lockfile-info');
 
 function prune(tree, keepDev, keepProduction, keepPeer) {
 	if (!keepDev || !keepProduction) {
@@ -19,19 +19,23 @@ function prune(tree, keepDev, keepProduction, keepPeer) {
 	return tree;
 }
 
-async function getBaseTree(mode, logger) {
-	const { hasNodeModules, hasLockfile, hasPackage, lockfileVersion } = await npmInfo(mode);
+async function getBaseTree(mode, logger) { // eslint-disable-line consistent-return
+	const { hasNodeModulesDir, hasLockfile, hasPackageJSON, lockfileVersion } = await lockfileInfo();
 
-	if (mode === 'actual' || hasNodeModules) {
+	const ideal = mode === 'ideal' || (mode === 'auto' && !hasNodeModulesDir && !hasLockfile);
+	const virtual = mode === 'virtual' || (mode === 'auto' && hasLockfile);
+	const actual = mode === 'actual' || (mode === 'auto' && hasNodeModulesDir);
+
+	if (ideal) {
 		const messages = [].concat(
-			hasNodeModules ? `\`${chalk.gray('node_modules')}\` found` : [],
-			mode === 'actual' ? 'mode is “actual”' : [],
+			`\`${chalk.gray('package.json')}\` ${hasPackageJSON ? '' : 'not '}found`,
+			mode === 'ideal' ? 'mode is “ideal”' : [],
 		);
-		logger(chalk.green(`${messages.join(', ')}; loading tree from disk...`));
-		return arb.loadActual();
+		logger(chalk.green(`${messages.join(', ')}; building ideal tree from \`${chalk.gray('package.json')}\`...`));
+		return arb.buildIdealTree({ fullMetadata: true, update: { all: true } });
 	}
 
-	if (mode === 'virtual' || hasLockfile) {
+	if (virtual) {
 		if (hasLockfile && lockfileVersion < 2) {
 			const messages = ['v1 lockfile found'].concat(mode === 'virtual' ? 'mode is “virtual”' : []);
 			logger(chalk.green(`${messages.join(', ')}; loading ideal tree from lockfile...`));
@@ -53,12 +57,14 @@ async function getBaseTree(mode, logger) {
 		return arb.loadVirtual({ fullMetadata: true });
 	}
 
-	const messages = [].concat(
-		`\`${chalk.gray('package.json')}\` ${hasPackage ? '' : 'not '}found`,
-		mode === 'ideal' ? 'mode is “ideal”' : [],
-	);
-	logger(chalk.green(`${messages.join(', ')}; building ideal tree from \`${chalk.gray('package.json')}\`...`));
-	return arb.buildIdealTree({ fullMetadata: true, update: { all: true } });
+	if (actual) {
+		const messages = [].concat(
+			hasNodeModulesDir ? `\`${chalk.gray('node_modules')}\` found` : [],
+			mode === 'actual' ? 'mode is “actual”' : [],
+		);
+		logger(chalk.green(`${messages.join(', ')}; loading tree from disk...`));
+		return arb.loadActual();
+	}
 }
 
 module.exports = async function getTree(mode, { dev, logger = (x) => console.log(x), peer, production } = {}) {
