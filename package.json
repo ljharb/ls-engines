@@ -5,7 +5,9 @@
 	"bin": {
 		"ls-engines": "bin/ls-engines"
 	},
-	"exports": {},
+	"exports": {
+		"./package.json": "./package.json"
+	},
 	"scripts": {
 		"prepublish": "not-in-publish || npm run prepublishOnly",
 		"prepublishOnly": "safe-publish-latest",
