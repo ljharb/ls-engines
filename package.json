@@ -40,7 +40,7 @@
 		"npm": ">=7"
 	},
 	"dependencies": {
-		"@npmcli/arborist": "^4.1.0",
+		"@npmcli/arborist": "^4.1.1",
 		"chalk": "^4.1.2",
 		"fast_array_intersect": "^1.1.0",
 		"get-json": "^1.0.1",
@@ -50,7 +50,7 @@
 		"promise.allsettled": "^1.0.5",
 		"semver": "^7.3.5",
 		"table": "^6.7.5",
-		"yargs": "^17.3.0"
+		"yargs": "^17.3.1"
 	},
 	"devDependencies": {
 		"@ljharb/eslint-config": "^20.1.0",
