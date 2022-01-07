@@ -1,7 +1,7 @@
 'use strict';
 
 const Arborist = require('@npmcli/arborist');
-const chalk = require('chalk');
+const colors = require('colors/safe');
 const pacote = require('pacote');
 
 const arb = new Arborist();
@@ -28,17 +28,17 @@ async function getBaseTree(mode, logger) { // eslint-disable-line consistent-ret
 
 	if (ideal) {
 		const messages = [].concat(
-			`\`${chalk.gray('package.json')}\` ${hasPackageJSON ? '' : 'not '}found`,
+			`\`${colors.gray('package.json')}\` ${hasPackageJSON ? '' : 'not '}found`,
 			mode === 'ideal' ? 'mode is “ideal”' : [],
 		);
-		logger(chalk.green(`${messages.join(', ')}; building ideal tree from \`${chalk.gray('package.json')}\`...`));
+		logger(colors.green(`${messages.join(', ')}; building ideal tree from \`${colors.gray('package.json')}\`...`));
 		return arb.buildIdealTree({ fullMetadata: true, update: { all: true } });
 	}
 
 	if (virtual) {
 		if (hasLockfile && lockfileVersion < 2) {
 			const messages = ['v1 lockfile found'].concat(mode === 'virtual' ? 'mode is “virtual”' : []);
-			logger(chalk.green(`${messages.join(', ')}; loading ideal tree from lockfile...`));
+			logger(colors.green(`${messages.join(', ')}; loading ideal tree from lockfile...`));
 			const tree = await arb.buildIdealTree({ fullMetadata: true });
 			await Promise.all(Array.from(
 				tree.children.values(),
@@ -53,16 +53,16 @@ async function getBaseTree(mode, logger) { // eslint-disable-line consistent-ret
 			hasLockfile ? 'Lockfile found' : [],
 			mode === 'virtual' ? 'mode is “virtual”' : [],
 		);
-		logger(chalk.green(`${messages.join(', ')}; loading virtual tree from lockfile...`));
+		logger(colors.green(`${messages.join(', ')}; loading virtual tree from lockfile...`));
 		return arb.loadVirtual({ fullMetadata: true });
 	}
 
 	if (actual) {
 		const messages = [].concat(
-			hasNodeModulesDir ? `\`${chalk.gray('node_modules')}\` found` : [],
+			hasNodeModulesDir ? `\`${colors.gray('node_modules')}\` found` : [],
 			mode === 'actual' ? 'mode is “actual”' : [],
 		);
-		logger(chalk.green(`${messages.join(', ')}; loading tree from disk...`));
+		logger(colors.green(`${messages.join(', ')}; loading tree from disk...`));
 		return arb.loadActual();
 	}
 }
