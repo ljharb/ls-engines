@@ -7,7 +7,6 @@ const Semver = require('semver');
 const { default: intersect } = require('fast_array_intersect');
 const colors = require('colors/safe');
 const yargs = require('yargs');
-const allSettled = require('promise.allsettled');
 const jsonFile = require('json-file-plus');
 
 const EXITS = require('../exit-codes');
@@ -292,7 +291,7 @@ Promise.all([pAllVersions, graphRanges, pPackage]).then(async ([allVersions, gra
 	const pCurrent = current ? checkCurrent({ node: rootValids }, { node: graphValids }) : { output: [] };
 
 	// print out successes first
-	const results = await allSettled([pEngines, pCurrent]);
+	const results = await Promise.allSettled([pEngines, pCurrent]);
 	const fulfilleds = results.filter(({ status }) => status === 'fulfilled');
 	const rejecteds = results.filter(({ status }) => status === 'rejected');
 
