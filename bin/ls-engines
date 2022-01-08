@@ -78,7 +78,7 @@ const argv = yargs
 
 const { current, dev, mode, peer, production, save } = argv;
 
-const getTree = require('../get-tree');
+const getTree = require('get-dep-tree');
 const getNodeVersions = require('../get-node-versions');
 
 const selectedEngines = ['node'];
