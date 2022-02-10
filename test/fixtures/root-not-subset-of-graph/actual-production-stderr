@@ -1,5 +1,7 @@
 Your “engines” field allows more node versions than your dependency graph does.
 
+Conflicting dependencies: @npmcli/installed-package-contents, agent-base, agentkeepalive, aggregate-error, cacache, clean-stack, depd, fs-minipass, http-proxy-agent, https-proxy-agent, iconv-lite, imurmurhash, indent-string, make-fetch-happen, minipass, minipass-collect, minipass-fetch, minipass-flush, minipass-pipeline, minipass-sized, minizlib, mkdirp, npm-package-arg, npm-packlist, npm-registry-fetch, os-homedir, os-tmpdir, p-map, pacote, path-is-absolute, promise-retry, semver, smart-buffer, socks, socks-proxy-agent, agent-base, ssri, tar, which
+
 If you want to narrow your support, you can run `ls-engines --save`, or manually add the following to your `package.json`:
 "engines": {
   "node": "^17 || ^16 || ^15 || ^14 || ^13 || ^12 || ^11 || ^10"

@@ -151,7 +151,7 @@ function isSubset(inner, outer) {
 	return inner.every((item) => outerS.has(item));
 }
 
-async function checkEngines(rootNode, rootValids, graphValids, displayRange, shouldSave) {
+async function checkEngines(rootNode, rootValids, graphValids, graphAllowed, displayRange, shouldSave) {
 	const fixMessage = shouldSave
 		? `\n\`${colors.gray('ls-engines')}\` will automatically fix this, per the \`${colors.gray('--save')}\` option, by adding the following to your \`${colors.gray('package.json')}\`:`
 		: `\nYou can fix this by running \`${colors.bold(colors.gray('ls-engines --save'))}\`, or by manually adding the following to your \`${colors.gray('package.json')}\`:`;
@@ -176,6 +176,7 @@ async function checkEngines(rootNode, rootValids, graphValids, displayRange, sho
 	const same = [];
 	const subset = [];
 	const superset = [];
+	const conflicting = {};
 	selectedEngines.forEach((engine) => {
 		const all = new Set(rootValids[engine].concat(graphValids[engine]));
 		const isSame = all.size === rootValids[engine].length && all.size === graphValids[engine].length;
@@ -183,10 +184,18 @@ async function checkEngines(rootNode, rootValids, graphValids, displayRange, sho
 		const graphIsSubsetOfRoot = isSubset(graphValids[engine], rootValids[engine]);
 		if (isSame) {
 			same.push(engine);
-		} else if (graphIsSubsetOfRoot) {
-			superset.push(engine);
-		} else if (rootIsSubsetOfGraph) {
-			subset.push(engine);
+			conflicting[engine] = [];
+		} else {
+			const packageInvalids = graphAllowed[engine]
+				.filter(([, vs]) => !rootValids[engine].every((v) => vs.includes(v)))
+				.map(([name, vs]) => [name, rootValids[engine].filter((v) => !vs.includes(v))]);
+			conflicting[engine] = packageInvalids;
+
+			if (graphIsSubsetOfRoot) {
+				superset.push(engine);
+			} else if (rootIsSubsetOfGraph) {
+				subset.push(engine);
+			}
 		}
 	});
 	if (same.length === selectedEngines.length) {
@@ -201,13 +210,15 @@ async function checkEngines(rootNode, rootValids, graphValids, displayRange, sho
 		const expandMessage = shouldSave
 			? `\n\`${colors.gray('ls-engines')}\` will automatically ${superset.length > 0 ? 'narrow' : 'widen'} your support, per the \`${colors.gray('--save')}\` option, by adding the following to your \`${colors.gray('package.json')}\`:`
 			: `\nIf you want to ${superset.length > 0 ? 'narrow' : 'widen'} your support, you can run \`${colors.bold(colors.gray('ls-engines --save'))}\`, or manually add the following to your \`${colors.gray('package.json')}\`:`;
+
 		const result = {
 			code: superset.length > 0 ? EXITS.INEXACT : EXITS.SUCCESS,
-			output: [
+			output: [].concat(
 				colors.bold(colors[superset.length > 0 ? 'yellow' : 'green'](`\nYour “engines” field allows ${superset.length > 0 ? 'more' : 'fewer'} node versions than your dependency graph does.`)),
+				conflicting.node.length > 0 ? `\n${colors.gray(`Conflicting dependencies: ${conflicting.node.map(([name]) => name).join(', ')}`)}` : [],
 				expandMessage,
 				colors.blue(`"engines": ${JSON.stringify({ node: displayRange }, null, 2)}`),
-			],
+			),
 			save(pkg) {
 				/* eslint no-param-reassign: 0 */
 				if (!pkg.engines) {
@@ -275,7 +286,7 @@ Promise.all([pAllVersions, graphRanges, pPackage]).then(async ([allVersions, gra
 	if (!graphValids.every((v) => validRange.test(v))) {
 		throw new RangeError(`please report this: ${graphValids.join(',')} / ${validRange}`);
 	}
-	// console.log('*', graphAllowed.filter(([x, vs]) => !vs.some((v) => v.startsWith('v8.'))));
+	// console.log('*', graphAllowed.filter(([x, vs]) => !vs.some((v) => v.startsWith('v14'))));
 
 	const displayRange = validRange.raw && validRange.raw.replace(/(?:\.0)+(?<x> |$)/g, '$<x>').split(' ').reverse().join(' ');
 	if (validRange.raw) {
@@ -285,7 +296,7 @@ Promise.all([pAllVersions, graphRanges, pPackage]).then(async ([allVersions, gra
 	}
 
 	// TODO: refactor to make rootValids/graphValids an object of engines
-	const pEngines = checkEngines(rootNode, { node: rootValids }, { node: graphValids }, displayRange, save);
+	const pEngines = checkEngines(rootNode, { node: rootValids }, { node: graphValids }, { node: graphAllowed }, displayRange, save);
 
 	// TODO: refactor to make rootValids/graphValids an object of engines
 	const pCurrent = current ? checkCurrent({ node: rootValids }, { node: graphValids }) : { output: [] };
