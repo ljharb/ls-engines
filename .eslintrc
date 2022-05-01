@@ -20,6 +20,14 @@
 
 	"overrides": [
 		{
+			"files": [
+				"./checkCurrent.js",
+			],
+			"rules": {
+				"no-throw-literal": 0,
+			},
+		},
+		{
 			"files": "test/**",
 			"rules": {
 				"max-params": 0,

@@ -1,5 +1,8 @@
 #!/usr/bin/env node
 
+/* eslint no-param-reassign: 0 */
+/* eslint no-throw-literal: 0 */
+
 'use strict';
 
 const path = require('path');
@@ -10,7 +13,7 @@ const yargs = require('yargs');
 const jsonFile = require('json-file-plus');
 
 const EXITS = require('../exit-codes');
-const table = require('../table');
+const checkCurrent = require('../checkCurrent');
 
 const FALSE = Object(false);
 const TRUE = Object(true);
@@ -83,10 +86,6 @@ const getNodeVersions = require('../get-node-versions');
 
 const selectedEngines = ['node'];
 
-const currentVersions = {
-	node: process.version,
-};
-
 const pPackage = jsonFile(path.join(process.cwd(), 'package.json'));
 
 const graphRanges = getTree(mode, { dev, peer, production }).then(async (tree) => {
@@ -106,46 +105,6 @@ const pAllVersions = getNodeVersions().then((nodeVersions) => ({
 	node: nodeVersions,
 }));
 
-async function checkCurrent(rootValids, graphValids) {
-	let anyInvalid = false;
-	const rows = await Promise.all(selectedEngines.map(async (engine) => {
-		const currentVersion = await currentVersions[engine];
-		const rootValid = rootValids[engine].includes(currentVersion);
-		const graphValid = graphValids[engine].includes(currentVersion);
-		if (!rootValid || !graphValid) {
-			anyInvalid = true;
-		}
-		return [
-			colors.blue(engine),
-			`${colors.blue(colors.bold(currentVersion))}`,
-			`${colors.bold(rootValid ? colors.green('yes') : colors.red('no'))}!`,
-			`${colors.bold(graphValids ? colors.green('yes') : colors.red('no'))}!`,
-		];
-	}));
-	const output = [
-		'',
-		table([
-			[
-				'engine',
-				'current version',
-				'valid (package)',
-				'valid (dependency graph)',
-			].map((x) => colors.bold(colors.gray(x))),
-			...rows,
-		]).trim(),
-	];
-
-	if (anyInvalid) {
-		throw {
-			code: EXITS.CURRENT,
-			output,
-		};
-	}
-	return {
-		output,
-	};
-}
-
 function isSubset(inner, outer) {
 	const outerS = new Set(outer);
 	return inner.every((item) => outerS.has(item));
@@ -155,7 +114,6 @@ async function checkEngines(rootNode, rootValids, graphValids, graphAllowed, dis
 	const fixMessage = shouldSave
 		? `\n\`${colors.gray('ls-engines')}\` will automatically fix this, per the \`${colors.gray('--save')}\` option, by adding the following to your \`${colors.gray('package.json')}\`:`
 		: `\nYou can fix this by running \`${colors.bold(colors.gray('ls-engines --save'))}\`, or by manually adding the following to your \`${colors.gray('package.json')}\`:`;
-	/* eslint no-throw-literal: 0 */
 	if (rootNode === '*') {
 		throw {
 			code: EXITS.IMPLICIT,
@@ -165,7 +123,6 @@ async function checkEngines(rootNode, rootValids, graphValids, graphAllowed, dis
 				colors.blue(`"engines": ${JSON.stringify({ node: displayRange }, null, 2)}`),
 			],
 			save(pkg) {
-				/* eslint no-param-reassign: 0 */
 				if (!pkg.engines) {
 					pkg.engines = {};
 				}
@@ -299,7 +256,7 @@ Promise.all([pAllVersions, graphRanges, pPackage]).then(async ([allVersions, gra
 	const pEngines = checkEngines(rootNode, { node: rootValids }, { node: graphValids }, { node: graphAllowed }, displayRange, save);
 
 	// TODO: refactor to make rootValids/graphValids an object of engines
-	const pCurrent = current ? checkCurrent({ node: rootValids }, { node: graphValids }) : { output: [] };
+	const pCurrent = current ? checkCurrent(selectedEngines, { node: rootValids }, { node: graphValids }) : { output: [] };
 
 	// print out successes first
 	const results = await Promise.allSettled([pEngines, pCurrent]);
