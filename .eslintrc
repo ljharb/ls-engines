@@ -28,6 +28,12 @@
 			},
 		},
 		{
+			"files": "./getLatestMajors.js",
+			"rules": {
+				"no-param-reassign": [2, { "props": false }],
+			},
+		},
+		{
 			"files": "test/**",
 			"rules": {
 				"max-params": 0,
