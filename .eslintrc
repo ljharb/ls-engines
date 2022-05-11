@@ -12,7 +12,7 @@
 		"func-style": 1,
 		"id-length": 0,
 		"max-len": 0,
-		"max-lines-per-function": [2, 100],
+		"max-lines-per-function": [2, 110],
 		"max-lines": 0,
 		"max-params": [2, 6],
 		"max-nested-callbacks": [2, 4],

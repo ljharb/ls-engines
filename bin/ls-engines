@@ -23,6 +23,8 @@ const table = require('../table');
 const FALSE = Object(false);
 const TRUE = Object(true);
 
+const validEngines = ['node'];
+
 const argv = yargs
 	.option('mode', {
 		choices: ['auto', 'actual', 'virtual', 'ideal'],
@@ -66,7 +68,21 @@ const argv = yargs
 		}
 		return true;
 	})
-	.middleware(({ dev, production, peer, current, ...args }) => {
+	.option('engines', {
+		choices: validEngines,
+		default: validEngines,
+		describe: 'which engine(s) to list',
+		hidden: validEngines.length < 2,
+		type: 'array',
+	})
+	.middleware(({
+		dev,
+		production,
+		peer,
+		current,
+		engines: originalEngines,
+		...args
+	}) => {
 		if (typeof dev === 'object') {
 			dev = Boolean.prototype.valueOf.call(dev);
 		}
@@ -79,18 +95,25 @@ const argv = yargs
 		if (typeof current === 'object') {
 			current = !dev && Boolean.prototype.valueOf.call(current);
 		}
-		return { ...args, current, dev, peer, production };
+		const selectedEnginesSet = new Set(originalEngines);
+		const engines = validEngines.filter((engine) => selectedEnginesSet.has(engine));
+		return {
+			...args,
+			current,
+			dev,
+			engines,
+			peer,
+			production,
+		};
 	})
 	.strict()
 	.help()
 	.parse();
 
-const { current, dev, mode, peer, production, save } = argv;
+const { current, dev, mode, peer, production, save, engines: selectedEngines } = argv;
 
 const getTree = require('get-dep-tree');
 const getNodeVersions = require('../get-node-versions');
-
-const selectedEngines = ['node'];
 
 const pPackage = jsonFile(path.join(process.cwd(), 'package.json'));
 
@@ -100,12 +123,12 @@ const pGraphEntries = getTree(mode, { dev, peer, production }).then(async (tree)
 			_inBundle,
 			engines,
 		},
-	}) => !_inBundle && engines && engines.node);
+	}) => !_inBundle && engines && validEngines.some((engine) => engines[engine]));
 	const tuples = Array.from(
 		nodesWithEngines,
 		({ name, package: { engines } }) => [name, engines],
 	);
-	return tuples.filter(([, { node }]) => node && node !== '*');
+	return tuples.filter(([, engines]) => engines && validEngines.some((engine) => engines[engine] !== '*'));
 });
 
 function caret(ver) {
@@ -132,7 +155,7 @@ async function getGraphValids(graphEntries) {
 	if (graphEntries.length === 0) {
 		return {
 			allowed: [],
-			valids: validVersionsForEngines({ node: '*' }),
+			valids: validVersionsForEngines(fromEntries(validEngines.map((engine) => [engine, '*']))),
 		};
 	}
 	const graphAllowed = await Promise.all(graphEntries.map(async ([name, engines]) => [name, engines, await validVersionsForEngines(engines)]));
@@ -156,10 +179,10 @@ async function getGraphValids(graphEntries) {
 }
 
 const pRootRanges = pPackage.then(async (pkg) => {
-	const engineEntries = selectedEngines.map((engine) => [
+	const engineEntries = validEngines.map((engine) => [
 		engine,
 		(pkg.data.engines && pkg.data.engines[engine]) || null,
-	]);
+	]).map(([engine, data]) => [engine, data && data.replace(/[=](?<digits>\d)/, '= $<digits>')]);
 	const engines = fromEntries(engineEntries);
 	const rangeEntries = engineEntries.map(([engine, v]) => [engine, new Semver.Range(v || '*')]);
 	const ranges = fromEntries(rangeEntries);
@@ -198,7 +221,7 @@ const pGraphRanges = pGraphEntries.then(async (graphEntries) => {
 
 	const engines = fromEntries(engineEntries);
 
-	const validEntries = await Promise.all(selectedEngines.map(async (engine) => {
+	const validEntries = await Promise.all(validEngines.map(async (engine) => {
 		const validForEngine = await validVersionsForEngines(engines);
 		return [engine, validForEngine[engine]];
 	}));
@@ -220,7 +243,7 @@ const pLatestEngineMajors = Promise.all([
 	{ ranges: rootRanges },
 	{ ranges: graphRanges },
 	allVersions,
-]) => getLatestEngineMajors(selectedEngines, allVersions, rootRanges, graphRanges));
+]) => getLatestEngineMajors(validEngines, allVersions, rootRanges, graphRanges));
 
 function wrapCommaSeparated(array, limit) {
 	const str = array.join(', ');
@@ -260,13 +283,15 @@ const pSummary = Promise.all([
 				'engine',
 				majorsHeading,
 			].map((x) => colors.bold(colors.gray(x))),
-			...Object.entries(latestEngineMajors).map(([
-				engine,
-				{ root, graph },
-			]) => [
-				colors.blue(engine),
-				wrapCommaSeparated(graph.length > 0 ? intersect([root, graph]) : root, majorsHeading.length),
-			]),
+			...Object.entries(latestEngineMajors)
+				.filter(([engine]) => selectedEngines.includes(engine))
+				.map(([
+					engine,
+					{ root, graph },
+				]) => [
+					colors.blue(engine),
+					wrapCommaSeparated(graph.length > 0 ? intersect([root, graph]) : root, majorsHeading.length),
+				]),
 		]),
 		table([
 			[].concat(
