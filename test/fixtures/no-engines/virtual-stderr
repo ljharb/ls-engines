@@ -1,4 +1,4 @@
-Your “engines” field is either missing, or set to `{ "node": "*" }`! Prefer explicitly setting a supported engine range.
+Your “engines” field is missing! Prefer explicitly setting a supported engine range.
 
 You can fix this by running `ls-engines --save`, or by manually adding the following to your `package.json`:
 "engines": {

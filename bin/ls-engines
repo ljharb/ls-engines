@@ -156,11 +156,12 @@ async function getGraphValids(graphEntries) {
 }
 
 const pRootRanges = pPackage.then(async (pkg) => {
-	const engines = {
-		node: '*',
-		...pkg.data.engines,
-	};
-	const rangeEntries = Object.entries(engines).map(([engine, v]) => [engine, new Semver.Range(v)]);
+	const engineEntries = selectedEngines.map((engine) => [
+		engine,
+		(pkg.data.engines && pkg.data.engines[engine]) || null,
+	]);
+	const engines = fromEntries(engineEntries);
+	const rangeEntries = engineEntries.map(([engine, v]) => [engine, new Semver.Range(v || '*')]);
 	const ranges = fromEntries(rangeEntries);
 	const valids = await validVersionsForEngines(engines);
 	return { engines, ranges, valids };
@@ -237,6 +238,11 @@ function wrapCommaSeparated(array, limit) {
 	}, []).map((x) => x.split(',').map((y) => colors.blue(y)).join(',')).join(',\n');
 }
 
+function normalizeEngines(engines) {
+	const entries = Object.entries(engines).map(([engine, version]) => [engine, version || '*']);
+	return fromEntries(entries);
+}
+
 const majorsHeading = 'Currently available latest release of each valid major version:';
 
 const pSummary = Promise.all([
@@ -268,8 +274,8 @@ const pSummary = Promise.all([
 				'dependency graph engines:',
 			).map((x) => colors.bold(colors.gray(x))),
 			[
-				`"engines": ${JSON.stringify(rootEngines, null, 2)}`,
-				values(graphValids).some((x) => x.length > 0) && values(graphEngines).length > 0 ? `"engines": ${JSON.stringify(graphEngines, null, 2)}` : 'N/A',
+				`"engines": ${JSON.stringify(normalizeEngines(rootEngines), null, 2)}`,
+				values(graphValids).some((x) => x.length > 0) && values(graphEngines).length > 0 ? `"engines": ${JSON.stringify(normalizeEngines(graphEngines), null, 2)}` : 'N/A',
 			].map((x) => colors.blue(x)),
 		]),
 	],
@@ -283,7 +289,7 @@ Promise.all([
 	{
 		allowed: graphAllowed,
 		valids: graphValids,
-		ranges: { node: { displayRange } = { displayRange: '*' } },
+		ranges: graphDisplayRanges,
 	},
 	pkg,
 	{
@@ -293,11 +299,11 @@ Promise.all([
 ]) => {
 	const pEngines = checkEngines(
 		selectedEngines,
-		rootEngines.node,
+		rootEngines,
 		rootValids,
 		graphValids,
 		graphAllowed,
-		displayRange,
+		graphDisplayRanges,
 		save,
 	);
 

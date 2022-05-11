@@ -1,6 +1,7 @@
 'use strict';
 
 const colors = require('colors/safe');
+const fromEntries = require('object.fromentries');
 
 const EXITS = require('./exit-codes');
 const table = require('./table');
@@ -12,39 +13,41 @@ function isSubset(inner, outer) {
 
 module.exports = async function checkEngines(
 	selectedEngines,
-	rootNode,
+	rootEngines,
 	rootValids,
 	graphValids,
 	graphAllowed,
-	displayRange,
+	graphRanges,
 	shouldSave,
 ) {
+	const engineEntries = selectedEngines.map((engine) => [engine, '*'])
+		.concat(Object.entries(graphRanges).map(([engine, { displayRange }]) => [engine, displayRange]));
+	const engines = fromEntries(engineEntries);
+
 	const fixMessage = shouldSave
 		? `\n\`${colors.gray('ls-engines')}\` will automatically fix this, per the \`${colors.gray('--save')}\` option, by adding the following to your \`${colors.gray('package.json')}\`:`
 		: `\nYou can fix this by running \`${colors.bold(colors.gray('ls-engines --save'))}\`, or by manually adding the following to your \`${colors.gray('package.json')}\`:`;
-	if (rootNode === '*') {
-		throw {
-			code: EXITS.IMPLICIT,
-			output: [
-				colors.bold(colors.red('\nYour “engines” field is either missing, or set to `{ "node": "*" }`! Prefer explicitly setting a supported engine range.')),
-				fixMessage,
-				colors.blue(`"engines": ${JSON.stringify({ node: displayRange }, null, 2)}`),
-			],
-			save(pkg) {
-				if (!pkg.engines) {
-					// eslint-disable-next-line no-param-reassign
-					pkg.engines = {};
-				}
-				// eslint-disable-next-line no-param-reassign
-				pkg.engines.node = displayRange;
-			},
-		};
-	}
+
+	let allOmitted = true;
+	let anyOmitted = false;
+	let allStar = true;
+	let anyStar = false;
 	const same = [];
 	const subset = [];
 	const superset = [];
 	const conflicting = {};
 	selectedEngines.forEach((engine) => {
+		const value = rootEngines[engine];
+		if (typeof value === 'string') {
+			allOmitted = false;
+			if (value === '*') {
+				anyStar = true;
+			} else {
+				allStar = false;
+			}
+		} else {
+			anyOmitted = true;
+		}
 		const all = new Set(rootValids[engine].concat(graphValids[engine]));
 		const isSame = all.size === rootValids[engine].length && all.size === graphValids[engine].length;
 		const rootIsSubsetOfGraph = isSubset(rootValids[engine], graphValids[engine]);
@@ -55,16 +58,44 @@ module.exports = async function checkEngines(
 		} else {
 			const packageInvalids = graphAllowed
 				.filter(([, , { [engine]: vs }]) => !rootValids[engine].every((v) => vs.includes(v)))
-				.map(([name, engines, { [engine]: vs }]) => [name, engines[engine], rootValids[engine].filter((v) => !vs.includes(v))]);
+				.map(([name, depEngines, { [engine]: vs }]) => [name, depEngines[engine], rootValids[engine].filter((v) => !vs.includes(v))]);
 			conflicting[engine] = packageInvalids;
 
+			// if (isSubset(rootValids[engine], graphValids[engine])) {
 			if (graphIsSubsetOfRoot) {
 				superset.push(engine);
 			} else if (rootIsSubsetOfGraph) {
 				subset.push(engine);
 			}
+			// }
 		}
 	});
+
+	let message;
+	if (allOmitted) {
+		message = '\nYour “engines” field is missing! Prefer explicitly setting a supported engine range.';
+	} else if (anyOmitted) {
+		message = '\nYour “engines” field has some of your selected engines missing! Prefer explicitly setting a supported engine range.';
+	} else if (allStar) {
+		message = '\nYour “engines” field has your selected engines set to `*`! Prefer explicitly setting a supported engine range.';
+	} else if (anyStar) {
+		message = '\nYour “engines” field has some of your selected engines set to `*`! Prefer explicitly setting a supported engine range.';
+	}
+	if (message) {
+		throw {
+			code: EXITS.IMPLICIT,
+			output: [
+				colors.bold(colors.red(message)),
+				fixMessage,
+				colors.blue(`"engines": ${JSON.stringify(engines, null, 2)}`),
+			],
+			save(pkg) {
+				// eslint-disable-next-line no-param-reassign
+				pkg.engines = { ...pkg.engines, ...engines };
+			},
+		};
+	}
+
 	if (same.length === selectedEngines.length) {
 		return {
 			output: [
@@ -80,7 +111,7 @@ module.exports = async function checkEngines(
 
 		const conflictingTable = conflicting.node.length > 0 ? `\n${table([].concat(
 			[['Conflicting dependencies', 'engines.node'].map((x) => colors.bold(colors.gray(x)))],
-			conflicting.node.map(([name, engines]) => [name, engines].map((x) => colors.gray(x))),
+			conflicting.node.map(([name, range]) => [name, range].map((x) => colors.gray(x))),
 		))}` : [];
 
 		const result = {
@@ -89,15 +120,11 @@ module.exports = async function checkEngines(
 				colors.bold(colors[superset.length > 0 ? 'yellow' : 'green'](`\nYour “engines” field allows ${superset.length > 0 ? 'more' : 'fewer'} node versions than your dependency graph does.`)),
 				conflictingTable,
 				expandMessage,
-				colors.blue(`"engines": ${JSON.stringify({ node: displayRange }, null, 2)}`),
+				colors.blue(`"engines": ${JSON.stringify(engines, null, 2)}`),
 			),
 			save(pkg) {
-				if (!pkg.engines) {
-					// eslint-disable-next-line no-param-reassign
-					pkg.engines = {};
-				}
 				// eslint-disable-next-line no-param-reassign
-				pkg.engines.node = displayRange;
+				pkg.engines = { ...pkg.engines, ...engines };
 			},
 		};
 		if (result.code !== EXITS.SUCCESS) {
@@ -110,15 +137,11 @@ module.exports = async function checkEngines(
 		output: [
 			colors.red('\nYour “engines” field does not exactly match your dependency graph‘s requirements!'),
 			fixMessage,
-			colors.blue(`"engines": ${JSON.stringify({ node: displayRange }, null, 2)}`),
+			colors.blue(`"engines": ${JSON.stringify(engines, null, 2)}`),
 		],
 		save(pkg) {
-			if (!pkg.engines) {
-				// eslint-disable-next-line no-param-reassign
-				pkg.engines = {};
-			}
 			// eslint-disable-next-line no-param-reassign
-			pkg.engines.node = displayRange;
+			pkg.engines = { ...pkg.engines, ...engines };
 		},
 	};
 };
