@@ -74,6 +74,7 @@
 	"publishConfig": {
 		"ignore": [
 			"test/fixtures/**",
+			"test/mocks/**",
 			".github/workflows"
 		]
 	}
