@@ -1,5 +1,7 @@
 'use strict';
 
+require('./mock');
+
 const test = require('tape');
 const fs = require('fs');
 const { exec, execSync } = require('child_process');
@@ -10,6 +12,7 @@ const EXITS = require('../exit-codes');
 
 const binPath = path.join(__dirname, '..', 'bin', 'ls-engines');
 const fixturePath = path.join(__dirname, 'fixtures');
+const mockPath = path.join(__dirname, 'mock');
 const { GREP, FIXTURE, UPDATE_SNAPSHOTS } = process.env;
 const grepRegex = GREP && new RegExp(GREP);
 const fixtures = fs.readdirSync(fixturePath)
@@ -74,7 +77,14 @@ function testMode(t, fixture, cwd, mode) {
 
 		t.comment(`## ${fixture}: running \`ls-engines --mode=${`${mode} ${flag}`.trim()}\`...`);
 		return new Promise((resolve) => {
-			exec(cmd, { cwd, env: { ...process.env, FORCE_COLOR: 0 } }, (err, res) => {
+			exec(cmd, {
+				cwd,
+				env: {
+					...process.env,
+					FORCE_COLOR: 0,
+					NODE_OPTIONS: `--require="${mockPath}"`,
+				},
+			}, (err, res) => {
 				resolve();
 
 				t.test(`fixture: ${fixture}, mode: ${mode}${flag ? `, flag: ${flag}` : ''}`, (st) => {

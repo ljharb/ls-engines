@@ -17,7 +17,7 @@
 		"tests-only": "NODE_OPTIONS='--require=./test/mocks' tape 'test/*.js'",
 		"test": "npm run tests-only",
 		"posttest": "npx aud --production",
-		"test:update-mocks": "curl http://nodejs.org/dist/index.json > test/mocks/node-versions.json",
+		"test:update-mocks": "curl -L https://nodejs.org/dist/index.json -o test/mocks/node-versions.json",
 		"version": "auto-changelog && git add CHANGELOG.md",
 		"postversion": "auto-changelog && git add CHANGELOG.md && git commit --no-edit --amend && git tag -f \"v$(node -e \"console.log(require('./package.json').version)\")\""
 	},
