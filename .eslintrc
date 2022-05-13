@@ -22,9 +22,19 @@
 		{
 			"files": [
 				"./checkCurrent.js",
+				"./checkEngines.js",
 			],
 			"rules": {
 				"no-throw-literal": 0,
+			},
+		},
+		{
+			"files": [
+				"./checkEngines.js",
+			],
+			"rules": {
+				"max-lines-per-function": 0,
+				"max-params": 0,
 			},
 		},
 		{
