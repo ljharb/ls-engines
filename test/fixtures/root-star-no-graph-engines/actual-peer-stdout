@@ -1,12 +1,11 @@
-Your “engines” field does not exactly match your dependency graph‘s requirements!
+`node_modules` found, mode is “actual”; loading tree from disk...
 
-You can fix this by running `ls-engines --save`, or by manually adding the following to your `package.json`:
-"engines": {
-  "node": "^18 || ^17 || ^16 || ^15 || ^14 || ^13 || ^12 || ^11 || ^10"
-}
+Valid node version range: *
+
+Currently available latest releases of each valid node major version: <node versions for above semver range>
 
 ┌────────┬─────────────────┬─────────────────┬──────────────────────────┐
 │ engine │ current version │ valid (package) │ valid (dependency graph) │
 ├────────┼─────────────────┼─────────────────┼──────────────────────────┤
-│ node   │ ${process.version} │ no!             │ yes!                     │
+│ node   │ ${process.version} │ yes!            │ yes!                     │
 └────────┴─────────────────┴─────────────────┴──────────────────────────┘

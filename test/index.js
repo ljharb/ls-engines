@@ -118,9 +118,9 @@ function testMode(t, fixture, cwd, mode) {
 }
 
 test('ls-engines', (t) => {
-	t.plan(fixtures.length * 3 * 3);
+	t.plan(fixtures.length * 3 * 4);
 
-	fixtures.reduce(async (prev, fixture) => {
+	return fixtures.reduce(async (prev, fixture) => {
 		await prev;
 
 		const cwd = path.join(fixturePath, fixture);
