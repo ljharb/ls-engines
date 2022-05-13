@@ -3,7 +3,7 @@
 require('./mock');
 
 const test = require('tape');
-const fs = require('fs');
+const { readdirSync, promises: fs } = require('fs');
 const { exec, execSync } = require('child_process');
 const path = require('path');
 const semver = require('semver');
@@ -15,7 +15,7 @@ const fixturePath = path.join(__dirname, 'fixtures');
 const mockPath = path.join(__dirname, 'mock');
 const { GREP, FIXTURE, UPDATE_SNAPSHOTS } = process.env;
 const grepRegex = GREP && new RegExp(GREP);
-const fixtures = fs.readdirSync(fixturePath)
+const fixtures = readdirSync(fixturePath)
 	.filter((x) => !FIXTURE || FIXTURE === x || (grepRegex && grepRegex.test(x)));
 const npmVersion = String(execSync('npm --version'));
 const isNPM7 = semver.satisfies(npmVersion, '>= 7');
@@ -51,7 +51,7 @@ function findCodes(code) {
 	return Object.keys(EXITS).filter((name) => EXITS[name] & code);
 }
 
-function getOrUpdate(cwd, cmd, mode, flag, err, res) {
+async function getOrUpdate(cwd, cmd, mode, flag, err, res) {
 	const errPath = path.join(cwd, filename(mode, flag, 'stderr'));
 	const outPath = path.join(cwd, filename(mode, flag, 'stdout'));
 	const codePath = path.join(cwd, filename(mode, flag, 'code'));
@@ -59,14 +59,22 @@ function getOrUpdate(cwd, cmd, mode, flag, err, res) {
 		const codes = findCodes(err ? err.code : 0);
 		const stderr = (err && normalizeNodeVersion(err.message.slice(`Command failed: ${cmd}\n\n`.length))) || null;
 		const stdout = normalizeNodeVersion(res) || null;
-		fs.writeFileSync(codePath, `${codes.join('\n')}\n`);
-		fs.writeFileSync(errPath, stderr || '');
-		fs.writeFileSync(outPath, stdout || '');
+		await Promise.all([
+			fs.writeFile(codePath, `${codes.join('\n')}\n`),
+			fs.writeFile(errPath, stderr || ''),
+			fs.writeFile(outPath, stdout || ''),
+		]);
 		return { codes, stderr, stdout };
 	}
-	const codes = fs.readFileSync(codePath, 'utf-8').trim().split('\n');
-	const stderr = fs.readFileSync(errPath, 'utf-8') || null;
-	const stdout = fs.readFileSync(outPath, 'utf-8') || null;
+	const [
+		codes,
+		stderr,
+		stdout,
+	] = await Promise.all([
+		fs.readFile(codePath, 'utf-8').then((x) => x.trim().split('\n')),
+		fs.readFile(errPath, 'utf-8').then((x) => x || null),
+		fs.readFile(outPath, 'utf-8').then((x) => x || null),
+	]);
 	return { codes, stderr, stdout };
 }
 
@@ -87,10 +95,10 @@ function testMode(t, fixture, cwd, mode) {
 			}, (err, res) => {
 				resolve();
 
-				t.test(`fixture: ${fixture}, mode: ${mode}${flag ? `, flag: ${flag}` : ''}`, (st) => {
+				t.test(`fixture: ${fixture}, mode: ${mode}${flag ? `, flag: ${flag}` : ''}`, async (st) => {
 					st.plan(4);
 
-					const { codes, stderr, stdout } = getOrUpdate(cwd, cmd, mode, flag, err, res);
+					const { codes, stderr, stdout } = await getOrUpdate(cwd, cmd, mode, flag, err, res);
 					const succeeds = codes.length === 1 && codes[0] === 'SUCCESS';
 
 					if (succeeds) {
