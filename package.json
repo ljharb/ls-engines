@@ -42,14 +42,15 @@
 		"npm": ">=7"
 	},
 	"dependencies": {
-		"@npmcli/arborist": "^5.2.0",
+		"@npmcli/arborist": "=5.0.2",
+		"@npmcli/run-script": "=3.0.0",
 		"colors": "=1.4.0",
 		"fast_array_intersect": "^1.1.0",
 		"get-dep-tree": "^1.0.2",
 		"get-json": "^1.0.1",
 		"json-file-plus": "^3.3.1",
 		"lockfile-info": "^1.0.0",
-		"pacote": "^13.3.0",
+		"pacote": "=13.0.3",
 		"semver": "^7.3.7",
 		"table": "^6.8.0",
 		"yargs": "^17.4.1"
