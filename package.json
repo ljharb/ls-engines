@@ -49,10 +49,10 @@
 		"get-json": "^1.0.1",
 		"json-file-plus": "^3.3.1",
 		"lockfile-info": "^1.0.0",
-		"pacote": "^13.3.0",
+		"pacote": "^13.5.0",
 		"semver": "^7.3.7",
 		"table": "^6.8.0",
-		"yargs": "^17.5.0"
+		"yargs": "^17.5.1"
 	},
 	"devDependencies": {
 		"@ljharb/eslint-config": "^21.0.0",
