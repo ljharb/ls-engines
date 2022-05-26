@@ -21,7 +21,8 @@ module.exports = async function checkEngines(
 	shouldSave,
 ) {
 	const engineEntries = selectedEngines.map((engine) => [engine, '*'])
-		.concat(Object.entries(graphRanges).map(([engine, { displayRange }]) => [engine, displayRange]));
+		.concat(Object.entries(graphRanges).map(([engine, { displayRange }]) => [engine, displayRange]))
+		.filter(([engine, displayRange]) => engine === 'node' || displayRange !== '*');
 	const engines = fromEntries(engineEntries);
 
 	const fixMessage = shouldSave

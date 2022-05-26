@@ -70,7 +70,7 @@ const argv = yargs
 	})
 	.option('engines', {
 		choices: validEngines,
-		default: validEngines,
+		default: 'node',
 		describe: 'which engine(s) to list',
 		hidden: validEngines.length < 2,
 		type: 'array',
@@ -123,21 +123,24 @@ const pGraphEntries = getTree(mode, { dev, peer, production }).then(async (tree)
 			_inBundle,
 			engines,
 		},
-	}) => !_inBundle && engines && validEngines.some((engine) => engines[engine]));
+	}) => !_inBundle && engines && selectedEngines.some((engine) => engines[engine]));
 	const tuples = Array.from(
 		nodesWithEngines,
 		({ name, package: { engines } }) => [name, engines],
 	);
-	return tuples.filter(([, engines]) => engines && validEngines.some((engine) => engines[engine] !== '*'));
+	return tuples.filter(([, engines]) => engines && selectedEngines.some((engine) => engines[engine] !== '*'));
 });
 
 function caret(ver) {
 	return `^${ver.replace(/^v/g, '')}`;
 }
 
-const pAllVersions = getNodeVersions().then((nodeVersions) => ({
-	node: nodeVersions,
-}));
+const getEngineVersions = {
+	node: getNodeVersions,
+};
+
+const pAllVersions = Promise.all(selectedEngines.map((x) => getEngineVersions[x]()))
+	.then((results) => fromEntries(selectedEngines.map((engine, i) => [engine, results[i]])));
 
 async function validVersionsForEngines(engines) {
 	const allVersions = await pAllVersions;
@@ -243,7 +246,7 @@ const pLatestEngineMajors = Promise.all([
 	{ ranges: rootRanges },
 	{ ranges: graphRanges },
 	allVersions,
-]) => getLatestEngineMajors(validEngines, allVersions, rootRanges, graphRanges));
+]) => getLatestEngineMajors(selectedEngines, allVersions, rootRanges, graphRanges));
 
 function wrapCommaSeparated(array, limit) {
 	const str = array.join(', ');
@@ -262,7 +265,9 @@ function wrapCommaSeparated(array, limit) {
 }
 
 function normalizeEngines(engines) {
-	const entries = Object.entries(engines).map(([engine, version]) => [engine, version || '*']);
+	const entries = Object.entries(engines)
+		.map(([engine, version]) => [engine, version || '*'])
+		.filter(([engine, version]) => engine === 'node' || version !== '*');
 	return fromEntries(entries);
 }
 

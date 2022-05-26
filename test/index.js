@@ -17,7 +17,7 @@ const { GREP, FIXTURE, UPDATE_SNAPSHOTS } = process.env;
 const grepRegex = GREP && new RegExp(GREP);
 const fixtures = readdirSync(fixturePath)
 	.filter((x) => !FIXTURE || FIXTURE === x || (grepRegex && grepRegex.test(x)));
-const npmVersion = String(execSync('npm --version'));
+const npmVersion = `v${execSync('npm --version')}`.trim();
 const isNPM7 = semver.satisfies(npmVersion, '>= 7');
 
 const replacement = '<node versions for below semver range>';
