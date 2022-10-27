@@ -4,6 +4,7 @@ v1 lockfile found, mode is “virtual”; loading virtual tree from lockfile...
 ├────────┼─────────────────────────────────────────────────────────────────┤
 │ node   │ <node versions for below semver range>                          │
 │        │ <node versions for below semver range>                          │
+│        │ <node versions for below semver range>                          │
 └────────┴─────────────────────────────────────────────────────────────────┘
 
 ┌──────────────────┬───────────────────────────┐
