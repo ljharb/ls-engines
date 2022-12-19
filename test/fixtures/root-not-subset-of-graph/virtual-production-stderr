@@ -87,3 +87,9 @@ If you want to narrow your support, you can run `ls-engines --save`, or manually
 "engines": {
   "node": ">= 10"
 }
+
+┌────────┬─────────────────┬─────────────────┬──────────────────────────┐
+│ engine │ current version │ valid (package) │ valid (dependency graph) │
+├────────┼─────────────────┼─────────────────┼──────────────────────────┤
+│ node   │ ${process.version} │ no!             │ yes!                     │
+└────────┴─────────────────┴─────────────────┴──────────────────────────┘

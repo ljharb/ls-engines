@@ -17,9 +17,3 @@
 
 
 Your “engines” field exactly matches your dependency graph’s requirements!
-
-┌────────┬─────────────────┬─────────────────┬──────────────────────────┐
-│ engine │ current version │ valid (package) │ valid (dependency graph) │
-├────────┼─────────────────┼─────────────────┼──────────────────────────┤
-│ node   │ ${process.version} │ yes!            │ yes!                     │
-└────────┴─────────────────┴─────────────────┴──────────────────────────┘
