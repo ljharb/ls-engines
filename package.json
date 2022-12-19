@@ -42,20 +42,20 @@
 		"npm": ">=8"
 	},
 	"dependencies": {
-		"@npmcli/arborist": "^5.6.2",
+		"@npmcli/arborist": "^5.6.3",
 		"colors": "=1.4.0",
 		"fast_array_intersect": "^1.1.0",
 		"get-dep-tree": "^1.0.3",
 		"get-json": "^1.0.1",
 		"json-file-plus": "^3.3.1",
 		"lockfile-info": "^1.0.0",
-		"object.fromentries": "^2.0.5",
-		"object.values": "^1.1.5",
+		"object.fromentries": "^2.0.6",
+		"object.values": "^1.1.6",
 		"pacote": "^13.6.2",
-		"promise.allsettled": "^1.0.5",
+		"promise.allsettled": "^1.0.6",
 		"semver": "^7.3.8",
-		"table": "^6.8.0",
-		"yargs": "^17.6.0"
+		"table": "^6.8.1",
+		"yargs": "^17.6.2"
 	},
 	"devDependencies": {
 		"@ljharb/eslint-config": "^21.0.0",
