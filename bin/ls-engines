@@ -123,7 +123,14 @@ const pGraphEntries = getTree(mode, { dev, peer, production }).then(async (tree)
 			_inBundle,
 			engines,
 		},
-	}) => !_inBundle && engines && selectedEngines.some((engine) => engines[engine]));
+		dev: nodeDev = false,
+		peer: nodePeer = false,
+	}) => ( // eslint-disable-line no-extra-parens
+		!_inBundle
+		&& engines
+		&& ((dev || !nodeDev) && (production || nodeDev) && (peer || !nodePeer)) // TODO: figure out why get-dep-tree isn't pruning properly
+		&& selectedEngines.some((engine) => engines[engine])
+	));
 	const tuples = Array.from(
 		nodesWithEngines,
 		({ name, package: { engines } }) => [name, engines],
