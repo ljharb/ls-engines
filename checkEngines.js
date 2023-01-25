@@ -2,6 +2,7 @@
 
 const colors = require('colors/safe');
 const fromEntries = require('object.fromentries');
+const group = require('array.prototype.group');
 
 const EXITS = require('./exit-codes');
 const table = require('./table');
@@ -59,8 +60,16 @@ module.exports = async function checkEngines(
 		} else {
 			const packageInvalids = graphAllowed
 				.filter(([, , { [engine]: vs }]) => !rootValids[engine].every((v) => vs.includes(v)))
-				.map(([name, depEngines, { [engine]: vs }]) => [name, depEngines[engine], rootValids[engine].filter((v) => !vs.includes(v))]);
-			conflicting[engine] = packageInvalids;
+				.map(([name, depEngines, { [engine]: vs }]) => [name, depEngines[engine], rootValids[engine].filter((v) => !vs.includes(v))])
+				.sort(([a], [b]) => a.localeCompare(b));
+
+			conflicting[engine] = Object.entries(group(packageInvalids, ([name]) => name)).map(([
+				name,
+				results,
+			]) => [
+				name,
+				Array.from(new Set(results.flatMap(([, depEngines]) => depEngines))).join('\n'),
+			]);
 
 			// if (isSubset(rootValids[engine], graphValids[engine])) {
 			if (graphIsSubsetOfRoot) {
@@ -111,7 +120,7 @@ module.exports = async function checkEngines(
 			: `\nIf you want to ${superset.length > 0 ? 'narrow' : 'widen'} your support, you can run \`${colors.bold(colors.gray('ls-engines --save'))}\`, or manually add the following to your \`${colors.gray('package.json')}\`:`;
 
 		const conflictingTable = conflicting.node.length > 0 ? `\n${table([].concat(
-			[['Conflicting dependencies', 'engines.node'].map((x) => colors.bold(colors.gray(x)))],
+			[[`Conflicting dependencies (${conflicting.node.length})`, 'engines.node'].map((x) => colors.bold(colors.gray(x)))],
 			conflicting.node.map(([name, range]) => [name, range].map((x) => colors.gray(x))),
 		))}` : [];
 

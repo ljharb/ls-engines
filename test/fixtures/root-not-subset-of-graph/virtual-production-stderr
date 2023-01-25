@@ -1,11 +1,12 @@
 Your “engines” field allows more node versions than your dependency graph does.
 
 ┌────────────────────────────────────┬──────────────┐
-│ Conflicting dependencies           │ engines.node │
+│ Conflicting dependencies (38)      │ engines.node │
 ├────────────────────────────────────┼──────────────┤
 │ @npmcli/installed-package-contents │ >= 10        │
 ├────────────────────────────────────┼──────────────┤
 │ agent-base                         │ >= 6.0.0     │
+│                                    │ >= 4.0.0     │
 ├────────────────────────────────────┼──────────────┤
 │ agentkeepalive                     │ >= 8.0.0     │
 ├────────────────────────────────────┼──────────────┤
@@ -72,8 +73,6 @@ Your “engines” field allows more node versions than your dependency graph do
 │ socks                              │ >= 6.0.0     │
 ├────────────────────────────────────┼──────────────┤
 │ socks-proxy-agent                  │ >= 6         │
-├────────────────────────────────────┼──────────────┤
-│ agent-base                         │ >= 4.0.0     │
 ├────────────────────────────────────┼──────────────┤
 │ ssri                               │ >= 8         │
 ├────────────────────────────────────┼──────────────┤

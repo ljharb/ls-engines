@@ -20,7 +20,7 @@
 Your “engines” field allows fewer node versions than your dependency graph does.
 
 ┌────────────────────────────────────┬──────────────┐
-│ Conflicting dependencies           │ engines.node │
+│ Conflicting dependencies (24)      │ engines.node │
 ├────────────────────────────────────┼──────────────┤
 │ @npmcli/installed-package-contents │ >= 10        │
 ├────────────────────────────────────┼──────────────┤
