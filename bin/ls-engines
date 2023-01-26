@@ -13,6 +13,7 @@ const jsonFile = require('json-file-plus');
 const fromEntries = require('object.fromentries');
 const values = require('object.values');
 const allSettled = require('promise.allsettled');
+const group = require('array.prototype.group');
 
 const EXITS = require('../exit-codes');
 const checkCurrent = require('../checkCurrent');
@@ -347,10 +348,12 @@ Promise.all([
 	const pCurrent = current ? checkCurrent(selectedEngines, rootValids, graphValids) : { output: [] };
 
 	// print out successes first
-	const results = await allSettled([pSummary, pEngines, pCurrent]);
-	const fulfilleds = results.filter((result) => result.status === 'fulfilled');
-	const rejecteds = results.filter((result) => result.status === 'rejected');
-	await fulfilleds.reduce(async (prev, { doSave, value: { output } }) => {
+	const { fulfilled = [], rejected = [] } = group(
+		await allSettled([pSummary, pEngines, pCurrent]),
+		(x) => x.status,
+	);
+
+	await fulfilled.reduce(async (prev, { doSave, value: { output } }) => {
 		await prev;
 
 		output.forEach((line) => {
@@ -368,7 +371,7 @@ Promise.all([
 	}, Promise.resolve());
 
 	// print out failures last
-	await rejecteds.reduce(async (prev, error) => {
+	await rejected.reduce(async (prev, error) => {
 		await prev;
 
 		if (!error || !error.reason) {
