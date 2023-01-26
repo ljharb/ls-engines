@@ -43,7 +43,7 @@ const argv = yargs
 		type: 'boolean',
 	})
 	.option('peer', {
-		default: FALSE,
+		default: TRUE,
 		describe: 'whether to include peer deps or not',
 		type: 'boolean',
 	})

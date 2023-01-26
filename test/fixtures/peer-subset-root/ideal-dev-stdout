@@ -10,9 +10,7 @@
 │ package engines: │ dependency graph engines: │
 ├──────────────────┼───────────────────────────┤
 │ "engines": {     │ "engines": {              │
-│   "node": ">= 8" │   "node": ">= 8"          │
+│   "node": ">= 8" │   "node": ">= 10"         │
 │ }                │ }                         │
 └──────────────────┴───────────────────────────┘
 
-
-Your “engines” field exactly matches your dependency graph’s requirements!
