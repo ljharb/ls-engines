@@ -191,7 +191,7 @@ async function getGraphValids(graphEntries) {
 const pRootRanges = pPackage.then(async (pkg) => {
 	const engineEntries = validEngines.map((engine) => [
 		engine,
-		(pkg.data.engines && pkg.data.engines[engine]) || null,
+		pkg.data.engines?.[engine] || null,
 	]).map(([engine, data]) => [engine, data && data.replace(/[=](?<digits>\d)/, '= $<digits>')]);
 	const engines = fromEntries(engineEntries);
 	const rangeEntries = engineEntries.map(([engine, v]) => [engine, new Semver.Range(v || '*')]);
