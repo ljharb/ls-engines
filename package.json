@@ -42,10 +42,10 @@
 		"npm": ">=8"
 	},
 	"dependencies": {
-		"@npmcli/arborist": "^6.1.5",
+		"@npmcli/arborist": "^6.2.0",
 		"colors": "=1.4.0",
 		"fast_array_intersect": "^1.1.0",
-		"get-dep-tree": "^1.0.3",
+		"get-dep-tree": "^1.0.4",
 		"get-json": "^1.0.1",
 		"json-file-plus": "^3.3.1",
 		"lockfile-info": "^1.0.0",
