@@ -1,7 +1,7 @@
 Your “engines” field allows more node versions than your dependency graph does.
 
 ┌────────────────────────────────────┬──────────────┐
-│ Conflicting dependencies (42)      │ engines.node │
+│ Conflicting dependencies (41)      │ engines.node │
 ├────────────────────────────────────┼──────────────┤
 │ @npmcli/installed-package-contents │ >= 10        │
 ├────────────────────────────────────┼──────────────┤
@@ -19,8 +19,6 @@ Your “engines” field allows more node versions than your dependency graph do
 │ clean-stack                        │ >=6          │
 ├────────────────────────────────────┼──────────────┤
 │ debug                              │ >=6.0        │
-├────────────────────────────────────┼──────────────┤
-│ depd                               │ >= 0.6       │
 ├────────────────────────────────────┼──────────────┤
 │ fs-minipass                        │ >= 8         │
 ├────────────────────────────────────┼──────────────┤
