@@ -1,0 +1,244 @@
+[
+	[
+		"valid-dev-invalid-prod",
+		{
+			"node": "^7"
+		}
+	],
+	[
+		"@npmcli/installed-package-contents",
+		{
+			"node": ">= 10"
+		}
+	],
+	[
+		"agent-base",
+		{
+			"node": ">= 6.0.0"
+		}
+	],
+	[
+		"agentkeepalive",
+		{
+			"node": ">= 8.0.0"
+		}
+	],
+	[
+		"aggregate-error",
+		{
+			"node": ">=8"
+		}
+	],
+	[
+		"cacache",
+		{
+			"node": ">= 10"
+		}
+	],
+	[
+		"clean-stack",
+		{
+			"node": ">=6"
+		}
+	],
+	[
+		"depd",
+		{
+			"node": ">= 0.6"
+		}
+	],
+	[
+		"fs-minipass",
+		{
+			"node": ">= 8"
+		}
+	],
+	[
+		"http-proxy-agent",
+		{
+			"node": ">= 6"
+		}
+	],
+	[
+		"https-proxy-agent",
+		{
+			"node": ">= 6.0.0"
+		}
+	],
+	[
+		"iconv-lite",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"imurmurhash",
+		{
+			"node": ">=0.8.19"
+		}
+	],
+	[
+		"indent-string",
+		{
+			"node": ">=8"
+		}
+	],
+	[
+		"make-fetch-happen",
+		{
+			"node": ">= 10"
+		}
+	],
+	[
+		"minipass",
+		{
+			"node": ">=8"
+		}
+	],
+	[
+		"minipass-collect",
+		{
+			"node": ">= 8"
+		}
+	],
+	[
+		"minipass-fetch",
+		{
+			"node": ">=8"
+		}
+	],
+	[
+		"minipass-flush",
+		{
+			"node": ">= 8"
+		}
+	],
+	[
+		"minipass-pipeline",
+		{
+			"node": ">=8"
+		}
+	],
+	[
+		"minipass-sized",
+		{
+			"node": ">=8"
+		}
+	],
+	[
+		"minizlib",
+		{
+			"node": ">= 8"
+		}
+	],
+	[
+		"mkdirp",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"npm-package-arg",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"npm-packlist",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"npm-registry-fetch",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"os-homedir",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"os-tmpdir",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"p-map",
+		{
+			"node": ">=8"
+		}
+	],
+	[
+		"pacote",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"path-is-absolute",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"promise-retry",
+		{
+			"node": ">=0.12"
+		}
+	],
+	[
+		"semver",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"smart-buffer",
+		{
+			"node": ">= 6.0.0",
+			"npm": ">= 3.0.0"
+		}
+	],
+	[
+		"socks",
+		{
+			"node": ">= 6.0.0",
+			"npm": ">= 3.0.0"
+		}
+	],
+	[
+		"socks-proxy-agent",
+		{
+			"node": ">= 6"
+		}
+	],
+	[
+		"agent-base",
+		{
+			"node": ">= 4.0.0"
+		}
+	],
+	[
+		"ssri",
+		{
+			"node": ">= 8"
+		}
+	],
+	[
+		"tar",
+		{
+			"node": ">= 10"
+		}
+	],
+	[
+		"which",
+		{
+			"node": ">= 8"
+		}
+	]
+]

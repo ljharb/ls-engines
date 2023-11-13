@@ -1,0 +1,284 @@
+[
+	[
+		"graph-root-same",
+		{
+			"node": ">= 10"
+		}
+	],
+	[
+		"array.prototype.flatmap",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"get-package-type",
+		{
+			"node": ">=8.0.0"
+		}
+	],
+	[
+		"npm-packlist",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"object.entries",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"read-package-json",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"define-properties",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"es-abstract",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"set-function-length",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"define-data-property",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"object-keys",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"arraybuffer.prototype.slice",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"available-typed-arrays",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"es-set-tostringtag",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"es-to-primitive",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"function.prototype.name",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"get-symbol-description",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"globalthis",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"has-proto",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"has-symbols",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"hasown",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"internal-slot",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"is-callable",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"is-negative-zero",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"is-regex",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"is-string",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"is-typed-array",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"object.assign",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"regexp.prototype.flags",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"safe-array-concat",
+		{
+			"node": ">=0.4"
+		}
+	],
+	[
+		"string.prototype.trim",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"typed-array-buffer",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"typed-array-byte-length",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"typed-array-byte-offset",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"which-typed-array",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"has-tostringtag",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"is-date-object",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"is-symbol",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"lru-cache",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"path-is-absolute",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"normalize-package-data",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"hosted-git-info",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"semver",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"set-function-name",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"supports-preserve-symlinks-flag",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"is-boolean-object",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"is-number-object",
+		{
+			"node": ">= 0.4"
+		}
+	]
+]

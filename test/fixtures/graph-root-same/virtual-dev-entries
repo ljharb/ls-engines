@@ -1,0 +1,1747 @@
+[
+	[
+		"@babel/helper-validator-identifier",
+		{
+			"node": ">=6.9.0"
+		}
+	],
+	[
+		"@babel/highlight",
+		{
+			"node": ">=6.9.0"
+		}
+	],
+	[
+		"@cloudcmd/copy-file",
+		{
+			"node": ">=4.0.0"
+		}
+	],
+	[
+		"@eslint/eslintrc",
+		{
+			"node": "^10.12.0 || >=12.0.0"
+		}
+	],
+	[
+		"@humanwhocodes/config-array",
+		{
+			"node": ">=10.10.0"
+		}
+	],
+	[
+		"@ljharb/eslint-config",
+		{
+			"node": ">= 12 || ^10.12"
+		}
+	],
+	[
+		"@npmcli/arborist",
+		{
+			"node": ">= 10"
+		}
+	],
+	[
+		"hosted-git-info",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"npm-package-arg",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"semver",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"semver",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"semver",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"@npmcli/installed-package-contents",
+		{
+			"node": ">= 10"
+		}
+	],
+	[
+		"@npmcli/map-workspaces",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"semver",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"@npmcli/move-file",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"@tootallnate/once",
+		{
+			"node": ">= 6"
+		}
+	],
+	[
+		"acorn",
+		{
+			"node": ">=0.4.0"
+		}
+	],
+	[
+		"agent-base",
+		{
+			"node": ">= 6.0.0"
+		}
+	],
+	[
+		"agentkeepalive",
+		{
+			"node": ">= 8.0.0"
+		}
+	],
+	[
+		"aggregate-error",
+		{
+			"node": ">=8"
+		}
+	],
+	[
+		"ansi-regex",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"is-fullwidth-code-point",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"string-width",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"strip-ansi",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"ansi-colors",
+		{
+			"node": ">=6"
+		}
+	],
+	[
+		"ansi-regex",
+		{
+			"node": ">=8"
+		}
+	],
+	[
+		"ansi-styles",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"array.prototype.map",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"assert-plus",
+		{
+			"node": ">=0.8"
+		}
+	],
+	[
+		"astral-regex",
+		{
+			"node": ">=8"
+		}
+	],
+	[
+		"aud",
+		{
+			"node": "^17 || ^16 || ^15 || ^14 || ^13 || ^12 || ^11 || ^10 || ^8 || ^6",
+			"npm": ">= 3"
+		}
+	],
+	[
+		"bin-links",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"boxen",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"ansi-regex",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"is-fullwidth-code-point",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"string-width",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"strip-ansi",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"cacache",
+		{
+			"node": ">= 10"
+		}
+	],
+	[
+		"callsites",
+		{
+			"node": ">=6"
+		}
+	],
+	[
+		"camelcase",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"capture-stack-trace",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"chalk",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"chownr",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"clean-stack",
+		{
+			"node": ">=6"
+		}
+	],
+	[
+		"cli-boxes",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"ansi-regex",
+		{
+			"node": ">=6"
+		}
+	],
+	[
+		"is-fullwidth-code-point",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"string-width",
+		{
+			"node": ">=6"
+		}
+	],
+	[
+		"strip-ansi",
+		{
+			"node": ">=6"
+		}
+	],
+	[
+		"cmd-shim",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"code-point-at",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"combined-stream",
+		{
+			"node": ">= 0.8"
+		}
+	],
+	[
+		"configstore",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"create-error-class",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"cross-spawn",
+		{
+			"node": ">= 8"
+		}
+	],
+	[
+		"crypto-random-string",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"dashdash",
+		{
+			"node": ">=0.10"
+		}
+	],
+	[
+		"debug",
+		{
+			"node": ">=6.0"
+		}
+	],
+	[
+		"decamelize",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"deep-extend",
+		{
+			"node": ">=4.0.0"
+		}
+	],
+	[
+		"delayed-stream",
+		{
+			"node": ">=0.4.0"
+		}
+	],
+	[
+		"depd",
+		{
+			"node": ">= 0.6"
+		}
+	],
+	[
+		"doctrine",
+		{
+			"node": ">=6.0.0"
+		}
+	],
+	[
+		"dot-prop",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"dotenv",
+		{
+			"node": ">=4.6.0"
+		}
+	],
+	[
+		"enquirer",
+		{
+			"node": ">=8.6"
+		}
+	],
+	[
+		"env-paths",
+		{
+			"node": ">=6"
+		}
+	],
+	[
+		"escalade",
+		{
+			"node": ">=6"
+		}
+	],
+	[
+		"escape-string-regexp",
+		{
+			"node": ">=0.8.0"
+		}
+	],
+	[
+		"eslint",
+		{
+			"node": "^10.12.0 || >=12.0.0"
+		}
+	],
+	[
+		"eslint-scope",
+		{
+			"node": ">=8.0.0"
+		}
+	],
+	[
+		"eslint-utils",
+		{
+			"node": ">=6"
+		}
+	],
+	[
+		"eslint-visitor-keys",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"eslint-visitor-keys",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"ansi-styles",
+		{
+			"node": ">=8"
+		}
+	],
+	[
+		"chalk",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"color-convert",
+		{
+			"node": ">=7.0.0"
+		}
+	],
+	[
+		"escape-string-regexp",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"has-flag",
+		{
+			"node": ">=8"
+		}
+	],
+	[
+		"semver",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"supports-color",
+		{
+			"node": ">=8"
+		}
+	],
+	[
+		"espree",
+		{
+			"node": "^10.12.0 || >=12.0.0"
+		}
+	],
+	[
+		"eslint-visitor-keys",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"esprima",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"esquery",
+		{
+			"node": ">=0.10"
+		}
+	],
+	[
+		"estraverse",
+		{
+			"node": ">=4.0"
+		}
+	],
+	[
+		"esrecurse",
+		{
+			"node": ">=4.0"
+		}
+	],
+	[
+		"estraverse",
+		{
+			"node": ">=4.0"
+		}
+	],
+	[
+		"estraverse",
+		{
+			"node": ">=4.0"
+		}
+	],
+	[
+		"esutils",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"execa",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"shebang-command",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"shebang-regex",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"file-entry-cache",
+		{
+			"node": "^10.12.0 || >=12.0.0"
+		}
+	],
+	[
+		"find-up",
+		{
+			"node": ">=6"
+		}
+	],
+	[
+		"flat-cache",
+		{
+			"node": "^10.12.0 || >=12.0.0"
+		}
+	],
+	[
+		"form-data",
+		{
+			"node": ">= 0.12"
+		}
+	],
+	[
+		"fs-copy-file",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"fs-minipass",
+		{
+			"node": ">= 8"
+		}
+	],
+	[
+		"ansi-regex",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"strip-ansi",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"get-caller-file",
+		{
+			"node": "6.* || 8.* || >= 10.*"
+		}
+	],
+	[
+		"get-stream",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"glob-parent",
+		{
+			"node": ">= 6"
+		}
+	],
+	[
+		"global-dirs",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"globals",
+		{
+			"node": ">=8"
+		}
+	],
+	[
+		"got",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"har-schema",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"har-validator",
+		{
+			"node": ">=6"
+		}
+	],
+	[
+		"has-flag",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"http-proxy-agent",
+		{
+			"node": ">= 6"
+		}
+	],
+	[
+		"http-signature",
+		{
+			"node": ">=0.8",
+			"npm": ">=1.3.7"
+		}
+	],
+	[
+		"https-proxy-agent",
+		{
+			"node": ">= 6"
+		}
+	],
+	[
+		"iconv-lite",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"ignore",
+		{
+			"node": ">= 4"
+		}
+	],
+	[
+		"import-fresh",
+		{
+			"node": ">=6"
+		}
+	],
+	[
+		"import-lazy",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"imurmurhash",
+		{
+			"node": ">=0.8.19"
+		}
+	],
+	[
+		"indent-string",
+		{
+			"node": ">=8"
+		}
+	],
+	[
+		"invert-kv",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"is-arguments",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"is-extglob",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"is-fullwidth-code-point",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"is-glob",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"is-installed-globally",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"is-npm",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"is-obj",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"is-path-inside",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"is-redirect",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"is-retry-allowed",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"is-stream",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"json-file-plus",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"latest-version",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"lcid",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"levn",
+		{
+			"node": ">= 0.8.0"
+		}
+	],
+	[
+		"libnpx",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"load-json-file",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"pify",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"locate-path",
+		{
+			"node": ">=6"
+		}
+	],
+	[
+		"lowercase-keys",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"ls-engines",
+		{
+			"node": "^17 || ^16 || ^15 || ^14.13 || ^12.20",
+			"npm": ">=7"
+		}
+	],
+	[
+		"ansi-styles",
+		{
+			"node": ">=8"
+		}
+	],
+	[
+		"chalk",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"color-convert",
+		{
+			"node": ">=7.0.0"
+		}
+	],
+	[
+		"has-flag",
+		{
+			"node": ">=8"
+		}
+	],
+	[
+		"is-fullwidth-code-point",
+		{
+			"node": ">=8"
+		}
+	],
+	[
+		"semver",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"string-width",
+		{
+			"node": ">=8"
+		}
+	],
+	[
+		"supports-color",
+		{
+			"node": ">=8"
+		}
+	],
+	[
+		"wrap-ansi",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"y18n",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"yargs",
+		{
+			"node": ">=12"
+		}
+	],
+	[
+		"yargs-parser",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"make-dir",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"make-fetch-happen",
+		{
+			"node": ">= 10"
+		}
+	],
+	[
+		"mime-db",
+		{
+			"node": ">= 0.6"
+		}
+	],
+	[
+		"mime-types",
+		{
+			"node": ">= 0.6"
+		}
+	],
+	[
+		"minipass",
+		{
+			"node": ">=8"
+		}
+	],
+	[
+		"minipass-collect",
+		{
+			"node": ">= 8"
+		}
+	],
+	[
+		"minipass-fetch",
+		{
+			"node": ">=8"
+		}
+	],
+	[
+		"minipass-flush",
+		{
+			"node": ">= 8"
+		}
+	],
+	[
+		"minipass-pipeline",
+		{
+			"node": ">=8"
+		}
+	],
+	[
+		"minipass-sized",
+		{
+			"node": ">=8"
+		}
+	],
+	[
+		"minizlib",
+		{
+			"node": ">= 8"
+		}
+	],
+	[
+		"mkdirp",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"mkdirp-infer-owner",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"negotiator",
+		{
+			"node": ">= 0.6"
+		}
+	],
+	[
+		"node-gyp",
+		{
+			"node": ">= 10.12.0"
+		}
+	],
+	[
+		"semver",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"node.extend",
+		{
+			"node": ">=0.4.0"
+		}
+	],
+	[
+		"nopt",
+		{
+			"node": ">=6"
+		}
+	],
+	[
+		"npm-install-checks",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"semver",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"npm-lockfile",
+		{
+			"node": ">= 6"
+		}
+	],
+	[
+		"hosted-git-info",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"npm-package-arg",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"semver",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"npm-registry-fetch",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"hosted-git-info",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"npm-package-arg",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"semver",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"npm-run-path",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"path-key",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"number-is-nan",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"object-assign",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"object.getownpropertydescriptors",
+		{
+			"node": ">= 0.8"
+		}
+	],
+	[
+		"optionator",
+		{
+			"node": ">= 0.8.0"
+		}
+	],
+	[
+		"os-homedir",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"os-locale",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"os-tmpdir",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"p-finally",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"p-limit",
+		{
+			"node": ">=6"
+		}
+	],
+	[
+		"p-locate",
+		{
+			"node": ">=6"
+		}
+	],
+	[
+		"p-map",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"p-try",
+		{
+			"node": ">=6"
+		}
+	],
+	[
+		"package-json",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"pacote",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"hosted-git-info",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"npm-package-arg",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"semver",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"parent-module",
+		{
+			"node": ">=6"
+		}
+	],
+	[
+		"parse-json",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"path-exists",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"path-key",
+		{
+			"node": ">=8"
+		}
+	],
+	[
+		"path-type",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"pify",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"pify",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"pinkie",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"pinkie-promise",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"pipe-io",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"prelude-ls",
+		{
+			"node": ">= 0.8.0"
+		}
+	],
+	[
+		"prepend-http",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"progress",
+		{
+			"node": ">=0.4.0"
+		}
+	],
+	[
+		"promise-deferred",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"promise-retry",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"promise.allsettled",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"promiseback",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"punycode",
+		{
+			"node": ">=6"
+		}
+	],
+	[
+		"qs",
+		{
+			"node": ">=0.6"
+		}
+	],
+	[
+		"strip-json-comments",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"read-package-json-fast",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"read-pkg",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"read-pkg-up",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"find-up",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"path-exists",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"regexpp",
+		{
+			"node": ">=8"
+		}
+	],
+	[
+		"registry-url",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"request",
+		{
+			"node": ">= 6"
+		}
+	],
+	[
+		"require-directory",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"require-from-string",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"resolve-from",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"retry",
+		{
+			"node": ">= 4"
+		}
+	],
+	[
+		"safe-publish-latest",
+		{
+			"node": ">= 0.10"
+		}
+	],
+	[
+		"ansi-regex",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"camelcase",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"strip-ansi",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"wrap-ansi",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"semver-diff",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"shebang-command",
+		{
+			"node": ">=8"
+		}
+	],
+	[
+		"shebang-regex",
+		{
+			"node": ">=8"
+		}
+	],
+	[
+		"slice-ansi",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"ansi-styles",
+		{
+			"node": ">=8"
+		}
+	],
+	[
+		"color-convert",
+		{
+			"node": ">=7.0.0"
+		}
+	],
+	[
+		"is-fullwidth-code-point",
+		{
+			"node": ">=8"
+		}
+	],
+	[
+		"smart-buffer",
+		{
+			"node": ">= 6.0.0",
+			"npm": ">= 3.0.0"
+		}
+	],
+	[
+		"socks",
+		{
+			"node": ">= 10.13.0",
+			"npm": ">= 3.0.0"
+		}
+	],
+	[
+		"socks-proxy-agent",
+		{
+			"node": ">= 10"
+		}
+	],
+	[
+		"sshpk",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"ssri",
+		{
+			"node": ">= 8"
+		}
+	],
+	[
+		"string-width",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"ansi-regex",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"strip-ansi",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"strip-ansi",
+		{
+			"node": ">=8"
+		}
+	],
+	[
+		"strip-bom",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"strip-eof",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"strip-json-comments",
+		{
+			"node": ">=8"
+		}
+	],
+	[
+		"supports-color",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"table",
+		{
+			"node": ">=10.0.0"
+		}
+	],
+	[
+		"is-fullwidth-code-point",
+		{
+			"node": ">=8"
+		}
+	],
+	[
+		"string-width",
+		{
+			"node": ">=8"
+		}
+	],
+	[
+		"tar",
+		{
+			"node": ">= 10"
+		}
+	],
+	[
+		"term-size",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"timed-out",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"tmp",
+		{
+			"node": ">=6"
+		}
+	],
+	[
+		"tough-cookie",
+		{
+			"node": ">=0.8"
+		}
+	],
+	[
+		"type-check",
+		{
+			"node": ">= 0.8.0"
+		}
+	],
+	[
+		"type-fest",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"unique-string",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"unzip-response",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"update-notifier",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"url-parse-lax",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"which",
+		{
+			"node": ">= 8"
+		}
+	],
+	[
+		"widest-line",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"ansi-regex",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"is-fullwidth-code-point",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"string-width",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"strip-ansi",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"word-wrap",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"wrap-ansi",
+		{
+			"node": ">=6"
+		}
+	],
+	[
+		"ansi-regex",
+		{
+			"node": ">=6"
+		}
+	],
+	[
+		"is-fullwidth-code-point",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"string-width",
+		{
+			"node": ">=6"
+		}
+	],
+	[
+		"strip-ansi",
+		{
+			"node": ">=6"
+		}
+	],
+	[
+		"xdg-basedir",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"camelcase",
+		{
+			"node": ">=6"
+		}
+	],
+	[
+		"ansi-regex",
+		{
+			"node": ">=6"
+		}
+	],
+	[
+		"is-fullwidth-code-point",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"string-width",
+		{
+			"node": ">=6"
+		}
+	],
+	[
+		"strip-ansi",
+		{
+			"node": ">=6"
+		}
+	]
+]

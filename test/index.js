@@ -9,6 +9,7 @@ const path = require('path');
 const semver = require('semver');
 
 const EXITS = require('../exit-codes');
+const getGraphEntries = require('../getGraphEntries');
 
 const binPath = path.join(__dirname, '..', 'bin', 'ls-engines');
 const fixturePath = path.join(__dirname, 'fixtures');
@@ -55,10 +56,12 @@ function findCodes(code) {
 	return Object.keys(EXITS).filter((name) => EXITS[name] & code);
 }
 
-async function getOrUpdate(cwd, cmd, mode, flag, err, res) {
+async function getOrUpdate(cwd, cmd, mode, flag, err, res, actualEntries) {
 	const errPath = path.join(cwd, filename(mode, flag, 'stderr'));
 	const outPath = path.join(cwd, filename(mode, flag, 'stdout'));
 	const codePath = path.join(cwd, filename(mode, flag, 'code'));
+	const entriesPath = path.join(cwd, filename(mode, flag, 'entries'));
+
 	if (UPDATE_SNAPSHOTS) {
 		const codes = findCodes(err ? err.code : 0);
 		const stderr = (err && normalizeNodeVersion(err.message.slice(`Command failed: ${cmd}\n\n`.length))) || null;
@@ -67,19 +70,23 @@ async function getOrUpdate(cwd, cmd, mode, flag, err, res) {
 			fs.writeFile(codePath, `${codes.join('\n')}\n`),
 			fs.writeFile(errPath, stderr || ''),
 			fs.writeFile(outPath, stdout || ''),
+			fs.writeFile(entriesPath, JSON.stringify(actualEntries, null, '\t') || ''),
 		]);
-		return { codes, stderr, stdout };
+		return { codes, stderr, stdout, entries: actualEntries };
 	}
+
 	const [
 		codes,
 		stderr,
 		stdout,
+		entries,
 	] = await Promise.all([
 		fs.readFile(codePath, 'utf-8').then((x) => x.trim().split('\n')),
 		fs.readFile(errPath, 'utf-8').then((x) => x || null),
 		fs.readFile(outPath, 'utf-8').then((x) => x || null),
+		fs.readFile(entriesPath, 'utf-8').then((x) => JSON.parse(x) || null),
 	]);
-	return { codes, stderr, stdout };
+	return { codes, stderr, stdout, entries };
 }
 
 function testMode(t, fixture, cwd, mode) {
@@ -88,6 +95,19 @@ function testMode(t, fixture, cwd, mode) {
 		const cmd = `${path.relative(cwd, binPath)} --mode=${mode} ${flag}`.trim();
 
 		t.comment(`## ${fixture}: running \`ls-engines --mode=${`${mode} ${flag}`.trim()}\`...`);
+
+		const mockLogger = t.captureFn(() => {});
+
+		const actualEntries = await getGraphEntries({
+			mode,
+			dev: flag === '' || flag === '--dev',
+			path: cwd,
+			peer: flag === '' || flag === '--peer',
+			production: flag === '' || flag === '--production',
+			selectedEngines: ['node'],
+			logger: mockLogger,
+		});
+
 		return new Promise((resolve) => {
 			exec(cmd, {
 				cwd,
@@ -100,9 +120,15 @@ function testMode(t, fixture, cwd, mode) {
 				resolve();
 
 				t.test(`fixture: ${fixture}, mode: ${mode}${flag ? `, flag: ${flag}` : ''}`, async (st) => {
-					st.plan(4);
+					st.plan(5);
 
-					const { codes, stderr, stdout } = await getOrUpdate(cwd, cmd, mode, flag, err, res);
+					const {
+						codes,
+						stderr,
+						stdout,
+						entries,
+					} = await getOrUpdate(cwd, cmd, mode, flag, err, res, actualEntries);
+
 					const succeeds = codes.length === 1 && codes[0] === 'SUCCESS';
 
 					if (succeeds) {
@@ -115,6 +141,7 @@ function testMode(t, fixture, cwd, mode) {
 					st.deepEqual(derivedCodes, codes, `exit code is \`${actualCode}\` (${derivedCodes})`);
 					st.equal(err && normalizeNodeVersion(err.message), stderr && `Command failed: ${cmd}\n\n${stderr}`, 'stderr is as expected');
 					st.equal(normalizeNodeVersion(res), stdout, 'stdout is as expected');
+					st.deepEqual(entries, actualEntries, 'entries are as expected');
 				});
 			});
 		});

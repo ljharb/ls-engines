@@ -1,0 +1,326 @@
+[
+	[
+		"salita",
+		{
+			"node": ">= 4"
+		}
+	],
+	[
+		"chalk",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"cli-table",
+		{
+			"node": ">= 0.2.0"
+		}
+	],
+	[
+		"json-file-plus",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"object.assign",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"ansi-styles",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"escape-string-regexp",
+		{
+			"node": ">=0.8.0"
+		}
+	],
+	[
+		"supports-color",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"colors",
+		{
+			"node": ">=0.1.90"
+		}
+	],
+	[
+		"is-callable",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"node.extend",
+		{
+			"node": ">=0.4.0"
+		}
+	],
+	[
+		"promiseback",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"hasown",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"define-properties",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"has-symbols",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"set-function-length",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"define-data-property",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"has-proto",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"promise-deferred",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"has-flag",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"decamelize",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"find-up",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"os-locale",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"require-directory",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"string-width",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"strip-ansi",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"wrap-ansi",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"locate-path",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"p-locate",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"path-exists",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"execa",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"lcid",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"mem",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"get-stream",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"is-stream",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"npm-run-path",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"p-finally",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"strip-eof",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"shebang-command",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"invert-kv",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"mimic-fn",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"path-key",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"p-limit",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"p-try",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"shebang-regex",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"is-fullwidth-code-point",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"ansi-regex",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"string-width",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"strip-ansi",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"camelcase",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"code-point-at",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"is-fullwidth-code-point",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"number-is-nan",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"ansi-regex",
+		{
+			"node": ">=0.10.0"
+		}
+	]
+]

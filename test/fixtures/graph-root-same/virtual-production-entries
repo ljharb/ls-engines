@@ -1,0 +1,176 @@
+[
+	[
+		"graph-root-same",
+		{
+			"node": ">= 10"
+		}
+	],
+	[
+		"array.prototype.flatmap",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"define-properties",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"es-abstract",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"es-to-primitive",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"get-package-type",
+		{
+			"node": ">=8.0.0"
+		}
+	],
+	[
+		"get-symbol-description",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"has",
+		{
+			"node": ">= 0.4.0"
+		}
+	],
+	[
+		"has-symbols",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"has-tostringtag",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"internal-slot",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"is-boolean-object",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"is-callable",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"is-date-object",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"is-negative-zero",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"is-number-object",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"is-regex",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"is-string",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"is-symbol",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"lru-cache",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"normalize-package-data",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"hosted-git-info",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"semver",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"npm-packlist",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"object-keys",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"object.assign",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"object.entries",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"path-is-absolute",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"read-package-json",
+		{
+			"node": ">=10"
+		}
+	]
+]

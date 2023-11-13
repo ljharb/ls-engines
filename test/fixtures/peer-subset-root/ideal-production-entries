@@ -1,0 +1,8 @@
+[
+	[
+		"peer-subset-root",
+		{
+			"node": ">= 8"
+		}
+	]
+]

@@ -1,0 +1,1777 @@
+[
+	[
+		"@ljharb/eslint-config",
+		{
+			"node": ">= 12 || ^10.12"
+		}
+	],
+	[
+		"eslint",
+		{
+			"node": "^10.12.0 || >=12.0.0"
+		}
+	],
+	[
+		"aud",
+		{
+			"node": "^16 || ^15 || ^14 || ^13 || ^12 || ^11 || ^10 || ^8 || ^6",
+			"npm": ">= 3"
+		}
+	],
+	[
+		"ls-engines",
+		{
+			"node": "^16 || ^15 || ^14.13 || ^12.20",
+			"npm": ">=7"
+		}
+	],
+	[
+		"safe-publish-latest",
+		{
+			"node": ">= 0.10"
+		}
+	],
+	[
+		"chalk",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"fs-copy-file",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"libnpx",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"npm-lockfile",
+		{
+			"node": ">= 6"
+		}
+	],
+	[
+		"ansi-styles",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"escape-string-regexp",
+		{
+			"node": ">=0.8.0"
+		}
+	],
+	[
+		"supports-color",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"@eslint/eslintrc",
+		{
+			"node": "^10.12.0 || >=12.0.0"
+		}
+	],
+	[
+		"@humanwhocodes/config-array",
+		{
+			"node": ">=10.10.0"
+		}
+	],
+	[
+		"chalk",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"cross-spawn",
+		{
+			"node": ">= 8"
+		}
+	],
+	[
+		"debug",
+		{
+			"node": ">=6.0"
+		}
+	],
+	[
+		"doctrine",
+		{
+			"node": ">=6.0.0"
+		}
+	],
+	[
+		"enquirer",
+		{
+			"node": ">=8.6"
+		}
+	],
+	[
+		"escape-string-regexp",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"eslint-scope",
+		{
+			"node": ">=8.0.0"
+		}
+	],
+	[
+		"eslint-utils",
+		{
+			"node": ">=6"
+		}
+	],
+	[
+		"eslint-visitor-keys",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"espree",
+		{
+			"node": "^10.12.0 || >=12.0.0"
+		}
+	],
+	[
+		"esquery",
+		{
+			"node": ">=0.10"
+		}
+	],
+	[
+		"esutils",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"file-entry-cache",
+		{
+			"node": "^10.12.0 || >=12.0.0"
+		}
+	],
+	[
+		"glob-parent",
+		{
+			"node": ">= 6"
+		}
+	],
+	[
+		"globals",
+		{
+			"node": ">=8"
+		}
+	],
+	[
+		"ignore",
+		{
+			"node": ">= 4"
+		}
+	],
+	[
+		"import-fresh",
+		{
+			"node": ">=6"
+		}
+	],
+	[
+		"imurmurhash",
+		{
+			"node": ">=0.8.19"
+		}
+	],
+	[
+		"is-glob",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"levn",
+		{
+			"node": ">= 0.8.0"
+		}
+	],
+	[
+		"optionator",
+		{
+			"node": ">= 0.8.0"
+		}
+	],
+	[
+		"progress",
+		{
+			"node": ">=0.4.0"
+		}
+	],
+	[
+		"regexpp",
+		{
+			"node": ">=8"
+		}
+	],
+	[
+		"semver",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"strip-ansi",
+		{
+			"node": ">=8"
+		}
+	],
+	[
+		"strip-json-comments",
+		{
+			"node": ">=8"
+		}
+	],
+	[
+		"table",
+		{
+			"node": ">=10.0.0"
+		}
+	],
+	[
+		"@babel/highlight",
+		{
+			"node": ">=6.9.0"
+		}
+	],
+	[
+		"@babel/helper-validator-identifier",
+		{
+			"node": ">=6.9.0"
+		}
+	],
+	[
+		"path-key",
+		{
+			"node": ">=8"
+		}
+	],
+	[
+		"shebang-command",
+		{
+			"node": ">=8"
+		}
+	],
+	[
+		"which",
+		{
+			"node": ">= 8"
+		}
+	],
+	[
+		"ansi-colors",
+		{
+			"node": ">=6"
+		}
+	],
+	[
+		"esrecurse",
+		{
+			"node": ">=4.0"
+		}
+	],
+	[
+		"estraverse",
+		{
+			"node": ">=4.0"
+		}
+	],
+	[
+		"eslint-visitor-keys",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"acorn",
+		{
+			"node": ">=0.4.0"
+		}
+	],
+	[
+		"eslint-visitor-keys",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"estraverse",
+		{
+			"node": ">=4.0"
+		}
+	],
+	[
+		"estraverse",
+		{
+			"node": ">=4.0"
+		}
+	],
+	[
+		"flat-cache",
+		{
+			"node": "^10.12.0 || >=12.0.0"
+		}
+	],
+	[
+		"@cloudcmd/copy-file",
+		{
+			"node": ">=4.0.0"
+		}
+	],
+	[
+		"pipe-io",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"type-fest",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"parent-module",
+		{
+			"node": ">=6"
+		}
+	],
+	[
+		"resolve-from",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"is-extglob",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"esprima",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"prelude-ls",
+		{
+			"node": ">= 0.8.0"
+		}
+	],
+	[
+		"type-check",
+		{
+			"node": ">= 0.8.0"
+		}
+	],
+	[
+		"dotenv",
+		{
+			"node": ">=4.6.0"
+		}
+	],
+	[
+		"update-notifier",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"@npmcli/arborist",
+		{
+			"node": ">= 10"
+		}
+	],
+	[
+		"chalk",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"json-file-plus",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"pacote",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"promise.allsettled",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"semver",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"yargs",
+		{
+			"node": ">=12"
+		}
+	],
+	[
+		"@npmcli/installed-package-contents",
+		{
+			"node": ">= 10"
+		}
+	],
+	[
+		"@npmcli/map-workspaces",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"@npmcli/move-file",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"bin-links",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"cacache",
+		{
+			"node": ">= 10"
+		}
+	],
+	[
+		"mkdirp",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"mkdirp-infer-owner",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"npm-install-checks",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"npm-package-arg",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"npm-registry-fetch",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"read-package-json-fast",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"semver",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"ssri",
+		{
+			"node": ">= 8"
+		}
+	],
+	[
+		"semver",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"node-gyp",
+		{
+			"node": ">= 10.12.0"
+		}
+	],
+	[
+		"cmd-shim",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"chownr",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"fs-minipass",
+		{
+			"node": ">= 8"
+		}
+	],
+	[
+		"minipass",
+		{
+			"node": ">=8"
+		}
+	],
+	[
+		"minipass-collect",
+		{
+			"node": ">= 8"
+		}
+	],
+	[
+		"minipass-flush",
+		{
+			"node": ">= 8"
+		}
+	],
+	[
+		"minipass-pipeline",
+		{
+			"node": ">=8"
+		}
+	],
+	[
+		"p-map",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"tar",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"semver",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"node.extend",
+		{
+			"node": ">=0.4.0"
+		}
+	],
+	[
+		"promiseback",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"env-paths",
+		{
+			"node": ">=6"
+		}
+	],
+	[
+		"nopt",
+		{
+			"node": ">=6"
+		}
+	],
+	[
+		"request",
+		{
+			"node": ">= 6"
+		}
+	],
+	[
+		"semver",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"semver",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"colors",
+		{
+			"node": ">=0.1.90"
+		}
+	],
+	[
+		"tmp",
+		{
+			"node": ">=6"
+		}
+	],
+	[
+		"npm-package-arg",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"semver",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"make-fetch-happen",
+		{
+			"node": ">= 10"
+		}
+	],
+	[
+		"minipass-fetch",
+		{
+			"node": ">=8"
+		}
+	],
+	[
+		"minizlib",
+		{
+			"node": ">= 8"
+		}
+	],
+	[
+		"npm-package-arg",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"agentkeepalive",
+		{
+			"node": ">= 8.0.0"
+		}
+	],
+	[
+		"http-proxy-agent",
+		{
+			"node": ">= 6"
+		}
+	],
+	[
+		"https-proxy-agent",
+		{
+			"node": ">= 6"
+		}
+	],
+	[
+		"negotiator",
+		{
+			"node": ">= 0.6"
+		}
+	],
+	[
+		"promise-retry",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"socks-proxy-agent",
+		{
+			"node": ">= 10"
+		}
+	],
+	[
+		"@tootallnate/once",
+		{
+			"node": ">= 6"
+		}
+	],
+	[
+		"agent-base",
+		{
+			"node": ">= 6.0.0"
+		}
+	],
+	[
+		"minipass-sized",
+		{
+			"node": ">=8"
+		}
+	],
+	[
+		"iconv-lite",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"object-assign",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"string-width",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"strip-ansi",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"@aashutoshrathi/word-wrap",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"os-homedir",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"os-tmpdir",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"aggregate-error",
+		{
+			"node": ">=8"
+		}
+	],
+	[
+		"clean-stack",
+		{
+			"node": ">=6"
+		}
+	],
+	[
+		"indent-string",
+		{
+			"node": ">=8"
+		}
+	],
+	[
+		"npm-package-arg",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"semver",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"callsites",
+		{
+			"node": ">=6"
+		}
+	],
+	[
+		"retry",
+		{
+			"node": ">= 4"
+		}
+	],
+	[
+		"array.prototype.map",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"is-arguments",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"stop-iteration-iterator",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"promise-deferred",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"combined-stream",
+		{
+			"node": ">= 0.8"
+		}
+	],
+	[
+		"form-data",
+		{
+			"node": ">= 0.12"
+		}
+	],
+	[
+		"har-validator",
+		{
+			"node": ">=6"
+		}
+	],
+	[
+		"http-signature",
+		{
+			"node": ">=0.8",
+			"npm": ">=1.3.7"
+		}
+	],
+	[
+		"mime-types",
+		{
+			"node": ">= 0.6"
+		}
+	],
+	[
+		"qs",
+		{
+			"node": ">=0.6"
+		}
+	],
+	[
+		"tough-cookie",
+		{
+			"node": ">=0.8"
+		}
+	],
+	[
+		"delayed-stream",
+		{
+			"node": ">=0.4.0"
+		}
+	],
+	[
+		"har-schema",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"assert-plus",
+		{
+			"node": ">=0.8"
+		}
+	],
+	[
+		"jsprim",
+		{
+			"node": ">=0.6.0"
+		}
+	],
+	[
+		"sshpk",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"mime-db",
+		{
+			"node": ">= 0.6"
+		}
+	],
+	[
+		"shebang-regex",
+		{
+			"node": ">=8"
+		}
+	],
+	[
+		"socks",
+		{
+			"node": ">= 10.13.0",
+			"npm": ">= 3.0.0"
+		}
+	],
+	[
+		"smart-buffer",
+		{
+			"node": ">= 6.0.0",
+			"npm": ">= 3.0.0"
+		}
+	],
+	[
+		"dashdash",
+		{
+			"node": ">=0.10"
+		}
+	],
+	[
+		"code-point-at",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"is-fullwidth-code-point",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"strip-ansi",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"number-is-nan",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"ansi-regex",
+		{
+			"node": ">=8"
+		}
+	],
+	[
+		"has-flag",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"slice-ansi",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"string-width",
+		{
+			"node": ">=8"
+		}
+	],
+	[
+		"ansi-styles",
+		{
+			"node": ">=8"
+		}
+	],
+	[
+		"astral-regex",
+		{
+			"node": ">=8"
+		}
+	],
+	[
+		"is-fullwidth-code-point",
+		{
+			"node": ">=8"
+		}
+	],
+	[
+		"minipass",
+		{
+			"node": ">=8"
+		}
+	],
+	[
+		"punycode",
+		{
+			"node": ">=6"
+		}
+	],
+	[
+		"boxen",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"configstore",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"import-lazy",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"is-installed-globally",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"is-npm",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"latest-version",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"semver-diff",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"xdg-basedir",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"camelcase",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"cli-boxes",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"string-width",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"term-size",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"widest-line",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"string-width",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"dot-prop",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"make-dir",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"unique-string",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"is-obj",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"global-dirs",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"is-path-inside",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"package-json",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"pify",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"got",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"registry-url",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"create-error-class",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"get-stream",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"is-redirect",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"is-retry-allowed",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"is-stream",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"lowercase-keys",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"timed-out",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"unzip-response",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"url-parse-lax",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"capture-stack-trace",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"deep-extend",
+		{
+			"node": ">=4.0.0"
+		}
+	],
+	[
+		"strip-json-comments",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"execa",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"npm-run-path",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"p-finally",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"strip-eof",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"path-key",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"crypto-random-string",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"prepend-http",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"object.getownpropertydescriptors",
+		{
+			"node": ">= 0.8"
+		}
+	],
+	[
+		"array.prototype.reduce",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"string-width",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"decamelize",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"find-up",
+		{
+			"node": ">=6"
+		}
+	],
+	[
+		"get-caller-file",
+		{
+			"node": "6.* || 8.* || >= 10.*"
+		}
+	],
+	[
+		"require-directory",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"string-width",
+		{
+			"node": ">=6"
+		}
+	],
+	[
+		"string-width",
+		{
+			"node": ">=6"
+		}
+	],
+	[
+		"strip-ansi",
+		{
+			"node": ">=6"
+		}
+	],
+	[
+		"wrap-ansi",
+		{
+			"node": ">=6"
+		}
+	],
+	[
+		"locate-path",
+		{
+			"node": ">=6"
+		}
+	],
+	[
+		"p-locate",
+		{
+			"node": ">=6"
+		}
+	],
+	[
+		"path-exists",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"p-limit",
+		{
+			"node": ">=6"
+		}
+	],
+	[
+		"p-try",
+		{
+			"node": ">=6"
+		}
+	],
+	[
+		"string-width",
+		{
+			"node": ">=6"
+		}
+	],
+	[
+		"strip-ansi",
+		{
+			"node": ">=6"
+		}
+	],
+	[
+		"camelcase",
+		{
+			"node": ">=6"
+		}
+	],
+	[
+		"hosted-git-info",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"is-fullwidth-code-point",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"strip-ansi",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"ansi-regex",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"is-fullwidth-code-point",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"strip-ansi",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"ansi-regex",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"is-fullwidth-code-point",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"ansi-regex",
+		{
+			"node": ">=6"
+		}
+	],
+	[
+		"ansi-styles",
+		{
+			"node": ">=8"
+		}
+	],
+	[
+		"supports-color",
+		{
+			"node": ">=8"
+		}
+	],
+	[
+		"color-convert",
+		{
+			"node": ">=7.0.0"
+		}
+	],
+	[
+		"has-flag",
+		{
+			"node": ">=8"
+		}
+	],
+	[
+		"shebang-command",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"shebang-regex",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"ansi-regex",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"ansi-styles",
+		{
+			"node": ">=8"
+		}
+	],
+	[
+		"supports-color",
+		{
+			"node": ">=8"
+		}
+	],
+	[
+		"color-convert",
+		{
+			"node": ">=7.0.0"
+		}
+	],
+	[
+		"has-flag",
+		{
+			"node": ">=8"
+		}
+	],
+	[
+		"cliui",
+		{
+			"node": ">=12"
+		}
+	],
+	[
+		"escalade",
+		{
+			"node": ">=6"
+		}
+	],
+	[
+		"string-width",
+		{
+			"node": ">=8"
+		}
+	],
+	[
+		"y18n",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"yargs-parser",
+		{
+			"node": ">=12"
+		}
+	],
+	[
+		"wrap-ansi",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"is-fullwidth-code-point",
+		{
+			"node": ">=8"
+		}
+	],
+	[
+		"hosted-git-info",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"hosted-git-info",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"semver",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"hosted-git-info",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"semver",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"camelcase",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"os-locale",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"read-pkg-up",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"lcid",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"invert-kv",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"find-up",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"read-pkg",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"load-json-file",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"path-type",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"parse-json",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"pify",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"pinkie-promise",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"strip-bom",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"pify",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"pinkie",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"path-exists",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"strip-ansi",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"wrap-ansi",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"ansi-regex",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"color-convert",
+		{
+			"node": ">=7.0.0"
+		}
+	],
+	[
+		"ansi-regex",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"require-from-string",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"is-fullwidth-code-point",
+		{
+			"node": ">=8"
+		}
+	],
+	[
+		"is-fullwidth-code-point",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"strip-ansi",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"ansi-regex",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"is-fullwidth-code-point",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"ansi-regex",
+		{
+			"node": ">=6"
+		}
+	],
+	[
+		"is-fullwidth-code-point",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"strip-ansi",
+		{
+			"node": ">=6"
+		}
+	],
+	[
+		"ansi-regex",
+		{
+			"node": ">=6"
+		}
+	]
+]

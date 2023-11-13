@@ -18,6 +18,7 @@ const group = require('array.prototype.group');
 const EXITS = require('../exit-codes');
 const checkCurrent = require('../checkCurrent');
 const checkEngines = require('../checkEngines');
+const getGraphEntries = require('../getGraphEntries');
 const getLatestEngineMajors = require('../getLatestEngineMajors');
 const table = require('../table');
 
@@ -113,31 +114,9 @@ const argv = yargs
 
 const { current, dev, mode, peer, production, save, engines: selectedEngines } = argv;
 
-const getTree = require('get-dep-tree');
 const getNodeVersions = require('../get-node-versions');
 
 const pPackage = jsonFile(path.join(process.cwd(), 'package.json'));
-
-const pGraphEntries = getTree(mode, { dev, peer, production }).then(async (tree) => {
-	const nodesWithEngines = tree.inventory.filter(({
-		package: {
-			_inBundle,
-			engines,
-		},
-		dev: nodeDev = false,
-		peer: nodePeer = false,
-	}) => ( // eslint-disable-line no-extra-parens
-		!_inBundle
-		&& engines
-		&& ((dev || !nodeDev) && (production || nodeDev) && (peer || !nodePeer)) // TODO: figure out why get-dep-tree isn't pruning properly
-		&& selectedEngines.some((engine) => engines[engine])
-	));
-	const tuples = Array.from(
-		nodesWithEngines,
-		({ name, package: { engines } }) => [name, engines],
-	);
-	return tuples.filter(([, engines]) => engines && selectedEngines.some((engine) => engines[engine] !== '*'));
-});
 
 function caret(ver) {
 	return `^${ver.replace(/^v/g, '')}`;
@@ -206,7 +185,13 @@ function dropPatch(v) {
 	return `^${Semver.major(num)}.${Semver.minor(num)}`;
 }
 
-const pGraphRanges = pGraphEntries.then(async (graphEntries) => {
+const pGraphRanges = getGraphEntries({
+	dev,
+	mode,
+	peer,
+	production,
+	selectedEngines,
+}).then(async (graphEntries) => {
 	const { valids: graphValids, allowed: graphAllowed } = await getGraphValids(graphEntries);
 	const graphRanges = Object.entries(graphValids).map(([engine, versions]) => {
 		const validMajorRanges = graphEntries.length > 0 && versions.length > 0 ? versions.reduceRight((prev, v) => {
