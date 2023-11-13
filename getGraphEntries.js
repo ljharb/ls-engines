@@ -29,5 +29,7 @@ module.exports = async function getGraphEntries({
 		nodesWithEngines,
 		({ name, package: { engines } }) => [name, engines],
 	);
-	return tuples.filter(([, engines]) => engines && selectedEngines.some((engine) => engines[engine] !== '*'));
+	return tuples
+		.filter(([, engines]) => engines && selectedEngines.some((engine) => engines[engine] !== '*'))
+		.sort(([a, aE], [b, bE]) => a.localeCompare(b) || aE.node.localeCompare(bE.node));
 };

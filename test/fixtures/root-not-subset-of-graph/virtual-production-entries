@@ -1,14 +1,14 @@
 [
 	[
-		"root-not-subset-of-graph",
-		{
-			"node": ">= 0.4"
-		}
-	],
-	[
 		"@npmcli/installed-package-contents",
 		{
 			"node": ">= 10"
+		}
+	],
+	[
+		"agent-base",
+		{
+			"node": ">= 4.0.0"
 		}
 	],
 	[
@@ -192,6 +192,12 @@
 		}
 	],
 	[
+		"root-not-subset-of-graph",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
 		"semver",
 		{
 			"node": ">=10"
@@ -215,12 +221,6 @@
 		"socks-proxy-agent",
 		{
 			"node": ">= 6"
-		}
-	],
-	[
-		"agent-base",
-		{
-			"node": ">= 4.0.0"
 		}
 	],
 	[

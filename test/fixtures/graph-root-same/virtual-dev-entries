@@ -42,36 +42,6 @@
 		}
 	],
 	[
-		"hosted-git-info",
-		{
-			"node": ">=10"
-		}
-	],
-	[
-		"npm-package-arg",
-		{
-			"node": ">=10"
-		}
-	],
-	[
-		"semver",
-		{
-			"node": ">=10"
-		}
-	],
-	[
-		"semver",
-		{
-			"node": ">=10"
-		}
-	],
-	[
-		"semver",
-		{
-			"node": ">=10"
-		}
-	],
-	[
 		"@npmcli/installed-package-contents",
 		{
 			"node": ">= 10"
@@ -79,12 +49,6 @@
 	],
 	[
 		"@npmcli/map-workspaces",
-		{
-			"node": ">=10"
-		}
-	],
-	[
-		"semver",
 		{
 			"node": ">=10"
 		}
@@ -126,31 +90,61 @@
 		}
 	],
 	[
+		"ansi-colors",
+		{
+			"node": ">=6"
+		}
+	],
+	[
+		"ansi-regex",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"ansi-regex",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"ansi-regex",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
 		"ansi-regex",
 		{
 			"node": ">=4"
 		}
 	],
 	[
-		"is-fullwidth-code-point",
+		"ansi-regex",
 		{
 			"node": ">=4"
 		}
 	],
 	[
-		"string-width",
+		"ansi-regex",
 		{
 			"node": ">=4"
 		}
 	],
 	[
-		"strip-ansi",
+		"ansi-regex",
 		{
-			"node": ">=4"
+			"node": ">=6"
 		}
 	],
 	[
-		"ansi-colors",
+		"ansi-regex",
+		{
+			"node": ">=6"
+		}
+	],
+	[
+		"ansi-regex",
 		{
 			"node": ">=6"
 		}
@@ -165,6 +159,24 @@
 		"ansi-styles",
 		{
 			"node": ">=4"
+		}
+	],
+	[
+		"ansi-styles",
+		{
+			"node": ">=8"
+		}
+	],
+	[
+		"ansi-styles",
+		{
+			"node": ">=8"
+		}
+	],
+	[
+		"ansi-styles",
+		{
+			"node": ">=8"
 		}
 	],
 	[
@@ -205,30 +217,6 @@
 		}
 	],
 	[
-		"ansi-regex",
-		{
-			"node": ">=4"
-		}
-	],
-	[
-		"is-fullwidth-code-point",
-		{
-			"node": ">=4"
-		}
-	],
-	[
-		"string-width",
-		{
-			"node": ">=4"
-		}
-	],
-	[
-		"strip-ansi",
-		{
-			"node": ">=4"
-		}
-	],
-	[
 		"cacache",
 		{
 			"node": ">= 10"
@@ -243,13 +231,37 @@
 	[
 		"camelcase",
 		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"camelcase",
+		{
 			"node": ">=4"
+		}
+	],
+	[
+		"camelcase",
+		{
+			"node": ">=6"
 		}
 	],
 	[
 		"capture-stack-trace",
 		{
 			"node": ">=0.10.0"
+		}
+	],
+	[
+		"chalk",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"chalk",
+		{
+			"node": ">=10"
 		}
 	],
 	[
@@ -277,30 +289,6 @@
 		}
 	],
 	[
-		"ansi-regex",
-		{
-			"node": ">=6"
-		}
-	],
-	[
-		"is-fullwidth-code-point",
-		{
-			"node": ">=4"
-		}
-	],
-	[
-		"string-width",
-		{
-			"node": ">=6"
-		}
-	],
-	[
-		"strip-ansi",
-		{
-			"node": ">=6"
-		}
-	],
-	[
 		"cmd-shim",
 		{
 			"node": ">=10"
@@ -310,6 +298,24 @@
 		"code-point-at",
 		{
 			"node": ">=0.10.0"
+		}
+	],
+	[
+		"color-convert",
+		{
+			"node": ">=7.0.0"
+		}
+	],
+	[
+		"color-convert",
+		{
+			"node": ">=7.0.0"
+		}
+	],
+	[
+		"color-convert",
+		{
+			"node": ">=7.0.0"
 		}
 	],
 	[
@@ -421,6 +427,12 @@
 		}
 	],
 	[
+		"escape-string-regexp",
+		{
+			"node": ">=10"
+		}
+	],
+	[
 		"eslint",
 		{
 			"node": "^10.12.0 || >=12.0.0"
@@ -441,67 +453,25 @@
 	[
 		"eslint-visitor-keys",
 		{
+			"node": ">=10"
+		}
+	],
+	[
+		"eslint-visitor-keys",
+		{
 			"node": ">=4"
 		}
 	],
 	[
 		"eslint-visitor-keys",
 		{
-			"node": ">=10"
-		}
-	],
-	[
-		"ansi-styles",
-		{
-			"node": ">=8"
-		}
-	],
-	[
-		"chalk",
-		{
-			"node": ">=10"
-		}
-	],
-	[
-		"color-convert",
-		{
-			"node": ">=7.0.0"
-		}
-	],
-	[
-		"escape-string-regexp",
-		{
-			"node": ">=10"
-		}
-	],
-	[
-		"has-flag",
-		{
-			"node": ">=8"
-		}
-	],
-	[
-		"semver",
-		{
-			"node": ">=10"
-		}
-	],
-	[
-		"supports-color",
-		{
-			"node": ">=8"
+			"node": ">=4"
 		}
 	],
 	[
 		"espree",
 		{
 			"node": "^10.12.0 || >=12.0.0"
-		}
-	],
-	[
-		"eslint-visitor-keys",
-		{
-			"node": ">=4"
 		}
 	],
 	[
@@ -517,13 +487,13 @@
 		}
 	],
 	[
-		"estraverse",
+		"esrecurse",
 		{
 			"node": ">=4.0"
 		}
 	],
 	[
-		"esrecurse",
+		"estraverse",
 		{
 			"node": ">=4.0"
 		}
@@ -553,21 +523,15 @@
 		}
 	],
 	[
-		"shebang-command",
-		{
-			"node": ">=0.10.0"
-		}
-	],
-	[
-		"shebang-regex",
-		{
-			"node": ">=0.10.0"
-		}
-	],
-	[
 		"file-entry-cache",
 		{
 			"node": "^10.12.0 || >=12.0.0"
+		}
+	],
+	[
+		"find-up",
+		{
+			"node": ">=0.10.0"
 		}
 	],
 	[
@@ -598,18 +562,6 @@
 		"fs-minipass",
 		{
 			"node": ">= 8"
-		}
-	],
-	[
-		"ansi-regex",
-		{
-			"node": ">=0.10.0"
-		}
-	],
-	[
-		"strip-ansi",
-		{
-			"node": ">=0.10.0"
 		}
 	],
 	[
@@ -664,6 +616,42 @@
 		"has-flag",
 		{
 			"node": ">=4"
+		}
+	],
+	[
+		"has-flag",
+		{
+			"node": ">=8"
+		}
+	],
+	[
+		"has-flag",
+		{
+			"node": ">=8"
+		}
+	],
+	[
+		"hosted-git-info",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"hosted-git-info",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"hosted-git-info",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"hosted-git-info",
+		{
+			"node": ">=10"
 		}
 	],
 	[
@@ -743,6 +731,60 @@
 		"is-fullwidth-code-point",
 		{
 			"node": ">=0.10.0"
+		}
+	],
+	[
+		"is-fullwidth-code-point",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"is-fullwidth-code-point",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"is-fullwidth-code-point",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"is-fullwidth-code-point",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"is-fullwidth-code-point",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"is-fullwidth-code-point",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"is-fullwidth-code-point",
+		{
+			"node": ">=8"
+		}
+	],
+	[
+		"is-fullwidth-code-point",
+		{
+			"node": ">=8"
+		}
+	],
+	[
+		"is-fullwidth-code-point",
+		{
+			"node": ">=8"
 		}
 	],
 	[
@@ -830,12 +872,6 @@
 		}
 	],
 	[
-		"pify",
-		{
-			"node": ">=0.10.0"
-		}
-	],
-	[
 		"locate-path",
 		{
 			"node": ">=6"
@@ -852,78 +888,6 @@
 		{
 			"node": "^17 || ^16 || ^15 || ^14.13 || ^12.20",
 			"npm": ">=7"
-		}
-	],
-	[
-		"ansi-styles",
-		{
-			"node": ">=8"
-		}
-	],
-	[
-		"chalk",
-		{
-			"node": ">=10"
-		}
-	],
-	[
-		"color-convert",
-		{
-			"node": ">=7.0.0"
-		}
-	],
-	[
-		"has-flag",
-		{
-			"node": ">=8"
-		}
-	],
-	[
-		"is-fullwidth-code-point",
-		{
-			"node": ">=8"
-		}
-	],
-	[
-		"semver",
-		{
-			"node": ">=10"
-		}
-	],
-	[
-		"string-width",
-		{
-			"node": ">=8"
-		}
-	],
-	[
-		"supports-color",
-		{
-			"node": ">=8"
-		}
-	],
-	[
-		"wrap-ansi",
-		{
-			"node": ">=10"
-		}
-	],
-	[
-		"y18n",
-		{
-			"node": ">=10"
-		}
-	],
-	[
-		"yargs",
-		{
-			"node": ">=12"
-		}
-	],
-	[
-		"yargs-parser",
-		{
-			"node": ">=10"
 		}
 	],
 	[
@@ -1017,12 +981,6 @@
 		}
 	],
 	[
-		"semver",
-		{
-			"node": ">=10"
-		}
-	],
-	[
 		"node.extend",
 		{
 			"node": ">=0.4.0"
@@ -1041,19 +999,13 @@
 		}
 	],
 	[
-		"semver",
-		{
-			"node": ">=10"
-		}
-	],
-	[
 		"npm-lockfile",
 		{
 			"node": ">= 6"
 		}
 	],
 	[
-		"hosted-git-info",
+		"npm-package-arg",
 		{
 			"node": ">=10"
 		}
@@ -1065,7 +1017,13 @@
 		}
 	],
 	[
-		"semver",
+		"npm-package-arg",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"npm-package-arg",
 		{
 			"node": ">=10"
 		}
@@ -1077,31 +1035,7 @@
 		}
 	],
 	[
-		"hosted-git-info",
-		{
-			"node": ">=10"
-		}
-	],
-	[
-		"npm-package-arg",
-		{
-			"node": ">=10"
-		}
-	],
-	[
-		"semver",
-		{
-			"node": ">=10"
-		}
-	],
-	[
 		"npm-run-path",
-		{
-			"node": ">=4"
-		}
-	],
-	[
-		"path-key",
 		{
 			"node": ">=4"
 		}
@@ -1191,24 +1125,6 @@
 		}
 	],
 	[
-		"hosted-git-info",
-		{
-			"node": ">=10"
-		}
-	],
-	[
-		"npm-package-arg",
-		{
-			"node": ">=10"
-		}
-	],
-	[
-		"semver",
-		{
-			"node": ">=10"
-		}
-	],
-	[
 		"parent-module",
 		{
 			"node": ">=6"
@@ -1223,6 +1139,18 @@
 	[
 		"path-exists",
 		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"path-exists",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"path-key",
+		{
 			"node": ">=4"
 		}
 	],
@@ -1234,6 +1162,12 @@
 	],
 	[
 		"path-type",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"pify",
 		{
 			"node": ">=0.10.0"
 		}
@@ -1323,12 +1257,6 @@
 		}
 	],
 	[
-		"strip-json-comments",
-		{
-			"node": ">=0.10.0"
-		}
-	],
-	[
 		"read-package-json-fast",
 		{
 			"node": ">=10"
@@ -1342,18 +1270,6 @@
 	],
 	[
 		"read-pkg-up",
-		{
-			"node": ">=0.10.0"
-		}
-	],
-	[
-		"find-up",
-		{
-			"node": ">=0.10.0"
-		}
-	],
-	[
-		"path-exists",
 		{
 			"node": ">=0.10.0"
 		}
@@ -1407,31 +1323,79 @@
 		}
 	],
 	[
-		"ansi-regex",
+		"semver",
 		{
-			"node": ">=0.10.0"
+			"node": ">=10"
 		}
 	],
 	[
-		"camelcase",
+		"semver",
 		{
-			"node": ">=0.10.0"
+			"node": ">=10"
 		}
 	],
 	[
-		"strip-ansi",
+		"semver",
 		{
-			"node": ">=0.10.0"
+			"node": ">=10"
 		}
 	],
 	[
-		"wrap-ansi",
+		"semver",
 		{
-			"node": ">=0.10.0"
+			"node": ">=10"
+		}
+	],
+	[
+		"semver",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"semver",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"semver",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"semver",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"semver",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"semver",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"semver",
+		{
+			"node": ">=10"
 		}
 	],
 	[
 		"semver-diff",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"shebang-command",
 		{
 			"node": ">=0.10.0"
 		}
@@ -1445,6 +1409,12 @@
 	[
 		"shebang-regex",
 		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"shebang-regex",
+		{
 			"node": ">=8"
 		}
 	],
@@ -1452,24 +1422,6 @@
 		"slice-ansi",
 		{
 			"node": ">=10"
-		}
-	],
-	[
-		"ansi-styles",
-		{
-			"node": ">=8"
-		}
-	],
-	[
-		"color-convert",
-		{
-			"node": ">=7.0.0"
-		}
-	],
-	[
-		"is-fullwidth-code-point",
-		{
-			"node": ">=8"
 		}
 	],
 	[
@@ -1511,7 +1463,55 @@
 		}
 	],
 	[
-		"ansi-regex",
+		"string-width",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"string-width",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"string-width",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"string-width",
+		{
+			"node": ">=6"
+		}
+	],
+	[
+		"string-width",
+		{
+			"node": ">=6"
+		}
+	],
+	[
+		"string-width",
+		{
+			"node": ">=6"
+		}
+	],
+	[
+		"string-width",
+		{
+			"node": ">=8"
+		}
+	],
+	[
+		"string-width",
+		{
+			"node": ">=8"
+		}
+	],
+	[
+		"strip-ansi",
 		{
 			"node": ">=0.10.0"
 		}
@@ -1520,6 +1520,48 @@
 		"strip-ansi",
 		{
 			"node": ">=0.10.0"
+		}
+	],
+	[
+		"strip-ansi",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"strip-ansi",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"strip-ansi",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"strip-ansi",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"strip-ansi",
+		{
+			"node": ">=6"
+		}
+	],
+	[
+		"strip-ansi",
+		{
+			"node": ">=6"
+		}
+	],
+	[
+		"strip-ansi",
+		{
+			"node": ">=6"
 		}
 	],
 	[
@@ -1543,6 +1585,12 @@
 	[
 		"strip-json-comments",
 		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"strip-json-comments",
+		{
 			"node": ">=8"
 		}
 	],
@@ -1553,21 +1601,21 @@
 		}
 	],
 	[
+		"supports-color",
+		{
+			"node": ">=8"
+		}
+	],
+	[
+		"supports-color",
+		{
+			"node": ">=8"
+		}
+	],
+	[
 		"table",
 		{
 			"node": ">=10.0.0"
-		}
-	],
-	[
-		"is-fullwidth-code-point",
-		{
-			"node": ">=8"
-		}
-	],
-	[
-		"string-width",
-		{
-			"node": ">=8"
 		}
 	],
 	[
@@ -1649,30 +1697,6 @@
 		}
 	],
 	[
-		"ansi-regex",
-		{
-			"node": ">=4"
-		}
-	],
-	[
-		"is-fullwidth-code-point",
-		{
-			"node": ">=4"
-		}
-	],
-	[
-		"string-width",
-		{
-			"node": ">=4"
-		}
-	],
-	[
-		"strip-ansi",
-		{
-			"node": ">=4"
-		}
-	],
-	[
 		"word-wrap",
 		{
 			"node": ">=0.10.0"
@@ -1681,29 +1705,17 @@
 	[
 		"wrap-ansi",
 		{
-			"node": ">=6"
+			"node": ">=0.10.0"
 		}
 	],
 	[
-		"ansi-regex",
+		"wrap-ansi",
 		{
-			"node": ">=6"
+			"node": ">=10"
 		}
 	],
 	[
-		"is-fullwidth-code-point",
-		{
-			"node": ">=4"
-		}
-	],
-	[
-		"string-width",
-		{
-			"node": ">=6"
-		}
-	],
-	[
-		"strip-ansi",
+		"wrap-ansi",
 		{
 			"node": ">=6"
 		}
@@ -1715,33 +1727,21 @@
 		}
 	],
 	[
-		"camelcase",
+		"y18n",
 		{
-			"node": ">=6"
+			"node": ">=10"
 		}
 	],
 	[
-		"ansi-regex",
+		"yargs",
 		{
-			"node": ">=6"
+			"node": ">=12"
 		}
 	],
 	[
-		"is-fullwidth-code-point",
+		"yargs-parser",
 		{
-			"node": ">=4"
-		}
-	],
-	[
-		"string-width",
-		{
-			"node": ">=6"
-		}
-	],
-	[
-		"strip-ansi",
-		{
-			"node": ">=6"
+			"node": ">=10"
 		}
 	]
 ]

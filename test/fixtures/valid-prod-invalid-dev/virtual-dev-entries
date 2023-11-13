@@ -8,6 +8,12 @@
 	[
 		"agent-base",
 		{
+			"node": ">= 4.0.0"
+		}
+	],
+	[
+		"agent-base",
+		{
 			"node": ">= 6.0.0"
 		}
 	],
@@ -209,12 +215,6 @@
 		"socks-proxy-agent",
 		{
 			"node": ">= 6"
-		}
-	],
-	[
-		"agent-base",
-		{
-			"node": ">= 4.0.0"
 		}
 	],
 	[

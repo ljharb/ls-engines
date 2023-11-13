@@ -1,11 +1,5 @@
 [
 	[
-		"graph-root-same",
-		{
-			"node": ">= 10"
-		}
-	],
-	[
 		"array.prototype.flatmap",
 		{
 			"node": ">= 0.4"
@@ -42,6 +36,12 @@
 		}
 	],
 	[
+		"graph-root-same",
+		{
+			"node": ">= 10"
+		}
+	],
+	[
 		"has",
 		{
 			"node": ">= 0.4.0"
@@ -57,6 +57,12 @@
 		"has-tostringtag",
 		{
 			"node": ">= 0.4"
+		}
+	],
+	[
+		"hosted-git-info",
+		{
+			"node": ">=10"
 		}
 	],
 	[
@@ -126,18 +132,6 @@
 		}
 	],
 	[
-		"hosted-git-info",
-		{
-			"node": ">=10"
-		}
-	],
-	[
-		"semver",
-		{
-			"node": ">=10"
-		}
-	],
-	[
 		"npm-packlist",
 		{
 			"node": ">=10"
@@ -169,6 +163,12 @@
 	],
 	[
 		"read-package-json",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"semver",
 		{
 			"node": ">=10"
 		}

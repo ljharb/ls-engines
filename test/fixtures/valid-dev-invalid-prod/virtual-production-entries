@@ -1,14 +1,14 @@
 [
 	[
-		"valid-dev-invalid-prod",
-		{
-			"node": "^7"
-		}
-	],
-	[
 		"@npmcli/installed-package-contents",
 		{
 			"node": ">= 10"
+		}
+	],
+	[
+		"agent-base",
+		{
+			"node": ">= 4.0.0"
 		}
 	],
 	[
@@ -218,12 +218,6 @@
 		}
 	],
 	[
-		"agent-base",
-		{
-			"node": ">= 4.0.0"
-		}
-	],
-	[
 		"ssri",
 		{
 			"node": ">= 8"
@@ -233,6 +227,12 @@
 		"tar",
 		{
 			"node": ">= 10"
+		}
+	],
+	[
+		"valid-dev-invalid-prod",
+		{
+			"node": "^7"
 		}
 	],
 	[

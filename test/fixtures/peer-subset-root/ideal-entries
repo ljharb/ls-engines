@@ -1,30 +1,18 @@
 [
 	[
-		"peer-subset-root",
-		{
-			"node": ">= 8"
-		}
-	],
-	[
-		"npm-package-arg",
-		{
-			"node": ">=10"
-		}
-	],
-	[
 		"hosted-git-info",
 		{
 			"node": ">=10"
 		}
 	],
 	[
-		"semver",
+		"lru-cache",
 		{
 			"node": ">=10"
 		}
 	],
 	[
-		"lru-cache",
+		"npm-package-arg",
 		{
 			"node": ">=10"
 		}
@@ -39,6 +27,18 @@
 		"os-tmpdir",
 		{
 			"node": ">=0.10.0"
+		}
+	],
+	[
+		"peer-subset-root",
+		{
+			"node": ">= 8"
+		}
+	],
+	[
+		"semver",
+		{
+			"node": ">=10"
 		}
 	]
 ]

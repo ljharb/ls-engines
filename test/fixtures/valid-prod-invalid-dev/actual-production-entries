@@ -1,14 +1,14 @@
 [
 	[
-		"valid-prod-invalid-dev",
-		{
-			"node": "^7"
-		}
-	],
-	[
 		"object-keys",
 		{
 			"node": ">= 0.4"
+		}
+	],
+	[
+		"valid-prod-invalid-dev",
+		{
+			"node": "^7"
 		}
 	]
 ]

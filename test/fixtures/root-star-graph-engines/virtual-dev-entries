@@ -1,5 +1,125 @@
 [
 	[
+		"agent-base",
+		{
+			"node": ">= 4.0.0"
+		}
+	],
+	[
+		"agent-base",
+		{
+			"node": ">= 4.0.0"
+		}
+	],
+	[
+		"agent-base",
+		{
+			"node": ">= 4.0.0"
+		}
+	],
+	[
+		"agent-base",
+		{
+			"node": ">= 4.0.0"
+		}
+	],
+	[
+		"agent-base",
+		{
+			"node": ">= 4.0.0"
+		}
+	],
+	[
+		"agent-base",
+		{
+			"node": ">= 4.0.0"
+		}
+	],
+	[
+		"agent-base",
+		{
+			"node": ">= 4.0.0"
+		}
+	],
+	[
+		"agent-base",
+		{
+			"node": ">= 4.0.0"
+		}
+	],
+	[
+		"agent-base",
+		{
+			"node": ">= 4.0.0"
+		}
+	],
+	[
+		"agentkeepalive",
+		{
+			"node": ">= 4.0.0"
+		}
+	],
+	[
+		"agentkeepalive",
+		{
+			"node": ">= 4.0.0"
+		}
+	],
+	[
+		"agentkeepalive",
+		{
+			"node": ">= 4.0.0"
+		}
+	],
+	[
+		"ansi-regex",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"ansi-regex",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"ansi-regex",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"ansi-regex",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"ansi-regex",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"ansi-regex",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"ansi-regex",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"ansi-regex",
+		{
+			"node": ">=4"
+		}
+	],
+	[
 		"ansi-regex",
 		{
 			"node": ">=4"
@@ -12,7 +132,79 @@
 		}
 	],
 	[
+		"ansi-styles",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"assert-plus",
+		{
+			"node": ">=0.8"
+		}
+	],
+	[
+		"block-stream",
+		{
+			"node": "0.4 || >=0.5.8"
+		}
+	],
+	[
+		"boom",
+		{
+			"node": ">=4.0.0"
+		}
+	],
+	[
+		"boom",
+		{
+			"node": ">=4.0.0"
+		}
+	],
+	[
+		"boxen",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"builtin-modules",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"byline",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
 		"camelcase",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"camelcase",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"camelcase",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"capture-stack-trace",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"chalk",
 		{
 			"node": ">=4"
 		}
@@ -24,9 +216,52 @@
 		}
 	],
 	[
+		"cli-boxes",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"cli-columns",
+		{
+			"node": ">= 4"
+		}
+	],
+	[
 		"cli-table",
 		{
 			"node": ">= 0.2.0"
+		}
+	],
+	[
+		"clone",
+		{
+			"node": ">=0.8"
+		}
+	],
+	[
+		"co",
+		{
+			"iojs": ">= 1.0.0",
+			"node": ">= 0.12.0"
+		}
+	],
+	[
+		"code-point-at",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"code-point-at",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"code-point-at",
+		{
+			"node": ">=0.10.0"
 		}
 	],
 	[
@@ -42,8 +277,76 @@
 		}
 	],
 	[
+		"colors",
+		{
+			"node": ">=0.1.90"
+		}
+	],
+	[
+		"combined-stream",
+		{
+			"node": ">= 0.8"
+		}
+	],
+	[
+		"configstore",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"create-error-class",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"cryptiles",
+		{
+			"node": ">=4.0.0"
+		}
+	],
+	[
+		"crypto-random-string",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"dashdash",
+		{
+			"node": ">=0.10"
+		}
+	],
+	[
 		"decamelize",
 		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"decamelize",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"decode-uri-component",
+		{
+			"node": ">=0.10"
+		}
+	],
+	[
+		"deep-extend",
+		{
+			"iojs": ">=1.0.0",
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"deep-extend",
+		{
+			"iojs": ">=1.0.0",
 			"node": ">=0.10.0"
 		}
 	],
@@ -51,6 +354,42 @@
 		"define-properties",
 		{
 			"node": ">= 0.4"
+		}
+	],
+	[
+		"delayed-stream",
+		{
+			"node": ">=0.4.0"
+		}
+	],
+	[
+		"detect-indent",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"detect-newline",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"dot-prop",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"dotenv",
+		{
+			"node": ">=4.6.0"
+		}
+	],
+	[
+		"escape-string-regexp",
+		{
+			"node": ">=0.8.0"
 		}
 	],
 	[
@@ -66,13 +405,97 @@
 		}
 	],
 	[
+		"execa",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"execa",
+		{
+			"node": ">=4"
+		}
+	],
+	[
 		"find-up",
 		{
 			"node": ">=4"
 		}
 	],
 	[
+		"find-up",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"form-data",
+		{
+			"node": ">= 0.12"
+		}
+	],
+	[
+		"fstream",
+		{
+			"node": ">=0.6"
+		}
+	],
+	[
 		"get-stream",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"get-stream",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"get-stream",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"get-stream",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"get-stream",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"global-dirs",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"got",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"graceful-fs",
+		{
+			"node": ">=0.4.0"
+		}
+	],
+	[
+		"har-schema",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"har-validator",
 		{
 			"node": ">=4"
 		}
@@ -90,13 +513,110 @@
 		}
 	],
 	[
+		"has-flag",
+		{
+			"node": ">=4"
+		}
+	],
+	[
 		"has-symbols",
 		{
 			"node": ">= 0.4"
 		}
 	],
 	[
+		"hawk",
+		{
+			"node": ">=4.5.0"
+		}
+	],
+	[
+		"hoek",
+		{
+			"node": ">=4.0.0"
+		}
+	],
+	[
+		"hosted-git-info",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"http-proxy-agent",
+		{
+			"node": ">= 4.5.0"
+		}
+	],
+	[
+		"http-proxy-agent",
+		{
+			"node": ">= 4.5.0"
+		}
+	],
+	[
+		"http-signature",
+		{
+			"node": ">=0.8",
+			"npm": ">=1.3.7"
+		}
+	],
+	[
+		"https-proxy-agent",
+		{
+			"node": ">= 4.5.0"
+		}
+	],
+	[
+		"https-proxy-agent",
+		{
+			"node": ">= 4.5.0"
+		}
+	],
+	[
+		"iconv-lite",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"iconv-lite",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"iconv-lite",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"import-lazy",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"imurmurhash",
+		{
+			"node": ">=0.8.19"
+		}
+	],
+	[
 		"invert-kv",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"invert-kv",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"is-builtin-module",
 		{
 			"node": ">=0.10.0"
 		}
@@ -110,125 +630,11 @@
 	[
 		"is-fullwidth-code-point",
 		{
-			"node": ">=4"
-		}
-	],
-	[
-		"is-stream",
-		{
 			"node": ">=0.10.0"
-		}
-	],
-	[
-		"json-file-plus",
-		{
-			"node": ">= 0.4"
-		}
-	],
-	[
-		"lcid",
-		{
-			"node": ">=0.10.0"
-		}
-	],
-	[
-		"locate-path",
-		{
-			"node": ">=4"
-		}
-	],
-	[
-		"mem",
-		{
-			"node": ">=4"
-		}
-	],
-	[
-		"mimic-fn",
-		{
-			"node": ">=4"
-		}
-	],
-	[
-		"node.extend",
-		{
-			"node": ">=0.4.0"
-		}
-	],
-	[
-		"npm-run-path",
-		{
-			"node": ">=4"
-		}
-	],
-	[
-		"ansi-regex",
-		{
-			"node": ">=4"
-		}
-	],
-	[
-		"mississippi",
-		{
-			"node": ">=4.0.0"
-		}
-	],
-	[
-		"xtend",
-		{
-			"node": ">=0.4"
-		}
-	],
-	[
-		"cli-columns",
-		{
-			"node": ">= 4"
-		}
-	],
-	[
-		"string-width",
-		{
-			"node": ">=4"
 		}
 	],
 	[
 		"is-fullwidth-code-point",
-		{
-			"node": ">=4"
-		}
-	],
-	[
-		"strip-ansi",
-		{
-			"node": ">=4"
-		}
-	],
-	[
-		"strip-ansi",
-		{
-			"node": ">=0.10.0"
-		}
-	],
-	[
-		"ansi-regex",
-		{
-			"node": ">=0.10.0"
-		}
-	],
-	[
-		"colors",
-		{
-			"node": ">=0.1.90"
-		}
-	],
-	[
-		"string-width",
-		{
-			"node": ">=0.10.0"
-		}
-	],
-	[
-		"code-point-at",
 		{
 			"node": ">=0.10.0"
 		}
@@ -240,265 +646,13 @@
 		}
 	],
 	[
-		"number-is-nan",
-		{
-			"node": ">=0.10.0"
-		}
-	],
-	[
-		"strip-ansi",
-		{
-			"node": ">=0.10.0"
-		}
-	],
-	[
-		"ansi-regex",
-		{
-			"node": ">=0.10.0"
-		}
-	],
-	[
-		"strip-ansi",
-		{
-			"node": ">=0.10.0"
-		}
-	],
-	[
-		"ansi-regex",
-		{
-			"node": ">=0.10.0"
-		}
-	],
-	[
-		"clone",
-		{
-			"node": ">=0.8"
-		}
-	],
-	[
-		"detect-indent",
-		{
-			"node": ">=4"
-		}
-	],
-	[
-		"detect-newline",
-		{
-			"node": ">=0.10.0"
-		}
-	],
-	[
-		"path-is-absolute",
-		{
-			"node": ">=0.10.0"
-		}
-	],
-	[
-		"graceful-fs",
-		{
-			"node": ">=0.4.0"
-		}
-	],
-	[
-		"hosted-git-info",
-		{
-			"node": ">=4"
-		}
-	],
-	[
-		"imurmurhash",
-		{
-			"node": ">=0.8.19"
-		}
-	],
-	[
-		"libnpx",
-		{
-			"node": ">=4"
-		}
-	],
-	[
-		"dotenv",
-		{
-			"node": ">=4.6.0"
-		}
-	],
-	[
-		"wrap-ansi",
-		{
-			"node": ">=0.10.0"
-		}
-	],
-	[
-		"string-width",
-		{
-			"node": ">=0.10.0"
-		}
-	],
-	[
-		"code-point-at",
-		{
-			"node": ">=0.10.0"
-		}
-	],
-	[
 		"is-fullwidth-code-point",
 		{
 			"node": ">=0.10.0"
 		}
 	],
 	[
-		"number-is-nan",
-		{
-			"node": ">=0.10.0"
-		}
-	],
-	[
-		"strip-ansi",
-		{
-			"node": ">=0.10.0"
-		}
-	],
-	[
-		"ansi-regex",
-		{
-			"node": ">=0.10.0"
-		}
-	],
-	[
-		"decamelize",
-		{
-			"node": ">=0.10.0"
-		}
-	],
-	[
-		"find-up",
-		{
-			"node": ">=4"
-		}
-	],
-	[
-		"locate-path",
-		{
-			"node": ">=4"
-		}
-	],
-	[
-		"p-locate",
-		{
-			"node": ">=4"
-		}
-	],
-	[
-		"p-limit",
-		{
-			"node": ">=4"
-		}
-	],
-	[
-		"p-try",
-		{
-			"node": ">=4"
-		}
-	],
-	[
-		"path-exists",
-		{
-			"node": ">=4"
-		}
-	],
-	[
-		"os-locale",
-		{
-			"node": ">=4"
-		}
-	],
-	[
-		"execa",
-		{
-			"node": ">=4"
-		}
-	],
-	[
-		"shebang-command",
-		{
-			"node": ">=0.10.0"
-		}
-	],
-	[
-		"shebang-regex",
-		{
-			"node": ">=0.10.0"
-		}
-	],
-	[
-		"get-stream",
-		{
-			"node": ">=4"
-		}
-	],
-	[
-		"is-stream",
-		{
-			"node": ">=0.10.0"
-		}
-	],
-	[
-		"npm-run-path",
-		{
-			"node": ">=4"
-		}
-	],
-	[
-		"path-key",
-		{
-			"node": ">=4"
-		}
-	],
-	[
-		"p-finally",
-		{
-			"node": ">=4"
-		}
-	],
-	[
-		"strip-eof",
-		{
-			"node": ">=0.10.0"
-		}
-	],
-	[
-		"lcid",
-		{
-			"node": ">=0.10.0"
-		}
-	],
-	[
-		"invert-kv",
-		{
-			"node": ">=0.10.0"
-		}
-	],
-	[
-		"mem",
-		{
-			"node": ">=4"
-		}
-	],
-	[
-		"mimic-fn",
-		{
-			"node": ">=4"
-		}
-	],
-	[
-		"require-directory",
-		{
-			"node": ">=0.10.0"
-		}
-	],
-	[
-		"string-width",
+		"is-fullwidth-code-point",
 		{
 			"node": ">=4"
 		}
@@ -510,693 +664,13 @@
 		}
 	],
 	[
-		"camelcase",
-		{
-			"node": ">=4"
-		}
-	],
-	[
-		"mississippi",
-		{
-			"node": ">=4.0.0"
-		}
-	],
-	[
-		"xtend",
-		{
-			"node": ">=0.4"
-		}
-	],
-	[
-		"node-gyp",
-		{
-			"node": ">= 0.8.0"
-		}
-	],
-	[
-		"fstream",
-		{
-			"node": ">=0.6"
-		}
-	],
-	[
-		"block-stream",
-		{
-			"node": "0.4 || >=0.5.8"
-		}
-	],
-	[
-		"is-builtin-module",
-		{
-			"node": ">=0.10.0"
-		}
-	],
-	[
-		"builtin-modules",
-		{
-			"node": ">=0.10.0"
-		}
-	],
-	[
-		"byline",
-		{
-			"node": ">=0.10.0"
-		}
-	],
-	[
-		"resolve-from",
-		{
-			"node": ">=4"
-		}
-	],
-	[
-		"agentkeepalive",
-		{
-			"node": ">= 4.0.0"
-		}
-	],
-	[
-		"agent-base",
-		{
-			"node": ">= 4.0.0"
-		}
-	],
-	[
-		"agent-base",
-		{
-			"node": ">= 4.0.0"
-		}
-	],
-	[
-		"xtend",
-		{
-			"node": ">=0.4"
-		}
-	],
-	[
-		"node-fetch-npm",
-		{
-			"node": ">=4"
-		}
-	],
-	[
-		"iconv-lite",
-		{
-			"node": ">=0.10.0"
-		}
-	],
-	[
-		"promise-retry",
-		{
-			"node": ">=0.12"
-		}
-	],
-	[
-		"agent-base",
-		{
-			"node": ">= 4.0.0"
-		}
-	],
-	[
-		"socks",
-		{
-			"node": ">= 0.10.0",
-			"npm": ">= 1.3.5"
-		}
-	],
-	[
-		"smart-buffer",
-		{
-			"node": ">= 0.10.15",
-			"npm": ">= 1.3.5"
-		}
-	],
-	[
-		"agentkeepalive",
-		{
-			"node": ">= 4.0.0"
-		}
-	],
-	[
-		"http-proxy-agent",
-		{
-			"node": ">= 4.5.0"
-		}
-	],
-	[
-		"agent-base",
-		{
-			"node": ">= 4.0.0"
-		}
-	],
-	[
-		"https-proxy-agent",
-		{
-			"node": ">= 4.5.0"
-		}
-	],
-	[
-		"agent-base",
-		{
-			"node": ">= 4.0.0"
-		}
-	],
-	[
-		"node-fetch-npm",
-		{
-			"node": ">=4"
-		}
-	],
-	[
-		"iconv-lite",
-		{
-			"node": ">=0.10.0"
-		}
-	],
-	[
-		"promise-retry",
-		{
-			"node": ">=0.12"
-		}
-	],
-	[
-		"agent-base",
-		{
-			"node": ">= 4.0.0"
-		}
-	],
-	[
-		"socks",
-		{
-			"node": ">= 0.10.0",
-			"npm": ">= 1.3.5"
-		}
-	],
-	[
-		"smart-buffer",
-		{
-			"node": ">= 0.10.15",
-			"npm": ">= 1.3.5"
-		}
-	],
-	[
-		"object-assign",
-		{
-			"node": ">=0.10.0"
-		}
-	],
-	[
-		"string-width",
-		{
-			"node": ">=0.10.0"
-		}
-	],
-	[
-		"code-point-at",
-		{
-			"node": ">=0.10.0"
-		}
-	],
-	[
-		"is-fullwidth-code-point",
-		{
-			"node": ">=0.10.0"
-		}
-	],
-	[
-		"number-is-nan",
-		{
-			"node": ">=0.10.0"
-		}
-	],
-	[
-		"strip-ansi",
-		{
-			"node": ">=0.10.0"
-		}
-	],
-	[
-		"ansi-regex",
-		{
-			"node": ">=0.10.0"
-		}
-	],
-	[
-		"os-homedir",
-		{
-			"node": ">=0.10.0"
-		}
-	],
-	[
-		"os-tmpdir",
-		{
-			"node": ">=0.10.0"
-		}
-	],
-	[
-		"get-stream",
-		{
-			"node": ">=4"
-		}
-	],
-	[
-		"agentkeepalive",
-		{
-			"node": ">= 4.0.0"
-		}
-	],
-	[
-		"http-proxy-agent",
-		{
-			"node": ">= 4.5.0"
-		}
-	],
-	[
-		"agent-base",
-		{
-			"node": ">= 4.0.0"
-		}
-	],
-	[
-		"https-proxy-agent",
-		{
-			"node": ">= 4.5.0"
-		}
-	],
-	[
-		"agent-base",
-		{
-			"node": ">= 4.0.0"
-		}
-	],
-	[
-		"xtend",
-		{
-			"node": ">=0.4"
-		}
-	],
-	[
-		"node-fetch-npm",
-		{
-			"node": ">=4"
-		}
-	],
-	[
-		"iconv-lite",
-		{
-			"node": ">=0.10.0"
-		}
-	],
-	[
-		"agent-base",
-		{
-			"node": ">= 4.0.0"
-		}
-	],
-	[
-		"socks",
-		{
-			"node": ">= 0.10.0",
-			"npm": ">= 1.3.5"
-		}
-	],
-	[
-		"smart-buffer",
-		{
-			"node": ">= 0.10.15",
-			"npm": ">= 1.3.5"
-		}
-	],
-	[
-		"promise-retry",
-		{
-			"node": ">=0.12"
-		}
-	],
-	[
-		"query-string",
-		{
-			"node": ">=6"
-		}
-	],
-	[
-		"decode-uri-component",
-		{
-			"node": ">=0.10"
-		}
-	],
-	[
-		"strict-uri-encode",
-		{
-			"node": ">=4"
-		}
-	],
-	[
-		"read",
-		{
-			"node": ">=0.8"
-		}
-	],
-	[
-		"slash",
-		{
-			"node": ">=0.10.0"
-		}
-	],
-	[
-		"request",
-		{
-			"node": ">= 4"
-		}
-	],
-	[
-		"combined-stream",
-		{
-			"node": ">= 0.8"
-		}
-	],
-	[
-		"delayed-stream",
-		{
-			"node": ">=0.4.0"
-		}
-	],
-	[
-		"form-data",
-		{
-			"node": ">= 0.12"
-		}
-	],
-	[
-		"har-validator",
-		{
-			"node": ">=4"
-		}
-	],
-	[
-		"co",
-		{
-			"iojs": ">= 1.0.0",
-			"node": ">= 0.12.0"
-		}
-	],
-	[
-		"har-schema",
-		{
-			"node": ">=4"
-		}
-	],
-	[
-		"hawk",
-		{
-			"node": ">=4.5.0"
-		}
-	],
-	[
-		"boom",
-		{
-			"node": ">=4.0.0"
-		}
-	],
-	[
-		"cryptiles",
-		{
-			"node": ">=4.0.0"
-		}
-	],
-	[
-		"boom",
-		{
-			"node": ">=4.0.0"
-		}
-	],
-	[
-		"hoek",
-		{
-			"node": ">=4.0.0"
-		}
-	],
-	[
-		"sntp",
-		{
-			"node": ">=4.0.0"
-		}
-	],
-	[
-		"http-signature",
-		{
-			"node": ">=0.8",
-			"npm": ">=1.3.7"
-		}
-	],
-	[
-		"assert-plus",
-		{
-			"node": ">=0.8"
-		}
-	],
-	[
-		"sshpk",
-		{
-			"node": ">=0.10.0"
-		}
-	],
-	[
-		"dashdash",
-		{
-			"node": ">=0.10"
-		}
-	],
-	[
-		"mime-types",
-		{
-			"node": ">= 0.6"
-		}
-	],
-	[
-		"mime-db",
-		{
-			"node": ">= 0.6"
-		}
-	],
-	[
-		"qs",
-		{
-			"node": ">=0.6"
-		}
-	],
-	[
-		"tough-cookie",
-		{
-			"node": ">=0.8"
-		}
-	],
-	[
-		"retry",
-		{
-			"node": ">= 4"
-		}
-	],
-	[
-		"strip-ansi",
-		{
-			"node": ">=4"
-		}
-	],
-	[
-		"ansi-regex",
-		{
-			"node": ">=4"
-		}
-	],
-	[
-		"tar",
-		{
-			"node": ">=4.5"
-		}
-	],
-	[
-		"unpipe",
-		{
-			"node": ">= 0.8"
-		}
-	],
-	[
-		"update-notifier",
-		{
-			"node": ">=4"
-		}
-	],
-	[
-		"boxen",
-		{
-			"node": ">=4"
-		}
-	],
-	[
-		"camelcase",
-		{
-			"node": ">=4"
-		}
-	],
-	[
-		"cli-boxes",
-		{
-			"node": ">=0.10.0"
-		}
-	],
-	[
-		"string-width",
-		{
-			"node": ">=4"
-		}
-	],
-	[
 		"is-fullwidth-code-point",
 		{
 			"node": ">=4"
 		}
 	],
 	[
-		"term-size",
-		{
-			"node": ">=4"
-		}
-	],
-	[
-		"execa",
-		{
-			"node": ">=4"
-		}
-	],
-	[
-		"shebang-command",
-		{
-			"node": ">=0.10.0"
-		}
-	],
-	[
-		"shebang-regex",
-		{
-			"node": ">=0.10.0"
-		}
-	],
-	[
-		"get-stream",
-		{
-			"node": ">=4"
-		}
-	],
-	[
-		"is-stream",
-		{
-			"node": ">=0.10.0"
-		}
-	],
-	[
-		"npm-run-path",
-		{
-			"node": ">=4"
-		}
-	],
-	[
-		"path-key",
-		{
-			"node": ">=4"
-		}
-	],
-	[
-		"p-finally",
-		{
-			"node": ">=4"
-		}
-	],
-	[
-		"strip-eof",
-		{
-			"node": ">=0.10.0"
-		}
-	],
-	[
-		"widest-line",
-		{
-			"node": ">=4"
-		}
-	],
-	[
-		"chalk",
-		{
-			"node": ">=4"
-		}
-	],
-	[
-		"ansi-styles",
-		{
-			"node": ">=4"
-		}
-	],
-	[
-		"escape-string-regexp",
-		{
-			"node": ">=0.8.0"
-		}
-	],
-	[
-		"supports-color",
-		{
-			"node": ">=4"
-		}
-	],
-	[
-		"has-flag",
-		{
-			"node": ">=4"
-		}
-	],
-	[
-		"configstore",
-		{
-			"node": ">=4"
-		}
-	],
-	[
-		"dot-prop",
-		{
-			"node": ">=4"
-		}
-	],
-	[
-		"is-obj",
-		{
-			"node": ">=0.10.0"
-		}
-	],
-	[
-		"make-dir",
-		{
-			"node": ">=4"
-		}
-	],
-	[
-		"pify",
-		{
-			"node": ">=4"
-		}
-	],
-	[
-		"unique-string",
-		{
-			"node": ">=4"
-		}
-	],
-	[
-		"crypto-random-string",
-		{
-			"node": ">=4"
-		}
-	],
-	[
-		"import-lazy",
+		"is-fullwidth-code-point",
 		{
 			"node": ">=4"
 		}
@@ -1208,57 +682,21 @@
 		}
 	],
 	[
-		"global-dirs",
-		{
-			"node": ">=4"
-		}
-	],
-	[
-		"is-path-inside",
-		{
-			"node": ">=0.10.0"
-		}
-	],
-	[
 		"is-npm",
 		{
 			"node": ">=0.10.0"
 		}
 	],
 	[
-		"latest-version",
-		{
-			"node": ">=4"
-		}
-	],
-	[
-		"package-json",
-		{
-			"node": ">=4"
-		}
-	],
-	[
-		"got",
-		{
-			"node": ">=4"
-		}
-	],
-	[
-		"create-error-class",
+		"is-obj",
 		{
 			"node": ">=0.10.0"
 		}
 	],
 	[
-		"capture-stack-trace",
+		"is-path-inside",
 		{
 			"node": ">=0.10.0"
-		}
-	],
-	[
-		"get-stream",
-		{
-			"node": ">=4"
 		}
 	],
 	[
@@ -1280,75 +718,169 @@
 		}
 	],
 	[
+		"is-stream",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"is-stream",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"is-stream",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"json-file-plus",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"latest-version",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"lcid",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"lcid",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"libnpx",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"locate-path",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"locate-path",
+		{
+			"node": ">=4"
+		}
+	],
+	[
 		"lowercase-keys",
 		{
 			"node": ">=0.10.0"
 		}
 	],
 	[
-		"timed-out",
-		{
-			"node": ">=0.10.0"
-		}
-	],
-	[
-		"unzip-response",
+		"make-dir",
 		{
 			"node": ">=4"
 		}
 	],
 	[
-		"url-parse-lax",
+		"mem",
 		{
-			"node": ">=0.10.0"
+			"node": ">=4"
 		}
 	],
 	[
-		"prepend-http",
+		"mem",
 		{
-			"node": ">=0.10.0"
+			"node": ">=4"
 		}
 	],
 	[
-		"deep-extend",
+		"mime-db",
 		{
-			"iojs": ">=1.0.0",
-			"node": ">=0.10.0"
+			"node": ">= 0.6"
 		}
 	],
 	[
-		"strip-json-comments",
+		"mime-types",
 		{
-			"node": ">=0.10.0"
+			"node": ">= 0.6"
 		}
 	],
 	[
-		"registry-url",
+		"mimic-fn",
 		{
-			"node": ">=0.10.0"
+			"node": ">=4"
 		}
 	],
 	[
-		"deep-extend",
+		"mimic-fn",
 		{
-			"iojs": ">=1.0.0",
-			"node": ">=0.10.0"
+			"node": ">=4"
 		}
 	],
 	[
-		"strip-json-comments",
+		"mississippi",
 		{
-			"node": ">=0.10.0"
+			"node": ">=4.0.0"
 		}
 	],
 	[
-		"semver-diff",
+		"mississippi",
 		{
-			"node": ">=0.10.0"
+			"node": ">=4.0.0"
 		}
 	],
 	[
-		"xdg-basedir",
+		"node-fetch-npm",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"node-fetch-npm",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"node-fetch-npm",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"node-gyp",
+		{
+			"node": ">= 0.8.0"
+		}
+	],
+	[
+		"node.extend",
+		{
+			"node": ">=0.4.0"
+		}
+	],
+	[
+		"npm-run-path",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"npm-run-path",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"npm-run-path",
 		{
 			"node": ">=4"
 		}
@@ -1360,13 +892,67 @@
 		}
 	],
 	[
+		"number-is-nan",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"number-is-nan",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"number-is-nan",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"object-assign",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
 		"object.assign",
 		{
 			"node": ">= 0.4"
 		}
 	],
 	[
+		"os-homedir",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
 		"os-locale",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"os-locale",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"os-tmpdir",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"p-finally",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"p-finally",
 		{
 			"node": ">=4"
 		}
@@ -1384,6 +970,18 @@
 		}
 	],
 	[
+		"p-limit",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"p-locate",
+		{
+			"node": ">=4"
+		}
+	],
+	[
 		"p-locate",
 		{
 			"node": ">=4"
@@ -1396,7 +994,37 @@
 		}
 	],
 	[
+		"p-try",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"package-json",
+		{
+			"node": ">=4"
+		}
+	],
+	[
 		"path-exists",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"path-exists",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"path-is-absolute",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"path-key",
 		{
 			"node": ">=4"
 		}
@@ -1408,9 +1036,45 @@
 		}
 	],
 	[
+		"path-key",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"pify",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"prepend-http",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
 		"promise-deferred",
 		{
 			"node": ">= 0.4"
+		}
+	],
+	[
+		"promise-retry",
+		{
+			"node": ">=0.12"
+		}
+	],
+	[
+		"promise-retry",
+		{
+			"node": ">=0.12"
+		}
+	],
+	[
+		"promise-retry",
+		{
+			"node": ">=0.12"
 		}
 	],
 	[
@@ -1420,15 +1084,81 @@
 		}
 	],
 	[
+		"qs",
+		{
+			"node": ">=0.6"
+		}
+	],
+	[
+		"query-string",
+		{
+			"node": ">=6"
+		}
+	],
+	[
+		"read",
+		{
+			"node": ">=0.8"
+		}
+	],
+	[
+		"registry-url",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"request",
+		{
+			"node": ">= 4"
+		}
+	],
+	[
 		"require-directory",
 		{
 			"node": ">=0.10.0"
 		}
 	],
 	[
+		"require-directory",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"resolve-from",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"retry",
+		{
+			"node": ">= 4"
+		}
+	],
+	[
 		"salita",
 		{
 			"node": ">= 4"
+		}
+	],
+	[
+		"semver-diff",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"shebang-command",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"shebang-command",
+		{
+			"node": ">=0.10.0"
 		}
 	],
 	[
@@ -1444,7 +1174,175 @@
 		}
 	],
 	[
+		"shebang-regex",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"shebang-regex",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"slash",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"smart-buffer",
+		{
+			"node": ">= 0.10.15",
+			"npm": ">= 1.3.5"
+		}
+	],
+	[
+		"smart-buffer",
+		{
+			"node": ">= 0.10.15",
+			"npm": ">= 1.3.5"
+		}
+	],
+	[
+		"smart-buffer",
+		{
+			"node": ">= 0.10.15",
+			"npm": ">= 1.3.5"
+		}
+	],
+	[
+		"sntp",
+		{
+			"node": ">=4.0.0"
+		}
+	],
+	[
+		"socks",
+		{
+			"node": ">= 0.10.0",
+			"npm": ">= 1.3.5"
+		}
+	],
+	[
+		"socks",
+		{
+			"node": ">= 0.10.0",
+			"npm": ">= 1.3.5"
+		}
+	],
+	[
+		"socks",
+		{
+			"node": ">= 0.10.0",
+			"npm": ">= 1.3.5"
+		}
+	],
+	[
+		"sshpk",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"strict-uri-encode",
+		{
+			"node": ">=4"
+		}
+	],
+	[
 		"string-width",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"string-width",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"string-width",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"string-width",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"string-width",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"string-width",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"string-width",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"string-width",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"strip-ansi",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"strip-ansi",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"strip-ansi",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"strip-ansi",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"strip-ansi",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"strip-ansi",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"strip-ansi",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"strip-ansi",
 		{
 			"node": ">=4"
 		}
@@ -1462,7 +1360,97 @@
 		}
 	],
 	[
+		"strip-eof",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"strip-eof",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"strip-json-comments",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"strip-json-comments",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
 		"supports-color",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"supports-color",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"tar",
+		{
+			"node": ">=4.5"
+		}
+	],
+	[
+		"term-size",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"timed-out",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"tough-cookie",
+		{
+			"node": ">=0.8"
+		}
+	],
+	[
+		"unique-string",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"unpipe",
+		{
+			"node": ">= 0.8"
+		}
+	],
+	[
+		"unzip-response",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"update-notifier",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"url-parse-lax",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"widest-line",
 		{
 			"node": ">=4"
 		}
@@ -1474,27 +1462,39 @@
 		}
 	],
 	[
-		"ansi-regex",
+		"wrap-ansi",
 		{
 			"node": ">=0.10.0"
 		}
 	],
 	[
-		"is-fullwidth-code-point",
+		"xdg-basedir",
 		{
-			"node": ">=0.10.0"
+			"node": ">=4"
 		}
 	],
 	[
-		"string-width",
+		"xtend",
 		{
-			"node": ">=0.10.0"
+			"node": ">=0.4"
 		}
 	],
 	[
-		"strip-ansi",
+		"xtend",
 		{
-			"node": ">=0.10.0"
+			"node": ">=0.4"
+		}
+	],
+	[
+		"xtend",
+		{
+			"node": ">=0.4"
+		}
+	],
+	[
+		"xtend",
+		{
+			"node": ">=0.4"
 		}
 	]
 ]

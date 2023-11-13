@@ -1,11 +1,5 @@
 [
 	[
-		"peer-subset-root",
-		{
-			"node": ">= 8"
-		}
-	],
-	[
 		"hosted-git-info",
 		{
 			"node": ">=10"
@@ -33,6 +27,12 @@
 		"os-tmpdir",
 		{
 			"node": ">=0.10.0"
+		}
+	],
+	[
+		"peer-subset-root",
+		{
+			"node": ">= 8"
 		}
 	],
 	[

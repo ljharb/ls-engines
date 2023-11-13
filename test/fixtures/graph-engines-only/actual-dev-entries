@@ -6,6 +6,12 @@
 		}
 	],
 	[
+		"ansi-regex",
+		{
+			"node": ">=4"
+		}
+	],
+	[
 		"ansi-styles",
 		{
 			"node": ">=4"
@@ -27,24 +33,6 @@
 		"cli-table",
 		{
 			"node": ">= 0.2.0"
-		}
-	],
-	[
-		"ansi-regex",
-		{
-			"node": ">=4"
-		}
-	],
-	[
-		"string-width",
-		{
-			"node": ">=4"
-		}
-	],
-	[
-		"strip-ansi",
-		{
-			"node": ">=4"
 		}
 	],
 	[
@@ -141,6 +129,12 @@
 		"is-date-object",
 		{
 			"node": ">= 0.4"
+		}
+	],
+	[
+		"is-fullwidth-code-point",
+		{
+			"node": ">=0.10.0"
 		}
 	],
 	[
@@ -308,6 +302,18 @@
 	[
 		"string-width",
 		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"string-width",
+		{
+			"node": ">=4"
+		}
+	],
+	[
+		"string-width",
+		{
 			"node": ">=4"
 		}
 	],
@@ -324,6 +330,12 @@
 		}
 	],
 	[
+		"strip-ansi",
+		{
+			"node": ">=4"
+		}
+	],
+	[
 		"strip-eof",
 		{
 			"node": ">=0.10.0"
@@ -337,18 +349,6 @@
 	],
 	[
 		"wrap-ansi",
-		{
-			"node": ">=0.10.0"
-		}
-	],
-	[
-		"is-fullwidth-code-point",
-		{
-			"node": ">=0.10.0"
-		}
-	],
-	[
-		"string-width",
 		{
 			"node": ">=0.10.0"
 		}
