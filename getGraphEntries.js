@@ -1,5 +1,6 @@
 'use strict';
 
+const flatMap = require('array.prototype.flatmap');
 const getTree = require('get-dep-tree');
 
 module.exports = async function getGraphEntries({
@@ -12,24 +13,21 @@ module.exports = async function getGraphEntries({
 	path = void undefined,
 }) {
 	const tree = await getTree(mode, { dev, logger, path, peer, production });
-	const nodesWithEngines = tree.inventory.filter(({
+	const nodesWithEngines = await tree.querySelectorAll(':attr(engines, [node])');
+	return flatMap(nodesWithEngines, ({
+		name,
 		package: {
 			_inBundle,
 			engines,
 		},
 		dev: nodeDev = false,
 		peer: nodePeer = false,
-	}) => ( // eslint-disable-line no-extra-parens
+	}) => (
 		!_inBundle
 		&& engines
 		&& ((dev || !nodeDev) && (production || nodeDev) && (peer || !nodePeer)) // TODO: figure out why get-dep-tree isn't pruning properly
-		&& selectedEngines.some((engine) => engines[engine])
-	));
-	const tuples = Array.from(
-		nodesWithEngines,
-		({ name, package: { engines } }) => [name, engines],
-	);
-	return tuples
-		.filter(([, engines]) => engines && selectedEngines.some((engine) => engines[engine] !== '*'))
-		.sort(([a, aE], [b, bE]) => a.localeCompare(b) || aE.node.localeCompare(bE.node));
+		&& selectedEngines.some((engine) => engines[engine] !== '*')
+			? [[name, engines]]
+			: []
+	)).sort(([a, aE], [b, bE]) => a.localeCompare(b) || aE.node.localeCompare(bE.node));
 };
