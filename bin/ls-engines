@@ -100,7 +100,10 @@ const argv = yargs
 const { current, dev, mode, peer, production, save, engines: selectedEngines } = argv;
 
 const path = require('path');
-const Semver = require('semver');
+const Range = require('semver/classes/range');
+const satisfies = require('semver/functions/satisfies');
+const major = require('semver/functions/major');
+const minor = require('semver/functions/minor');
 const { default: intersect } = require('fast_array_intersect');
 const jsonFile = require('json-file-plus');
 const fromEntries = require('object.fromentries');
@@ -129,10 +132,10 @@ const pAllVersions = getAlVersions(selectedEngines);
 const pRootRanges = Promise.all([pPackage, pAllVersions]).then(async ([pkg, allVersions]) => {
 	const engineEntries = validEngines.map((engine) => [
 		engine,
-		pkg.data.engines?.[engine] || null,
-	]).map(([engine, data]) => [engine, data && data.replace(/[=](?<digits>\d)/, '= $<digits>')]);
+		(pkg.data.engines?.[engine] || null)?.replace(/[=](?<digits>\d)/, '= $<digits>'),
+	]);
 	const engines = fromEntries(engineEntries);
-	const rangeEntries = engineEntries.map(([engine, v]) => [engine, new Semver.Range(v || '*')]);
+	const rangeEntries = engineEntries.map(([engine, v]) => [engine, new Range(v || '*')]);
 	const ranges = fromEntries(rangeEntries);
 	const valids = await validVersionsForEngines(engines, allVersions);
 	return { engines, ranges, valids };
@@ -140,7 +143,14 @@ const pRootRanges = Promise.all([pPackage, pAllVersions]).then(async ([pkg, allV
 
 function dropPatch(v) {
 	const num = v.replace(/^v/, '');
-	return `^${Semver.major(num)}.${Semver.minor(num)}`;
+	return `^${major(num)}.${minor(num)}`;
+}
+
+function versionReducer(prev, v) {
+	if (prev.length === 0) {
+		return [v];
+	}
+	return satisfies(v, caret(prev[prev.length - 1])) ? prev : prev.concat(v);
 }
 
 const pGraphRanges = Promise.all([
@@ -153,19 +163,14 @@ const pGraphRanges = Promise.all([
 	}),
 	pAllVersions,
 ]).then(async ([graphEntries, allVersions]) => {
-	const { valids: graphValids, allowed: graphAllowed } = await getGraphValids(graphEntries, allVersions);
+	const { valids: graphValids, allowed } = await getGraphValids(graphEntries, allVersions);
 	const graphRanges = Object.entries(graphValids).map(([engine, versions]) => {
-		const validMajorRanges = graphEntries.length > 0 && versions.length > 0 ? versions.reduceRight((prev, v) => {
-			if (prev.length === 0) {
-				return [v];
-			}
-			return Semver.satisfies(v, caret(prev[prev.length - 1])) ? prev : prev.concat(v);
-		}, []).map(dropPatch).reverse() : ['*'];
+		const validMajorRanges = graphEntries.length > 0 && versions.length > 0 ? versions.reduceRight(versionReducer, []).map(dropPatch).reverse() : ['*'];
 		const lastMajor = validMajorRanges[validMajorRanges.length - 1];
 		const greaterThanLowest = lastMajor === '*' ? lastMajor : `>= ${lastMajor.replace(/^\^/, '')}`;
-		const validRange = versions.every((v) => Semver.satisfies(v, greaterThanLowest))
-			? new Semver.Range(greaterThanLowest)
-			: new Semver.Range(validMajorRanges.join(' || '));
+		const validRange = versions.every((v) => satisfies(v, greaterThanLowest))
+			? new Range(greaterThanLowest)
+			: new Range(validMajorRanges.join(' || '));
 		if (!versions.every((v) => validRange.test(v))) {
 			throw new RangeError(`please report this: ${engine}: ${versions.join(',')} / ${validRange}`);
 		}
@@ -182,12 +187,14 @@ const pGraphRanges = Promise.all([
 		const validForEngine = await validVersionsForEngines(engines, allVersions);
 		return [engine, validForEngine[engine]];
 	}));
+
+	const ranges = fromEntries(graphRanges);
 	const valids = fromEntries(validEntries);
 
 	return {
-		allowed: graphAllowed,
+		allowed,
 		engines,
-		ranges: fromEntries(graphRanges),
+		ranges,
 		valids,
 	};
 });
@@ -219,9 +226,11 @@ function wrapCommaSeparated(array, limit) {
 }
 
 function normalizeEngines(engines) {
-	const entries = Object.entries(engines)
-		.map(([engine, version]) => [engine, version || '*'])
-		.filter(([engine, version]) => engine === 'node' || version !== '*');
+	const entries = Object.entries(engines).flatMap(([engine, version]) => (
+		engine === 'node' || version !== '*'
+			? [[engine, version || '*']]
+			: []
+	));
 	return fromEntries(entries);
 }
 
@@ -243,14 +252,17 @@ const pSummary = Promise.all([
 				majorsHeading,
 			].map((x) => colors.bold(colors.gray(x))),
 			...Object.entries(latestEngineMajors)
-				.filter(([engine]) => selectedEngines.includes(engine))
-				.map(([
+				.flatMap(([
 					engine,
 					{ root, graph },
-				]) => [
-					colors.blue(engine),
-					wrapCommaSeparated(graph.length > 0 ? intersect([root, graph]) : root, majorsHeading.length),
-				]),
+				]) => (
+					selectedEngines.includes(engine)
+						? [[
+							colors.blue(engine),
+							wrapCommaSeparated(graph.length > 0 ? intersect([root, graph]) : root, majorsHeading.length),
+						]]
+						: []
+				)),
 		]),
 		table([
 			[].concat(

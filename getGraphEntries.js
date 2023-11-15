@@ -1,6 +1,5 @@
 'use strict';
 
-const flatMap = require('array.prototype.flatmap');
 const some = require('array.prototype.some');
 const toSorted = require('array.prototype.tosorted');
 const getTree = require('get-dep-tree');
@@ -17,7 +16,7 @@ module.exports = async function getGraphEntries({
 	const tree = await getTree(mode, { dev, logger, path, peer, production });
 	const nodesWithEngines = await tree.querySelectorAll(':attr(engines, [node])');
 	return toSorted(
-		flatMap(nodesWithEngines, ({
+		nodesWithEngines.flatMap(({
 			name,
 			package: {
 				_inBundle,
@@ -27,9 +26,9 @@ module.exports = async function getGraphEntries({
 			peer: nodePeer = false,
 		}) => (
 			!_inBundle
-		&& engines
-		&& ((dev || !nodeDev) && (production || nodeDev) && (peer || !nodePeer)) // TODO: figure out why get-dep-tree isn't pruning properly
-		&& some(selectedEngines, (engine) => engines[engine] !== '*')
+			&& engines
+			&& ((dev || !nodeDev) && (production || nodeDev) && (peer || !nodePeer)) // TODO: figure out why get-dep-tree isn't pruning properly
+			&& some(selectedEngines, (engine) => engines[engine] !== '*')
 				? [[name, engines]]
 				: []
 		)),
