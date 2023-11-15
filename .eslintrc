@@ -48,6 +48,7 @@
 		{
 			"files": "test/**",
 			"rules": {
+				"max-lines-per-function": 0,
 				"max-params": 0,
 			},
 		},

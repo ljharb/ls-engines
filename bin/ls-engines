@@ -19,8 +19,10 @@ const EXITS = require('../exit-codes');
 const checkCurrent = require('../checkCurrent');
 const checkEngines = require('../checkEngines');
 const getGraphEntries = require('../getGraphEntries');
+const getGraphValids = require('../getGraphValids');
 const getLatestEngineMajors = require('../getLatestEngineMajors');
 const table = require('../table');
+const validVersionsForEngines = require('../validVersionsForEngines');
 
 const FALSE = Object(false);
 const TRUE = Object(true);
@@ -129,46 +131,7 @@ const getEngineVersions = {
 const pAllVersions = Promise.all(selectedEngines.map((x) => getEngineVersions[x]()))
 	.then((results) => fromEntries(selectedEngines.map((engine, i) => [engine, results[i]])));
 
-async function validVersionsForEngines(engines) {
-	const allVersions = await pAllVersions;
-	const entries = Object.entries(allVersions);
-	return fromEntries(entries.map(([
-		engine,
-		versions,
-	]) => [
-		engine,
-		versions.filter((v) => Semver.satisfies(v, engines[engine] || '*')),
-	]));
-}
-
-async function getGraphValids(graphEntries) {
-	if (graphEntries.length === 0) {
-		return {
-			allowed: [],
-			valids: {},
-		};
-	}
-	const graphAllowed = await Promise.all(graphEntries.map(async ([name, engines]) => [name, engines, await validVersionsForEngines(engines)]));
-	const mergedGraphEngines = graphAllowed.reduce((mergedEngines, [, , engines]) => {
-		const entries = Object.entries(engines);
-		entries.forEach(([engine, versions]) => {
-			if (!Array.isArray(mergedEngines[engine])) {
-				mergedEngines[engine] = [];
-			}
-			mergedEngines[engine].push(versions);
-		});
-		return mergedEngines;
-	}, {});
-	return {
-		allowed: graphAllowed,
-		valids: fromEntries(Object.entries(mergedGraphEngines).map(([engine, versionArrays]) => {
-			const intersection = intersect(versionArrays);
-			return [engine, intersection.sort((a, b) => -Semver.compare(a, b))];
-		})),
-	};
-}
-
-const pRootRanges = pPackage.then(async (pkg) => {
+const pRootRanges = Promise.all([pPackage, pAllVersions]).then(async ([pkg, allVersions]) => {
 	const engineEntries = validEngines.map((engine) => [
 		engine,
 		pkg.data.engines?.[engine] || null,
@@ -176,7 +139,7 @@ const pRootRanges = pPackage.then(async (pkg) => {
 	const engines = fromEntries(engineEntries);
 	const rangeEntries = engineEntries.map(([engine, v]) => [engine, new Semver.Range(v || '*')]);
 	const ranges = fromEntries(rangeEntries);
-	const valids = await validVersionsForEngines(engines);
+	const valids = await validVersionsForEngines(engines, allVersions);
 	return { engines, ranges, valids };
 });
 
@@ -185,14 +148,17 @@ function dropPatch(v) {
 	return `^${Semver.major(num)}.${Semver.minor(num)}`;
 }
 
-const pGraphRanges = getGraphEntries({
-	dev,
-	mode,
-	peer,
-	production,
-	selectedEngines,
-}).then(async (graphEntries) => {
-	const { valids: graphValids, allowed: graphAllowed } = await getGraphValids(graphEntries);
+const pGraphRanges = Promise.all([
+	getGraphEntries({
+		dev,
+		mode,
+		peer,
+		production,
+		selectedEngines,
+	}),
+	pAllVersions,
+]).then(async ([graphEntries, allVersions]) => {
+	const { valids: graphValids, allowed: graphAllowed } = await getGraphValids(graphEntries, allVersions);
 	const graphRanges = Object.entries(graphValids).map(([engine, versions]) => {
 		const validMajorRanges = graphEntries.length > 0 && versions.length > 0 ? versions.reduceRight((prev, v) => {
 			if (prev.length === 0) {
@@ -218,7 +184,7 @@ const pGraphRanges = getGraphEntries({
 	const engines = fromEntries(engineEntries);
 
 	const validEntries = await Promise.all(validEngines.map(async (engine) => {
-		const validForEngine = await validVersionsForEngines(engines);
+		const validForEngine = await validVersionsForEngines(engines, allVersions);
 		return [engine, validForEngine[engine]];
 	}));
 	const valids = fromEntries(validEntries);
