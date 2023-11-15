@@ -145,7 +145,7 @@ async function getGraphValids(graphEntries) {
 	if (graphEntries.length === 0) {
 		return {
 			allowed: [],
-			valids: validVersionsForEngines(fromEntries(validEngines.map((engine) => [engine, '*']))),
+			valids: {},
 		};
 	}
 	const graphAllowed = await Promise.all(graphEntries.map(async ([name, engines]) => [name, engines, await validVersionsForEngines(engines)]));
