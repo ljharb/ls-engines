@@ -4,25 +4,8 @@
 
 'use strict';
 
-const path = require('path');
-const Semver = require('semver');
-const { default: intersect } = require('fast_array_intersect');
 const colors = require('colors/safe');
 const yargs = require('yargs');
-const jsonFile = require('json-file-plus');
-const fromEntries = require('object.fromentries');
-const values = require('object.values');
-const allSettled = require('promise.allsettled');
-const group = require('array.prototype.group');
-
-const EXITS = require('../exit-codes');
-const checkCurrent = require('../checkCurrent');
-const checkEngines = require('../checkEngines');
-const getGraphEntries = require('../getGraphEntries');
-const getGraphValids = require('../getGraphValids');
-const getLatestEngineMajors = require('../getLatestEngineMajors');
-const table = require('../table');
-const validVersionsForEngines = require('../validVersionsForEngines');
 
 const FALSE = Object(false);
 const TRUE = Object(true);
@@ -116,7 +99,24 @@ const argv = yargs
 
 const { current, dev, mode, peer, production, save, engines: selectedEngines } = argv;
 
-const getNodeVersions = require('../get-node-versions');
+const path = require('path');
+const Semver = require('semver');
+const { default: intersect } = require('fast_array_intersect');
+const jsonFile = require('json-file-plus');
+const fromEntries = require('object.fromentries');
+const values = require('object.values');
+const allSettled = require('promise.allsettled');
+const group = require('array.prototype.group');
+
+const EXITS = require('../exit-codes');
+const checkCurrent = require('../checkCurrent');
+const checkEngines = require('../checkEngines');
+const getGraphEntries = require('../getGraphEntries');
+const getGraphValids = require('../getGraphValids');
+const getLatestEngineMajors = require('../getLatestEngineMajors');
+const table = require('../table');
+const validVersionsForEngines = require('../validVersionsForEngines');
+const getAlVersions = require('../getAllVersions');
 
 const pPackage = jsonFile(path.join(process.cwd(), 'package.json'));
 
@@ -124,12 +124,7 @@ function caret(ver) {
 	return `^${ver.replace(/^v/g, '')}`;
 }
 
-const getEngineVersions = {
-	node: getNodeVersions,
-};
-
-const pAllVersions = Promise.all(selectedEngines.map((x) => getEngineVersions[x]()))
-	.then((results) => fromEntries(selectedEngines.map((engine, i) => [engine, results[i]])));
+const pAllVersions = getAlVersions(selectedEngines);
 
 const pRootRanges = Promise.all([pPackage, pAllVersions]).then(async ([pkg, allVersions]) => {
 	const engineEntries = validEngines.map((engine) => [
