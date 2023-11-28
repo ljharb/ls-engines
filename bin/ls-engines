@@ -245,7 +245,7 @@ const pSummary = Promise.all([
 	{ engines: graphEngines, valids: graphValids },
 	latestEngineMajors,
 ]) => ({
-	output: [
+	output: [].concat(
 		table([
 			[
 				'engine',
@@ -274,7 +274,7 @@ const pSummary = Promise.all([
 				values(graphValids).some((x) => x.length > 0) && values(graphEngines).length > 0 ? `"engines": ${JSON.stringify(normalizeEngines(graphEngines), null, 2)}` : 'N/A',
 			].map((x) => colors.blue(x)),
 		]),
-	],
+	),
 }));
 
 Promise.all([

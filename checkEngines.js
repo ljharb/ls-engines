@@ -3,6 +3,7 @@
 const colors = require('colors/safe');
 const fromEntries = require('object.fromentries');
 const group = require('array.prototype.group');
+const { inspect } = require('util');
 
 const EXITS = require('./exit-codes');
 const table = require('./table');
@@ -129,6 +130,10 @@ module.exports = async function checkEngines(
 			output: [].concat(
 				colors.bold(colors[superset.length > 0 ? 'yellow' : 'green'](`\nYour “engines” field allows ${superset.length > 0 ? 'more' : 'fewer'} node versions than your dependency graph does.`)),
 				conflictingTable,
+				process.env.DEBUG ? table([].concat(
+					[['Graph deps', 'engines'].map((x) => colors.bold(colors.gray(x)))],
+					graphAllowed.map(([a, b]) => [colors.blue(a), inspect(b, { depth: Infinity, maxArrayLength: null })]),
+				)) : [],
 				expandMessage,
 				colors.blue(`"engines": ${JSON.stringify(engines, null, 2)}`),
 			),
