@@ -18,6 +18,12 @@
 		}
 	],
 	[
+		"call-bind",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
 		"camelcase",
 		{
 			"node": ">=4"
@@ -66,6 +72,18 @@
 		}
 	],
 	[
+		"es-define-property",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"es-errors",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
 		"escape-string-regexp",
 		{
 			"node": ">=0.8.0"
@@ -81,6 +99,12 @@
 		"find-up",
 		{
 			"node": ">=4"
+		}
+	],
+	[
+		"get-intrinsic",
+		{
+			"node": ">= 0.4"
 		}
 	],
 	[

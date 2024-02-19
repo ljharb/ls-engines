@@ -18,6 +18,12 @@
 		}
 	],
 	[
+		"array-buffer-byte-length",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
 		"arraybuffer.prototype.slice",
 		{
 			"node": ">= 0.4"
@@ -25,6 +31,12 @@
 	],
 	[
 		"available-typed-arrays",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"call-bind",
 		{
 			"node": ">= 0.4"
 		}
@@ -84,6 +96,18 @@
 		}
 	],
 	[
+		"es-define-property",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"es-errors",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
 		"es-set-tostringtag",
 		{
 			"node": ">= 0.4"
@@ -115,6 +139,12 @@
 	],
 	[
 		"function.prototype.name",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"get-intrinsic",
 		{
 			"node": ">= 0.4"
 		}
@@ -177,6 +207,12 @@
 		"invert-kv",
 		{
 			"node": ">=0.10.0"
+		}
+	],
+	[
+		"is-array-buffer",
+		{
+			"node": ">= 0.4"
 		}
 	],
 	[
@@ -384,6 +420,12 @@
 		}
 	],
 	[
+		"safe-regex-test",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
 		"salita",
 		{
 			"node": ">= 4"
@@ -411,6 +453,12 @@
 		"shebang-regex",
 		{
 			"node": ">=0.10.0"
+		}
+	],
+	[
+		"side-channel",
+		{
+			"node": ">= 0.4"
 		}
 	],
 	[

@@ -186,6 +186,12 @@
 		}
 	],
 	[
+		"array-buffer-byte-length",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
 		"array.prototype.flatmap",
 		{
 			"node": ">= 0.4"
@@ -250,6 +256,12 @@
 		"cacache",
 		{
 			"node": ">= 10"
+		}
+	],
+	[
+		"call-bind",
+		{
+			"node": ">= 0.4"
 		}
 	],
 	[
@@ -469,6 +481,18 @@
 		}
 	],
 	[
+		"es-define-property",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"es-errors",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
 		"es-set-tostringtag",
 		{
 			"node": ">= 0.4"
@@ -640,6 +664,12 @@
 		"get-caller-file",
 		{
 			"node": "6.* || 8.* || >= 10.*"
+		}
+	],
+	[
+		"get-intrinsic",
+		{
+			"node": ">= 0.4"
 		}
 	],
 	[
@@ -848,7 +878,19 @@
 		}
 	],
 	[
+		"ip-address",
+		{
+			"node": ">= 12"
+		}
+	],
+	[
 		"is-arguments",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"is-array-buffer",
 		{
 			"node": ">= 0.4"
 		}
@@ -1581,6 +1623,12 @@
 		}
 	],
 	[
+		"safe-regex-test",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
 		"semver",
 		{
 			"node": ">=10"
@@ -1695,6 +1743,12 @@
 		}
 	],
 	[
+		"side-channel",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
 		"slice-ansi",
 		{
 			"node": ">=10"
@@ -1710,7 +1764,7 @@
 	[
 		"socks",
 		{
-			"node": ">= 10.13.0",
+			"node": ">= 10.0.0",
 			"npm": ">= 3.0.0"
 		}
 	],

@@ -1,5 +1,11 @@
 [
 	[
+		"array-buffer-byte-length",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
 		"array.prototype.flatmap",
 		{
 			"node": ">= 0.4"
@@ -13,6 +19,12 @@
 	],
 	[
 		"available-typed-arrays",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"call-bind",
 		{
 			"node": ">= 0.4"
 		}
@@ -36,6 +48,18 @@
 		}
 	],
 	[
+		"es-define-property",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"es-errors",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
 		"es-set-tostringtag",
 		{
 			"node": ">= 0.4"
@@ -49,6 +73,12 @@
 	],
 	[
 		"function.prototype.name",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"get-intrinsic",
 		{
 			"node": ">= 0.4"
 		}
@@ -109,6 +139,12 @@
 	],
 	[
 		"internal-slot",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"is-array-buffer",
 		{
 			"node": ">= 0.4"
 		}
@@ -228,6 +264,12 @@
 		}
 	],
 	[
+		"safe-regex-test",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
 		"semver",
 		{
 			"node": ">=10"
@@ -241,6 +283,12 @@
 	],
 	[
 		"set-function-name",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"side-channel",
 		{
 			"node": ">= 0.4"
 		}
