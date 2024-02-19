@@ -45,7 +45,7 @@
 		"@npmcli/arborist": "^6.5.0",
 		"array.prototype.group": "^1.1.2",
 		"array.prototype.some": "^1.1.5",
-		"array.prototype.tosorted": "^1.1.2",
+		"array.prototype.tosorted": "^1.1.3",
 		"colors": "=1.4.0",
 		"fast_array_intersect": "^1.1.0",
 		"get-dep-tree": "^1.0.4",
@@ -56,7 +56,7 @@
 		"object.values": "^1.1.7",
 		"pacote": "^15.2.0",
 		"promise.allsettled": "^1.0.7",
-		"semver": "^7.5.4",
+		"semver": "^7.6.0",
 		"table": "^6.8.1",
 		"yargs": "^17.7.2"
 	},
