@@ -1,6 +1,6 @@
 'use strict';
 
-const getJSON = require('get-json');
+const getJSON = require('./get-json');
 const semver = require('semver');
 
 module.exports = async function getNodeVersions() {
