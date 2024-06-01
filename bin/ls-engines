@@ -109,7 +109,7 @@ const jsonFile = require('json-file-plus');
 const fromEntries = require('object.fromentries');
 const values = require('object.values');
 const allSettled = require('promise.allsettled');
-const group = require('array.prototype.group');
+const groupBy = require('object.groupby');
 
 const EXITS = require('../exit-codes');
 const checkCurrent = require('../checkCurrent');
@@ -306,7 +306,7 @@ Promise.all([
 	const pCurrent = current ? checkCurrent(selectedEngines, rootValids, graphValids) : { output: [] };
 
 	// print out successes first
-	const { fulfilled = [], rejected = [] } = group(
+	const { fulfilled = [], rejected = [] } = groupBy(
 		await allSettled([pSummary, pEngines, pCurrent]),
 		(x) => x.status,
 	);

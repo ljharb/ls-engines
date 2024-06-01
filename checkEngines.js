@@ -2,7 +2,7 @@
 
 const colors = require('colors/safe');
 const fromEntries = require('object.fromentries');
-const group = require('array.prototype.group');
+const groupBy = require('object.groupby');
 const { inspect } = require('util');
 
 const EXITS = require('./exit-codes');
@@ -64,7 +64,7 @@ module.exports = async function checkEngines(
 				.map(([name, depEngines, { [engine]: vs }]) => [name, depEngines[engine], rootValids[engine].filter((v) => !vs.includes(v))])
 				.sort(([a], [b]) => a.localeCompare(b));
 
-			conflicting[engine] = Object.entries(group(packageInvalids, ([name]) => name)).map(([
+			conflicting[engine] = Object.entries(groupBy(packageInvalids, ([name]) => name)).map(([
 				name,
 				results,
 			]) => [
