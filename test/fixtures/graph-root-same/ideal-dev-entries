@@ -1,11 +1,5 @@
 [
 	[
-		"@aashutoshrathi/word-wrap",
-		{
-			"node": ">=0.10.0"
-		}
-	],
-	[
 		"@babel/helper-validator-identifier",
 		{
 			"node": ">=6.9.0"
@@ -824,6 +818,12 @@
 		}
 	],
 	[
+		"is-map",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
 		"is-npm",
 		{
 			"node": ">=0.10.0"
@@ -851,6 +851,12 @@
 		"is-retry-allowed",
 		{
 			"node": ">=0.10.0"
+		}
+	],
+	[
+		"is-set",
+		{
+			"node": ">= 0.4"
 		}
 	],
 	[
@@ -1736,6 +1742,12 @@
 		"widest-line",
 		{
 			"node": ">=4"
+		}
+	],
+	[
+		"word-wrap",
+		{
+			"node": ">=0.10.0"
 		}
 	],
 	[

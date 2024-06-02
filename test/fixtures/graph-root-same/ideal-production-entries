@@ -30,6 +30,24 @@
 		}
 	],
 	[
+		"data-view-buffer",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"data-view-byte-length",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"data-view-byte-offset",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
 		"define-data-property",
 		{
 			"node": ">= 0.4"
@@ -55,6 +73,12 @@
 	],
 	[
 		"es-errors",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"es-object-atoms",
 		{
 			"node": ">= 0.4"
 		}
@@ -162,6 +186,12 @@
 		}
 	],
 	[
+		"is-data-view",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
 		"is-date-object",
 		{
 			"node": ">= 0.4"
@@ -181,6 +211,12 @@
 	],
 	[
 		"is-regex",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"is-shared-array-buffer",
 		{
 			"node": ">= 0.4"
 		}
@@ -246,6 +282,12 @@
 		}
 	],
 	[
+		"possible-typed-array-names",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
 		"read-package-json",
 		{
 			"node": ">=10"
@@ -300,6 +342,12 @@
 		}
 	],
 	[
+		"string.prototype.trimstart",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
 		"supports-preserve-symlinks-flag",
 		{
 			"node": ">= 0.4"
@@ -319,6 +367,12 @@
 	],
 	[
 		"typed-array-byte-offset",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"typed-array-length",
 		{
 			"node": ">= 0.4"
 		}

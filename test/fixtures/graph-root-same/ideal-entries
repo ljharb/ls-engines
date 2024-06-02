@@ -1,11 +1,5 @@
 [
 	[
-		"@aashutoshrathi/word-wrap",
-		{
-			"node": ">=0.10.0"
-		}
-	],
-	[
 		"@babel/helper-validator-identifier",
 		{
 			"node": ">=6.9.0"
@@ -409,6 +403,24 @@
 		}
 	],
 	[
+		"data-view-buffer",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"data-view-byte-length",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"data-view-byte-offset",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
 		"debug",
 		{
 			"node": ">=6.0"
@@ -488,6 +500,12 @@
 	],
 	[
 		"es-errors",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"es-object-atoms",
 		{
 			"node": ">= 0.4"
 		}
@@ -908,6 +926,12 @@
 		}
 	],
 	[
+		"is-data-view",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
 		"is-date-object",
 		{
 			"node": ">= 0.4"
@@ -992,6 +1016,12 @@
 		}
 	],
 	[
+		"is-map",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
 		"is-negative-zero",
 		{
 			"node": ">= 0.4"
@@ -1037,6 +1067,18 @@
 		"is-retry-allowed",
 		{
 			"node": ">=0.10.0"
+		}
+	],
+	[
+		"is-set",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"is-shared-array-buffer",
+		{
+			"node": ">= 0.4"
 		}
 	],
 	[
@@ -1485,6 +1527,12 @@
 		}
 	],
 	[
+		"possible-typed-array-names",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
 		"prelude-ls",
 		{
 			"node": ">= 0.8.0"
@@ -1853,6 +1901,12 @@
 		}
 	],
 	[
+		"string.prototype.trimstart",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
 		"strip-ansi",
 		{
 			"node": ">=0.10.0"
@@ -2027,6 +2081,12 @@
 		}
 	],
 	[
+		"typed-array-length",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
 		"unique-string",
 		{
 			"node": ">=4"
@@ -2066,6 +2126,12 @@
 		"widest-line",
 		{
 			"node": ">=4"
+		}
+	],
+	[
+		"word-wrap",
+		{
+			"node": ">=0.10.0"
 		}
 	],
 	[

@@ -102,12 +102,6 @@
 		}
 	],
 	[
-		"lru-cache",
-		{
-			"node": ">=10"
-		}
-	],
-	[
 		"make-fetch-happen",
 		{
 			"node": ">= 10"
