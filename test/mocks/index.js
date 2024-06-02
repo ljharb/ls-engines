@@ -2,9 +2,9 @@
 
 const Module = require('module');
 
-const getJSON = require('get-json');
+const getJSON = require('../../get-json');
 
-const id = require.resolve('get-json');
+const id = require.resolve('../../get-json');
 const mod = new Module(id);
 mod.exports = (url, ...args) => {
 	if (url === 'http://nodejs.org/dist/index.json') {
