@@ -70,7 +70,7 @@
 		"nyc": "^15.1.0",
 		"object-inspect": "^1.13.1",
 		"safe-publish-latest": "^2.0.0",
-		"tape": "^5.7.5"
+		"tape": "^5.8.1"
 	},
 	"auto-changelog": {
 		"output": "CHANGELOG.md",
