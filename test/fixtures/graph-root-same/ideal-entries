@@ -691,6 +691,12 @@
 		}
 	],
 	[
+		"get-json",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
 		"get-package-type",
 		{
 			"node": ">=8.0.0"
