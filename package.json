@@ -56,7 +56,7 @@
 		"object.values": "^1.2.0",
 		"pacote": "^15.2.0",
 		"promise.allsettled": "^1.0.7",
-		"semver": "^7.6.2",
+		"semver": "^7.6.3",
 		"table": "^6.8.2",
 		"yargs": "^17.7.2"
 	},
