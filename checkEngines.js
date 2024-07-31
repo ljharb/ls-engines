@@ -153,6 +153,10 @@ module.exports = async function checkEngines(
 			colors.red('\nYour “engines” field does not exactly match your dependency graph‘s requirements!'),
 			fixMessage,
 			colors.blue(`"engines": ${JSON.stringify(engines, null, 2)}`),
+			process.env.DEBUG ? table([].concat(
+				[['Graph deps', 'engines'].map((x) => colors.bold(colors.gray(x)))],
+				graphAllowed.map(([a, b]) => [colors.blue(a), inspect(b, { depth: Infinity, maxArrayLength: null })]),
+			)) : [],
 		],
 		save(pkg) {
 			// eslint-disable-next-line no-param-reassign
