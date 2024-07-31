@@ -48,7 +48,7 @@ const argv = yargs
 		if (![dev, production, peer].some((x) => x === TRUE || x === true)) {
 			throw 'At least one of `--dev`, `--production`, or `--peer` must be enabled.';
 		}
-		if (current && dev) {
+		if (current && dev && dev !== FALSE) {
 			if (current !== TRUE) {
 				throw '`--current` is not available when checking dev deps.';
 			}
