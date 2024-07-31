@@ -372,6 +372,12 @@
 		}
 	],
 	[
+		"object-inspect",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
 		"object.assign",
 		{
 			"node": ">= 0.4"

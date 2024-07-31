@@ -372,6 +372,12 @@
 		}
 	],
 	[
+		"object-inspect",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
 		"object-keys",
 		{
 			"node": ">= 0.4"

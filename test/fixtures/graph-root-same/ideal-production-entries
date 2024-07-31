@@ -186,6 +186,12 @@
 		}
 	],
 	[
+		"is-core-module",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
 		"is-data-view",
 		{
 			"node": ">= 0.4"
@@ -255,6 +261,12 @@
 		"npm-packlist",
 		{
 			"node": ">=10"
+		}
+	],
+	[
+		"object-inspect",
+		{
+			"node": ">= 0.4"
 		}
 	],
 	[
