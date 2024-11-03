@@ -38,11 +38,11 @@
 	},
 	"homepage": "https://github.com/ljharb/ls-engines#readme",
 	"engines": {
-		"node": ">= 19 || ^18 || ^16.13 || ^14.18",
+		"node": ">= 19 || ^18 || ^16.14",
 		"npm": ">=8"
 	},
 	"dependencies": {
-		"@npmcli/arborist": "^6.5.1",
+		"@npmcli/arborist": "^7.2.1",
 		"array.prototype.some": "^1.1.6",
 		"array.prototype.tosorted": "^1.1.4",
 		"colors": "=1.4.0",
@@ -54,7 +54,7 @@
 		"object.fromentries": "^2.0.8",
 		"object.groupby": "^1.0.3",
 		"object.values": "^1.2.0",
-		"pacote": "^15.2.0",
+		"pacote": "^18.0.6",
 		"promise.allsettled": "^1.0.7",
 		"semver": "^7.6.3",
 		"table": "^6.8.2",
