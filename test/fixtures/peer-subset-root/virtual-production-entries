@@ -1,8 +1,38 @@
 [
 	[
+		"hosted-git-info",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"lru-cache",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"os-homedir",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"os-tmpdir",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
 		"peer-subset-root",
 		{
 			"node": ">= 8"
+		}
+	],
+	[
+		"semver",
+		{
+			"node": ">=10"
 		}
 	]
 ]

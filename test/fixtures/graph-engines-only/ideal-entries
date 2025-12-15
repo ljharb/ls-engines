@@ -12,12 +12,6 @@
 		}
 	],
 	[
-		"ansi-styles",
-		{
-			"node": ">=4"
-		}
-	],
-	[
 		"array-buffer-byte-length",
 		{
 			"node": ">= 0.4"
@@ -25,6 +19,12 @@
 	],
 	[
 		"arraybuffer.prototype.slice",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"async-function",
 		{
 			"node": ">= 0.4"
 		}
@@ -42,13 +42,19 @@
 		}
 	],
 	[
-		"camelcase",
+		"call-bind-apply-helpers",
 		{
-			"node": ">=4"
+			"node": ">= 0.4"
 		}
 	],
 	[
-		"chalk",
+		"call-bound",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"camelcase",
 		{
 			"node": ">=4"
 		}
@@ -63,6 +69,12 @@
 		"code-point-at",
 		{
 			"node": ">=0.10.0"
+		}
+	],
+	[
+		"colors",
+		{
+			"node": ">=0.1.90"
 		}
 	],
 	[
@@ -108,6 +120,12 @@
 		}
 	],
 	[
+		"dunder-proto",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
 		"es-abstract",
 		{
 			"node": ">= 0.4"
@@ -144,12 +162,6 @@
 		}
 	],
 	[
-		"escape-string-regexp",
-		{
-			"node": ">=0.8.0"
-		}
-	],
-	[
 		"execa",
 		{
 			"node": ">=4"
@@ -162,13 +174,31 @@
 		}
 	],
 	[
+		"for-each",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
 		"function.prototype.name",
 		{
 			"node": ">= 0.4"
 		}
 	],
 	[
+		"generator-function",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
 		"get-intrinsic",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"get-proto",
 		{
 			"node": ">= 0.4"
 		}
@@ -192,9 +222,15 @@
 		}
 	],
 	[
-		"has-flag",
+		"gopd",
 		{
-			"node": ">=4"
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"has-bigints",
+		{
+			"node": ">= 0.4"
 		}
 	],
 	[
@@ -234,7 +270,25 @@
 		}
 	],
 	[
+		"is",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
 		"is-array-buffer",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"is-async-function",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"is-bigint",
 		{
 			"node": ">= 0.4"
 		}
@@ -264,6 +318,12 @@
 		}
 	],
 	[
+		"is-finalizationregistry",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
 		"is-fullwidth-code-point",
 		{
 			"node": ">=0.10.0"
@@ -273,6 +333,18 @@
 		"is-fullwidth-code-point",
 		{
 			"node": ">=4"
+		}
+	],
+	[
+		"is-generator-function",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"is-map",
+		{
+			"node": ">= 0.4"
 		}
 	],
 	[
@@ -289,6 +361,12 @@
 	],
 	[
 		"is-regex",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"is-set",
 		{
 			"node": ">= 0.4"
 		}
@@ -324,6 +402,24 @@
 		}
 	],
 	[
+		"is-weakmap",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"is-weakref",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"is-weakset",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
 		"json-file-plus",
 		{
 			"node": ">= 0.4"
@@ -339,6 +435,12 @@
 		"locate-path",
 		{
 			"node": ">=4"
+		}
+	],
+	[
+		"math-intrinsics",
+		{
+			"node": ">= 0.4"
 		}
 	],
 	[
@@ -396,6 +498,12 @@
 		}
 	],
 	[
+		"own-keys",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
 		"p-finally",
 		{
 			"node": ">=4"
@@ -450,6 +558,12 @@
 		}
 	],
 	[
+		"reflect.getprototypeof",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
 		"regexp.prototype.flags",
 		{
 			"node": ">= 0.4"
@@ -465,6 +579,12 @@
 		"safe-array-concat",
 		{
 			"node": ">=0.4"
+		}
+	],
+	[
+		"safe-push-apply",
+		{
+			"node": ">= 0.4"
 		}
 	],
 	[
@@ -492,6 +612,12 @@
 		}
 	],
 	[
+		"set-proto",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
 		"shebang-command",
 		{
 			"node": ">=0.10.0"
@@ -510,6 +636,30 @@
 		}
 	],
 	[
+		"side-channel-list",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"side-channel-map",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"side-channel-weakmap",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"stop-iteration-iterator",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
 		"string-width",
 		{
 			"node": ">=0.10.0"
@@ -523,6 +673,12 @@
 	],
 	[
 		"string.prototype.trim",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"string.prototype.trimend",
 		{
 			"node": ">= 0.4"
 		}
@@ -552,12 +708,6 @@
 		}
 	],
 	[
-		"supports-color",
-		{
-			"node": ">=4"
-		}
-	],
-	[
 		"typed-array-buffer",
 		{
 			"node": ">= 0.4"
@@ -577,6 +727,30 @@
 	],
 	[
 		"typed-array-length",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"unbox-primitive",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"which-boxed-primitive",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"which-builtin-type",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"which-collection",
 		{
 			"node": ">= 0.4"
 		}

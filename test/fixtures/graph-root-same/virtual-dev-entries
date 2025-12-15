@@ -66,12 +66,6 @@
 		}
 	],
 	[
-		"acorn",
-		{
-			"node": ">=0.4.0"
-		}
-	],
-	[
 		"agent-base",
 		{
 			"node": ">= 6.0.0"
@@ -174,12 +168,6 @@
 		}
 	],
 	[
-		"ansi-styles",
-		{
-			"node": ">=8"
-		}
-	],
-	[
 		"array.prototype.map",
 		{
 			"node": ">= 0.4"
@@ -261,12 +249,6 @@
 	[
 		"chalk",
 		{
-			"node": ">=10"
-		}
-	],
-	[
-		"chalk",
-		{
 			"node": ">=4"
 		}
 	],
@@ -298,12 +280,6 @@
 		"code-point-at",
 		{
 			"node": ">=0.10.0"
-		}
-	],
-	[
-		"color-convert",
-		{
-			"node": ">=7.0.0"
 		}
 	],
 	[
@@ -424,18 +400,6 @@
 		"escape-string-regexp",
 		{
 			"node": ">=0.8.0"
-		}
-	],
-	[
-		"escape-string-regexp",
-		{
-			"node": ">=10"
-		}
-	],
-	[
-		"eslint",
-		{
-			"node": "^10.12.0 || >=12.0.0"
 		}
 	],
 	[
@@ -616,12 +580,6 @@
 		"has-flag",
 		{
 			"node": ">=4"
-		}
-	],
-	[
-		"has-flag",
-		{
-			"node": ">=8"
 		}
 	],
 	[
@@ -1383,12 +1341,6 @@
 		}
 	],
 	[
-		"semver",
-		{
-			"node": ">=10"
-		}
-	],
-	[
 		"semver-diff",
 		{
 			"node": ">=0.10.0"
@@ -1598,12 +1550,6 @@
 		"supports-color",
 		{
 			"node": ">=4"
-		}
-	],
-	[
-		"supports-color",
-		{
-			"node": ">=8"
 		}
 	],
 	[
