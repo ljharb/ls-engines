@@ -244,38 +244,44 @@ const pSummary = Promise.all([
 	{ engines: rootEngines },
 	{ engines: graphEngines, valids: graphValids },
 	latestEngineMajors,
-]) => ({
-	output: [].concat(
-		table([
-			[
-				'engine',
-				majorsHeading,
-			].map((x) => colors.bold(colors.gray(x))),
-			...Object.entries(latestEngineMajors)
-				.flatMap(([
-					engine,
-					{ root, graph },
-				]) => (
-					selectedEngines.includes(engine)
-						? [[
-							colors.blue(engine),
-							wrapCommaSeparated(graph.length > 0 ? intersect([root, graph]) : root, majorsHeading.length),
-						]]
-						: []
-				)),
-		]),
-		table([
-			[].concat(
-				'package engines:',
-				'dependency graph engines:',
-			).map((x) => colors.bold(colors.gray(x))),
-			[
-				`"engines": ${JSON.stringify(normalizeEngines(rootEngines), null, 2)}`,
-				values(graphValids).some((x) => x.length > 0) && values(graphEngines).length > 0 ? `"engines": ${JSON.stringify(normalizeEngines(graphEngines), null, 2)}` : 'N/A',
-			].map((x) => colors.blue(x)),
-		]),
-	),
-}));
+]) => {
+	const enginesField = 'engines';
+
+	return {
+		output: [].concat(
+			table([
+				[
+					'engine',
+					majorsHeading,
+				].map((x) => colors.bold(colors.gray(x))),
+				...Object.entries(latestEngineMajors)
+					.flatMap(([
+						engine,
+						{ root, graph },
+					]) => (
+						selectedEngines.includes(engine)
+							? [[
+								colors.blue(engine),
+								wrapCommaSeparated(graph.length > 0 ? intersect([root, graph]) : root, majorsHeading.length),
+							]]
+							: []
+					)),
+			]),
+			table([
+				[].concat(
+					'package engines:',
+					'dependency graph engines:',
+				).map((x) => colors.bold(colors.gray(x))),
+				[
+					`"${enginesField}": ${JSON.stringify(normalizeEngines(rootEngines), null, 2)}`,
+					values(graphValids).some((x) => x.length > 0) && values(graphEngines).length > 0
+						? `"engines": ${JSON.stringify(normalizeEngines(graphEngines), null, 2)}`
+						: 'N/A',
+				].map((x) => colors.blue(x)),
+			]),
+		),
+	};
+});
 
 Promise.all([
 	pGraphRanges,
