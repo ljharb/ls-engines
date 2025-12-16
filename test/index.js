@@ -72,7 +72,7 @@ async function getOrUpdate(cwd, cmd, mode, flag, err, res, actualEntries) {
 			fs.writeFile(outPath, stdout || ''),
 			fs.writeFile(entriesPath, JSON.stringify(actualEntries, null, '\t') || ''),
 		]);
-		return { codes, stderr, stdout, entries: actualEntries };
+		return { codes, entries: actualEntries, stderr, stdout };
 	}
 
 	const [
@@ -86,7 +86,7 @@ async function getOrUpdate(cwd, cmd, mode, flag, err, res, actualEntries) {
 		fs.readFile(outPath, 'utf-8').then((x) => x || null),
 		fs.readFile(entriesPath, 'utf-8').then((x) => JSON.parse(x) || null),
 	]);
-	return { codes, stderr, stdout, entries };
+	return { codes, entries, stderr, stdout };
 }
 
 function testMode(t, fixture, cwd, mode) {
@@ -99,13 +99,13 @@ function testMode(t, fixture, cwd, mode) {
 		const mockLogger = t.captureFn(() => {});
 
 		const actualEntries = await getGraphEntries({
-			mode,
 			dev: flag === '' || flag === '--dev',
+			logger: mockLogger,
+			mode,
 			path: cwd,
 			peer: flag === '' || flag === '--peer',
 			production: flag === '' || flag === '--production',
 			selectedEngines: ['node'],
-			logger: mockLogger,
 		});
 
 		return new Promise((resolve) => {

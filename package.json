@@ -61,11 +61,11 @@
 		"yargs": "^17.7.2"
 	},
 	"devDependencies": {
-		"@ljharb/eslint-config": "^21.4.0",
+		"@ljharb/eslint-config": "^22.1.2",
 		"auto-changelog": "^2.5.0",
 		"encoding": "^0.1.13",
 		"es-value-fixtures": "^1.7.1",
-		"eslint": "^8.57.1",
+		"eslint": "^9.39.2",
 		"npmignore": "^0.3.2",
 		"nyc": "^10.3.2",
 		"object-inspect": "^1.13.4",

@@ -36,12 +36,12 @@ test('getGraphEntries: default dev/peer values', async (t) => {
 	const getGraphEntriesFresh = require('../getGraphEntries'); // eslint-disable-line global-require
 
 	const entries = await getGraphEntriesFresh({
-		mode: 'ideal',
 		dev: true,
+		logger: silentLogger,
+		mode: 'ideal',
 		peer: true,
 		production: true,
 		selectedEngines: ['node'],
-		logger: silentLogger,
 	});
 
 	t.ok(Array.isArray(entries), 'returns an array');
@@ -52,13 +52,13 @@ test('getGraphEntries: default dev/peer values', async (t) => {
 test('getGraphEntries', async (t) => {
 	t.test('returns array of entries', async (st) => {
 		const entries = await getGraphEntries({
-			mode: 'ideal',
 			dev: true,
+			logger: silentLogger,
+			mode: 'ideal',
+			path: fixturePath,
 			peer: true,
 			production: true,
 			selectedEngines: ['node'],
-			path: fixturePath,
-			logger: silentLogger,
 		});
 
 		st.ok(Array.isArray(entries), 'returns an array');
@@ -66,13 +66,13 @@ test('getGraphEntries', async (t) => {
 
 	t.test('each entry is [name, engines] tuple', async (st) => {
 		const entries = await getGraphEntries({
-			mode: 'ideal',
 			dev: true,
+			logger: silentLogger,
+			mode: 'ideal',
+			path: fixturePath,
 			peer: true,
 			production: true,
 			selectedEngines: ['node'],
-			path: fixturePath,
-			logger: silentLogger,
 		});
 
 		if (entries.length > 0) {
@@ -87,13 +87,13 @@ test('getGraphEntries', async (t) => {
 
 	t.test('entries are sorted by name then engine', async (st) => {
 		const entries = await getGraphEntries({
-			mode: 'ideal',
 			dev: true,
+			logger: silentLogger,
+			mode: 'ideal',
+			path: fixturePath,
 			peer: true,
 			production: true,
 			selectedEngines: ['node'],
-			path: fixturePath,
-			logger: silentLogger,
 		});
 
 		if (entries.length > 1) {
@@ -110,23 +110,23 @@ test('getGraphEntries', async (t) => {
 
 	t.test('filters by production flag', async (st) => {
 		const prodEntries = await getGraphEntries({
-			mode: 'ideal',
 			dev: false,
+			logger: silentLogger,
+			mode: 'ideal',
+			path: fixturePath,
 			peer: false,
 			production: true,
 			selectedEngines: ['node'],
-			path: fixturePath,
-			logger: silentLogger,
 		});
 
 		const allEntries = await getGraphEntries({
-			mode: 'ideal',
 			dev: true,
+			logger: silentLogger,
+			mode: 'ideal',
+			path: fixturePath,
 			peer: true,
 			production: true,
 			selectedEngines: ['node'],
-			path: fixturePath,
-			logger: silentLogger,
 		});
 
 		st.ok(prodEntries.length <= allEntries.length, 'production-only has <= entries than all');
@@ -134,13 +134,13 @@ test('getGraphEntries', async (t) => {
 
 	t.test('filters out packages with engines.node = "*"', async (st) => {
 		const entries = await getGraphEntries({
-			mode: 'ideal',
 			dev: true,
+			logger: silentLogger,
+			mode: 'ideal',
+			path: fixturePath,
 			peer: true,
 			production: true,
 			selectedEngines: ['node'],
-			path: fixturePath,
-			logger: silentLogger,
 		});
 
 		const hasStarEngine = entries.some(([, engines]) => engines.node === '*');
@@ -152,13 +152,13 @@ test('getGraphEntries', async (t) => {
 		const logger = (...args) => logs.push(args);
 
 		await getGraphEntries({
-			mode: 'ideal',
 			dev: true,
+			logger,
+			mode: 'ideal',
+			path: fixturePath,
 			peer: true,
 			production: true,
 			selectedEngines: ['node'],
-			path: fixturePath,
-			logger,
 		});
 
 		st.ok(logs.length > 0, 'logger was called');
@@ -170,13 +170,13 @@ test('getGraphEntries', async (t) => {
 
 	t.test('works with ideal mode', async (st) => {
 		const entries = await getGraphEntries({
-			mode: 'ideal',
 			dev: true,
+			logger: silentLogger,
+			mode: 'ideal',
+			path: fixturePath,
 			peer: true,
 			production: true,
 			selectedEngines: ['node'],
-			path: fixturePath,
-			logger: silentLogger,
 		});
 
 		st.ok(Array.isArray(entries), 'mode "ideal" returns array');
@@ -186,13 +186,13 @@ test('getGraphEntries', async (t) => {
 		// Virtual mode requires a lockfile
 		try {
 			const entries = await getGraphEntries({
-				mode: 'virtual',
 				dev: true,
+				logger: silentLogger,
+				mode: 'virtual',
+				path: fixturePath,
 				peer: true,
 				production: true,
 				selectedEngines: ['node'],
-				path: fixturePath,
-				logger: silentLogger,
 			});
 
 			st.ok(Array.isArray(entries), 'mode "virtual" returns array');

@@ -33,12 +33,6 @@ test('getGraphValids', async (t) => {
 	));
 
 	const allVersions = {
-		foo: [
-			'v0.1.2',
-			'v2.3.4',
-			'v4.5.6',
-			'v6.7.8',
-		],
 		bar: [
 			'v0.1.2',
 			'v1.2.3',
@@ -50,6 +44,12 @@ test('getGraphValids', async (t) => {
 			'v5.6.7',
 			'v7.8.9',
 		],
+		foo: [
+			'v0.1.2',
+			'v2.3.4',
+			'v4.5.6',
+			'v6.7.8',
+		],
 	};
 
 	t.deepEqual(
@@ -60,12 +60,12 @@ test('getGraphValids', async (t) => {
 
 	const graphEntries = [
 		['one', {
-			foo: '^1.0.0',
 			bar: '>= 2',
+			foo: '^1.0.0',
 		}],
 		['two', {
-			foo: '^1.3.4',
 			baz: '^0',
+			foo: '^1.3.4',
 		}],
 		['three', {
 			foo: '^2.0.0',
@@ -82,24 +82,24 @@ test('getGraphValids', async (t) => {
 				[
 					'one',
 					{
-						foo: '^1.0.0',
 						bar: '>= 2',
+						foo: '^1.0.0',
 					},
 					{
-						foo: [],
 						bar: ['v3.4.5', 'v5.6.7'],
 						baz: allVersions.baz,
+						foo: [],
 					},
 				],
 				[
 					'two',
 					{
-						foo: '^1.3.4', baz: '^0',
+						baz: '^0', foo: '^1.3.4',
 					},
 					{
-						foo: [],
 						bar: allVersions.bar,
 						baz: [],
+						foo: [],
 					},
 				],
 				[
@@ -108,9 +108,9 @@ test('getGraphValids', async (t) => {
 						foo: '^2.0.0',
 					},
 					{
-						foo: ['v2.3.4'],
 						bar: allVersions.bar,
 						baz: allVersions.baz,
+						foo: ['v2.3.4'],
 					},
 				],
 				[
@@ -119,16 +119,16 @@ test('getGraphValids', async (t) => {
 						foo: '^2.4.5',
 					},
 					{
-						foo: [],
 						bar: allVersions.bar,
 						baz: allVersions.baz,
+						foo: [],
 					},
 				],
 			],
 			valids: {
-				foo: [],
 				bar: ['v5.6.7', 'v3.4.5'],
 				baz: [],
+				foo: [],
 			},
 		},
 		'handles a populated graphEntries array',

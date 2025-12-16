@@ -89,17 +89,17 @@ test('getLatestEngineMajors', async (t) => {
 
 	t.test('handles multiple engines', async (st) => {
 		const multiVersions = {
-			node: ['v18.0.0', 'v20.0.0'],
 			iojs: ['v1.0.0', 'v2.0.0'],
+			node: ['v18.0.0', 'v20.0.0'],
 		};
 		const selectedEngines = ['node', 'iojs'];
 		const rootRanges = {
-			node: { validRange: new Semver.Range('*') },
 			iojs: { validRange: new Semver.Range('*') },
+			node: { validRange: new Semver.Range('*') },
 		};
 		const graphRanges = {
-			node: { validRange: new Semver.Range('*') },
 			iojs: { validRange: new Semver.Range('*') },
+			node: { validRange: new Semver.Range('*') },
 		};
 
 		const result = await getLatestEngineMajors(selectedEngines, multiVersions, rootRanges, graphRanges);
