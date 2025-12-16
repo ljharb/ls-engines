@@ -14,7 +14,7 @@
 		"prepublishOnly": "safe-publish-latest",
 		"lint": "eslint . bin/*",
 		"pretest": "npm run lint",
-		"tests-only": "NODE_OPTIONS='--require=./test/mocks' tape 'test/*.js'",
+		"tests-only": "NODE_NO_WARNINGS=1 NODE_OPTIONS='--require=./test/mocks' nyc tape 'test/*.js'",
 		"test": "npm run tests-only",
 		"posttest": "npx aud --production",
 		"test:update-mocks": "curl -L https://nodejs.org/dist/index.json -o test/mocks/node-versions.json",
@@ -67,7 +67,7 @@
 		"es-value-fixtures": "^1.4.2",
 		"eslint": "=8.8.0",
 		"npmignore": "^0.3.1",
-		"nyc": "^15.1.0",
+		"nyc": "^10.3.2",
 		"object-inspect": "^1.13.2",
 		"safe-publish-latest": "^2.0.0",
 		"tape": "^5.8.1"

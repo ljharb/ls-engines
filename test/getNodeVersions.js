@@ -21,4 +21,28 @@ test('getNodeVersions', async (t) => {
 	);
 
 	t.ok(versions.includes('v18.12.0') || versions.includes('v19.0.0'), 'includes expected versions from mock');
+
+	t.test('rejects when getJSON fails', async (st) => {
+		const id = require.resolve('get-json');
+		const originalExports = require.cache[id].exports;
+
+		// Temporarily replace getJSON to simulate failure
+		const testError = new Error('Network error');
+		require.cache[id].exports = () => Promise.reject(testError);
+
+		// Clear require cache for get-node-versions to pick up the new mock
+		delete require.cache[require.resolve('../get-node-versions')];
+		const getNodeVersionsFresh = require('../get-node-versions'); // eslint-disable-line global-require
+
+		try {
+			await getNodeVersionsFresh();
+			st.fail('should have thrown');
+		} catch (e) {
+			st.equal(e, testError, 'rejects with the original error');
+		}
+
+		// Restore original mock
+		require.cache[id].exports = originalExports;
+		delete require.cache[require.resolve('../get-node-versions')];
+	});
 });

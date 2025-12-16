@@ -7,6 +7,9 @@ const getGraphEntries = require('../getGraphEntries');
 
 const fixturePath = path.join(__dirname, 'fixtures', 'graph-engines-only');
 
+// Silent logger to prevent console output during tests
+const silentLogger = () => {};
+
 test('getGraphEntries', async (t) => {
 	t.test('returns array of entries', async (st) => {
 		const entries = await getGraphEntries({
@@ -16,6 +19,7 @@ test('getGraphEntries', async (t) => {
 			production: true,
 			selectedEngines: ['node'],
 			path: fixturePath,
+			logger: silentLogger,
 		});
 
 		st.ok(Array.isArray(entries), 'returns an array');
@@ -29,6 +33,7 @@ test('getGraphEntries', async (t) => {
 			production: true,
 			selectedEngines: ['node'],
 			path: fixturePath,
+			logger: silentLogger,
 		});
 
 		if (entries.length > 0) {
@@ -49,6 +54,7 @@ test('getGraphEntries', async (t) => {
 			production: true,
 			selectedEngines: ['node'],
 			path: fixturePath,
+			logger: silentLogger,
 		});
 
 		if (entries.length > 1) {
@@ -71,6 +77,7 @@ test('getGraphEntries', async (t) => {
 			production: true,
 			selectedEngines: ['node'],
 			path: fixturePath,
+			logger: silentLogger,
 		});
 
 		const allEntries = await getGraphEntries({
@@ -80,6 +87,7 @@ test('getGraphEntries', async (t) => {
 			production: true,
 			selectedEngines: ['node'],
 			path: fixturePath,
+			logger: silentLogger,
 		});
 
 		st.ok(prodEntries.length <= allEntries.length, 'production-only has <= entries than all');
@@ -93,13 +101,14 @@ test('getGraphEntries', async (t) => {
 			production: true,
 			selectedEngines: ['node'],
 			path: fixturePath,
+			logger: silentLogger,
 		});
 
 		const hasStarEngine = entries.some(([, engines]) => engines.node === '*');
 		st.notOk(hasStarEngine, 'no entries with engines.node = "*"');
 	});
 
-	t.test('accepts logger option', async (st) => {
+	t.test('logger receives mode information', async (st) => {
 		const logs = [];
 		const logger = (...args) => logs.push(args);
 
@@ -113,7 +122,11 @@ test('getGraphEntries', async (t) => {
 			logger,
 		});
 
-		st.ok(Array.isArray(logs), 'logger was called with array');
+		st.ok(logs.length > 0, 'logger was called');
+		st.ok(
+			logs.some((args) => args.some((arg) => typeof arg === 'string' && arg.includes('ideal'))),
+			'logger received mode information',
+		);
 	});
 
 	t.test('works with ideal mode', async (st) => {
@@ -124,6 +137,7 @@ test('getGraphEntries', async (t) => {
 			production: true,
 			selectedEngines: ['node'],
 			path: fixturePath,
+			logger: silentLogger,
 		});
 
 		st.ok(Array.isArray(entries), 'mode "ideal" returns array');
@@ -139,6 +153,7 @@ test('getGraphEntries', async (t) => {
 				production: true,
 				selectedEngines: ['node'],
 				path: fixturePath,
+				logger: silentLogger,
 			});
 
 			st.ok(Array.isArray(entries), 'mode "virtual" returns array');
