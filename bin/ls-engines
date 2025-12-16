@@ -5,6 +5,7 @@
 'use strict';
 
 const colors = require('colors/safe');
+const toSorted = require('array.prototype.tosorted');
 const yargs = require('yargs');
 
 const FALSE = Object(false);
@@ -129,16 +130,31 @@ function caret(ver) {
 
 const pAllVersions = getAlVersions(selectedEngines);
 
-const pRootRanges = Promise.all([pPackage, pAllVersions]).then(async ([pkg, allVersions]) => {
-	const engineEntries = validEngines.map((engine) => [
-		engine,
-		(pkg.data.engines?.[engine] || null)?.replace(/[=](?<digits>\d)/, '= $<digits>'),
-	]);
+const pRootRanges = Promise.all([pPackage, pAllVersions]).then(async ([
+	{ data: { private: isPrivate, devEngines, engines: prodEngines } },
+	allVersions,
+]) => {
+	const devEnginesRuntime = devEngines?.runtime;
+	// For private packages, devEngines takes precedence over engines (if present)
+	const useDevEngines = isPrivate && devEnginesRuntime;
+	const engineEntries = validEngines.map((engine) => {
+		if (useDevEngines) {
+			// devEngines.runtime is an object with name and version (or an array of such)
+			const runtimes = [].concat(devEnginesRuntime);
+			const nodeRuntime = runtimes.find((r) => r.name === 'node');
+			const version = nodeRuntime?.version || null;
+			return [engine, version?.replace(/[=](?<digits>\d)/, '= $<digits>') || null];
+		}
+		return [
+			engine,
+			(prodEngines?.[engine] || null)?.replace(/[=](?<digits>\d)/, '= $<digits>'),
+		];
+	});
 	const engines = fromEntries(engineEntries);
 	const rangeEntries = engineEntries.map(([engine, v]) => [engine, new Range(v || '*')]);
 	const ranges = fromEntries(rangeEntries);
 	const valids = await validVersionsForEngines(engines, allVersions);
-	return { engines, ranges, valids };
+	return { engines, ranges, useDevEngines, valids };
 });
 
 function dropPatch(v) {
@@ -226,11 +242,15 @@ function wrapCommaSeparated(array, limit) {
 }
 
 function normalizeEngines(engines) {
-	const entries = Object.entries(engines).flatMap(([engine, version]) => (
-		engine === 'node' || version !== '*'
-			? [[engine, version || '*']]
-			: []
-	));
+	const entries = toSorted(
+		Object.entries(engines)
+			.flatMap(([engine, version]) => (
+				engine === 'node' || version !== '*'
+					? [[engine, version || '*']]
+					: []
+			)),
+		([a], [b]) => a.localeCompare(b),
+	);
 	return fromEntries(entries);
 }
 
@@ -241,12 +261,14 @@ const pSummary = Promise.all([
 	pGraphRanges,
 	pLatestEngineMajors,
 ]).then(([
-	{ engines: rootEngines },
+	{ engines: rootEngines, useDevEngines },
 	{ engines: graphEngines, valids: graphValids },
 	latestEngineMajors,
 ]) => {
-	const enginesField = 'engines';
-
+	const enginesField = useDevEngines ? 'devEngines' : 'engines';
+	const displayRootEngines = useDevEngines
+		? { runtime: { name: 'node', version: rootEngines.node } }
+		: normalizeEngines(rootEngines);
 	return {
 		output: [].concat(
 			table([
@@ -269,11 +291,11 @@ const pSummary = Promise.all([
 			]),
 			table([
 				[].concat(
-					'package engines:',
+					`package ${enginesField}:`,
 					'dependency graph engines:',
 				).map((x) => colors.bold(colors.gray(x))),
 				[
-					`"${enginesField}": ${JSON.stringify(normalizeEngines(rootEngines), null, 2)}`,
+					`"${enginesField}": ${JSON.stringify(displayRootEngines, null, 2)}`,
 					values(graphValids).some((x) => x.length > 0) && values(graphEngines).length > 0
 						? `"engines": ${JSON.stringify(normalizeEngines(graphEngines), null, 2)}`
 						: 'N/A',
@@ -287,6 +309,7 @@ Promise.all([
 	pGraphRanges,
 	pPackage,
 	pRootRanges,
+	pAllVersions,
 ]).then(async ([
 	{
 		allowed: graphAllowed,
@@ -297,8 +320,32 @@ Promise.all([
 	{
 		engines: rootEngines,
 		valids: rootValids,
+		useDevEngines,
 	},
+	allVersions,
 ]) => {
+	// Validate devEngines is subset of engines for non-private packages
+	const devEnginesRuntime = pkg.data.devEngines?.runtime;
+	if (!pkg.data.private && devEnginesRuntime) {
+		const runtimes = [].concat(devEnginesRuntime);
+		const nodeRuntime = runtimes.find((r) => r.name === 'node');
+		const devVersion = nodeRuntime?.version || '*';
+		const devValids = await validVersionsForEngines({ node: devVersion }, allVersions);
+
+		const rootValidsSet = new Set(rootValids.node);
+		if (!devValids.node.every((v) => rootValidsSet.has(v))) {
+			throw {
+				code: EXITS.DEV_ENGINES,
+				output: [
+					colors.bold(colors.red('\nYour "devEngines" field is not a subset of your "engines" field!')),
+					`\n"engines.node" allows: ${colors.blue(rootEngines.node || '*')}`,
+					`"devEngines.runtime" requires: ${colors.blue(devVersion)}`,
+					'\nEither widen your "engines" field or narrow your "devEngines" field.',
+				],
+			};
+		}
+	}
+
 	const pEngines = checkEngines(
 		selectedEngines,
 		rootEngines,
@@ -307,6 +354,7 @@ Promise.all([
 		graphAllowed,
 		graphDisplayRanges,
 		save,
+		useDevEngines,
 	);
 
 	const pCurrent = current ? checkCurrent(selectedEngines, rootValids, graphValids) : { output: [] };
@@ -362,6 +410,8 @@ Promise.all([
 		});
 	}, Promise.resolve());
 }).catch((e) => {
-	console.error((e && e.stack) || e);
-	process.exitCode |= EXITS.ERROR;
+	[].concat(e.output || (e && e.stack) || e).forEach((line) => {
+		console.error(line);
+	});
+	process.exitCode |= typeof e.code === 'number' ? e.code : EXITS.ERROR;
 });

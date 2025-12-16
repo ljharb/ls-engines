@@ -7,5 +7,6 @@ module.exports = {
 	INEXACT: 2,
 	CURRENT: 4,
 	SAVE: 8,
+	DEV_ENGINES: 16,
 	ERROR: 128,
 };

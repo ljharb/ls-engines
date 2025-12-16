@@ -1,0 +1,6 @@
+Your "devEngines" field is not a subset of your "engines" field!
+
+"engines.node" allows: >= 18
+"devEngines.runtime" requires: >= 10
+
+Either widen your "engines" field or narrow your "devEngines" field.

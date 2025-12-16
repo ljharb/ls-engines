@@ -1,0 +1,29 @@
+v1 lockfile found, mode is “virtual”; loading virtual tree from lockfile...
+┌────────┬─────────────────────────────────────────────────────────────────┐
+│ engine │ Currently available latest release of each valid major version: │
+├────────┼─────────────────────────────────────────────────────────────────┤
+│ node   │ <node versions for below semver range>                          │
+│        │ <node versions for below semver range>                          │
+└────────┴─────────────────────────────────────────────────────────────────┘
+
+┌────────────────────────┬───────────────────────────┐
+│ package devEngines:    │ dependency graph engines: │
+├────────────────────────┼───────────────────────────┤
+│ "devEngines": {        │ "engines": {              │
+│   "runtime": {         │   "node": ">= 10"         │
+│     "name": "node",    │ }                         │
+│     "version": ">= 18" │                           │
+│   }                    │                           │
+│ }                      │                           │
+└────────────────────────┴───────────────────────────┘
+
+
+Your “devEngines” field allows fewer node versions than your dependency graph does.
+
+If you want to widen your support, you can run `ls-engines --save`, or manually add the following to your `package.json`:
+"devEngines": {
+  "runtime": {
+    "name": "node",
+    "version": ">= 10"
+  }
+}

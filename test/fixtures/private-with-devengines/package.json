@@ -1,0 +1,19 @@
+{
+	"name": "private-with-devengines",
+	"description": "Private package with devEngines.runtime - should use devEngines instead of engines",
+	"repository": {},
+	"license": "All rights reserved",
+	"private": true,
+	"engines": {
+		"node": ">= 10"
+	},
+	"devEngines": {
+		"runtime": {
+			"name": "node",
+			"version": ">= 18"
+		}
+	},
+	"dependencies": {
+		"object-keys": "^1"
+	}
+}

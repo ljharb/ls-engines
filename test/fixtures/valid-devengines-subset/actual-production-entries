@@ -1,0 +1,14 @@
+[
+	[
+		"object-keys",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"valid-devengines-subset",
+		{
+			"node": ">= 10"
+		}
+	]
+]

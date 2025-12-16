@@ -1,0 +1,14 @@
+[
+	[
+		"invalid-devengines-not-subset",
+		{
+			"node": ">= 18"
+		}
+	],
+	[
+		"object-keys",
+		{
+			"node": ">= 0.4"
+		}
+	]
+]

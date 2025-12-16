@@ -1,0 +1,18 @@
+`node_modules` found, mode is “actual”; loading tree from disk...
+┌────────┬─────────────────────────────────────────────────────────────────┐
+│ engine │ Currently available latest release of each valid major version: │
+├────────┼─────────────────────────────────────────────────────────────────┤
+│ node   │ <node versions for below semver range>                          │
+│        │ <node versions for below semver range>                          │
+└────────┴─────────────────────────────────────────────────────────────────┘
+
+┌───────────────────┬───────────────────────────┐
+│ package engines:  │ dependency graph engines: │
+├───────────────────┼───────────────────────────┤
+│ "engines": {      │ "engines": {              │
+│   "node": ">= 10" │   "node": ">= 10"         │
+│ }                 │ }                         │
+└───────────────────┴───────────────────────────┘
+
+
+Your “engines” field exactly matches your dependency graph’s requirements!

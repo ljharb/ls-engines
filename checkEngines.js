@@ -13,24 +13,27 @@ function isSubset(inner, outer) {
 	return inner.every((item) => outerS.has(item));
 }
 
-module.exports = async function checkEngines(
-	selectedEngines,
-	rootEngines,
-	rootValids,
-	graphValids,
-	graphAllowed,
-	graphRanges,
-	shouldSave,
-) {
-	const engineEntries = selectedEngines.map((engine) => [engine, '*'])
-		.concat(Object.entries(graphRanges).map(([engine, { displayRange }]) => [engine, displayRange]))
-		.filter(([engine, displayRange]) => engine === 'node' || displayRange !== '*');
-	const engines = fromEntries(engineEntries);
+function getDisplayEngines(engines, useDevEngines) {
+	return useDevEngines
+		? { runtime: { name: 'node', version: engines.node } }
+		: engines;
+}
 
-	const fixMessage = shouldSave
-		? `\n\`${colors.gray('ls-engines')}\` will automatically fix this, per the \`${colors.gray('--save')}\` option, by adding the following to your \`${colors.gray('package.json')}\`:`
-		: `\nYou can fix this by running \`${colors.bold(colors.gray('ls-engines --save'))}\`, or by manually adding the following to your \`${colors.gray('package.json')}\`:`;
+function makeSaveFunction(engines, useDevEngines) {
+	return function save(pkg) {
+		if (useDevEngines) {
+			// eslint-disable-next-line no-param-reassign
+			pkg.devEngines = pkg.devEngines || {};
+			// eslint-disable-next-line no-param-reassign
+			pkg.devEngines.runtime = { name: 'node', version: engines.node };
+		} else {
+			// eslint-disable-next-line no-param-reassign
+			pkg.engines = { ...pkg.engines, ...engines };
+		}
+	};
+}
 
+function analyzeEngines(selectedEngines, rootEngines, rootValids, graphValids, graphAllowed) {
 	let allOmitted = true;
 	let anyOmitted = false;
 	let allStar = true;
@@ -39,6 +42,7 @@ module.exports = async function checkEngines(
 	const subset = [];
 	const superset = [];
 	const conflicting = {};
+
 	selectedEngines.forEach((engine) => {
 		const value = rootEngines[engine];
 		if (typeof value === 'string') {
@@ -72,45 +76,83 @@ module.exports = async function checkEngines(
 				Array.from(new Set(results.flatMap(([, depEngines]) => depEngines))).join('\n'),
 			]);
 
-			// if (isSubset(rootValids[engine], graphValids[engine])) {
 			if (graphIsSubsetOfRoot) {
 				superset.push(engine);
 			} else if (rootIsSubsetOfGraph) {
 				subset.push(engine);
 			}
-			// }
 		}
 	});
 
-	let message;
+	return { allOmitted, allStar, anyOmitted, anyStar, conflicting, same, subset, superset };
+}
+
+function getImplicitMessage(enginesField, allOmitted, anyOmitted, allStar, anyStar) {
 	if (allOmitted) {
-		message = '\nYour “engines” field is missing! Prefer explicitly setting a supported engine range.';
-	} else if (anyOmitted) {
-		message = '\nYour “engines” field has some of your selected engines missing! Prefer explicitly setting a supported engine range.';
-	} else if (allStar) {
-		message = '\nYour “engines” field has your selected engines set to `*`! Prefer explicitly setting a supported engine range.';
-	} else if (anyStar) {
-		message = '\nYour “engines” field has some of your selected engines set to `*`! Prefer explicitly setting a supported engine range.';
+		return `\nYour “${enginesField}” field is missing! Prefer explicitly setting a supported engine range.`;
 	}
+	if (anyOmitted) {
+		return `\nYour “${enginesField}” field has some of your selected engines missing! Prefer explicitly setting a supported engine range.`;
+	}
+	if (allStar) {
+		return `\nYour “${enginesField}” field has your selected engines set to \`*\`! Prefer explicitly setting a supported engine range.`;
+	}
+	if (anyStar) {
+		return `\nYour “${enginesField}” field has some of your selected engines set to \`*\`! Prefer explicitly setting a supported engine range.`;
+	}
+	return null;
+}
+
+module.exports = async function checkEngines(
+	selectedEngines,
+	rootEngines,
+	rootValids,
+	graphValids,
+	graphAllowed,
+	graphRanges,
+	shouldSave,
+	useDevEngines,
+) {
+	const engineEntries = selectedEngines.map((engine) => [engine, '*'])
+		.concat(Object.entries(graphRanges).map(([engine, { displayRange }]) => [engine, displayRange]))
+		.filter(([engine, displayRange]) => engine === 'node' || displayRange !== '*');
+	const engines = fromEntries(engineEntries);
+
+	const enginesField = useDevEngines ? 'devEngines' : 'engines';
+	const displayEngines = getDisplayEngines(engines, useDevEngines);
+	const saveEngines = makeSaveFunction(engines, useDevEngines);
+	const fixMessage = shouldSave
+		? `\n\`${colors.gray('ls-engines')}\` will automatically fix this, per the \`${colors.gray('--save')}\` option, by adding the following to your \`${colors.gray('package.json')}\`:`
+		: `\nYou can fix this by running \`${colors.bold(colors.gray('ls-engines --save'))}\`, or by manually adding the following to your \`${colors.gray('package.json')}\`:`;
+
+	const {
+		allOmitted,
+		allStar,
+		anyOmitted,
+		anyStar,
+		conflicting,
+		same,
+		subset,
+		superset,
+	} = analyzeEngines(selectedEngines, rootEngines, rootValids, graphValids, graphAllowed);
+
+	const message = getImplicitMessage(enginesField, allOmitted, anyOmitted, allStar, anyStar);
 	if (message) {
 		throw {
 			code: EXITS.IMPLICIT,
 			output: [
 				colors.bold(colors.red(message)),
 				fixMessage,
-				colors.blue(`"engines": ${JSON.stringify(engines, null, 2)}`),
+				colors.blue(`"${enginesField}": ${JSON.stringify(displayEngines, null, 2)}`),
 			],
-			save(pkg) {
-				// eslint-disable-next-line no-param-reassign
-				pkg.engines = { ...pkg.engines, ...engines };
-			},
+			save: saveEngines,
 		};
 	}
 
 	if (same.length === selectedEngines.length) {
 		return {
 			output: [
-				colors.bold(colors.green('\nYour “engines” field exactly matches your dependency graph’s requirements!')),
+				colors.bold(colors.green(`\nYour “${enginesField}” field exactly matches your dependency graph’s requirements!`)),
 			],
 		};
 	}
@@ -128,19 +170,16 @@ module.exports = async function checkEngines(
 		const result = {
 			code: superset.length > 0 ? EXITS.INEXACT : EXITS.SUCCESS,
 			output: [].concat(
-				colors.bold(colors[superset.length > 0 ? 'yellow' : 'green'](`\nYour “engines” field allows ${superset.length > 0 ? 'more' : 'fewer'} node versions than your dependency graph does.`)),
+				colors.bold(colors[superset.length > 0 ? 'yellow' : 'green'](`\nYour “${enginesField}” field allows ${superset.length > 0 ? 'more' : 'fewer'} node versions than your dependency graph does.`)),
 				conflictingTable,
 				process.env.DEBUG ? table([].concat(
 					[['Graph deps', 'engines'].map((x) => colors.bold(colors.gray(x)))],
 					graphAllowed.map(([a, b]) => [colors.blue(a), inspect(b, { depth: Infinity, maxArrayLength: null })]),
 				)) : [],
 				expandMessage,
-				colors.blue(`"engines": ${JSON.stringify(engines, null, 2)}`),
+				colors.blue(`"${enginesField}": ${JSON.stringify(displayEngines, null, 2)}`),
 			),
-			save(pkg) {
-				// eslint-disable-next-line no-param-reassign
-				pkg.engines = { ...pkg.engines, ...engines };
-			},
+			save: saveEngines,
 		};
 		if (result.code !== EXITS.SUCCESS) {
 			throw result;
@@ -150,17 +189,14 @@ module.exports = async function checkEngines(
 	throw {
 		code: EXITS.INEXACT,
 		output: [
-			colors.red('\nYour “engines” field does not exactly match your dependency graph‘s requirements!'),
+			colors.red(`\nYour “${enginesField}” field does not exactly match your dependency graph’s requirements!`),
 			fixMessage,
-			colors.blue(`"engines": ${JSON.stringify(engines, null, 2)}`),
+			colors.blue(`"${enginesField}": ${JSON.stringify(displayEngines, null, 2)}`),
 			process.env.DEBUG ? table([].concat(
 				[['Graph deps', 'engines'].map((x) => colors.bold(colors.gray(x)))],
 				graphAllowed.map(([a, b]) => [colors.blue(a), inspect(b, { depth: Infinity, maxArrayLength: null })]),
 			)) : [],
 		],
-		save(pkg) {
-			// eslint-disable-next-line no-param-reassign
-			pkg.engines = { ...pkg.engines, ...engines };
-		},
+		save: saveEngines,
 	};
 };
