@@ -10,7 +10,9 @@ v1 lockfile found, mode is “virtual”; loading virtual tree from lockfile...
 │ package engines: │ dependency graph engines: │
 ├──────────────────┼───────────────────────────┤
 │ "engines": {     │ "engines": {              │
-│   "node": ">= 8" │   "node": ">= 10"         │
+│   "node": ">= 8" │   "node": ">= 8"          │
 │ }                │ }                         │
 └──────────────────┴───────────────────────────┘
 
+
+Your “engines” field exactly matches your dependency graph’s requirements!

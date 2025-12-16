@@ -1,1 +1,38 @@
-[]
+[
+	[
+		"hosted-git-info",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"lru-cache",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"npm-package-arg",
+		{
+			"node": ">=10"
+		}
+	],
+	[
+		"os-homedir",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"os-tmpdir",
+		{
+			"node": ">=0.10.0"
+		}
+	],
+	[
+		"semver",
+		{
+			"node": ">=10"
+		}
+	]
+]

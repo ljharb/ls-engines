@@ -2,13 +2,18 @@
 	"name": "peer-subset-root",
 	"description": "",
 	"private": true,
-	"scripts": {
-		"postinstall": "npm install --no-save npm-package-arg@=8.0.0"
-	},
 	"engines": {
 		"node": ">= 8"
 	},
 	"peerDependencies": {
+		"npm-package-arg": "=8.0.0"
+	},
+	"peerDependenciesMeta": {
+		"npm-package-arg": {
+			"optional": false
+		}
+	},
+	"devDependencies": {
 		"npm-package-arg": "=8.0.0"
 	}
 }
