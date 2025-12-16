@@ -16,7 +16,7 @@
 		"pretest": "npm run lint",
 		"tests-only": "NODE_NO_WARNINGS=1 NODE_OPTIONS='--require=./test/mocks' nyc tape 'test/*.js'",
 		"test": "npm run tests-only",
-		"posttest": "npx aud --production",
+		"posttest": "npx npm@\">= 10.2\" audit --production",
 		"test:update-mocks": "curl -L https://nodejs.org/dist/index.json -o test/mocks/node-versions.json",
 		"version": "auto-changelog && git add CHANGELOG.md",
 		"postversion": "auto-changelog && git add CHANGELOG.md && git commit --no-edit --amend && git tag -f \"v$(node -e \"console.log(require('./package.json').version)\")\""
@@ -62,7 +62,6 @@
 	},
 	"devDependencies": {
 		"@ljharb/eslint-config": "^21.1.1",
-		"aud": "^3.0.0",
 		"auto-changelog": "^2.4.0",
 		"es-value-fixtures": "^1.4.2",
 		"eslint": "=8.8.0",
