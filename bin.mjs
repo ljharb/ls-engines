@@ -2,10 +2,10 @@
 
 /* eslint no-param-reassign: 0 */
 
-'use strict';
-
-const colors = require('colors/safe');
-const toSorted = require('array.prototype.tosorted');
+import colors from 'colors/safe.js';
+import toSorted from 'array.prototype.tosorted';
+import { createRequire } from 'module';
+const require = createRequire(import.meta.url);
 const yargs = require('yargs');
 
 const FALSE = Object(false);
@@ -100,27 +100,28 @@ const argv = yargs
 
 const { current, dev, mode, peer, production, save, engines: selectedEngines } = argv;
 
-const path = require('path');
-const Range = require('semver/classes/range');
-const satisfies = require('semver/functions/satisfies');
-const major = require('semver/functions/major');
-const minor = require('semver/functions/minor');
-const { default: intersect } = require('fast_array_intersect');
-const jsonFile = require('json-file-plus');
-const fromEntries = require('object.fromentries');
-const values = require('object.values');
-const allSettled = require('promise.allsettled');
-const groupBy = require('object.groupby');
+import path from 'path';
+import Range from 'semver/classes/range.js';
+import satisfies from 'semver/functions/satisfies.js';
+import major from 'semver/functions/major.js';
+import minor from 'semver/functions/minor.js';
+import fastArrayIntersect from 'fast_array_intersect';
+const intersect = fastArrayIntersect.default || fastArrayIntersect;
+import jsonFile from 'json-file-plus';
+import fromEntries from 'object.fromentries';
+import values from 'object.values';
+import allSettled from 'promise.allsettled';
+import groupBy from 'object.groupby';
 
-const EXITS = require('../exit-codes');
-const checkCurrent = require('../checkCurrent');
-const checkEngines = require('../checkEngines');
-const getGraphEntries = require('../getGraphEntries');
-const getGraphValids = require('../getGraphValids');
-const getLatestEngineMajors = require('../getLatestEngineMajors');
-const table = require('../table');
-const validVersionsForEngines = require('../validVersionsForEngines');
-const getAlVersions = require('../getAllVersions');
+import EXITS from './exit-codes.js';
+import checkCurrent from './checkCurrent.js';
+import checkEngines from './checkEngines.js';
+import getGraphEntries from './getGraphEntries.js';
+import getGraphValids from './getGraphValids.js';
+import getLatestEngineMajors from './getLatestEngineMajors.js';
+import table from './table.js';
+import validVersionsForEngines from './validVersionsForEngines.js';
+import getAlVersions from './getAllVersions.js';
 
 const pPackage = jsonFile(path.join(process.cwd(), 'package.json'));
 

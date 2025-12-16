@@ -4,7 +4,7 @@ export default [
 	{
 		ignores: ['test/fixtures/**', 'coverage/**'],
 	},
-	...ljharbConfig.map((config) => (config.files ? config : { ...config, files: ['**/*.js', 'bin/ls-engines'] })),
+	...ljharbConfig,
 	{
 		rules: {
 			'array-bracket-newline': 0,

@@ -10,8 +10,10 @@ const semver = require('semver');
 
 const EXITS = require('../exit-codes');
 const getGraphEntries = require('../getGraphEntries');
+const pkg = require('../package.json');
 
-const binPath = path.join(__dirname, '..', 'bin', 'ls-engines');
+const binEntry = typeof pkg.bin === 'string' ? pkg.bin : pkg.bin[pkg.name];
+const binPath = path.join(__dirname, '..', binEntry);
 const fixturePath = path.join(__dirname, 'fixtures');
 const mockPath = path.join(__dirname, 'mock');
 const { GREP, FIXTURE, UPDATE_SNAPSHOTS } = process.env;
