@@ -22,7 +22,7 @@ module.exports = async function checkCurrent(selectedEngines, rootValids, graphV
 			colors.blue(engine),
 			`${colors.blue(colors.bold(currentVersion))}`,
 			`${colors.bold(rootValid ? colors.green('yes') : colors.red('no'))}!`,
-			`${colors.bold(graphValids ? colors.green('yes') : colors.red('no'))}!`,
+			`${colors.bold(graphValid ? colors.green('yes') : colors.red('no'))}!`,
 		];
 	}));
 	const output = [

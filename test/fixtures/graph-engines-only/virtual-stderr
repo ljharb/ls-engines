@@ -8,5 +8,5 @@ You can fix this by running `ls-engines --save`, or by manually adding the follo
 ┌────────┬─────────────────┬─────────────────┬──────────────────────────┐
 │ engine │ current version │ valid (package) │ valid (dependency graph) │
 ├────────┼─────────────────┼─────────────────┼──────────────────────────┤
-│ node   │ ${process.version} │ no!             │ yes!                     │
+│ node   │ ${process.version} │ no!             │ no!                      │
 └────────┴─────────────────┴─────────────────┴──────────────────────────┘
