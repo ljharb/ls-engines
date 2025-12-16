@@ -10,6 +10,45 @@ const fixturePath = path.join(__dirname, 'fixtures', 'graph-engines-only');
 // Silent logger to prevent console output during tests
 const silentLogger = () => {};
 
+test('getGraphEntries: default dev/peer values', async (t) => {
+	// Mock get-dep-tree to return nodes without dev/peer properties
+	const getDepTreeId = require.resolve('get-dep-tree');
+	const originalGetDepTree = require.cache[getDepTreeId].exports;
+	t.teardown(() => {
+		require.cache[getDepTreeId].exports = originalGetDepTree;
+		delete require.cache[require.resolve('../getGraphEntries')];
+	});
+
+	require.cache[getDepTreeId].exports = () => Promise.resolve({
+		querySelectorAll: () => Promise.resolve([
+			{
+				name: 'test-pkg',
+				package: {
+					engines: { node: '>= 14' },
+				},
+				// deliberately omitting dev and peer to test defaults
+			},
+		]),
+	});
+
+	// Clear cache to pick up mock
+	delete require.cache[require.resolve('../getGraphEntries')];
+	const getGraphEntriesFresh = require('../getGraphEntries'); // eslint-disable-line global-require
+
+	const entries = await getGraphEntriesFresh({
+		mode: 'ideal',
+		dev: true,
+		peer: true,
+		production: true,
+		selectedEngines: ['node'],
+		logger: silentLogger,
+	});
+
+	t.ok(Array.isArray(entries), 'returns an array');
+	t.equal(entries.length, 1, 'has one entry');
+	t.equal(entries[0][0], 'test-pkg', 'entry has correct name');
+});
+
 test('getGraphEntries', async (t) => {
 	t.test('returns array of entries', async (st) => {
 		const entries = await getGraphEntries({
