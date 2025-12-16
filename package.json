@@ -63,6 +63,7 @@
 	"devDependencies": {
 		"@ljharb/eslint-config": "^21.4.0",
 		"auto-changelog": "^2.5.0",
+		"encoding": "^0.1.13",
 		"es-value-fixtures": "^1.7.1",
 		"eslint": "^8.57.1",
 		"npmignore": "^0.3.2",
