@@ -1,4 +1,4 @@
-import ljharbConfig from '@ljharb/eslint-config/flat/node/14';
+import ljharbConfig from '@ljharb/eslint-config/flat/node/22';
 
 export default [
 	{

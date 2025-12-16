@@ -38,7 +38,7 @@
 	},
 	"homepage": "https://github.com/ljharb/ls-engines#readme",
 	"engines": {
-		"node": ">= 19 || ^18 || ^16.13 || ^14.18",
+		"node": "^22.21 || ^24.12 || >= 25.2",
 		"npm": ">=8"
 	},
 	"dependencies": {
