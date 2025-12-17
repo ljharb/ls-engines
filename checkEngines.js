@@ -1,9 +1,8 @@
 'use strict';
 
-const colors = require('colors/safe');
 const fromEntries = require('object.fromentries');
 const groupBy = require('object.groupby');
-const { inspect } = require('util');
+const { inspect, styleText } = require('util');
 
 const EXITS = require('./exit-codes');
 const table = require('./table');
@@ -122,8 +121,8 @@ module.exports = async function checkEngines(
 	const displayEngines = getDisplayEngines(engines, useDevEngines);
 	const saveEngines = makeSaveFunction(engines, useDevEngines);
 	const fixMessage = shouldSave
-		? `\n\`${colors.gray('ls-engines')}\` will automatically fix this, per the \`${colors.gray('--save')}\` option, by adding the following to your \`${colors.gray('package.json')}\`:`
-		: `\nYou can fix this by running \`${colors.bold(colors.gray('ls-engines --save'))}\`, or by manually adding the following to your \`${colors.gray('package.json')}\`:`;
+		? `\n\`${styleText('gray', 'ls-engines')}\` will automatically fix this, per the \`${styleText('gray', '--save')}\` option, by adding the following to your \`${styleText('gray', 'package.json')}\`:`
+		: `\nYou can fix this by running \`${styleText(['bold', 'gray'], 'ls-engines --save')}\`, or by manually adding the following to your \`${styleText('gray', 'package.json')}\`:`;
 
 	const {
 		allOmitted,
@@ -141,9 +140,9 @@ module.exports = async function checkEngines(
 		throw {
 			code: EXITS.IMPLICIT,
 			output: [
-				colors.bold(colors.red(message)),
+				styleText(['bold', 'red'], message),
 				fixMessage,
-				colors.blue(`"${enginesField}": ${JSON.stringify(displayEngines, null, 2)}`),
+				styleText('blue', `"${enginesField}": ${JSON.stringify(displayEngines, null, 2)}`),
 			],
 			save: saveEngines,
 		};
@@ -152,32 +151,32 @@ module.exports = async function checkEngines(
 	if (same.length === selectedEngines.length) {
 		return {
 			output: [
-				colors.bold(colors.green(`\nYour “${enginesField}” field exactly matches your dependency graph’s requirements!`)),
+				styleText(['bold', 'green'], `\nYour “${enginesField}” field exactly matches your dependency graph’s requirements!`),
 			],
 		};
 	}
 
 	if (superset.length > 0 || subset.length > 0) {
 		const expandMessage = shouldSave
-			? `\n\`${colors.gray('ls-engines')}\` will automatically ${superset.length > 0 ? 'narrow' : 'widen'} your support, per the \`${colors.gray('--save')}\` option, by adding the following to your \`${colors.gray('package.json')}\`:`
-			: `\nIf you want to ${superset.length > 0 ? 'narrow' : 'widen'} your support, you can run \`${colors.bold(colors.gray('ls-engines --save'))}\`, or manually add the following to your \`${colors.gray('package.json')}\`:`;
+			? `\n\`${styleText('gray', 'ls-engines')}\` will automatically ${superset.length > 0 ? 'narrow' : 'widen'} your support, per the \`${styleText('gray', '--save')}\` option, by adding the following to your \`${styleText('gray', 'package.json')}\`:`
+			: `\nIf you want to ${superset.length > 0 ? 'narrow' : 'widen'} your support, you can run \`${styleText(['bold', 'gray'], 'ls-engines --save')}\`, or manually add the following to your \`${styleText('gray', 'package.json')}\`:`;
 
 		const conflictingTable = conflicting.node.length > 0 ? `\n${table([].concat(
-			[[`Conflicting dependencies (${conflicting.node.length})`, 'engines.node'].map((x) => colors.bold(colors.gray(x)))],
-			conflicting.node.map(([name, range]) => [name, range].map((x) => colors.gray(x))),
+			[[`Conflicting dependencies (${conflicting.node.length})`, 'engines.node'].map((x) => styleText(['bold', 'gray'], x))],
+			conflicting.node.map(([name, range]) => [name, range].map((x) => styleText('gray', x))),
 		))}` : [];
 
 		const result = {
 			code: superset.length > 0 ? EXITS.INEXACT : EXITS.SUCCESS,
 			output: [].concat(
-				colors.bold(colors[superset.length > 0 ? 'yellow' : 'green'](`\nYour “${enginesField}” field allows ${superset.length > 0 ? 'more' : 'fewer'} node versions than your dependency graph does.`)),
+				styleText(['bold', superset.length > 0 ? 'yellow' : 'green'], `\nYour “${enginesField}” field allows ${superset.length > 0 ? 'more' : 'fewer'} node versions than your dependency graph does.`),
 				conflictingTable,
 				process.env.DEBUG ? table([].concat(
-					[['Graph deps', 'engines'].map((x) => colors.bold(colors.gray(x)))],
-					graphAllowed.map(([a, b]) => [colors.blue(a), inspect(b, { depth: Infinity, maxArrayLength: null })]),
+					[['Graph deps', 'engines'].map((x) => styleText(['bold', 'gray'], x))],
+					graphAllowed.map(([a, b]) => [styleText('blue', a), inspect(b, { depth: Infinity, maxArrayLength: null })]),
 				)) : [],
 				expandMessage,
-				colors.blue(`"${enginesField}": ${JSON.stringify(displayEngines, null, 2)}`),
+				styleText('blue', `"${enginesField}": ${JSON.stringify(displayEngines, null, 2)}`),
 			),
 			save: saveEngines,
 		};
@@ -189,12 +188,12 @@ module.exports = async function checkEngines(
 	throw {
 		code: EXITS.INEXACT,
 		output: [
-			colors.red(`\nYour “${enginesField}” field does not exactly match your dependency graph’s requirements!`),
+			styleText('red', `\nYour “${enginesField}” field does not exactly match your dependency graph’s requirements!`),
 			fixMessage,
-			colors.blue(`"${enginesField}": ${JSON.stringify(displayEngines, null, 2)}`),
+			styleText('blue', `"${enginesField}": ${JSON.stringify(displayEngines, null, 2)}`),
 			process.env.DEBUG ? table([].concat(
-				[['Graph deps', 'engines'].map((x) => colors.bold(colors.gray(x)))],
-				graphAllowed.map(([a, b]) => [colors.blue(a), inspect(b, { depth: Infinity, maxArrayLength: null })]),
+				[['Graph deps', 'engines'].map((x) => styleText(['bold', 'gray'], x))],
+				graphAllowed.map(([a, b]) => [styleText('blue', a), inspect(b, { depth: Infinity, maxArrayLength: null })]),
 			)) : [],
 		],
 		save: saveEngines,

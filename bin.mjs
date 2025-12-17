@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import colors from 'colors/safe.js';
+import { styleText } from 'util';
 import toSorted from 'array.prototype.tosorted';
 import pargs from 'pargs';
 
@@ -206,7 +206,7 @@ function wrapCommaSeparated(array, limit) {
 			return lines.concat(possibleLine);
 		}
 		return lines.concat(lastLine, version);
-	}, []).map((x) => x.split(',').map((y) => colors.blue(y)).join(',')).join(',\n');
+	}, []).map((x) => x.split(',').map((y) => styleText('blue', y)).join(',')).join(',\n');
 }
 
 function normalizeEngines(engines) {
@@ -243,7 +243,7 @@ const pSummary = Promise.all([
 				[
 					'engine',
 					majorsHeading,
-				].map((x) => colors.bold(colors.gray(x))),
+				].map((x) => styleText(['bold', 'gray'], x)),
 				...Object.entries(latestEngineMajors)
 					.flatMap(([
 						engine,
@@ -251,7 +251,7 @@ const pSummary = Promise.all([
 					]) => (
 						selectedEngines.includes(engine)
 							? [[
-								colors.blue(engine),
+								styleText('blue', engine),
 								wrapCommaSeparated(graph.length > 0 ? intersect([root, graph]) : root, majorsHeading.length),
 							]]
 							: []
@@ -261,13 +261,13 @@ const pSummary = Promise.all([
 				[].concat(
 					`package ${enginesField}:`,
 					'dependency graph engines:',
-				).map((x) => colors.bold(colors.gray(x))),
+				).map((x) => styleText(['bold', 'gray'], x)),
 				[
 					`"${enginesField}": ${JSON.stringify(displayRootEngines, null, 2)}`,
 					values(graphValids).some((x) => x.length > 0) && values(graphEngines).length > 0
 						? `"engines": ${JSON.stringify(normalizeEngines(graphEngines), null, 2)}`
 						: 'N/A',
-				].map((x) => colors.blue(x)),
+				].map((x) => styleText('blue', x)),
 			]),
 		),
 	};
@@ -305,9 +305,9 @@ Promise.all([
 			throw {
 				code: EXITS.DEV_ENGINES,
 				output: [
-					colors.bold(colors.red('\nYour "devEngines" field is not a subset of your "engines" field!')),
-					`\n"engines.node" allows: ${colors.blue(rootEngines.node || '*')}`,
-					`"devEngines.runtime" requires: ${colors.blue(devVersion)}`,
+					styleText(['bold', 'red'], '\nYour "devEngines" field is not a subset of your "engines" field!'),
+					`\n"engines.node" allows: ${styleText('blue', rootEngines.node || '*')}`,
+					`"devEngines.runtime" requires: ${styleText('blue', devVersion)}`,
 					'\nEither widen your "engines" field or narrow your "devEngines" field.',
 				],
 			};

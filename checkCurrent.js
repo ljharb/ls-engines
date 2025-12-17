@@ -1,6 +1,6 @@
 'use strict';
 
-const colors = require('colors/safe');
+const { styleText } = require('util');
 
 const EXITS = require('./exit-codes');
 const table = require('./table');
@@ -19,10 +19,10 @@ module.exports = async function checkCurrent(selectedEngines, rootValids, graphV
 			anyInvalid = true;
 		}
 		return [
-			colors.blue(engine),
-			`${colors.blue(colors.bold(currentVersion))}`,
-			`${colors.bold(rootValid ? colors.green('yes') : colors.red('no'))}!`,
-			`${colors.bold(graphValid ? colors.green('yes') : colors.red('no'))}!`,
+			styleText('blue', engine),
+			styleText(['blue', 'bold'], currentVersion),
+			`${styleText('bold', styleText(rootValid ? 'green' : 'red', rootValid ? 'yes' : 'no'))}!`,
+			`${styleText('bold', styleText(graphValid ? 'green' : 'red', graphValid ? 'yes' : 'no'))}!`,
 		];
 	}));
 	const output = [
@@ -33,7 +33,7 @@ module.exports = async function checkCurrent(selectedEngines, rootValids, graphV
 				'current version',
 				'valid (package)',
 				'valid (dependency graph)',
-			].map((x) => colors.bold(colors.gray(x))),
+			].map((x) => styleText(['bold', 'gray'], x)),
 			...rows,
 		]).trim(),
 	];
