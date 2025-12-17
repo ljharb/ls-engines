@@ -20,7 +20,7 @@ export default [
 		},
 	},
 	{
-		files: ['checkCurrent.js', 'checkEngines.js'],
+		files: ['bin.mjs', 'checkCurrent.js', 'checkEngines.js'],
 		rules: {
 			'no-throw-literal': 0,
 		},

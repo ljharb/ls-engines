@@ -1,104 +1,71 @@
 #!/usr/bin/env node
 
-/* eslint no-param-reassign: 0 */
-
 import colors from 'colors/safe.js';
 import toSorted from 'array.prototype.tosorted';
-import { createRequire } from 'module';
-const require = createRequire(import.meta.url);
-const yargs = require('yargs');
-
-const FALSE = Object(false);
-const TRUE = Object(true);
+import pargs from 'pargs';
 
 const validEngines = ['node'];
 
-const argv = yargs
-	.option('mode', {
-		choices: ['auto', 'actual', 'virtual', 'ideal'],
-		default: 'auto',
-		describe: `”actual“ reads from \`${colors.gray('node_modules')}\`; ”virtual“ reads from a lockfile; “ideal” reads from \`${colors.gray('package.json')}\``,
-	})
-	.option('production', {
-		default: TRUE,
-		describe: 'whether to include production deps or not',
-		type: 'boolean',
-	})
-	.option('dev', {
-		default: FALSE,
-		describe: 'whether to include dev deps or not',
-		type: 'boolean',
-	})
-	.option('peer', {
-		default: TRUE,
-		describe: 'whether to include peer deps or not',
-		type: 'boolean',
-	})
-	.option('save', {
-		default: false,
-		describe: `update \`${colors.gray('package.json')}\`’s “engines” field to match that of your dependency graph`,
-		type: 'boolean',
-	})
-	.option('current', {
-		default: TRUE,
-		describe: 'check that the current node version matches your dependency graph’s requirements',
-		type: 'boolean',
-	})
-	.check(({ dev, production, peer, current }) => {
-		/* eslint no-throw-literal: 0 */
-		if (![dev, production, peer].some((x) => x === TRUE || x === true)) {
-			throw 'At least one of `--dev`, `--production`, or `--peer` must be enabled.';
-		}
-		if (current && dev && dev !== FALSE) {
-			if (current !== TRUE) {
-				throw '`--current` is not available when checking dev deps.';
-			}
-		}
-		return true;
-	})
-	.option('engines', {
-		choices: validEngines,
-		default: 'node',
-		describe: 'which engine(s) to list',
-		hidden: validEngines.length < 2,
-		type: 'array',
-	})
-	.middleware(({
-		dev,
-		production,
-		peer,
+const {
+	errors,
+	help,
+	tokens,
+	values: {
 		current,
-		engines: originalEngines,
-		...args
-	}) => {
-		if (typeof dev === 'object') {
-			dev = Boolean.prototype.valueOf.call(dev);
-		}
-		if (typeof production === 'object') {
-			production = Boolean.prototype.valueOf.call(production);
-		}
-		if (typeof peer === 'object') {
-			peer = Boolean.prototype.valueOf.call(peer);
-		}
-		if (typeof current === 'object') {
-			current = !dev && Boolean.prototype.valueOf.call(current);
-		}
-		const selectedEnginesSet = new Set(originalEngines);
-		const engines = validEngines.filter((engine) => selectedEnginesSet.has(engine));
-		return {
-			...args,
-			current,
-			dev,
-			engines,
-			peer,
-			production,
-		};
-	})
-	.strict()
-	.help()
-	.parse();
+		dev,
+		mode,
+		peer,
+		production,
+		save,
+	},
+} = await pargs(import.meta.filename, {
+	options: {
+		current: {
+			default: true,
+			type: 'boolean',
+		},
+		dev: {
+			default: false,
+			type: 'boolean',
+		},
+		mode: {
+			choices: ['auto', 'actual', 'virtual', 'ideal'],
+			default: 'auto',
+			type: 'enum',
+		},
+		peer: {
+			default: true,
+			type: 'boolean',
+		},
+		production: {
+			default: true,
+			type: 'boolean',
+		},
+		save: {
+			default: false,
+			type: 'boolean',
+		},
+	},
+	tokens: true,
+});
 
-const { current, dev, mode, peer, production, save, engines: selectedEngines } = argv;
+// Check if options were explicitly passed (not defaults)
+const currentExplicitlyPassed = tokens.some((t) => t.kind === 'option' && (t.name === 'current' || t.name === 'no-current'));
+const devExplicitlyPassed = tokens.some((t) => t.kind === 'option' && (t.name === 'dev' || t.name === 'no-dev'));
+
+// Custom validation
+if (![dev, production, peer].some(Boolean)) {
+	errors.push('At least one of `--dev`, `--production`, or `--peer` must be enabled.');
+}
+if (dev && devExplicitlyPassed && current && currentExplicitlyPassed) {
+	errors.push('`--current` is not available when checking dev deps.');
+}
+
+await help();
+
+// If we get here, no errors and no --help
+const selectedEngines = validEngines;
+const effectiveCurrent = dev ? false : current;
 
 import path from 'path';
 import Range from 'semver/classes/range.js';
@@ -358,7 +325,7 @@ Promise.all([
 		useDevEngines,
 	);
 
-	const pCurrent = current ? checkCurrent(selectedEngines, rootValids, graphValids) : { output: [] };
+	const pCurrent = effectiveCurrent ? checkCurrent(selectedEngines, rootValids, graphValids) : { output: [] };
 
 	// print out successes first
 	const { fulfilled = [], rejected = [] } = groupBy(

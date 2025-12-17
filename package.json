@@ -53,10 +53,10 @@
 		"object.groupby": "^1.0.3",
 		"object.values": "^1.2.1",
 		"pacote": "^21.0.4",
+		"pargs": "^1.2.1",
 		"promise.allsettled": "^1.0.7",
 		"semver": "^7.7.3",
-		"table": "^6.9.0",
-		"yargs": "^17.7.2"
+		"table": "^6.9.0"
 	},
 	"devDependencies": {
 		"@ljharb/eslint-config": "^22.1.3",

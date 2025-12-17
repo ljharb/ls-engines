@@ -1,0 +1,23 @@
+ls-engines
+
+Determine if your dependency graph's stated "engines" criteria is met.
+
+Usage:
+  ls-engines [options]
+
+Options:
+  --mode <mode>     "actual" reads from `[90mnode_modules[0m`; "virtual" reads from a
+                    lockfile; "ideal" reads from `[90mpackage.json[0m`
+                    (choices: auto, actual, virtual, ideal) (default: auto)
+  --production      whether to include production deps or not (default: true)
+  --no-production   exclude production deps
+  --dev             whether to include dev deps or not (default: false)
+  --no-dev          exclude dev deps
+  --peer            whether to include peer deps or not (default: true)
+  --no-peer         exclude peer deps
+  --save            update `[90mpackage.json[0m`'s "engines" field to match that of
+                    your dependency graph (default: false)
+  --current         check that the current node version matches your dependency
+                    graph's requirements (default: true)
+  --no-current      skip checking current node version
+  --help            Show this help message
