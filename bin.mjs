@@ -336,8 +336,14 @@ Promise.all([
 		(x) => x.status,
 	);
 
-	await fulfilled.reduce(async (prev, { doSave, value: { output } }) => {
+	await fulfilled.reduce(async (prev, result) => {
 		await prev;
+		if (result.status !== 'fulfilled') {
+			return;
+		}
+		const { value } = result;
+		const { output } = value;
+		const doSave = 'save' in value ? value.save : undefined;
 
 		output.forEach((line) => {
 			console.log(line);
