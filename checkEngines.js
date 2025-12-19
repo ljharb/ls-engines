@@ -1,11 +1,15 @@
 'use strict';
 
-const fromEntries = require('object.fromentries');
-const groupBy = require('object.groupby');
 const { inspect, styleText } = require('util');
 
 const EXITS = require('./exit-codes');
 const table = require('./table');
+
+const {
+	entries,
+	fromEntries,
+	groupBy,
+} = Object;
 
 function isSubset(inner, outer) {
 	const outerS = new Set(outer);
@@ -67,7 +71,7 @@ function analyzeEngines(selectedEngines, rootEngines, rootValids, graphValids, g
 				.map(([name, depEngines, { [engine]: vs }]) => [name, depEngines[engine], rootValids[engine].filter((v) => !vs.includes(v))])
 				.sort(([a], [b]) => a.localeCompare(b));
 
-			conflicting[engine] = Object.entries(groupBy(packageInvalids, ([name]) => name)).map(([
+			conflicting[engine] = entries(groupBy(packageInvalids, ([name]) => name)).map(([
 				name,
 				results,
 			]) => [
@@ -113,7 +117,7 @@ module.exports = async function checkEngines(
 	useDevEngines,
 ) {
 	const engineEntries = selectedEngines.map((engine) => [engine, '*'])
-		.concat(Object.entries(graphRanges).map(([engine, { displayRange }]) => [engine, displayRange]))
+		.concat(entries(graphRanges).map(([engine, { displayRange }]) => [engine, displayRange]))
 		.filter(([engine, displayRange]) => engine === 'node' || displayRange !== '*');
 	const engines = fromEntries(engineEntries);
 

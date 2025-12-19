@@ -1,6 +1,6 @@
 'use strict';
 
-const fromEntries = require('object.fromentries');
+const { fromEntries } = Object;
 
 const getNodeVersions = require('./get-node-versions');
 

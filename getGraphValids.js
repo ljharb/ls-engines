@@ -1,8 +1,12 @@
 'use strict';
 
 const { default: intersect } = require('fast_array_intersect');
-const fromEntries = require('object.fromentries');
 const compare = require('semver/functions/compare');
+
+const {
+	entries,
+	fromEntries,
+} = Object;
 
 const validVersionsForEngines = require('./validVersionsForEngines');
 
@@ -28,8 +32,7 @@ module.exports = async function getGraphValids(graphEntries, allVersions) {
 	]));
 
 	const mergedGraphEngines = graphAllowed.reduce((mergedEngines, [, , engines]) => {
-		const entries = Object.entries(engines);
-		entries.forEach(([engine, versions]) => {
+		entries(engines).forEach(([engine, versions]) => {
 			if (!Array.isArray(mergedEngines[engine])) {
 				mergedEngines[engine] = []; // eslint-disable-line no-param-reassign
 			}
@@ -39,7 +42,7 @@ module.exports = async function getGraphValids(graphEntries, allVersions) {
 	}, {});
 	return {
 		allowed: graphAllowed,
-		valids: fromEntries(Object.entries(mergedGraphEngines).map(([engine, versionArrays]) => {
+		valids: fromEntries(entries(mergedGraphEngines).map(([engine, versionArrays]) => {
 			const intersection = intersect(versionArrays);
 			return [engine, intersection.sort((a, b) => -compare(a, b))];
 		})),

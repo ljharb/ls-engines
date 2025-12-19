@@ -2,6 +2,8 @@
 
 const Semver = require('semver');
 
+const { values } = Object;
+
 function isString(x) {
 	return typeof x === 'string';
 }
@@ -16,7 +18,7 @@ module.exports = function getLatestMajors(versions, validRange = new Semver.Rang
 		map[key].push(v);
 		return map;
 	}, {});
-	return Object.values(versionsByMajor)
+	return values(versionsByMajor)
 		.map((vs) => Semver.maxSatisfying(vs, validRange))
 		.filter(isString)
 		.sort((a, b) => -Semver.compare(a, b));

@@ -1,7 +1,11 @@
 'use strict';
 
-const fromEntries = require('object.fromentries');
 const satisfies = require('semver/functions/satisfies');
+
+const {
+	fromEntries,
+	entries,
+} = Object;
 
 module.exports = async function validVersionsForEngines(engines, allVersions) {
 	if (!engines || typeof engines !== 'object' || Array.isArray(engines)) {
@@ -11,8 +15,7 @@ module.exports = async function validVersionsForEngines(engines, allVersions) {
 		throw new TypeError('`allVersions` must be an object');
 	}
 
-	const entries = Object.entries(allVersions);
-	return fromEntries(entries.map(([
+	return fromEntries(entries(allVersions).map(([
 		engine,
 		versions,
 	]) => [

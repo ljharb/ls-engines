@@ -1,8 +1,12 @@
 #!/usr/bin/env node
 
 import { styleText } from 'util';
-import toSorted from 'array.prototype.tosorted';
 import pargs from 'pargs';
+
+const {
+	entries,
+	groupBy,
+} = Object;
 
 const validEngines = ['node'];
 
@@ -75,10 +79,6 @@ import minor from 'semver/functions/minor.js';
 import fastArrayIntersect from 'fast_array_intersect';
 const intersect = fastArrayIntersect.default || fastArrayIntersect;
 import jsonFile from 'json-file-plus';
-import fromEntries from 'object.fromentries';
-import values from 'object.values';
-import allSettled from 'promise.allsettled';
-import groupBy from 'object.groupby';
 
 import EXITS from './exit-codes.js';
 import checkCurrent from './checkCurrent.js';
@@ -89,6 +89,11 @@ import getLatestEngineMajors from './getLatestEngineMajors.js';
 import table from './table.js';
 import validVersionsForEngines from './validVersionsForEngines.js';
 import getAlVersions from './getAllVersions.js';
+
+const {
+	fromEntries,
+	values,
+} = Object;
 
 const pPackage = jsonFile(path.join(process.cwd(), 'package.json'));
 
@@ -148,7 +153,7 @@ const pGraphRanges = Promise.all([
 	pAllVersions,
 ]).then(async ([graphEntries, allVersions]) => {
 	const { valids: graphValids, allowed } = await getGraphValids(graphEntries, allVersions);
-	const graphRanges = Object.entries(graphValids).map(([engine, versions]) => {
+	const graphRanges = entries(graphValids).map(([engine, versions]) => {
 		const validMajorRanges = graphEntries.length > 0 && versions.length > 0 ? versions.reduceRight(versionReducer, []).map(dropPatch).reverse() : ['*'];
 		const lastMajor = validMajorRanges[validMajorRanges.length - 1];
 		const greaterThanLowest = lastMajor === '*' ? lastMajor : `>= ${lastMajor.replace(/^\^/, '')}`;
@@ -210,16 +215,14 @@ function wrapCommaSeparated(array, limit) {
 }
 
 function normalizeEngines(engines) {
-	const entries = toSorted(
-		Object.entries(engines)
-			.flatMap(([engine, version]) => (
-				engine === 'node' || version !== '*'
-					? [[engine, version || '*']]
-					: []
-			)),
-		([a], [b]) => a.localeCompare(b),
-	);
-	return fromEntries(entries);
+	const engineEntries = entries(engines)
+		.flatMap(([engine, version]) => (
+			engine === 'node' || version !== '*'
+				? [[engine, version || '*']]
+				: []
+		))
+		.toSorted(([a], [b]) => a.localeCompare(b));
+	return fromEntries(engineEntries);
 }
 
 const majorsHeading = 'Currently available latest release of each valid major version:';
@@ -244,7 +247,7 @@ const pSummary = Promise.all([
 					'engine',
 					majorsHeading,
 				].map((x) => styleText(['bold', 'gray'], x)),
-				...Object.entries(latestEngineMajors)
+				...entries(latestEngineMajors)
 					.flatMap(([
 						engine,
 						{ root, graph },
@@ -329,7 +332,7 @@ Promise.all([
 
 	// print out successes first
 	const { fulfilled = [], rejected = [] } = groupBy(
-		await allSettled([pSummary, pEngines, pCurrent]),
+		await Promise.allSettled([pSummary, pEngines, pCurrent]),
 		(x) => x.status,
 	);
 
