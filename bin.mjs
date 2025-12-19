@@ -86,6 +86,7 @@ import checkEngines from './checkEngines.js';
 import getGraphEntries from './getGraphEntries.js';
 import getGraphValids from './getGraphValids.js';
 import getLatestEngineMajors from './getLatestEngineMajors.js';
+import processFulfilledResults from './processFulfilledResults.js';
 import table from './table.js';
 import validVersionsForEngines from './validVersionsForEngines.js';
 import getAlVersions from './getAllVersions.js';
@@ -336,28 +337,7 @@ Promise.all([
 		(x) => x.status,
 	);
 
-	await fulfilled.reduce(async (prev, result) => {
-		await prev;
-		if (result.status !== 'fulfilled') {
-			return;
-		}
-		const { value } = result;
-		const { output } = value;
-		const doSave = 'save' in value ? value.save : undefined;
-
-		output.forEach((line) => {
-			console.log(line);
-		});
-
-		if (save && doSave) {
-			doSave(pkg.data);
-			try {
-				await pkg.save();
-			} catch {
-				process.exitCode |= EXITS.SAVE;
-			}
-		}
-	}, Promise.resolve());
+	await processFulfilledResults(fulfilled, save, pkg, EXITS, console.log);
 
 	// print out failures last
 	await rejected.reduce(async (prev, error) => {
