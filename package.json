@@ -54,7 +54,7 @@
 		"encoding": "^0.1.13",
 		"es-value-fixtures": "^1.7.1",
 		"eslint": "^9.39.2",
-		"npmignore": "^0.3.2",
+		"npmignore": "^0.3.4",
 		"nyc": "^10.3.2",
 		"object-inspect": "^1.13.4",
 		"safe-publish-latest": "^2.0.0",
