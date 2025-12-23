@@ -1,6 +1,6 @@
 {
 	"name": "ls-engines",
-	"version": "0.9.4",
+	"version": "0.10.0",
 	"description": "Determine if your dependency graph's stated \"engines\" criteria is met.",
 	"bin": "./bin.mjs",
 	"exports": {
