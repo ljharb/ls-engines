@@ -8,7 +8,7 @@ module.exports = async function processFulfilledResults(fulfilled, shouldSave, p
 		}
 		const { value } = result;
 		const { output } = value;
-		const doSave = 'save' in value ? value.save : undefined;
+		const doSave = 'save' in value ? value.save : void undefined;
 
 		output.forEach((line) => {
 			log(line);

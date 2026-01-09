@@ -59,10 +59,10 @@ const devExplicitlyPassed = tokens.some((t) => t.kind === 'option' && (t.name ==
 
 // Custom validation
 if (![dev, production, peer].some(Boolean)) {
-	errors.push('At least one of `--dev`, `--production`, or `--peer` must be enabled.');
+	errors[errors.length] = 'At least one of `--dev`, `--production`, or `--peer` must be enabled.';
 }
 if (dev && devExplicitlyPassed && current && currentExplicitlyPassed) {
-	errors.push('`--current` is not available when checking dev deps.');
+	errors[errors.length] = '`--current` is not available when checking dev deps.';
 }
 
 await help();

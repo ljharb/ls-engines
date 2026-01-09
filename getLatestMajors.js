@@ -15,7 +15,7 @@ module.exports = function getLatestMajors(versions, validRange = new Semver.Rang
 		if (!map[key]) {
 			map[key] = [];
 		}
-		map[key].push(v);
+		map[key][map[key].length] = v;
 		return map;
 	}, {});
 	return values(versionsByMajor)

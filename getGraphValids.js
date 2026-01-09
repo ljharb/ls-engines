@@ -36,7 +36,7 @@ module.exports = async function getGraphValids(graphEntries, allVersions) {
 			if (!Array.isArray(mergedEngines[engine])) {
 				mergedEngines[engine] = []; // eslint-disable-line no-param-reassign
 			}
-			mergedEngines[engine].push(versions);
+			mergedEngines[engine][mergedEngines[engine].length] = versions;
 		});
 		return mergedEngines;
 	}, {});

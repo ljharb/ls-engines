@@ -63,7 +63,7 @@ function analyzeEngines(selectedEngines, rootEngines, rootValids, graphValids, g
 		const rootIsSubsetOfGraph = isSubset(rootValids[engine], graphValids[engine]);
 		const graphIsSubsetOfRoot = isSubset(graphValids[engine], rootValids[engine]);
 		if (isSame) {
-			same.push(engine);
+			same[same.length] = engine;
 			conflicting[engine] = [];
 		} else {
 			const packageInvalids = graphAllowed
@@ -80,9 +80,9 @@ function analyzeEngines(selectedEngines, rootEngines, rootValids, graphValids, g
 			]);
 
 			if (graphIsSubsetOfRoot) {
-				superset.push(engine);
+				superset[superset.length] = engine;
 			} else if (rootIsSubsetOfGraph) {
-				subset.push(engine);
+				subset[subset.length] = engine;
 			}
 		}
 	});
