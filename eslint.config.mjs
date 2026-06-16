@@ -7,42 +7,44 @@ export default [
 	...ljharbConfig,
 	{
 		rules: {
-			'array-bracket-newline': 0,
-			'func-style': 0,
-			'id-length': 0,
-			'max-len': 0,
-			'max-lines': 0,
-			'max-lines-per-function': [2, 110],
-			'max-nested-callbacks': [2, 4],
-			'max-params': [2, 6],
-			'multiline-comment-style': 0,
-			'object-curly-newline': 0,
+			'array-bracket-newline': 'off',
+			'func-style': 'off',
+			'id-length': 'off',
+			'max-len': 'off',
+			'max-lines': 'off',
+			'max-lines-per-function': ['error', 110],
+			'max-nested-callbacks': ['error', 4],
+			'max-params': ['error', 6],
+			'multiline-comment-style': 'off',
+			'no-magic-numbers': ['warn', { ignore: [-1, 0] }],
+			'object-curly-newline': 'off',
 		},
 	},
 	{
 		files: ['bin.mjs', 'checkCurrent.js', 'checkEngines.js'],
 		rules: {
-			'no-throw-literal': 0,
+			'no-throw-literal': 'off',
 		},
 	},
 	{
 		files: ['checkEngines.js'],
 		rules: {
-			'max-lines-per-function': 0,
-			'max-params': 0,
+			'max-lines-per-function': 'off',
+			'max-params': 'off',
 		},
 	},
 	{
 		files: ['getLatestMajors.js'],
 		rules: {
-			'no-param-reassign': [2, { props: false }],
+			'no-param-reassign': ['error', { props: false }],
 		},
 	},
 	{
 		files: ['test/**'],
 		rules: {
-			'max-lines-per-function': 0,
-			'max-params': 0,
+			'max-lines-per-function': 'off',
+			'max-params': 'off',
+			'no-magic-numbers': 'off',
 		},
 	},
 ];

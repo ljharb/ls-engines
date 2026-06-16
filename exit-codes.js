@@ -1,6 +1,6 @@
 'use strict';
 
-/* eslint-disable sort-keys, no-magic-numbers */
+/* eslint-disable sort-keys */
 module.exports = {
 	SUCCESS: 0,
 	IMPLICIT: 1,
