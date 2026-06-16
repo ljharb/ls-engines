@@ -90,6 +90,12 @@
 		}
 	],
 	[
+		"es-abstract-get",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
 		"es-define-property",
 		{
 			"node": ">= 0.4"
@@ -276,6 +282,12 @@
 		}
 	],
 	[
+		"is-document.all",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
 		"is-finalizationregistry",
 		{
 			"node": ">= 0.4"
@@ -372,6 +384,12 @@
 		}
 	],
 	[
+		"node-exports-info",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
 		"normalize-package-data",
 		{
 			"node": ">=10"
@@ -439,6 +457,12 @@
 	],
 	[
 		"regexp.prototype.flags",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"resolve",
 		{
 			"node": ">= 0.4"
 		}

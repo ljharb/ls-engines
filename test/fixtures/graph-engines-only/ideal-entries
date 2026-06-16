@@ -132,6 +132,12 @@
 		}
 	],
 	[
+		"es-abstract-get",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
 		"es-define-property",
 		{
 			"node": ">= 0.4"
@@ -313,6 +319,12 @@
 	],
 	[
 		"is-date-object",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
+		"is-document.all",
 		{
 			"node": ">= 0.4"
 		}

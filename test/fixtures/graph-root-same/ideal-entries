@@ -517,6 +517,12 @@
 		}
 	],
 	[
+		"es-abstract-get",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
 		"es-define-property",
 		{
 			"node": ">= 0.4"
@@ -1028,6 +1034,12 @@
 		}
 	],
 	[
+		"is-document.all",
+		{
+			"node": ">= 0.4"
+		}
+	],
+	[
 		"is-extglob",
 		{
 			"node": ">=0.10.0"
@@ -1386,6 +1398,12 @@
 		"negotiator",
 		{
 			"node": ">= 0.6"
+		}
+	],
+	[
+		"node-exports-info",
+		{
+			"node": ">= 0.4"
 		}
 	],
 	[
@@ -1788,6 +1806,12 @@
 		"require-from-string",
 		{
 			"node": ">=0.10.0"
+		}
+	],
+	[
+		"resolve",
+		{
+			"node": ">= 0.4"
 		}
 	],
 	[
