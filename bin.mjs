@@ -8,7 +8,7 @@ const {
 	groupBy,
 } = Object;
 
-const validEngines = ['node'];
+import validEngines from '#/validEngines';
 
 const {
 	errors,
