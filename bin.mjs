@@ -98,23 +98,37 @@ const {
 
 const pPackage = jsonFile(path.join(process.cwd(), 'package.json'));
 
+/** @type {(ver: string) => string} */
 function caret(ver) {
 	return `^${ver.replace(/^v/g, '')}`;
 }
 
 const pAllVersions = getAlVersions(selectedEngines);
 
+/** @typedef {typeof selectedEngines[number]} ValidEngine */
+/** @typedef {{ name: ValidEngine; version?: string | null }} Runtime */
+/** @typedef {{ runtime?: Runtime | Runtime[] }} DevEngines */
+/** @typedef {Record<ValidEngine, string | null>} Engines */
+/** @typedef {{ private?: boolean; devEngines?: DevEngines; engines?: Engines }} PackageData */
+
+/** @import { FulfilledCheckResult, JSONFileLike } from './processFulfilledResults.js' */
+
 const pRootRanges = Promise.all([pPackage, pAllVersions]).then(async ([
-	{ data: { private: isPrivate, devEngines, engines: prodEngines } },
+	{ data },
 	allVersions,
 ]) => {
+	const {
+		private: isPrivate,
+		devEngines, engines:
+		prodEngines,
+	} = /** @type {PackageData} */ (data);
 	const devEnginesRuntime = devEngines?.runtime;
 	// For private packages, devEngines takes precedence over engines (if present)
 	const useDevEngines = isPrivate && devEnginesRuntime;
 	const engineEntries = validEngines.map((engine) => {
 		if (useDevEngines) {
 			// devEngines.runtime is an object with name and version (or an array of such)
-			const runtimes = [].concat(devEnginesRuntime);
+			const runtimes = /** @type {Runtime[]} */ ([]).concat(devEnginesRuntime);
 			const nodeRuntime = runtimes.find((r) => r.name === 'node');
 			const version = nodeRuntime?.version || null;
 			return [engine, version?.replace(/[=](?<digits>\d)/, '= $<digits>') || null];
@@ -131,11 +145,13 @@ const pRootRanges = Promise.all([pPackage, pAllVersions]).then(async ([
 	return { engines, ranges, useDevEngines, valids };
 });
 
+/** @type {(v: string) => string} */
 function dropPatch(v) {
 	const num = v.replace(/^v/, '');
 	return `^${major(num)}.${minor(num)}`;
 }
 
+/** @type {(prev: string[], v: string) => string[]} */
 function versionReducer(prev, v) {
 	if (prev.length === 0) {
 		return [v];
@@ -169,7 +185,7 @@ const pGraphRanges = Promise.all([
 		return [engine, { displayRange, validRange }];
 	});
 
-	const engineEntries = graphRanges.map(([engine, { displayRange }]) => [engine, displayRange]);
+	const engineEntries = graphRanges.map(([engine, x]) => [engine, /** @type {{ displayRange: string }} */ (x).displayRange]);
 
 	const engines = fromEntries(engineEntries);
 
@@ -199,6 +215,7 @@ const pLatestEngineMajors = Promise.all([
 	allVersions,
 ]) => getLatestEngineMajors(selectedEngines, allVersions, rootRanges, graphRanges));
 
+/** @type {(array: string[], limit: number) => string} */
 function wrapCommaSeparated(array, limit) {
 	const str = array.join(', ');
 	if (str.length <= limit) {
@@ -211,10 +228,11 @@ function wrapCommaSeparated(array, limit) {
 		if (possibleLine.length <= limit) {
 			return lines.concat(possibleLine);
 		}
-		return lines.concat(lastLine, version);
-	}, []).map((x) => x.split(',').map((y) => styleText('blue', y)).join(',')).join(',\n');
+		return lines.concat(lastLine || [], version);
+	}, /** @type {string[]} */ ([])).map((x) => x.split(',').map((y) => styleText('blue', y)).join(',')).join(',\n');
 }
 
+/** @type {(engines: Engines) => Record<string, string>} */
 function normalizeEngines(engines) {
 	const engineEntries = entries(engines)
 		.flatMap(([engine, version]) => (
@@ -228,6 +246,11 @@ function normalizeEngines(engines) {
 
 const majorsHeading = 'Currently available latest release of each valid major version:';
 
+/** @type {(engine: unknown) => engine is ValidEngine} */
+function isValidEngine(engine) {
+	return selectedEngines.includes(/** @type {ValidEngine} */ (engine));
+}
+
 const pSummary = Promise.all([
 	pRootRanges,
 	pGraphRanges,
@@ -238,11 +261,12 @@ const pSummary = Promise.all([
 	latestEngineMajors,
 ]) => {
 	const enginesField = useDevEngines ? 'devEngines' : 'engines';
+	/** @type {DevEngines} */
 	const displayRootEngines = useDevEngines
-		? { runtime: { name: 'node', version: rootEngines.node } }
+		? { runtime: { name: ('node'), version: rootEngines.node } }
 		: normalizeEngines(rootEngines);
 	return {
-		output: [].concat(
+		output: /** @type {string[]} */ ([]).concat(
 			table([
 				[
 					'engine',
@@ -253,16 +277,21 @@ const pSummary = Promise.all([
 						engine,
 						{ root, graph },
 					]) => (
-						selectedEngines.includes(engine)
+						isValidEngine(engine)
 							? [[
 								styleText('blue', engine),
-								wrapCommaSeparated(graph.length > 0 ? intersect([root, graph]) : root, majorsHeading.length),
+								wrapCommaSeparated(
+									graph.length > 0
+										? intersect([root, graph])
+										: root,
+									majorsHeading.length,
+								),
 							]]
 							: []
 					)),
 			]),
 			table([
-				[].concat(
+				/** @type {string[]} */ ([]).concat(
 					`package ${enginesField}:`,
 					'dependency graph engines:',
 				).map((x) => styleText(['bold', 'gray'], x)),
@@ -297,9 +326,10 @@ Promise.all([
 	allVersions,
 ]) => {
 	// Validate devEngines is subset of engines for non-private packages
-	const devEnginesRuntime = pkg.data.devEngines?.runtime;
-	if (!pkg.data.private && devEnginesRuntime) {
-		const runtimes = [].concat(devEnginesRuntime);
+	const pkgData = /** @type {PackageData} */ (pkg.data);
+	const devEnginesRuntime = pkgData.devEngines?.runtime;
+	if (!pkgData.private && devEnginesRuntime) {
+		const runtimes = /** @type {Runtime[]} */ ([]).concat(devEnginesRuntime);
 		const nodeRuntime = runtimes.find((r) => r.name === 'node');
 		const devVersion = nodeRuntime?.version || '*';
 		const devValids = await validVersionsForEngines({ node: devVersion }, allVersions);
@@ -326,10 +356,12 @@ Promise.all([
 		graphAllowed,
 		graphDisplayRanges,
 		save,
-		useDevEngines,
+		/** @type {boolean} */ (useDevEngines),
 	);
 
-	const pCurrent = effectiveCurrent ? checkCurrent(selectedEngines, rootValids, graphValids) : { output: [] };
+	const pCurrent = effectiveCurrent
+		? checkCurrent(selectedEngines, rootValids, graphValids)
+		: { output: [] };
 
 	// print out successes first
 	const { fulfilled = [], rejected = [] } = groupBy(
@@ -337,16 +369,25 @@ Promise.all([
 		(x) => x.status,
 	);
 
-	await processFulfilledResults(fulfilled, save, pkg, EXITS, console.log);
+	await processFulfilledResults(
+		/** @type {FulfilledCheckResult[]} */
+		(fulfilled),
+		save,
+		/** @type {JSONFileLike} */
+		(pkg),
+		EXITS,
+		console.log,
+	);
 
 	// print out failures last
 	await rejected.reduce(async (prev, error) => {
 		await prev;
 
-		if (!error || !error.reason) {
+		const rejection = /** @type {PromiseRejectedResult} */ (error);
+		if (!rejection.reason) {
 			throw error;
 		}
-		const { reason } = error;
+		const { reason } = rejection;
 		const { code, output, save: doSave } = reason;
 		if (!output) {
 			throw reason;
@@ -357,18 +398,18 @@ Promise.all([
 			try {
 				await pkg.save();
 			} catch {
-				process.exitCode |= EXITS.SAVE;
+				process.exitCode = /** @type {number} */ (process.exitCode) | EXITS.SAVE;
 			}
 		} else {
-			process.exitCode |= code;
+			process.exitCode = /** @type {number} */ (process.exitCode) | code;
 		}
-		output.forEach((line) => {
+		output.forEach((/** @type {unknown} */ line) => {
 			console.error(line);
 		});
 	}, Promise.resolve());
 }).catch((e) => {
-	[].concat(e.output || (e && e.stack) || e).forEach((line) => {
+	[].concat(e.output || (e && e.stack) || e).forEach((/** @type {unknown} */ line) => {
 		console.error(line);
 	});
-	process.exitCode |= typeof e.code === 'number' ? e.code : EXITS.ERROR;
+	process.exitCode = /** @type {number} */ (process.exitCode) | (typeof e.code === 'number' ? e.code : EXITS.ERROR);
 });

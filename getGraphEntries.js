@@ -1,7 +1,10 @@
 'use strict';
 
+/** @import { EnginesRecord } from './validVersionsForEngines' */
+
 const getTree = require('get-dep-tree');
 
+/** @type {import('./getGraphEntries')} */
 module.exports = async function getGraphEntries({
 	mode,
 	dev,
@@ -13,7 +16,7 @@ module.exports = async function getGraphEntries({
 }) {
 	const tree = await getTree(mode, { dev, logger, path, peer, production });
 	const nodesWithEngines = await tree.querySelectorAll(':attr(engines, [node])');
-	return nodesWithEngines
+	return /** @type {{ name: string, package: { _inBundle?: boolean, engines?: EnginesRecord }, dev?: boolean, peer?: boolean }[]} */ (nodesWithEngines)
 		.flatMap(({
 			name,
 			package: {
@@ -27,8 +30,8 @@ module.exports = async function getGraphEntries({
 			&& engines
 			&& ((dev || !nodeDev) && (production || nodeDev) && (peer || !nodePeer)) // TODO: figure out why get-dep-tree isn't pruning properly
 			&& selectedEngines.some((engine) => engines[engine] !== '*')
-				? [[name, engines]]
+				? /** @type {[string, EnginesRecord][]} */ ([[name, engines]])
 				: []
 		))
-		.toSorted(([a, aE], [b, bE]) => a.localeCompare(b) || aE.node.localeCompare(bE.node));
+		.toSorted(([a, aE], [b, bE]) => a.localeCompare(b) || /** @type {NonNullable<typeof aE.node>} */ (aE.node).localeCompare(/** @type {NonNullable<typeof bE.node>} */ (bE.node)));
 };

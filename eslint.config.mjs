@@ -9,6 +9,7 @@ export default [
 		rules: {
 			'array-bracket-newline': 'off',
 			'func-style': 'off',
+			'function-paren-newline': ['error', 'consistent'],
 			'id-length': 'off',
 			'max-len': 'off',
 			'max-lines': 'off',
@@ -16,6 +17,7 @@ export default [
 			'max-nested-callbacks': ['error', 4],
 			'max-params': ['error', 6],
 			'multiline-comment-style': 'off',
+			'no-extra-parens': 'off', // conflicts with JSDoc type casts
 			'no-magic-numbers': ['warn', { ignore: [-1, 0] }],
 			'object-curly-newline': 'off',
 		},

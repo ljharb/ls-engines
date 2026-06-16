@@ -1,5 +1,6 @@
 'use strict';
 
+/** @type {import('./processFulfilledResults')} */
 module.exports = async function processFulfilledResults(fulfilled, shouldSave, pkg, EXITS, log) {
 	await fulfilled.reduce(async (prev, result) => {
 		await prev;
@@ -19,7 +20,7 @@ module.exports = async function processFulfilledResults(fulfilled, shouldSave, p
 			try {
 				await pkg.save();
 			} catch {
-				process.exitCode |= EXITS.SAVE;
+				process.exitCode = /** @type {number} */ (process.exitCode) | EXITS.SAVE;
 			}
 		}
 	}, Promise.resolve());

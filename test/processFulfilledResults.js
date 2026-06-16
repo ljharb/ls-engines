@@ -100,6 +100,32 @@ test('processFulfilledResults', (t) => {
 		st.deepEqual(logged, ['from fulfilled'], 'only logs from fulfilled results');
 	});
 
+	t.test('sets exitCode when pkg.save() throws', async (st) => {
+		const origExitCode = process.exitCode;
+		process.exitCode = 0;
+
+		const fulfilled = [
+			{
+				status: 'fulfilled',
+				value: {
+					output: ['line 1'],
+					save() {},
+				},
+			},
+		];
+
+		const mockPkg = {
+			data: {},
+			save() { throw new Error('save failed'); },
+		};
+
+		await processFulfilledResults(fulfilled, true, mockPkg, EXITS, () => {});
+
+		st.equal(process.exitCode & EXITS.SAVE, EXITS.SAVE, 'exitCode has SAVE bit set');
+
+		process.exitCode = origExitCode;
+	});
+
 	t.test('handles results without save function', async (st) => {
 		const fulfilled = [
 			{

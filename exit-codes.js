@@ -1,6 +1,8 @@
 'use strict';
 
 /* eslint-disable sort-keys */
+
+/** @type {import('./exit-codes')} */
 module.exports = {
 	SUCCESS: 0,
 	IMPLICIT: 1,

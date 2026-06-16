@@ -5,10 +5,13 @@ const { styleText } = require('util');
 const EXITS = require('./exit-codes');
 const table = require('./table');
 
-const currentVersions = {
-	node: process.version,
-};
+/** @import { SemVerString } from './getAllVersions' */
 
+const currentVersions = /** @type {const} */ ({
+	node: /** @type {SemVerString} */ (process.version),
+});
+
+/** @type {import('./checkCurrent')} */
 module.exports = async function checkCurrent(selectedEngines, rootValids, graphValids) {
 	let anyInvalid = false;
 	const rows = await Promise.all(selectedEngines.map(async (engine) => {

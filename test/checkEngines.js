@@ -191,6 +191,211 @@ test('checkEngines', async (t) => {
 		}
 	});
 
+	t.test('some engines omitted (anyOmitted)', async (st) => {
+		const selectedEngines = ['node', 'npm'];
+		const rootEngines = { node: '>= 16', npm: null };
+		const rootValids = { node: ['v16.0.0', 'v16.20.0', 'v18.0.0', 'v18.19.0'], npm: allVersions.node };
+		const graphValids = { node: ['v16.0.0', 'v16.20.0', 'v18.0.0', 'v18.19.0'], npm: allVersions.node };
+		const graphAllowed = [];
+		const graphRanges = { node: { displayRange: '>= 16', validRange: { raw: '>= 16' } } };
+
+		try {
+			await checkEngines(
+				selectedEngines,
+				rootEngines,
+				rootValids,
+				graphValids,
+				graphAllowed,
+				graphRanges,
+				false,
+			);
+			st.fail('should have thrown');
+		} catch (e) {
+			st.equal(e.code, EXITS.IMPLICIT, 'exit code is IMPLICIT');
+			st.ok(e.output.some((line) => line.includes('some of your selected engines missing')), 'indicates some engines missing');
+		}
+	});
+
+	t.test('some engines star (anyStar)', async (st) => {
+		const selectedEngines = ['node', 'npm'];
+		const rootEngines = { node: '>= 16', npm: '*' };
+		const rootValids = { node: ['v16.0.0', 'v16.20.0', 'v18.0.0', 'v18.19.0'], npm: allVersions.node };
+		const graphValids = { node: ['v16.0.0', 'v16.20.0', 'v18.0.0', 'v18.19.0'], npm: allVersions.node };
+		const graphAllowed = [];
+		const graphRanges = { node: { displayRange: '>= 16', validRange: { raw: '>= 16' } } };
+
+		try {
+			await checkEngines(
+				selectedEngines,
+				rootEngines,
+				rootValids,
+				graphValids,
+				graphAllowed,
+				graphRanges,
+				false,
+			);
+			st.fail('should have thrown');
+		} catch (e) {
+			st.equal(e.code, EXITS.IMPLICIT, 'exit code is IMPLICIT');
+			st.ok(e.output.some((line) => line.includes('some of your selected engines set to `*`')), 'indicates some engines are star');
+		}
+	});
+
+	t.test('superset with shouldSave', async (st) => {
+		const selectedEngines = ['node'];
+		const rootEngines = { node: '>= 14' };
+		const rootValids = { node: allVersions.node };
+		const graphValids = { node: ['v18.0.0', 'v18.19.0', 'v20.0.0', 'v20.10.0'] };
+		const graphAllowed = [
+			['some-package', { node: '>= 18' }, { node: ['v18.0.0', 'v18.19.0', 'v20.0.0', 'v20.10.0'] }],
+		];
+		const graphRanges = { node: { displayRange: '>= 18', validRange: { raw: '>= 18' } } };
+
+		try {
+			await checkEngines(
+				selectedEngines,
+				rootEngines,
+				rootValids,
+				graphValids,
+				graphAllowed,
+				graphRanges,
+				true, // shouldSave
+			);
+			st.fail('should have thrown');
+		} catch (e) {
+			st.equal(e.code, EXITS.INEXACT, 'exit code is INEXACT');
+			st.ok(e.output.some((line) => line.includes('automatically')), 'indicates auto-save with --save');
+		}
+	});
+
+	t.test('superset with DEBUG output', async (st) => {
+		const selectedEngines = ['node'];
+		const rootEngines = { node: '>= 14' };
+		const rootValids = { node: allVersions.node };
+		const graphValids = { node: ['v18.0.0', 'v18.19.0', 'v20.0.0', 'v20.10.0'] };
+		const graphAllowed = [
+			['some-package', { node: '>= 18' }, { node: ['v18.0.0', 'v18.19.0', 'v20.0.0', 'v20.10.0'] }],
+		];
+		const graphRanges = { node: { displayRange: '>= 18', validRange: { raw: '>= 18' } } };
+
+		const origDebug = process.env.DEBUG;
+		process.env.DEBUG = 'true';
+		try {
+			await checkEngines(
+				selectedEngines,
+				rootEngines,
+				rootValids,
+				graphValids,
+				graphAllowed,
+				graphRanges,
+				false,
+			);
+			st.fail('should have thrown');
+		} catch (e) {
+			st.equal(e.code, EXITS.INEXACT, 'exit code is INEXACT');
+			st.ok(e.output.some((line) => line.includes('Graph deps')), 'output includes DEBUG table');
+		} finally {
+			if (origDebug === undefined) {
+				delete process.env.DEBUG;
+			} else {
+				process.env.DEBUG = origDebug;
+			}
+		}
+	});
+
+	t.test('partial overlap (neither superset nor subset)', async (st) => {
+		const selectedEngines = ['node'];
+		const rootEngines = { node: '>= 14' };
+		const rootValids = { node: ['v14.0.0', 'v14.21.0', 'v18.0.0', 'v18.19.0'] };
+		const graphValids = { node: ['v16.0.0', 'v16.20.0', 'v18.0.0', 'v18.19.0'] };
+		const graphAllowed = [
+			['some-package', { node: '>= 16' }, { node: ['v16.0.0', 'v16.20.0', 'v18.0.0', 'v18.19.0'] }],
+		];
+		const graphRanges = { node: { displayRange: '>= 16', validRange: { raw: '>= 16' } } };
+
+		try {
+			await checkEngines(
+				selectedEngines,
+				rootEngines,
+				rootValids,
+				graphValids,
+				graphAllowed,
+				graphRanges,
+				false,
+			);
+			st.fail('should have thrown');
+		} catch (e) {
+			st.equal(e.code, EXITS.INEXACT, 'exit code is INEXACT');
+			st.ok(e.output.some((line) => line.includes('does not exactly match')), 'indicates engines do not match');
+		}
+	});
+
+	t.test('partial overlap with DEBUG output', async (st) => {
+		const selectedEngines = ['node'];
+		const rootEngines = { node: '>= 14' };
+		const rootValids = { node: ['v14.0.0', 'v14.21.0', 'v18.0.0', 'v18.19.0'] };
+		const graphValids = { node: ['v16.0.0', 'v16.20.0', 'v18.0.0', 'v18.19.0'] };
+		const graphAllowed = [
+			['some-package', { node: '>= 16' }, { node: ['v16.0.0', 'v16.20.0', 'v18.0.0', 'v18.19.0'] }],
+		];
+		const graphRanges = { node: { displayRange: '>= 16', validRange: { raw: '>= 16' } } };
+
+		const origDebug = process.env.DEBUG;
+		process.env.DEBUG = 'true';
+		try {
+			await checkEngines(
+				selectedEngines,
+				rootEngines,
+				rootValids,
+				graphValids,
+				graphAllowed,
+				graphRanges,
+				false,
+			);
+			st.fail('should have thrown');
+		} catch (e) {
+			st.equal(e.code, EXITS.INEXACT, 'exit code is INEXACT');
+			st.ok(e.output.some((line) => line.includes('Graph deps')), 'output includes DEBUG table');
+		} finally {
+			if (origDebug === undefined) {
+				delete process.env.DEBUG;
+			} else {
+				process.env.DEBUG = origDebug;
+			}
+		}
+	});
+
+	t.test('useDevEngines changes field name and save behavior', async (st) => {
+		const selectedEngines = ['node'];
+		const rootEngines = { node: null };
+		const rootValids = { node: allVersions.node };
+		const graphValids = { node: ['v18.0.0', 'v18.19.0', 'v20.0.0', 'v20.10.0'] };
+		const graphAllowed = [];
+		const graphRanges = { node: { displayRange: '>= 18', validRange: { raw: '>= 18' } } };
+
+		try {
+			await checkEngines(
+				selectedEngines,
+				rootEngines,
+				rootValids,
+				graphValids,
+				graphAllowed,
+				graphRanges,
+				false,
+				true, // useDevEngines
+			);
+			st.fail('should have thrown');
+		} catch (e) {
+			st.equal(e.code, EXITS.IMPLICIT, 'exit code is IMPLICIT');
+			st.ok(e.output.some((line) => line.includes('devEngines')), 'uses devEngines field name');
+			const pkg = {};
+			e.save(pkg);
+			st.ok(pkg.devEngines, 'save creates devEngines');
+			st.ok(pkg.devEngines.runtime, 'save creates devEngines.runtime');
+			st.equal(pkg.devEngines.runtime.name, 'node', 'save sets runtime name to node');
+		}
+	});
+
 	t.test('conflicting dependencies are reported', async (st) => {
 		const selectedEngines = ['node'];
 		const rootEngines = { node: '>= 14' };

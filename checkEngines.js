@@ -11,18 +11,31 @@ const {
 	groupBy,
 } = Object;
 
+/**
+ * @import { ValidEngine } from './validEngines'
+ * @import { EnginesRecord } from './validVersionsForEngines'
+ * @import { VersionsByEngine, SemVerString } from './getAllVersions'
+ * @import { GraphAllowedEntry } from './getGraphValids'
+ * @import { SaveFunction } from './checkEngines'
+ * @import { RangeInfo } from './getLatestEngineMajors'
+ */
+
+/** @type {(inner: SemVerString[], outer: SemVerString[]) => boolean} */
 function isSubset(inner, outer) {
 	const outerS = new Set(outer);
 	return inner.every((item) => outerS.has(item));
 }
 
+/** @param {EnginesRecord} engines @param {boolean} useDevEngines */
 function getDisplayEngines(engines, useDevEngines) {
 	return useDevEngines
 		? { runtime: { name: 'node', version: engines.node } }
 		: engines;
 }
 
+/** @param {EnginesRecord} engines @param {boolean} useDevEngines */
 function makeSaveFunction(engines, useDevEngines) {
+	/** @type {SaveFunction} */
 	return function save(pkg) {
 		if (useDevEngines) {
 			// eslint-disable-next-line no-param-reassign
@@ -36,15 +49,23 @@ function makeSaveFunction(engines, useDevEngines) {
 	};
 }
 
+/**
+ * @param {readonly ValidEngine[]} selectedEngines
+ * @param {EnginesRecord} rootEngines
+ * @param {VersionsByEngine} rootValids
+ * @param {VersionsByEngine} graphValids
+ * @param {GraphAllowedEntry[]} graphAllowed
+ **/
 function analyzeEngines(selectedEngines, rootEngines, rootValids, graphValids, graphAllowed) {
 	let allOmitted = true;
 	let anyOmitted = false;
 	let allStar = true;
 	let anyStar = false;
-	const same = [];
-	const subset = [];
-	const superset = [];
-	const conflicting = {};
+	/** @type {string[]} */ const same = [];
+	/** @type {string[]} */ const subset = [];
+	/** @type {string[]} */ const superset = [];
+	/** @type {[ValidEngine, [string, string][]][]} */
+	const conflictingEntries = [];
 
 	selectedEngines.forEach((engine) => {
 		const value = rootEngines[engine];
@@ -64,20 +85,30 @@ function analyzeEngines(selectedEngines, rootEngines, rootValids, graphValids, g
 		const graphIsSubsetOfRoot = isSubset(graphValids[engine], rootValids[engine]);
 		if (isSame) {
 			same[same.length] = engine;
-			conflicting[engine] = [];
+			conflictingEntries[conflictingEntries.length] = [engine, []];
 		} else {
 			const packageInvalids = graphAllowed
 				.filter(([, , { [engine]: vs }]) => !rootValids[engine].every((v) => vs.includes(v)))
-				.map(([name, depEngines, { [engine]: vs }]) => [name, depEngines[engine], rootValids[engine].filter((v) => !vs.includes(v))])
+				.map(([name, depEngines, { [engine]: vs }]) => /** @type {const} */ ([
+					name,
+					depEngines[engine],
+					rootValids[engine].filter((v) => !vs.includes(v)),
+				]))
 				.sort(([a], [b]) => a.localeCompare(b));
 
-			conflicting[engine] = entries(groupBy(packageInvalids, ([name]) => name)).map(([
-				name,
-				results,
-			]) => [
-				name,
-				Array.from(new Set(results.flatMap(([, depEngines]) => depEngines))).join('\n'),
-			]);
+			conflictingEntries[conflictingEntries.length] = [
+				engine,
+				entries(
+					/** @type {{ [k: string]: typeof packageInvalids }} */
+					(groupBy(packageInvalids, ([name]) => name)),
+				).map(([
+					name,
+					results,
+				]) => [
+					name,
+					Array.from(new Set(results.flatMap(([, depEngines]) => depEngines))).join('\n'),
+				]),
+			];
 
 			if (graphIsSubsetOfRoot) {
 				superset[superset.length] = engine;
@@ -87,9 +118,27 @@ function analyzeEngines(selectedEngines, rootEngines, rootValids, graphValids, g
 		}
 	});
 
-	return { allOmitted, allStar, anyOmitted, anyStar, conflicting, same, subset, superset };
+	const conflicting = fromEntries(conflictingEntries);
+
+	return {
+		allOmitted,
+		allStar,
+		anyOmitted,
+		anyStar,
+		conflicting,
+		same,
+		subset,
+		superset,
+	};
 }
 
+/**
+ * @param {string} enginesField
+ * @param {boolean} allOmitted
+ * @param {boolean} anyOmitted
+ * @param {boolean} allStar
+ * @param {boolean} anyStar
+ **/
 function getImplicitMessage(enginesField, allOmitted, anyOmitted, allStar, anyStar) {
 	if (allOmitted) {
 		return `\nYour “${enginesField}” field is missing! Prefer explicitly setting a supported engine range.`;
@@ -106,6 +155,7 @@ function getImplicitMessage(enginesField, allOmitted, anyOmitted, allStar, anySt
 	return null;
 }
 
+/** @type {import('./checkEngines')} */
 module.exports = async function checkEngines(
 	selectedEngines,
 	rootEngines,
@@ -116,8 +166,21 @@ module.exports = async function checkEngines(
 	shouldSave,
 	useDevEngines,
 ) {
-	const engineEntries = selectedEngines.map((engine) => [engine, '*'])
-		.concat(entries(graphRanges).map(([engine, { displayRange }]) => [engine, displayRange]))
+	// TODO: when https://github.com/microsoft/TypeScript/issues/41173 / https://github.com/microsoft/TypeScript/issues/59497
+	// are fixed, move the destructuring to the signature, and inline `filterer`
+	/** @type {<T>(entry: readonly [T, RangeInfo | undefined]) => entry is [T, RangeInfo]} */
+	const filterer = (entry) => {
+		const [, v] = entry;
+		return !!v;
+	};
+	const engineEntries = selectedEngines.map((engine) => /** @type {[string, string]} */ ([engine, '*']))
+		.concat(entries(graphRanges).filter(filterer).map(([
+			engine,
+			{ displayRange },
+		]) => /** @type {const} */ ([
+			engine,
+			displayRange,
+		])))
 		.filter(([engine, displayRange]) => engine === 'node' || displayRange !== '*');
 	const engines = fromEntries(engineEntries);
 
@@ -165,17 +228,17 @@ module.exports = async function checkEngines(
 			? `\n\`${styleText('gray', 'ls-engines')}\` will automatically ${superset.length > 0 ? 'narrow' : 'widen'} your support, per the \`${styleText('gray', '--save')}\` option, by adding the following to your \`${styleText('gray', 'package.json')}\`:`
 			: `\nIf you want to ${superset.length > 0 ? 'narrow' : 'widen'} your support, you can run \`${styleText(['bold', 'gray'], 'ls-engines --save')}\`, or manually add the following to your \`${styleText('gray', 'package.json')}\`:`;
 
-		const conflictingTable = conflicting.node.length > 0 ? `\n${table([].concat(
+		const conflictingTable = conflicting.node.length > 0 ? `\n${table(/** @type {string[][]} */ ([]).concat(
 			[[`Conflicting dependencies (${conflicting.node.length})`, 'engines.node'].map((x) => styleText(['bold', 'gray'], x))],
 			conflicting.node.map(([name, range]) => [name, range].map((x) => styleText('gray', x))),
 		))}` : [];
 
 		const result = {
 			code: superset.length > 0 ? EXITS.INEXACT : EXITS.SUCCESS,
-			output: [].concat(
+			output: /** @type {string[]} */ ([]).concat(
 				styleText(['bold', superset.length > 0 ? 'yellow' : 'green'], `\nYour “${enginesField}” field allows ${superset.length > 0 ? 'more' : 'fewer'} node versions than your dependency graph does.`),
 				conflictingTable,
-				process.env.DEBUG ? table([].concat(
+				process.env.DEBUG ? table(/** @type {string[][]} */ ([]).concat(
 					[['Graph deps', 'engines'].map((x) => styleText(['bold', 'gray'], x))],
 					graphAllowed.map(([a, b]) => [styleText('blue', a), inspect(b, { depth: Infinity, maxArrayLength: null })]),
 				)) : [],
@@ -195,7 +258,7 @@ module.exports = async function checkEngines(
 			styleText('red', `\nYour “${enginesField}” field does not exactly match your dependency graph’s requirements!`),
 			fixMessage,
 			styleText('blue', `"${enginesField}": ${JSON.stringify(displayEngines, null, 2)}`),
-			process.env.DEBUG ? table([].concat(
+			process.env.DEBUG ? table(/** @type {string[][]} */ ([]).concat(
 				[['Graph deps', 'engines'].map((x) => styleText(['bold', 'gray'], x))],
 				graphAllowed.map(([a, b]) => [styleText('blue', a), inspect(b, { depth: Infinity, maxArrayLength: null })]),
 			)) : [],

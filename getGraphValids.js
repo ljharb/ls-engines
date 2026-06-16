@@ -1,5 +1,8 @@
 'use strict';
 
+/** @import { SemVerString } from './getAllVersions' */
+/** @import { GraphAllowedEntry } from './getGraphValids' */
+
 const { default: intersect } = require('fast_array_intersect');
 const compare = require('semver/functions/compare');
 
@@ -10,6 +13,7 @@ const {
 
 const validVersionsForEngines = require('./validVersionsForEngines');
 
+/** @type {import('./getGraphValids')} */
 module.exports = async function getGraphValids(graphEntries, allVersions) {
 	if (!Array.isArray(graphEntries)) {
 		throw new TypeError('`graphEntries` must be an array');
@@ -25,11 +29,12 @@ module.exports = async function getGraphValids(graphEntries, allVersions) {
 		};
 	}
 
-	const graphAllowed = await Promise.all(graphEntries.map(async ([name, engines]) => [
+	/** @type {GraphAllowedEntry[]} */
+	const graphAllowed = await Promise.all(graphEntries.map(async ([name, engines]) => /** @type {const} */ ([
 		name,
 		engines,
 		await validVersionsForEngines(engines, allVersions),
-	]));
+	])));
 
 	const mergedGraphEngines = graphAllowed.reduce((mergedEngines, [, , engines]) => {
 		entries(engines).forEach(([engine, versions]) => {
@@ -40,7 +45,7 @@ module.exports = async function getGraphValids(graphEntries, allVersions) {
 			mergedEngines[engine][mergedEngines[engine].length] = versions;
 		});
 		return mergedEngines;
-	}, {});
+	}, /** @type {{ [engine: string]: SemVerString[][] }} */ ({}));
 	return {
 		allowed: graphAllowed,
 		valids: fromEntries(entries(mergedGraphEngines).map(([engine, versionArrays]) => {

@@ -7,6 +7,7 @@ const {
 	entries,
 } = Object;
 
+/** @type {import('./validVersionsForEngines')} */
 module.exports = async function validVersionsForEngines(engines, allVersions) {
 	if (!engines || typeof engines !== 'object' || Array.isArray(engines)) {
 		throw new TypeError('`engines` must be an object');

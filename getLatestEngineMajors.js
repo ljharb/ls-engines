@@ -4,6 +4,7 @@ const { fromEntries } = Object;
 
 const getLatestMajors = require('./getLatestMajors');
 
+/** @type {import('./getLatestEngineMajors')} */
 module.exports = async function getLatestEngineMajors(
 	selectedEngines,
 	allVersions,
