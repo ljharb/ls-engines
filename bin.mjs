@@ -23,30 +23,37 @@ const {
 		save,
 	},
 } = await pargs(import.meta.filename, {
+	description: 'Determine if your dependency graph’s stated "engines" criteria is met.',
 	options: {
 		current: {
 			default: true,
+			description: 'check that the current node version matches your dependency graph’s requirements',
 			type: 'boolean',
 		},
 		dev: {
 			default: false,
+			description: 'whether to include dev deps or not',
 			type: 'boolean',
 		},
 		mode: {
 			choices: ['auto', 'actual', 'virtual', 'ideal'],
 			default: 'auto',
+			description: '"actual" reads from `node_modules`; "virtual" reads from a lockfile; "ideal" reads from `package.json`',
 			type: 'enum',
 		},
 		peer: {
 			default: true,
+			description: 'whether to include peer deps or not',
 			type: 'boolean',
 		},
 		production: {
 			default: true,
+			description: 'whether to include production deps or not',
 			type: 'boolean',
 		},
 		save: {
 			default: false,
+			description: 'update `package.json`’s "engines" field to match that of your dependency graph',
 			type: 'boolean',
 		},
 	},
