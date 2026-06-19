@@ -109,7 +109,7 @@ test('processFulfilledResults', (t) => {
 				status: 'fulfilled',
 				value: {
 					output: ['line 1'],
-					save() {},
+					save() {}, // eslint-disable-line no-empty-function
 				},
 			},
 		];

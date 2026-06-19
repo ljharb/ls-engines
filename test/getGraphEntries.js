@@ -149,7 +149,7 @@ test('getGraphEntries', async (t) => {
 
 	t.test('logger receives mode information', async (st) => {
 		const logs = [];
-		function logger(...args) { logs[logs.length] = args; };
+		function logger(...args) { logs[logs.length] = args; }
 
 		await getGraphEntries({
 			dev: true,
