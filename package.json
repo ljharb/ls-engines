@@ -57,8 +57,8 @@
 		"@ljharb/eslint-config": "^22.2.3",
 		"@ljharb/tsconfig": "^0.3.2",
 		"@types/node": "^22.19.21",
+		"@types/object-inspect": "^1.13.0",
 		"@types/semver": "^7.7.1",
-		"@types/tape": "^5.8.1",
 		"auto-changelog": "^2.6.0",
 		"encoding": "^0.1.13",
 		"es-value-fixtures": "^1.7.1",
@@ -67,7 +67,7 @@
 		"nyc": "^17.1.0",
 		"object-inspect": "^1.13.4",
 		"safe-publish-latest": "^2.0.0",
-		"tape": "^5.10.1",
+		"tape": "^5.10.2",
 		"typescript": "next"
 	},
 	"auto-changelog": {
