@@ -79,9 +79,11 @@
 	},
 	"publishConfig": {
 		"ignore": [
-			"test/fixtures/**",
-			"test/mocks/**",
-			".github/workflows"
+			".github/workflows",
+			".nycrc",
+			"eslint.config.mjs",
+			"test",
+			"types"
 		]
 	}
 }
